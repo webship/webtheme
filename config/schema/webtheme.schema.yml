@@ -1,0 +1,5 @@
+# Schema for the configuration files of the webtheme theme.
+
+webtheme.settings:
+  type: theme_settings
+  label: 'Webtheme settings'

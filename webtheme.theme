@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Conditional logic and data processing for webtheme.
+ */
+
+/**
+ * Load webtheme's include files for theme processing.
+ */
+include_once 'includes/preprocess.inc';
+include_once 'includes/process.inc';
+include_once 'includes/theme.inc';
+include_once 'includes/alter.inc';

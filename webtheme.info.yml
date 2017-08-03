@@ -1,0 +1,17 @@
+name: Webtheme
+type: theme
+core: 8.x
+base theme: uikit
+package: Webtheme
+author: Rajab Natshah
+
+regions:
+  navbar: 'Navigation Bar'
+  offcanvas: 'Offcanvas Navigation'
+  content: Content
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  footer: 'Footer'
+
+libraries:
+  - webtheme/global-style

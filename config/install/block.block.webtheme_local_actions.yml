@@ -1,11 +1,8 @@
-uuid: ff690035-147e-4b44-9643-d57a39f6b14b
 langcode: en
 status: true
 dependencies:
   theme:
     - webtheme
-_core:
-  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: webtheme_local_actions
 theme: webtheme
 region: header

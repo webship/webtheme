@@ -1,4 +1,3 @@
-uuid: 07a72942-35ad-4e80-b01f-8baac3a493c2
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - system
   theme:
     - webtheme
-_core:
-  default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
 id: webtheme_footer
 theme: webtheme
 region: footer

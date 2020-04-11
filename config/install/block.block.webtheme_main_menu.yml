@@ -1,4 +1,3 @@
-uuid: b89d0b90-1a2c-41de-9fbb-ad383cb52e2c
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - system
   theme:
     - webtheme
-_core:
-  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
 id: webtheme_main_menu
 theme: webtheme
 region: navbar_right

@@ -21,7 +21,6 @@
     }
   ],
   "require": {
-    "drupal/radix": "^4.8",
-    "drupal/components": "^2.0"
+    "drupal/radix": "^4.8"
   }
 }

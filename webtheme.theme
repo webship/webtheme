@@ -1,14 +1,11 @@
 <?php
-
 /**
  * @file
- * Conditional logic and data processing for webtheme.
+ * Theme functions
  */
 
-/**
- * Load webtheme's include files for theme processing.
- */
-include_once 'includes/preprocess.inc';
-include_once 'includes/process.inc';
-include_once 'includes/theme.inc';
-include_once 'includes/alter.inc';
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}

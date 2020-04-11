@@ -1,4 +1,0 @@
-# Webtheme
----------------------
-
- * Introduction

@@ -1,0 +1,27 @@
+{
+  "name": "drupal/webtheme",
+  "description": "Webtheme is a dynamic sub theme of the Radix theme.",
+  "type": "drupal-theme",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Webship",
+      "homepage": "https://www.drupal.org/webship",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+  "issues": "http://drupal.org/project/issues/webtheme",
+  "source": "http://cgit.drupalcode.org/webtheme"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "drupal/radix": "^4.8",
+    "drupal/components": "^2.0"
+  }
+}

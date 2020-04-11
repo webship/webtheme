@@ -1,13 +1,10 @@
-global-style:
+style:
   version: VERSION
   css:
-    base:
-      css/webtheme.base.css: {}
-    layout:
-      css/webtheme.layout.css: {}
-    component:
-      css/webtheme.component.css: {}
     theme:
-      css/webtheme.theme.css: {}
+      assets/css/webtheme.style.css: {}
   js:
-    js/webtheme.theme.js: {}
+    assets/js/webtheme.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

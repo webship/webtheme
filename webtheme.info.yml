@@ -1,17 +1,33 @@
 name: Webtheme
+description: "Bootstrap 4 dynamic sub theme of the Radix theme"
+screenshot: screenshot.png
+core_version_requirement: ^8 || ^9
+# version: VERSION
+engine: twig
 type: theme
-core: 8.x
-base theme: uikit
-package: Webtheme
-author: Rajab Natshah
+base theme: radix
+
 
 regions:
-  navbar: 'Navigation Bar'
-  offcanvas: 'Offcanvas Navigation'
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
   content: Content
-  sidebar_first: 'Left Sidebar'
-  sidebar_second: 'Right Sidebar'
-  footer: 'Footer'
+  page_bottom: Page bottom
+  footer: Footer
 
 libraries:
-  - webtheme/global-style
+  - radix/style
+  - webtheme/style
+
+libraries-override:
+  radix/bootstrap: false
+
+ckeditor_stylesheets:
+  - assets/css/webtheme.style.css
+
+component-libraries:
+  webtheme:
+    paths:
+      - ./src/components

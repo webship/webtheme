@@ -1,4 +1,4 @@
-# Schema for the configuration files of the webtheme theme.
+# Schema for the configuration files of the Webtheme theme.
 
 webtheme.settings:
   type: theme_settings

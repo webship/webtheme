@@ -6,7 +6,9 @@ core_version_requirement: ^8 || ^9
 engine: twig
 type: theme
 base theme: radix
-
+dependencies:
+  - components
+  - radix_layouts
 
 regions:
   navbar_branding: Navbar branding

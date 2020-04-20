@@ -2,13 +2,9 @@ name: Webtheme
 description: "Bootstrap 4 dynamic sub theme of the Radix theme"
 screenshot: screenshot.png
 core_version_requirement: ^8 || ^9
-# version: VERSION
 engine: twig
 type: theme
 base theme: radix
-dependencies:
-  - components
-  - radix_layouts
 
 regions:
   navbar_branding: Navbar branding

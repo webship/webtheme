@@ -7,8 +7,8 @@ dependencies:
     - webtheme
 id: webtheme_help
 theme: webtheme
-region: header
-weight: -2
+region: help
+weight: -5
 provider: null
 plugin: help_block
 settings:

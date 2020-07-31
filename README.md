@@ -1,28 +1,14 @@
 # Webtheme
-Webtheme is a Bootstrap 4 dynamic sub theme of the Radix theme.
+---
 
-[![VDO](https://www.drupal.org/files/project-images/webtheme.png)](https://www.drupal.org/project/webtheme)
+Based on Bootstrap 4 framework using SASS, and extending [Vartheme](https://github.com/Vardot/vartheme_bs4) (Bootstrap 4 - SASS).
 
-# Installation
+A SASS base theme for [Webship](https://www.drupal.org/project/webship) standard websites.
+ Based on Bootstrap 4 framework using SASS,
+  and extending [Vartheme BS4](https://www.drupal.org/project/vartheme_bs4) contrib theme.
+  and extending [Barrio (Bootstrap 4)](https://www.drupal.org/project/bootstrap_barrio) contrib theme.
 
-Webtheme theme uses [Webpack](https://webpack.js.org) to compile and bundle
- SASS and JS.
-
-#### Step 1
-Make sure you have Node and npm installed. 
-You can read a guide on how to install node here:
- https://docs.npmjs.com/getting-started/installing-node
-
-If you prefer to use [Yarn](https://yarnpkg.com) instead of npm, install Yarn
- by following the guide [here](https://yarnpkg.com/docs/install).
-
-#### Step 2
-Go to the root of Webtheme theme and run the following commands: `npm install`
- or `yarn install`.
-
-#### Step 3
-Update `proxy` in **webpack.mix.json**.
-
-#### Step 4
-Run the following command to compile Sass and watch for changes:
- `npm run watch` or `yarn watch`.
+### Install with Composer:
+```
+ $ composer require 'drupal/webship:~9.0'
+```

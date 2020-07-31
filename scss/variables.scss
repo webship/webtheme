@@ -1,0 +1,38 @@
+//
+// webtheme Variables ovarrides.
+// --------------------------------------------------
+
+
+// #############################################################################
+// Bootstrap library standard variables.
+// #############################################################################
+// All variables which are used in the default bootstrap library.
+// You can change them in webtheme for the bootstrap-variables.sass
+//
+@import "bootstrap-variables"; // Bootstrap custom variables ovarrides in webtheme.
+
+
+// #############################################################################
+// Barrio custom variables.
+// #############################################################################
+// All needed custom variables for Bootstrap Barrio theme.
+// You can change them in webtheme in the bootstrap-variables.sass
+//
+@import "barrio-variables"; // Barrio custom variables ovarrides in webtheme.
+
+
+// #############################################################################
+// Vartheme BS4 custom variables
+// #############################################################################
+// All needed custom Vartheme bs4 variables
+// You can change them in webtheme in the vartheme_bs4-variables.sass
+//
+@import "vartheme_bs4-variables"; // Vartheme BS4 custom variables ovarrides in webtheme.
+
+
+// #############################################################################
+// webtheme custom needed variables
+// #############################################################################
+// Add custom needed webtheme variables.
+// In the generated webtheme not in Vartheme BS4 base theme.
+//

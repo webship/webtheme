@@ -168,6 +168,7 @@ global-scripts:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/drupal.ajax
 
 
 # webtheme Varbase Bootstrap Paragraphs colors theme.
@@ -194,6 +195,11 @@ heroslider:
     theme:
       css/theme/varbase-heroslider-media.theme.css: {}
 
+# webtheme Moderation status component.
+moderation-state:
+  css:
+    component:
+      css/components/moderation-state.component.css: {}
 
 # ------------------------------------------------------------------------------
 # Bootstrap Barrio components overrides.

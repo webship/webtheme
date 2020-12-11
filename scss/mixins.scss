@@ -1,6 +1,9 @@
 // webtheme Mixings.
 // -----------------------------------------------------------------------------
 @import "mixins/rfs"; // RFS mixin.
+// Issue #3171962: Update RFS from ~8.0 to ~9.0 for Vartheme BS4
+// https://www.drupal.org/project/vartheme_bs4/issues/3171962
+// -----------------------------------------------------------------------------
 // Issue #3157982: Fix RFS SCSS library located in
 // Bootstrap 4.5.0 vendor which causing code standard notice for every
 // font-size use in Vartheme BS4 and generated Sub-theme

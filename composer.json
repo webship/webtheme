@@ -21,7 +21,7 @@
     }
   ],
   "require": {
-    "drupal/core": "~9.0"
-    "drupal/vartheme_bs4": "~6.0"
+    "drupal/core": "~9.0",
+    "drupal/vartheme_bs4": "~9.0"
   }
 }

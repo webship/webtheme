@@ -1,24 +1,24 @@
-// Visual styles for comments in Bartik.
+// Comments component style.
 // -----------------------------------------------------------------------------
 @import "../../node_modules/bootstrap/scss/functions";  // Bootstrap functions.
 @import "../../node_modules/bootstrap/scss/mixins";     // Bootstrap mixins.
 @import "../variables";                   // webtheme variables.
 @import "../mixins";                      // webtheme mixins.
 // -----------------------------------------------------------------------------
- 
 
-/* This is required to win over specificity of #content h2 */
+// This is required to win over specificity of #content h2
+#content .comment-wrapper {
+  h2 {
+    @include margin-bottom(1rem);
 
-#content .comment-wrapper h2 {
-  margin-bottom: 1em;
-}
-
-#content .comment-wrapper h2.comment-form__title {
-  margin-bottom: 1em;
+    &.comment-form__title {
+      @include margin-bottom(1rem);
+    }
+  }
 }
 
 .field-node--comment {
-  font-size: $font-size-sm;
+  @include font-size($font-size-sm);
 }
 
 .comment {
@@ -34,11 +34,11 @@
 .comment__meta {
   padding: 0 30px 0 0;
   /* LTR */
-  font-size: $font-size-base;
+  @include font-size($font-size-base);
 }
 
 [dir="rtl"] .comment__meta {
-  padding: 0 0 0 30px;
+  @include padding(0 0 0 1.875rem);
 }
 
 .comment__attribution img {
@@ -46,7 +46,7 @@
 }
 
 
-// This is required to win over specificity of .field--type-image img
+/* This is required to win over specificity of .field--type-image img */
 
 .comment .field--name-user-picture img {
   margin: 0;
@@ -57,16 +57,16 @@
 }
 
 .comment__author {
-  margin: 4px 0;
-  line-height: 1.2;
+  @include margin(0.25rem 0);
+  @include rfs(1.2, line-height);
 }
 
 .comment__time,
 .comment__permalink {
-  margin-bottom: 4px;
+  @include margin-bottom(0.25rem);
   color: #68696b;
-  font-size: $font-size-sm;
-  line-height: 1.2;
+  @include font-size($font-size-sm);
+  @include rfs(1.2, line-height);
   padding: 0 0.5em 0 0;
   /* LTR */
 }
@@ -77,8 +77,8 @@
 }
 
 .comment__permalink {
-  font-size: $font-size-sm;
-  line-height: 1.2;
+  @include font-size($font-size-sm);
+  @include rfs(1.2rem, line-height);
 }
 
 .comment__content:before {
@@ -110,7 +110,7 @@
   border-right: $comment-spacer-x solid $white;
   /* LTR */
   border-bottom: $comment-spacer-y solid transparent;
-  margin-right: -1px;
+  @include margin-right(-0.0625);
   /* LTR */
 }
 
@@ -120,26 +120,26 @@
   border-right: none;
   border-left: $comment-spacer-x solid $white;
   margin-right: 0;
-  margin-left: -1px;
+  @include margin-left(-0.0625);
 }
 
 .comment__content h3 {
   margin-top: 0.94em;
   margin-bottom: 0.45em;
-  font-size: $font-size-lg;
+  @include font-size($font-size-lg);
 }
 
 .comment__content nav {
-  padding-top: 1px;
+  @include padding-top(0.0625);
 }
 
 .indented {
-  margin-left: 40px;
+  @include margin-left(2.5rem);
   /* LTR */
 }
 
 [dir="rtl"] .indented {
-  margin-right: 40px;
+  @include margin-right(2.5rem);
   margin-left: 0;
 }
 
@@ -150,7 +150,7 @@
 .comment .links-inline span {
   padding: 0 0.5em 0 0;
   /* LTR */
-  font-size: $font-size-base;
+  @include font-size($font-size-base);
 }
 
 [dir="rtl"] .comment .links-inline span {
@@ -158,19 +158,18 @@
 }
 
 .comment--unpublished {
-  margin-right: 5px;
+  @include margin-right(0.3125rem);
   /* LTR */
-  padding: 5px 2px 5px 5px;
+  @include padding(0.3125rem 0.125 0.3125rem 0.3125rem);
   /* LTR */
   background: $accent-light;
 }
 
 [dir="rtl"] .comment--unpublished {
-  margin-left: 5px;
+  @include margin-left(0.3125rem);
   margin-right: 0;
-  padding: 5px 5px 5px 2px;
+  @include padding(0.3125rem 0.3125rem 0.3125rem 0.125);
 }
-
 
 // @todo: unpublished nodes have class .node--unpublished.
 // change this to .comment--unpublished.

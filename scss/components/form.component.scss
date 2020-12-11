@@ -1,4 +1,4 @@
-// Visual styles for Bootstrap Barrio's form components.
+// Form component style.
 // -----------------------------------------------------------------------------
 @import "../../node_modules/bootstrap/scss/functions";  // Bootstrap functions.
 @import "../../node_modules/bootstrap/scss/mixins";     // Bootstrap mixins.
@@ -19,8 +19,8 @@
 }
 
 form .filter-wrapper {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  @include padding-left(1rem);
+  @include padding-right(1rem);
 }
 
 form .form-type-textarea {

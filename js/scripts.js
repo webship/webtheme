@@ -3,14 +3,10 @@
  * Behaviors for the webtheme theme.
  */
 
-(function ($, _, Drupal, drupalSettings) {
-  'use strict';
-
+(function($, _, Drupal) {
   Drupal.behaviors.webtheme = {
-    attach: function (context) {
-
+    attach: function() {
       // webtheme JavaScript behaviors goes here.
     }
   };
-
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
+})(window.jQuery, window._, window.Drupal);

@@ -3,9 +3,9 @@ html.overlay-open .navbar-fixed-top {
 }
 
 html.js fieldset.collapsed {
-  border-left-width: 1px;
-  border-right-width: 1px;
   height: auto;
+  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
 html.js input.form-autocomplete {
@@ -17,12 +17,12 @@ html.js input.form-autocomplete {
 }
 
 html.js .autocomplete-throbber {
-  background-position: 100% 2px;
-  background-repeat: no-repeat;
   display: inline-block;
+  width: 15px;
   height: 15px;
   margin: 2px 0 0 2px;
-  width: 15px;
+  background-repeat: no-repeat;
+  background-position: 100% 2px;
 }
 
 html.js .autocomplete-throbber.throbbing {
@@ -48,8 +48,8 @@ html.js .autocomplete-throbber.throbbing {
 }
 
 .ctools-modal-dialog .modal-body {
-  width: 100% !important;
   overflow: auto;
+  width: 100% !important;
 }
 
 .modal-backdrop {
@@ -57,9 +57,9 @@ html.js .autocomplete-throbber.throbbing {
 }
 
 .element-invisible {
+  width: 1px;
   margin: 0;
   padding: 0;
-  width: 1px;
 }
 
 ul.secondary {
@@ -84,26 +84,26 @@ input,
 textarea,
 select,
 .uneditable-input {
-  max-width: 100%;
   width: auto;
+  max-width: 100%;
 }
 
 fieldset legend.panel-heading {
   float: left;
-  line-height: 1em;
   margin: 0;
+  line-height: 1em;
 }
 
 fieldset .panel-body {
-  clear: both;
   display: inherit;
+  clear: both;
 }
 
 fieldset .panel-heading a.panel-title {
-  color: inherit;
   display: block;
   margin: -10px -15px;
   padding: 10px 15px;
+  color: inherit;
 }
 
 fieldset .panel-heading a.panel-title:hover {
@@ -116,8 +116,8 @@ fieldset .panel-heading a.panel-title:hover {
 }
 
 .form-horizontal .form-group {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 
 .form-actions {
@@ -142,11 +142,13 @@ div.image-widget-data {
   margin-bottom: 0;
 }
 
-.radio:first-child, .checkbox:first-child {
+.radio:first-child,
+.checkbox:first-child {
   margin-top: 0;
 }
 
-.radio:last-child, .checkbox:last-child {
+.radio:last-child,
+.checkbox:last-child {
   margin-bottom: 0;
 }
 
@@ -155,8 +157,8 @@ div.image-widget-data {
 }
 
 a.tabledrag-handle .handle {
-  height: auto;
   width: auto;
+  height: auto;
 }
 
 .nav-tabs {
@@ -176,9 +178,9 @@ ul li.leaf {
 
 .submitted {
   margin-bottom: 1em;
-  font-style: italic;
-  font-weight: normal;
   color: #777;
+  font-weight: normal;
+  font-style: italic;
 }
 
 .form-type-password-confirm {
@@ -198,12 +200,10 @@ ul li.leaf {
 }
 
 .form-type-password-confirm .progress {
-  background: transparent;
-  border-radius: 0 0 5px 5px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
   height: 4px;
-  margin: -5px 0px 0;
+  margin: -5px 0 0;
+  border-radius: 0 0 5px 5px;
+  background: transparent;
 }
 
 .form-type-password-confirm .form-type-password {
@@ -243,13 +243,13 @@ ul.pagination li > a.progress-disabled {
 @keyframes adjust-hue {
   0% {
     -webkit-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(359deg);
-         -o-transform: rotate(359deg);
-            transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    transform: rotate(359deg);
   }
 }
 
@@ -261,17 +261,23 @@ td.radio {
 }
 
 .views-display-settings .label {
+  color: #666;
   font-size: 100%;
-  color: #666666;
 }
 
 .views-display-settings .footer {
-  padding: 0;
   margin: 4px 0 0 0;
+  padding: 0;
 }
 
 .views-exposed-form .views-exposed-widget .btn {
-  margin-top: 1.8em;
+  margin-top: calc(1.305rem + 0.66vw);
+}
+
+@media (min-width: 1200px) {
+  .views-exposed-form .views-exposed-widget .btn {
+    margin-top: 1.8rem;
+  }
 }
 
 table .radio input[type="radio"],
@@ -285,8 +291,8 @@ table .checkbox input[type="checkbox"] {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 7px;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
   text-align: right;
 }
 
@@ -322,53 +328,69 @@ td.module,
 }
 
 .book-toc > .dropdown-menu .dropdown-menu {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: 0;
+  position: static;
   display: block;
+  width: 100%;
   margin: 0;
   padding: 0;
-  position: static;
-  width: 100%;
+  border: 0;
 }
 
 .book-toc > .dropdown-menu .dropdown-menu > li {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 .book-toc > .dropdown-menu .dropdown-menu > li > a {
-  margin-left: -40px;
-  padding-left: 60px;
+  margin-left: calc(1.375rem + 1.5vw);
+  padding-left: calc(1.445rem + 2.34vw);
+}
+
+@media (min-width: 1200px) {
+  .book-toc > .dropdown-menu .dropdown-menu > li > a {
+    margin-left: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .book-toc > .dropdown-menu .dropdown-menu > li > a {
+    padding-left: 3.2rem;
+  }
 }
 
 #features-filter .form-item.form-type-checkbox {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 fieldset.features-export-component .panel-heading {
-  padding: 5px 10px;
+  padding: 0.3125rem 0.625rem;
 }
 
 fieldset.features-export-component .panel-heading a.panel-title {
+  margin: -0.3125rem -0.625rem;
+  padding: 0.3125rem 0.625rem;
   font-weight: 500;
-  margin: -5px -10px;
-  padding: 5px 10px;
 }
 
 fieldset.features-export-component .panel-body {
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 
 div.features-export-list {
-  margin: -11px 0 10px;
-  padding: 0 10px;
+  margin: -0.6875rem 0 0.625rem;
+  padding: 0 0.625rem;
 }
 
 fieldset.features-export-component .component-select .form-type-checkbox {
-  line-height: 1em;
-  margin: 5px 5px 5px 0 !important;
   min-height: 0;
-  padding: 3px 3px 3px 25px !important;
+  margin: 0.3125rem 0.3125rem 0.3125rem 0 !important;
+  padding: 0.1875rem 0.1875rem 0.1875rem calc(1.28125rem + 0.375vw) !important;
+  line-height: 1rem;
+}
+
+@media (min-width: 1200px) {
+  fieldset.features-export-component .component-select .form-type-checkbox {
+    padding: 0.1875rem 0.1875rem 0.1875rem 1.5625rem !important;
+  }
 }
 
 fieldset.features-export-component .component-select .form-type-checkbox input[type=checkbox] {
@@ -376,10 +398,16 @@ fieldset.features-export-component .component-select .form-type-checkbox input[t
 }
 
 div.features-export-list .form-type-checkbox {
-  line-height: 1em;
-  margin: 5px 5px 5px 0 !important;
   min-height: 0;
-  padding: 3px 3px 3px 25px !important;
+  margin: 0.3125rem 0.3125rem 0.3125rem 0 !important;
+  padding: 0.1875rem 0.1875rem 0.1875rem calc(1.28125rem + 0.375vw) !important;
+  line-height: 1em;
+}
+
+@media (min-width: 1200px) {
+  div.features-export-list .form-type-checkbox {
+    padding: 0.1875rem 0.1875rem 0.1875rem 1.5625rem !important;
+  }
 }
 
 div.features-export-list .form-type-checkbox input[type=checkbox] {
@@ -396,7 +424,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 
 .main-container .region.region-header .tabs {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .form-type-password-confirm > * {
@@ -408,7 +436,7 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 
 .navigation-top-wrapper {
-  padding-top: 15px;
+  padding-top: 0.9375rem;
 }
 
 .cke_editable body {
@@ -420,8 +448,8 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
 }
 
 .field-collection-view {
-  padding: 0;
   margin: 0;
+  padding: 0;
   border-bottom: 0 none;
 }
 
@@ -446,8 +474,8 @@ dt {
 }
 
 dd {
-  margin-left: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  margin-left: 0.625rem;
 }
 
 img {
@@ -455,26 +483,32 @@ img {
 }
 
 .ajax-progress-throbber {
-  background: transparent;
-  min-height: 0;
-  opacity: 1;
-  padding: 0;
   width: auto;
+  min-height: 0;
+  padding: 0;
   vertical-align: baseline;
+  opacity: 1;
+  background: transparent;
 }
 
 .modal-content .panels-add-content-modal {
-  background: white;
-  margin-left: 175px;
+  margin-left: calc(2.21875rem + 11.625vw);
   padding-left: 0;
+  background: white;
+}
+
+@media (min-width: 1200px) {
+  .modal-content .panels-add-content-modal {
+    margin-left: 10.9375rem;
+  }
 }
 
 .modal-content .panels-add-content-modal .panels-modal-add-category {
-  margin-right: 5px;
+  margin-right: 0.3125rem;
 }
 
 .modal-content .panels-add-content-modal .panels-section-column-body {
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 
 .maintenance-page #page {
@@ -501,27 +535,33 @@ body.user-logged-in .btn .hidden-anonymous {
 
 body.path-frontpage h1.page-header {
   position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
 pre {
   display: block;
-  padding: 9.5px;
   margin: 0 0 10px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  word-break: break-all;
+  padding: 0.59375rem;
   word-wrap: break-word;
-  color: #333333;
-  background-color: #f5f5f5;
+  word-break: break-all;
+  color: #333;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 0.25rem;
+  background-color: #f5f5f5;
+  font-size: 0.7rem;
+  line-height: calc(1.26786rem + 0.21429vw);
+}
+
+@media (min-width: 1200px) {
+  pre {
+    line-height: 1.42857rem;
+  }
 }
 
 #tour.hidden.list-group {
@@ -533,10 +573,10 @@ pre {
 }
 
 .card .card-top-image {
-  max-width: 100%;
   -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
 }
 
 select::-ms-expand {

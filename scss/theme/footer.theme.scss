@@ -30,13 +30,13 @@
         flex-flow: column;
         display: flex;
         justify-content: center;
-        padding: $spacer $spacer 0 $spacer;
-        font-size: 12px;
+        @include padding($spacer $spacer 0 $spacer);
+        @include font-size(0.75rem);
       }
 
       .menu--footer {
         padding: $spacer 0;
-        font-size: 12px;
+        @include font-size(0.75rem);
         display: flex;
         flex-flow: column;
         justify-content: center;
@@ -46,10 +46,10 @@
           flex-flow: row;
           justify-content: center;
           flex-wrap: wrap;
-          padding: $spacer $spacer 0 $spacer;
+          @include padding($spacer $spacer 0 $spacer);
 
           li {
-            padding: 0 $spacer;
+            @include padding(0 $spacer);
           }
         }
       }

@@ -1,4 +1,0 @@
-# Schema for the configuration files of the webtheme.
-webtheme.settings:
-  type: bootstrap_barrio.settings
-  label: 'webtheme settings'

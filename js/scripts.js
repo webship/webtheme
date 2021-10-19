@@ -1,12 +1,10 @@
 /**
- * @file
- * Behaviors for the webtheme theme.
+ * Place your custom script modifications here.
  */
 
-(function($, _, Drupal) {
-  Drupal.behaviors.webtheme = {
-    attach: function() {
-      // webtheme JavaScript behaviors goes here.
-    }
-  };
-})(window.jQuery, window._, window.Drupal);
+(function ($, Drupal, window, document) {
+  $(document).ready(function () {
+    // Add code here, like
+    // alert("Welcome to the web site!");
+  });
+})(jQuery, Drupal, this, this.document);

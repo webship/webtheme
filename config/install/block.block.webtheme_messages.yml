@@ -6,8 +6,8 @@ dependencies:
   theme:
     - olivero
     - webtheme
-id: olivero_messages
-theme: olivero
+id: webtheme_messages
+theme: webtheme
 region: highlighted
 weight: -5
 provider: null

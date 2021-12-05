@@ -1,0 +1,4 @@
+# Schema for the configuration files of the Webtheme theme.
+webtheme.settings:
+  type: olivero.settings
+  label: 'Webtheme settings'

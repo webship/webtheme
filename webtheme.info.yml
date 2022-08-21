@@ -2,9 +2,8 @@ name: 'Webtheme'
 type: theme
 base theme: olivero
 description: 'An Olivero based sub-theme.'
-package: 'Olivero'
-version: 1.x
-core_version_requirement: ^9
+package: Webtheme
+core_version_requirement: ~9
 regions:
   header: Header
   primary_menu: 'Primary menu'

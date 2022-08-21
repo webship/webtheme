@@ -2,7 +2,7 @@ name: 'Webtheme'
 type: theme
 base theme: olivero
 description: 'An Olivero based sub-theme.'
-package: 'Olivero'
+package: Webtheme
 
 core_version_requirement: ~10
 regions:

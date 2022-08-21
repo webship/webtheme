@@ -3,8 +3,8 @@ type: theme
 base theme: olivero
 description: 'An Olivero based sub-theme.'
 package: 'Olivero'
-version: 1.x
-core_version_requirement: ^9
+
+core_version_requirement: ^9 || ^10
 regions:
   header: Header
   primary_menu: 'Primary menu'

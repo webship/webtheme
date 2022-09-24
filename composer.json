@@ -1,6 +1,6 @@
 {
   "name": "drupal/webtheme",
-  "description": "Based on Bootstrap 4 framework using SASS, and extending Vartheme (Bootstrap 4 - SASS).",
+  "description": "Webtheme is an Olivero based sub-theme.",
   "type": "drupal-theme",
   "license": "GPL-2.0-or-later",
   "authors": [

@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Styles for views.
+ */
+
+.view > * {
+    margin-bottom: 2.25rem
+  }
+
+.view > *:last-child {
+      margin-bottom: 0;
+    }
+
+@media (min-width: 43.75rem) {
+
+.view > * {
+      margin-bottom: 3.375rem
+  }
+    }

@@ -33,7 +33,6 @@ libraries-override:
   olivero/dialog.off_canvas: webtheme/dialog.off_canvas
   olivero/dropbutton: webtheme/dropbutton
   olivero/drupal.dialog: webtheme/drupal.dialog
-  olivero/drupal.message: webtheme/drupal.message
   olivero/drupal.node.preview: webtheme/drupal.node.preview
   olivero/feed: webtheme/feed
   olivero/filter.theme: webtheme/filter.theme
@@ -47,7 +46,6 @@ libraries-override:
   olivero/local-actions: webtheme/local-actions
   olivero/maintenance-page: webtheme/maintenance-page
   olivero/menu-sidebar: webtheme/menu-sidebar
-  olivero/messages: webtheme/messages
   olivero/navigation-primary: webtheme/navigation-primary
   olivero/navigation-secondary: webtheme/navigation-secondary
   olivero/powered-by-block: webtheme/powered-by-block

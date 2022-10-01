@@ -5,36 +5,36 @@
 
 .olivero-details {
   display: block;
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   color: inherit;
   border: 1px solid #e7edf1;
-  border-radius: 0.1875rem;
+  border-radius: 0.16667rem;
   box-shadow: 0 1px 4px #d7e1e8;
 }
 
 /* Details summary styles */
 
 [dir="ltr"] .olivero-details__summary {
-  padding-left: 2.25rem;
+  padding-left: 2rem;
 }
 
 [dir="rtl"] .olivero-details__summary {
-  padding-right: 2.25rem;
+  padding-right: 2rem;
 }
 
 [dir="ltr"] .olivero-details__summary {
-  padding-right: 1.125rem;
+  padding-right: 1rem;
 }
 
 [dir="rtl"] .olivero-details__summary {
-  padding-left: 1.125rem;
+  padding-left: 1rem;
 }
 
 .olivero-details__summary {
   position: relative;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   list-style: none;
   cursor: pointer;
   transition: background-color 0.12s ease-in-out;
@@ -44,21 +44,21 @@
   hyphens: auto;
   color: inherit;
   background-color: #f7f9fa;
-  font-size: 1.125rem;
+  font-size: var(--line-height-s);
   font-weight: 700;
-  line-height: 1.125rem;
+  line-height: 1rem;
 }
 
 /* Arrow icon */
 
 [dir="ltr"] .olivero-details__summary:before,[dir="ltr"] 
 .collapse-processed > .olivero-details__summary .details-title:before {
-  left: 0.84375rem;
+  left: 0.75rem;
 }
 
 [dir="rtl"] .olivero-details__summary:before,[dir="rtl"] 
 .collapse-processed > .olivero-details__summary .details-title:before {
-  right: 0.84375rem;
+  right: 0.75rem;
 }
 
 .olivero-details__summary:before,
@@ -66,8 +66,8 @@
   position: absolute;
   top: 50%;
   display: block;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.55556rem;
+  height: 0.55556rem;
   content: "";
   transform: translateY(-50%) rotate(45deg); /* LTR */
   border-top: solid 2px currentColor;
@@ -91,7 +91,7 @@
   content: "";
   pointer-events: none;
   opacity: 0;
-  border-radius: 0.1875rem;
+  border-radius: 0.16667rem;
   box-shadow: inset 0 0 0 2px #C5D9E5;
 }
 
@@ -163,26 +163,26 @@
   }
 
 [dir="ltr"] .collapse-processed > .olivero-details__summary .details-title {
-  padding-left: 2.25rem;
+  padding-left: 2rem;
 }
 
 [dir="rtl"] .collapse-processed > .olivero-details__summary .details-title {
-  padding-right: 2.25rem;
+  padding-right: 2rem;
 }
 
 [dir="ltr"] .collapse-processed > .olivero-details__summary .details-title {
-  padding-right: 1.125rem;
+  padding-right: 1rem;
 }
 
 [dir="rtl"] .collapse-processed > .olivero-details__summary .details-title {
-  padding-left: 1.125rem;
+  padding-left: 1rem;
 }
 
 .collapse-processed > .olivero-details__summary .details-title {
   position: relative;
   display: block;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   transition: background-color 0.12s ease-in-out;
   text-decoration: none;
   color: inherit;
@@ -199,10 +199,10 @@
 
 @media screen and (-ms-high-contrast: active) {
   .collapse-processed > .olivero-details__summary .details-title::after {
-    top: -0.3125rem;
-    right: -0.3125rem;
-    bottom: -0.3125rem;
-    left: -0.3125rem;
+    top: -0.27778rem;
+    right: -0.27778rem;
+    bottom: -0.27778rem;
+    left: -0.27778rem;
     border: 2px dotted;
   }
 }
@@ -210,38 +210,38 @@
 /* Details content wrapper */
 
 .olivero-details__wrapper {
-  margin: 1.125rem
+  margin: 1rem
 }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="ltr"] .olivero-details__wrapper {
-    margin-left: 2.25rem;
+    margin-left: 2rem;
   }
 
 [dir="rtl"] .olivero-details__wrapper {
-    margin-right: 2.25rem;
+    margin-right: 2rem;
   }
 
 [dir="ltr"] .olivero-details__wrapper {
-    margin-right: 2.25rem;
+    margin-right: 2rem;
   }
 
 [dir="rtl"] .olivero-details__wrapper {
-    margin-left: 2.25rem;
+    margin-left: 2rem;
   }
 
 .olivero-details__wrapper {
-    margin-top: 1.6875rem;
-    margin-bottom: 1.6875rem
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem
 }
   }
 
 /* Description */
 
 .olivero-details__description {
-  margin-bottom: 1.125rem;
+  margin-bottom: 1rem;
   color: #313637;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
+  font-size: 1.2rem;
+  line-height: var(--line-height-s);
 }

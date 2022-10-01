@@ -9,10 +9,10 @@ html:not(.js) {
    */
 }
 
-@media (max-width: 75rem) {
+@media (max-width: 66.66667rem) {
     html:not(.js) .primary-nav__menu--level-1 {
-      column-width: 18.75rem;
-      grid-column-gap: 2.25rem;
+      column-width: 300px;
+      grid-column-gap: 36px;
     }
 
     html:not(.js) .primary-nav__menu-item {
@@ -29,35 +29,35 @@ html:not(.js) {
     }
 
     html[dir="ltr"]:not(.js) .header-nav {
-      margin-left: 2.25rem;
+      margin-left: 36px;
   }
 
     html[dir="rtl"]:not(.js) .header-nav {
-      margin-right: 2.25rem;
+      margin-right: 36px;
   }
 
     html[dir="ltr"]:not(.js) .header-nav {
-      margin-right: 2.25rem;
+      margin-right: 36px;
   }
 
     html[dir="rtl"]:not(.js) .header-nav {
-      margin-left: 2.25rem;
+      margin-left: 36px;
   }
 
     html[dir="ltr"]:not(.js) .header-nav {
-      padding-left: 2.25rem;
+      padding-left: 36px;
   }
 
     html[dir="rtl"]:not(.js) .header-nav {
-      padding-right: 2.25rem;
+      padding-right: 36px;
   }
 
     html[dir="ltr"]:not(.js) .header-nav {
-      padding-right: 2.25rem;
+      padding-right: 36px;
   }
 
     html[dir="rtl"]:not(.js) .header-nav {
-      padding-left: 2.25rem;
+      padding-left: 36px;
   }
 
     html:not(.js) .header-nav {
@@ -66,9 +66,9 @@ html:not(.js) {
       flex-basis: 100%;
       width: 100%;
       max-width: none;
-      margin-top: 2.25rem;
+      margin-top: 36px;
       margin-bottom: 0;
-      padding-top: 2.25rem;
+      padding-top: 36px;
       padding-bottom: 0;
       transform: none;
       border: solid 1px #e7edf1 !important;
@@ -92,7 +92,7 @@ html:not(.js) {
       }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 html:not(.js) {
     /**
@@ -100,8 +100,8 @@ html:not(.js) {
      */
 }
       html:not(.js) body.is-always-mobile-nav .primary-nav__menu--level-1 {
-        column-width: 18.75rem;
-        grid-column-gap: 2.25rem;
+        column-width: 300px;
+        grid-column-gap: 36px;
       }
 
       html:not(.js) body.is-always-mobile-nav .primary-nav__menu-item {
@@ -118,35 +118,35 @@ html:not(.js) {
       }
 
       html[dir="ltr"]:not(.js) body.is-always-mobile-nav .header-nav {
-        margin-left: 2.25rem;
+        margin-left: 36px;
   }
 
       html[dir="rtl"]:not(.js) body.is-always-mobile-nav .header-nav {
-        margin-right: 2.25rem;
+        margin-right: 36px;
   }
 
       html[dir="ltr"]:not(.js) body.is-always-mobile-nav .header-nav {
-        margin-right: 2.25rem;
+        margin-right: 36px;
   }
 
       html[dir="rtl"]:not(.js) body.is-always-mobile-nav .header-nav {
-        margin-left: 2.25rem;
+        margin-left: 36px;
   }
 
       html[dir="ltr"]:not(.js) body.is-always-mobile-nav .header-nav {
-        padding-left: 2.25rem;
+        padding-left: 36px;
   }
 
       html[dir="rtl"]:not(.js) body.is-always-mobile-nav .header-nav {
-        padding-right: 2.25rem;
+        padding-right: 36px;
   }
 
       html[dir="ltr"]:not(.js) body.is-always-mobile-nav .header-nav {
-        padding-right: 2.25rem;
+        padding-right: 36px;
   }
 
       html[dir="rtl"]:not(.js) body.is-always-mobile-nav .header-nav {
-        padding-left: 2.25rem;
+        padding-left: 36px;
   }
 
       html:not(.js) body.is-always-mobile-nav .header-nav {
@@ -155,9 +155,9 @@ html:not(.js) {
         flex-basis: 100%;
         width: 100%;
         max-width: none;
-        margin-top: 2.25rem;
+        margin-top: 36px;
         margin-bottom: 0;
-        padding-top: 2.25rem;
+        padding-top: 36px;
         padding-bottom: 0;
         transform: none;
         border: solid 1px #e7edf1 !important;

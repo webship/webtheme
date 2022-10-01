@@ -22,15 +22,15 @@
   }
 
 [dir="ltr"] .site-footer .menu ul {
-      margin-left: 1.125rem
+      margin-left: 1rem
 }
 
 [dir="rtl"] .site-footer .menu ul {
-      margin-right: 1.125rem
+      margin-right: 1rem
 }
 
 .site-footer .menu li {
-      margin-bottom: 0.5625rem;
+      margin-bottom: 0.5rem;
     }
 
 .site-footer a {

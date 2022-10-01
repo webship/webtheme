@@ -7,15 +7,15 @@
 .text-content table,
 .views-table,
 .draggable-table {
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   border-spacing: 0;
   color: #313637;
   border: 0;
   border-collapse: collapse;
-  font-family: "metropolis", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6875rem
+  font-family: "Zen Maru Gothic", "georgia", sans-serif;
+  font-size: 0.88889rem;
+  line-height: 1.5rem
 }
 
 [dir="ltr"] .forum table caption,[dir="ltr"]  .text-content table caption,[dir="ltr"]  .views-table caption,[dir="ltr"]  .draggable-table caption {
@@ -27,12 +27,12 @@
 }
 
 .forum table caption, .text-content table caption, .views-table caption, .draggable-table caption {
-    margin-bottom: 1.125rem;
+    margin-bottom: 1rem;
     color: #313637;
-    font-family: "Lora", "georgia", serif;
-    font-size: 0.875rem;
+    font-family: "Zen Maru Gothic", "georgia", serif;
+    font-size: 0.77778rem;
     font-style: italic;
-    line-height: 1.125rem;
+    line-height: 1rem;
   }
 
 .forum table tr:last-child td, .text-content table tr:last-child td, .views-table tr:last-child td, .draggable-table tr:last-child td {
@@ -69,7 +69,7 @@
   .views-table th,[dir="ltr"] 
   .draggable-table td,[dir="ltr"] 
   .draggable-table th {
-    padding-right: 1.125rem
+    padding-right: 1rem
 }
 
 [dir="rtl"] .forum table td,[dir="rtl"] 
@@ -80,7 +80,7 @@
   .views-table th,[dir="rtl"] 
   .draggable-table td,[dir="rtl"] 
   .draggable-table th {
-    padding-left: 1.125rem
+    padding-left: 1rem
 }
 
 .forum table td,
@@ -91,8 +91,8 @@
   .views-table th,
   .draggable-table td,
   .draggable-table th {
-    padding-top: 1.125rem;
-    padding-bottom: 1.125rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     vertical-align: top;
   }
 
@@ -126,9 +126,9 @@
     letter-spacing: 0.02em;
     color: #0d1214;
     border-bottom: 2px solid #5C9EC8;
-    font-family: "metropolis", sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.125rem
+    font-family: "Zen Maru Gothic", "georgia", sans-serif;
+    font-size: 0.77778rem;
+    line-height: 1rem
 
     /**
      * Fixes for styles injected by CKEditor

@@ -4,9 +4,9 @@
  */
 
 .block-search-narrow {
-  margin-left: -1.125rem;
-  margin-right: -1.125rem;
-  margin-bottom: 2.25rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: 2rem;
   background: #000
 }
 
@@ -24,24 +24,24 @@
   }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-    padding-left: 1.125rem
+    padding-left: 1rem
 }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-    padding-right: 1.125rem
+    padding-right: 1rem
 }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-    padding-right: 1.125rem
+    padding-right: 1rem
 }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-    padding-left: 1.125rem
+    padding-left: 1rem
 }
 
 .block-search-narrow input[type="search"] {
-    width: calc(100% + 2.25rem);
-    height: 3.375rem;
+    width: calc(100% + 2rem);
+    height: 3rem;
     padding-top: 0;
     padding-bottom: 0;
     transition: background-size 0.4s;
@@ -51,22 +51,22 @@
     background-image: linear-gradient(#5C9EC8, #5C9EC8); /* Two values are needed for IE11 support. */
     background-repeat: no-repeat;
     background-position: bottom left; /* LTR */
-    background-size: 0% 0.3125rem;
+    background-size: 0% 0.27778rem;
     box-shadow: none;
-    font-family: "Lora", "georgia", serif;
-    font-size: 1rem;
+    font-family: "Zen Maru Gothic", "georgia", serif;
+    font-size: 0.88889rem;
     -webkit-appearance: none
   }
 
 .block-search-narrow input[type="search"]::-ms-clear {
-      width: 2.5rem;
+      width: 2.22222rem;
       opacity: 0.5;
     }
 
 .block-search-narrow input[type="search"]:focus {
       outline: solid 4px transparent;
       outline-offset: -4px;
-      background-size: 100% 0.3125rem
+      background-size: 100% 0.27778rem
 
       /*
         We normally indicate focus by animating background-image width. This isn't
@@ -81,26 +81,26 @@
     }
       }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-      padding-left: 2.25rem
+      padding-left: 2rem
   }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-      padding-right: 2.25rem
+      padding-right: 2rem
   }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-      padding-right: 2.25rem
+      padding-right: 2rem
   }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-      padding-left: 2.25rem
+      padding-left: 2rem
   }
 
 .block-search-narrow input[type="search"] {
-      height: 4.5rem
+      height: 4rem
   }
     }
 
@@ -141,7 +141,7 @@
     overflow: hidden;
     -ms-grid-row-align: stretch;
     align-self: stretch;
-    width: 3.375rem;
+    width: 3rem;
     height: auto;
     margin-top: 0;
     margin-bottom: 0;
@@ -232,10 +232,10 @@
         }
       }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .block-search-narrow .search-form__submit {
-      width: 5rem
+      width: 4.44444rem
   }
     }
 
@@ -267,7 +267,7 @@
   /* 500px is the width of the primary nav at mobile. */
 }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 [dir="ltr"] .block-search-narrow {
     margin-left: 0
@@ -286,7 +286,7 @@
   }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 body:not(.is-always-mobile-nav) .block-search-narrow {
     display: none

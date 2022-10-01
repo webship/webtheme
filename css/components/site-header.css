@@ -12,11 +12,11 @@
   z-index: 101
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 .site-header {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
-    min-height: 11.25rem;
+    min-height: 10rem;
     border-bottom: solid 1px transparent /* Will show in Windows high contrast mode. */
 }
   }
@@ -37,38 +37,38 @@
   transition: all 0.5s
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
       .site-header__fixable.is-fixed:not(.is-expanded) {
         pointer-events: none;
       }
     }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
     body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed {
       position: fixed;
       z-index: 102; /* Appear above body content that is position: relative */
-      top: -4.5rem;
-      max-width: 98.125rem;
+      top: -4rem;
+      max-width: 87.22222rem;
     }
   body:not(.is-always-mobile-nav) {
 
     /* Toolbar is fixed, and tray is either vertical or closed and horizontal. */
   }
       body:not(.is-always-mobile-nav).toolbar-vertical.toolbar-fixed .site-header__fixable.is-fixed, body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .site-header__fixable.is-fixed {
-        top: -2.0625rem;
+        top: -1.83333rem;
       }
   body:not(.is-always-mobile-nav) {
     /* Toolbar is fixed, and tray is open and horizontal. */
   }
     body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed.toolbar-tray-open .site-header__fixable.is-fixed {
-      top: 0.4375rem;
+      top: 0.38889rem;
     }
 }
 
 .site-header__inner {
   z-index: 1; /* Appear in front of Drupal's tabs. */
   flex-grow: 1;
-  width: calc(100vw - 5.625rem);
+  width: calc(100vw - 5rem);
   background: #fff;
 }
 
@@ -77,21 +77,21 @@
  * works around https://bugs.chromium.org/p/chromium/issues/detail?id=332189
  */
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 html.js body:not(.is-always-mobile-nav) .site-header__inner {
     transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 .site-header__fixable.is-expanded .site-header__inner {
     box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08) /* LTR */
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="rtl"] .site-header__fixable.is-expanded .site-header__inner {
     box-shadow: 36px 1px 36px rgba(0, 0, 0, 0.08)
@@ -100,7 +100,7 @@ html.js body:not(.is-always-mobile-nav) .site-header__inner {
 
 /* Hide the desktop nav when it's fixed and not active. */
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed:not(.is-expanded) .site-header__inner {
     transform: translateX(-101%); /* LTR */
@@ -108,7 +108,7 @@ body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed:not(.is-expanded)
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="rtl"] body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed:not(.is-expanded) .site-header__inner {
     transform: translateX(101%)

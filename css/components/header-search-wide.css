@@ -65,8 +65,8 @@
   visibility: hidden;
   overflow: hidden;
   width: 100vw;
-  max-width: 98.125rem;
-  height: 9rem;
+  max-width: 87.22222rem;
+  height: 8rem;
   max-height: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -78,7 +78,7 @@
 
 .block-search-wide__wrapper.is-active {
     visibility: visible;
-    max-height: 9rem;
+    max-height: 8rem;
   }
 
 .block-search-wide__wrapper form {
@@ -89,11 +89,11 @@
   }
 
 [dir="ltr"] .block-search-wide__wrapper input[type="search"] {
-    padding-left: 13.5rem;
+    padding-left: 12rem;
 }
 
 [dir="rtl"] .block-search-wide__wrapper input[type="search"] {
-    padding-right: 13.5rem;
+    padding-right: 12rem;
 }
 
 [dir="ltr"] .block-search-wide__wrapper input[type="search"] {
@@ -105,21 +105,21 @@
 }
 
 .block-search-wide__wrapper input[type="search"] {
-    width: calc(100% + 2.25rem);
-    height: 9rem;
+    width: calc(100% + 2rem);
+    height: 8rem;
     padding-top: 0;
     padding-bottom: 0;
     transition: background-size 0.4s;
     color: #fff;
     border: solid 1px transparent;
     box-shadow: none;
-    font-family: "Lora", "georgia", serif;
-    font-size: 2rem;
+    font-family: "Zen Maru Gothic", "georgia", serif;
+    font-size: 1.77778rem;
     -webkit-appearance: none
   }
 
 .block-search-wide__wrapper input[type="search"]::-ms-clear {
-      width: 2.5rem;
+      width: 2.22222rem;
       opacity: 0.5;
     }
 
@@ -187,7 +187,7 @@
     overflow: hidden;
     -ms-grid-row-align: stretch;
     align-self: stretch;
-    width: 6.25rem;
+    width: 5.55556rem;
     height: auto;
     margin-top: 0;
     margin-bottom: 0;
@@ -215,7 +215,7 @@
       position: absolute;
       top: 0;
       display: block;
-      width: 1.5rem; /* Width of the SVG background image. */
+      width: 1.33333rem; /* Width of the SVG background image. */
       height: 100%;
       pointer-events: none;
       background-image: url("../../images/search--white.svg");
@@ -289,15 +289,15 @@
     }
 
 [dir="ltr"] .block-search-wide__container {
-  padding-right: 2.25rem;
+  padding-right: 2rem;
 }
 
 [dir="rtl"] .block-search-wide__container {
-  padding-left: 2.25rem;
+  padding-left: 2rem;
 }
 
 .block-search-wide__container {
-  max-width: 84.375rem;
+  max-width: 75rem;
 }
 
 .block-search-wide__grid {
@@ -305,7 +305,7 @@
   display: grid;
   -ms-grid-columns: (1fr)[14];
   grid-template-columns: repeat(14, 1fr);
-  grid-column-gap: 2.25rem;
+  grid-column-gap: 2rem;
 }
 
 /* Override specificity from container-inline.module.css */
@@ -322,8 +322,8 @@
 .block-search-wide__button {
   position: relative;
   display: none;
-  width: 3.375rem;
-  height: 6.75rem;
+  width: 3rem;
+  height: 6rem;
   cursor: pointer;
   color: #0d1214; /* Affects SVG search icon. */
   border: 0;
@@ -341,11 +341,11 @@
       top: 50%;
       left: 50%;
       width: 80%;
-      height: 3.375rem;
+      height: 3rem;
       content: "";
       transform: translate(-50%, -50%);
       border: solid 2px #5C9EC8;
-      border-radius: 0.25rem;
+      border-radius: 0.22222rem;
     }
 
 .block-search-wide__button[aria-expanded="true"] {
@@ -361,7 +361,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 1.6875rem;
+        width: 1.5rem;
         height: 0;
         content: "";
         border-top: solid 2px #fff;
@@ -410,7 +410,7 @@
 
 html:not(.js) .search-block-form:focus-within .block-search-wide__wrapper {
   visibility: visible;
-  max-height: 9rem;
+  max-height: 144px;
 }
 
 /* Necessary to override specificity of transpiled PostCSS properties from default input focus styling. */
@@ -420,11 +420,11 @@ html:not(.js) .search-block-form:focus-within .block-search-wide__wrapper {
   background-image: linear-gradient(#5C9EC8, #5C9EC8); /* Two values are needed for IE11 support. */
   background-repeat: no-repeat;
   background-position: bottom left; /* LTR */
-  background-size: 0% 0.625rem
+  background-size: 0% 0.55556rem
 }
 
 [dir] .block-search-wide__wrapper input[type="search"]:focus {
-    background-size: 100% 0.5625rem;
+    background-size: 100% 0.5rem;
   }
 
 [dir="rtl"] .block-search-wide__wrapper input[type="search"] {
@@ -435,7 +435,7 @@ html:not(.js) .search-block-form:focus-within .block-search-wide__wrapper {
     transform-origin: right;
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 body:not(.is-always-mobile-nav) .block-search-wide__wrapper,
   body:not(.is-always-mobile-nav) .block-search-wide__button {

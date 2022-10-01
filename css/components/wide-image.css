@@ -20,11 +20,11 @@
 }
 
 .wide-image {
-  margin-top: 0.5625rem;
-  margin-bottom: 2.25rem
+  margin-top: 0.5rem;
+  margin-bottom: 2rem
 }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .wide-image {
     margin-left: -7.14286vw
@@ -35,13 +35,13 @@
   }
 
 .wide-image {
-    width: calc(100vw - 2.25rem);
-    margin-top: 2.25rem;
-    margin-bottom: 4.5rem
+    width: calc(100vw - 2rem);
+    margin-top: 2rem;
+    margin-bottom: 4rem
 }
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="ltr"] .wide-image {
     margin-left: calc(-7.14286vw - -1.07143px)
@@ -52,67 +52,67 @@
   }
 
 .wide-image {
-    width: calc(85.71429vw - 3.05357rem)
+    width: calc(85.71429vw - 2.71429rem)
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] .wide-image {
-    margin-left: calc(-7.14286vw - -0.62946rem)
+    margin-left: calc(-7.14286vw - -0.55952rem)
   }
 
 [dir="rtl"] .wide-image {
-    margin-right: calc(-7.14286vw - -0.62946rem)
+    margin-right: calc(-7.14286vw - -0.55952rem)
   }
 
 .wide-image {
-    width: calc(85.71429vw - 9.80357rem)
+    width: calc(85.71429vw - 8.71429rem)
 }
   }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 [dir="ltr"] .wide-image {
-    margin-left: -5.86607rem
+    margin-left: -5.21429rem
   }
 
 [dir="rtl"] .wide-image {
-    margin-right: -5.86607rem
+    margin-right: -5.21429rem
   }
 
 .wide-image {
-    width: 68.14286rem
+    width: 60.57143rem
 }
   }
 
 /* Ensure that image doesn't overlap sidebar. */
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .sidebar-grid .wide-image {
-    width: calc(64.28571vw - 2.85268rem)
+    width: calc(64.28571vw - 2.53571rem)
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 .sidebar-grid .wide-image {
-    width: calc(64.28571vw - 7.91518rem)
+    width: calc(64.28571vw - 7.03571rem)
 }
   }
 
-@media (min-width: 81.25rem) {
+@media (min-width: 72.22222rem) {
 
 .sidebar-grid .wide-image {
-    width: calc(71.42857vw - 8.54464rem)
+    width: calc(71.42857vw - 7.59524rem)
 }
   }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 .sidebar-grid .wide-image {
-    width: 56.41071rem
+    width: 50.14286rem
 }
   }
 

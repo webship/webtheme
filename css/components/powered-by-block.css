@@ -5,8 +5,8 @@
 
 .block-system-powered-by-block {
   letter-spacing: 0.02em;
-  font-size: 0.875rem;
-  line-height: 1.125rem
+  font-size: 0.77778rem;
+  line-height: 1rem
 }
 
 .block-system-powered-by-block a {
@@ -19,16 +19,16 @@
     }
 
 [dir="ltr"] .block-system-powered-by-block .drupal-logo {
-    margin-left: 0.28125rem
+    margin-left: 0.25rem
 }
 
 [dir="rtl"] .block-system-powered-by-block .drupal-logo {
-    margin-right: 0.28125rem
+    margin-right: 0.25rem
 }
 
 .block-system-powered-by-block .drupal-logo {
     display: inline-block;
-    margin-top: -0.28125rem;
+    margin-top: -0.25rem;
   }
 
 .block-system-powered-by-block svg {

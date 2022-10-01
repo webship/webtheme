@@ -6,40 +6,40 @@
 .node__meta {
   display: flex;
   align-items: center;
-  margin-bottom: 1.125rem;
+  margin-bottom: 1rem;
   color: #6e7172;
-  font-size: 0.875rem;
-  line-height: 1.125rem
+  font-size: 0.77778rem;
+  line-height: 1rem
 }
 
 .node__meta a {
     font-weight: bold;
   }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 .node__meta {
-    margin-bottom: 2.25rem
+    margin-bottom: 2rem
 }
   }
 
 [dir="ltr"] .node__author-image img {
-  margin-right: 0.5625rem
+  margin-right: 0.5rem
 }
 
 [dir="rtl"] .node__author-image img {
-  margin-left: 0.5625rem
+  margin-left: 0.5rem
 }
 
 .node__author-image img {
-  width: 2.8125rem;
-  height: 2.8125rem;
+  width: 2.5rem;
+  height: 2.5rem;
   object-fit: cover;
   border-radius: 50%;
 }
 
 .node__title a {
-    padding-bottom: 0.1875rem;
+    padding-bottom: 0.16667rem;
     transition: background-size 0.2s, color 0.2s;
     text-decoration: none;
     color: #0d1214;
@@ -47,7 +47,7 @@
     background-image: linear-gradient(#5C9EC8, #5C9EC8); /* Two values are needed for IE11 support. */
     background-repeat: no-repeat;
     background-position: bottom left; /* LTR */
-    background-size: 0 0.1875rem
+    background-size: 0 0.16667rem
   }
 
 .node__title a:hover,
@@ -60,13 +60,13 @@
 }
 
 .node__content {
-  padding-bottom: 1.6875rem
+  padding-bottom: 1.5rem
 }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node__content {
-    padding-bottom: 3.375rem
+    padding-bottom: 3rem
 }
   }
 

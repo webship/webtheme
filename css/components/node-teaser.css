@@ -5,13 +5,13 @@
 
 .node--view-mode-teaser {
   position: relative; /* Anchor after pseudo-element. */
-  margin-bottom: 1.6875rem
+  margin-bottom: 1.5rem
 }
 
 .node--view-mode-teaser:after {
     position: absolute;
     bottom: 0;
-    width: 3.375rem;
+    width: 3rem;
     height: 0;
     content: "";
     /* Intentionally not using CSS logical properties. */
@@ -19,7 +19,7 @@
   }
 
 .node--view-mode-teaser .node__meta {
-    margin-bottom: 1.125rem
+    margin-bottom: 1rem
   }
 
 .node--view-mode-teaser .node__meta a {
@@ -34,7 +34,7 @@
     margin: 0
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node--view-mode-teaser .node__top-wrapper {
       position: relative /* Anchor the image */
@@ -42,26 +42,26 @@
     }
 
 [dir="ltr"] .node--view-mode-teaser .primary-image {
-    margin-right: 1.125rem
+    margin-right: 1rem
 }
 
 [dir="rtl"] .node--view-mode-teaser .primary-image {
-    margin-left: 1.125rem
+    margin-left: 1rem
 }
 
 .node--view-mode-teaser .primary-image {
     flex-shrink: 0;
     margin: 0;
-    margin-bottom: 1.125rem
+    margin-bottom: 1rem
 
     /* Ensure title does not wrap under image until necessary. */
   }
 
 .node--view-mode-teaser .primary-image + .node__title {
-      flex-basis: calc(100% - 5.0625rem)
+      flex-basis: calc(100% - 4.5rem)
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node--view-mode-teaser .primary-image + .node__title {
         flex-basis: auto
@@ -73,37 +73,37 @@
     }
 
 .node--view-mode-teaser .primary-image img {
-      width: 3.9375rem;
-      height: 3.9375rem;
+      width: 3.5rem;
+      height: 3.5rem;
       object-fit: cover;
       border-radius: 50%
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node--view-mode-teaser .primary-image img {
-        width: calc(7.14286vw - 2.31696rem);
-        height: calc(7.14286vw - 2.31696rem)
+        width: calc(7.14286vw - 2.05952rem);
+        height: calc(7.14286vw - 2.05952rem)
     }
       }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 .node--view-mode-teaser .primary-image img {
-        width: calc(7.14286vw - 2.87946rem);
-        height: calc(7.14286vw - 2.87946rem)
+        width: calc(7.14286vw - 2.55952rem);
+        height: calc(7.14286vw - 2.55952rem)
     }
       }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 .node--view-mode-teaser .primary-image img {
-        width: 3.61607rem;
-        height: 3.61607rem
+        width: 3.21429rem;
+        height: 3.21429rem
     }
       }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="ltr"] .node--view-mode-teaser .primary-image {
       left: calc(-7.14286vw - -1.07143px)
@@ -120,41 +120,41 @@
   }
     }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] .node--view-mode-teaser .primary-image {
-      left: calc(-7.14286vw - -0.62946rem)
+      left: calc(-7.14286vw - -0.55952rem)
   }
 
 [dir="rtl"] .node--view-mode-teaser .primary-image {
-      right: calc(-7.14286vw - -0.62946rem)
+      right: calc(-7.14286vw - -0.55952rem)
   }
     }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 [dir="ltr"] .node--view-mode-teaser .primary-image {
-      left: -5.86607rem
+      left: -5.21429rem
   }
 
 [dir="rtl"] .node--view-mode-teaser .primary-image {
-      right: -5.86607rem
+      right: -5.21429rem
   }
     }
 
 .node--view-mode-teaser .node__title {
     margin: 0;
-    margin-bottom: 1.125rem;
+    margin-bottom: 1rem;
     color: #0d1214;
-    font-size: 1.5rem;
-    line-height: 1.6875rem
+    font-size: 1.33333rem;
+    line-height: 0.666rem
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node--view-mode-teaser .node__title {
-      font-size: 2.25rem;
-      line-height: 3.375rem
+      font-size: 2rem;
+      line-height: 3rem
   }
     }
 
@@ -191,24 +191,24 @@
 }
 
 .node--view-mode-teaser .field--tag-ref {
-    margin-top: 1.125rem;
+    margin-top: 1rem;
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
     background-color: transparent
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node--view-mode-teaser .field--tag-ref {
-      margin-top: 2.25rem
+      margin-top: 2rem
   }
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node--view-mode-teaser {
-    margin-bottom: 3.375rem
+    margin-bottom: 3rem
 }
   }
 

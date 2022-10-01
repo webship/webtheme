@@ -50,6 +50,8 @@ module.exports = (filePath, callback) => {
       }),
       postcssCalc,
       postcssPixelsToRem({
+          rootValue: 18,
+          selectorBlackList: ["html"],
           propList: [
             '*',
             '!background-position',

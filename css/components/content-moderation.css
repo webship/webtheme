@@ -4,19 +4,19 @@
  */
 
 [dir="ltr"] .entity-moderation-form {
-  padding-left: 1.125rem
+  padding-left: 1rem
 }
 
 [dir="rtl"] .entity-moderation-form {
-  padding-right: 1.125rem
+  padding-right: 1rem
 }
 
 [dir="ltr"] .entity-moderation-form {
-  padding-right: 1.125rem
+  padding-right: 1rem
 }
 
 [dir="rtl"] .entity-moderation-form {
-  padding-left: 1.125rem
+  padding-left: 1rem
 }
 
 .entity-moderation-form {
@@ -30,7 +30,7 @@
     background-color: #fff;
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .entity-moderation-form {
     flex-direction: row
@@ -38,11 +38,11 @@
   }
 
 [dir="ltr"] .entity-moderation-form__item {
-  margin-right: 1.125rem
+  margin-right: 1rem
 }
 
 [dir="rtl"] .entity-moderation-form__item {
-  margin-left: 1.125rem
+  margin-left: 1rem
 }
 
 .entity-moderation-form__item {
@@ -61,7 +61,7 @@
     align-self: flex-start
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .entity-moderation-form__item:last-child {
       align-self: flex-end
@@ -87,7 +87,7 @@
   }
     }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .layout--content-narrow .entity-moderation-form,[dir="ltr"]  .layout--pass--content-narrow > * .entity-moderation-form,[dir="ltr"]  .layout--content-medium .entity-moderation-form,[dir="ltr"]  .layout--pass--content-medium > * .entity-moderation-form {
       margin-left: -14.28571vw
@@ -98,13 +98,13 @@
   }
 
 .layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
-      width: calc(100vw - 2.25rem);
-      margin-top: 2.25rem;
-      margin-bottom: 4.5rem
+      width: calc(100vw - 2rem);
+      margin-top: 2rem;
+      margin-bottom: 4rem
   }
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="ltr"] .layout--content-narrow .entity-moderation-form,[dir="ltr"]  .layout--pass--content-narrow > * .entity-moderation-form,[dir="ltr"]  .layout--content-medium .entity-moderation-form,[dir="ltr"]  .layout--pass--content-medium > * .entity-moderation-form {
       margin-left: calc(-7.14286vw - -1.07143px)
@@ -115,26 +115,26 @@
   }
 
 .layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
-      width: calc(85.71429vw - 3.05357rem)
+      width: calc(85.71429vw - 2.71429rem)
   }
     }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] .layout--content-narrow .entity-moderation-form,[dir="ltr"]  .layout--pass--content-narrow > * .entity-moderation-form,[dir="ltr"]  .layout--content-medium .entity-moderation-form,[dir="ltr"]  .layout--pass--content-medium > * .entity-moderation-form {
-      margin-left: calc(-7.14286vw - -0.62946rem)
+      margin-left: calc(-7.14286vw - -0.55952rem)
   }
 
 [dir="rtl"] .layout--content-narrow .entity-moderation-form,[dir="rtl"]  .layout--pass--content-narrow > * .entity-moderation-form,[dir="rtl"]  .layout--content-medium .entity-moderation-form,[dir="rtl"]  .layout--pass--content-medium > * .entity-moderation-form {
-      margin-right: calc(-7.14286vw - -0.62946rem)
+      margin-right: calc(-7.14286vw - -0.55952rem)
   }
 
 .layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
-      width: calc(85.71429vw - 9.80357rem)
+      width: calc(85.71429vw - 8.71429rem)
   }
     }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 [dir="ltr"] .layout--content-narrow .entity-moderation-form,[dir="ltr"]  .layout--pass--content-narrow > * .entity-moderation-form,[dir="ltr"]  .layout--content-medium .entity-moderation-form,[dir="ltr"]  .layout--pass--content-medium > * .entity-moderation-form {
       margin-left: 0
@@ -145,6 +145,6 @@
   }
 
 .layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
-      width: 60.91071rem
+      width: 54.14286rem
   }
     }

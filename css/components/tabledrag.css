@@ -21,8 +21,8 @@
 
 a.tabledrag-handle,
 .touchevents a.tabledrag-handle {
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 [dir="ltr"] .draggable a.tabledrag-handle {
@@ -34,14 +34,14 @@ a.tabledrag-handle,
 }
 
 a.tabledrag-handle .handle {
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
   margin: 0;
   background-position: 50% 5px;
 }
 
 .touchevents a.tabledrag-handle .handle {
-  height: 2.25rem;
+  height: 2rem;
   background-position: 50% 5px;
 }
 
@@ -54,16 +54,16 @@ a.tabledrag-handle .handle {
 }
 
 [dir="ltr"] .touchevents .draggable td {
-  padding-right: 0.5625rem;
+  padding-right: 0.5rem;
 }
 
 [dir="rtl"] .touchevents .draggable td {
-  padding-left: 0.5625rem;
+  padding-left: 0.5rem;
 }
 
 .touchevents .draggable td {
-  padding-top: 0.5625rem;
-  padding-bottom: 0.5625rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .touchevents .draggable .menu-item__link {

@@ -6,27 +6,27 @@
  */
 
 [dir="ltr"] .skip-link {
-  padding-left: 1.125rem
+  padding-left: 1rem
 }
 
 [dir="rtl"] .skip-link {
-  padding-right: 1.125rem
+  padding-right: 1rem
 }
 
 [dir="ltr"] .skip-link {
-  padding-right: 1.125rem
+  padding-right: 1rem
 }
 
 [dir="rtl"] .skip-link {
-  padding-left: 1.125rem
+  padding-left: 1rem
 }
 
 .skip-link {
   display: block;
   width: 100%;
-  max-width: 98.125rem;
-  padding-top: 0.5625rem;
-  padding-bottom: 0.5625rem;
+  max-width: 87.22222rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   text-decoration: none;
   color: #fff;
   outline: 0;
@@ -46,6 +46,6 @@
   position: absolute !important; /* Override position from module file. */
   z-index: 503;
   width: 100%;
-  height: 2.5rem;
+  height: 2.22222rem;
   outline: none;
 }

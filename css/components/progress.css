@@ -5,13 +5,13 @@
 
 .progress__track {
   overflow: hidden;
-  height: 1.125rem;
+  height: 1rem;
   border: 1px solid #0C7FC8;
-  border-radius: 0.1875rem;
+  border-radius: 0.16667rem;
 }
 
 .progress__bar {
-  height: 1.125rem;
+  height: 1rem;
   background-color: #0C7FC8;
 }
 

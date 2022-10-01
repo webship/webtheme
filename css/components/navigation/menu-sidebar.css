@@ -34,10 +34,10 @@
 .menu--sidebar .menu__link {
     position: relative;
     display: block;
-    padding-top: 0.84375rem;
-    padding-bottom: 0.84375rem;
-    font-family: "Lora", "georgia", serif;
-    font-size: 1.125rem
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-family: "Zen Maru Gothic", "georgia", serif;
+    font-size: 1rem
 
     /* Bottom divider line. */
   }
@@ -53,7 +53,7 @@
 .menu--sidebar .menu__link:after {
       position: absolute;
       bottom: 0;
-      width: 4.5rem;
+      width: 4rem;
       height: 0;
       content: "";
       border-top: solid 2px #e7edf1;

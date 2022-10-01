@@ -11,7 +11,7 @@
   width: 100%
 }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .layout--content-medium,
 .layout--pass--content-medium > * {
@@ -21,7 +21,7 @@
 }
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .layout--content-medium,
 .layout--pass--content-medium > * {
@@ -37,7 +37,7 @@
   parent .grid-full.
 */
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .layout--pass--content-medium > * .layout--content-medium,
   .layout--pass--content-medium > * .layout--pass--content-medium > *,
@@ -49,7 +49,7 @@
   }
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .layout--pass--content-medium > * .layout--content-medium,
   .layout--pass--content-medium > * .layout--pass--content-medium > *,

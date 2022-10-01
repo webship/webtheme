@@ -37,13 +37,13 @@
 
 .fieldset {
   min-width: 0;
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding-top: 0;
   padding-bottom: 0;
   color: inherit;
   border: solid 2px #5d7585;
-  border-radius: 0.1875rem;
+  border-radius: 0.16667rem;
   background-color: #fff;
 }
 
@@ -72,9 +72,9 @@ _:-ms-fullscreen,
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background-color: #5d7585;
-  font-size: 1.125rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  line-height: 1.6875rem
+  line-height: 0.666rem
 }
 
 .fieldset__legend + * {
@@ -99,27 +99,27 @@ _:-ms-fullscreen,
 }
 
 [dir="ltr"] .fieldset__label {
-  padding-left: 1.125rem;
+  padding-left: 1rem;
 }
 
 [dir="rtl"] .fieldset__label {
-  padding-right: 1.125rem;
+  padding-right: 1rem;
 }
 
 [dir="ltr"] .fieldset__label {
-  padding-right: 1.125rem;
+  padding-right: 1rem;
 }
 
 [dir="rtl"] .fieldset__label {
-  padding-left: 1.125rem;
+  padding-left: 1rem;
 }
 
 .fieldset__label {
   display: block;
-  padding-top: 0.5625rem;
-  padding-bottom: 0.5625rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   color: #fff;
-  line-height: 1.125rem;
+  line-height: var(--line-height-s);
 }
 
 .fieldset__label.is-disabled {
@@ -127,10 +127,10 @@ _:-ms-fullscreen,
 }
 
 .fieldset__description {
-  margin-top: 0.5625rem;
-  margin-bottom: 0.5625rem;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  line-height: var(--line-height-s);
 }
 
 .fieldset__description.is-disabled {
@@ -138,23 +138,23 @@ _:-ms-fullscreen,
 }
 
 [dir="ltr"] .fieldset__error-message {
-  padding-left: 1.6875rem;
+  padding-left: 1.5rem;
 }
 
 [dir="rtl"] .fieldset__error-message {
-  padding-right: 1.6875rem;
+  padding-right: 1.5rem;
 }
 
 .fieldset__error-message {
-  margin-top: 0.5625rem;
-  margin-bottom: 0.5625rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: #e33f1e;
   background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23E33F1E' d='M9 0C4.03125 0 0 4.03125 0 9C0 13.9688 4.03125 18 9 18C13.9687 18 18 13.9688 18 9C18 4.03125 13.9687 0 9 0ZM10.5 14.6133C10.5 14.8242 10.3359 15 10.1367 15H7.88672C7.67578 15 7.5 14.8242 7.5 14.6133V12.3867C7.5 12.1758 7.67578 12 7.88672 12H10.1367C10.3359 12 10.5 12.1758 10.5 12.3867V14.6133ZM10.4766 10.582C10.4648 10.7461 10.2891 10.875 10.0781 10.875H7.91016C7.6875 10.875 7.51172 10.7461 7.51172 10.582L7.3125 3.30469C7.3125 3.22266 7.34766 3.14063 7.42969 3.09375C7.5 3.03516 7.60547 3 7.71094 3H10.2891C10.3945 3 10.5 3.03516 10.5703 3.09375C10.6523 3.14063 10.6875 3.22266 10.6875 3.30469L10.4766 10.582Z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: left top; /* LTR */
-  background-size: 1.125rem 1.125rem;
-  font-size: 0.875rem;
-  line-height: 1.125rem
+  background-size: 1rem 1rem;
+  font-size: 1.125rem;
+  line-height: var(--line-height-s)
 }
 
 @media screen and (-ms-high-contrast: active) {
@@ -169,7 +169,7 @@ _:-ms-fullscreen,
 }
 
 .fieldset__wrapper {
-  padding: 1.125rem;
+  padding: 1rem;
 }
 
 .fieldset__legend--invisible ~ .fieldset__wrapper {

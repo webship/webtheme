@@ -20,33 +20,33 @@
 }
 
 .messages-list {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding-top: 0;
   padding-bottom: 0;
   list-style: none;
 }
 
 [dir="ltr"] .messages {
-  padding-left: 1.6875rem;
+  padding-left: 1.5rem;
 }
 
 [dir="rtl"] .messages {
-  padding-right: 1.6875rem;
+  padding-right: 1.5rem;
 }
 
 [dir="ltr"] .messages {
-  padding-right: 1.6875rem;
+  padding-right: 1.5rem;
 }
 
 [dir="rtl"] .messages {
-  padding-left: 1.6875rem;
+  padding-left: 1.5rem;
 }
 
 .messages {
-  min-height: 4.25rem;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  min-height: 3.77778rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: #fff;
   outline: solid 1px transparent;
   background-color: #0d1214
@@ -106,11 +106,11 @@
 }
 
 .messages:not(.hidden) ~ .messages {
-  margin-top: 1.125rem;
+  margin-top: 1rem;
 }
 
 .messages__item + .messages__item {
-  margin-top: 0.5625rem;
+  margin-top: 0.5rem;
 }
 
 .messages__container {
@@ -118,11 +118,11 @@
 }
 
 [dir="ltr"] .messages__header {
-  margin-right: 1.125rem;
+  margin-right: 1rem;
 }
 
 [dir="rtl"] .messages__header {
-  margin-left: 1.125rem;
+  margin-left: 1rem;
 }
 
 .messages__header {
@@ -140,20 +140,20 @@
 .messages__content {
   overflow: auto; /* Ensure large code blocks can be scrolled to. */
   flex: 1;
-  padding-top: 0.1875rem;
+  padding-top: 0.16667rem;
 }
 
 [dir="ltr"] .messages__button {
-  margin-left: 1.125rem;
+  margin-left: 1rem;
 }
 
 [dir="rtl"] .messages__button {
-  margin-right: 1.125rem;
+  margin-right: 1rem;
 }
 
 .messages__button {
   flex-shrink: 0;
-  padding-top: 0.1875rem;
+  padding-top: 0.16667rem;
 }
 
 [dir="ltr"] .messages__close {
@@ -174,8 +174,8 @@
 
 .messages__close {
   position: relative;
-  width: 1.5625rem;
-  height: 1.5625rem;
+  width: 1.38889rem;
+  height: 1.38889rem;
   padding-top: 0;
   padding-bottom: 0;
   cursor: pointer;
@@ -192,7 +192,7 @@
     top: 50%;
     left: 50%;
     display: block;
-    width: 2.0625rem;
+    width: 1.83333rem;
     height: 0;
     content: "";
     border-top: solid 2px #7e96a7;
@@ -253,5 +253,5 @@
 }
 
 .js-form-managed-file .messages {
-  margin-bottom: 1.125rem;
+  margin-bottom: 1rem;
 }

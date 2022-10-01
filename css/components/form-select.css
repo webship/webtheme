@@ -4,29 +4,29 @@
  */
 
 [dir="ltr"] select {
-  padding-left: 1.125rem
+  padding-left: 1rem
 }
 
 [dir="rtl"] select {
-  padding-right: 1.125rem
+  padding-right: 1rem
 }
 
 [dir="ltr"] select {
-  padding-right: 3.375rem
+  padding-right: 3rem
 }
 
 [dir="rtl"] select {
-  padding-left: 3.375rem
+  padding-left: 3rem
 }
 
 select {
   max-width: 100%;
-  height: 3.375rem;
+  height: 3rem;
   padding-top: 0;
   padding-bottom: 0;
   color: #0d1214;
   border: 1px solid #7e96a7;
-  border-radius: 0.1875rem;
+  border-radius: 0.16667rem;
   background-color: #fff;
   background-image: url("../../images/chevron-down.svg");
   background-repeat: no-repeat;
@@ -76,17 +76,17 @@ select.error:focus {
 
 select[multiple] {
     height: auto;
-    padding: 0.5625rem;
+    padding: 0.5rem;
     background-image: none;
     line-height: 1 /* Needed by non-Chromium based MS Edge browsers. */
   }
 
 select[multiple] option {
-      padding: 0.5625rem;
+      padding: 0.5rem;
     }
 
 select.form-element--small {
-    height: 2.8125rem;
+    height: 2.5rem;
   }
 
 select {
@@ -97,11 +97,11 @@ select {
 @media (forced-colors: active) {
 
 [dir="ltr"] select {
-    padding-right: 1.125rem
+    padding-right: 1rem
   }
 
 [dir="rtl"] select {
-    padding-left: 1.125rem
+    padding-left: 1rem
   }
 
 select {

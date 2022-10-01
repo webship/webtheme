@@ -4,21 +4,21 @@
  */
 
 .field:not(:last-child) {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
 }
 
 .node--view-mode-teaser .field {
-  margin-bottom: 1.125rem
+  margin-bottom: 1rem
 }
 
 .node--view-mode-teaser .field:last-child {
     margin-bottom: 0;
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .node--view-mode-teaser .field {
-    margin-bottom: 2.25rem
+    margin-bottom: 2rem
 }
   }
 

@@ -11,7 +11,7 @@
   width: 100%
 }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .layout--content-narrow,
 .layout--pass--content-narrow > * {
@@ -21,7 +21,7 @@
 }
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .layout--content-narrow,
 .layout--pass--content-narrow > * {
@@ -40,7 +40,7 @@
     - Element that's inheriting the layout--content-medium styles from its parent region.
 */
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .layout--content-narrow .layout--content-narrow,
   .layout--content-narrow .layout--pass--content-narrow > *,
@@ -56,7 +56,7 @@
   }
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .layout--content-narrow .layout--content-narrow,
   .layout--content-narrow .layout--pass--content-narrow > *,
@@ -77,7 +77,7 @@
   reside in a content-narrow layout.
 */
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
           left: -7.14286vw
@@ -88,7 +88,7 @@
   }
         }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
           left: calc(-7.14286vw - -1.07143px)
@@ -99,29 +99,29 @@
   }
         }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          left: calc(-7.14286vw - -0.62946rem)
+          left: calc(-7.14286vw - -0.55952rem)
   }
 
 [dir="rtl"] .layout--content-narrow.text-content blockquote:before,[dir="rtl"]  .layout--content-narrow .text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          right: calc(-7.14286vw - -0.62946rem)
+          right: calc(-7.14286vw - -0.55952rem)
   }
         }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:before,[dir="ltr"]  .layout--content-narrow .text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          left: -5.86607rem
+          left: -5.21429rem
   }
 
 [dir="rtl"] .layout--content-narrow.text-content blockquote:before,[dir="rtl"]  .layout--content-narrow .text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:before,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:before {
-          right: -5.86607rem
+          right: -5.21429rem
   }
         }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
           left: -7.14286vw
@@ -140,12 +140,12 @@
   }
 
 .layout--content-narrow.text-content blockquote:after, .layout--content-narrow .text-content blockquote:after, .layout--pass--content-narrow > *.text-content blockquote:after, .layout--pass--content-narrow > * .text-content blockquote:after {
-          width: 1.125rem;
-          height: calc(100% - 2.8125rem)
+          width: 1rem;
+          height: calc(100% - 2.5rem)
       }
         }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
           left: calc(-7.14286vw - -1.07143px)
@@ -156,29 +156,29 @@
   }
         }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          left: calc(-7.14286vw - -0.62946rem)
+          left: calc(-7.14286vw - -0.55952rem)
   }
 
 [dir="rtl"] .layout--content-narrow.text-content blockquote:after,[dir="rtl"]  .layout--content-narrow .text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          right: calc(-7.14286vw - -0.62946rem)
+          right: calc(-7.14286vw - -0.55952rem)
   }
         }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote:after,[dir="ltr"]  .layout--content-narrow .text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          left: -5.86607rem
+          left: -5.21429rem
   }
 
 [dir="rtl"] .layout--content-narrow.text-content blockquote:after,[dir="rtl"]  .layout--content-narrow .text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > *.text-content blockquote:after,[dir="rtl"]  .layout--pass--content-narrow > * .text-content blockquote:after {
-          right: -5.86607rem
+          right: -5.21429rem
   }
         }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content blockquote,[dir="ltr"]  .layout--content-narrow .text-content blockquote,[dir="ltr"]  .layout--pass--content-narrow > *.text-content blockquote,[dir="ltr"]  .layout--pass--content-narrow > * .text-content blockquote {
         padding-left: 0
@@ -189,42 +189,42 @@
   }
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: calc(71.42857vw - 2.25rem);
-        margin-top: 3.375rem;
-        margin-bottom: 3.375rem
+        width: calc(71.42857vw - 2rem);
+        margin-top: 3rem;
+        margin-bottom: 3rem
     }
       }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: calc(71.42857vw - 2.91964rem)
+        width: calc(71.42857vw - 2.59524rem)
     }
       }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: calc(71.42857vw - 8.54464rem)
+        width: calc(71.42857vw - 7.59524rem)
     }
       }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 .layout--content-narrow.text-content blockquote, .layout--content-narrow .text-content blockquote, .layout--pass--content-narrow > *.text-content blockquote, .layout--pass--content-narrow > * .text-content blockquote {
-        width: 56.41071rem
+        width: 50.14286rem
     }
       }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        margin-top: 3.375rem;
-        margin-bottom: 3.375rem
+        margin-top: 3rem;
+        margin-bottom: 3rem
     }
       }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content pre,[dir="ltr"]  .layout--content-narrow .text-content pre,[dir="ltr"]  .layout--pass--content-narrow > *.text-content pre,[dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
         margin-left: calc(-7.14286vw - -1.07143px)
@@ -235,37 +235,37 @@
   }
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        width: calc(85.71429vw - 3.05357rem)
+        width: calc(85.71429vw - 2.71429rem)
     }
       }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content pre,[dir="ltr"]  .layout--content-narrow .text-content pre,[dir="ltr"]  .layout--pass--content-narrow > *.text-content pre,[dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-left: calc(-7.14286vw - -0.62946rem)
+        margin-left: calc(-7.14286vw - -0.55952rem)
   }
 
 [dir="rtl"] .layout--content-narrow.text-content pre,[dir="rtl"]  .layout--content-narrow .text-content pre,[dir="rtl"]  .layout--pass--content-narrow > *.text-content pre,[dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-right: calc(-7.14286vw - -0.62946rem)
+        margin-right: calc(-7.14286vw - -0.55952rem)
   }
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        width: calc(85.71429vw - 9.80357rem)
+        width: calc(85.71429vw - 8.71429rem)
     }
       }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 [dir="ltr"] .layout--content-narrow.text-content pre,[dir="ltr"]  .layout--content-narrow .text-content pre,[dir="ltr"]  .layout--pass--content-narrow > *.text-content pre,[dir="ltr"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-left: -5.86607rem
+        margin-left: -5.21429rem
   }
 
 [dir="rtl"] .layout--content-narrow.text-content pre,[dir="rtl"]  .layout--content-narrow .text-content pre,[dir="rtl"]  .layout--pass--content-narrow > *.text-content pre,[dir="rtl"]  .layout--pass--content-narrow > * .text-content pre {
-        margin-right: -5.86607rem
+        margin-right: -5.21429rem
   }
 
 .layout--content-narrow.text-content pre, .layout--content-narrow .text-content pre, .layout--pass--content-narrow > *.text-content pre, .layout--pass--content-narrow > * .text-content pre {
-        width: 68.14286rem
+        width: 60.57143rem
     }
       }
 

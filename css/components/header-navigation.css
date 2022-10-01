@@ -12,19 +12,19 @@
 }
 
 [dir="ltr"] .header-nav {
-  padding-left: 1.125rem
+  padding-left: 1rem
 }
 
 [dir="rtl"] .header-nav {
-  padding-right: 1.125rem
+  padding-right: 1rem
 }
 
 [dir="ltr"] .header-nav {
-  padding-right: 1.125rem
+  padding-right: 1rem
 }
 
 [dir="rtl"] .header-nav {
-  padding-left: 1.125rem
+  padding-left: 1rem
 }
 
 .header-nav {
@@ -40,10 +40,10 @@
   flex-basis: 0;
   flex-grow: 1; /* Necessary for IE11. */
   width: 100%;
-  max-width: 31.25rem;
+  max-width: 27.77778rem;
   height: 100%;
   padding-top: 0;
-  padding-bottom: 1.125rem;
+  padding-bottom: 1rem;
   /**
    * Create room for the "close" button. We cannot use margin because The
    * mobile navigation needs to slide beneath the button, but we also cannot
@@ -67,30 +67,30 @@
 }
   }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 .header-nav {
     border-top-width: 90px
 }
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .header-nav {
-    padding-left: 3.375rem
+    padding-left: 3rem
   }
 
 [dir="rtl"] .header-nav {
-    padding-right: 3.375rem
+    padding-right: 3rem
   }
 
 .header-nav {
-    padding-bottom: 3.375rem;
+    padding-bottom: 3rem;
     border-top-width: 126px
 }
   }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .header-nav {
     -ms-grid-column: 5;
@@ -128,7 +128,7 @@ body.toolbar-vertical .header-nav {
   border-top-width: 93px
 }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 body.toolbar-vertical .header-nav {
     border-top-width: 129px
@@ -137,7 +137,7 @@ body.toolbar-vertical .header-nav {
 
 /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 body.toolbar-vertical .header-nav,
 body.toolbar-horizontal.toolbar-fixed .header-nav {
@@ -147,14 +147,14 @@ body.toolbar-horizontal.toolbar-fixed .header-nav {
 
 /* Toolbar is horizontal fixed, and tray is open. */
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 body.toolbar-horizontal.toolbar-fixed.toolbar-tray-open .header-nav {
     border-top-width: 205px
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] body:not(.is-always-mobile-nav) .header-nav {
     padding-left: 0
@@ -183,7 +183,7 @@ body:not(.is-always-mobile-nav) .header-nav {
     align-items: center;
     justify-content: flex-end;
     max-width: none;
-    height: 6.75rem;
+    height: 6rem;
     margin-top: auto;
     padding-top: 0;
     padding-bottom: 0;
@@ -198,7 +198,7 @@ body.is-always-mobile-nav {
   /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 body.is-always-mobile-nav.toolbar-vertical .header-nav,
   body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed .header-nav {
@@ -211,43 +211,43 @@ body.is-always-mobile-nav {
   /* Toolbar is horizontal fixed, and tray is open. */
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed.toolbar-tray-open .header-nav {
       border-top-width: 277px
   }
     }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 [dir="ltr"] body.is-always-mobile-nav .header-nav {
-      padding-right: 1.125rem
+      padding-right: 1rem
   }
 
 [dir="rtl"] body.is-always-mobile-nav .header-nav {
-      padding-left: 1.125rem
+      padding-left: 1rem
   }
 
 body.is-always-mobile-nav .header-nav {
       overflow: auto;
-      max-width: calc(50vw - 4.40625rem);
+      max-width: calc(50vw - 3.91667rem);
       transition: transform 0.2s, visibility 0.2s;
       border-top-width: 198px
   }
     }
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
 
 [dir="ltr"] body.is-always-mobile-nav .header-nav {
-      padding-right: calc(100vw - 88.875rem)
+      padding-right: calc(100vw - 79rem)
   }
 
 [dir="rtl"] body.is-always-mobile-nav .header-nav {
-      padding-left: calc(100vw - 88.875rem)
+      padding-left: calc(100vw - 79rem)
   }
 
 body.is-always-mobile-nav .header-nav {
-      max-width: calc(100vw - 48.9375rem)
+      max-width: calc(100vw - 43.5rem)
   }
     }
 

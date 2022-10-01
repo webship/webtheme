@@ -12,31 +12,31 @@
 }
 
 .mobile-buttons {
-  margin-top: 0.5625rem
+  margin-top: 0.5rem
 }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 .mobile-buttons {
-    margin-top: 2.25rem
+    margin-top: 2rem
 }
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .mobile-buttons {
-    margin-top: 4.5rem
+    margin-top: 4rem
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
 
 .mobile-buttons {
-    margin-top: 6.75rem
+    margin-top: 6rem
 }
   }
 
-@media (min-width: 75rem) {
+@media (min-width: 66.66667rem) {
   body:not(.is-always-mobile-nav) .mobile-buttons {
     display: none;
   }

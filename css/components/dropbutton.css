@@ -10,18 +10,18 @@
 }
 
 [dir="ltr"] .dropbutton-widget {
-  padding-right: 1.6875rem;
+  padding-right: 1.5rem;
 }
 
 [dir="rtl"] .dropbutton-widget {
-  padding-left: 1.6875rem;
+  padding-left: 1.5rem;
 }
 
 .dropbutton-widget {
   position: relative;
-  width: 12.5rem;
-  height: 1.6875rem;
-  border-radius: 0.1875rem
+  width: 11.11111rem;
+  height: 1.5rem;
+  border-radius: 0.16667rem
 }
 
 @supports (width: max-content) {
@@ -56,11 +56,11 @@
 }
 
 .dropbutton {
-  height: 1.6875rem;
+  height: 1.5rem;
   margin-top: 0;
   margin-bottom: 0;
   list-style: none;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
 }
 
 [dir="ltr"] .dropbutton-toggle button {
@@ -77,12 +77,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.6875rem;
-  height: 1.6875rem;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
   cursor: pointer;
   border-color: transparent;
-  border-radius: 0 0.1875rem 0.1875rem 0; /* LTR */
+  border-radius: 0 0.16667rem 0.16667rem 0; /* LTR */
   background: #e3e3e5
 }
 
@@ -93,8 +93,8 @@
 
 .dropbutton-toggle button:before {
     display: block;
-    width: 0.5625rem;
-    height: 0.5625rem;
+    width: 0.5rem;
+    height: 0.5rem;
     content: "";
     transform: translateY(-25%) rotate(45deg);
     border-right: solid 2px #0C7FC8;
@@ -102,7 +102,7 @@
   }
 
 [dir="rtl"] .dropbutton-toggle button {
-  border-radius: 0.1875rem 0 0 0.1875rem;
+  border-radius: 0.16667rem 0 0 0.16667rem;
 }
 
 [dir="ltr"] .dropbutton-action:first-child {
@@ -115,7 +115,7 @@
 
 .dropbutton-action:first-child {
     border: solid 1px transparent;
-    border-radius: 0.1875rem 0 0 0.1875rem; /* LTR */
+    border-radius: 0.16667rem 0 0 0.16667rem; /* LTR */
     background: #e3e3e5;
   }
 
@@ -123,7 +123,7 @@
     display: flex;
     align-items: center;
     margin-bottom: -2px; /* Account for borders. */
-    padding: 0 0.5625rem;
+    padding: 0 0.5rem;
     text-decoration: none;
     color: #313637;
     font-weight: 600
@@ -147,7 +147,7 @@
 
 .dropbutton-single .dropbutton-action:first-child {
     border-right: solid 1px transparent; /* LTR */
-    border-radius: 0.1875rem;
+    border-radius: 0.16667rem;
   }
 
 .dropbutton-single .dropbutton-action a {
@@ -156,7 +156,7 @@
 
 [dir="rtl"] .dropbutton-action:first-child {
     border: solid 1px transparent;
-    border-radius: 0 0.1875rem 0.1875rem 0;
+    border-radius: 0 0.16667rem 0.16667rem 0;
   }
 
 [dir="rtl"] .dropbutton-single .dropbutton-action:first-child {
@@ -165,7 +165,7 @@
 
 .secondary-action {
   visibility: hidden;
-  width: calc(100% + 1.6875rem);
+  width: calc(100% + 1.5rem);
   border-right: 1px solid #e3e3e5;
   border-left: 1px solid #e3e3e5;
   background: #fff
@@ -180,7 +180,7 @@
   }
 
 .dropbutton-wrapper.open .dropbutton-widget {
-    border-radius: 0.1875rem 0.1875rem 0 0;
+    border-radius: 0.16667rem 0.16667rem 0 0;
   }
 
 .dropbutton-wrapper.open .secondary-action {

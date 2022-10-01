@@ -23,17 +23,17 @@
   These are "compiled" by postcss/postcss-custom-properties for IE11 compatibility.
 */
 :root {
-  --font-sans: "metropolis", sans-serif;
-  --font-serif: "Lora", "georgia", serif;
+  --font-sans: "Zen Maru Gothic", "georgia", sans-serif;
+  --font-serif: "Zen Maru Gothic", "georgia", serif;
 
   /* Typography */
-  --font-size-base: 16px;
-  --font-size-l: 18px;
-  --font-size-s: 14px;
-  --font-size-xs: 13px;
-  --font-size-xxs: 12px;
-  --line-height-base: 27px;
-  --line-height-s: 18px;
+  --font-size-base: 1rem;
+  --font-size-l: 0.9rem;
+  --font-size-s: 1.125rem;
+  --font-size-xs: 1.2rem;
+  --font-size-xxs: 1.285rem;
+  --line-height-base: 0.666rem;
+  --font-size-l: 0.9rem;
 
   /* Layout */
   --max-width: 1350px;

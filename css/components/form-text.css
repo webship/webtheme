@@ -20,11 +20,11 @@
 textarea {
   width: 100%;
   max-width: 100%;
-  min-height: 3.375rem;
-  padding: 0 1.125rem;
+  min-height: 3rem;
+  padding: 0 1rem;
   color: #0d1214;
   border: 1px solid #7e96a7;
-  border-radius: 0.1875rem;
+  border-radius: 0.16667rem;
   background-color: #fff;
   font-family: inherit;
   font-size: inherit;
@@ -70,10 +70,10 @@ textarea {
     }
 
 [type="color"].form-element--small, [type="date"].form-element--small, [type="datetime-local"].form-element--small, [type="email"].form-element--small, [type="file"].form-element--small, [type="month"].form-element--small, [type="number"].form-element--small, [type="password"].form-element--small, [type="search"].form-element--small, [type="tel"].form-element--small, [type="text"].form-element--small, [type="time"].form-element--small, [type="url"].form-element--small, [type="week"].form-element--small, textarea.form-element--small {
-    min-height: 2.8125rem;
+    min-height: 2.5rem;
   }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 [type="color"],
 [type="date"],
@@ -121,11 +121,11 @@ textarea {
 
 [type="file"] {
   height: auto;
-  padding-top: 0.84375rem;
-  padding-bottom: 0.84375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 [type="color"] {
-  width: 3.375rem;
+  width: 3rem;
   padding: 0;
 }

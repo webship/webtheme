@@ -7,11 +7,11 @@
 }
 
 html[dir="ltr"].js .form-autocomplete {
-  padding-right: 3.375rem;
+  padding-right: 54px;
 }
 
 html[dir="rtl"].js .form-autocomplete {
-  padding-left: 3.375rem;
+  padding-left: 54px;
 }
 
 html.js .form-autocomplete {
@@ -26,7 +26,7 @@ html.js .form-autocomplete:disabled {
   }
 
 html.js .form-autocomplete.ui-autocomplete-loading {
-    background: url("../../images/throbber.svg") no-repeat right 1.125rem center;
+    background: url("../../images/throbber.svg") no-repeat right 18px center;
   }
 
 html.js[dir="rtl"] .form-autocomplete {
@@ -41,7 +41,7 @@ html.js[dir="rtl"] .form-autocomplete:disabled {
   }
 
 html.js[dir="rtl"] .form-autocomplete.ui-autocomplete-loading {
-    background: url("../../images/throbber.svg") no-repeat left 1.125rem center;
+    background: url("../../images/throbber.svg") no-repeat left 18px center;
   }
 
 /* IE11 does not animate inline SVG. */
@@ -52,12 +52,12 @@ html.js[dir="rtl"] .form-autocomplete.ui-autocomplete-loading {
 
 _:-ms-fullscreen,
 html[dir=ltr].js .form-autocomplete.ui-autocomplete-loading {
-  background: url("../../images/throbber.gif") no-repeat right 1.125rem center / 1.125rem 1.125rem;
+  background: url("../../images/throbber.gif") no-repeat right 18px center / 1.125rem 1.125rem;
 }
 
 /* stylelint-disable-next-line selector-type-no-unknown */
 
 _:-ms-fullscreen,
 html[dir=rtl].js .form-autocomplete.ui-autocomplete-loading {
-  background: url("../../images/throbber.gif") no-repeat left 1.125rem center / 1.125rem 1.125rem;
+  background: url("../../images/throbber.gif") no-repeat left 18px center / 1.125rem 1.125rem;
 }

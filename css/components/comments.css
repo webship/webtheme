@@ -8,7 +8,7 @@
 }
 
 .comment--level-1 ~ .comment--level-1 {
-    margin-top: 2.25rem;
+    margin-top: 2rem;
   }
 
 .comments__title {
@@ -18,59 +18,59 @@
 }
 
 [dir="ltr"] .comments__count {
-  margin-left: 1.125rem
+  margin-left: 1rem
 }
 
 [dir="rtl"] .comments__count {
-  margin-right: 1.125rem
+  margin-right: 1rem
 }
 
 [dir="ltr"] .comments__count {
-  margin-right: 1.125rem
+  margin-right: 1rem
 }
 
 [dir="rtl"] .comments__count {
-  margin-left: 1.125rem
+  margin-left: 1rem
 }
 
 [dir="ltr"] .comments__count {
-  padding-left: 0.3125rem
+  padding-left: 0.27778rem
 }
 
 [dir="rtl"] .comments__count {
-  padding-right: 0.3125rem
+  padding-right: 0.27778rem
 }
 
 [dir="ltr"] .comments__count {
-  padding-right: 0.3125rem
+  padding-right: 0.27778rem
 }
 
 [dir="rtl"] .comments__count {
-  padding-left: 0.3125rem
+  padding-left: 0.27778rem
 }
 
 .comments__count {
   position: relative;
   display: inline-block;
-  min-width: 2.125rem;
+  min-width: 1.88889rem;
   margin-top: 0;
-  margin-bottom: 0.5625rem;
+  margin-bottom: 0.5rem;
   padding-top: 0;
   padding-bottom: 0;
   text-align: center;
   color: #fff;
   border-radius: 2px;
   background-color: #0C7FC8;
-  font-size: 0.6875rem;
-  line-height: 1.3125rem
+  font-size: 0.61111rem;
+  line-height: 1.16667rem
 }
 
 [dir="ltr"] .comments__count:after {
-    left: 0.5rem
+    left: 0.44444rem
 }
 
 [dir="rtl"] .comments__count:after {
-    right: 0.5rem
+    right: 0.44444rem
 }
 
 [dir="ltr"] .comments__count:after {
@@ -83,7 +83,7 @@
 
 .comments__count:after {
     position: absolute;
-    bottom: -0.4375rem;
+    bottom: -0.38889rem;
     width: 0;
     height: 0;
     content: "";
@@ -91,7 +91,7 @@
   }
 
 .comment-form {
-  padding-bottom: 2.25rem;
+  padding-bottom: 2rem;
 }
 
 [dir="ltr"] .add-comment__form {
@@ -103,19 +103,19 @@
 }
 
 [dir="ltr"] .comment {
-  padding-left: 3.375rem
+  padding-left: 3rem
 }
 
 [dir="rtl"] .comment {
-  padding-right: 3.375rem
+  padding-right: 3rem
 }
 
 .comment {
   position: relative;
-  padding-top: 2.25rem
+  padding-top: 2rem
 }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .comment {
     padding-left: 0
@@ -127,12 +127,12 @@
   }
 
 .comment__text-content {
-  font-size: 1rem
+  font-size: 0.88889rem
 }
 
 .comment__text-content blockquote {
-    font-size: 1.3125rem;
-    line-height: 2.25rem;
+    font-size: 1.16667rem;
+    line-height: 2rem;
   }
 
 .comment__text-content {
@@ -145,15 +145,15 @@
   }
 
 .comment__links {
-  margin-top: 1.125rem;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 
 .comment__links-link {
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.77778rem;
   font-weight: bold;
-  line-height: 1.125rem
+  line-height: 1rem
 }
 
 .comment__links-link:hover {
@@ -161,7 +161,7 @@
   }
 
 .add-comment__picture-wrapper {
-  top: 2.25rem;
+  top: calc(0.666rem + 0.5rem);
 }
 
 [dir="ltr"] .add-comment__picture,[dir="ltr"] 
@@ -178,8 +178,8 @@
 .comment__picture {
   position: absolute;
   overflow: hidden;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: #e7edf1
 }
@@ -212,38 +212,38 @@
   }
     }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .add-comment__picture,[dir="ltr"] 
 .comment__picture {
-    left: -5.625rem
+    left: -5rem
   }
 
 [dir="rtl"] .add-comment__picture,[dir="rtl"] 
 .comment__picture {
-    right: -5.625rem
+    right: -5rem
   }
 
 .add-comment__picture,
 .comment__picture {
-    width: 3.375rem;
-    height: 3.375rem
+    width: 3rem;
+    height: 3rem
 }
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .indented .comment__picture {
-    left: -4.5rem
+    left: -4rem
   }
 
 [dir="rtl"] .indented .comment__picture {
-    right: -4.5rem
+    right: -4rem
   }
 
 .indented .comment__picture {
-    width: 2.25rem;
-    height: 2.25rem
+    width: 2rem;
+    height: 2rem
 }
   }
 
@@ -252,18 +252,18 @@
   }
 
 [dir="ltr"] .comment__author {
-  margin-right: 1.125rem
+  margin-right: 1rem
 }
 
 [dir="rtl"] .comment__author {
-  margin-left: 1.125rem
+  margin-left: 1rem
 }
 
 .comment__author {
-  font-family: "metropolis", sans-serif;
-  font-size: 1rem;
+  font-family: "Zen Maru Gothic", "georgia", sans-serif;
+  font-size: 0.88889rem;
   font-weight: 700;
-  line-height: 1.125rem
+  line-height: 1rem
 }
 
 .comment__author a {
@@ -273,25 +273,25 @@
 .comment__time {
   margin: 0;
   color: #6e7172;
-  font-family: "metropolis", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
+  font-family: "Zen Maru Gothic", "georgia", sans-serif;
+  font-size: 0.77778rem;
+  line-height: 1rem;
 }
 
 [dir="ltr"] .indented {
-  margin-left: 2.25rem
+  margin-left: 2rem
 }
 
 [dir="rtl"] .indented {
-  margin-right: 2.25rem
+  margin-right: 2rem
 }
 
 [dir="ltr"] .indented > .comment:not(:last-of-type):not(.has-children):before {
-    left: -3.375rem
+    left: -3rem
 }
 
 [dir="rtl"] .indented > .comment:not(:last-of-type):not(.has-children):before {
-    right: -3.375rem
+    right: -3rem
 }
 
 [dir="ltr"] .indented > .comment:not(:last-of-type):not(.has-children):before {
@@ -304,40 +304,40 @@
 
 .indented > .comment:not(:last-of-type):not(.has-children):before {
     position: absolute;
-    top: 2.25rem; /* Comment's padding-top */
+    top: 2rem; /* Comment's padding-top */
     width: 0;
     height: 100%;
     content: ""
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .indented > .comment:not(:last-of-type):not(.has-children):before {
-      left: -3.375rem
+      left: -3rem
   }
 
 [dir="rtl"] .indented > .comment:not(:last-of-type):not(.has-children):before {
-      right: -3.375rem
+      right: -3rem
   }
     }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .indented {
-    margin-left: 4.5rem
+    margin-left: 4rem
   }
 
 [dir="rtl"] .indented {
-    margin-right: 4.5rem
+    margin-right: 4rem
   }
   }
 
 [dir="ltr"] .show-hide-btn {
-  margin-left: 3.375rem
+  margin-left: 3rem
 }
 
 [dir="rtl"] .show-hide-btn {
-  margin-right: 3.375rem
+  margin-right: 3rem
 }
 
 [dir="ltr"] .show-hide-btn {
@@ -365,7 +365,7 @@
 }
 
 .show-hide-btn {
-  margin-top: 2.25rem;
+  margin-top: 2rem;
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
@@ -373,9 +373,9 @@
   color: #313637;
   border: 0;
   background: none;
-  font-size: 0.875rem;
+  font-size: 0.77778rem;
   font-weight: 600;
-  line-height: 1.125rem;
+  line-height: 1rem;
   -webkit-appearance: none;
   appearance: none
 }
@@ -388,7 +388,7 @@
     content: "\0020 +";
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 [dir="ltr"] .show-hide-btn {
     margin-left: 0

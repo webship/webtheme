@@ -12,19 +12,19 @@
  */
 
 [dir="ltr"] .ajax-progress-throbber {
-  margin-left: 0.5625rem;
+  margin-left: 0.5rem;
 }
 
 [dir="rtl"] .ajax-progress-throbber {
-  margin-right: 0.5625rem;
+  margin-right: 0.5rem;
 }
 
 [dir="ltr"] .ajax-progress-throbber {
-  margin-right: 0.5625rem;
+  margin-right: 0.5rem;
 }
 
 [dir="rtl"] .ajax-progress-throbber {
-  margin-left: 0.5625rem;
+  margin-left: 0.5rem;
 }
 
 .ajax-progress-throbber {
@@ -32,7 +32,7 @@
   display: inline-flex;
   align-content: center;
   height: 1.125rem;
-  margin-top: -0.1875rem;
+  margin-top: -0.16667rem;
   margin-bottom: 0;
   vertical-align: middle;
   white-space: nowrap;
@@ -47,16 +47,16 @@
 }
 
 [dir="ltr"] .ajax-progress-throbber .message {
-  padding-left: 0.5625rem;
+  padding-left: 0.5rem;
 }
 
 [dir="rtl"] .ajax-progress-throbber .message {
-  padding-right: 0.5625rem;
+  padding-right: 0.5rem;
 }
 
 .ajax-progress-throbber .message {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 400;
 }
 

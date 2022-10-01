@@ -11,7 +11,7 @@
     -ms-grid-row-align: start
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .sidebar-grid > .site-main {
       -ms-grid-column: 1;
@@ -20,7 +20,7 @@
   }
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .sidebar-grid > .site-main {
       display: -ms-grid;
@@ -58,7 +58,7 @@
     grid-column: 1 / 7
   }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 38.88889rem) {
 
 .sidebar-grid .region--sidebar {
       -ms-grid-column: 3;
@@ -67,7 +67,7 @@
   }
     }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 55.55556rem) {
 
 .sidebar-grid .region--sidebar {
       -ms-grid-row: 1;

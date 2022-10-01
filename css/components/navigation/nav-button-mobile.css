@@ -12,27 +12,27 @@
 }
 
 [dir="ltr"] .mobile-nav-button {
-  margin-right: -0.375rem
+  margin-right: -0.33333rem
 }
 
 [dir="rtl"] .mobile-nav-button {
-  margin-left: -0.375rem
+  margin-left: -0.33333rem
 }
 
 [dir="ltr"] .mobile-nav-button {
-  padding-left: 0.375rem
+  padding-left: 0.33333rem
 }
 
 [dir="rtl"] .mobile-nav-button {
-  padding-right: 0.375rem
+  padding-right: 0.33333rem
 }
 
 [dir="ltr"] .mobile-nav-button {
-  padding-right: 0.375rem
+  padding-right: 0.33333rem
 }
 
 [dir="rtl"] .mobile-nav-button {
-  padding-left: 0.375rem
+  padding-left: 0.33333rem
 }
 
 .mobile-nav-button {
@@ -42,8 +42,8 @@
   align-items: center;
   -ms-grid-row-align: center;
   align-self: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
   padding-top: 0;
   padding-bottom: 0;
   cursor: pointer;
@@ -61,14 +61,14 @@
     color: inherit; /* Override Safari's default UA styles. */
   }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 [dir="ltr"] .mobile-nav-button {
-    padding-left: 1.125rem
+    padding-left: 1rem
   }
 
 [dir="rtl"] .mobile-nav-button {
-    padding-right: 1.125rem
+    padding-right: 1rem
   }
 
 .mobile-nav-button {
@@ -89,14 +89,14 @@
   word-wrap: normal
 }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 27.77778rem) {
 
 [dir="ltr"] .mobile-nav-button__label {
-    margin-right: 0.75rem
+    margin-right: 0.66667rem
   }
 
 [dir="rtl"] .mobile-nav-button__label {
-    margin-left: 0.75rem
+    margin-left: 0.66667rem
   }
 
 .mobile-nav-button__label {
@@ -106,7 +106,7 @@
     width: auto;
     height: auto;
     letter-spacing: 0.05em;
-    font-size: 0.875rem;
+    font-size: 0.77778rem;
     font-weight: 600
 }
   }
@@ -114,7 +114,7 @@
 .mobile-nav-button__icon {
   position: relative;
   display: block;
-  width: 2.25rem;
+  width: 2rem;
   height: 0;
   border-top: solid 3px #5C9EC8
 }
@@ -129,7 +129,7 @@
 
 .mobile-nav-button__icon:before {
     position: absolute;
-    top: -0.6875rem;
+    top: -0.61111rem;
     width: 100%;
     height: 0;
     content: "";
@@ -148,7 +148,7 @@
 .mobile-nav-button__icon:after {
     position: absolute;
     top: auto;
-    bottom: -0.5rem;
+    bottom: -0.44444rem;
     width: 100%;
     height: 0;
     content: "";

@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: social-media-menu
-label: 'social media menu'
+label: 'Social media menu'
 description: ''
 locked: false

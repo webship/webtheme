@@ -5,7 +5,7 @@ description: 'An Olivero based sub-theme.'
 package: Webtheme
 core_version_requirement: ^9 || ^10
 dependencies:
-  - default_content:default_content
+  - webtheme_default_content:webtheme_default_content
 regions:
   header: Header
   primary_menu: 'Primary menu'

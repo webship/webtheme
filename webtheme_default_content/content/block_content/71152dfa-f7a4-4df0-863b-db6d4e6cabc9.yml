@@ -19,6 +19,6 @@ default:
       value: true
   body:
     -
-      value: '<img src="themes/contrib/webtheme/images/logo-white.svg" alt="Home">'
+      value: '<img src="themes/contrib/webtheme/logo-white.svg" alt="Home">'
       format: full_html
       summary: ''

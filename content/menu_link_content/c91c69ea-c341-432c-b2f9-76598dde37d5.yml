@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: c91c69ea-c341-432c-b2f9-76598dde37d5
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Youtube
+  menu_name:
+    -
+      value: social-media-menu
+  link:
+    -
+      uri: 'https://www.youtube.com/channel/UCB6-J447aDgfPKP8HmV5TUw'
+      title: ''
+      options:
+        attributes:
+          class:
+            - youtube
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -45
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

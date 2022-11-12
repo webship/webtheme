@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:webtheme_copyright:e524b434-01da-4807-9726-a5d9a320a3ed'
+    - 'block_content:basic:e524b434-01da-4807-9726-a5d9a320a3ed'
   module:
     - block_content
   theme:

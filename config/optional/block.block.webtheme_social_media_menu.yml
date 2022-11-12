@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - webtheme
-id: webtheme_social_medi_amenu
+id: webtheme_social_media_menu
 theme: webtheme
 region: footer_bottom
 weight: -7

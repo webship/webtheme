@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:webtheme_footer_logo:71152dfa-f7a4-4df0-863b-db6d4e6cabc9'
+    - 'block_content:basic:71152dfa-f7a4-4df0-863b-db6d4e6cabc9'
   module:
     - block_content
   theme:

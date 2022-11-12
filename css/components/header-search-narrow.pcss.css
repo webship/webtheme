@@ -6,11 +6,7 @@
 @import "../base/variables.pcss.css";
 
 .block-search-narrow {
-  margin-inline: calc(-1 * var(--sp));
-  margin-block-end: var(--sp2);
-  background: var(--color--black);
-
-  & .search-block-form {
+  margin-inline: calc(-1 * var(--sp));   margin-block-end: var(--sp2);   background: var(--color--black);   & .search-block-form {
     display: flex;
   }
 
@@ -36,13 +32,7 @@
     background-image: linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
     background-repeat: no-repeat;
     background-position: bottom left; /* LTR */
-    background-size: 0% 5px;
-    box-shadow: none;
-    font-family: var(--font-serif);
-    font-size: 16px;
-    -webkit-appearance: none;
-
-    &::-ms-clear {
+    background-size: 0% 5px;     box-shadow: none;     font-family: var(--font-serif);     font-size: 16px;     -webkit-appearance: none;     &::-ms-clear {
       width: 40px;
       opacity: 0.5;
     }
@@ -94,14 +84,7 @@
       inset-inline-start: 0;
       display: block;
       width: 100%; /* Width of the SVG background image. */
-      height: 100%;
-      pointer-events: none;
-      background-image: url("../../images/search--white.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-
-      &:after {
+      height: 100%;       pointer-events: none;       background-image: url("../../images/search--white.svg");       background-repeat: no-repeat;       background-position: center;       background-size: auto;       &:after {
         position: absolute;
         inset-block-end: 0;
         inset-inline-start: 0;
@@ -123,18 +106,12 @@
     }
 
     &:focus {
-      outline: solid 4px transparent;
-      outline-offset: -4px;
-      box-shadow: none;
-
-      & span:after {
+      outline: solid 4px transparent;       outline-offset: -4px;       box-shadow: none;       & span:after {
         transform: scaleX(1);
       }
 
       @media screen and (-ms-high-contrast: active) {
-        border-bottom-width: var(--sp0-5);
-
-        & span:after {
+        border-bottom-width: var(--sp0-5);         & span:after {
           content: none;
         }
       }

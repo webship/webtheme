@@ -47,16 +47,16 @@
   height: 2.5rem;
   cursor: default;
   color: #6e7172;
-  background-color: #fff
+  background-color: #fff;
 }
 
 @media (min-width: 27.77778rem) {
 
-.pager__item {
+  .pager__item {
     width: 3rem;
-    height: 3rem
-}
+    height: 3rem;
   }
+}
 
 [dir="rtl"] .pager__item--control {
   transform: scaleX(-1);
@@ -64,26 +64,26 @@
 
 .pager__item--active {
   color: #fff;
-  background-color: #0C7FC8;
+  background-color: #0c7fc8;
 }
 
 .pager__item--control path {
-    /* IE11 Specific. */
-  }
+  /* IE11 Specific. */
+}
 
 @media (-ms-high-contrast: active) {
 
-.pager__item--control path {
-      fill: currentColor
+  .pager__item--control path {
+    fill: currentColor;
   }
-    }
+}
 
 @media (forced-colors: active) {
 
-.pager__item--control path {
-      fill: linktext
+  .pager__item--control path {
+    fill: linktext;
   }
-    }
+}
 
 .pager__link {
   display: flex;
@@ -100,8 +100,8 @@
 }
 
 .pager__link:focus {
-  color: #0C7FC8;
-  outline: solid 2px #0C7FC8;
+  color: #0c7fc8;
+  outline: solid 2px #0c7fc8;
   outline-offset: -2px;
 }
 

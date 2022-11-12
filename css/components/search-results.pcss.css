@@ -6,13 +6,7 @@
 @import "../base/variables.pcss.css";
 
 .search-results {
-  margin-block-end: var(--sp2);
-  padding-block: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  list-style: none;
-
-  @media (--md) {
+  margin-block-end: var(--sp2);   padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   list-style: none;   @media (--md) {
     margin-block-end: var(--sp3);
   }
 }
@@ -33,9 +27,7 @@
     background-image: linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
     background-repeat: no-repeat;
     background-position: bottom left; /* LTR */
-    background-size: 0 3px;
-
-    &:hover {
+    background-size: 0 3px;     &:hover {
       color: var(--color--blue-20);
     }
   }
@@ -52,22 +44,13 @@
 }
 
 .search-result__snippet {
-  padding-block-end: calc(var(--sp1-5) - 2px);
-
-  @media (--lg) {
+  padding-block-end: calc(var(--sp1-5) - 2px);   @media (--lg) {
     padding-block-end: var(--sp3);
   }
 }
 
 .search-result__meta {
-  display: flex;
-  align-items: center;
-  margin-block-end: var(--sp1);
-  color: var(--color--gray-20);
-  font-size: 14px;
-  line-height: var(--sp);
-
-  & a {
+  display: flex;   align-items: center;   margin-block-end: var(--sp1);   color: var(--color--gray-20);   font-size: 14px;   line-height: var(--sp);   & a {
     color: var(--color--blue-20);
     font-weight: bold;
   }
@@ -75,9 +58,7 @@
 
 .search-results__item {
   position: relative; /* Anchor after pseudo-element. */
-  margin-block-end: var(--sp1-5);
-
-  &:after {
+  margin-block-end: var(--sp1-5);   &:after {
     position: absolute;
     inset-block-end: 0;
     width: var(--sp3);

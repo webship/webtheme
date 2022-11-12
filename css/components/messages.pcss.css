@@ -3,9 +3,7 @@
  * Messages.
  */
 
-@import "../base/variables.pcss.css";
-
-:root {
+@import "../base/variables.pcss.css"; :root {
   --messages-icon-size: 32px;
 }
 
@@ -18,15 +16,7 @@
 }
 
 .messages {
-  min-height: calc(var(--messages-icon-size) + 2 * var(--sp1));
-  padding-block: var(--sp1);
-  padding-inline-start: var(--sp1-5);
-  padding-inline-end: var(--sp1-5);
-  color: var(--color--white);
-  outline: solid 1px transparent;
-  background-color: var(--color--gray-0);
-
-  & * {
+  min-height: calc(var(--messages-icon-size) + 2 * var(--sp1));   padding-block: var(--sp1);   padding-inline-start: var(--sp1-5);   padding-inline-end: var(--sp1-5);   color: var(--color--white);   outline: solid 1px transparent;   background-color: var(--color--gray-0);   & * {
     color: inherit;
   }
 
@@ -59,10 +49,7 @@
 }
 
 .messages__header {
-  flex-shrink: 0;
-  margin-inline-end: var(--sp1);
-
-  &.no-icon {
+  flex-shrink: 0;   margin-inline-end: var(--sp1);   &.no-icon {
     margin-inline-end: 0;
   }
 }
@@ -80,19 +67,7 @@
 }
 
 .messages__close {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  padding-block: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  cursor: pointer;
-  vertical-align: top;
-  border: 0;
-  background: none;
-  appearance: none;
-
-  &:before,
+  position: relative;   width: 25px;   height: 25px;   padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   cursor: pointer;   vertical-align: top;   border: 0;   background: none;   appearance: none;   &:before,
   &:after {
     position: absolute;
     top: 50%;

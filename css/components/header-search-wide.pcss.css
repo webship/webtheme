@@ -13,26 +13,7 @@
 .block-search-wide__wrapper {
   position: absolute;
   z-index: 1; /* Ensure left border shows above social region in IE11. */
-  inset-block-start: 100%;
-  inset-inline-start: 0;
-  display: none;
-  visibility: hidden;
-  overflow: hidden;
-  width: 100vw;
-  max-width: var(--max-bg-color);
-  height: var(--sp8);
-  max-height: 0;
-  margin-block: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-block: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  transition: all 0.2s;
-  border-inline-start: solid var(--content-left) var(--color--gray-10);
-  background: var(--color--black);
-
-  &.is-active {
+  inset-block-start: 100%;   inset-inline-start: 0;   display: none;   visibility: hidden;   overflow: hidden;   width: 100vw;   max-width: var(--max-bg-color);   height: var(--sp8);   max-height: 0;   margin-block: 0;   margin-inline-start: 0;   margin-inline-end: 0;   padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   transition: all 0.2s;   border-inline-start: solid var(--content-left) var(--color--gray-10);   background: var(--color--black);   &.is-active {
     visibility: visible;
     max-height: var(--sp8);
   }
@@ -43,20 +24,7 @@
   }
 
   & input[type="search"] {
-    width: calc(100% + var(--sp2));
-    height: var(--sp8);
-    padding-block: 0;
-    padding-inline-start: var(--sp12);
-    padding-inline-end: 0;
-    transition: background-size 0.4s;
-    color: var(--color--white);
-    border: solid 1px transparent;
-    box-shadow: none;
-    font-family: var(--font-serif);
-    font-size: 32px;
-    -webkit-appearance: none;
-
-    &::-ms-clear {
+    width: calc(100% + var(--sp2));     height: var(--sp8);     padding-block: 0;     padding-inline-start: var(--sp12);     padding-inline-end: 0;     transition: background-size 0.4s;     color: var(--color--white);     border: solid 1px transparent;     box-shadow: none;     font-family: var(--font-serif);     font-size: 32px;     -webkit-appearance: none;     &::-ms-clear {
       width: 40px;
       opacity: 0.5;
     }
@@ -111,14 +79,7 @@
       inset-inline-end: 0;
       display: block;
       width: 24px; /* Width of the SVG background image. */
-      height: 100%;
-      pointer-events: none;
-      background-image: url("../../images/search--white.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-
-      &:after {
+      height: 100%;       pointer-events: none;       background-image: url("../../images/search--white.svg");       background-repeat: no-repeat;       background-position: center;       background-size: contain;       &:after {
         position: absolute;
         inset-block-end: 0;
         inset-inline-start: 0;
@@ -133,18 +94,12 @@
     }
 
     &:focus {
-      outline: solid 4px transparent;
-      outline-offset: -4px;
-      box-shadow: none;
-
-      & span:after {
+      outline: solid 4px transparent;       outline-offset: -4px;       box-shadow: none;       & span:after {
         transform: scaleX(1);
       }
 
       @media screen and (-ms-high-contrast: active) {
-        border-bottom-width: var(--sp0-5);
-
-        & span:after {
+        border-bottom-width: var(--sp0-5);         & span:after {
           content: none;
         }
       }
@@ -203,10 +158,7 @@
   -webkit-appearance: none;
 
   &:focus {
-    position: relative;
-    outline: 0;
-
-    &:after {
+    position: relative;     outline: 0;     &:after {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -220,9 +172,7 @@
   }
 
   &[aria-expanded="true"] {
-    background: var(--color--black);
-
-    &:focus:after {
+    background: var(--color--black);     &:focus:after {
       border-color: var(--color--white);
     }
 
@@ -258,9 +208,7 @@
   }
 
   @media (forced-colors: active) {
-    background: ButtonFace;
-
-    & path {
+    background: ButtonFace;     & path {
       fill: ButtonText;
     }
   }
@@ -278,9 +226,7 @@ html:not(.js) .search-block-form:focus-within .block-search-wide__wrapper {
   background-image: linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
   background-repeat: no-repeat;
   background-position: bottom left; /* LTR */
-  background-size: 0% 10px;
-
-  &:focus {
+  background-size: 0% 10px;   &:focus {
     background-size: 100% var(--sp0-5);
   }
 }

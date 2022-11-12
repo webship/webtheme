@@ -3,24 +3,12 @@
  * Embedded Media.
  */
 
-@import "../base/variables.pcss.css";
-
-figure {
+@import "../base/variables.pcss.css"; figure {
   background: var(--color--gray-95);
 }
 
 figcaption {
-  padding-block: var(--sp0-5);
-  padding-inline-start: var(--sp0-5);
-  padding-inline-end: var(--sp0-5);
-  color: var(--color--gray-10);
-  background: var(--color--gray-95);
-  font-family: var(--font-serif);
-  font-size: 14px;
-  font-style: italic;
-  line-height: var(--sp);
-
-  @media (--sm) {
+  padding-block: var(--sp0-5);   padding-inline-start: var(--sp0-5);   padding-inline-end: var(--sp0-5);   color: var(--color--gray-10);   background: var(--color--gray-95);   font-family: var(--font-serif);   font-size: 14px;   font-style: italic;   line-height: var(--sp);   @media (--sm) {
     padding-block: var(--sp);
     padding-inline-start: var(--sp);
     padding-inline-end: var(--sp);
@@ -29,12 +17,7 @@ figcaption {
 
 .align-right {
   float: none; /* Override core's align.module.css. */
-  max-width: 100%;
-  margin-block: var(--sp3);
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-
-  @media (--grid-md) {
+  max-width: 100%;   margin-block: var(--sp3);   margin-inline-start: 0;   margin-inline-end: 0;   @media (--grid-md) {
     float: inline-end;
     max-width: 50%;
     margin-block-start: var(--sp);
@@ -66,13 +49,7 @@ figcaption {
 
 .align-left {
   float: none; /* Override core's align.module.css. */
-  max-width: 100%;
-  margin-block-start: var(--sp3);
-  margin-block-end: var(--sp3);
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-
-  @media (--grid-md) {
+  max-width: 100%;   margin-block-start: var(--sp3);   margin-block-end: var(--sp3);   margin-inline-start: 0;   margin-inline-end: 0;   @media (--grid-md) {
     float: inline-start;
     max-width: 50%;
     margin-block-start: var(--sp);

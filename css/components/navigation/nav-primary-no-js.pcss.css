@@ -3,9 +3,7 @@
  * Styles for primary navigation when JavaScript is disabled.
  */
 
-@import "../../base/variables.pcss.css";
-
-:root {
+@import "../../base/variables.pcss.css"; :root {
   --no-js-nav-column-width: 300px;
   --no-js-nav-column-gap: var(--sp2);
 }

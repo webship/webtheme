@@ -3,9 +3,7 @@
  * Dropbutton styles.
  */
 
-@import "../base/variables.pcss.css";
-
-:root {
+@import "../base/variables.pcss.css"; :root {
   --dropbutton--height: var(--sp1-5);
   --dropbutton--bg-color: var(--color--gray-75);
   --dropbutton--border-color: var(--color--blue-20);
@@ -18,13 +16,7 @@
 }
 
 .dropbutton-widget {
-  position: relative;
-  width: 200px;
-  height: var(--dropbutton--height);
-  padding-inline-end: var(--dropbutton--height);
-  border-radius: var(--border-radius);
-
-  @supports (width: max-content) {
+  position: relative;   width: 200px;   height: var(--dropbutton--height);   padding-inline-end: var(--dropbutton--height);   border-radius: var(--border-radius);   @supports (width: max-content) {
     width: max-content;
   }
 }
@@ -55,9 +47,7 @@
   cursor: pointer;
   border-color: transparent;
   border-radius: 0 var(--border-radius) var(--border-radius) 0; /* LTR */
-  background: var(--dropbutton--bg-color);
-
-  &:focus {
+  background: var(--dropbutton--bg-color);   &:focus {
     outline: solid 2px var(--dropbutton--border-color);
     outline-offset: -2px;
   }
@@ -131,13 +121,7 @@
 }
 
 .secondary-action {
-  visibility: hidden;
-  width: calc(100% + var(--dropbutton--height));
-  border-right: 1px solid var(--dropbutton--bg-color);
-  border-left: 1px solid var(--dropbutton--bg-color);
-  background: var(--color--white);
-
-  &:last-child {
+  visibility: hidden;   width: calc(100% + var(--dropbutton--height));   border-right: 1px solid var(--dropbutton--bg-color);   border-left: 1px solid var(--dropbutton--bg-color);   background: var(--color--white);   &:last-child {
     border-bottom: 1px solid var(--dropbutton--bg-color);
   }
 }

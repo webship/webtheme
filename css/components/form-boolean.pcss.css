@@ -21,10 +21,7 @@ input[type="radio"] {
   appearance: none;
 
   &:focus {
-    border: solid 2px var(--color--blue-50);
-    outline: solid 2px var(--color--blue-50);
-
-    @supports (outline-style: double) {
+    border: solid 2px var(--color--blue-50);     outline: solid 2px var(--color--blue-50);     @supports (outline-style: double) {
       border-width: 1px;
       outline-width: 6px;
       outline-style: double;
@@ -37,9 +34,7 @@ input[type="radio"] {
   }
 
   &[disabled] {
-    background-color: var(--color--gray-90);
-
-    &:hover {
+    background-color: var(--color--gray-90);     &:hover {
       border-color: var(--color--gray-30);
     }
 
@@ -53,9 +48,7 @@ input[type="radio"] {
   }
 
   &.error {
-    border: solid 2px var(--color--red);
-
-    &:focus {
+    border: solid 2px var(--color--red);     &:focus {
       outline-color: var(--color--red);
       outline-offset: -2px;
     }
@@ -79,9 +72,7 @@ input[type="checkbox"] {
 }
 
 input[type="radio"] {
-  border-radius: 50%;
-
-  &:checked {
+  border-radius: 50%;   &:checked {
     background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8.5' cy='8.5' r='8.5' fill='%232494DB'/%3E%3C/svg%3E%0A");
     background-size: 17px;
   }

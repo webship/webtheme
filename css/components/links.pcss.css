@@ -13,9 +13,7 @@
   list-style: none;
 
   & > * {
-    display: inline;
-
-    &:not(:last-child) {
+    display: inline;     &:not(:last-child) {
       padding-inline-end: 1em;
     }
   }

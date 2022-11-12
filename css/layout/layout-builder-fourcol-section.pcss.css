@@ -10,10 +10,7 @@
   flex-wrap: wrap;
 
   & > .layout__region {
-    flex: 1 0 100%;
-    margin-block-end: var(--grid-gap);
-
-    @media (--md) {
+    flex: 1 0 100%;     margin-block-end: var(--grid-gap);     @media (--md) {
       flex-basis: calc(50% - (var(--grid-gap--md) * 0.5));
       flex-grow: 0;
       flex-shrink: 0;

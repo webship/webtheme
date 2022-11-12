@@ -14,9 +14,7 @@
   list-style: none;
 
   & li {
-    display: inline-block;
-
-    & a {
+    display: inline-block;     & a {
       color: var(--color--blue-20);
     }
   }

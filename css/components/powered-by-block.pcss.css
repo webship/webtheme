@@ -11,9 +11,7 @@
   line-height: var(--sp);
 
   & a {
-    text-decoration: underline;
-
-    &:hover,
+    text-decoration: underline;     &:hover,
     &:focus {
       text-decoration: none;
     }
@@ -28,9 +26,7 @@
   & svg {
     width: 0.875rem; /* 14 */
     height: 1.1875rem; /* 19 */
-    vertical-align: top;
-
-    & path {
+    vertical-align: top;     & path {
       fill: currentColor;
     }
   }

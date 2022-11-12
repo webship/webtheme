@@ -7,10 +7,7 @@
 
 #drupal-off-canvas {
   & .form-type-boolean {
-    margin-inline-start: 0;
-    line-height: var(--line-height-s);
-
-    & input[type="checkbox"],
+    margin-inline-start: 0;     line-height: var(--line-height-s);     & input[type="checkbox"],
     & input[type="radio"] {
       float: none;
       width: var(--sp0-75);
@@ -37,10 +34,7 @@
 
   /* Necessary for Safari. */
   & .olivero-details__summary {
-    display: block;
-    list-style: initial;
-
-    &:focus {
+    display: block;     list-style: initial;     &:focus {
       outline: solid 1px rgba(255, 255, 255, 0.25);
     }
 

@@ -12,19 +12,7 @@
   display: none;
 
   @media (--nav) {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: var(--content-left);
-    height: var(--sp6);
-    pointer-events: none;
-    opacity: 0;
-    border: 0;
-    outline: 0;
-    background-color: var(--color--blue-50);
-
-    &:focus {
+    display: flex;     flex-shrink: 0;     align-items: center;     justify-content: center;     width: var(--content-left);     height: var(--sp6);     pointer-events: none;     opacity: 0;     border: 0;     outline: 0;     background-color: var(--color--blue-50);     &:focus {
       cursor: pointer;
       pointer-events: auto;
       opacity: 1;
@@ -58,9 +46,7 @@ body.is-always-mobile-nav .sticky-header-toggle {
     display: block;
     height: 0;
     /* Intentionally not using CSS logical properties. */
-    border-top: solid 3px var(--color--white);
-
-    &:nth-child(1) {
+    border-top: solid 3px var(--color--white);     &:nth-child(1) {
       position: absolute;
       inset-block-start: 0;
       inset-inline-start: 0;

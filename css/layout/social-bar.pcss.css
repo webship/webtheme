@@ -21,13 +21,7 @@
   padding-inline-end: var(--sp);
 
   @media (--nav) {
-    position: relative;
-    width: var(--content-left);
-    padding-block: calc(5 * var(--sp));
-    padding-inline-start: 0;
-    padding-inline-end: 0;
-
-    &.is-fixed {
+    position: relative;     width: var(--content-left);     padding-block: calc(5 * var(--sp));     padding-inline-start: 0;     padding-inline-end: 0;     &.is-fixed {
       position: fixed;
       inset-block-start: var(--sp6);
       inset-inline-start: 0;
@@ -41,11 +35,7 @@
     margin-block-end: var(--sp2);
 
     @media (--nav) {
-      display: flex;
-      align-items: center;
-      margin-block-end: 0;
-
-      &:not(:first-child) {
+      display: flex;       align-items: center;       margin-block-end: 0;       &:not(:first-child) {
         margin-inline-end: var(--sp2);
       }
     }
@@ -81,10 +71,7 @@
 [dir="rtl"] {
   @media (--nav) {
     & .rotate {
-      transform: rotate(90deg) translateX(100%);
-      transform-origin: right;
-
-      & .contextual {
+      transform: rotate(90deg) translateX(100%);       transform-origin: right;       & .contextual {
         transform: rotate(-90deg);
         transform-origin: top right;
       }

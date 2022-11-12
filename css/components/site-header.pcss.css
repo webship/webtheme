@@ -11,22 +11,12 @@
    * Ensure mobile site header is always above other elements including
    * contextual links, quick-edit, and Tour.
    */
-  z-index: 101;
-
-  @media (--nav) {
+  z-index: 101;   @media (--nav) {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
     min-height: var(--site-header-height-wide);
     border-block-end: solid 1px transparent; /* Will show in Windows high contrast mode. */
+    box-shadow: 0 4px 4px var(--color--shadow-2);
   }
-}
-
-.site-header__initial {
-  position: relative;
-  z-index: 102;
-  display: flex;
-  align-items: flex-end;
-  align-self: stretch;
-  background-color: var(--color--blue-50);
 }
 
 .site-header__fixable {

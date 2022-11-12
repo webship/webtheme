@@ -3,9 +3,7 @@
  * Base Fonts.
  */
 
-@import "variables.pcss.css";
-
-@font-face {
+@import "variables.pcss.css"; @font-face {
   font-family: metropolis;
   src:
     url("../../fonts/metropolis/Metropolis-Regular.woff2") format("woff2"),

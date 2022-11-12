@@ -6,19 +6,19 @@
  */
 
 [dir="ltr"] .skip-link {
-  padding-left: 1rem
+  padding-left: 1rem;
 }
 
 [dir="rtl"] .skip-link {
-  padding-right: 1rem
+  padding-right: 1rem;
 }
 
 [dir="ltr"] .skip-link {
-  padding-right: 1rem
+  padding-right: 1rem;
 }
 
 [dir="rtl"] .skip-link {
-  padding-left: 1rem
+  padding-left: 1rem;
 }
 
 .skip-link {
@@ -30,17 +30,17 @@
   text-decoration: none;
   color: #fff;
   outline: 0;
-  background-color: #0d1214
+  background-color: #0d1214;
 }
 
 .skip-link:hover {
-    text-decoration: underline;
-    color: #fff;
-  }
+  text-decoration: underline;
+  color: #fff;
+}
 
 .skip-link:after {
-    content: "\0020	➔";
-  }
+  content: "\0020	➔";
+}
 
 .skip-link.focusable:focus {
   position: absolute !important; /* Override position from module file. */

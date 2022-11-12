@@ -7,10 +7,7 @@
 
 .layout--content-narrow,
 .layout--pass--content-narrow > * {
-  grid-column: 1 / 7;
-  width: 100%;
-
-  @media (--grid-md) {
+  grid-column: 1 / 7;   width: 100%;   @media (--grid-md) {
     grid-column: 2 / 14;
   }
 

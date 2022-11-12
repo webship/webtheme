@@ -6,9 +6,7 @@
 @import "../base/variables.pcss.css";
 
 .hero__content {
-  grid-column: 1 / 7;
-
-  @media (--grid-md) { /* 700px */
+  grid-column: 1 / 7;   @media (--grid-md) { /* 700px */
     grid-column: 3 / 13;
   }
 
@@ -18,11 +16,7 @@
 }
 
 .hero__img {
-  grid-column: 1 / 7;
-  margin-block-start: var(--sp2);
-  margin-block-end: var(--sp2);
-
-  & img {
+  grid-column: 1 / 7;   margin-block-start: var(--sp2);   margin-block-end: var(--sp2);   & img {
     width: 100%;
   }
 

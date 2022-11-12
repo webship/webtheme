@@ -7,16 +7,14 @@
 
 .container {
   width: 100%;
-  max-width: var(--max-width);
-  padding-inline: var(--container-padding);
-
-  @media (--nav) {
+  /* max-width: var(--max-width); */
+  padding-inline: var(--container-padding);   @media (--nav) {
     padding-inline: var(--container-padding-nav);
   }
 }
 
 .page-wrapper {
-  max-width: var(--max-bg-color);
+  /* max-width: var(--max-bg-color); */
   background: var(--color--white);
 }
 
@@ -46,9 +44,7 @@
 }
 
 .main-content__container {
-  padding-block-start: var(--sp3);
-
-  @media (--md) {
+  padding-block-start: var(--sp3);   @media (--md) {
     padding-block-start: var(--sp5);
   }
 }

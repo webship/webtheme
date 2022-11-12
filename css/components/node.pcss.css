@@ -6,14 +6,7 @@
 @import "../base/variables.pcss.css";
 
 .node__meta {
-  display: flex;
-  align-items: center;
-  margin-block-end: var(--sp1);
-  color: var(--color--gray-20);
-  font-size: 14px;
-  line-height: var(--sp);
-
-  & a {
+  display: flex;   align-items: center;   margin-block-end: var(--sp1);   color: var(--color--gray-20);   font-size: 14px;   line-height: var(--sp);   & a {
     font-weight: bold;
   }
 
@@ -40,9 +33,7 @@
     background-image: linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
     background-repeat: no-repeat;
     background-position: bottom left; /* LTR */
-    background-size: 0 3px;
-
-    &:hover,
+    background-size: 0 3px;     &:hover,
     &:focus {
       color: var(--color--blue-20);
     }
@@ -54,9 +45,7 @@
 }
 
 .node__content {
-  padding-block-end: var(--sp1-5);
-
-  @media (--lg) {
+  padding-block-end: var(--sp1-5);   @media (--lg) {
     padding-block-end: var(--sp3);
   }
 }

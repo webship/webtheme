@@ -6,12 +6,6 @@
 @import "../base/variables.pcss.css";
 
 .maintenance-page {
-  & .site-header__initial {
-    @media (--nav) {
-      flex-shrink: 0;
-      width: var(--content-left);
-    }
-  }
 
   & .main-content {
     min-height: 80vh;

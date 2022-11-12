@@ -9,17 +9,7 @@
 .text-content table,
 .views-table,
 .draggable-table {
-  margin-block-start: var(--sp2);
-  margin-block-end: var(--sp2);
-  border-spacing: 0;
-  color: var(--color--gray-10);
-  border: 0;
-  border-collapse: collapse;
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: var(--sp1-5);
-
-  & caption {
+  margin-block-start: var(--sp2);   margin-block-end: var(--sp2);   border-spacing: 0;   color: var(--color--gray-10);   border: 0;   border-collapse: collapse;   font-family: var(--font-sans);   font-size: 16px;   line-height: var(--sp1-5);   & caption {
     margin-block-end: var(--sp1);
     text-align: start;
     color: var(--color--gray-10);

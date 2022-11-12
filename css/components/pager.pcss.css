@@ -3,9 +3,7 @@
  * Styles for pagination.
  */
 
-@import "../base/variables.pcss.css";
-
-.pager__items {
+@import "../base/variables.pcss.css"; .pager__items {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -19,16 +17,7 @@
 }
 
 .pager__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--sp2-5);
-  height: var(--sp2-5);
-  cursor: default;
-  color: var(--color--gray-20);
-  background-color: var(--color--white);
-
-  @media (--sm) {
+  display: flex;   align-items: center;   justify-content: center;   width: var(--sp2-5);   height: var(--sp2-5);   cursor: default;   color: var(--color--gray-20);   background-color: var(--color--white);   @media (--sm) {
     width: var(--sp3);
     height: var(--sp3);
   }

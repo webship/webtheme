@@ -3,9 +3,7 @@
  * Block styling.
  */
 
-@import "../base/variables.pcss.css";
-
-.block__title {
+@import "../base/variables.pcss.css"; .block__title {
   margin-block: 0 var(--sp);
   letter-spacing: 0.02em;
   color: var(--color--gray-20);

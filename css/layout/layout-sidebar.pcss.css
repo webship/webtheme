@@ -7,20 +7,14 @@
 
 .sidebar-grid {
   & > .site-main {
-    grid-column: 1 / 7;
-    align-self: flex-start;
-    -ms-grid-row-align: start;
-
-    @media (--grid-md) {
+    grid-column: 1 / 7;     align-self: flex-start;     -ms-grid-row-align: start;     @media (--grid-md) {
       grid-column: 1 / 15;
     }
 
     @media (--lg) {
-      display: grid;
-      grid-template-columns: repeat(8, minmax(0, 1fr));
-      grid-column: 3 / 11;
-
-      & > .region--content-above,
+      display: grid;       grid-template-columns:         repeat(           8,
+          minmax(             0,
+            1fr           )         );       grid-column: 3 / 11;       & > .region--content-above,
       & > .region--content {
         grid-template-columns: repeat(8, minmax(0, 1fr));
         grid-column: 1 / 9;
@@ -36,10 +30,7 @@
   }
 
   & .region--sidebar {
-    -ms-grid-row: 2;
-    grid-column: 1 / 7;
-
-    @media (--grid-md) {
+    -ms-grid-row: 2;     grid-column: 1 / 7;     @media (--grid-md) {
       grid-column: 3 / 13;
     }
 

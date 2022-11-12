@@ -43,7 +43,7 @@
   width: 1.125rem;
   height: 1.125rem;
   border-width: 2px;
-  border-color: #5C9EC8 transparent #5C9EC8 #5C9EC8;
+  border-color: #5c9ec8 transparent #5c9ec8 #5c9ec8;
 }
 
 [dir="ltr"] .ajax-progress-throbber .message {
@@ -56,7 +56,7 @@
 
 .ajax-progress-throbber .message {
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: 1.1111rem;
   font-weight: 400;
 }
 
@@ -86,22 +86,22 @@
 }
 
 [dir="ltr"] .ajax-progress-fullscreen:before {
-    left: 50%;
+  left: 50%;
 }
 
 [dir="rtl"] .ajax-progress-fullscreen:before {
-    right: 50%;
+  right: 50%;
 }
 
 .ajax-progress-fullscreen:before {
-    position: absolute;
-    top: 50%;
-    width: 1.75rem;
-    height: 1.75rem;
-    margin: -0.875rem;
-    content: "";
-    border-width: 3px;
-  }
+  position: absolute;
+  top: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: -0.875rem;
+  content: "";
+  border-width: 3px;
+}
 
 [dir="rtl"] .ajax-progress-fullscreen {
   box-shadow: 0 -0.25rem 0.625rem rgba(34, 35, 48, 0.1);
@@ -115,7 +115,7 @@
 .ajax-progress-fullscreen:before {
   animation: olivero-throbber 0.75s linear infinite;
   border-style: solid dotted solid solid;
-  border-color: #5C9EC8 transparent #5C9EC8 #5C9EC8;
+  border-color: #5c9ec8 transparent #5c9ec8 #5c9ec8;
   border-radius: 50%;
 }
 

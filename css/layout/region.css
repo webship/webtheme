@@ -4,19 +4,19 @@
  */
 
 .region > * {
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 38.88889rem) {
 
-.region > * {
-    margin-bottom: 2rem
-}
+  .region > * {
+    margin-bottom: 2rem;
   }
+}
 
 @media (min-width: 55.55556rem) {
 
-.region > * {
-    margin-bottom: 3rem
-}
+  .region > * {
+    margin-bottom: 3rem;
   }
+}

@@ -3,9 +3,7 @@
  * Visual styles for autocomplete input field.
  */
 
-@import "../base/variables.pcss.css";
-
-:root {
+@import "../base/variables.pcss.css"; :root {
   --autocomplete-search-icon-url: url("../../images/magnifying-glass.svg");
   --autocomplete-throbber-icon-url: url("../../images/throbber.svg");
   --autocomplete-throbber-IE-icon-url: url("../../images/throbber.gif");
@@ -30,12 +28,7 @@ html.js .form-autocomplete {
 }
 
 html.js[dir="rtl"] .form-autocomplete {
-  background-color: var(--color--white);
-  background-image: var(--autocomplete-search-icon-url);
-  background-repeat: no-repeat;
-  background-position: left var(--autocomplete-icon-right-offset) center;
-
-  &:disabled {
+  background-color: var(--color--white);   background-image: var(--autocomplete-search-icon-url);   background-repeat: no-repeat;   background-position: left var(--autocomplete-icon-right-offset) center;   &:disabled {
     background-color: var(--color--gray-90);
   }
 

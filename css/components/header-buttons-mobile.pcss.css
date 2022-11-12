@@ -6,10 +6,7 @@
 @import "../base/variables.pcss.css";
 
 .mobile-buttons {
-  margin-block-start: var(--sp0-5);
-  margin-inline-start: auto;
-
-  @media (--sm) {
+  margin-block-start: var(--sp0-5);   margin-inline-start: auto;   @media (--sm) {
     margin-block-start: var(--sp2);
   }
 

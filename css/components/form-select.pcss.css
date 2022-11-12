@@ -3,9 +3,7 @@
  * Select input elements.
  */
 
-@import "../base/variables.pcss.css";
-
-:root {
+@import "../base/variables.pcss.css"; :root {
   --form-element-select-icon: url("../../images/chevron-down.svg");
 }
 
@@ -27,10 +25,7 @@ select {
   appearance: none;
 
   &:focus {
-    border: solid 2px var(--color--blue-50);
-    outline: solid 2px var(--color--blue-50);
-
-    @supports (outline-style: double) {
+    border: solid 2px var(--color--blue-50);     outline: solid 2px var(--color--blue-50);     @supports (outline-style: double) {
       border-width: 1px;
       outline-width: 6px;
       outline-style: double;
@@ -49,9 +44,7 @@ select {
   }
 
   &.error {
-    border: solid 2px var(--color--red);
-
-    &:focus {
+    border: solid 2px var(--color--red);     &:focus {
       outline-color: var(--color--red);
     }
   }

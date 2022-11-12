@@ -3,9 +3,7 @@
  * Collapsible details.
  */
 
-@import "../base/variables.pcss.css";
-
-:root {
+@import "../base/variables.pcss.css"; :root {
   --details-border-width: 1px;
   --details-summary-transition: background-color 0.12s ease-in-out;
 }
@@ -104,11 +102,7 @@
 
 /* Collapse processed for non-supporting browsers like IE or Edge */
 .collapse-processed > .olivero-details__summary {
-  padding-block: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-
-  &:before {
+  padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   &:before {
     content: none;
   }
 
@@ -146,9 +140,7 @@
 
 /* Details content wrapper */
 .olivero-details__wrapper {
-  margin: var(--sp1);
-
-  @media (--lg) {
+  margin: var(--sp1);   @media (--lg) {
     margin-block-start: var(--sp1-5);
     margin-block-end: var(--sp1-5);
     margin-inline-start: var(--sp2);

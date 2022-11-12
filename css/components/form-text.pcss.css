@@ -33,10 +33,7 @@ textarea {
   appearance: none;
 
   &:focus {
-    border: solid 2px var(--color--blue-50);
-    outline: solid 2px var(--color--blue-50);
-
-    @supports (outline-style: double) {
+    border: solid 2px var(--color--blue-50);     outline: solid 2px var(--color--blue-50);     @supports (outline-style: double) {
       border-width: 1px;
       outline-width: 6px;
       outline-style: double;
@@ -54,9 +51,7 @@ textarea {
   }
 
   &.error {
-    border: solid 2px var(--color--red);
-
-    &:focus {
+    border: solid 2px var(--color--red);     &:focus {
       outline-color: var(--color--red);
       outline-offset: -2px;
     }

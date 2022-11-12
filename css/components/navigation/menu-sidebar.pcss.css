@@ -6,9 +6,7 @@
 @import "../../base/variables.pcss.css";
 
 .menu--sidebar {
-  list-style: none;
-
-  & .menu {
+  list-style: none;   & .menu {
     list-style: none;
   }
 
@@ -38,11 +36,7 @@
   }
 
   & .menu__link--link {
-    text-decoration: none;
-    color: var(--color--gray-0);
-    font-weight: 600;
-
-    &:hover {
+    text-decoration: none;     color: var(--color--gray-0);     font-weight: 600;     &:hover {
       color: var(--color--blue-50);
     }
   }

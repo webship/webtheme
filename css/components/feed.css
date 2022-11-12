@@ -7,12 +7,12 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #5d7585
+  color: #5d7585;
 }
 
 .feed-icon:hover {
-    color: #5C9EC8;
-  }
+  color: #5c9ec8;
+}
 
 .feed-icon__label {
   flex-shrink: 0;
@@ -22,11 +22,11 @@
 }
 
 [dir="ltr"] .feed-icon__icon {
-  margin-left: 0.5rem
+  margin-left: 0.5rem;
 }
 
 [dir="rtl"] .feed-icon__icon {
-  margin-right: 0.5rem
+  margin-right: 0.5rem;
 }
 
 .feed-icon__icon {
@@ -37,10 +37,10 @@
   width: 1.5rem;
   height: 1.5rem;
   color: #fff;
-  background-color: #5C9EC8
+  background-color: #5c9ec8;
 }
 
 .feed-icon__icon svg {
-    vertical-align: top;
-    fill: currentColor;
-  }
+  vertical-align: top;
+  fill: currentColor;
+}

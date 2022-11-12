@@ -3,9 +3,7 @@
  * Responsive styles for views grid horizontal layout.
  */
 
-@import "../base/variables.pcss.css";
-
-:root {
+@import "../base/variables.pcss.css"; :root {
   --views-grid-layout-gap: var(--sp);
 }
 
@@ -27,10 +25,7 @@
 
       /* 2 column layout. */
       @media (--md) {
-        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));
-        margin-inline-end: var(--views-grid-layout-gap);
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));         margin-inline-end: var(--views-grid-layout-gap);         &:nth-child(2n) {
           margin-inline-end: 0;
         }
       }
@@ -44,19 +39,14 @@
 
       /* 2 column layout. */
       @media (--md) {
-        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));
-        margin-inline-end: var(--views-grid-layout-gap);
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));         margin-inline-end: var(--views-grid-layout-gap);         &:nth-child(2n) {
           margin-inline-end: 0;
         }
       }
 
       /* 3 column layout. */
       @media (--lg) {
-        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));         &:nth-child(2n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -74,19 +64,14 @@
 
       /* 2 column layout. */
       @media (--md) {
-        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));
-        margin-inline-end: var(--views-grid-layout-gap);
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));         margin-inline-end: var(--views-grid-layout-gap);         &:nth-child(2n) {
           margin-inline-end: 0;
         }
       }
 
       /* 4 column layout. */
       @media (--lg) {
-        flex-basis: calc(100% / 4 - (((4 - 1) / 4) * var(--views-grid-layout-gap)));
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 4 - (((4 - 1) / 4) * var(--views-grid-layout-gap)));         &:nth-child(2n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -104,19 +89,14 @@
 
       /* 2 column layout. */
       @media (--sm) {
-        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));
-        margin-inline-end: var(--views-grid-layout-gap);
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));         margin-inline-end: var(--views-grid-layout-gap);         &:nth-child(2n) {
           margin-inline-end: 0;
         }
       }
 
       /* 3 column layout. */
       @media (--md) {
-        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));         &:nth-child(2n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -127,9 +107,7 @@
 
       /* 5 column layout. */
       @media (--lg) {
-        flex-basis: calc(100% / 5 - (((5 - 1) / 5) * var(--views-grid-layout-gap)));
-
-        &:nth-child(3n) {
+        flex-basis: calc(100% / 5 - (((5 - 1) / 5) * var(--views-grid-layout-gap)));         &:nth-child(3n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -147,19 +125,14 @@
 
       /* 2 column layout. */
       @media (--sm) {
-        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));
-        margin-inline-end: var(--views-grid-layout-gap);
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));         margin-inline-end: var(--views-grid-layout-gap);         &:nth-child(2n) {
           margin-inline-end: 0;
         }
       }
 
       /* 3 column layout. */
       @media (--md) {
-        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));         &:nth-child(2n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -170,9 +143,7 @@
 
       /* 6 column layout. */
       @media (--lg) {
-        flex-basis: calc(100% / 6 - (((6 - 1) / 6) * var(--views-grid-layout-gap)));
-
-        &:nth-child(3n) {
+        flex-basis: calc(100% / 6 - (((6 - 1) / 6) * var(--views-grid-layout-gap)));         &:nth-child(3n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -190,19 +161,14 @@
 
       /* 2 column layout. */
       @media (--sm) {
-        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));
-        margin-inline-end: var(--views-grid-layout-gap);
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));         margin-inline-end: var(--views-grid-layout-gap);         &:nth-child(2n) {
           margin-inline-end: 0;
         }
       }
 
       /* 3 column layout. */
       @media (--md) {
-        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 3 - (((3 - 1) / 3) * var(--views-grid-layout-gap)));         &:nth-child(2n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -213,9 +179,7 @@
 
       /* 7 column layout. */
       @media (--lg) {
-        flex-basis: calc(100% / 7 - (((7 - 1) / 7) * var(--views-grid-layout-gap)));
-
-        &:nth-child(3n) {
+        flex-basis: calc(100% / 7 - (((7 - 1) / 7) * var(--views-grid-layout-gap)));         &:nth-child(3n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -233,19 +197,14 @@
 
       /* 2 column layout. */
       @media (--sm) {
-        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));
-        margin-inline-end: var(--views-grid-layout-gap);
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 2 - (((2 - 1) / 2) * var(--views-grid-layout-gap)));         margin-inline-end: var(--views-grid-layout-gap);         &:nth-child(2n) {
           margin-inline-end: 0;
         }
       }
 
       /* 4 column layout. */
       @media (--md) {
-        flex-basis: calc(100% / 4 - (((4 - 1) / 4) * var(--views-grid-layout-gap)));
-
-        &:nth-child(2n) {
+        flex-basis: calc(100% / 4 - (((4 - 1) / 4) * var(--views-grid-layout-gap)));         &:nth-child(2n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 
@@ -256,9 +215,7 @@
 
       /* 8 column layout. */
       @media (--lg) {
-        flex-basis: calc(100% / 8 - (((8 - 1) / 8) * var(--views-grid-layout-gap)));
-
-        &:nth-child(4n) {
+        flex-basis: calc(100% / 8 - (((8 - 1) / 8) * var(--views-grid-layout-gap)));         &:nth-child(4n) {
           margin-inline-end: var(--views-grid-layout-gap);
         }
 

@@ -3,17 +3,13 @@
  * Comment section and individual comments.
  */
 
-@import "../base/variables.pcss.css";
-
-:root {
+@import "../base/variables.pcss.css"; :root {
   --comment-indentation: var(--sp2);
   --comment-indentation--md: var(--sp4);
 }
 
 .comment--level-1 {
-  border-block-start: 2px solid var(--color--gray-80);
-
-  & ~ .comment--level-1 {
+  border-block-start: 2px solid var(--color--gray-80);   & ~ .comment--level-1 {
     margin-block-start: var(--sp2);
   }
 }
@@ -25,24 +21,7 @@
 }
 
 .comments__count {
-  position: relative;
-  display: inline-block;
-  min-width: 34px;
-  margin-block-start: 0;
-  margin-block-end: var(--sp0-5);
-  margin-inline-start: var(--sp);
-  margin-inline-end: var(--sp);
-  padding-block: 0;
-  padding-inline-start: 5px;
-  padding-inline-end: 5px;
-  text-align: center;
-  color: var(--color--white);
-  border-radius: 2px;
-  background-color: var(--color--blue-20);
-  font-size: 11px;
-  line-height: 21px;
-
-  &:after {
+  position: relative;   display: inline-block;   min-width: 34px;   margin-block-start: 0;   margin-block-end: var(--sp0-5);   margin-inline-start: var(--sp);   margin-inline-end: var(--sp);   padding-block: 0;   padding-inline-start: 5px;   padding-inline-end: 5px;   text-align: center;   color: var(--color--white);   border-radius: 2px;   background-color: var(--color--blue-20);   font-size: 11px;   line-height: 21px;   &:after {
     position: absolute;
     inset-block-end: -7px;
     inset-inline-start: 8px;
@@ -63,19 +42,13 @@
 }
 
 .comment {
-  position: relative;
-  padding-block-start: var(--sp2);
-  padding-inline-start: var(--sp3);
-
-  @media (--grid-md) {
+  position: relative;   padding-block-start: var(--sp2);   padding-inline-start: var(--sp3);   @media (--grid-md) {
     padding-inline-start: 0;
   }
 }
 
 .comment__text-content {
-  font-size: 16px;
-
-  & blockquote {
+  font-size: 16px;   & blockquote {
     font-size: 21px;
     line-height: var(--sp2);
   }
@@ -91,12 +64,7 @@
 }
 
 .comment__links-link {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: var(--sp);
-
-  &:hover {
+  text-decoration: none;   font-size: 14px;   font-weight: bold;   line-height: var(--sp);   &:hover {
     text-decoration: underline;
   }
 }
@@ -107,15 +75,7 @@
 
 .add-comment__picture,
 .comment__picture {
-  position: absolute;
-  inset-inline-start: 0;
-  overflow: hidden;
-  width: var(--sp2);
-  height: var(--sp2);
-  border-radius: 50%;
-  background-color: var(--color--gray-80);
-
-  & *:not(img) {
+  position: absolute;   inset-inline-start: 0;   overflow: hidden;   width: var(--sp2);   height: var(--sp2);   border-radius: 50%;   background-color: var(--color--gray-80);   & *:not(img) {
     display: inherit;
     width: inherit;
     height: inherit;
@@ -127,7 +87,8 @@
     object-fit: cover;
 
     /* @TODO: create image-style for profile's avatar to have image squared by default. */
-    @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @media all and (-ms-high-contrast: active),
+      (-ms-high-contrast: none) {
       position: absolute;
       /* stylelint-disable csstools/use-logical */
       top: 50%;
@@ -161,13 +122,7 @@
 }
 
 .comment__author {
-  margin-inline-end: var(--sp);
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: var(--sp);
-
-  & a {
+  margin-inline-end: var(--sp);   font-family: var(--font-sans);   font-size: 16px;   font-weight: 700;   line-height: var(--sp);   & a {
     text-decoration: none;
   }
 }
@@ -187,12 +142,7 @@
     position: absolute;
     inset-block-start: var(--sp2);
     inset-inline-start: calc(-1 * var(--comment-indentation) - var(--sp)); /* Comment's padding-top */
-    width: 0;
-    height: 100%;
-    content: "";
-    border-inline-start: solid 1px var(--color--gray-80);
-
-    @media (--md) {
+    width: 0;     height: 100%;     content: "";     border-inline-start: solid 1px var(--color--gray-80);     @media (--md) {
       inset-inline-start: calc(-1 * var(--comment-indentation--md) + var(--sp));
     }
   }
@@ -203,23 +153,7 @@
 }
 
 .show-hide-btn {
-  margin-block-start: var(--sp2);
-  margin-block-end: 0;
-  margin-inline-start: var(--sp3);
-  margin-inline-end: 0;
-  padding-block: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  cursor: pointer;
-  color: var(--color--gray-10);
-  border: 0;
-  background: none;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 18px;
-  appearance: none;
-
-  &[aria-expanded="true"]:after {
+  margin-block-start: var(--sp2);   margin-block-end: 0;   margin-inline-start: var(--sp3);   margin-inline-end: 0;   padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   cursor: pointer;   color: var(--color--gray-10);   border: 0;   background: none;   font-size: 14px;   font-weight: 600;   line-height: 18px;   appearance: none;   &[aria-expanded="true"]:after {
     content: "\0020 -";
   }
 

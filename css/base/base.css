@@ -10,7 +10,7 @@
 }
 
 html {
-  font-family: "Zen Maru Gothic", "georgia", sans-serif;
+  font-family: "Zen Maru Gothic", georgia, sans-serif;
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -26,27 +26,27 @@ body {
 }
 
 body.is-fixed {
-    position: fixed;
-    overflow: hidden;
-    width: 100%;
-  }
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
 
 [dir="rtl"] body {
   background-position: top right;
 }
 
 a {
-  color: #0C7FC8
+  color: #0c7fc8;
 }
 
 a:hover {
-    color: #5C9EC8;
-  }
+  color: #5c9ec8;
+}
 
 a:focus {
-    outline: solid 2px currentColor;
-    outline-offset: 2px;
-  }
+  outline: solid 2px currentColor;
+  outline-offset: 2px;
+}
 
 button {
   font-family: inherit;
@@ -67,43 +67,43 @@ audio {
 h1 {
   letter-spacing: -0.01em;
   font-size: 1.55556rem;
-  line-height: 2rem
+  line-height: 2rem;
 }
 
 @media (min-width: 38.88889rem) {
 
-h1 {
+  h1 {
     font-size: 3.33333rem;
-    line-height: 4rem
-}
+    line-height: 4rem;
   }
+}
 
 h2 {
   letter-spacing: -0.01em;
   font-size: 1.33333rem;
-  line-height: 2rem
+  line-height: 2rem;
 }
 
 @media (min-width: 38.88889rem) {
 
-h2 {
+  h2 {
     font-size: 2rem;
-    line-height: 3rem
-}
+    line-height: 3rem;
   }
+}
 
 h3 {
   font-size: 1.11111rem;
-  line-height: 1.5rem
+  line-height: 1.5rem;
 }
 
 @media (min-width: 38.88889rem) {
 
-h3 {
+  h3 {
     font-size: 1.33333rem;
-    line-height: 2rem
-}
+    line-height: 2rem;
   }
+}
 
 h4 {
   font-size: 1rem;
@@ -129,22 +129,22 @@ h6 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   color: #0d1214;
-  font-family: "Zen Maru Gothic", "georgia", sans-serif;
-  font-weight: bold
+  font-family: "Zen Maru Gothic", georgia, sans-serif;
+  font-weight: bold;
 }
 
 @media (min-width: 38.88889rem) {
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: 2rem;
-    margin-bottom: 2rem
-}
+    margin-bottom: 2rem;
   }
+}
 
 [dir="ltr"] ul {
   margin-left: 1.5em;

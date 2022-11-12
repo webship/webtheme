@@ -3,9 +3,7 @@
  * Generic base elements.
  */
 
-@import "variables.pcss.css";
-
-*,
+@import "variables.pcss.css"; *,
 *:before,
 *:after {
   box-sizing: border-box;
@@ -38,9 +36,7 @@ body {
 }
 
 a {
-  color: var(--color--blue-20);
-
-  &:hover {
+  color: var(--color--blue-20);   &:hover {
     color: var(--color--blue-50);
   }
 
@@ -67,32 +63,21 @@ audio {
 }
 
 h1 {
-  letter-spacing: -0.01em;
-  font-size: 28px;
-  line-height: var(--sp2);
-
-  @media (--md) {
+  letter-spacing: -0.01em;   font-size: 28px;   line-height: var(--sp2);   @media (--md) {
     font-size: 60px;
     line-height: var(--sp4);
   }
 }
 
 h2 {
-  letter-spacing: -0.01em;
-  font-size: 24px;
-  line-height: var(--sp2);
-
-  @media (--md) {
+  letter-spacing: -0.01em;   font-size: 24px;   line-height: var(--sp2);   @media (--md) {
     font-size: 36px;
     line-height: var(--sp3);
   }
 }
 
 h3 {
-  font-size: 20px;
-  line-height: var(--sp1-5);
-
-  @media (--md) {
+  font-size: 20px;   line-height: var(--sp1-5);   @media (--md) {
     font-size: 24px;
     line-height: var(--sp2);
   }
@@ -119,12 +104,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-block: var(--sp);
-  color: var(--color--gray-0);
-  font-family: var(--font-sans);
-  font-weight: bold;
-
-  @media (--md) {
+  margin-block: var(--sp);   color: var(--color--gray-0);   font-family: var(--font-sans);   font-weight: bold;   @media (--md) {
     margin-block: var(--sp2);
   }
 }

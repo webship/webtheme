@@ -9,20 +9,7 @@
   display: none;
 
   @media (--nav) {
-    display: flex;
-    visibility: hidden;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: var(--content-left);
-    height: var(--sp6);
-    cursor: pointer;
-    pointer-events: auto;
-    color: var(--color--white);
-    border: 0;
-    background-color: var(--color--blue-50);
-
-    &:focus {
+    display: flex;     visibility: hidden;     flex-shrink: 0;     align-items: center;     justify-content: center;     width: var(--content-left);     height: var(--sp6);     cursor: pointer;     pointer-events: auto;     color: var(--color--white);     border: 0;     background-color: var(--color--blue-50);     &:focus {
       outline: solid 2px currentColor;
       outline-offset: -4px;
     }
@@ -54,9 +41,7 @@ body.is-always-mobile-nav .wide-nav-expand {
     display: block;
     height: 0;
     /* Intentionally not using CSS logical properties. */
-    border-top: solid 3px currentColor;
-
-    &:nth-child(1) {
+    border-top: solid 3px currentColor;     &:nth-child(1) {
       position: absolute;
       inset-block-start: 0;
       inset-inline-start: 0;

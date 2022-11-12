@@ -1,20 +1,17 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - help
   theme:
-    - olivero
     - webtheme
-id: webtheme_help
+id: webtheme_page_title
 theme: webtheme
 region: content_above
-weight: 0
+weight: -5
 provider: null
-plugin: help_block
+plugin: page_title_block
 settings:
-  id: help_block
-  label: Help
-  provider: help
+  id: page_title_block
+  label: 'Page title'
   label_display: '0'
+  provider: core
 visibility: {  }

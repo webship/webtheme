@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - olivero
     - webtheme
 id: webtheme_primary_local_tasks
 theme: webtheme
@@ -13,8 +12,8 @@ plugin: local_tasks_block
 settings:
   id: local_tasks_block
   label: 'Primary tabs'
-  provider: core
   label_display: '0'
+  provider: core
   primary: true
   secondary: false
 visibility: {  }

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:webtheme_copyright:e524b434-01da-4807-9726-a5d9a320a3ed'
+  module:
+    - block_content
+  theme:
+    - webtheme
+id: webtheme_copyright
+theme: webtheme
+region: footer_top
+weight: -9
+provider: null
+plugin: 'block_content:e524b434-01da-4807-9726-a5d9a320a3ed'
+settings:
+  id: 'block_content:e524b434-01da-4807-9726-a5d9a320a3ed'
+  label: 'Webtheme copyright'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

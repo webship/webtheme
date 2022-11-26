@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update for Webtheme Default Content module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function webtheme_default_content_install() {
+
+  $basic_html = \Drupal::configFactory()->getEditable('filter.format.basic_html');
+
+  if (isset($basic_html)) {
+    $basic_html_filters = $basic_html->get('filters');
+
+    if (isset($basic_html_filters) && is_array($basic_html_filters)) {
+      $basic_html_filters['token_filter'] = [
+        'id' => 'token_filter',
+        'provider' => 'token_filter',
+        'status' => TRUE,
+        'weight' => 0,
+        'settings' => ['replace_empty' => '1'],
+        ];
+      $basic_html->set('filters', $basic_html_filters)->save(TRUE);
+    }
+  }
+
+  $full_html = \Drupal::configFactory()->getEditable('filter.format.full_html');
+
+  if (isset($full_html)) {
+    $full_html_filters = $full_html->get('filters');
+
+    if (isset($full_html_filters) && is_array($full_html_filters)) {
+      $full_html_filters['token_filter'] = [
+        'id' => 'token_filter',
+        'provider' => 'token_filter',
+        'status' => TRUE,
+        'weight' => 0,
+        'settings' => ['replace_empty' => '1'],
+        ];
+      $full_html->set('filters', $full_html_filters)->save(TRUE);
+    }
+  }
+
+  $restricted_html = \Drupal::configFactory()->getEditable('filter.format.restricted_html');
+
+  if (isset($restricted_html)) {
+    $restricted_html_filters = $restricted_html->get('filters');
+
+    if (isset($restricted_html_filters) && is_array($restricted_html_filters)) {
+      $restricted_html_filters['token_filter'] = [
+        'id' => 'token_filter',
+        'provider' => 'token_filter',
+        'status' => TRUE,
+        'weight' => 0,
+        'settings' => ['replace_empty' => '1'],
+        ];
+      $restricted_html->set('filters', $restricted_html_filters)->save(TRUE);
+    }
+  }
+
+}

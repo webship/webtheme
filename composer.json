@@ -23,6 +23,7 @@
   "require": {
     "drupal/core": "~9.0 || ~10.0",
     "drupal/token_filter": "~1.0",
-    "drupal/default_content": "~2.0"
+    "drupal/default_content": "~2.0",
+    "drupal/link_attributes": "~1.0"
   }
 }

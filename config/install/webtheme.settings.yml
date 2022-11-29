@@ -8,7 +8,7 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: logo.svg
+  path: themes/contrib/webtheme/logo-blue.svg
   use_default: false
 mobile_menu_all_widths: 0
 site_branding_bg_color: default

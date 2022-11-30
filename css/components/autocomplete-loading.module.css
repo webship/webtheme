@@ -22,27 +22,24 @@ html.js .form-autocomplete {
 }
 
 html.js .form-autocomplete:disabled {
-  background-color: #f1f4f7;
-}
+    background-color: #f1f4f7;
+  }
 
 html.js .form-autocomplete.ui-autocomplete-loading {
-  background: url("../../images/throbber.svg") no-repeat right 18px center;
-}
+    background: url("../../images/throbber.svg") no-repeat right 18px center;
+  }
 
 html.js[dir="rtl"] .form-autocomplete {
-  background-color: #fff;
-  background-image: url("../../images/magnifying-glass.svg");
-  background-repeat: no-repeat;
-  background-position: left 18px center;
+  background-color: #fff;   background-image: url("../../images/magnifying-glass.svg");   background-repeat: no-repeat;   background-position: left 18px center
 }
 
 html.js[dir="rtl"] .form-autocomplete:disabled {
-  background-color: #f1f4f7;
-}
+    background-color: #f1f4f7;
+  }
 
 html.js[dir="rtl"] .form-autocomplete.ui-autocomplete-loading {
-  background: url("../../images/throbber.svg") no-repeat left 18px center;
-}
+    background: url("../../images/throbber.svg") no-repeat left 18px center;
+  }
 
 /* IE11 does not animate inline SVG. */
 

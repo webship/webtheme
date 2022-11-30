@@ -3,71 +3,47 @@
  * Buttons.
  */
 
-[dir="ltr"] .button {
-  margin-left: 0;
+[dir="ltr"] .button {   margin-left: 0
 }
 
-[dir="rtl"] .button {
-  margin-right: 0;
+[dir="rtl"] .button {   margin-right: 0
 }
 
-[dir="ltr"] .button {
-  margin-right: 1rem;
+[dir="ltr"] .button {   margin-right: 1rem
 }
 
-[dir="rtl"] .button {
-  margin-left: 1rem;
+[dir="rtl"] .button {   margin-left: 1rem
 }
 
 .button {
-  display: inline-block;
-  height: 3rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-top: calc(1.5rem - var(--line-height-s)/2);
-  padding-right: 1.5rem;
-  padding-bottom: calc(1.5rem - var(--line-height-s)/2);
-  padding-left: 1.5rem;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  color: #0c7fc8;
-  border: solid 2px #0c7fc8;
-  border-radius: 0.16667rem;
-  background-color: #fff;
-  font-family: "Zen Maru Gothic", georgia, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-font-smoothing: antialiased;
+  display: inline-block;   height: 3rem;   margin-top: 1rem;   margin-bottom: 1rem;   padding-top: calc(1.5rem - var(--line-height-s)/2);   padding-bottom: calc(1.5rem - var(--line-height-s)/2);   padding-left: 1.5rem;   padding-right: 1.5rem;   cursor: pointer;   text-align: center;   text-decoration: none;   color: #0c7fc8;   border: solid 2px #0c7fc8;   border-radius: 0.16667rem;   background-color: #fff;   font-family: "Zen Maru Gothic", "georgia", sans-serif;   font-size: 0.9rem;   font-weight: 700;   -webkit-appearance: none;   appearance: none;   -webkit-font-smoothing: antialiased
 }
 
 .button:hover,
-.button:focus {
-  text-decoration: none;
-  color: #004e80;
-  border: solid 2px #004e80;
-  background: none;
-  font-weight: 700;
-}
+  .button:focus {
+    text-decoration: none;
+    color: #004e80;
+    border: solid 2px #004e80;
+    background: none;
+    font-weight: 700;
+  }
 
 .button:focus {
-  outline: 2px solid #c5d9e5;
-  outline-offset: 2px;
-}
+    outline: 2px solid #c5d9e5;
+    outline-offset: 2px;
+  }
 
 .button:active {
-  color: #0c7fc8;
-  border-color: #0c7fc8;
-}
+    color: #0c7fc8;
+    border-color: #0c7fc8;
+  }
 
 .button:disabled,
-.button.is-disabled {
-  cursor: default;
-  color: #d7e1e8;
-  border-color: #d7e1e8;
-}
+  .button.is-disabled {
+    cursor: default;
+    color: #d7e1e8;
+    border-color: #d7e1e8;
+  }
 
 .button {
 
@@ -79,35 +55,35 @@
 
 @supports (display: inline-flex) {
 
-  .button {
+.button {
     display: inline-flex;
     align-items: center;
 
     /* Top padding accounts for font not being vertically centered within line-height. */
     padding-top: 1px;
-    padding-right: 1.5rem;
     padding-bottom: 0;
     padding-left: 1.5rem;
-    line-height: var(--line-height-s);
-  }
+    padding-right: 1.5rem;
+    line-height: var(--line-height-s)
 }
+  }
 
 /* No margin if is part of a menu. */
 
 [dir="ltr"] .menu .button {
-  margin-left: 0;
+  margin-left: 0
 }
 
 [dir="rtl"] .menu .button {
-  margin-right: 0;
+  margin-right: 0
 }
 
 [dir="ltr"] .menu .button {
-  margin-right: 0;
+  margin-right: 0
 }
 
 [dir="rtl"] .menu .button {
-  margin-left: 0;
+  margin-left: 0
 }
 
 .menu .button {
@@ -118,65 +94,63 @@
 .button--small {
   height: 2.5rem;
   padding-top: calc(1.25rem - var(--line-height-s)/2);
-  padding-right: 1rem;
   padding-bottom: calc(1.25rem - var(--line-height-s)/2);
   padding-left: 1rem;
+  padding-right: 1rem;
   font-size: 1rem;
   line-height: normal;
 }
 
 .button--primary {
-  color: #fff;
-  background-color: #0c7fc8;
+  color: #fff;   background-color: #0c7fc8
 }
 
 .button--primary:hover,
-.button--primary:focus {
-  color: #fff;
-  border-color: #004e80;
-  background-color: #004e80;
-}
+  .button--primary:focus {
+    color: #fff;
+    border-color: #004e80;
+    background-color: #004e80;
+  }
 
 .button--primary:active {
-  color: #fff;
-  background-color: #0c7fc8;
-}
+    color: #fff;
+    background-color: #0c7fc8;
+  }
 
 .button--primary:disabled,
-.button--primary.is-disabled {
-  color: #fff;
-  background-color: #d7e1e8;
-}
+  .button--primary.is-disabled {
+    color: #fff;
+    background-color: #d7e1e8;
+  }
 
 .button--icon-back {
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex;   align-items: center
 }
 
 [dir="ltr"] .button--icon-back:before {
-  margin-right: 0.5em;
+    margin-right: 0.5em
 }
 
 [dir="rtl"] .button--icon-back:before {
-  margin-left: 0.5em;
+    margin-left: 0.5em
 }
 
 [dir="ltr"] .button--icon-back:before {
-  border-left: solid 2px currentColor;
+    border-left: solid 2px currentColor
 }
 
 [dir="rtl"] .button--icon-back:before {
-  border-right: solid 2px currentColor;
+    border-right: solid 2px currentColor
 }
 
 .button--icon-back:before {
-  display: block;
-  width: 0.5em;
-  height: 0.5em;
-  content: "";
-  transform: rotate(45deg); /* LTR */
-  border-bottom: solid 2px currentColor;
-}
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    content: "";
+    transform: rotate(45deg); /* LTR */
+    border-bottom: solid 2px currentColor;
+  }
 
 [dir="rtl"] .button--icon-back:before {
   transform: rotate(-45deg);

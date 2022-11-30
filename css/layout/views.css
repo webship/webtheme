@@ -4,16 +4,16 @@
  */
 
 .view > * {
-  margin-bottom: 2rem;
-}
+    margin-bottom: 2rem
+  }
 
 .view > *:last-child {
-  margin-bottom: 0;
-}
+      margin-bottom: 0;
+    }
 
 @media (min-width: 38.88889rem) {
 
-  .view > * {
-    margin-bottom: 3rem;
+.view > * {
+      margin-bottom: 3rem
   }
-}
+    }

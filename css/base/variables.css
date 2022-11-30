@@ -35,9 +35,7 @@
     as they are processed by postcss/postcss-custom-properties (for IE11 compatibility),
     which does not support that functionality. Therefore, we need a separate custom
     property for each breakpoint. 😭
-  */
-
-  /* Approximate width of a scrollbar. Doesn't have to be perfect. */
+  */ /* Approximate width of a scrollbar. Doesn't have to be perfect. */
 
   /* Grid gap across various breakpoints. */
 
@@ -49,97 +47,15 @@
 
   /* Width of a grid column at various breakpoints */
 
-  /* Layout helpers */
+  /* Layout helpers */ /* Black */ /* Black 1 */ /* Black 2 */ /* Black 3 */ /* Gray Dark */ /* Gray Dark 2 */ /* Gray medium */ /* Gray medium 1 */ /* Gray medium 2 */ /* Black 4 */ /* Gray light */ /* Gray light 1 */ /* Gray light 2 */
 
-  /* Black */
+  /* Blue colors */ /* Blue dark */ /* Blue dark 2 */ /* Blue medium */ /* Blue medium 2 */ /* Blue bright */ /* Blue bright 5 */
 
-  /* Black 1 */
+  /* Green colors */ /* green dark */ /* green dark 2 */ /* green medium */ /* green medium 2 */ /* green bright */ /* green bright 5 */
 
-  /* Black 2 */
+  /* Yellow colors */ /* yellow dark */ /* yellow dark 2 */ /* yellow medium */ /* yellow medium 2 */ /* yellow bright */ /* yellow bright 5 */
 
-  /* Black 3 */
-
-  /* Gray Dark */
-
-  /* Gray Dark 2 */
-
-  /* Gray medium */
-
-  /* Gray medium 1 */
-
-  /* Gray medium 2 */
-
-  /* Black 4 */
-
-  /* Gray light */
-
-  /* Gray light 1 */
-
-  /* Gray light 2 */
-
-  /* Blue colors */
-
-  /* Blue dark */
-
-  /* Blue dark 2 */
-
-  /* Blue medium */
-
-  /* Blue medium 2 */
-
-  /* Blue bright */
-
-  /* Blue bright 5 */
-
-  /* Green colors */
-
-  /* green dark */
-
-  /* green dark 2 */
-
-  /* green medium */
-
-  /* green medium 2 */
-
-  /* green bright */
-
-  /* green bright 5 */
-
-  /* Yellow colors */
-
-  /* yellow dark */
-
-  /* yellow dark 2 */
-
-  /* yellow medium */
-
-  /* yellow medium 2 */
-
-  /* yellow bright */
-
-  /* yellow bright 5 */
-
-  /* Red colors */
-
-  /* red dark */
-
-  /* red dark 2 */
-
-  /* red medium */
-
-  /* red medium 2 */
-
-  /* red bright */
-
-  /* red bright 5 */
-
-  /* White */
-
-  /* Red */
-
-  /* Gold */
-
-  /* Green */
+  /* Red colors */ /* red dark */ /* red dark 2 */ /* red medium */ /* red medium 2 */ /* red bright */ /* red bright 5 */ /* White */ /* Red */ /* Gold */ /* Green */
 
   /* Header */
 

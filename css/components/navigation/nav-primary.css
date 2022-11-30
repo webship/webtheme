@@ -9,42 +9,35 @@
 }
 
 .primary-nav__menu-item {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem
 }
 
 .primary-nav__menu-item:last-child {
-  margin-bottom: 0;
-}
+    margin-bottom: 0;
+  }
 
 .primary-nav__menu-item.primary-nav__menu-item--has-children {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+    display: flex;     flex-wrap: wrap;     justify-content: space-between
+  }
 
 .primary-nav__menu-item.primary-nav__menu-item--has-children .primary-nav__menu-link--link,
-.primary-nav__menu-item.primary-nav__menu-item--has-children .primary-nav__menu-link--nolink {
-  /* Ensure that long text doesn't make the mobile expand button wrap. */
-  flex-basis: calc(100% - 3rem);
-}
+    .primary-nav__menu-item.primary-nav__menu-item--has-children .primary-nav__menu-link--nolink {
+      /* Ensure that long text doesn't make the mobile expand button wrap. */
+      flex-basis: calc(100% - 3rem);
+    }
 
 .primary-nav__menu-link {
-  flex-grow: 1;
-  text-decoration: none;
-  color: #0d1214;
-  font-size: 1.1111rem;
-  font-weight: bold;
-  line-height: 2rem;
+  flex-grow: 1;   text-decoration: none;   color: #0d1214;   font-size: 1.1111rem;   font-weight: bold;   line-height: 2rem
 }
 
 .primary-nav__menu-link:hover {
-  color: inherit;
-}
+    color: inherit;
+  }
 
 .primary-nav__menu-link:focus {
-  outline: auto 2px #5c9ec8;
-  outline-offset: 2px;
-}
+    outline: auto 2px #5c9ec8;
+    outline-offset: 2px;
+  }
 
 [dir="ltr"] .primary-nav__menu-link--nolink {
   padding-left: 0;
@@ -105,94 +98,86 @@
 }
 
 [dir="ltr"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children {
-  padding-right: 3rem;
+    padding-right: 3rem;
 }
 
 [dir="rtl"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children {
-  padding-left: 3rem;
+    padding-left: 3rem;
 }
 
 .primary-nav__menu-link--button.primary-nav__menu-link--has-children { /* Ensure text does not overlap icon. */
+  }
+
+[dir="ltr"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children:before,[dir="ltr"] 
+    .primary-nav__menu-link--button.primary-nav__menu-link--has-children:after {
+      right: 0.5rem;
 }
 
-[dir="ltr"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children:before,
-[dir="ltr"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children:after {
-  right: 0.5rem;
-}
-
-[dir="rtl"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children:before,
-[dir="rtl"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children:after {
-  left: 0.5rem;
+[dir="rtl"] .primary-nav__menu-link--button.primary-nav__menu-link--has-children:before,[dir="rtl"] 
+    .primary-nav__menu-link--button.primary-nav__menu-link--has-children:after {
+      left: 0.5rem;
 }
 
 .primary-nav__menu-link--button.primary-nav__menu-link--has-children:before,
-.primary-nav__menu-link--button.primary-nav__menu-link--has-children:after {
-  position: absolute;
-  top: 1.69444rem; /* Visually align button with menu link text. */
-  width: 1rem;
-  height: 0;
-  content: "";
-  /* Intentionally not using CSS logical properties. */
-  border-top: solid 1px #358fc8;
-}
+    .primary-nav__menu-link--button.primary-nav__menu-link--has-children:after {
+      position: absolute;
+      top: 1.69444rem; /* Visually align button with menu link text. */
+      width: 1rem;
+      height: 0;
+      content: "";
+      /* Intentionally not using CSS logical properties. */
+      border-top: solid 1px #358fc8;
+    }
 
 .primary-nav__menu-link--button.primary-nav__menu-link--has-children:after {
-  transition: opacity 0.2s;
-  transform: rotate(90deg);
-}
+      transition: opacity 0.2s;
+      transform: rotate(90deg);
+    }
 
 .primary-nav__menu-link--button.primary-nav__menu-link--has-children[aria-expanded="true"]:after {
-  opacity: 0;
+      opacity: 0;
+    }
+
+[dir="ltr"] .primary-nav__menu-link-inner {   padding-left: 0;
 }
 
-[dir="ltr"] .primary-nav__menu-link-inner {
-  padding-left: 0;
+[dir="rtl"] .primary-nav__menu-link-inner {   padding-right: 0;
 }
 
-[dir="rtl"] .primary-nav__menu-link-inner {
-  padding-right: 0;
+[dir="ltr"] .primary-nav__menu-link-inner {   padding-right: 0;
 }
 
-[dir="ltr"] .primary-nav__menu-link-inner {
-  padding-right: 0;
-}
-
-[dir="rtl"] .primary-nav__menu-link-inner {
-  padding-left: 0;
+[dir="rtl"] .primary-nav__menu-link-inner {   padding-left: 0;
 }
 
 .primary-nav__menu-link-inner {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  position: relative;   display: inline-flex;   align-items: center;   padding-top: 0.75rem;   padding-bottom: 0.75rem
 }
 
 [dir="ltr"] .primary-nav__menu-link-inner:after {
-  left: 0;
+    left: 0;
 }
 
 [dir="rtl"] .primary-nav__menu-link-inner:after {
-  right: 0;
+    right: 0;
 }
 
 .primary-nav__menu-link-inner:after {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 0;
-  content: "";
-  transition: transform 0.2s;
-  transform: scaleX(0);
-  transform-origin: left;
-  /* Intentionally not using CSS logical properties. */
-  border-top: solid 1px #358fc8;
-}
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    content: "";
+    transition: transform 0.2s;
+    transform: scaleX(0);
+    transform-origin: left;
+    /* Intentionally not using CSS logical properties. */
+    border-top: solid 1px #358fc8;
+  }
 
 .primary-nav__menu-link:hover .primary-nav__menu-link-inner:after {
-  transform: scaleX(0);
-}
+      transform: scaleX(0)
+  }
 
 /*
   Top level specific styles.
@@ -247,66 +232,55 @@
   Secondary menu specific styles.
 */
 
-[dir="ltr"] .primary-nav__menu--level-2 {
-  margin-left: -1rem;
+[dir="ltr"] .primary-nav__menu--level-2 {   margin-left: -1rem;
 }
 
-[dir="rtl"] .primary-nav__menu--level-2 {
-  margin-right: -1rem;
+[dir="rtl"] .primary-nav__menu--level-2 {   margin-right: -1rem;
 }
 
-[dir="ltr"] .primary-nav__menu--level-2 {
-  padding-left: 2.5rem;
+[dir="ltr"] .primary-nav__menu--level-2 {   padding-left: 2.5rem;
 }
 
-[dir="rtl"] .primary-nav__menu--level-2 {
-  padding-right: 2.5rem;
+[dir="rtl"] .primary-nav__menu--level-2 {   padding-right: 2.5rem;
 }
 
-[dir="ltr"] .primary-nav__menu--level-2 {
-  border-left: solid 18px #5c9ec8;
+[dir="ltr"] .primary-nav__menu--level-2 {   border-left: solid 18px #5c9ec8;
 }
 
-[dir="rtl"] .primary-nav__menu--level-2 {
-  border-right: solid 18px #5c9ec8;
+[dir="rtl"] .primary-nav__menu--level-2 {   border-right: solid 18px #5c9ec8;
 }
 
 .primary-nav__menu--level-2 {
-  visibility: hidden;
-  overflow: hidden;
-  flex-basis: 100%;
-  max-height: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  transition: opacity 0.2s, visibility 0.2s, max-height 0.2s;
-  opacity: 0;
+  visibility: hidden;   overflow: hidden;   flex-basis: 100%;   max-height: 0;   margin-top: 0;   margin-bottom: 0;   transition:     opacity 0.2s,
+    visibility 0.2s,
+    max-height 0.2s;   opacity: 0
 }
 
 .primary-nav__menu--level-2.is-active-menu-parent {
-  visibility: visible;
-  max-height: none;
-  margin-top: 1.5rem;
-  opacity: 1;
-}
+    visibility: visible;
+    max-height: none;
+    margin-top: 1.5rem;
+    opacity: 1;
+  }
 
 @media (min-width: 38.88889rem) {
 
-  [dir="ltr"] .primary-nav__menu--level-2 {
+[dir="ltr"] .primary-nav__menu--level-2 {
     margin-left: -3rem;
   }
 
-  [dir="rtl"] .primary-nav__menu--level-2 {
+[dir="rtl"] .primary-nav__menu--level-2 {
     margin-right: -3rem;
   }
 
-  [dir="ltr"] .primary-nav__menu--level-2 {
+[dir="ltr"] .primary-nav__menu--level-2 {
     padding-left: 3rem;
   }
 
-  [dir="rtl"] .primary-nav__menu--level-2 {
+[dir="rtl"] .primary-nav__menu--level-2 {
     padding-right: 3rem;
   }
-}
+  }
 
 /*
  * Olivero doesn't officially support nested tertiary submenus, but this
@@ -326,11 +300,11 @@
 }
 
 html:not(.js) .primary-nav__menu--level-2 {
-  visibility: visible;
-  max-height: none;
-  opacity: 1;
-}
+    visibility: visible;
+    max-height: none;
+    opacity: 1;
+  }
 
 [dir="rtl"] .primary-nav__menu-link-inner:after {
-  transform-origin: right;
-}
+      transform-origin: right;
+    }

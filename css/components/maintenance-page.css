@@ -4,8 +4,8 @@
  */
 
 .maintenance-page .main-content {
-  min-height: 80vh;
-}
+    min-height: 80vh;
+  }
 
 .maintenance-page-icon {
   display: block;

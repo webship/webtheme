@@ -13,220 +13,193 @@
 }
 
 [dir="ltr"] .breadcrumb:after {
-  right: -1rem;
+    right: -1rem
 }
 
 [dir="rtl"] .breadcrumb:after {
-  left: -1rem;
+    left: -1rem
 }
 
 .breadcrumb:after {
-  position: absolute;
-  top: 0;
-  width: 3rem;
-  height: 2rem;
-  content: "";
-  background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%) /* LTR */
-}
+    position: absolute;
+    top: 0;
+    width: 3rem;
+    height: 2rem;
+    content: "";
+    background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%) /* LTR */
+  }
 
 @media (min-width: 55.55556rem) {
 
-  .breadcrumb:after {
-    content: none;
+.breadcrumb:after {
+      content: none
   }
-}
+    }
 
 @media (min-width: 55.55556rem) {
 
-  .breadcrumb {
-    position: static;
-  }
+.breadcrumb {
+    position: static
 }
+  }
 
 [dir="rtl"] .breadcrumb:after {
   background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-[dir="ltr"] .breadcrumb__content {
-  margin-left: -0.5rem;
+[dir="ltr"] .breadcrumb__content {   margin-left: -0.5rem
 }
 
-[dir="rtl"] .breadcrumb__content {
-  margin-right: -0.5rem;
+[dir="rtl"] .breadcrumb__content {   margin-right: -0.5rem
 }
 
-[dir="ltr"] .breadcrumb__content {
-  margin-right: -1rem;
+[dir="ltr"] .breadcrumb__content {   margin-right: -1rem
 }
 
-[dir="rtl"] .breadcrumb__content {
-  margin-left: -1rem;
+[dir="rtl"] .breadcrumb__content {   margin-left: -1rem
 }
 
-[dir="ltr"] .breadcrumb__content {
-  padding-left: 0.5rem;
+[dir="ltr"] .breadcrumb__content {   padding-left: 0.5rem
 }
 
-[dir="rtl"] .breadcrumb__content {
-  padding-right: 0.5rem;
+[dir="rtl"] .breadcrumb__content {   padding-right: 0.5rem
 }
 
 .breadcrumb__content {
-  overflow: auto;
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto;   margin-top: -0.5rem;   margin-bottom: -0.5rem;   padding-top: 0.5rem;   padding-bottom: 0.5rem;   -webkit-overflow-scrolling: touch
 }
 
 @media (min-width: 55.55556rem) {
 
-  [dir="ltr"] .breadcrumb__content {
-    margin-right: 0;
+[dir="ltr"] .breadcrumb__content {
+    margin-right: 0
   }
 
-  [dir="rtl"] .breadcrumb__content {
-    margin-left: 0;
+[dir="rtl"] .breadcrumb__content {
+    margin-left: 0
   }
+  }
+
+[dir="ltr"] .breadcrumb__list {   margin-left: -1rem
 }
 
-[dir="ltr"] .breadcrumb__list {
-  margin-left: -1rem;
+[dir="rtl"] .breadcrumb__list {   margin-right: -1rem
 }
 
-[dir="rtl"] .breadcrumb__list {
-  margin-right: -1rem;
+[dir="ltr"] .breadcrumb__list {   margin-right: -1rem
 }
 
-[dir="ltr"] .breadcrumb__list {
-  margin-right: -1rem;
+[dir="rtl"] .breadcrumb__list {   margin-left: -1rem
 }
 
-[dir="rtl"] .breadcrumb__list {
-  margin-left: -1rem;
+[dir="ltr"] .breadcrumb__list {   padding-left: 1rem
 }
 
-[dir="ltr"] .breadcrumb__list {
-  padding-left: 1rem;
+[dir="rtl"] .breadcrumb__list {   padding-right: 1rem
 }
 
-[dir="rtl"] .breadcrumb__list {
-  padding-right: 1rem;
+[dir="ltr"] .breadcrumb__list {   padding-right: 0
 }
 
-[dir="ltr"] .breadcrumb__list {
-  padding-right: 0;
-}
-
-[dir="rtl"] .breadcrumb__list {
-  padding-left: 0;
+[dir="rtl"] .breadcrumb__list {   padding-left: 0
 }
 
 .breadcrumb__list {
-  overflow-x: auto;
-  width: max-content;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 1rem;
-  list-style: none;
-  white-space: nowrap;
+  overflow-x: auto;   width: max-content;   margin-top: 0;   margin-bottom: 0;   padding-top: 0;   padding-bottom: 1rem;   list-style: none;   white-space: nowrap
 }
 
 @media (min-width: 55.55556rem) {
 
-  [dir="ltr"] .breadcrumb__list {
-    margin-left: 0;
+[dir="ltr"] .breadcrumb__list {
+    margin-left: 0
   }
 
-  [dir="rtl"] .breadcrumb__list {
-    margin-right: 0;
+[dir="rtl"] .breadcrumb__list {
+    margin-right: 0
   }
 
-  [dir="ltr"] .breadcrumb__list {
-    margin-right: 0;
+[dir="ltr"] .breadcrumb__list {
+    margin-right: 0
   }
 
-  [dir="rtl"] .breadcrumb__list {
-    margin-left: 0;
+[dir="rtl"] .breadcrumb__list {
+    margin-left: 0
   }
 
-  [dir="ltr"] .breadcrumb__list {
-    padding-left: 0;
+[dir="ltr"] .breadcrumb__list {
+    padding-left: 0
   }
 
-  [dir="rtl"] .breadcrumb__list {
-    padding-right: 0;
+[dir="rtl"] .breadcrumb__list {
+    padding-right: 0
   }
 
-  .breadcrumb__list {
+.breadcrumb__list {
     overflow: visible;
     padding-bottom: 0;
-    white-space: normal;
-  }
+    white-space: normal
 }
+  }
 
 .breadcrumb__item {
-  display: inline-block;
+  display: inline-block
 }
 
 [dir="ltr"] .breadcrumb__item:nth-child(n+2):before {
-  margin-right: 1.11111rem;
-  margin-left: 0.88889rem;
+    margin-left: 0.88889rem;
+    margin-right: 1.11111rem
 }
 
 [dir="rtl"] .breadcrumb__item:nth-child(n+2):before {
-  margin-right: 0.88889rem;
-  margin-left: 1.11111rem;
+    margin-right: 0.88889rem;
+    margin-left: 1.11111rem
 }
 
 [dir="ltr"] .breadcrumb__item:nth-child(n+2):before {
-  border-right: 2px solid #5d7585;
+    border-right: 2px solid #5d7585
 }
 
 [dir="rtl"] .breadcrumb__item:nth-child(n+2):before {
-  border-left: 2px solid #5d7585;
+    border-left: 2px solid #5d7585
 }
 
 .breadcrumb__item:nth-child(n+2):before {
-  display: inline-block;
-  width: 0.44444rem;
-  height: 0.44444rem;
-  content: "";
-  transform: rotate(45deg); /* LTR */
-  border-top: 2px solid #5d7585;
-}
+    display: inline-block;
+    width: 0.44444rem;
+    height: 0.44444rem;
+    content: "";
+    transform: rotate(45deg); /* LTR */
+    border-top: 2px solid #5d7585;
+  }
 
 [dir="ltr"] .breadcrumb__item:last-child {
-  margin-right: 3rem;
+    margin-right: 3rem
 }
 
 [dir="rtl"] .breadcrumb__item:last-child {
-  margin-left: 3rem;
+    margin-left: 3rem
 }
 
 @media (min-width: 55.55556rem) {
 
-  [dir="ltr"] .breadcrumb__item:last-child {
-    margin-right: 0;
+[dir="ltr"] .breadcrumb__item:last-child {
+      margin-right: 0
   }
 
-  [dir="rtl"] .breadcrumb__item:last-child {
-    margin-left: 0;
+[dir="rtl"] .breadcrumb__item:last-child {
+      margin-left: 0
   }
-}
+    }
 
 [dir="rtl"] .breadcrumb__item:nth-child(n+2):before {
   transform: rotate(-45deg);
 }
 
 .breadcrumb__link {
-  text-decoration: none;
-  color: #0c7fc8;
+  text-decoration: none;   color: #0c7fc8
 }
 
 .breadcrumb__link:hover,
-.breadcrumb__link:focus {
-  text-decoration: underline;
-}
+  .breadcrumb__link:focus {
+    text-decoration: underline;
+  }

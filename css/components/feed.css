@@ -4,15 +4,12 @@
  */
 
 .feed-icon {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #5d7585;
+  display: flex;   align-items: center;   text-decoration: none;   color: #5d7585
 }
 
 .feed-icon:hover {
-  color: #5c9ec8;
-}
+    color: #5c9ec8;
+  }
 
 .feed-icon__label {
   flex-shrink: 0;
@@ -21,26 +18,17 @@
   font-weight: 600;
 }
 
-[dir="ltr"] .feed-icon__icon {
-  margin-left: 0.5rem;
+[dir="ltr"] .feed-icon__icon {   margin-left: 0.5rem
 }
 
-[dir="rtl"] .feed-icon__icon {
-  margin-right: 0.5rem;
+[dir="rtl"] .feed-icon__icon {   margin-right: 0.5rem
 }
 
 .feed-icon__icon {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  color: #fff;
-  background-color: #5c9ec8;
+  display: flex;   flex-shrink: 0;   align-items: center;   justify-content: center;   width: 1.5rem;   height: 1.5rem;   color: #fff;   background-color: #5c9ec8
 }
 
 .feed-icon__icon svg {
-  vertical-align: top;
-  fill: currentColor;
-}
+    vertical-align: top;
+    fill: currentColor;
+  }

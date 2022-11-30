@@ -4,263 +4,248 @@
  */
 
 .block-search-narrow {
-  margin-right: -1rem;
-  margin-bottom: 2rem;
   margin-left: -1rem;
-  background: #000;
+  margin-right: -1rem;   margin-bottom: 2rem;   background: #000
 }
 
 .block-search-narrow .search-block-form {
-  display: flex;
-}
+    display: flex;
+  }
 
 .block-search-narrow .form-item {
-  flex-grow: 1;
-  margin: 0;
-}
+    flex-grow: 1;
+    margin: 0;
+  }
 
 .block-search-narrow .form-actions {
-  margin: 0;
-}
+    margin: 0;
+  }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-  padding-left: 1rem;
+    padding-left: 1rem
 }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-  padding-right: 1rem;
+    padding-right: 1rem
 }
 
 [dir="ltr"] .block-search-narrow input[type="search"] {
-  padding-right: 1rem;
+    padding-right: 1rem
 }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-  padding-left: 1rem;
+    padding-left: 1rem
 }
 
 .block-search-narrow input[type="search"] {
-  width: calc(100% + 2rem);
-  height: 3rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: background-size 0.4s;
-  color: #fff;
-  border: solid 1px transparent;
-  background-color: transparent;
-  background-image: linear-gradient(#5c9ec8, #5c9ec8); /* Two values are needed for IE11 support. */
-  background-repeat: no-repeat;
-  background-position: bottom left; /* LTR */
-  background-size: 0% 0.27778rem;
-  box-shadow: none;
-  font-family: "Zen Maru Gothic", georgia, serif;
-  font-size: 0.88889rem;
-  -webkit-appearance: none;
-}
+    width: calc(100% + 2rem);
+    height: 3rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: background-size 0.4s;
+    color: #fff;
+    border: solid 1px transparent;
+    background-color: transparent;
+    background-image: linear-gradient(#5c9ec8, #5c9ec8); /* Two values are needed for IE11 support. */
+    background-repeat: no-repeat;
+    background-position: bottom left; /* LTR */
+    background-size: 0% 0.27778rem;     box-shadow: none;     font-family: "Zen Maru Gothic", "georgia", serif;     font-size: 0.88889rem;     -webkit-appearance: none
+  }
 
 .block-search-narrow input[type="search"]::-ms-clear {
-  width: 2.22222rem;
-  opacity: 0.5;
-}
+      width: 2.22222rem;
+      opacity: 0.5;
+    }
 
 .block-search-narrow input[type="search"]:focus {
-  outline: solid 4px transparent;
-  outline-offset: -4px;
-  background-size: 100% 0.27778rem
+      outline: solid 4px transparent;
+      outline-offset: -4px;
+      background-size: 100% 0.27778rem
 
-  /*
+      /*
         We normally indicate focus by animating background-image width. This isn't
         available in IE11 when in Windows high contrast mode.
       */
-}
+    }
 
 @media screen and (-ms-high-contrast: active) {
 
-  .block-search-narrow input[type="search"]:focus {
-    border-bottom-width: 5px;
-  }
-}
+.block-search-narrow input[type="search"]:focus {
+        border-bottom-width: 5px
+    }
+      }
 
 @media (min-width: 38.88889rem) {
 
-  [dir="ltr"] .block-search-narrow input[type="search"] {
-    padding-left: 2rem;
+[dir="ltr"] .block-search-narrow input[type="search"] {
+      padding-left: 2rem
   }
 
-  [dir="rtl"] .block-search-narrow input[type="search"] {
-    padding-right: 2rem;
+[dir="rtl"] .block-search-narrow input[type="search"] {
+      padding-right: 2rem
   }
 
-  [dir="ltr"] .block-search-narrow input[type="search"] {
-    padding-right: 2rem;
+[dir="ltr"] .block-search-narrow input[type="search"] {
+      padding-right: 2rem
   }
 
-  [dir="rtl"] .block-search-narrow input[type="search"] {
-    padding-left: 2rem;
+[dir="rtl"] .block-search-narrow input[type="search"] {
+      padding-left: 2rem
   }
 
-  .block-search-narrow input[type="search"] {
-    height: 4rem;
+.block-search-narrow input[type="search"] {
+      height: 4rem
   }
-}
+    }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-  margin-left: 0;
+    margin-left: 0
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-  margin-right: 0;
+    margin-right: 0
 }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-  margin-right: 0;
+    margin-right: 0
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-  margin-left: 0;
+    margin-left: 0
 }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-  padding-left: 0;
+    padding-left: 0
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-  padding-right: 0;
+    padding-right: 0
 }
 
 [dir="ltr"] .block-search-narrow .search-form__submit {
-  padding-right: 0;
+    padding-right: 0
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit {
-  padding-left: 0;
+    padding-left: 0
 }
 
 .block-search-narrow .search-form__submit {
-  position: relative;
-  overflow: hidden;
-  -ms-grid-row-align: stretch;
-  align-self: stretch;
-  width: 3rem;
-  height: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  cursor: pointer;
-  border-color: transparent;
-  background-color: transparent
+    position: relative;
+    overflow: hidden;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
+    width: 3rem;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    cursor: pointer;
+    border-color: transparent;
+    background-color: transparent
 
-  /*
+    /*
       When in Windows high contrast mode, FF will will not output either background
       images or SVGs that are nested directly within a <button> element, so we add a <span>.
     */
-}
+  }
 
 [dir="ltr"] .block-search-narrow .search-form__submit .icon--search {
-  left: 0;
+      left: 0
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit .icon--search {
-  right: 0;
+      right: 0
 }
 
 .block-search-narrow .search-form__submit .icon--search {
-  position: absolute;
-  top: 0;
-  display: block;
-  width: 100%; /* Width of the SVG background image. */
-  height: 100%;
-  pointer-events: none;
-  background-image: url("../../images/search--white.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-}
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 100%; /* Width of the SVG background image. */
+      height: 100%;       pointer-events: none;       background-image: url("../../images/search--white.svg");       background-repeat: no-repeat;       background-position: center;       background-size: auto
+    }
 
 [dir="ltr"] .block-search-narrow .search-form__submit .icon--search:after {
-  left: 0;
+        left: 0
 }
 
 [dir="rtl"] .block-search-narrow .search-form__submit .icon--search:after {
-  right: 0;
+        right: 0
 }
 
 .block-search-narrow .search-form__submit .icon--search:after {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 0;
-  content: "";
-  transition: transform 0.2s;
-  transform: scaleX(0);
-  transform-origin: left; /* LTR */
-  border-top: solid 5px #5c9ec8;
-}
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        content: "";
+        transition: transform 0.2s;
+        transform: scaleX(0);
+        transform-origin: left; /* LTR */
+        border-top: solid 5px #5c9ec8;
+      }
 
 @media (forced-colors: active) {
 
-  .block-search-narrow .search-form__submit .icon--search {
-    background: buttontext;
-    -webkit-mask-image: url("../../images/search--white.svg");
-    mask-image: url("../../images/search--white.svg");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-  }
-}
+.block-search-narrow .search-form__submit .icon--search {
+        background: buttontext;
+        -webkit-mask-image: url("../../images/search--white.svg");
+        mask-image: url("../../images/search--white.svg");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center
+    }
+      }
 
 .block-search-narrow .search-form__submit:focus {
-  outline: solid 4px transparent;
-  outline-offset: -4px;
-  box-shadow: none;
-}
+      outline: solid 4px transparent;       outline-offset: -4px;       box-shadow: none
+    }
 
 .block-search-narrow .search-form__submit:focus span:after {
-  transform: scaleX(1);
-}
+        transform: scaleX(1);
+      }
 
 @media screen and (-ms-high-contrast: active) {
 
-  .block-search-narrow .search-form__submit:focus {
-    border-bottom-width: 9px;
-  }
-
-  .block-search-narrow .search-form__submit:focus span:after {
-    content: none;
-  }
-}
+.block-search-narrow .search-form__submit:focus {
+        border-bottom-width: 9px
+    }         .block-search-narrow .search-form__submit:focus span:after {
+          content: none;
+        }
+      }
 
 @media (min-width: 38.88889rem) {
 
-  .block-search-narrow .search-form__submit {
-    width: 4.44444rem;
+.block-search-narrow .search-form__submit {
+      width: 4.44444rem
   }
-}
+    }
 
 @media screen and (-ms-high-contrast: active) {
 
-  .block-search-narrow .search-form__submit {
-    /* IE11's high contrast show will not show the background image, so we show the text. */
+.block-search-narrow .search-form__submit {
+      /* IE11's high contrast show will not show the background image, so we show the text. */
   }
-  .block-search-narrow .search-form__submit .visually-hidden {
-    position: static;
-    overflow: visible;
-    clip: auto;
-    width: auto;
-    height: auto;
-    text-align: center;
-  }
+      .block-search-narrow .search-form__submit .visually-hidden {
+        position: static;
+        overflow: visible;
+        clip: auto;
+        width: auto;
+        height: auto;
+        text-align: center;
+      }
 
-  .block-search-narrow .search-form__submit {
+.block-search-narrow .search-form__submit {
 
-    /* Edge's high contrast does show the background image, so we hide it. */
+      /* Edge's high contrast does show the background image, so we hide it. */
   }
-  .block-search-narrow .search-form__submit .icon--search {
-    display: none;
-  }
-}
+      .block-search-narrow .search-form__submit .icon--search {
+        display: none;
+      }
+    }
 
 .block-search-narrow {
 
@@ -269,34 +254,34 @@
 
 @media (min-width: 27.77778rem) {
 
-  [dir="ltr"] .block-search-narrow {
-    margin-left: 0;
+[dir="ltr"] .block-search-narrow {
+    margin-left: 0
   }
 
-  [dir="rtl"] .block-search-narrow {
-    margin-right: 0;
+[dir="rtl"] .block-search-narrow {
+    margin-right: 0
   }
 
-  [dir="ltr"] .block-search-narrow {
-    margin-right: 0;
+[dir="ltr"] .block-search-narrow {
+    margin-right: 0
   }
 
-  [dir="rtl"] .block-search-narrow {
-    margin-left: 0;
+[dir="rtl"] .block-search-narrow {
+    margin-left: 0
   }
-}
+  }
 
 @media (min-width: 66.66667rem) {
 
-  body:not(.is-always-mobile-nav) .block-search-narrow {
-    display: none;
-  }
+body:not(.is-always-mobile-nav) .block-search-narrow {
+    display: none
 }
+  }
 
 [dir="rtl"] .block-search-narrow input[type="search"] {
-  background-position: bottom right;
-}
+    background-position: bottom right;
+  }
 
 [dir="rtl"] .block-search-narrow .search-form__submit .icon--search:after {
-  transform-origin: right;
-}
+    transform-origin: right;
+  }

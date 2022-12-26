@@ -1,0 +1,95 @@
+/**
+ * @file
+ * Footer regions.
+ */
+
+.site-footer {
+  position: relative; /* stack above left social bar */
+  color: #fff;
+  background: #358fc8
+}
+
+[dir="ltr"] .site-footer .menu {     margin-left: 0
+}
+
+[dir="rtl"] .site-footer .menu {     margin-right: 0
+}
+
+.site-footer .menu {
+    display: flex;     justify-content: flex-end;     list-style: none;     font-weight: bold
+  }
+
+[dir="ltr"] .site-footer .menu ul {
+      margin-left: 1rem
+}
+
+[dir="rtl"] .site-footer .menu ul {
+      margin-right: 1rem
+}
+
+[dir="ltr"] .site-footer .menu li {
+      margin-left: 2rem
+}
+
+[dir="rtl"] .site-footer .menu li {
+      margin-right: 2rem
+}
+
+.site-footer .menu li {
+      margin-bottom: 0.5rem;
+    }
+
+.site-footer a {
+    text-decoration: none;     color: inherit
+  }
+
+.site-footer a:hover {
+      text-decoration: underline;
+    }
+
+.menu--social-media-menu a {
+    display: block;
+    width: 2.22222rem;
+    height: 2.22222rem;
+    font-size: 0;
+  }
+
+.menu--social-media-menu svg.ext {
+    display:none;
+  }
+
+.menu--social-media-menu .bitbucket {
+  background-image: url("/dev/webshiptheme/web/themes/contrib/webtheme/images/icon/Icon-bitbucket.svg");
+}
+
+.menu--social-media-menu .github {
+  background-image: url("/dev/webshiptheme/web/themes/contrib/webtheme/images/icon/Icon-github.svg");
+}
+
+.menu--social-media-menu .gitlab {
+  background-image: url("/dev/webshiptheme/web/themes/contrib/webtheme/images/icon/Icon-gitlab.svg");
+}
+
+.menu--social-media-menu .linkedin {
+  background-image: url("/dev/webshiptheme/web/themes/contrib/webtheme/images/icon/Icon-linkedin.svg");
+}
+
+.menu--social-media-menu .twitter {
+  background-image: url("/dev/webshiptheme/web/themes/contrib/webtheme/images/icon/Icon-twitter.svg");
+}
+
+.menu--social-media-menu .youtube {
+  background-image: url("/dev/webshiptheme/web/themes/contrib/webtheme/images/icon/Icon-youtube.svg");
+}
+
+.region--footer-bottom {
+  display: flex;
+}
+
+/*
+@media (--nav) {
+  body:not(.is-always-mobile-nav) .site-footer {
+    border-inline-start: solid var(--content-left) var(--color--black);
+  }
+}
+*/

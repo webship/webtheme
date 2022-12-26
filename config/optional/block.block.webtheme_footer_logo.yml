@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:71152dfa-f7a4-4df0-863b-db6d4e6cabc9'
+  module:
+    - block_content
+  theme:
+    - webtheme
+id: webtheme_footer_logo
+theme: webtheme
+region: footer_bottom
+weight: -8
+provider: null
+plugin: 'block_content:71152dfa-f7a4-4df0-863b-db6d4e6cabc9'
+settings:
+  id: 'block_content:71152dfa-f7a4-4df0-863b-db6d4e6cabc9'
+  label: 'webtheme footer logo'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

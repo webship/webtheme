@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Forum specific styles.
+ */
+
+.forum table {
+    width: 100%;
+  }
+
+.forum__name--link,
+.forum__last-reply a,
+.forum__title a {
+  color: #0c7fc8;
+  font-weight: bold;
+}

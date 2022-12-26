@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Block styling.
+ */
+
+.block__title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  color: #6e7172;
+  font-size: 1.1111rem;
+  line-height: 1rem;
+}
+
+.site-footer .block__title {
+  color: #9ea0a1;
+}

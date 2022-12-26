@@ -1,10 +1,9 @@
 name: 'Webtheme'
 type: theme
 base theme: olivero
-description: 'An Olivero based sub-theme.'
+description: 'An Olivero based sub-theme for the Webship.co portal site.'
 package: Webtheme
-
-core_version_requirement: ~10
+core_version_requirement: ~10.0
 regions:
   header: Header
   primary_menu: 'Primary menu'
@@ -22,3 +21,38 @@ regions:
 libraries:
   - webtheme/global-styling
   - webtheme/global-scripts
+libraries-override:
+  olivero/global-styling: false
+
+  olivero/book: webtheme/book
+  olivero/cke-dialog: webtheme/cke-dialog
+  olivero/comments: webtheme/comments
+  olivero/content-below: webtheme/content-below
+  olivero/content_moderation: webtheme/content_moderation
+  olivero/details: webtheme/details
+  olivero/dialog.off_canvas: webtheme/dialog.off_canvas
+  olivero/dropbutton: webtheme/dropbutton
+  olivero/drupal.dialog: webtheme/drupal.dialog
+  olivero/drupal.node.preview: webtheme/drupal.node.preview
+  olivero/feed: webtheme/feed
+  olivero/filter.theme: webtheme/filter.theme
+  olivero/forum: webtheme/forum
+  olivero/layout_builder_fourcol_section: webtheme/layout_builder_fourcol_section
+  olivero/layout_builder_threecol_section: webtheme/layout_builder_threecol_section
+  olivero/layout_builder_twocol_section: webtheme/layout_builder_twocol_section
+  olivero/layout_discovery_section: webtheme/layout_discovery_section
+  olivero/layout-views-grid-horizontal: webtheme/layout-views-grid-horizontal
+  olivero/layout-views-grid-vertical: webtheme/layout-views-grid-vertical
+  olivero/local-actions: webtheme/local-actions
+  olivero/maintenance-page: webtheme/maintenance-page
+  olivero/menu-sidebar: webtheme/menu-sidebar
+  olivero/navigation-primary: webtheme/navigation-primary
+  olivero/navigation-secondary: webtheme/navigation-secondary
+  olivero/powered-by-block: webtheme/powered-by-block
+  olivero/progress: webtheme/progress
+  olivero/search-narrow: webtheme/search-narrow
+  olivero/search-results: webtheme/search-results
+  olivero/search-wide: webtheme/search-wide
+  olivero/sidebar: webtheme/sidebar
+  olivero/tabs: webtheme/tabs
+  olivero/tags: webtheme/tags

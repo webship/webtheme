@@ -1,0 +1,8 @@
+/**
+ * @file
+ * Region default layout.
+ */
+
+.region--hero > *:last-child {
+    margin-bottom: 0;
+  }

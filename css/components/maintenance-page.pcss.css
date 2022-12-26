@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Maintenance page.
+ */
+
+@import "../base/variables.pcss.css";
+
+.maintenance-page {
+
+  & .main-content {
+    min-height: 80vh;
+  }
+}
+.maintenance-page-icon {
+  display: block;
+  margin-block: var(--sp3);
+}

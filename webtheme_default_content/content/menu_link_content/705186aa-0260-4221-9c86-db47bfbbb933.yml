@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 705186aa-0260-4221-9c86-db47bfbbb933
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Bitbucket
+  menu_name:
+    -
+      value: social-media-menu
+  link:
+    -
+      uri: 'https://bitbucket.org/webshipco/'
+      title: ''
+      options:
+        attributes:
+          class:
+            - bitbucket
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -48
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

@@ -1,6 +1,6 @@
 {
   "name": "drupal/webtheme",
-  "description": "Based on Bootstrap 4 framework using SASS, and extending Vartheme (Bootstrap 4 - SASS).",
+  "description": "An Olivero based sub-theme for the Webship.co portal site.",
   "type": "drupal-theme",
   "license": "GPL-2.0-or-later",
   "authors": [
@@ -21,6 +21,9 @@
     }
   ],
   "require": {
-    "drupal/core": "~10"
+    "drupal/core": "~10.0",
+    "drupal/token_filter": "~1.0",
+    "drupal/default_content": "~2.0",
+    "drupal/link_attributes": "~1.0"
   }
 }

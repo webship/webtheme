@@ -1,0 +1,269 @@
+/**
+ * @file
+ * Embedded Media.
+ */
+
+figure {
+  background: #f7f9fa;
+}
+
+[dir="ltr"] figcaption {   padding-left: 0.5rem;
+}
+
+[dir="rtl"] figcaption {   padding-right: 0.5rem;
+}
+
+[dir="ltr"] figcaption {   padding-right: 0.5rem;
+}
+
+[dir="rtl"] figcaption {   padding-left: 0.5rem;
+}
+
+figcaption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;   color: #313637;   background: #f7f9fa;   font-family: "Zen Maru Gothic", "georgia", serif;   font-size: 0.77778rem;   font-style: italic;   line-height: 1rem
+}
+
+@media (min-width: 27.77778rem) {
+
+[dir="ltr"] figcaption {
+    padding-left: 1rem;
+  }
+
+[dir="rtl"] figcaption {
+    padding-right: 1rem;
+  }
+
+[dir="ltr"] figcaption {
+    padding-right: 1rem;
+  }
+
+[dir="rtl"] figcaption {
+    padding-left: 1rem;
+  }
+
+figcaption {
+    padding-top: 1rem;
+    padding-bottom: 1rem
+}
+  }
+
+[dir="ltr"] .align-right {   margin-left: 0;
+}
+
+[dir="rtl"] .align-right {   margin-right: 0;
+}
+
+[dir="ltr"] .align-right {   margin-right: 0;
+}
+
+[dir="rtl"] .align-right {   margin-left: 0;
+}
+
+.align-right {
+  float: none; /* Override core's align.module.css. */
+  max-width: 100%;   margin-top: 3rem;   margin-bottom: 3rem
+}
+
+@media (min-width: 38.88889rem) {
+
+[dir="ltr"] .align-right {
+    float: right;
+  }
+
+[dir="rtl"] .align-right {
+    float: left;
+  }
+
+[dir="ltr"] .align-right {
+    margin-left: 1rem;
+  }
+
+[dir="rtl"] .align-right {
+    margin-right: 1rem;
+  }
+
+[dir="ltr"] .align-right {
+    margin-right: 0;
+  }
+
+[dir="rtl"] .align-right {
+    margin-left: 0;
+  }
+
+.align-right {
+    max-width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+  }
+
+/* Pull out of grid if nested in content narrow layout. */
+
+@media (min-width: 38.88889rem) {
+
+[dir="ltr"] .layout--content-narrow .align-right,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-right: -7.14286vw;
+  }
+
+[dir="rtl"] .layout--content-narrow .align-right,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-left: -7.14286vw;
+  }
+  }
+
+@media (min-width: 55.55556rem) {
+
+[dir="ltr"] .layout--content-narrow .align-right,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-right: calc(-14.28571vw - -2.14286px);
+  }
+
+[dir="rtl"] .layout--content-narrow .align-right,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-left: calc(-14.28571vw - -2.14286px);
+  }
+  }
+
+@media (min-width: 66.66667rem) {
+
+[dir="ltr"] .layout--content-narrow .align-right,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-right: calc(-21.42857vw - -1.67857rem);
+  }
+
+[dir="rtl"] .layout--content-narrow .align-right,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-left: calc(-21.42857vw - -1.67857rem);
+  }
+  }
+
+@media (min-width: 80rem) {
+
+[dir="ltr"] .layout--content-narrow .align-right,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-right: -15.64286rem;
+  }
+
+[dir="rtl"] .layout--content-narrow .align-right,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-right {
+    margin-left: -15.64286rem;
+  }
+  }
+
+[dir="ltr"] .align-left {   margin-left: 0;
+}
+
+[dir="rtl"] .align-left {   margin-right: 0;
+}
+
+[dir="ltr"] .align-left {   margin-right: 0;
+}
+
+[dir="rtl"] .align-left {   margin-left: 0;
+}
+
+.align-left {
+  float: none; /* Override core's align.module.css. */
+  max-width: 100%;   margin-top: 3rem;   margin-bottom: 3rem
+}
+
+@media (min-width: 38.88889rem) {
+
+[dir="ltr"] .align-left {
+    float: left;
+  }
+
+[dir="rtl"] .align-left {
+    float: right;
+  }
+
+[dir="ltr"] .align-left {
+    margin-left: 0;
+  }
+
+[dir="rtl"] .align-left {
+    margin-right: 0;
+  }
+
+[dir="ltr"] .align-left {
+    margin-right: 2rem;
+  }
+
+[dir="rtl"] .align-left {
+    margin-left: 2rem;
+  }
+
+.align-left {
+    max-width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem /* Extra right margins in case of aligning next to lists. */
+}
+  }
+
+/* Pull out of grid if nested in content narrow layout. */
+
+@media (min-width: 38.88889rem) {
+
+[dir="ltr"] .layout--content-narrow .align-left,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-left: -7.14286vw;
+  }
+
+[dir="rtl"] .layout--content-narrow .align-left,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-right: -7.14286vw;
+  }
+  }
+
+@media (min-width: 55.55556rem) {
+
+[dir="ltr"] .layout--content-narrow .align-left,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-left: calc(-7.14286vw - -1.07143px);
+  }
+
+[dir="rtl"] .layout--content-narrow .align-left,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-right: calc(-7.14286vw - -1.07143px);
+  }
+  }
+
+@media (min-width: 66.66667rem) {
+
+[dir="ltr"] .layout--content-narrow .align-left,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-left: calc(-7.14286vw - -0.55952rem);
+  }
+
+[dir="rtl"] .layout--content-narrow .align-left,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-right: calc(-7.14286vw - -0.55952rem);
+  }
+  }
+
+@media (min-width: 80rem) {
+
+[dir="ltr"] .layout--content-narrow .align-left,[dir="ltr"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-left: -5.21429rem;
+  }
+
+[dir="rtl"] .layout--content-narrow .align-left,[dir="rtl"] 
+.layout--pass--content-narrow > * .align-left {
+    margin-right: -5.21429rem;
+  }
+  }
+
+.align-center img,
+.align-center video,
+.align-center audio {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-oembed-content {
+  display: block;
+  max-width: 100%;
+}

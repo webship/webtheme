@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Progress bar specific styles.
+ */
+
+.progress__track {
+  overflow: hidden;
+  height: 1rem;
+  border: 1px solid #0c7fc8;
+  border-radius: 0.16667rem;
+}
+
+.progress__bar {
+  height: 1rem;
+  background-color: #0c7fc8;
+}
+
+[dir="ltr"] .progress__percentage {
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .progress__percentage {
+  margin-right: 1rem;
+}

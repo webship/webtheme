@@ -1,6 +1,6 @@
 # Webtheme
 
-An Olivero based sub-theme.
+Webtheme is an Olivero based sub-theme.
 
 Testing having a custom theme of the new Drupal core Olivero theme.
 

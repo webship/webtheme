@@ -1,0 +1,170 @@
+/**
+ * @file
+ * Generic base elements.
+ */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Zen Maru Gothic", "georgia", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 0.666rem;
+}
+
+body {
+  margin: 0;
+  color: #313637;
+  background-color: #f7f9fa;
+  background-image: url("../../images/background.svg");
+  background-position: top left /* LTR */
+}
+
+body.is-fixed {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+
+[dir="rtl"] body {
+  background-position: top right;
+}
+
+a {
+  color: #0c7fc8
+}
+
+a:hover {
+    color: #5c9ec8;
+  }
+
+a:focus {
+    outline: solid 2px currentColor;
+    outline-offset: 2px;
+  }
+
+button {
+  font-family: inherit;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+audio {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  letter-spacing: -0.01em;   font-size: 1.55556rem;   line-height: 2rem
+}
+
+@media (min-width: 38.88889rem) {
+
+h1 {
+    font-size: 3.33333rem;
+    line-height: 4rem
+}
+  }
+
+h2 {
+  letter-spacing: -0.01em;   font-size: 1.33333rem;   line-height: 2rem
+}
+
+@media (min-width: 38.88889rem) {
+
+h2 {
+    font-size: 2rem;
+    line-height: 3rem
+}
+  }
+
+h3 {
+  font-size: 1.11111rem;   line-height: 1.5rem
+}
+
+@media (min-width: 38.88889rem) {
+
+h3 {
+    font-size: 1.33333rem;
+    line-height: 2rem
+}
+  }
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h5 {
+  font-size: 0.88889rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 0.77778rem;
+  line-height: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;   color: #0d1214;   font-family: "Zen Maru Gothic", "georgia", sans-serif;   font-weight: bold
+}
+
+@media (min-width: 38.88889rem) {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+  }
+
+[dir="ltr"] ul {
+  margin-left: 1.5em;
+}
+
+[dir="rtl"] ul {
+  margin-right: 1.5em;
+}
+
+[dir="ltr"] ul {
+  margin-right: 0;
+}
+
+[dir="rtl"] ul {
+  margin-left: 0;
+}
+
+[dir="ltr"] ul {
+  padding-left: 0;
+}
+
+[dir="rtl"] ul {
+  padding-right: 0;
+}
+
+ul {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  list-style-type: disc;
+  list-style-image: none;
+}

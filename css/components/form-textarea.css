@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Textarea.
+ */
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 8rem;
+  padding: 1rem;
+}

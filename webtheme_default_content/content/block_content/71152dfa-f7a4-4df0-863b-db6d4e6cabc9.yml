@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 71152dfa-f7a4-4df0-863b-db6d4e6cabc9
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Webtheme footer logo'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: '<img src="themes/contrib/webtheme/logo-white.svg" alt="Home">'
+      format: full_html
+      summary: ''

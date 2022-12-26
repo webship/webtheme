@@ -1,0 +1,115 @@
+{
+  "name": "webtheme",
+  "description": "Webtheme is an Olivero based sub-theme.",
+  "license": "GPL-2.0",
+  "private": true,
+  "engines": {
+    "yarn": ">= 1.6",
+    "node": ">= 16.0"
+  },
+  "scripts": {
+    "theme:build": "node scripts/css/postcss-build.js",
+    "theme:watch": "node scripts/postcss-watch.js",
+    "phpcs": "phpcs --standard=./.phpcs.xml .",
+    "phpcbf": "phpcbf --standard=./.phpcs.xml .",
+    "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json --ext .yml .",
+    "lint:js": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json .",
+    "lint:css": "npx stylelint --config=.stylelintrc.json ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.7.7",
+    "@drupal/once": "1.0.x",
+    "@popperjs/core": "2.11.x",
+    "babel-plugin-add-header-comment": "^1.0.3",
+    "backbone": "1.4.x",
+    "chalk": "^4.1.0",
+    "chokidar": "^3.3.1",
+    "chromedriver": "^98.0.1",
+    "ckeditor5": "34.1.x",
+    "cross-env": "^7.0.2",
+    "cspell": "^5.0.0",
+    "css.escape": "1.5.x",
+    "dotenv-safe": "^8.2.0",
+    "es6-promise": "4.2.x",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jquery": "^1.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-yml": "^0.14.0",
+    "farbtastic": "https://github.com/mattfarina/farbtastic/archive/1.3u.tar.gz",
+    "glob": "^7.1.2",
+    "joyride": "https://github.com/zurb/joyride/archive/refs/heads/v2.1.tar.gz",
+    "jsdom": "^19.0.0",
+    "loadjs": "4.2.x",
+    "minimist": "^1.2.2",
+    "mkdirp": "^1.0.4",
+    "normalize.css": "8.0.x",
+    "picturefill": "3.0.x",
+    "postcss": "^7.0.18",
+    "postcss-calc": "^7.0.1",
+    "postcss-header": "^2.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-pxtorem": "^5.1.1",
+    "postcss-url": "^8.0.0",
+    "prettier": "^2.1.2",
+    "raw-loader": "^4.0.2",
+    "shepherd.js": "9.1.x",
+    "sortablejs": "1.15.x",
+    "stylelint": "^14.0.1",
+    "stylelint-checkstyle-formatter": "^0.1.2",
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-order": "^5.0.0",
+    "tabbable": "5.3.x",
+    "terser": "^5.3.4",
+    "terser-webpack-plugin": "^5.2.0",
+    "underscore": "1.13.x",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.4.0"
+  },
+  "//": "'development is the default environment, and legacy is for transpiling the old jQuery codebase",
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": "commonjs",
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      },
+      "legacy": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": false
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "browserslist": [
+    "last 2 Chrome major versions",
+    "last 2 Firefox major versions",
+    "last 2 Safari major versions",
+    "last 2 Edge major versions",
+    "last 2 Opera versions",
+    "last 2 iOS major versions",
+    "last 1 Explorer major version",
+    "last 1 ChromeAndroid version",
+    "last 1 UCAndroid version",
+    "last 1 Samsung version",
+    "Firefox ESR"
+  ]
+}

@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: ec5567d6-e813-42b1-ad6e-5ba4ae7ad40e
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Linkedin
+  menu_name:
+    -
+      value: social-media-menu
+  link:
+    -
+      uri: 'https://www.linkedin.com/company/webshipco/'
+      title: ''
+      options:
+        attributes:
+          class:
+            - linkedin
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -46
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

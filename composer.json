@@ -24,7 +24,6 @@
     "drupal/core": "~10.0",
     "drupal/token_filter": "~2.0",
     "drupal/default_content": "~2.0",
-    "drupal/link_attributes": "~1.0",
-    "drupal/webtheme_default_content": "~10.0"
+    "drupal/link_attributes": "~1.0"
   }
 }

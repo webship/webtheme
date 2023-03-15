@@ -3,7 +3,7 @@
  * Select input elements.
  */
 
-@import "../base/variables.pcss.css"; :root {
+ @import "../base/variables.pcss.css"; :root {
   --form-element-select-icon: url("../../images/chevron-down.svg");
 }
 

@@ -109,7 +109,7 @@
   }
     }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
 
 [dir="ltr"] .layout--content-narrow .entity-moderation-form,[dir="ltr"]  .layout--pass--content-narrow > * .entity-moderation-form,[dir="ltr"]  .layout--content-medium .entity-moderation-form,[dir="ltr"]  .layout--pass--content-medium > * .entity-moderation-form {
       margin-left: calc(-7.14286vw - -0.55952rem)

@@ -6,12 +6,14 @@
 @custom-media --sm (min-width: 500px);
 @custom-media --md (min-width: 700px);
 @custom-media --lg (min-width: 1000px);
-@custom-media --xl (min-width: 1300px);
+@custom-media --xl (min-width: 1400px);
+@custom-media --xxl (min-width: 2000px);
+@custom-media --xxxl (min-width: 3600px);
 
 /* Navigation related breakpoints */
 @custom-media --nav-md (min-width: 500px);
-@custom-media --nav (min-width: 1200px);
-@custom-media --max-nav (max-width: 1200px);
+@custom-media --nav (min-width: 1400px);
+@custom-media --max-nav (max-width: 1400px);
 
 /* Grid related breakpoints */
 @custom-media --grid-md (min-width: 700px);   /* Grid shifts from 6 to 14 columns. */
@@ -182,6 +184,8 @@
 
   /* Border radius */
   --border-radius: 3px;
+  --border-radius2: 6px;
+  --border-radius3: 10px;
 
   /* Main colors for site */
   --color--main-1: var(--color--blue-30);

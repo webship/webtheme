@@ -3,9 +3,9 @@
  * Textarea.
  */
 
-textarea {
+ textarea {
   display: block;
   width: 100%;
-  min-height: 8rem;
+  min-height: 10rem;
   padding: 1rem;
 }

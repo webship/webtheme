@@ -65,7 +65,7 @@
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
 
 [dir="ltr"] .site-branding {
     margin-left: -2rem
@@ -126,7 +126,7 @@
     text-decoration: none;
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
 
 [dir="ltr"] .site-branding__inner {
     padding-left: 0
@@ -174,7 +174,7 @@
   }
     }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
 
 .site-branding__logo img {
       max-height: 2.1rem
@@ -197,7 +197,7 @@
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
 
 .site-branding__text {
     letter-spacing: 0.02em;

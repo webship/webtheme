@@ -3,7 +3,7 @@
  * Nav Primary (wide widths).
  */
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
     body:not(.is-always-mobile-nav) .primary-nav__menu-item {
       flex-wrap: nowrap /* Ensure that sub navigation toggle button doesn't wrap underneath link. */
     }
@@ -261,7 +261,7 @@ body:not(.is-always-mobile-nav) {
  * menus will never overflow viewport.
  */
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
   body:not(.is-always-mobile-nav) {
     /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */
   }
@@ -290,14 +290,14 @@ body:not(.is-always-mobile-nav) {
  * works around https://bugs.chromium.org/p/chromium/issues/detail?id=332189
  */
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
     html.js body:not(.is-always-mobile-nav) .primary-nav__menu--level-2,
     html.js body:not(.is-always-mobile-nav) .primary-nav__menu-🥕 {
       transition: visibility 0.2s, transform 0.2s, opacity 0.2s;
     }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 77.77778rem) {
         [dir="rtl"] body:not(.is-always-mobile-nav) .primary-nav__menu-link--level-2 .primary-nav__menu-link-inner:after {
           transform-origin: right;
         }

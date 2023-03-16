@@ -189,3 +189,11 @@ tr .form-item,
     margin-top: var(--sp1-5);
   }
 }
+
+.bluelight-background{
+  width:70%;
+  background-color: var(--color--main-2);
+  padding: 15px 80px;
+  border-radius: var(--border-radius3);
+  box-shadow: 1px 2px 4px 1px var(--color--gray-40);
+}

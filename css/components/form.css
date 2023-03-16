@@ -240,3 +240,11 @@
  .form--inline .form-actions {
     margin-top: 1.5rem;
   }
+
+ .bluelight-background{
+  width:70%;
+  background-color: #f3f6f8;
+  padding: 0.83333rem 4.44444rem;
+  border-radius: 0.55556rem;
+  box-shadow: 1px 2px 4px 1px #98abb9;
+}

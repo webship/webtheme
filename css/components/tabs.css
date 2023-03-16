@@ -73,7 +73,7 @@ html:not(.js) .tabs__tab,
   color: #6e7172;
   border: 1px solid #e7edf1;
   background-color: #f7f9fa;
-  font-size: 1.1111rem;
+  font-size: 0.9rem;
 }
 .tabs--secondary .tabs__link {
   text-transform: none

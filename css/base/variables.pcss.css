@@ -30,12 +30,11 @@
 
   /* Typography */
   --font-size-base: 1rem;
-  --font-size-l: 0.9rem;
-  --font-size-s: 1.1111rem;
-  --font-size-xs: 1.2rem;
-  --font-size-xxs: 1.285rem;
+  --font-size-l: 1.77778rem;
+  --font-size-s: 0.9rem;
+  --font-size-xs: 0.7rem;
+  --font-size-xxs: 0.5rem;
   --line-height-base: 0.666rem;
-  --font-size-l: 0.9rem;
 
   /* Layout */
   --max-width: 1350px;
@@ -181,6 +180,16 @@
 
   /* Width of slide out navigation */
   --mobile-nav-width: 500px;
+
+  /* Width of button */
+  --button--width-1: 500px; 
+  --button--width-2: 268px; 
+  --button--width-3: 230px; 
+  --button--width-4: 180px; 
+
+  /* Hight of button */
+  --button--hight-1: 70px;
+  --button--hight-2: 55px;
 
   /* Border radius */
   --border-radius: 3px;

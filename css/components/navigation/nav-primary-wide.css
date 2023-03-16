@@ -22,7 +22,7 @@
 
     body:not(.is-always-mobile-nav) .primary-nav__menu-link {
       letter-spacing: 0.02em;
-      font-size: 1.1111rem;
+      font-size: 0.9rem;
       line-height: 1.5rem
     }
 

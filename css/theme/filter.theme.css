@@ -35,7 +35,7 @@
 .filter-help {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 1.285rem;
+  font-size: 0.5rem;
 }
 
 /**
@@ -55,7 +55,7 @@
 
 .filter-guidelines__item {
   margin-top: 1rem;
-  font-size: 1.1111rem;
+  font-size: 0.9rem;
   line-height: var(--line-height-s);
 }
 

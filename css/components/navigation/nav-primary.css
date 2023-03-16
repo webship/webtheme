@@ -27,7 +27,7 @@
     }
 
 .primary-nav__menu-link {
-  flex-grow: 1;   text-decoration: none;   color: #0d1214;   font-size: 1.1111rem;   font-weight: bold;   line-height: 2rem
+  flex-grow: 1;   text-decoration: none;   color: #0d1214;   font-size: 0.9rem;   font-weight: bold;   line-height: 2rem
 }
 
 .primary-nav__menu-link:hover {

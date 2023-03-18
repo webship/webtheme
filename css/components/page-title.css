@@ -10,3 +10,7 @@
   */
   display: inline;
 }
+
+.path-frontpage .page-title{
+  display:none;
+}

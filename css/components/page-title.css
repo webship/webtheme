@@ -3,7 +3,7 @@
  * Page title.
  */
 
-.page-title {
+ .page-title {
   /*
     Necessary to properly display the star icon from core's shortcut
     module.
@@ -11,6 +11,10 @@
   display: inline;
 }
 
-.path-frontpage .page-title{
+ .path-frontpage .page-title{
   display:none;
+}
+
+ .block-page-title-block{
+  text-align:center;
 }

@@ -69,15 +69,15 @@
 @media (min-width: 80rem) {
 
 [dir="ltr"] .wide-image {
-    margin-left: -5.21429rem
+    margin-left: -5.4127rem
    }
 
 [dir="rtl"] .wide-image {
-    margin-right: -5.21429rem
+    margin-right: -5.4127rem
    }
 
 .wide-image {
-    width: 60.57143rem
+    width: 62.95238rem
 }
   }
 
@@ -107,7 +107,7 @@
 @media (min-width: 80rem) {
 
 .sidebar-grid .wide-image {
-    width: 50.14286rem
+    width: 52.12698rem
 }
   }
 

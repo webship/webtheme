@@ -240,15 +240,15 @@ body.is-always-mobile-nav .header-nav {
 @media (min-width: 80rem) {
 
 [dir="ltr"] body.is-always-mobile-nav .header-nav {
-      padding-right: calc(100vw - 79rem)
+      padding-right: calc(100vw - 81.77778rem)
   }
 
 [dir="rtl"] body.is-always-mobile-nav .header-nav {
-      padding-left: calc(100vw - 79rem)
+      padding-left: calc(100vw - 81.77778rem)
   }
 
 body.is-always-mobile-nav .header-nav {
-      max-width: calc(100vw - 43.5rem)
+      max-width: calc(100vw - 44.88889rem)
   }
     }
 

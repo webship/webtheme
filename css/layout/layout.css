@@ -3,69 +3,64 @@
  * Base Layout.
  */
 
-.container {
-  width: 100%;
-  /* max-width: var(--max-width); */
-  padding-left: 1rem;
-  padding-right: 1rem
-}
+ .container {
+   width: 100%;
+   /* max-width: var(--max-width); */
+   padding-left: 1rem;
+   padding-right: 1rem
+ }
 
-@media (min-width: 77.77778rem) {
+ @media (min-width: 77.77778rem) {
 
-.container {
-    padding-left: 2rem;
-    padding-right: 2rem
-}
-  }
+ .container {
+     padding-left: 2rem;
+     padding-right: 2rem
+ }
+   }
 
-.page-wrapper {
-  /* max-width: var(--max-bg-color); */
-  background: #fff;
-}
+ .page-wrapper {
+   /* max-width: var(--max-bg-color); */
+   background: #fff;
+ }
 
-/**
- * Creates stacking context ensuring that child elements can never appear in
- * front of mobile navigation.
- */
+ /**
+  * Creates stacking context ensuring that child elements can never appear in
+  * front of mobile navigation.
+  */
 
-.layout-main-wrapper {
-  position: relative;
-  z-index: 1;
-}
+ .layout-main-wrapper {
+   position: relative;
+   z-index: 1;
+ }
 
-/* Contains the social sidebar, and the primary content area. */
+ /* Contains the social sidebar, and the primary content area. */
 
-@media (min-width: 77.77778rem) {
+ @media (min-width: 77.77778rem) {
 
-.layout-main {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap
-}
-  }
+ .layout-main {
+     display: flex;
+     flex-direction: row-reverse;
+     flex-wrap: wrap
+ }
+   }
 
-@media (min-width: 77.77778rem) {
+ @media (min-width: 77.77778rem) {
 
-[dir="ltr"] .main-content {
-    margin-right: auto
-  }
+ .main-content {
+     width: calc(100% - 5rem);
+     margin-left:auto;
+     margin-right:auto
+ }
+   }
 
-[dir="rtl"] .main-content {
-    margin-left: auto
-  }
+ .main-content__container {
+   padding-top: 3rem
+ }
 
-.main-content {
-    width: calc(100% - 5rem)
-}
-  }
+ @media (min-width: 38.88889rem) {
 
-.main-content__container {
-  padding-top: 3rem
-}
-
-@media (min-width: 38.88889rem) {
-
-.main-content__container {
-    padding-top: 5rem
-}
-  }
+ .main-content__container {
+     padding-top: 5rem
+ }
+   }
+ 

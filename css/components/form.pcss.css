@@ -135,6 +135,8 @@ tr .form-item,
 .form-actions .button,
 .form-actions .action-link {
   margin-block: var(--sp0-5);
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .form-actions .ajax-progress--throbber {
@@ -196,4 +198,6 @@ tr .form-item,
   padding: 15px 80px;
   border-radius: var(--border-radius3);
   box-shadow: 1px 2px 4px 1px var(--color--gray-40);
+  margin-left:auto;
+  margin-right:auto;
 }

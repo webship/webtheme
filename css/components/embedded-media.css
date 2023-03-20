@@ -143,12 +143,12 @@ figcaption {
 
 [dir="ltr"] .layout--content-narrow .align-right,[dir="ltr"] 
 .layout--pass--content-narrow > * .align-right {
-    margin-right: -15.64286rem;
+    margin-right: -16.2381rem;
   }
 
 [dir="rtl"] .layout--content-narrow .align-right,[dir="rtl"] 
 .layout--pass--content-narrow > * .align-right {
-    margin-left: -15.64286rem;
+    margin-left: -16.2381rem;
   }
   }
 
@@ -247,12 +247,12 @@ figcaption {
 
 [dir="ltr"] .layout--content-narrow .align-left,[dir="ltr"] 
 .layout--pass--content-narrow > * .align-left {
-    margin-left: -5.21429rem;
+    margin-left: -5.4127rem;
   }
 
 [dir="rtl"] .layout--content-narrow .align-left,[dir="rtl"] 
 .layout--pass--content-narrow > * .align-left {
-    margin-right: -5.21429rem;
+    margin-right: -5.4127rem;
   }
   }
 

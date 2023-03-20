@@ -92,8 +92,8 @@
 @media (min-width: 80rem) {
 
 .node--view-mode-teaser .primary-image img {
-        width: 3.21429rem;
-        height: 3.21429rem
+        width: 3.4127rem;
+        height: 3.4127rem
     }
       }
 
@@ -128,11 +128,11 @@
 @media (min-width: 80rem) {
 
 [dir="ltr"] .node--view-mode-teaser .primary-image {
-      left: -5.21429rem
+      left: -5.4127rem
   }
 
 [dir="rtl"] .node--view-mode-teaser .primary-image {
-      right: -5.21429rem
+      right: -5.4127rem
   }
     }
 

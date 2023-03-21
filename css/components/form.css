@@ -256,6 +256,11 @@
   
 }
 
+ .bluelight-background .form-type-webform-markup {
+    text-align:center;
+    padding-bottom:0.55556rem;
+  }
+
  @media (min-width: 77.77778rem) {
 
  .bluelight-background{

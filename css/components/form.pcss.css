@@ -193,11 +193,21 @@ tr .form-item,
 }
 
 .bluelight-background{
-  width:70%;
+
+  width:95%;
   background-color: var(--color--main-2);
-  padding: 15px 80px;
+  padding: 10px 20px;
   border-radius: var(--border-radius3);
   box-shadow: 1px 2px 4px 1px var(--color--gray-40);
   margin-left:auto;
   margin-right:auto;
+
+  @media (--nav) {
+    width: 70%;
+    padding: 15px 80px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  
 }

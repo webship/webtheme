@@ -51,6 +51,8 @@ global-styling:
       css/components/tabledrag.css: {}
       css/components/wide-image.css: {}
 
+  js:
+    js/navigation.js: {}
 
 
   dependencies:

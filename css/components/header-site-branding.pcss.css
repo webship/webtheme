@@ -77,7 +77,7 @@
 
   & img {
     width: auto;     max-width: 100%;     max-height: var(--sp);     @media (--sm) {
-      max-height: var(--sp1);
+      max-height: var(--sp2);
     }
 
     @media (--md) {

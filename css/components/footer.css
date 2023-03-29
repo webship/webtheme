@@ -83,13 +83,12 @@
 }
 
 .region--footer-bottom {
-  display: flex;
+  display: block
 }
 
-/*
-@media (--nav) {
-  body:not(.is-always-mobile-nav) .site-footer {
-    border-inline-start: solid var(--content-left) var(--color--black);
-  }
+@media (min-width: 38.88889rem) {
+
+.region--footer-bottom {
+      display: flex
 }
-*/
+      }

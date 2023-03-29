@@ -9,7 +9,7 @@ html:not(.js) {
    */
 }
 
-@media (max-width: 77.77778rem) {
+@media (max-width: 100rem) {
     html:not(.js) .primary-nav__menu--level-1 {
       column-width: 300px;
       grid-column-gap: 36px;

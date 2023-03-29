@@ -67,13 +67,9 @@
 }
 
 .region--footer-bottom {
-  display: flex;
+  display: block;
+  
+    @media (--nav-md) {
+      display: flex;
+      }
 }
-
-/*
-@media (--nav) {
-  body:not(.is-always-mobile-nav) .site-footer {
-    border-inline-start: solid var(--content-left) var(--color--black);
-  }
-}
-*/

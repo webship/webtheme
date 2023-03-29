@@ -13,7 +13,11 @@
 
  .path-frontpage .page-title{
   display:none;
-}
+  }
+
+ .page-node-type-webblog .page-title{
+  display:none;
+  }
 
  .block-page-title-block{
   text-align:center;

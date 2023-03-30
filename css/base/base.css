@@ -198,7 +198,9 @@
 
  .views-view-responsive-grid {
  
-     display:flex
+     display:-ms-grid;
+ 
+     display:grid
  
  }
  

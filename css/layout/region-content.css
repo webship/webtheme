@@ -3,20 +3,35 @@
  * Content region layout.
  */
 
-.region--content {
-  margin-bottom: 1rem
-}
+ .region--content {
+   margin-bottom: 1rem
+ }
 
-@media (min-width: 38.88889rem) {
+ @media (min-width: 38.88889rem) {
 
-.region--content {
-    margin-bottom: 2rem
-}
-  }
+ .region--content {
+     margin-bottom: 2rem
+ }
+   }
 
-@media (min-width: 55.55556rem) {
+ @media (min-width: 55.55556rem) {
 
-.region--content {
-    margin-bottom: 3rem
-}
-  }
+ .region--content {
+     margin-bottom: 3rem
+ }
+   }
+
+ .page-node-type-webblog .region--content {
+ 
+   width:90%;
+   margin:auto
+ 
+   }
+
+ @media (min-width: 38.88889rem) {
+
+ .page-node-type-webblog .region--content {
+     width:75%
+ 
+   }
+   }

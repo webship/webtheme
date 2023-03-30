@@ -3,15 +3,20 @@
  * Block styling.
  */
 
-.block__title {
+ .block__title {
   margin-top: 0;
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
-  color: #6e7172;
+  color: #666666;
   font-size: 0.9rem;
   line-height: 1rem;
 }
 
-.site-footer .block__title {
+ .site-footer .block__title {
   color: #9ea0a1;
 }
+
+ .block__content .field--name-created{
+      color: #666666;
+      font-size: 0.88889rem;
+  }

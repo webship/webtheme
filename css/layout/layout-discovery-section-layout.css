@@ -3,20 +3,21 @@
  * Provides default layout styles for all layout sections.
  */
 
-.layout {
-  margin-bottom: 1rem
-}
+ .layout {
+   margin-bottom: 1rem
+ }
 
-@media (min-width: 38.88889rem) {
+ @media (min-width: 38.88889rem) {
 
-.layout {
-    margin-bottom: 2rem
-}
-  }
+ .layout {
+     margin-bottom: 1rem
+ }
+   }
 
-@media (min-width: 55.55556rem) {
+ @media (min-width: 55.55556rem) {
 
-.layout {
-    margin-bottom: 3rem
-}
-  }
+ .layout {
+     margin-bottom: 1.5rem
+ }
+   }
+ 

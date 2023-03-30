@@ -4,7 +4,7 @@
  */
 
 .node__meta {
-  display: flex;   align-items: center;   margin-bottom: 1rem;   color: #6e7172;   font-size: 0.77778rem;   line-height: 1rem
+  display: flex;   align-items: center;   margin-bottom: 1rem;   color: #666666;   font-size: 0.77778rem;   line-height: 1rem
 }
 
 .node__meta a {

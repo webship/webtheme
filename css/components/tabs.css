@@ -70,7 +70,7 @@ html:not(.js) .tabs__tab,
   transition: background-color 0.2s;
   text-decoration: none;
   letter-spacing: 1px;
-  color: #6e7172;
+  color: #666666;
   border: 1px solid #e7edf1;
   background-color: #f7f9fa;
   font-size: 0.9rem;

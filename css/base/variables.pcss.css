@@ -3,27 +3,10 @@
   Processed by postcss/postcss-custom-media.
 */
 
-@custom-media --sm (min-width: 500px);
-@custom-media --md (min-width: 700px);
-@custom-media --lg (min-width: 1000px);
-@custom-media --xl (min-width: 1400px);
-@custom-media --xxl (min-width: 2000px);
-@custom-media --xxxl (min-width: 3600px);
-
-/* Navigation related breakpoints */
-@custom-media --nav-sm (min-width: 500px);
-@custom-media --nav-md (min-width: 700px);
-@custom-media --nav (min-width: 1400px);
-@custom-media --max-nav (max-width: 1800px);
-
-/* Grid related breakpoints */
-@custom-media --grid-md (min-width: 700px);   /* Grid shifts from 6 to 14 columns. */
-@custom-media --grid-max (min-width: 1440px); /* Width of the entire grid maxes out. */
+@import "media-queries.pcss.css";
 
 /*
   Custom CSS properties.
-
-  These are "compiled" by postcss/postcss-custom-properties for IE11 compatibility.
 */
 :root {
   --font-sans: "Zen Maru Gothic", "georgia", sans-serif;
@@ -31,16 +14,21 @@
 
   /* Typography */
   --font-size-base: 1rem;
-  --font-size-l: 1.77778rem;
+  --font-size-xxxl: 3rem;
+  --font-size-xxl: 2.5rem;
+  --font-size-xl: 2rem;
+  --font-size-l: 1.5rem;
+  --font-size-m: var(--font-size-base);
   --font-size-s: 0.9rem;
   --font-size-xs: 0.7rem;
-  --font-size-xxs: 0.5rem;
-  --line-height-base: 0.666rem;
+  --font-size-xxs: 0.6rem;
+  --font-size-xxxs: 0.5rem;
+  --line-height-base: 1.1rem;
 
   /* Layout */
   --max-width: 1400px;
   --max-bg-color: 1570px;
-  --sp: 18px;
+  --sp: var(--font-size-base);
   --content-left: 90px;
   --container-padding: var(--sp);
   --container-padding-nav: var(--sp2);

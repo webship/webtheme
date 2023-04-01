@@ -3,44 +3,33 @@
  * Messages.
  */
 
-[dir="ltr"] .messages-list {
-  padding-left: 0;
-}
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
-[dir="rtl"] .messages-list {
-  padding-right: 0;
-}
+/* Navigation related breakpoints */
 
-[dir="ltr"] .messages-list {
-  padding-right: 0;
-}
+/* Grid related breakpoints */
 
-[dir="rtl"] .messages-list {
-  padding-left: 0;
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+:root {
+  --messages-icon-size: 1.77778rem;
 }
 
 .messages-list {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin-block: var(--sp1);
+  padding-block: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
   list-style: none;
 }
 
-[dir="ltr"] .messages {   padding-left: 1.5rem;
-}
-
-[dir="rtl"] .messages {   padding-right: 1.5rem;
-}
-
-[dir="ltr"] .messages {   padding-right: 1.5rem;
-}
-
-[dir="rtl"] .messages {   padding-left: 1.5rem;
-}
-
 .messages {
-  min-height: 3.77778rem;   padding-top: 1rem;   padding-bottom: 1rem;   color: #fff;   outline: solid 1px transparent;   background-color: #0d1214
+  min-height: calc(var(--messages-icon-size) + var(--sp1)*2);   padding-block: var(--sp1);   padding-inline-start: var(--sp1-5);   padding-inline-end: var(--sp1-5);   color: var(--color--white);   outline: solid 1px transparent;   background-color: var(--color--gray-0)
 }
 
 .messages * {
@@ -56,109 +45,50 @@
     background-image: none;
   }
 
-[dir="ltr"] .messages__list {
-  margin-left: 0;
-}
-
-[dir="rtl"] .messages__list {
-  margin-right: 0;
-}
-
-[dir="ltr"] .messages__list {
-  margin-right: 0;
-}
-
-[dir="rtl"] .messages__list {
-  margin-left: 0;
-}
-
-[dir="ltr"] .messages__list {
-  padding-left: 0;
-}
-
-[dir="rtl"] .messages__list {
-  padding-right: 0;
-}
-
-[dir="ltr"] .messages__list {
-  padding-right: 0;
-}
-
-[dir="rtl"] .messages__list {
-  padding-left: 0;
-}
-
 .messages__list {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin-block: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
   list-style: none;
 }
 
 .messages:not(.hidden) ~ .messages {
-  margin-top: 1rem;
+  margin-block-start: var(--sp1);
 }
 
 .messages__item + .messages__item {
-  margin-top: 0.5rem;
+  margin-block-start: var(--sp0-5);
 }
 
 .messages__container {
   display: flex;
 }
 
-[dir="ltr"] .messages__header {   margin-right: 1rem;
-}
-
-[dir="rtl"] .messages__header {   margin-left: 1rem;
-}
-
 .messages__header {
-  flex-shrink: 0
+  flex-shrink: 0;   margin-inline-end: var(--sp1)
 }
 
-[dir="ltr"] .messages__header.no-icon {
-    margin-right: 0;
-}
-
-[dir="rtl"] .messages__header.no-icon {
-    margin-left: 0;
-}
+.messages__header.no-icon {
+    margin-inline-end: 0;
+  }
 
 .messages__content {
   overflow: auto; /* Ensure large code blocks can be scrolled to. */
   flex: 1;
-  padding-top: 0.16667rem;
-}
-
-[dir="ltr"] .messages__button {
-  margin-left: 1rem;
-}
-
-[dir="rtl"] .messages__button {
-  margin-right: 1rem;
+  padding-block-start: 0.16667rem;
 }
 
 .messages__button {
   flex-shrink: 0;
-  padding-top: 0.16667rem;
-}
-
-[dir="ltr"] .messages__close {   padding-left: 0;
-}
-
-[dir="rtl"] .messages__close {   padding-right: 0;
-}
-
-[dir="ltr"] .messages__close {   padding-right: 0;
-}
-
-[dir="rtl"] .messages__close {   padding-left: 0;
+  margin-inline-start: var(--sp1);
+  padding-block-start: 0.16667rem;
 }
 
 .messages__close {
-  position: relative;   width: 1.38889rem;   height: 1.38889rem;   padding-top: 0;   padding-bottom: 0;   cursor: pointer;   vertical-align: top;   border: 0;   background: none;   -webkit-appearance: none;   appearance: none
+  position: relative;   width: 1.38889rem;   height: 1.38889rem;   padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   cursor: pointer;   vertical-align: top;   border: 0;   background: none;   -webkit-appearance: none;   appearance: none
 }
 
 .messages__close:before,
@@ -170,7 +100,7 @@
     width: 1.83333rem;
     height: 0;
     content: "";
-    border-top: solid 2px #7e96a7;
+    border-top: solid 2px var(--color--gray-30);
   }
 
 .messages__close:before {
@@ -183,11 +113,11 @@
 
 .messages__close:hover::before,
     .messages__close:hover::after {
-      border-color: #fff;
+      border-color: var(--color--white);
     }
 
 .messages__close:focus {
-    outline: 2px solid #c5d9e5;
+    outline: 2px solid var(--color--blue-70);
     outline-offset: 2px;
   }
 
@@ -196,37 +126,30 @@
 }
 
 .messages--error .messages__icon svg {
-  fill: #e33f1e;
+  fill: var(--color--red);
 }
 
 .messages--warning .messages__icon svg {
-  fill: #fdca40;
+  fill: var(--color--gold);
 }
 
 .messages--status .messages__icon svg {
-  fill: #3fa21c;
+  fill: var(--color--green);
 }
 
 .messages--info .messages__icon svg {
-  fill: #c5d9e5;
+  fill: var(--color--blue-70);
 }
 
 .messages a {
-  color: #fff;
+  color: var(--color--white);
 }
 
 .messages pre {
   margin: 0;
 }
 
-[dir="ltr"] .js-form-managed-file .messages {
-  border-left: solid 6px #e33f1e;
-}
-
-[dir="rtl"] .js-form-managed-file .messages {
-  border-right: solid 6px #e33f1e;
-}
-
 .js-form-managed-file .messages {
-  margin-bottom: 1rem;
+  margin-block-end: var(--sp1);
+  border-inline-start: solid 0.33333rem var(--color--red);
 }

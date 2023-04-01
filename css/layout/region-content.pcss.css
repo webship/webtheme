@@ -3,7 +3,7 @@
  * Content region layout.
  */
 
- @import "../base/variables.pcss.css";
+ @import "../base/media-queries.pcss.css";
 
  .region--content {
    margin-block-end: var(--sp);   @media (--md) {
@@ -15,16 +15,3 @@
    }
  }
  
- .page-node-type-webblog {
- 
- & .region--content {
- 
-   width:90%;
-   margin:auto;
- 
-   @media (--md) {
-     width:75%;
-   }
- 
-   }
- }

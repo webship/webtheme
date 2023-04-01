@@ -3,33 +3,35 @@
  * Settings tray specific styles.
  */
 
-[dir="ltr"] #drupal-off-canvas .form-type-boolean {
-    margin-left: 0
-}
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
-[dir="rtl"] #drupal-off-canvas .form-type-boolean {
-    margin-right: 0
-}
+/* Navigation related breakpoints */
 
-#drupal-off-canvas .form-type-boolean {     line-height: var(--line-height-s)
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+#drupal-off-canvas .form-type-boolean {
+    margin-inline-start: 0;     line-height: var(--line-height-s)
   }
 
 #drupal-off-canvas .form-type-boolean input[type="checkbox"],
     #drupal-off-canvas .form-type-boolean input[type="radio"] {
       float: none;
-      width: 0.75rem;
-      height: 0.75rem;
+      width: var(--sp0-75);
+      height: var(--sp0-75);
       transform: none;
       vertical-align: middle;
     }
 
-[dir="ltr"] #drupal-off-canvas .form-type-boolean .form-item__description {
-      margin-left: 0
-}
-
-[dir="rtl"] #drupal-off-canvas .form-type-boolean .form-item__description {
-      margin-right: 0
-}
+#drupal-off-canvas .form-type-boolean .form-item__description {
+      margin-inline-start: 0;
+    }
 
 #drupal-off-canvas {
 
@@ -52,7 +54,7 @@
 }
 
 #drupal-off-canvas .olivero-details__summary {
-    display: block;     list-style: disc outside none;     list-style: initial
+    display: block;     list-style: initial
   }
 
 #drupal-off-canvas .olivero-details__summary:focus {

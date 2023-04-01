@@ -268,3 +268,21 @@ tags:
   css:
     theme:
       css/components/tags.css: {}
+
+views.responsive-grid:
+  version: VERSION
+  css:
+    layout:
+      css/layout/views-responsive-grid.css: {}
+
+webblog.teaser:
+  version: VERSION
+  css:
+    theme:
+      css/components/webblog-teaser.css: {}
+
+webblog.full:
+  version: VERSION
+  css:
+    theme:
+      css/components/webblog-full.css: {}

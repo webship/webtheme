@@ -3,7 +3,8 @@
  * Dropbutton styles.
  */
 
-@import "../base/variables.pcss.css"; :root {
+@import "../base/media-queries.pcss.css";  
+:root {
   --dropbutton--height: var(--sp1-5);
   --dropbutton--bg-color: var(--color--gray-75);
   --dropbutton--border-color: var(--color--blue-20);

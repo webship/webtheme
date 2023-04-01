@@ -3,38 +3,34 @@
  * Buttons.
  */
 
- [dir="ltr"] .button {   
-   margin-left: 0
-}
+ /*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
- [dir="rtl"] .button {   
-   margin-right: 0
-}
+ /* Navigation related breakpoints */
 
- [dir="ltr"] .button {   
-   margin-right: 1rem
-}
+ /* Grid related breakpoints */
 
- [dir="rtl"] .button {   
-   margin-left: 1rem
-}
+ /* Grid shifts from 6 to 14 columns. */
+
+ /* Width of the entire grid maxes out. */
 
  .button {
    display: inline-block;   
-   height: 3rem;   
-   margin-top: 1rem;   
-   margin-bottom: 1rem;   
-   padding-top: calc(1.5rem - var(--line-height-s)/2);   
-   padding-bottom: calc(1.5rem - var(--line-height-s)/2);
-   padding-left: 1.5rem;
-   padding-right: 1.5rem;   cursor: pointer;
+   height: var(--sp3);   
+   margin-block: var(--sp1);   
+   margin-inline-start: 0;   
+   margin-inline-end: var(--sp1);   
+   padding-block: calc(var(--sp3)/2 - var(--line-height-s)/2);
+   padding-inline: var(--sp1-5);   cursor: pointer;
    text-align: center;   text-decoration: none;
-   color: #0c7fc8;
-   border: solid 2px #358fc8;   
-   border-radius: 0.16667rem;   
-   background-color: #fff;   
-   font-family: "Zen Maru Gothic", "georgia", sans-serif;   
-   font-size: 1.77778rem;   
+   color: var(--color--blue-20);
+   border: solid 2px var(--color--main-1);   
+   border-radius: var(--border-radius);   
+   background-color: var(--color--white);   
+   font-family: var(--font-sans);   
+   font-size: var(--font-size-l);   
    font-weight: bold;   
    -webkit-appearance: none;   
    appearance: none;   
@@ -44,24 +40,24 @@
  .button:hover,
    .button:focus {
      text-decoration: none;
-     color: #004e80;
+     color: var(--color--blue-10);
      background: none;
      font-weight: bold;
    }
 
  .button:focus {
-     outline: 2px solid #c5d9e5;
+     outline: 2px solid var(--color--blue-70);
      outline-offset: 2px;
    }
 
  .button:active {
-     color: #0c7fc8;
+     color: var(--color--blue-20);
    }
 
  .button:disabled,
    .button.is-disabled {
      cursor: default;
-     color: #d7e1e8;
+     color: var(--color--gray-70);
    }
 
  .button {
@@ -79,105 +75,72 @@
      align-items: center;
  
      /* Top padding accounts for font not being vertically centered within line-height. */
-     padding-top: 1px;
-     padding-bottom: 0;
-     padding-left: 1.5rem;
-     padding-right: 1.5rem;
+     padding-block: 1px 0;
+     padding-inline: var(--sp1-5);
      line-height: var(--line-height-s)
  }
    }
 
  /* No margin if is part of a menu. */
 
- [dir="ltr"] .menu .button {
-   margin-left: 0
-}
-
- [dir="rtl"] .menu .button {
-   margin-right: 0
-}
-
- [dir="ltr"] .menu .button {
-   margin-right: 0
-}
-
- [dir="rtl"] .menu .button {
-   margin-left: 0
-}
-
  .menu .button {
-   margin-top: 0;
-   margin-bottom: 0;
+   margin-block: 0;
+   margin-inline-start: 0;
+   margin-inline-end: 0;
  }
 
  .button--small {
-   height: 2.5rem;
-   padding-top: calc(1.25rem - var(--line-height-s)/2);
-   padding-bottom: calc(1.25rem - var(--line-height-s)/2);
-   padding-left: 1rem;
-   padding-right: 1rem;
-   font-size: 1rem;
+   height: var(--sp2-5);
+   padding-block: calc(var(--sp2-5)/2 - var(--line-height-s)/2);
+   padding-inline: var(--sp);
+   font-size: var(--font-size-base);
    line-height: normal;
-   height: 3.05556rem;
-   width: 12.77778rem;
+   height: var(--button--hight-2);
+   width: var(--button--width-3);
  }
 
  .button--primary {
-   color: #fff;
-   background-color: #358fc8; 
-   border-radius: 0.55556rem; 
-   height: 3.88889rem;
-   width: 27.77778rem;
+   color: var(--color--white);
+   background-color: var(--color--blue-30); 
+   border-radius: var(--border-radius3); 
+   height: var(--button--hight-1);
+   width: var(--button--width-1);
    text-align: center;
    display: block
  }
 
  .button--primary:hover,
    .button--primary:focus {
-     color: #fff;
-     background-color: #0c7fc8;
+     color: var(--color--white);
+     background-color: var(--color--blue-20);
    }
 
  .button--primary:active {
-     color: #fff;
-     background-color: #0c7fc8;
+     color: var(--color--white);
+     background-color: var(--color--blue-20);
    }
 
  .button--primary:disabled,
    .button--primary.is-disabled {
-     color: #fff;
-     background-color: #d7e1e8;
+     color: var(--color--white);
+     background-color: var(--color--gray-70);
    }
 
  .button--icon-back {
    display: inline-flex;   align-items: center
  }
 
- [dir="ltr"] .button--icon-back:before {
-     margin-right: 0.5em
-}
-
- [dir="rtl"] .button--icon-back:before {
-     margin-left: 0.5em
-}
-
- [dir="ltr"] .button--icon-back:before {
-     border-left: solid 2px currentColor
-}
-
- [dir="rtl"] .button--icon-back:before {
-     border-right: solid 2px currentColor
-}
-
  .button--icon-back:before {
      display: block;
      width: 0.5em;
      height: 0.5em;
+     margin-inline-end: 0.5em;
      content: "";
      transform: rotate(45deg); /* LTR */
-     border-bottom: solid 2px currentColor;
-     height: 3.88889rem;
-     width: 10rem;
+     border-block-end: solid 2px currentColor;
+     border-inline-start: solid 2px currentColor;
+     height: var(--button--hight-1);
+     width: var(--button--width-4);
    }
 
  [dir="rtl"] .button--icon-back:before {
@@ -185,30 +148,30 @@
  }
 
  .button--button--primary2{
-   color: #fff;
-   background-color: #358fc8; 
-   border-radius: 0.55556rem; 
-   height: 3.88889rem;
-   width: 14.88889rem;
+   color: var(--color--white);
+   background-color: var(--color--blue-30); 
+   border-radius: var(--border-radius3); 
+   height: var(--button--hight-1);
+   width: var(--button--width-2);
    text-align: center;
    display: block
  }
 
  .button--button--primary2:hover,
    .button--button--primary2:focus {
-     color: #fff;
-     background-color: #0c7fc8;
+     color: var(--color--white);
+     background-color: var(--color--blue-20);
    }
 
  .button--button--primary2:active {
-     color: #fff;
-     background-color: #0c7fc8;
+     color: var(--color--white);
+     background-color: var(--color--blue-20);
    }
 
  .button--button--primary2:disabled,
    .button--button--primary2.is-disabled {
-     color: #fff;
-     background-color: #d7e1e8;
+     color: var(--color--white);
+     background-color: var(--color--gray-70);
    }
 
  .shepherd-cancel-icon {

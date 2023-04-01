@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Change responsive grid to block for mobile
+ *
+ */
+
+@import "../base/media-queries.pcss.css";
+
+.views-view-responsive-grid {
+  display:block;
+
+  @media (--lg) {
+    display:grid;
+  }
+
+}

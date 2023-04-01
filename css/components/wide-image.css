@@ -3,81 +3,53 @@
  * Wide image component.
  */
 
-[dir="ltr"] .wide-image {   margin-left: 0
-}
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
-[dir="rtl"] .wide-image {   margin-right: 0
-}
+/* Navigation related breakpoints */
 
-[dir="ltr"] .wide-image {   margin-right: 0
-}
+/* Grid related breakpoints */
 
-[dir="rtl"] .wide-image {   margin-left: 0
-}
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
 
 .wide-image {
-  margin-top: 0.5rem;   margin-bottom: 2rem
+  margin-block-start: var(--sp0-5);   margin-block-end: var(--sp2);   margin-inline-start: 0;   margin-inline-end: 0
 }
 
 @media (min-width: 38.88889rem) {
 
-[dir="ltr"] .wide-image {
-    margin-left: -7.14286vw
-   }
-
-[dir="rtl"] .wide-image {
-    margin-right: -7.14286vw
-   }
-
 .wide-image {
-    width: calc(100vw - 2rem);
-    margin-top: 2rem;
-    margin-bottom: 4rem
+    width: calc(var(--grid-col-width--md)*14 + var(--grid-gap--md)*13);
+    margin-block: var(--sp2) var(--sp4);
+    margin-inline-start: calc(var(--grid-col-width--md)*-1 + var(--grid-gap--md)*-1)
 }
   }
 
 @media (min-width: 55.55556rem) {
 
-[dir="ltr"] .wide-image {
-    margin-left: calc(-7.14286vw - -1.07143px)
-   }
-
-[dir="rtl"] .wide-image {
-    margin-right: calc(-7.14286vw - -1.07143px)
-   }
-
 .wide-image {
-    width: calc(85.71429vw - 2.71429rem)
+    width: calc(var(--grid-col-width--lg)*12 + var(--grid-gap--lg)*11);
+    margin-inline-start: calc(var(--grid-col-width--lg)*-1 + var(--grid-gap--lg)*-1)
 }
   }
 
-@media (min-width: 77.77778rem) {
-
-[dir="ltr"] .wide-image {
-    margin-left: calc(-7.14286vw - -0.55952rem)
-   }
-
-[dir="rtl"] .wide-image {
-    margin-right: calc(-7.14286vw - -0.55952rem)
-   }
+@media (min-width: 66.66667rem) {
 
 .wide-image {
-    width: calc(85.71429vw - 8.71429rem)
+    width: calc(var(--grid-col-width--nav)*12 + var(--grid-gap--nav)*11);
+    margin-inline-start: calc(var(--grid-col-width--nav)*-1 + var(--grid-gap--nav)*-1)
 }
   }
 
 @media (min-width: 80rem) {
 
-[dir="ltr"] .wide-image {
-    margin-left: -5.4127rem
-   }
-
-[dir="rtl"] .wide-image {
-    margin-right: -5.4127rem
-   }
-
 .wide-image {
-    width: 62.95238rem
+    width: calc(var(--grid-col-width--max)*12 + var(--grid-gap--max)*11);
+    margin-inline-start: calc(var(--grid-col-width--max)*-1 + var(--grid-gap--max)*-1)
 }
   }
 
@@ -86,49 +58,35 @@
 @media (min-width: 55.55556rem) {
 
 .sidebar-grid .wide-image {
-    width: calc(64.28571vw - 2.53571rem)
+    width: calc(var(--grid-col-width--lg)*9 + var(--grid-gap--lg)*8)
 }
   }
 
-@media (min-width: 77.77778rem) {
+@media (min-width: 66.66667rem) {
 
 .sidebar-grid .wide-image {
-    width: calc(64.28571vw - 7.03571rem)
+    width: calc(var(--grid-col-width--nav)*9 + var(--grid-gap--nav)*8)
 }
   }
 
-@media (min-width: 77.77778rem) {
+@media (min-width: 72.22222rem) {
 
 .sidebar-grid .wide-image {
-    width: calc(71.42857vw - 7.59524rem)
+    width: calc(var(--grid-col-width--nav)*10 + var(--grid-gap--nav)*9)
 }
   }
 
 @media (min-width: 80rem) {
 
 .sidebar-grid .wide-image {
-    width: 52.12698rem
+    width: calc(var(--grid-col-width--max)*10 + var(--grid-gap--max)*9)
 }
   }
 
 /* Ensure that image doesn't overlap layout builder sections when editing layouts. */
 
-[dir="ltr"] .layout-builder .wide-image {
-  margin-left: 0
-}
-
-[dir="rtl"] .layout-builder .wide-image {
-  margin-right: 0
-}
-
-[dir="ltr"] .layout-builder .wide-image {
-  margin-right: 0
-}
-
-[dir="rtl"] .layout-builder .wide-image {
-  margin-left: 0
-}
-
 .layout-builder .wide-image {
   max-width: 100%;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }

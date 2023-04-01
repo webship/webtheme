@@ -3,8 +3,21 @@
  * Node specific styles.
  */
 
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
 .node__meta {
-  display: flex;   align-items: center;   margin-bottom: 1rem;   color: #666666;   font-size: 0.77778rem;   line-height: 1rem
+  display: flex;   align-items: center;   margin-block-end: var(--sp1);   color: var(--color--gray-20);   font-size: 0.77778rem;   line-height: var(--sp)
 }
 
 .node__meta a {
@@ -14,32 +27,25 @@
 @media (min-width: 27.77778rem) {
 
 .node__meta {
-    margin-bottom: 2rem
+    margin-block-end: var(--sp2)
 }
   }
 
-[dir="ltr"] .node__author-image img {
-  margin-right: 0.5rem
-}
-
-[dir="rtl"] .node__author-image img {
-  margin-left: 0.5rem
-}
-
 .node__author-image img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--sp2-5);
+  height: var(--sp2-5);
+  margin-inline-end: var(--sp0-5);
   object-fit: cover;
   border-radius: 50%;
 }
 
 .node__title a {
-    padding-bottom: 0.16667rem;
+    padding-block-end: 0.16667rem;
     transition: background-size 0.2s, color 0.2s;
     text-decoration: none;
-    color: #0d1214;
+    color: var(--color--gray-0);
     background-color: transparent;
-    background-image: linear-gradient(#5c9ec8, #5c9ec8); /* Two values are needed for IE11 support. */
+    background-image: linear-gradient(var(--color--blue-50), var(--color--blue-50)); /* Two values are needed for IE11 support. */
     background-repeat: no-repeat;
     background-position: bottom left; /* LTR */
     background-size: 0 0.16667rem
@@ -47,7 +53,7 @@
 
 .node__title a:hover,
     .node__title a:focus {
-      color: #0c7fc8;
+      color: var(--color--blue-20);
     }
 
 [dir="rtl"] .node__title {
@@ -55,13 +61,13 @@
 }
 
 .node__content {
-  padding-bottom: 1.5rem
+  padding-block-end: var(--sp1-5)
 }
 
 @media (min-width: 55.55556rem) {
 
 .node__content {
-    padding-bottom: 3rem
+    padding-block-end: var(--sp3)
 }
   }
 

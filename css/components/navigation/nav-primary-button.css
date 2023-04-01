@@ -3,30 +3,173 @@
  * Button that expands second level nav when clicked.
  */
 
-[dir="ltr"] .primary-nav__button-toggle {   padding-left: 0
-}
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
-[dir="rtl"] .primary-nav__button-toggle {   padding-right: 0
-}
+/* Navigation related breakpoints */
 
-[dir="ltr"] .primary-nav__button-toggle {   padding-right: 0
-}
+/* Grid related breakpoints */
 
-[dir="rtl"] .primary-nav__button-toggle {   padding-left: 0
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+:root {
+  --font-sans: "Zen Maru Gothic", "georgia", sans-serif;
+  --font-serif: "Zen Maru Gothic", "georgia", serif;
+  --font-size-base: 1rem;
+  --font-size-xxxl: 3rem;
+  --font-size-xxl: 2.5rem;
+  --font-size-xl: 2rem;
+  --font-size-l: 1.5rem;
+  --font-size-m: var(--font-size-base);
+  --font-size-s: 0.9rem;
+  --font-size-xs: 0.7rem;
+  --font-size-xxs: 0.6rem;
+  --font-size-xxxs: 0.5rem;
+  --line-height-base: 1.1rem;
+  --max-width: 77.77778rem;
+  --max-bg-color: 87.22222rem;
+  --sp: var(--font-size-base);
+  --content-left: 5rem;
+  --container-padding: var(--sp);
+  --container-padding-nav: var(--sp2);
+  --site-header-height-wide: var(--sp2);
+  --toolbar-height: 2.16667rem;
+  --toolbar-tray-height: 2.22222rem;
+  --toolbar-tray-vertical-width: 13.27778rem;
+
+  --scrollbar-width: 0.83333rem;
+  --grid-gap: var(--sp);
+  --grid-gap--md: var(--sp2);
+  --grid-gap--lg: var(--grid-gap--md);
+  --grid-gap--nav: var(--grid-gap--md);
+  --grid-gap--max: var(--grid-gap--md);
+  --grid-col-count: 6;
+  --grid-col-count--md: 14;
+  --grid-col-count--lg: var(--grid-col-count--md);
+  --grid-col-count--nav: var(--grid-col-count--md);
+  --grid-col-count--max: var(--grid-col-count--md);
+  --grid-gap-count: calc(var(--grid-col-count) - 1);
+  --grid-gap-count--md: calc(var(--grid-col-count--md) - 1);
+  --grid-gap-count--lg: var(--grid-gap-count--md);
+  --grid-gap-count--nav: var(--grid-gap-count--md);
+  --grid-gap-count--max: var(--grid-gap-count--md);
+  --grid-full-width: calc(100vw - var(--sp2));
+  --grid-full-width--md: var(--grid-full-width);
+  --grid-full-width--lg: calc(var(--grid-full-width) - var(--scrollbar-width));
+  --grid-full-width--nav: calc(100vw - var(--scrollbar-width) - var(--content-left) - var(--sp4));
+  --grid-full-width--max: calc(var(--max-width) - var(--sp4));
+  --grid-col-width: calc((var(--grid-full-width) - var(--grid-gap-count)*var(--grid-gap))/var(--grid-col-count));
+  --grid-col-width--md: calc((var(--grid-full-width--md) - var(--grid-gap-count--md)*var(--grid-gap--md))/var(--grid-col-count--md));
+  --grid-col-width--lg: calc((var(--grid-full-width--lg) - var(--grid-gap-count--lg)*var(--grid-gap--lg))/var(--grid-col-count--lg));
+  --grid-col-width--nav: calc((var(--grid-full-width--nav) - var(--grid-gap-count--nav)*var(--grid-gap--nav))/var(--grid-col-count--nav));
+  --grid-col-width--max: calc((var(--grid-full-width--max) - var(--grid-gap-count--max)*var(--grid-gap--max))/var(--grid-col-count--max));
+  --sp0-25: calc(var(--sp)*0.25);
+  --sp0-5: calc(var(--sp)*0.5);
+  --sp0-75: calc(var(--sp)*0.75);
+  --sp1: calc(var(--sp)*1);
+  --sp1-5: calc(var(--sp)*1.5);
+  --sp2: calc(var(--sp)*2);
+  --sp2-5: calc(var(--sp)*2.5);
+  --sp3: calc(var(--sp)*3);
+  --sp4: calc(var(--sp)*4);
+  --sp5: calc(var(--sp)*5);
+  --sp6: calc(var(--sp)*6);
+  --sp7: calc(var(--sp)*7);
+  --sp8: calc(var(--sp)*8);
+  --sp9: calc(var(--sp)*9);
+  --sp10: calc(var(--sp)*10);
+  --sp11: calc(var(--sp)*11);
+  --sp12: calc(var(--sp)*12);
+
+  --color--black: #000;
+  --color--gray-0: #0d1214;
+  --color--gray-5: #0c0d0e;
+  --color--gray-8: #171e23;
+  --color--gray-10: #313637;
+  --color--gray-20: #666666;
+  --color--gray-25: #5d7585;
+  --color--gray-28: #7d919d;
+  --color--gray-30: #7e96a7;
+  --color--gray-40: #98abb9;
+  --color--gray-45: #afb8be;
+  --color--gray-50: #9ea0a1;
+  --color--gray-70: #d7e1e8;
+  --color--gray-75: #e3e3e5;
+  --color--gray-80: #e7edf1;
+  --color--gray-90: #f1f4f7;
+  --color--gray-95: #f7f9fa;
+  --color--blue-10: #004e80;
+  --color--blue-20: #0c7fc8;
+  --color--blue-30: #358fc8;
+  --color--blue-40: #84aec8;
+  --color--blue-50: #5c9ec8;
+  --color--blue-70: #c5d9e5;
+  --color--blue-90: #f3f6f8;
+  --color--green-10: #0b3319;
+  --color--green-20: #13592c;
+  --color--green-30: #209347;
+  --color--green-40: #42935e;
+  --color--green-50: #679376;
+  --color--green-70: #7db28f;
+  --color--green-90: #b8e5c7;
+  --color--yellow-10: #999300;
+  --color--yellow-20: #ccc514;
+  --color--yellow-30: #ece53a;
+  --color--yellow-40: #e5e05c;
+  --color--yellow-50: #e5e289;
+  --color--yellow-70: #fffdcc;
+  --color--yellow-90: #fffee5;
+  --color--red-10: #660a0a;
+  --color--red-20: #990f0f;
+  --color--red-30: #c83535;
+  --color--red-40: #d93636;
+  --color--red-50: #f25555;
+  --color--red-70: #f28585;
+  --color--red-90: #ffbfbf;
+  --color--white: #fff;
+  --color--red: #e33f1e;
+  --color--gold: #fdca40;
+  --color--green: #3fa21c;
+  --header-height-wide-when-fixed: calc(var(--sp)*3.1);
+  --mobile-nav-width: 27.77778rem;
+  --button--width-1: 27.77778rem; 
+  --button--width-2: 14.88889rem; 
+  --button--width-3: 12.77778rem; 
+  --button--width-4: 10rem;
+  --button--hight-1: 3.88889rem;
+  --button--hight-2: 3.05556rem;
+  --border-radius: 0.16667rem;
+  --border-radius2: 0.33333rem;
+  --border-radius3: 0.55556rem;
+  --color--main-1: var(--color--blue-30);
+  --color--main-2: var(--color--blue-90);
+  --color--success-1: var(--color--green-10);
+  --color--success-2: var(--color--green-30);
+  --color--success-3: var(--color--green-70);
+  --color--warning-1: var(--color--yellow-10);
+  --color--worning-2: var(--color--yellow-70);
+  --color--error-1: var(--color--red-10);
+  --color--error-2: var(--color--red-40);
+  --color--error-3: var(--color--red-70);
+  --color--shadow-1: rgba(0, 0, 0, 0.25);
+  --color--shadow-2: rgba(0, 0, 0, 0.15);
 }
 
 .primary-nav__button-toggle {
   position: relative;
   overflow: hidden;
-  width: 2rem;
-  height: 2rem;
-  margin-top: 0.5rem; /* Visually align button with menu link text. */
-  padding-top: 0;
-  padding-bottom: 0;   cursor: pointer;   text-indent: -55.5rem;   border: 0;   background: transparent;   -webkit-appearance: none
+  width: var(--sp2);
+  height: var(--sp2);
+  margin-block-start: var(--sp0-5); /* Visually align button with menu link text. */
+  padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   cursor: pointer;   text-indent: -55.5rem;   border: 0;   background: transparent;   -webkit-appearance: none
 }
 
 .primary-nav__button-toggle:focus {
-    outline: auto 2px #5c9ec8;
+    outline: auto 2px var(--color--blue-50);
     outline-offset: 2px;
   }
 
@@ -47,12 +190,12 @@
       top: 50%;
       left: 50%;
       /* stylelint-enable csstools/use-logical */
-      width: 1rem;
+      width: var(--sp);
       height: 0;
       content: "";
       transform: translate(-50%, -50%);
       /* Intentionally not using CSS logical properties. */
-      border-top: solid 3px #5c9ec8;
+      border-top: solid 3px var(--color--blue-50);
     }
 
 .primary-nav__button-toggle .icon--menu-toggle:after {
@@ -75,26 +218,20 @@
     pointer-events: none;
   }
 
-@media (min-width: 77.77778rem) {
-    [dir="ltr"] body:not(.is-always-mobile-nav) .primary-nav__button-toggle {
-      margin-right: -2rem
-   }
-    [dir="rtl"] body:not(.is-always-mobile-nav) .primary-nav__button-toggle {
-      margin-left: -2rem
-   }
+@media (min-width: 66.66667rem) {
     body:not(.is-always-mobile-nav) .primary-nav__button-toggle {
       flex-shrink: 0;
-      -ms-grid-row-align: stretch;
       align-self: stretch;
-      width: 2.44444rem;
+      width: calc(var(--sp2) + 0.44444rem);
       height: auto;
-      margin-top: 0
+      margin-block-start: 0;
+      margin-inline-end: calc(var(--sp2)*-1)
     }
 
       body:not(.is-always-mobile-nav) .primary-nav__button-toggle:focus {
         border: 0;         outline: 0
       }         body:not(.is-always-mobile-nav) .primary-nav__button-toggle:focus .icon--menu-toggle {
-          border: solid 2px #0c7fc8;
+          border: solid 2px var(--color--blue-20);
         }
 
       body:not(.is-always-mobile-nav) .primary-nav__button-toggle:active {
@@ -106,15 +243,8 @@
         opacity: 0.8;
       }
 
-      [dir="ltr"] body:not(.is-always-mobile-nav) .primary-nav__button-toggle .icon--menu-toggle {
-        left: 0.16667rem
-   }
-
-      [dir="rtl"] body:not(.is-always-mobile-nav) .primary-nav__button-toggle .icon--menu-toggle {
-        right: 0.16667rem
-   }
-
-      body:not(.is-always-mobile-nav) .primary-nav__button-toggle .icon--menu-toggle {         width: 1rem;         transform: translateY(-50%);         border-radius: 0.22222rem;         background-color: #fff
+      body:not(.is-always-mobile-nav) .primary-nav__button-toggle .icon--menu-toggle {
+        inset-inline-start: 0.16667rem;         width: 1rem;         transform: translateY(-50%);         border-radius: 0.22222rem;         background-color: var(--color--white)
       }         body:not(.is-always-mobile-nav) .primary-nav__button-toggle .icon--menu-toggle:before {
           content: none;
         }

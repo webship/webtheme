@@ -3,7 +3,8 @@
  * Embedded Media.
  */
 
-@import "../base/variables.pcss.css"; figure {
+@import "../base/media-queries.pcss.css";  
+figure {
   background: var(--color--gray-95);
 }
 

@@ -3,46 +3,30 @@
  * Book module styling.
  */
 
-[dir="ltr"] .book-pager {
-  margin-left: 0;
-}
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
-[dir="rtl"] .book-pager {
-  margin-right: 0;
-}
+/* Navigation related breakpoints */
 
-[dir="ltr"] .book-pager {
-  margin-right: 0;
-}
+/* Grid related breakpoints */
 
-[dir="rtl"] .book-pager {
-  margin-left: 0;
-}
+/* Grid shifts from 6 to 14 columns. */
 
-[dir="ltr"] .book-pager {
-  padding-left: 0;
-}
-
-[dir="rtl"] .book-pager {
-  padding-right: 0;
-}
-
-[dir="ltr"] .book-pager {
-  padding-right: 0;
-}
-
-[dir="rtl"] .book-pager {
-  padding-left: 0;
-}
+/* Width of the entire grid maxes out. */
 
 .book-pager {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0 1rem;
-  padding-top: 0;
-  padding-bottom: 1rem;
+  margin-block-start: 0 var(--sp);
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block: 0 var(--sp);
+  padding-inline-start: 0;
+  padding-inline-end: 0;
   list-style: none;
-  border-bottom: solid 1px #0c7fc8;
+  border-block-end: solid 1px var(--color--blue-20);
 }
 
 .book-pager__item {
@@ -65,144 +49,59 @@
 
 @media (min-width: 27.77778rem) {
 
-[dir="ltr"] .book-pager__item--next {
-    margin-left: auto;
-  }
-
-[dir="rtl"] .book-pager__item--next {
-    margin-right: auto;
-  }
-
-[dir="ltr"] .book-pager__item--next {
-    text-align: right;
-  }
-
-[dir="rtl"] .book-pager__item--next {
-    text-align: left;
-  }
+.book-pager__item--next {
+    margin-inline-start: auto;
+    text-align: end
+}
   }
 
 .book-pager__link {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #0c7fc8;
-  font-family: "Zen Maru Gothic", "georgia", serif;
+  color: var(--color--blue-20);
+  font-family: var(--font-serif);
   font-size: 1rem;
   font-weight: 600;
 }
 
-[dir="ltr"] .book-pager__link--previous:before {
-    margin-right: 0.25em;
-}
-
-[dir="rtl"] .book-pager__link--previous:before {
-    margin-left: 0.25em;
-}
-
-[dir="ltr"] .book-pager__link--previous:before {
-    border-left: solid 3px currentColor;
-}
-
-[dir="rtl"] .book-pager__link--previous:before {
-    border-right: solid 3px currentColor;
-}
-
 .book-pager__link--previous:before {
     display: block;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: var(--sp0-5);
+    height: var(--sp0-5);
+    margin-inline-end: 0.25em;
     content: "";
     transform: rotate(-45deg);
-    border-top: solid 3px currentColor;
+    border-block-start: solid 0.16667rem currentColor;
+    border-inline-start: solid 0.16667rem currentColor;
   }
-
-[dir="ltr"] .book-pager__link--next:after {
-    margin-left: 0.25em;
-}
-
-[dir="rtl"] .book-pager__link--next:after {
-    margin-right: 0.25em;
-}
-
-[dir="ltr"] .book-pager__link--next:after {
-    border-left: solid 3px currentColor;
-}
-
-[dir="rtl"] .book-pager__link--next:after {
-    border-right: solid 3px currentColor;
-}
 
 .book-pager__link--next:after {
     display: block;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: var(--sp0-5);
+    height: var(--sp0-5);
+    margin-inline-start: 0.25em;
     content: "";
     transform: rotate(135deg);
-    border-top: solid 3px currentColor;
+    border-block-start: solid 0.16667rem currentColor;
+    border-inline-start: solid 0.16667rem currentColor;
   }
 
-[dir="ltr"] .book-navigation__menu {
-  margin-left: 0;
-}
-
-[dir="rtl"] .book-navigation__menu {
-  margin-right: 0;
-}
-
-[dir="ltr"] .book-navigation__menu {
-  margin-right: 0;
-}
-
-[dir="rtl"] .book-navigation__menu {
-  margin-left: 0;
-}
-
-[dir="ltr"] .book-navigation__menu {
-  padding-left: 0;
-}
-
-[dir="rtl"] .book-navigation__menu {
-  padding-right: 0;
-}
-
-[dir="ltr"] .book-navigation__menu {
-  padding-right: 0;
-}
-
-[dir="rtl"] .book-navigation__menu {
-  padding-left: 0;
-}
-
 .book-navigation__menu {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin-block: var(--sp2);
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
   list-style: none;
 }
 
-[dir="ltr"] .book-navigation__item {
-  padding-left: 0;
-}
-
-[dir="rtl"] .book-navigation__item {
-  padding-right: 0;
-}
-
-[dir="ltr"] .book-navigation__item {
-  padding-right: 0;
-}
-
-[dir="rtl"] .book-navigation__item {
-  padding-left: 0;
-}
-
 .book-navigation__item {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin-block: 0;
+  padding-block: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
   list-style: none;
 }
 

@@ -3,9 +3,26 @@
  * Responsive styles for views grid vertical layout.
  */
 
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+:root {
+  --views-grid-layout-gap: var(--sp);
+}
+
 .views-view-grid--vertical {
-  margin-bottom: -1rem; /* Offset the bottom row's padding. */
-  grid-column-gap: 1rem
+  margin-block-end: calc(var(--views-grid-layout-gap)*-1); /* Offset the bottom row's padding. */
+  grid-column-gap: var(--views-grid-layout-gap)
 }
 
 @media (min-width: 27.77778rem) {
@@ -135,7 +152,7 @@
     }
 
 .views-view-grid--vertical .views-view-grid__item > * {
-      padding-bottom: 1rem;
+      padding-block-end: var(--views-grid-layout-gap);
       page-break-inside: avoid;
       break-inside: avoid;
     }

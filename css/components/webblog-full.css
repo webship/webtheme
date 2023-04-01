@@ -1,0 +1,47 @@
+/**
+ * @file
+ * Web Blog full contant view mode
+ *
+ */
+
+ /*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+ /* Navigation related breakpoints */
+
+ /* Grid related breakpoints */
+
+ /* Grid shifts from 6 to 14 columns. */
+
+ /* Width of the entire grid maxes out. */
+
+ .node--type-webblog.node--view-mode-full h1 {
+    letter-spacing: -0.01em;   
+    font-size: var(--font-size-l);
+    line-height: var(--sp1)
+  }
+
+ @media (min-width: 38.88889rem) {
+
+ .node--type-webblog.node--view-mode-full h1 {
+      font-size: var(--font-size-xxl);
+      line-height: var(--sp2)
+  }
+    }
+
+ .region--content {
+ 
+  width:90%;
+  margin:auto
+
+  }
+
+ @media (min-width: 38.88889rem) {
+
+ .region--content {
+    width:75%
+
+  }
+  }

@@ -56,3 +56,7 @@ libraries-override:
   olivero/sidebar: webtheme/sidebar
   olivero/tabs: webtheme/tabs
   olivero/tags: webtheme/tags
+
+libraries-extend:
+  views/views.responsive-grid:
+    - webtheme/views.responsive-grid

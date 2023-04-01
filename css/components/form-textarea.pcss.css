@@ -3,7 +3,8 @@
  * Textarea.
  */
 
- @import "../base/variables.pcss.css"; textarea {
+ @import "../base/media-queries.pcss.css";  
+textarea {
   display: block;
   width: 100%;
   min-height: var(--sp10);

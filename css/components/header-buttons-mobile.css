@@ -3,38 +3,45 @@
  * Header Mobile Buttons.
  */
 
-[dir="ltr"] .mobile-buttons {   margin-left: auto
-}
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
-[dir="rtl"] .mobile-buttons {   margin-right: auto
-}
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
 
 .mobile-buttons {
-  margin-top: 0.5rem
+  margin-block-start: var(--sp0-5);   margin-inline-start: auto
 }
 
 @media (min-width: 27.77778rem) {
 
 .mobile-buttons {
-    margin-top: 2rem
+    margin-block-start: var(--sp2)
 }
   }
 
 @media (min-width: 38.88889rem) {
 
 .mobile-buttons {
-    margin-top: 4rem
+    margin-block-start: var(--sp4)
 }
   }
 
-@media (min-width: 77.77778rem) {
+@media (min-width: 66.66667rem) {
 
 .mobile-buttons {
-    margin-top: 6rem
+    margin-block-start: var(--sp6)
 }
   }
 
-@media (min-width: 77.77778rem) {
+@media (min-width: 66.66667rem) {
   body:not(.is-always-mobile-nav) .mobile-buttons {
     display: none;
   }

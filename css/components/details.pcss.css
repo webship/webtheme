@@ -3,7 +3,8 @@
  * Collapsible details.
  */
 
-@import "../base/variables.pcss.css"; :root {
+@import "../base/media-queries.pcss.css";  
+:root {
   --details-border-width: 1px;
   --details-summary-transition: background-color 0.12s ease-in-out;
 }

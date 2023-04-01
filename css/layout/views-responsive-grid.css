@@ -1,0 +1,31 @@
+/**
+ * @file
+ * Change responsive grid to block for mobile
+ *
+ */
+
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+.views-view-responsive-grid {
+  display:block
+
+}
+
+@media (min-width: 55.55556rem) {
+
+.views-view-responsive-grid {
+    display:grid
+
+}
+  }

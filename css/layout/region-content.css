@@ -3,35 +3,34 @@
  * Content region layout.
  */
 
+ /*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+ /* Navigation related breakpoints */
+
+ /* Grid related breakpoints */
+
+ /* Grid shifts from 6 to 14 columns. */
+
+ /* Width of the entire grid maxes out. */
+
  .region--content {
-   margin-bottom: 1rem
+   margin-block-end: var(--sp)
  }
 
  @media (min-width: 38.88889rem) {
 
  .region--content {
-     margin-bottom: 2rem
+     margin-block-end: var(--sp2)
  }
    }
 
  @media (min-width: 55.55556rem) {
 
  .region--content {
-     margin-bottom: 3rem
+     margin-block-end: var(--sp3)
  }
    }
-
- .page-node-type-webblog .region--content {
  
-   width:90%;
-   margin:auto
- 
-   }
-
- @media (min-width: 38.88889rem) {
-
- .page-node-type-webblog .region--content {
-     width:75%
- 
-   }
-   }

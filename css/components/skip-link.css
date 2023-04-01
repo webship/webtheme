@@ -5,25 +5,26 @@
  * Allows keyboard users to quickly skip to the main content of the page.
  */
 
-[dir="ltr"] .skip-link {   padding-left: 1rem
-}
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
 
-[dir="rtl"] .skip-link {   padding-right: 1rem
-}
+/* Navigation related breakpoints */
 
-[dir="ltr"] .skip-link {   padding-right: 1rem
-}
+/* Grid related breakpoints */
 
-[dir="rtl"] .skip-link {   padding-left: 1rem
-}
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
 
 .skip-link {
-  display: block;   width: 100%;   max-width: 87.22222rem;   padding-top: 0.5rem;   padding-bottom: 0.5rem;   text-decoration: none;   color: #fff;   outline: 0;   background-color: #0d1214
+  display: block;   width: 100%;   max-width: var(--max-bg-color);   padding-block: var(--sp0-5);   padding-inline-start: var(--sp);   padding-inline-end: var(--sp);   text-decoration: none;   color: var(--color--white);   outline: 0;   background-color: var(--color--gray-0)
 }
 
 .skip-link:hover {
     text-decoration: underline;
-    color: #fff;
+    color: var(--color--white);
   }
 
 .skip-link:after {

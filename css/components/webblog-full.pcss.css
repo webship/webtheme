@@ -1,0 +1,33 @@
+/**
+ * @file
+ * Web Blog full contant view mode
+ *
+ */
+
+ @import "../base/media-queries.pcss.css";
+
+ .node--type-webblog.node--view-mode-full {
+
+  & h1 {
+    letter-spacing: -0.01em;   
+    font-size: var(--font-size-l);
+    line-height: var(--sp1);   
+    
+    @media (--md) {
+      font-size: var(--font-size-xxl);
+      line-height: var(--sp2);
+    }
+  }
+
+}
+
+.region--content {
+ 
+  width:90%;
+  margin:auto;
+
+  @media (--md) {
+    width:75%;
+  }
+
+  }

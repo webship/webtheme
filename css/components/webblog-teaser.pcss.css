@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Web Blog teaser contant view mode
+ *
+ */
+
+@import "../base/media-queries.pcss.css";
+
+.node--type-webblog.node--view-mode-teaser {
+
+ & h3 a {
+    color: var(--color--black);  
+    
+    &:hover {
+      color: var(--color--main-1);
+    }
+  
+    &:focus {
+      outline: solid 2px currentColor;
+      outline-offset: 2px;
+    }
+  }
+}

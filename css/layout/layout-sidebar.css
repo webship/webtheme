@@ -3,17 +3,26 @@
  * Special grid system for sidebar.
  */
 
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
 .sidebar-grid > .site-main {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 6;
     grid-column: 1 / 7;     align-self: flex-start;     -ms-grid-row-align: start
   }
 
 @media (min-width: 38.88889rem) {
 
 .sidebar-grid > .site-main {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 14;
       grid-column: 1 / 15
   }
     }
@@ -21,17 +30,12 @@
 @media (min-width: 55.55556rem) {
 
 .sidebar-grid > .site-main {
-      display: -ms-grid;
-      display: grid;       -ms-grid-columns:         (minmax(             0,
-            1fr           ))[8];       grid-template-columns:         repeat(           8,
+      display: grid;       grid-template-columns:         repeat(           8,
           minmax(             0,
-            1fr           )         );       -ms-grid-column: 3;       -ms-grid-column-span: 8;       grid-column: 3 / 11
+            1fr           )         );       grid-column: 3 / 11
   }       .sidebar-grid > .site-main > .region--content-above,
       .sidebar-grid > .site-main > .region--content {
-        -ms-grid-columns: (minmax(0, 1fr))[8];
         grid-template-columns: repeat(8, minmax(0, 1fr));
-        -ms-grid-column: 1;
-        -ms-grid-column-span: 8;
         grid-column: 1 / 9;
       }
 
@@ -39,21 +43,17 @@
       .sidebar-grid > .site-main .layout--pass--content-narrow > *,
       .sidebar-grid > .site-main .layout--content-medium,
       .sidebar-grid > .site-main .layout--pass--content-medium > * {
-        -ms-grid-column: 1;
-        -ms-grid-column-span: 8;
         grid-column: 1 / 9;
       }
     }
 
 .sidebar-grid .region--sidebar {
-    -ms-grid-row: 2;     -ms-grid-column: 1;     -ms-grid-column-span: 6;     grid-column: 1 / 7
+    -ms-grid-row: 2;     grid-column: 1 / 7
   }
 
 @media (min-width: 38.88889rem) {
 
 .sidebar-grid .region--sidebar {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 10;
       grid-column: 3 / 13
   }
     }
@@ -62,8 +62,6 @@
 
 .sidebar-grid .region--sidebar {
       -ms-grid-row: 1;
-      -ms-grid-column: 12;
-      -ms-grid-column-span: 3;
       grid-column: 12 / 15
   }
     }

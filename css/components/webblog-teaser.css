@@ -1,0 +1,31 @@
+/**
+ * @file
+ * Web Blog teaser contant view mode
+ *
+ */
+
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
+.node--type-webblog.node--view-mode-teaser h3 a {
+    color: var(--color--black)
+  }
+
+.node--type-webblog.node--view-mode-teaser h3 a:hover {
+      color: var(--color--main-1);
+    }
+
+.node--type-webblog.node--view-mode-teaser h3 a:focus {
+      outline: solid 2px currentColor;
+      outline-offset: 2px;
+    }

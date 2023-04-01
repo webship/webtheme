@@ -3,7 +3,7 @@
  * Node specific styles.
  */
 
-@import "../base/variables.pcss.css";
+@import "../base/media-queries.pcss.css";
 
 .node__meta {
   display: flex;   align-items: center;   margin-block-end: var(--sp1);   color: var(--color--gray-20);   font-size: 14px;   line-height: var(--sp);   & a {

@@ -3,7 +3,8 @@
  * Comment section and individual comments.
  */
 
-@import "../base/variables.pcss.css"; :root {
+@import "../base/media-queries.pcss.css";  
+:root {
   --comment-indentation: var(--sp2);
   --comment-indentation--md: var(--sp4);
 }

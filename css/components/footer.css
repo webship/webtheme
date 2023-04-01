@@ -3,40 +3,36 @@
  * Footer regions.
  */
 
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
 .site-footer {
   position: relative; /* stack above left social bar */
-  color: #fff;
-  background: #358fc8
-}
-
-[dir="ltr"] .site-footer .menu {     margin-left: 0
-}
-
-[dir="rtl"] .site-footer .menu {     margin-right: 0
+  color: var(--color--white);
+  background: var(--color--main-1)
 }
 
 .site-footer .menu {
-    display: flex;     justify-content: flex-end;     list-style: none;     font-weight: bold
+    display: flex;     justify-content: flex-end;     margin-inline-start: 0;     list-style: none;     font-weight: bold
   }
 
-[dir="ltr"] .site-footer .menu ul {
-      margin-left: 1rem
-}
-
-[dir="rtl"] .site-footer .menu ul {
-      margin-right: 1rem
-}
-
-[dir="ltr"] .site-footer .menu li {
-      margin-left: 2rem
-}
-
-[dir="rtl"] .site-footer .menu li {
-      margin-right: 2rem
-}
+.site-footer .menu ul {
+      margin-inline-start: var(--sp);
+    }
 
 .site-footer .menu li {
-      margin-bottom: 0.5rem;
+      margin-block-end: var(--sp0-5);
+      margin-inline-start: var(--sp2);
     }
 
 .site-footer a {
@@ -86,7 +82,7 @@
   display: block
 }
 
-@media (min-width: 38.88889rem) {
+@media (min-width: 27.77778rem) {
 
 .region--footer-bottom {
       display: flex

@@ -3,6 +3,19 @@
  * Content below region layout.
  */
 
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
 @media (min-width: 38.88889rem) {
 
 .region--content-below {
@@ -10,41 +23,24 @@
     flex-wrap: wrap
 }
 
-    [dir="ltr"] .region--content-below > * {       margin-right: 2rem
-}
-
-    [dir="rtl"] .region--content-below > * {       margin-left: 2rem
-}
-
     .region--content-below > * {
-      flex-basis: calc(50% - 1rem);       flex-grow: 1;       flex-shrink: 0
-    }       [dir="ltr"] .region--content-below > *:nth-child(2n),[dir="ltr"] 
+      flex-basis: calc(50% - var(--grid-gap--md)/2);       flex-grow: 1;       flex-shrink: 0;       margin-inline-end: var(--grid-gap--md)
+    }       .region--content-below > *:nth-child(2n),
       .region--content-below > *:last-child {
-        margin-right: 0
-}       [dir="rtl"] .region--content-below > *:nth-child(2n),[dir="rtl"] 
-      .region--content-below > *:last-child {
-        margin-left: 0
-}
+        margin-inline-end: 0;
+      }
   }
 
 @media (min-width: 38.88889rem) {
     .region--content-below > * {
-      flex-basis: calc(33.33% - 1.334rem)
-    }       [dir="ltr"] .region--content-below > *:nth-child(2n),[dir="ltr"] 
+      flex-basis: calc(33.33% - var(--grid-gap--md)*0.667)
+    }       .region--content-below > *:nth-child(2n),
       .region--content-below > *:last-child {
-        margin-right: 2rem
-}       [dir="rtl"] .region--content-below > *:nth-child(2n),[dir="rtl"] 
-      .region--content-below > *:last-child {
-        margin-left: 2rem
-}
+        margin-inline-end: var(--grid-gap--md);
+      }
 
-      [dir="ltr"] .region--content-below > *:nth-child(3n),[dir="ltr"] 
+      .region--content-below > *:nth-child(3n),
       .region--content-below > *:last-child {
-        margin-right: 0
-}
-
-      [dir="rtl"] .region--content-below > *:nth-child(3n),[dir="rtl"] 
-      .region--content-below > *:last-child {
-        margin-left: 0
-}
+        margin-inline-end: 0;
+      }
   }

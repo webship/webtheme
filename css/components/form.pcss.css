@@ -3,7 +3,8 @@
  * Main form and form item styles.
  */
 
- @import "../base/variables.pcss.css"; ::placeholder {
+ @import "../base/media-queries.pcss.css";  
+::placeholder {
   color: var(--color--main-1);
 }
 

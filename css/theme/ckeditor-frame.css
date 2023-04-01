@@ -3,37 +3,35 @@
  * CKEditor frame styles.
  */
 /** cspell:ignore grouptitle */
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+/* Navigation related breakpoints */
+/* Grid related breakpoints */
+/* Grid shifts from 6 to 14 columns. */
+/* Width of the entire grid maxes out. */
 .cke_editable {
-  margin: 1rem;
+  margin: var(--sp1);
   background-image: none;
 }
 [dir].cke_panel_container body {
-  background: #fff;
+  background: var(--color--white);
 }
 .cke_panel_listItem a > * {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-block: 0;
 }
 .cke_panel_grouptitle {
   margin: 0;
 }
-[dir="ltr"] .cke_editable blockquote {
-  margin-left: 3rem;
+.cke_editable blockquote {
+  margin-inline-start: var(--sp3);
 }
-[dir="rtl"] .cke_editable blockquote {
-  margin-right: 3rem;
+.cke_editable .align-right {
+  margin-inline-end: 0;
 }
-[dir="ltr"] .cke_editable .align-right {
-  margin-right: 0;
-}
-[dir="rtl"] .cke_editable .align-right {
-  margin-left: 0;
-}
-[dir="ltr"] .cke_editable .align-left {
-  margin-left: 0;
-}
-[dir="rtl"] .cke_editable .align-left {
-  margin-right: 0;
+.cke_editable .align-left {
+  margin-inline-start: 0;
 }
 .cke_image_resizer_wrapper {
   vertical-align: top;
@@ -42,11 +40,8 @@ figure.cke_widget_element {
   margin: 0;
 }
 figcaption.cke_widget_editable {
-  background-color: #fff;
+  background-color: var(--color--white);
 }
-[dir="ltr"] .cke_panel_list {
-  margin-left: 0;
-}
-[dir="rtl"] .cke_panel_list {
-  margin-right: 0;
+.cke_panel_list {
+  margin-inline-start: 0;
 }

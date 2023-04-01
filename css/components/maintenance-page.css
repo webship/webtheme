@@ -3,12 +3,24 @@
  * Maintenance page.
  */
 
+/*
+ * Media query breakpoints.
+ * Processed by postcss/postcss-custom-media.
+ */
+
+/* Navigation related breakpoints */
+
+/* Grid related breakpoints */
+
+/* Grid shifts from 6 to 14 columns. */
+
+/* Width of the entire grid maxes out. */
+
 .maintenance-page .main-content {
     min-height: 80vh;
   }
 
 .maintenance-page-icon {
   display: block;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-block: var(--sp3);
 }

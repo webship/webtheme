@@ -163,7 +163,7 @@
   display: none
 }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .wide-nav-expand {
     display: flex;     visibility: hidden;     flex-shrink: 0;     align-items: center;     justify-content: center;     width: var(--content-left);     height: var(--sp6);     cursor: pointer;     pointer-events: auto;     color: var(--color--white);     border: 0;     background-color: var(--color--blue-50)
@@ -173,14 +173,14 @@
     }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 body:not(.is-always-mobile-nav) .is-fixed .wide-nav-expand {
     visibility: visible
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 body.is-always-mobile-nav .wide-nav-expand {
     visibility: hidden

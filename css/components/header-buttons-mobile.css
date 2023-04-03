@@ -34,14 +34,14 @@
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .mobile-buttons {
     margin-block-start: var(--sp6)
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
   body:not(.is-always-mobile-nav) .mobile-buttons {
     display: none;
   }

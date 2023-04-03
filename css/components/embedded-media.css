@@ -68,7 +68,7 @@ figcaption {
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .layout--content-narrow .align-right,
 .layout--pass--content-narrow > * .align-right {
@@ -119,7 +119,7 @@ figcaption {
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .layout--content-narrow .align-left,
 .layout--pass--content-narrow > * .align-left {

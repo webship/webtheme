@@ -24,7 +24,7 @@
     margin-block-end: 0;
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
     body:not(.is-always-mobile-nav) .region--secondary-menu {
       justify-content: flex-end;
       margin: 0

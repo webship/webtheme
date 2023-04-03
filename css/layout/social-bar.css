@@ -17,7 +17,7 @@
 
 /* Width of the entire grid maxes out. */
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .social-bar {
     flex-shrink: 0;
@@ -33,7 +33,7 @@
   padding-inline-end: var(--sp)
 }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .social-bar__inner {
     position: relative;     width: var(--content-left);     padding-block: calc(var(--sp)*5);     padding-inline-start: 0;     padding-inline-end: 0
@@ -49,7 +49,7 @@
     margin-block-end: var(--sp2)
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .rotate > * {
       display: flex;       align-items: center;       margin-block-end: 0
@@ -58,7 +58,7 @@
       }
     }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .rotate .contextual {
       inset-inline: 100% auto;
@@ -71,7 +71,7 @@
       }
     }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .rotate {
     position: absolute;
@@ -91,7 +91,7 @@
     }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
     [dir="rtl"] .rotate {
       transform: rotate(90deg) translateX(100%);       transform-origin: right
     }       [dir="rtl"] .rotate .contextual {

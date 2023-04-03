@@ -214,7 +214,7 @@
       opacity: 0.8;
     }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
     body:not(.is-always-mobile-nav) .secondary-nav {
       position: relative;       display: flex;       margin-inline-start: var(--sp);       padding-inline-start: var(--sp2)
     }       body:not(.is-always-mobile-nav) .secondary-nav:before {

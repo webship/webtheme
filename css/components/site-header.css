@@ -25,7 +25,7 @@
   z-index: 101
 }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .site-header {
     /* Necessary to keep the content from jumping up when header transitions to fixed. */
@@ -41,13 +41,13 @@
   transition: all 0.5s
 }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
       .site-header__fixable.is-fixed:not(.is-expanded) {
         pointer-events: none;
       }
     }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
     body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed {
       position: fixed;
       z-index: 102; /* Appear above body content that is position: relative */
@@ -81,21 +81,21 @@
  * works around https://bugs.chromium.org/p/chromium/issues/detail?id=332189
  */
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 html.js body:not(.is-always-mobile-nav) .site-header__inner {
     transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 .site-header__fixable.is-expanded .site-header__inner {
     box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08) /* LTR */
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="rtl"] .site-header__fixable.is-expanded .site-header__inner {
     box-shadow: 36px 1px 36px rgba(0, 0, 0, 0.08)
@@ -104,7 +104,7 @@ html.js body:not(.is-always-mobile-nav) .site-header__inner {
 
 /* Hide the desktop nav when it's fixed and not active. */
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed:not(.is-expanded) .site-header__inner {
     transform: translateX(-101%); /* LTR */
@@ -112,7 +112,7 @@ body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed:not(.is-expanded)
 }
   }
 
-@media (min-width: 66.66667rem) {
+@media (min-width: 55.55556rem) {
 
 [dir="rtl"] body:not(.is-always-mobile-nav) .site-header__fixable.is-fixed:not(.is-expanded) .site-header__inner {
     transform: translateX(101%)

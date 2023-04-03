@@ -69,7 +69,7 @@
 .region--footer-bottom {
   display: block;
   
-    @media (--nav-md) {
+    @media (--nav) {
       display: flex;
       }
 }

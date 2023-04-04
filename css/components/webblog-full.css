@@ -20,14 +20,14 @@
  .node--type-webblog.node--view-mode-full h1 {
     letter-spacing: -0.01em;   
     font-size: var(--font-size-l);
-    line-height: var(--sp1)
+    line-height: var(--sp2)
   }
 
  @media (min-width: 38.88889rem) {
 
  .node--type-webblog.node--view-mode-full h1 {
       font-size: var(--font-size-xxl);
-      line-height: var(--sp2)
+      line-height: var(--sp3)
   }
     }
 

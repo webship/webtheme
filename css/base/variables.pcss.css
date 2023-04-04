@@ -14,10 +14,10 @@
 
   /* Typography */
   --font-size-base: 1rem;
-  --font-size-xxxl: 3rem;
-  --font-size-xxl: 2.5rem;
-  --font-size-xl: 2rem;
-  --font-size-l: 1.5rem;
+  --font-size-xxxl: 2.8rem;
+  --font-size-xxl: 2.3rem;
+  --font-size-xl: 1.8rem;
+  --font-size-l: 1.4rem;
   --font-size-m: var(--font-size-base);
   --font-size-s: 0.9rem;
   --font-size-xs: 0.7rem;

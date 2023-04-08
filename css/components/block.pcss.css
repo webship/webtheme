@@ -7,19 +7,30 @@
 .block__title {
   margin-block: 0 var(--sp);
   letter-spacing: 0.02em;
-  color: var(--color--gray-20);
-  font-size: var(--font-size-s);
-  line-height: var(--sp);
+  color: var(--color--black);
+  font-size: var(--font-size-m);   
+  line-height: var(--sp2);   
+  
+  @media (--md) {
+    font-size: var(--font-size-xl);
+    line-height: var(--sp3);
+  }
 }
 
 .site-footer .block__title {
-  color: var(--color--gray-50);
+  color: var(--color--white);
 }
 
-.block__content{
+.block__content {
 
-  & .field--name-created{
-      color: var(--color--gray-20);
-      font-size: 16px;
+  & .field--name-created {
+    color: var(--color--black);
+    font-size: var(--font-size-m);   
+    line-height: var(--sp2);   
+  
+    @media (--md) {
+      font-size: var(--font-size-l);
+      line-height: var(--sp2-5);
+    }
   }
 }

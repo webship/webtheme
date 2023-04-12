@@ -64,9 +64,6 @@
      min-height: var(--sp2-5);
    }
  
-   @media (--sm) {
-     width: auto;
-   }
  }
  
  [type="date"] {

@@ -57,6 +57,23 @@
        line-height: var(--sp2);
      }
    }
+   
+   & li {
+    margin-block-start: var(--sp);     margin-block-end: var(--sp);     &:first-child {
+      margin-block-start: 0;
+    }
+
+      &:last-child {
+        margin-block-end: 0;
+      }
+
+      @media (--lg) {
+        font-size: var(--font-size-l);
+        margin-block-start: var(--sp);
+        margin-block-end: var(--sp);
+        line-height: var(--sp2);
+      }
+    }
  
    & code {
      background-color: var(--color--gray-95);

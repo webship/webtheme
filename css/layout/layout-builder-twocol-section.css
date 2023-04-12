@@ -22,7 +22,9 @@
 }
 
 .layout--twocol-section > .layout__region {
-    flex: 1 0 100%;     margin-block-end: var(--grid-gap)
+    flex: 1 0 100%;
+    width:100%;     
+    margin-block-end: var(--grid-gap)
   }
 
 @media (min-width: 38.88889rem) {
@@ -34,7 +36,7 @@
   }
     }
 
-@media (min-width: 38.88889rem) {
+@media (min-width: 55.55556rem) {
     .layout--twocol-section--50-50 > .layout__region--first {
       flex-basis: calc(50% - var(--grid-gap--md)*0.5);
       margin-inline-end: calc(var(--grid-gap--md)*0.5);

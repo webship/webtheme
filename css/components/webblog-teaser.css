@@ -29,3 +29,9 @@
       outline: solid 2px currentColor;
       outline-offset: 2px;
     }
+
+.node--type-webblog.node--view-mode-teaser .field--name-created {
+    color: var(--color--gray-20);
+    font-size: var(--font-size-s);   
+    line-height: var(--sp1);   
+  }

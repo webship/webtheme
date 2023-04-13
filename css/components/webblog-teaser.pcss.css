@@ -20,4 +20,10 @@
       outline-offset: 2px;
     }
   }
+
+  & .field--name-created {
+    color: var(--color--gray-20);
+    font-size: var(--font-size-s);   
+    line-height: var(--sp1);   
+  }
 }

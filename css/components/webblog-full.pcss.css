@@ -19,6 +19,12 @@
     }
   }
 
+  & .field--name-created {
+    color: var(--color--gray-20);
+    font-size: var(--font-size-s);   
+    line-height: var(--sp1);   
+  }
+
 }
 
 .region--content {

@@ -14,21 +14,21 @@
    padding-block: calc((var(--sp3) - var(--line-height-s)) / 2);
    padding-inline: var(--sp1-5);   cursor: pointer;
    text-align: center;   text-decoration: none;
-   color: var(--color--blue-20);
-   border: solid 2px var(--color--main-1);   
-   border-radius: var(--border-radius);   
-   background-color: var(--color--white);   
+   border: solid 2px var(--color--main-1); 
    font-family: var(--font-sans);   
    font-size: var(--font-size-l);   
    font-weight: bold;   
    appearance: none;   
+   color: var(--color--white);
+   background-color: var(--color--blue-30); 
+   border-radius: var(--border-radius3); 
    -webkit-font-smoothing: antialiased;
  
    &:hover,
    &:focus {
      text-decoration: none;
-     color: var(--color--blue-10);
-     background: none;
+     color: var(--color--white);
+     background: var(--color--blue-20);
      font-weight: bold;
    }
  
@@ -80,9 +80,6 @@
  }
  
  .button--primary {
-   color: var(--color--white);
-   background-color: var(--color--blue-30); 
-   border-radius: var(--border-radius3); 
    height: var(--button--hight-1);
    width: var(--button--width-1);
    text-align: center;

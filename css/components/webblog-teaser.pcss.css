@@ -27,3 +27,73 @@
     line-height: var(--sp1);   
   }
 }
+
+
+.pager{
+
+  text-align:center;
+
+  & .pager__items {
+      display: inline-flex;
+  }
+
+  & .pager__item--active{
+    width:50px;
+    height:50px;
+  }
+
+  & .pager__link {
+
+    width:30px;
+    height:30px;
+    display:black;
+
+    &:hover{
+      background:none;
+    }
+  }
+
+  & .pager__item--next{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-next-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
+
+  & .pager__item--previous{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-back-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
+
+  & .pager__item--last{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-last-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
+
+  & .pager__item--first{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-first-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
+}

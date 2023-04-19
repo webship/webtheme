@@ -48,6 +48,7 @@
 .pager .pager__item--active{
     width:2.77778rem;
     height:2.77778rem;
+    background-color: var(--color--main-1);
   }
 
 .pager .pager__link {

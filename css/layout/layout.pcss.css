@@ -45,8 +45,12 @@
  }
  
  .main-content__container {
-   padding-block-start: var(--sp3);   @media (--md) {
-     padding-block-start: var(--sp5);
-   }
- }
+  padding-block-start: var(--sp);
+  padding-left: 0px;
+  padding-right: 0px;   
+  
+  @media (--md) {
+    padding-block-start: var(--sp1);
+  }
+}
  

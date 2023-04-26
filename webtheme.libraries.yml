@@ -286,3 +286,9 @@ webblog.full:
   css:
     theme:
       css/components/webblog-full.css: {}
+    
+webdoc.full:
+  version: VERSION
+  css:
+    theme:
+      css/components/webdoc-full.css: {}

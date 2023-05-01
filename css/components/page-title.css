@@ -28,6 +28,10 @@
   display:none;
   }
 
+ .path-frontpage .block-page-title-block {
+    margin-block-end: 0px;
+  }
+
  .page-node-type-webblog .page-title{
   display:none;
   }

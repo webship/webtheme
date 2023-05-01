@@ -21,7 +21,11 @@
   & .block-page-title-block {
     margin-block-end: 0px;
   }
-  
+
+  & .main-content__container {
+    padding-block-start: 0px;
+  }
+
 }
 
 .page-node-type-webblog {

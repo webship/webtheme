@@ -46,11 +46,11 @@
  
  .main-content__container {
   padding-block-start: var(--sp);
-  padding-left: 0px;
-  padding-right: 0px;   
   
   @media (--md) {
     padding-block-start: var(--sp1);
+    padding-left: 0px;
+    padding-right: 0px;   
   }
 }
  

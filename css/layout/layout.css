@@ -65,15 +65,15 @@
    }
 
  .main-content__container {
-  padding-block-start: var(--sp);
-  padding-left: 0px;
-  padding-right: 0px
+  padding-block-start: var(--sp)
 }
 
  @media (min-width: 38.88889rem) {
 
  .main-content__container {
-    padding-block-start: var(--sp1)
-}
+    padding-block-start: var(--sp1);
+    padding-left: 0px;
+    padding-right: 0px
+}   
   }
  

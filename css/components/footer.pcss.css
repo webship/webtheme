@@ -3,73 +3,85 @@
  * Footer regions.
  */
 
-@import "../base/media-queries.pcss.css";
+ @import "../base/media-queries.pcss.css";
 
-.site-footer {
-  position: relative; /* stack above left social bar */
-  color: var(--color--white);
-  background: var(--color--main-1);
-
-  & .menu {
-    display: flex;     justify-content: flex-end;     margin-inline-start: 0;     list-style: none;     font-weight: bold;     & ul {
-      margin-inline-start: var(--sp);
-    }
-
-    & li {
-      margin-block-end: var(--sp0-5);
-      margin-inline-start: var(--sp2);
-    }
-  }
-
-  & a {
-    text-decoration: none;     color: inherit;     &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.menu--social-media-menu {
-  & a {
-    display: block;
-    width: 36px;
-    height: 36px;
-    font-size: 0;
-  }
-  
-  & svg.ext {
-    display:none;
-  }
-
-}
-
-.menu--social-media-menu .bitbucket {
-  background-image: url("../../images/icon/Icon-bitbucket.svg");
-}
-
-.menu--social-media-menu .github {
-  background-image: url("../../images/icon/Icon-github.svg");
-}
-
-.menu--social-media-menu .gitlab {
-  background-image: url("../../images/icon/Icon-gitlab.svg");
-}
-
-.menu--social-media-menu .linkedin {
-  background-image: url("../../images/icon/Icon-linkedin.svg");
-}
-
-.menu--social-media-menu .twitter {
-  background-image: url("../../images/icon/Icon-twitter.svg");
-}
-
-.menu--social-media-menu .youtube {
-  background-image: url("../../images/icon/Icon-youtube.svg");
-}
-
-.region--footer-bottom {
-  display: block;
-  
-    @media (--nav) {
-      display: flex;
-      }
-}
+ .site-footer {
+   position: relative; /* stack above left social bar */
+   color: var(--color--white);
+   background: var(--color--main-1);
+ 
+   & .menu {
+     display: flex;
+     justify-content: flex-end;     
+     margin-inline-start: 0;     
+     list-style: none;     
+     font-weight: bold;
+     flex-flow: wrap;  
+     
+     @media (--nav) {
+       flex-flow: row;
+     }
+     
+     & ul {
+       margin-inline-start: var(--sp);
+     }
+ 
+     & li {
+       margin-block-end: var(--sp0-5);
+       margin-inline-start: var(--sp2);
+     }
+   }
+ 
+   & a {
+     text-decoration: none;     color: inherit;     &:hover {
+       text-decoration: underline;
+     }
+   }
+ }
+ 
+ .menu--social-media-menu {
+   & a {
+     display: block;
+     width: 36px;
+     height: 36px;
+     font-size: 0;
+   }
+   
+   & svg.ext {
+     display:none;
+   }
+ 
+ }
+ 
+ .menu--social-media-menu .bitbucket {
+   background-image: url("../../images/icon/Icon-bitbucket.svg");
+ }
+ 
+ .menu--social-media-menu .github {
+   background-image: url("../../images/icon/Icon-github.svg");
+ }
+ 
+ .menu--social-media-menu .gitlab {
+   background-image: url("../../images/icon/Icon-gitlab.svg");
+ }
+ 
+ .menu--social-media-menu .linkedin {
+   background-image: url("../../images/icon/Icon-linkedin.svg");
+ }
+ 
+ .menu--social-media-menu .twitter {
+   background-image: url("../../images/icon/Icon-twitter.svg");
+ }
+ 
+ .menu--social-media-menu .youtube {
+   background-image: url("../../images/icon/Icon-youtube.svg");
+ }
+ 
+ .region--footer-bottom {
+   display: block;
+   
+     @media (--nav) {
+       display: flex;
+       }
+ }
+ 

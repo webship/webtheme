@@ -32,9 +32,8 @@
 
  body {
   margin: 0;
-  color: var(--color--gray-10);
-  background-color: var(--color--gray-95);
-  background-image: url("../../images/background.svg");
+  color: var(--color--black);
+  overflow-x: hidden;
   background-position: top left /* LTR */
 }
 

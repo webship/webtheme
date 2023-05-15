@@ -181,6 +181,9 @@
   --button--hight-1: 70px;
   --button--hight-2: 55px;
 
+  /* Hight of video */
+  --hight-video-1: 300px;
+
   /* Border radius */
   --border-radius: 3px;
   --border-radius2: 6px;

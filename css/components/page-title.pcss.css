@@ -26,6 +26,33 @@
     padding-block-start: 0px;
   }
 
+  & .welcome-video {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color--main-1);
+    height: var(--hight-video-1);
+    position: relative;
+    flex: 0 0 100vw;
+    left: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    max-width: none;
+    right: 50%;
+    width: 100vw;
+
+    @media (--lg) {
+      
+      justify-content: normal;
+      height:auto;
+    }
+
+    & video {
+      width: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+  }
+
 }
 
 .page-node-type-webblog {

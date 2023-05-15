@@ -193,6 +193,9 @@
   --button--hight-1: 3.88889rem;
   --button--hight-2: 3.05556rem;
 
+  /* Hight of video */
+  --hight-video-1: 16.66667rem;
+
   /* Border radius */
   --border-radius: 0.16667rem;
   --border-radius2: 0.33333rem;

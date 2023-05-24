@@ -29,8 +29,14 @@
   }
 
  .node--type-webdoc.node--view-mode-full .layout__region--second{
-       padding-inline-end: calc(var(--grid-gap--md)*0.75);
+       padding-inline-end: calc(var(--grid-gap--md)*0.75)
    }
+
+ .node--type-webdoc.node--view-mode-full .layout__region--second code{
+          font-size:var(--font-size-m);
+          background-color: var(--color--gray-75);
+          color:var(--color--black);
+       }
 
  .node--type-webdoc.node--view-mode-full .layout__region--first {
  

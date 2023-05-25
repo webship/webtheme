@@ -23,7 +23,7 @@
 
     flex-wrap: wrap;
 
-    @media (--md) {
+    @media (--lg) {
       flex-wrap: inherit;
     }
     
@@ -38,7 +38,7 @@
           color:var(--color--black);
           width:100%;
 
-          @media (--md) {
+          @media (--lg) {
             width:70%;
           }
        }

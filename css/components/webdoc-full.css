@@ -34,7 +34,7 @@
     
    }
 
- @media (min-width: 38.88889rem) {
+ @media (min-width: 55.55556rem) {
 
  .node--type-webdoc.node--view-mode-full .layout--twocol-section{
       flex-wrap: inherit
@@ -53,7 +53,7 @@
           width:100%
        }
 
- @media (min-width: 38.88889rem) {
+ @media (min-width: 55.55556rem) {
 
  .node--type-webdoc.node--view-mode-full .layout__region--second code{
             width:70%

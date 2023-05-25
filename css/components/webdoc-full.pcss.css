@@ -18,7 +18,16 @@
  }
  
  .node--type-webdoc.node--view-mode-full {
- 
+
+   & .layout--twocol-section{
+
+    flex-wrap: wrap;
+
+    @media (--md) {
+      flex-wrap: inherit;
+    }
+    
+   }
  
    & .layout__region--second{
        padding-inline-end: calc(var(--grid-gap--md)*0.75);
@@ -27,6 +36,11 @@
           font-size:var(--font-size-m);
           background-color: var(--color--gray-75);
           color:var(--color--black);
+          width:100%;
+
+          @media (--md) {
+            width:70%;
+          }
        }
    }
  
@@ -61,6 +75,6 @@
       width: calc(100% - var(--content-left));
       margin-left: auto;
       margin-right: auto;
-      
+
    }
  }

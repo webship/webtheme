@@ -32,15 +32,15 @@
    & .layout__region--second{
        padding-inline-end: calc(var(--grid-gap--md)*0.75);
 
-       & code{
+       & pre {
+        display: grid;
+       }
+       & code {
           font-size:var(--font-size-m);
           background-color: var(--color--gray-75);
           color:var(--color--black);
           width:100%;
 
-          @media (--lg) {
-            width:70%;
-          }
        }
    }
  

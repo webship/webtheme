@@ -56,7 +56,7 @@
      & .book-navigation__item {
  
        font-size: var(--font-size-m);
-       line-height: var(--sp2);
+       line-height: var(--sp2-5);
      }
  
      & a {
@@ -67,7 +67,11 @@
          text-decoration: underline;
        }
      }
- 
+     
+     & .menu__item--active-trail{
+        color: var(--color--black);
+        text-decoration: none;
+     }
      
    }
 

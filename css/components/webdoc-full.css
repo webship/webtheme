@@ -66,14 +66,13 @@
 
  .node--type-webdoc.node--view-mode-full .book-navigation__menu {
      padding: var(--sp1)
- 
      
    }
 
  .node--type-webdoc.node--view-mode-full .book-navigation__menu .book-navigation__item {
  
        font-size: var(--font-size-m);
-       line-height: var(--sp2);
+       line-height: var(--sp2-5);
      }
 
  .node--type-webdoc.node--view-mode-full .book-navigation__menu a {
@@ -84,6 +83,11 @@
  .node--type-webdoc.node--view-mode-full .book-navigation__menu a:hover {
          text-decoration: underline;
        }
+
+ .node--type-webdoc.node--view-mode-full .book-navigation__menu .menu__item--active-trail{
+        color: var(--color--black);
+        text-decoration: none;
+     }
 
  .node--type-webdoc.node--view-mode-full .book-navigation {
       width: calc(100% - var(--content-left));

@@ -65,6 +65,75 @@
  }
    }
 
+ .region--breadcrumb {
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+  width:100%
+}
+
+ .region--breadcrumb .block-system-breadcrumb-block{
+    overflow: auto;
+    display: block;
+    flex-basis: calc(75% - var(--grid-gap--md)*0.75)
+
+  }
+
+ .region--breadcrumb .block-system-breadcrumb-block .breadcrumb{
+      overflow: hidden;
+    }
+
+ .region--breadcrumb .search-block-form{
+    flex-basis: calc(25% - var(--grid-gap--md)*0.25);
+  }
+
+ .region--breadcrumb .search-form{
+   width: -moz-fit-content;
+   width: fit-content;
+   float: none;
+   position: relative;
+   width: 16.66667rem
+
+  }
+
+ @media (min-width: 55.55556rem) {
+
+ .region--breadcrumb {
+    display:flex
+}
+
+    .region--breadcrumb .search-form {
+      float: right;
+    }
+  }
+
+ .region--breadcrumb .form-search{
+   padding-left: 3.33333rem;
+ }
+
+ .region--breadcrumb .form-actions{
+   position: absolute;
+   left: 0.38889rem;
+   top: 0.27778rem;
+ }
+
+ .region--breadcrumb .search-form__submit {
+     width:1.83333rem;
+     height:2.44444rem;
+     font-size:0px;
+     border:0px;
+     background-color: transparent;
+     background-image: url("data:image/svg+xml,%3c%3fxml version='1.0' encoding='utf-8'%3f%3e%3c!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --%3e%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'%09 viewBox='64.8 11.6 75 77.8' enable-background='new 64.8 11.6 75 77.8' xml:space='preserve'%3e%3cg%3e%09%3cpath fill='%23358FC8' d='M138.5,76.4L138.5,76.4L138.5,76.4l-18.8-18.8c3-4.7,4.8-10.2,4.8-16.2c0-16.5-13.4-29.9-29.9-29.9%09%09S64.8,25,64.8,41.5s13.4,29.9,29.9,29.9c4.5,0,8.9-1,12.7-2.8l19.5,19.5c0.1,0.1,0.3,0.2,0.4,0.3c0.8,0.7,1.9,1,3,1%09%09c0.6,0,1-0.1,1.6-0.2c1.7-0.4,3.4-1.5,4.8-2.8C140,83.1,140.8,78.8,138.5,76.4z M68.9,41.5c0-14.3,11.6-25.8,25.8-25.8%09%09c14.1,0,25.7,11.6,25.7,25.8s-11.6,25.7-25.7,25.7C80.4,67.2,68.9,55.6,68.9,41.5z M133.9,83.5c-0.9,0.9-1.9,1.5-2.9,1.7%09%09c-0.7,0.1-1.1,0.1-1.2-0.1c-0.1-0.1-0.1-0.1-0.2-0.2l-18.4-18.4c2.2-1.6,4.4-3.4,6.2-5.4l18.3,18.3l0,0%09%09C135.9,79.7,135.8,81.6,133.9,83.5z'/%3e%3c/g%3e%3c/svg%3e");
+     background-repeat: no-repeat
+
+ }
+
+ .region--breadcrumb .search-form__submit:hover{
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3c%3fxml version='1.0' encoding='utf-8'%3f%3e%3c!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --%3e%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'%09 viewBox='64.8 11.6 75 77.8' enable-background='new 64.8 11.6 75 77.8' xml:space='preserve'%3e%3cg%3e%09%3cpath fill='%23358FC8' d='M138.5,76.4L138.5,76.4L138.5,76.4l-18.8-18.8c3-4.7,4.8-10.2,4.8-16.2c0-16.5-13.4-29.9-29.9-29.9%09%09S64.8,25,64.8,41.5s13.4,29.9,29.9,29.9c4.5,0,8.9-1,12.7-2.8l19.5,19.5c0.1,0.1,0.3,0.2,0.4,0.3c0.8,0.7,1.9,1,3,1%09%09c0.6,0,1-0.1,1.6-0.2c1.7-0.4,3.4-1.5,4.8-2.8C140,83.1,140.8,78.8,138.5,76.4z M68.9,41.5c0-14.3,11.6-25.8,25.8-25.8%09%09c14.1,0,25.7,11.6,25.7,25.8s-11.6,25.7-25.7,25.7C80.4,67.2,68.9,55.6,68.9,41.5z M133.9,83.5c-0.9,0.9-1.9,1.5-2.9,1.7%09%09c-0.7,0.1-1.1,0.1-1.2-0.1c-0.1-0.1-0.1-0.1-0.2-0.2l-18.4-18.4c2.2-1.6,4.4-3.4,6.2-5.4l18.3,18.3l0,0%09%09C135.9,79.7,135.8,81.6,133.9,83.5z'/%3e%3c/g%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+    }
+
  .main-content__container {
   padding-block-start: var(--sp)
 }

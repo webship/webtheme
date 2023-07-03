@@ -32,11 +32,6 @@
      font-weight: bold;
    }
  
-   &:focus {
-     outline: 2px solid var(--color--blue-70);
-     outline-offset: 2px;
-   }
- 
    &:active {
      color: var(--color--blue-20);
    }

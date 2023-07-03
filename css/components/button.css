@@ -45,11 +45,6 @@
      font-weight: bold;
    }
 
- .button:focus {
-     outline: 2px solid var(--color--blue-70);
-     outline-offset: 2px;
-   }
-
  .button:active {
      color: var(--color--blue-20);
    }

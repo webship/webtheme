@@ -63,15 +63,74 @@
 .pager__link:focus {
   color: var(--color--blue-20);
   outline: solid 2px var(--color--blue-20);
-  outline-offset: -2px;
 }
 
-.pager__item svg {
-  display: block;
-  fill: currentColor;
-}
+.pager{
 
-.pager__item--next svg,
-.pager__item--last svg {
-  transform: rotate(180deg);
+  text-align:center;
+
+  & .pager__items {
+      display: inline-flex;
+  }
+
+  & .pager__item--active{
+    width:50px;
+    height:50px;
+    background-color: var(--color--main-1);
+  }
+
+  & .pager__link {
+
+    width:30px;
+    height:30px;
+    display:black;
+
+    &:hover{
+      background:none;
+    }
+  }
+
+  & .pager__item--next{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-next-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
+
+  & .pager__item--previous{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-back-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
+
+  & .pager__item--last{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-last-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
+
+  & .pager__item--first{
+
+    & .pager__link{
+      background-image: url("../../images/icon/Icon-first-arrow.svg");
+      
+      & svg {
+        display: none;
+      }
+    }
+  }
 }

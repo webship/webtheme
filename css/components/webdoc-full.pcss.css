@@ -80,5 +80,9 @@
       margin-left: auto;
       margin-right: auto;
 
+      & .book-navigation__menu{
+        display:none;
+      }
+
    }
  }

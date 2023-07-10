@@ -60,7 +60,7 @@
  @media (min-width: 55.55556rem) {
 
  .breadcrumb__content {
-     margin-inline-end: 0
+     margin-inline-end: 0;margin-top:auto
  }
    }
 

@@ -84,10 +84,13 @@
          text-decoration: underline;
        }
 
- .node--type-webdoc.node--view-mode-full .book-navigation__menu .menu__item--active-trail{
-        color: var(--color--black);
-        text-decoration: none;
-     }
+ .node--type-webdoc.node--view-mode-full .book-navigation__menu .menu__link--active-trail{
+      color: var(--color--black);
+      background: var(--color--gray-80);
+      padding:0.44444rem;
+      border-radius: 0.22222rem;
+      text-decoration: none;
+   }
 
  .node--type-webdoc.node--view-mode-full .book-navigation {
       width: calc(100% - var(--content-left));

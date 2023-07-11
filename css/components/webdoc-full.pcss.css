@@ -68,10 +68,13 @@
        }
      }
      
-     & .menu__item--active-trail{
-        color: var(--color--black);
-        text-decoration: none;
-     }
+     & .menu__link--active-trail{
+      color: var(--color--black);
+      background: var(--color--gray-80);
+      padding:8px;
+      border-radius: 4px;
+      text-decoration: none;
+   }
      
    }
 

@@ -10,9 +10,13 @@
    width: 100%;
  
   & .region--breadcrumb{
-      width: calc(100% - var(--content-left));
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
+
+      @media (--md) {
+        width: calc(100% - var(--content-left));
+      }
   }
   
  }
@@ -23,7 +27,7 @@
 
     flex-wrap: wrap;
 
-    @media (--lg) {
+    @media (--md) {
       flex-wrap: inherit;
     }
     

@@ -90,11 +90,14 @@
  .region--breadcrumb .search-form{
    width: -moz-fit-content;
    width: fit-content;
-   float: none;
    position: relative;
-   width: 16.66667rem
+   width: 100%
 
   }
+
+ .region--breadcrumb .search-form .js-form-type-search{
+        width:100%;
+    }
 
  @media (min-width: 55.55556rem) {
 
@@ -103,7 +106,7 @@
 }
 
     .region--breadcrumb .search-form {
-      float: right;
+      width: 100%;
     }
   }
 

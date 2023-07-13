@@ -68,9 +68,12 @@
 
   & .search-form{
    width: fit-content;
-   float: none;
    position: relative;
-   width: 300px
+   width: 100%;
+
+    & .js-form-type-search{
+        width:100%;
+    }
 
   }
 
@@ -78,7 +81,7 @@
     display:flex;
 
     & .search-form {
-      float: right;
+      width: 100%;
     }
   }
 

@@ -28,7 +28,7 @@
       margin-right: auto
   }
 
- @media (min-width: 38.88889rem) {
+ @media (min-width: 55.55556rem) {
 
  .main-content .region--breadcrumb{
         width: calc(100% - var(--content-left))

@@ -16,7 +16,7 @@
    text-align: center;   text-decoration: none;
    border: solid 2px var(--color--main-1); 
    font-family: var(--font-sans);   
-   font-size: var(--font-size-m);   
+   font-size: var(--font-size-s);   
    font-weight: bold;   
    appearance: none;   
    color: var(--color--white);
@@ -30,6 +30,9 @@
  
    &:active{
     background-color: var(--color--blue-20); 
+   }
+   &:hover{
+    color: var(--color--white); 
    }
  
    /*

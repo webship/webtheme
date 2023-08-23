@@ -9,28 +9,32 @@
 }
 
 select {
+  width:100%;
   max-width: 100%;
-  height: var(--sp3);
+  min-height: var(--sp4);
   padding-block: 0;
   padding-inline-start: var(--sp);
   padding-inline-end: var(--sp3);
-  color: var(--color--gray-0);
-  border: 1px solid var(--color--gray-30);
+  color: var(--color--black);
+  border: 1px solid var(--color--main-1);
   border-radius: var(--border-radius);
   background-color: var(--color--white);
   background-image: var(--form-element-select-icon);
+  border-radius: var(--border-radius3);
   background-repeat: no-repeat;
+  cursor: pointer;
   background-position: right var(--sp) center; /* LTR */
   font-family: inherit;
   font-size: inherit;
   appearance: none;
 
   &:focus {
-    border: solid 2px var(--color--blue-50);     outline: solid 2px var(--color--blue-50);     @supports (outline-style: double) {
+    border: solid 1px var(--color--main-1);     outline: solid 1px var(--color--main-1);     @supports (outline-style: double) {
       border-width: 1px;
       outline-width: 6px;
       outline-style: double;
       outline-offset: -1px;
+      color: var(--color--main-1);
     }
   }
 

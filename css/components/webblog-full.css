@@ -37,6 +37,14 @@
     line-height: var(--sp1);   
   }
 
+ .node--type-webblog.node--view-mode-full code {
+    font-size:var(--font-size-m);
+    background-color: var(--color--gray-75);
+    color:var(--color--black);
+    width:100%;
+
+  }
+
  .region--content {
  
   width:90%;

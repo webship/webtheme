@@ -29,7 +29,6 @@
    font-family: var(--font-sans);   
    font-size: var(--font-size-s);   
    font-weight: bold;   
-   -webkit-appearance: none;   
    appearance: none;   
    color: var(--color--white);
    background-color: var(--color--blue-30); 

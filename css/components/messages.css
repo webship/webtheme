@@ -88,7 +88,7 @@
 }
 
 .messages__close {
-  position: relative;   width: 1.38889rem;   height: 1.38889rem;   padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   cursor: pointer;   vertical-align: top;   border: 0;   background: none;   -webkit-appearance: none;   appearance: none
+  position: relative;   width: 1.38889rem;   height: 1.38889rem;   padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   cursor: pointer;   vertical-align: top;   border: 0;   background: none;   appearance: none
 }
 
 .messages__close:before,

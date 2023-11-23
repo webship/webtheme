@@ -163,7 +163,7 @@
  .mobile-nav-button {
    position: relative;
    z-index: 505; /* Appear above mobile nav. */
-   display: flex;   align-items: center;   align-self: center;   width: var(--sp2);   height: var(--sp2);   margin-inline-start: auto;   margin-inline-end: -0.33333rem;   padding-block: 0;   padding-inline-start: 0.33333rem;   padding-inline-end: 0.33333rem;   cursor: pointer;   border: none;   background: transparent;   -webkit-appearance: none;   appearance: none
+   display: flex;   align-items: center;   align-self: center;   width: var(--sp2);   height: var(--sp2);   margin-inline-start: auto;   margin-inline-end: -0.33333rem;   padding-block: 0;   padding-inline-start: 0.33333rem;   padding-inline-end: 0.33333rem;   cursor: pointer;   border: none;   background: transparent;   appearance: none
  }
 
  .mobile-nav-button:focus {

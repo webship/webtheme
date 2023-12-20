@@ -5,7 +5,7 @@
   "private": true,
   "engines": {
     "yarn": ">= 1.6",
-    "node": ">= 16.0"
+    "node": ">= 18.0"
   },
   "scripts": {
     "theme:build": "node scripts/css/postcss-build.js",
@@ -69,7 +69,8 @@
     "terser-webpack-plugin": "^5.2.0",
     "underscore": "1.13.x",
     "webpack": "^5.51.1",
-    "webpack-cli": "^4.4.0"
+    "webpack-cli": "^4.4.0",
+    "webship-js": "~1"
   },
   "//": "'development is the default environment, and legacy is for transpiling the old jQuery codebase",
   "babel": {

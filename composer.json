@@ -21,7 +21,8 @@
     }
   ],
   "require": {
-    "drupal/core": "~10.0",
-    "drupal/webtheme_default_content-webtheme_default_content": "10.0.x-dev@dev"
+    "drupal/core": "~10.2.0",
+    "drupal/webpatches": "~10.0",
+    "drupal/webtheme_default_content-webtheme_default_content": "~10.0 || 10.0.x-dev"
   }
 }

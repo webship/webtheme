@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+    - system
+  theme:
+    - webtheme
+id: webtheme_searchform
+theme: webtheme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/docs\r\n/blog\r\n/docs/*\r\n/blog/*"

@@ -138,43 +138,52 @@ ul {
   list-style-image: none;
 }
 
-.font_size_base{
+.font-size-base{
   font-size: var(--font-size-base);
   font-family: var(--font-sans);
 }
-.font_size_xxxl{
+
+.font-size-xxxl{
   font-size: var(--font-size-xxxl);
   font-family: var(--font-sans);
 }
-.font_size_xxl{
+
+.font-size-xxl{
   font-size: var(--font-size-xxl);
   font-family: var(--font-sans);
 }
-.font_size_xl{
+
+.font-size-xl{
   font-size: var(--font-size-xl);
   font-family: var(--font-sans);
 }
-.font_size_l{
+
+.font-size-l{
   font-size: var(--font-size-l);
   font-family: var(--font-sans);
 }
-.font_size_m{
+
+.font-size-m{
   font-size: var(--font-size-m);
   font-family: var(--font-sans);
 }
-.font_size_s{
+
+.font-size-s{
   font-size: var(--font-size-s);
   font-family: var(--font-sans);
 }
-.font_size_xs{
+
+.font-size-xs{
   font-size: var(--font-size-xs);
   font-family: var(--font-sans);
 }
-.font_size_xxs{
+
+.font-size-xxs{
   font-size: var(--font-size-xxs);
   font-family: var(--font-sans);
 }
-.font_size_xxxs{
+
+.font-size-xxxs{
   font-size: var(--font-size-xxxs);
   font-family: var(--font-sans);
 }

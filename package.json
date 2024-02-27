@@ -1,6 +1,6 @@
 {
   "name": "webtheme",
-  "description": "Webtheme is an Olivero based sub-theme.",
+  "description": "Webtheme is the default theme for webship.co. With a responsive and mobile-first layout.",
   "license": "GPL-2.0",
   "private": true,
   "engines": {

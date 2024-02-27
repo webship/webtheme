@@ -3,7 +3,7 @@
  * Nav Primary.
  */
 
-@import "../../base/variables.pcss.css"; .primary-nav__menu {
+ @import "../../base/variables.pcss.css"; .primary-nav__menu {
   flex-wrap: wrap;
   list-style: none;
 }
@@ -138,7 +138,7 @@
 }
 
 /*
- * Olivero doesn't officially support nested tertiary submenus, but this
+ * webtheme doesn't officially support nested tertiary submenus, but this
  * ensures that it doesn't break all the way.
  *
  * @see https://www.drupal.org/project/drupal/issues/3221399

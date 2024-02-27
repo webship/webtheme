@@ -1,6 +1,6 @@
 {
   "name": "drupal/webtheme",
-  "description": "An Olivero based sub-theme for the Webship.co portal site.",
+  "description": "Webtheme is the default theme for webship.co. With a responsive and mobile-first layout.",
   "type": "drupal-theme",
   "license": "GPL-2.0-or-later",
   "authors": [

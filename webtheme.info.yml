@@ -1,8 +1,9 @@
 name: 'Webtheme'
 type: theme
-base theme: olivero
-description: An Olivero based sub-theme for the Webship.co portal site.
-package: Webtheme
+base theme: false
+description: Webtheme is the default theme for webship.co. With a responsive and mobile-first layout.
+package: Webship
+version: VERSION
 core_version_requirement: ~10.2.0
 regions:
   header: Header
@@ -18,45 +19,92 @@ regions:
   content_below: 'Content Below'
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'
+libraries-override:
+  system/base:
+    css:
+      component:
+        css/components/ajax-progress.module.css: css/components/ajax-progress.module.css
+        css/components/autocomplete-loading.module.css: css/components/autocomplete-loading.module.css
+  core/drupal.checkbox: false
+  core/drupal.vertical-tabs:
+    css:
+      component:
+        misc/vertical-tabs.css: css/components/vertical-tabs.css
+  media/oembed.formatter: false
+  layout_builder/twocol_section: webtheme/layout_builder_twocol_section
+  layout_builder/threecol_section: webtheme/layout_builder_threecol_section
+  layout_builder/fourcol_section: webtheme/layout_builder_fourcol_section
 libraries:
   - webtheme/global-styling
   - webtheme/global-scripts
-libraries-override:
-  olivero/global-styling: false
+  - webtheme/book
+  - webtheme/cke-dialog
+  - webtheme/comments
+  - webtheme/content-below
+  - webtheme/content_moderation
+  - webtheme/details
+  - webtheme/dialog.off_canvas
+  - webtheme/dropbutton
+  - webtheme/drupal.dialog
+  - webtheme/drupal.node.preview
+  - webtheme/feed
+  - webtheme/filter.theme
+  - webtheme/forum
+  - webtheme/layout_builder_fourcol_section
+  - webtheme/layout_builder_threecol_section
+  - webtheme/layout_builder_twocol_section
+  - webtheme/layout_discovery_section
+  - webtheme/layout-views-grid-horizontal
+  - webtheme/layout-views-grid-vertical
+  - webtheme/local-actions
+  - webtheme/maintenance-page
+  - webtheme/menu-sidebar
+  - webtheme/navigation-primary
+  - webtheme/navigation-secondary
+  - webtheme/powered-by-block
+  - webtheme/progress
+  - webtheme/search-narrow
+  - webtheme/search-results
+  - webtheme/search-wide
+  - webtheme/sidebar
+  - webtheme/tabs
+  - webtheme/tags
 
-  olivero/book: webtheme/book
-  olivero/cke-dialog: webtheme/cke-dialog
-  olivero/comments: webtheme/comments
-  olivero/content-below: webtheme/content-below
-  olivero/content_moderation: webtheme/content_moderation
-  olivero/details: webtheme/details
-  olivero/dialog.off_canvas: webtheme/dialog.off_canvas
-  olivero/dropbutton: webtheme/dropbutton
-  olivero/drupal.dialog: webtheme/drupal.dialog
-  olivero/drupal.node.preview: webtheme/drupal.node.preview
-  olivero/feed: webtheme/feed
-  olivero/filter.theme: webtheme/filter.theme
-  olivero/forum: webtheme/forum
-  olivero/layout_builder_fourcol_section: webtheme/layout_builder_fourcol_section
-  olivero/layout_builder_threecol_section: webtheme/layout_builder_threecol_section
-  olivero/layout_builder_twocol_section: webtheme/layout_builder_twocol_section
-  olivero/layout_discovery_section: webtheme/layout_discovery_section
-  olivero/layout-views-grid-horizontal: webtheme/layout-views-grid-horizontal
-  olivero/layout-views-grid-vertical: webtheme/layout-views-grid-vertical
-  olivero/local-actions: webtheme/local-actions
-  olivero/maintenance-page: webtheme/maintenance-page
-  olivero/menu-sidebar: webtheme/menu-sidebar
-  olivero/navigation-primary: webtheme/navigation-primary
-  olivero/navigation-secondary: webtheme/navigation-secondary
-  olivero/powered-by-block: webtheme/powered-by-block
-  olivero/progress: webtheme/progress
-  olivero/search-narrow: webtheme/search-narrow
-  olivero/search-results: webtheme/search-results
-  olivero/search-wide: webtheme/search-wide
-  olivero/sidebar: webtheme/sidebar
-  olivero/tabs: webtheme/tabs
-  olivero/tags: webtheme/tags
+  
 
 libraries-extend:
   views/views.responsive-grid:
     - webtheme/views.responsive-grid
+  core/drupal.message:
+    - webtheme/messages
+  core/drupal.collapse:
+    - webtheme/details
+  core/drupal.dialog.off_canvas:
+    - webtheme/dialog.off_canvas
+  core/drupal.progress:
+    - webtheme/progress
+  core/drupal.dropbutton:
+    - webtheme/dropbutton
+  layout_discovery/onecol:
+    - webtheme/layout_discovery_section
+  layout_discovery/twocol_bricks:
+    - webtheme/layout_discovery_section
+  layout_discovery/twocol:
+    - webtheme/layout_discovery_section
+  layout_discovery/threecol_25_50_25:
+    - webtheme/layout_discovery_section
+  layout_discovery/threecol_33_34_33:
+    - webtheme/layout_discovery_section
+  node/drupal.node.preview:
+    - webtheme/drupal.node.preview
+  core/ckeditor:
+    - webtheme/cke-dialog
+  content_moderation/content_moderation:
+    - webtheme/content_moderation
+ckeditor_stylesheets:
+  - css/base/base.css
+  - css/components/embedded-media.css
+  - css/components/table.css
+  - css/components/text-content.css
+  - css/theme/ckeditor-frame.css
+  

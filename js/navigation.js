@@ -57,8 +57,8 @@
     // Close any open sub-navigation first, then close the header navigation.
     document.addEventListener('keyup', (e) => {
       if (e.key === 'Escape') {
-        if (props.olivero.areAnySubNavsOpen()) {
-          props.olivero.closeAllSubNav();
+        if (props.webtheme.areAnySubNavsOpen()) {
+          props.webtheme.closeAllSubNav();
         } else {
           toggleNav(props, false);
         }
@@ -87,14 +87,14 @@
         if (e.shiftKey) {
           if (
             document.activeElement === firstTabbableEl &&
-            !props.olivero.isDesktopNav()
+            !props.webtheme.isDesktopNav()
           ) {
             lastTabbableEl.focus();
             e.preventDefault();
           }
         } else if (
           document.activeElement === lastTabbableEl &&
-          !props.olivero.isDesktopNav()
+          !props.webtheme.isDesktopNav()
         ) {
           firstTabbableEl.focus();
           e.preventDefault();
@@ -104,14 +104,14 @@
 
     // Remove overlays when browser is resized and desktop nav appears.
     window.addEventListener('resize', () => {
-      if (props.olivero.isDesktopNav()) {
+      if (props.webtheme.isDesktopNav()) {
         toggleNav(props, false);
         props.body.classList.remove('is-overlay-active');
         props.body.classList.remove('is-fixed');
       }
 
       // Ensure that all sub-navigation menus close when the browser is resized.
-      Drupal.olivero.closeAllSubNav();
+      Drupal.webtheme.closeAllSubNav();
     });
 
     // If hyperlink links to an anchor in the current page, close the
@@ -135,7 +135,7 @@
    * @prop {Drupal~behaviorAttach} attach
    *   Attach context and settings for navigation.
    */
-  Drupal.behaviors.oliveroNavigation = {
+  Drupal.behaviors.webthemeNavigation = {
     attach(context) {
       const headerId = 'header';
       const header = once('navigation', `#${headerId}`, context).shift();
@@ -143,7 +143,7 @@
 
       if (header) {
         const navWrapper = header.querySelector(`#${navWrapperId}`);
-        const { olivero } = Drupal;
+        const { webtheme } = Drupal;
         const navButton = context.querySelector(
           '[data-drupal-selector="mobile-nav-button"]',
         );
@@ -153,7 +153,7 @@
         );
 
         init({
-          olivero,
+          webtheme,
           header,
           navWrapperId,
           navWrapper,

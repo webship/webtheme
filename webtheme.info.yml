@@ -69,6 +69,7 @@ libraries:
   - webtheme/sidebar
   - webtheme/tabs
   - webtheme/tags
+  - webtheme/webreleases
 
   
 

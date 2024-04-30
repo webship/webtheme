@@ -119,3 +119,27 @@
 
   }
 }
+
+.view-display-id-releases_page{
+    .field--name-title {
+      & h3 {
+        font-size: var(--font-size-l);    
+        line-height: var(--sp1-5);   
+        
+        @media (--md) {
+          font-size: var(--font-size-xl);
+          line-height: var(--sp2);
+        }
+      }
+
+      & a{
+        text-decoration: none;
+        color:var(--color--black);
+        box-shadow: none;
+      }
+      & a:hover{
+        text-decoration: underline;
+        color:var(--color--main-1);
+      }
+  } 
+}

@@ -118,6 +118,20 @@
     }
 
   }
+  
+  .node__content{
+    padding-block-end: 0px ;
+  }
+
+  .layout--twocol-section{
+    flex-wrap: wrap;
+
+    @media (--md) {
+      flex-wrap: inherit;
+    }
+  }
+
+
 }
 
 .view-display-id-releases_page{

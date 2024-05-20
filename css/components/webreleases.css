@@ -131,6 +131,26 @@
     }
       }
 
+ .block-views-blockproducts-products-block{
+  
+  .node__content{
+    padding-block-end: 0px ;
+  }
+
+  .layout--twocol-section{
+    flex-wrap: wrap
+  }
+
+    @media (min-width: 38.88889rem) {
+
+  .layout--twocol-section{
+      flex-wrap: inherit
+  }
+    }
+
+
+}
+
  .view-display-id-releases_page{
       .field--name-title h3 {
         font-size: var(--font-size-l);    

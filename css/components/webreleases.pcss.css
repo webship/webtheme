@@ -157,3 +157,17 @@
       }
   } 
 }
+
+.page-node-type-release{
+
+  .region--content {
+ 
+    width:90%;
+    margin:auto;
+  
+    @media (--md) {
+      width:75%;
+    }
+  
+    }
+}

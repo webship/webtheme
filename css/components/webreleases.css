@@ -174,3 +174,21 @@
         color:var(--color--main-1);
       } 
 }
+
+ .page-node-type-release{
+
+  .region--content {
+ 
+    width:90%;
+    margin:auto
+  
+    }
+  
+    @media (min-width: 38.88889rem) {
+
+  .region--content {
+      width:75%
+  
+    }
+    }
+}

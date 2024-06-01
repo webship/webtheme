@@ -19,21 +19,7 @@ regions:
   content_below: 'Content Below'
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'
-libraries-override:
-  system/base:
-    css:
-      component:
-        css/components/ajax-progress.module.css: css/components/ajax-progress.module.css
-        css/components/autocomplete-loading.module.css: css/components/autocomplete-loading.module.css
-  core/drupal.checkbox: false
-  core/drupal.vertical-tabs:
-    css:
-      component:
-        misc/vertical-tabs.css: css/components/vertical-tabs.css
-  media/oembed.formatter: false
-  layout_builder/twocol_section: webtheme/layout_builder_twocol_section
-  layout_builder/threecol_section: webtheme/layout_builder_threecol_section
-  layout_builder/fourcol_section: webtheme/layout_builder_fourcol_section
+
 libraries:
   - webtheme/global-styling
   - webtheme/global-scripts
@@ -71,7 +57,32 @@ libraries:
   - webtheme/tags
   - webtheme/webreleases
 
-  
+libraries-override:
+  core/drupal.ajax:
+    css:
+      component:
+        core/components/ajax-progress.module.css: css/components/ajax-progress.module.css
+  core/drupal.autocomplete:
+    css:
+      component:
+        core/components/autocomplete-loading.module.css: css/components/autocomplete-loading.module.css
+  system/admin:
+    css:
+      theme:
+        css/system.admin.css: false
+  core/drupal.checkbox: false
+  core/drupal.dropbutton:
+    css:
+      component:
+        misc/dropbutton/dropbutton.css: css/components/dropbutton.css
+  core/drupal.vertical-tabs:
+    css:
+      component:
+        misc/vertical-tabs.css: css/components/vertical-tabs.css
+  media/oembed.formatter: false
+  layout_builder/twocol_section: webtheme/layout_builder_twocol_section
+  layout_builder/threecol_section: webtheme/layout_builder_threecol_section
+  layout_builder/fourcol_section: webtheme/layout_builder_fourcol_section
 
 libraries-extend:
   views/views.responsive-grid:
@@ -84,8 +95,8 @@ libraries-extend:
     - webtheme/dialog.off_canvas
   core/drupal.progress:
     - webtheme/progress
-  core/drupal.dropbutton:
-    - webtheme/dropbutton
+  core/drupal.tabledrag:
+    - webtheme/tabledrag
   layout_discovery/onecol:
     - webtheme/layout_discovery_section
   layout_discovery/twocol_bricks:
@@ -102,10 +113,3 @@ libraries-extend:
     - webtheme/cke-dialog
   content_moderation/content_moderation:
     - webtheme/content_moderation
-ckeditor_stylesheets:
-  - css/base/base.css
-  - css/components/embedded-media.css
-  - css/components/table.css
-  - css/components/text-content.css
-  - css/theme/ckeditor-frame.css
-  

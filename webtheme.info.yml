@@ -95,8 +95,8 @@ libraries-extend:
     - webtheme/dialog.off_canvas
   core/drupal.progress:
     - webtheme/progress
-  core/drupal.tabledrag:
-    - webtheme/tabledrag
+  core/drupal.dropbutton:
+    - webtheme/dropbutton
   layout_discovery/onecol:
     - webtheme/layout_discovery_section
   layout_discovery/twocol_bricks:

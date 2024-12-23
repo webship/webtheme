@@ -4,7 +4,7 @@ base theme: false
 description: Webtheme is the default theme for webship.co. With a responsive and mobile-first layout.
 package: Webship
 version: VERSION
-core_version_requirement: ~10.3.0
+core_version_requirement: ~10.4.0
 regions:
   header: Header
   primary_menu: 'Primary menu'

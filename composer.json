@@ -1,6 +1,6 @@
 {
   "name": "drupal/webtheme",
-  "description": "Webtheme is the default theme for webship.co. With a responsive and mobile-first layout.",
+  "description": "Webtheme is the default theme for the Webship.co portal site.",
   "type": "drupal-theme",
   "license": "GPL-2.0-or-later",
   "authors": [
@@ -22,7 +22,6 @@
   ],
   "require": {
     "drupal/core": "~11.1.0",
-    "drupal/webpatches": "11.0.x-dev",
-    "drupal/webtheme_default_content-webtheme_default_content": "11.0.x-dev"
+    "drupal/webpatches": "~11.0.0"
   }
 }

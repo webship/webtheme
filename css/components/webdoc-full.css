@@ -19,7 +19,7 @@
 
  .main-content{
    width: 100%
-  
+
  }
 
  .main-content .region--breadcrumb{
@@ -38,14 +38,14 @@
  .node--type-webdoc.node--view-mode-full .layout--twocol-section{
 
     flex-wrap: wrap
-    
+
    }
 
  @media (min-width: 38.88889rem) {
 
  .node--type-webdoc.node--view-mode-full .layout--twocol-section{
       flex-wrap: inherit
-    
+
    }
     }
 
@@ -73,18 +73,18 @@
        }
 
  .node--type-webdoc.node--view-mode-full .layout__region--first {
- 
+
      background: var(--color--main-1);
- 
+
      }
 
  .node--type-webdoc.node--view-mode-full .book-navigation__menu {
      padding: var(--sp1)
-     
+
    }
 
  .node--type-webdoc.node--view-mode-full .book-navigation__menu .book-navigation__item {
- 
+
        font-size: var(--font-size-m);
        line-height: var(--sp2-5);
      }

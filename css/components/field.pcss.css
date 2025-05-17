@@ -3,8 +3,7 @@
  * Visual styles for fields.
  */
 
-@import "../base/media-queries.pcss.css";  
-.field:not(:last-child) {
+@import "../base/media-queries.pcss.css"; .field:not(:last-child) {
   margin-block-end: var(--sp2);
 }
 

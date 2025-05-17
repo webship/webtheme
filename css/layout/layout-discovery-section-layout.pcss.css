@@ -6,14 +6,11 @@
  @import "../base/media-queries.pcss.css";
 
  .layout {
-   margin-block-end: var(--sp);   
-   
-   @media (--md) {
+   margin-block-end: var(--sp);    @media (--md) {
      margin-block-end: var(--sp1);
    }
- 
+
    @media (--lg) {
      margin-block-end: var(--sp1-5);
    }
  }
- 

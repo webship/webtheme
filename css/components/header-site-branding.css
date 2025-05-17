@@ -26,7 +26,7 @@
    padding-block: 0 var(--sp0-5);
    padding-inline-start: var(--container-padding);
    padding-inline-end: var(--container-padding)
- 
+
    /* @todo - #0d7ab8 isn't currently a variable.
    background-image: linear-gradient(160deg, var(--color--blue-50) 0%, #0d7ab8 78.66%);
    */
@@ -109,9 +109,9 @@
  }
 
  .site-branding__logo img {
-     width: auto;     max-width: 100%;     max-height: var(--sp2); 
-     
-     
+     width: auto;     max-width: 100%;     max-height: var(--sp2);
+
+
    }
 
  .site-branding__text {
@@ -147,4 +147,3 @@
  .site-branding__logo + .site-branding__text {
    margin-inline-start: 0.66667rem;
  }
- 

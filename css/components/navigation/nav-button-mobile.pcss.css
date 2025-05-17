@@ -11,32 +11,24 @@
    display: flex;   align-items: center;   align-self: center;   width: var(--sp2);   height: var(--sp2);   margin-inline-start: auto;   margin-inline-end: -6px;   padding-block: 0;   padding-inline-start: 6px;   padding-inline-end: 6px;   cursor: pointer;   border: none;   background: transparent;   appearance: none;   &:focus {
      outline: solid 2px var(--color--blue-20);
    }
- 
+
    &:active {
      color: inherit; /* Override Safari's default UA styles. */
    }
- 
+
    @media (--sm) {
      display: inline-flex;
      width: auto;
      padding-inline-start: var(--sp);
    }
  }
- 
+
  /* Text that says "menu". */
  .mobile-nav-button__label {
-   position: absolute;
-   display: block;   
-   overflow: hidden;   
-   clip:     rect(       1px,
+   position: absolute;    display: block;    overflow: hidden;    clip:     rect(       1px,
        1px,
        1px,
-       1px     );   
-   width: 1px;   
-   height: 1px;   
-   word-wrap: normal;   
-   
-   @media (--sm) {
+       1px     );    width: 1px;    height: 1px;    word-wrap: normal;    @media (--sm) {
      position: static;
      overflow: visible;
      clip: auto;
@@ -48,15 +40,9 @@
      font-weight: 600;
    }
  }
- 
+
  .mobile-nav-button__icon {
-   position: relative;
-   display: block;
-   width: var(--sp2);   
-   height: 0;   
-   border-top: solid 4px var(--color--main-1);   
-   
-   &:before {
+   position: relative;    display: block;    width: var(--sp2);    height: 0;    border-top: solid 4px var(--color--main-1);    &:before {
      position: absolute;
      inset-block-start: -14px;
      inset-inline-start: 0;
@@ -66,7 +52,7 @@
      transition: all 0.2s;
      border-top: solid 4px var(--color--main-1);
    }
- 
+
    &:after {
      position: absolute;
      inset-block: auto -11px;
@@ -78,16 +64,15 @@
      border-top: solid 4px var(--color--main-1);
    }
  }
- 
+
  .mobile-nav-button[aria-expanded="true"] .mobile-nav-button__icon {
    border-top: 0;   &:before {
      inset-block-start: 0;
      transform: rotate(-45deg);
    }
- 
+
    &:after {
      inset-block-start: 0;
      transform: rotate(45deg);
    }
  }
- 

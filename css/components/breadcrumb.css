@@ -21,7 +21,7 @@
    font-size: var(--font-size-m);
    font-weight: bold;
    line-height: var(--sp1)
- 
+
    /* Shadow on the right side of breadcrumbs for narrow screens. */
  }
 
@@ -118,4 +118,3 @@
    .breadcrumb__link:focus {
      text-decoration: underline;
    }
- 

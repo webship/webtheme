@@ -3,12 +3,11 @@
  * Collapsible details.
  */
 
- @import "../base/media-queries.pcss.css";  
- :root {
+ @import "../base/media-queries.pcss.css";  :root {
    --details-border-width: 1px;
    --details-summary-transition: background-color 0.12s ease-in-out;
  }
- 
+
  .webtheme-details {
    display: block;
    margin-block: var(--sp1);
@@ -17,7 +16,7 @@
    border-radius: var(--border-radius);
    box-shadow: 0 1px 4px var(--color--gray-70);
  }
- 
+
  /* Details summary styles */
  .webtheme-details__summary {
    position: relative;
@@ -35,7 +34,7 @@
    font-weight: 700;
    line-height: var(--sp1);
  }
- 
+
  /* Arrow icon */
  .webtheme-details__summary:before,
  .collapse-processed > .webtheme-details__summary .details-title:before {
@@ -50,14 +49,14 @@
    border-top: solid 2px currentColor;
    border-right: solid 2px currentColor;
  }
- 
+
  [dir="rtl"] {
    & .webtheme-details__summary:before,
    & .collapse-processed > .webtheme-details__summary .details-title:before {
      transform: translateY(-50%) rotate(-135deg);
    }
  }
- 
+
  /* Pseudo-selector to manage focus styles */
  .webtheme-details__summary:after,
  .collapse-processed > .webtheme-details__summary .details-title:after {
@@ -69,23 +68,23 @@
    border-radius: var(--border-radius);
    box-shadow: inset 0 0 0 2px var(--color--blue-70);
  }
- 
+
  /* Hide the marker */
  .webtheme-details__summary::-webkit-details-marker {
    display: none;
  }
- 
+
  /* Disable default outline for summary, since we have own implementation */
  .webtheme-details__summary:focus {
    outline: solid 2px transparent;
    outline-offset: -4px;
  }
- 
+
  /* Details summary, hover state */
  .webtheme-details__summary:hover {
    background-color: var(--color--gray-80);
  }
- 
+
  /* Details summary, focus and active states */
  .webtheme-details__summary:focus:after,
  .webtheme-details__summary:active:after,
@@ -93,25 +92,25 @@
  .collapse-processed > .webtheme-details__summary .details-title:active:after {
    opacity: 1;
  }
- 
+
  /* Rotate arrow icon of the details summary, when details expanded */
  .webtheme-details[open] > .webtheme-details__summary::before,
  .collapse-processed[open] > .webtheme-details__summary .details-title::before {
    margin-block-start: -2px;
    transform: translateY(-50%) rotate(135deg);
  }
- 
+
  /* Collapse processed for non-supporting browsers like IE or Edge */
  .collapse-processed > .webtheme-details__summary {
    padding-block: 0;   padding-inline-start: 0;   padding-inline-end: 0;   &:before {
      content: none;
    }
- 
+
    &:after {
      content: none;
    }
  }
- 
+
  .collapse-processed > .webtheme-details__summary .details-title {
    position: relative;
    display: block;
@@ -123,22 +122,22 @@
    color: inherit;
    background-color: var(--color--gray-95);
  }
- 
+
  .collapse-processed > .webtheme-details__summary .details-title:focus {
    outline: solid 2px transparent;
  }
- 
+
  .collapse-processed > .webtheme-details__summary .details-title:hover {
    background-color: var(--color--gray-80);
  }
- 
+
  @media screen and (-ms-high-contrast: active) {
    .collapse-processed > .webtheme-details__summary .details-title::after {
      inset: -5px;
      border: 2px dotted;
    }
  }
- 
+
  /* Details content wrapper */
  .webtheme-details__wrapper {
    margin: var(--sp1);   @media (--lg) {
@@ -148,7 +147,7 @@
      margin-inline-end: var(--sp2);
    }
  }
- 
+
  /* Description */
  .webtheme-details__description {
    margin-block-end: var(--sp1);
@@ -156,4 +155,3 @@
    font-size: var(--font-size-xs);
    line-height: var(--line-height-s);
  }
- 

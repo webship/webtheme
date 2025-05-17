@@ -48,20 +48,29 @@
   }
     }
 
-.layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
+.layout--content-narrow .entity-moderation-form,
+ .layout--pass--content-narrow > * .entity-moderation-form,
+ .layout--content-medium .entity-moderation-form,
+ .layout--pass--content-medium > * .entity-moderation-form {
     width: 100%;     margin-inline-start: 0
   }
 
 @supports (width: max-content) {
 
-.layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
+.layout--content-narrow .entity-moderation-form,
+ .layout--pass--content-narrow > * .entity-moderation-form,
+ .layout--content-medium .entity-moderation-form,
+ .layout--pass--content-medium > * .entity-moderation-form {
       width: max-content
   }
     }
 
 @media (min-width: 38.88889rem) {
 
-.layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
+.layout--content-narrow .entity-moderation-form,
+ .layout--pass--content-narrow > * .entity-moderation-form,
+ .layout--content-medium .entity-moderation-form,
+ .layout--pass--content-medium > * .entity-moderation-form {
       width: calc(var(--grid-col-width--md)*14 + var(--grid-gap--md)*13);
       margin-block: var(--sp2) var(--sp4);
       margin-inline-start: calc(var(--grid-col-width--md)*-2 + var(--grid-gap--md)*-2)
@@ -70,7 +79,10 @@
 
 @media (min-width: 55.55556rem) {
 
-.layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
+.layout--content-narrow .entity-moderation-form,
+ .layout--pass--content-narrow > * .entity-moderation-form,
+ .layout--content-medium .entity-moderation-form,
+ .layout--pass--content-medium > * .entity-moderation-form {
       width: calc(var(--grid-col-width--lg)*12 + var(--grid-gap--lg)*11);
       margin-inline-start: calc(var(--grid-col-width--lg)*-1 + var(--grid-gap--lg)*-1)
   }
@@ -78,7 +90,10 @@
 
 @media (min-width: 55.55556rem) {
 
-.layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
+.layout--content-narrow .entity-moderation-form,
+ .layout--pass--content-narrow > * .entity-moderation-form,
+ .layout--content-medium .entity-moderation-form,
+ .layout--pass--content-medium > * .entity-moderation-form {
       width: calc(var(--grid-col-width--nav)*12 + var(--grid-gap--nav)*11);
       margin-inline-start: calc(var(--grid-col-width--nav)*-1 + var(--grid-gap--nav)*-1)
   }
@@ -86,7 +101,10 @@
 
 @media (min-width: 80rem) {
 
-.layout--content-narrow .entity-moderation-form, .layout--pass--content-narrow > * .entity-moderation-form, .layout--content-medium .entity-moderation-form, .layout--pass--content-medium > * .entity-moderation-form {
+.layout--content-narrow .entity-moderation-form,
+ .layout--pass--content-narrow > * .entity-moderation-form,
+ .layout--content-medium .entity-moderation-form,
+ .layout--pass--content-medium > * .entity-moderation-form {
       width: calc(var(--grid-col-width--max)*10 + var(--grid-gap--max)*11);
       margin-inline-start: 0
   }

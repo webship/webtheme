@@ -3,8 +3,7 @@
  * Responsive styles for views grid horizontal layout.
  */
 
-@import "../base/media-queries.pcss.css";  
-:root {
+@import "../base/media-queries.pcss.css"; :root {
   --views-grid-layout-gap: var(--sp);
 }
 

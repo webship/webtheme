@@ -17,22 +17,22 @@
  /* Width of the entire grid maxes out. */
 
  .button {
-   display: inline-block;   
-   height: var(--sp3);   
-   margin-block: var(--sp1);   
-   margin-inline-start: 0;   
-   margin-inline-end: var(--sp1);   
+   display: inline-block;
+   height: var(--sp3);
+   margin-block: var(--sp1);
+   margin-inline-start: 0;
+   margin-inline-end: var(--sp1);
    padding-block: calc(var(--sp3)/2 - var(--line-height-s)/2);
    padding-inline: var(--sp1-5);   cursor: pointer;
    text-align: center;   text-decoration: none;
-   border: solid 2px var(--color--main-1); 
-   font-family: var(--font-sans);   
-   font-size: var(--font-size-s);   
-   font-weight: bold;   
-   appearance: none;   
+   border: solid 2px var(--color--main-1);
+   font-family: var(--font-sans);
+   font-size: var(--font-size-s);
+   font-weight: bold;
+   appearance: none;
    color: var(--color--white);
-   background-color: var(--color--blue-30); 
-   border-radius: var(--border-radius3); 
+   background-color: var(--color--blue-30);
+   border-radius: var(--border-radius3);
    -webkit-font-smoothing: antialiased
  }
 
@@ -40,19 +40,19 @@
 
  .button {
     font-size: var(--font-size-l)
- }  
+ }
    }
 
  .button:active{
-    background-color: var(--color--blue-20); 
+    background-color: var(--color--blue-20);
    }
 
  .button:hover{
-    color: var(--color--white); 
+    color: var(--color--white);
    }
 
  .button {
- 
+
    /*
      IE11 doesn't work properly on button elements so we only do
      inline-flex on modern browsers.
@@ -64,7 +64,7 @@
  .button {
      display: inline-flex;
      align-items: center;
- 
+
      /* Top padding accounts for font not being vertically centered within line-height. */
      padding-block: 1px 0;
      padding-inline: var(--sp1-5);
@@ -95,7 +95,7 @@
    width: var(--button--width-1);
    text-align: center;
    display: block;
-   
+
  }
 
  .button--icon-back {
@@ -121,16 +121,15 @@
 
  .button--button--primary2{
    color: var(--color--white);
-   background-color: var(--color--blue-30); 
-   border-radius: var(--border-radius3); 
+   background-color: var(--color--blue-30);
+   border-radius: var(--border-radius3);
    height: var(--button--hight-1);
    width: var(--button--width-2);
    text-align: center;
    display: block;
-   
+
  }
 
  .shepherd-cancel-icon {
    font-size: 1.5em;
  }
- 

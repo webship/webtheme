@@ -58,7 +58,8 @@
 
     /* Toolbar is fixed, and tray is either vertical or closed and horizontal. */
   }
-      body:not(.is-always-mobile-nav).toolbar-vertical.toolbar-fixed .site-header__fixable.is-fixed, body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .site-header__fixable.is-fixed {
+      body:not(.is-always-mobile-nav).toolbar-vertical.toolbar-fixed .site-header__fixable.is-fixed,
+ body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .site-header__fixable.is-fixed {
         inset-block-start: calc(var(--toolbar-height) - var(--sp4));
       }
   body:not(.is-always-mobile-nav) {

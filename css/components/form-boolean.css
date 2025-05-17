@@ -32,13 +32,15 @@ input[type="radio"] {
   appearance: none
 }
 
-input[type="checkbox"]:focus, input[type="radio"]:focus {
+input[type="checkbox"]:focus,
+ input[type="radio"]:focus {
     border: solid 2px var(--color--blue-50);     outline: solid 2px var(--color--blue-50)
   }
 
 @supports (outline-style: double) {
 
-input[type="checkbox"]:focus, input[type="radio"]:focus {
+input[type="checkbox"]:focus,
+ input[type="radio"]:focus {
       border-width: 1px;
       outline-width: 6px;
       outline-style: double;
@@ -46,31 +48,38 @@ input[type="checkbox"]:focus, input[type="radio"]:focus {
   }
     }
 
-input[type="checkbox"]:hover, input[type="radio"]:hover {
+input[type="checkbox"]:hover,
+ input[type="radio"]:hover {
     border-color: var(--color--blue-70);
   }
 
-input[type="checkbox"][disabled], input[type="radio"][disabled] {
+input[type="checkbox"][disabled],
+ input[type="radio"][disabled] {
     background-color: var(--color--gray-90)
   }
 
-input[type="checkbox"][disabled]:hover, input[type="radio"][disabled]:hover {
+input[type="checkbox"][disabled]:hover,
+ input[type="radio"][disabled]:hover {
       border-color: var(--color--gray-30);
     }
 
-input[type="checkbox"][disabled]:checked, input[type="radio"][disabled]:checked {
+input[type="checkbox"][disabled]:checked,
+ input[type="radio"][disabled]:checked {
       border-width: 1px;
     }
 
-input[type="checkbox"]:checked, input[type="radio"]:checked {
+input[type="checkbox"]:checked,
+ input[type="radio"]:checked {
     border-width: 2px;
   }
 
-input[type="checkbox"].error, input[type="radio"].error {
+input[type="checkbox"].error,
+ input[type="radio"].error {
     border: solid 2px var(--color--red)
   }
 
-input[type="checkbox"].error:focus, input[type="radio"].error:focus {
+input[type="checkbox"].error:focus,
+ input[type="radio"].error:focus {
       outline-color: var(--color--red);
       outline-offset: -2px;
     }
@@ -81,11 +90,13 @@ input[type="radio"] {
   /* Specific pseudo-element to apply red borders for IE11 bool elements in case of error */
 }
 
-input[type="checkbox"].error::-ms-check, input[type="radio"].error::-ms-check {
+input[type="checkbox"].error::-ms-check,
+ input[type="radio"].error::-ms-check {
     border: 1px solid var(--color--red);
   }
 
-input[type="checkbox"] + label, input[type="radio"] + label {
+input[type="checkbox"] + label,
+ input[type="radio"] + label {
     display: inline-block;
     padding-inline-start: var(--sp0-5);
   }

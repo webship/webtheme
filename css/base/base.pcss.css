@@ -3,9 +3,7 @@
  * Generic base elements.
  */
 
- @import "media-queries.pcss.css";
-
-*,
+ @import "media-queries.pcss.css"; *,
 *:before,
 *:after {
   box-sizing: border-box;
@@ -35,11 +33,9 @@ body {
 [dir="rtl"] body {
   background-position: top right;
 }
- 
+
 a {
-  color: var(--color--main-1);  
-  
-  &:hover {
+  color: var(--color--main-1);   &:hover {
     color: var(--color--black);
   }
 
@@ -48,11 +44,11 @@ a {
     outline-offset: 2px;
   }
 }
- 
+
 button {
   font-family: inherit;
 }
- 
+
 img,
 video {
   display: block;
@@ -64,54 +60,37 @@ audio {
   display: block;
   max-width: 100%;
 }
- 
+
 h1 {
-  letter-spacing: -0.01em;   
-  font-size: var(--font-size-xl);   
-  line-height: var(--sp2);   
-  
-  @media (--md) {
+  letter-spacing: -0.01em;   font-size: var(--font-size-xl);   line-height: var(--sp2);   @media (--md) {
     font-size: var(--font-size-xxxl);
     line-height: var(--sp4);
   }
 }
- 
+
 h2 {
-  letter-spacing: -0.01em;
-  font-size: var(--font-size-m);   
-  line-height: var(--sp2);   
-  
-  @media (--md) {
+  letter-spacing: -0.01em;   font-size: var(--font-size-m);   line-height: var(--sp2);   @media (--md) {
     font-size: var(--font-size-xl);
     line-height: var(--sp3);
   }
 }
 
 h3 {
-  font-size: var(--font-size-s);    
-  line-height: var(--sp1-5);   
-  
-  @media (--md) {
+  font-size: var(--font-size-s);   line-height: var(--sp1-5);   @media (--md) {
     font-size: var(--font-size-l);
     line-height: var(--sp2);
   }
 }
- 
+
 h4 {
-  font-size: var(--font-size-xxs);    
-  line-height: var(--sp1-5);   
-  
-  @media (--md) {
+  font-size: var(--font-size-xxs);   line-height: var(--sp1-5);   @media (--md) {
     font-size: var(--font-size-m);
     line-height: var(--sp-5);
   }
 }
- 
+
 h5 {
-  font-size: var(--font-size-xxxs);    
-  line-height: var(--sp1-5);   
-  
-  @media (--md) {
+  font-size: var(--font-size-xxxs);   line-height: var(--sp1-5);   @media (--md) {
     font-size: var(--font-size-s);
     line-height: var(--sp-5);
   }
@@ -127,7 +106,7 @@ h6 {
     margin-block: var(--sp2);
   }
 }
- 
+
 ul {
   margin-block-start: 0.25em;
   margin-block-end: 0.25em;

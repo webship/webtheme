@@ -3,8 +3,7 @@
  * Main form and form item styles.
  */
 
- @import "../base/media-queries.pcss.css";  
-::placeholder {
+ @import "../base/media-queries.pcss.css"; ::placeholder {
   color: var(--color--main-1);
 }
 
@@ -31,7 +30,7 @@
 /**
  * When a table row or a container-inline has a single form item, prevent it
  * from adding unnecessary extra spacing.
- * If it has multiple form items, allow spacing between them, overriding Classy.
+ * If it has multiple form items, allow spacing between them.
  */
 tr .form-item,
 .container-inline .form-item {
@@ -195,15 +194,7 @@ tr .form-item,
 
 .bluelight-background{
 
-  width:95%;
-  background-color: var(--color--main-2);
-  padding: 10px 20px;
-  border-radius: var(--border-radius3);
-  box-shadow: 1px 2px 4px 1px var(--color--gray-40);
-  margin-left:auto;
-  margin-right:auto;
-
-  & .form-type-webform-markup {
+  width:95%;   background-color: var(--color--main-2);   padding: 10px 20px;   border-radius: var(--border-radius3);   box-shadow: 1px 2px 4px 1px var(--color--gray-40);   margin-left:auto;   margin-right:auto;   & .form-type-webform-markup {
     text-align:center;
     padding-bottom:10px;
   }
@@ -215,5 +206,5 @@ tr .form-item,
     margin-right:auto;
   }
 
-  
+
 }

@@ -136,9 +136,9 @@
   --color--green: #3fa21c;
   --header-height-wide-when-fixed: calc(var(--sp)*3.1);
   --mobile-nav-width: 27.77778rem;
-  --button--width-1: 27.77778rem; 
-  --button--width-2: 14.88889rem; 
-  --button--width-3: 12.77778rem; 
+  --button--width-1: 27.77778rem;
+  --button--width-2: 14.88889rem;
+  --button--width-3: 12.77778rem;
   --button--width-4: 10rem;
   --button--hight-1: 3.88889rem;
   --button--hight-2: 3.05556rem;
@@ -207,6 +207,7 @@
   /* No bottom divider line for last menu item. */
 }
 
-.menu--sidebar .menu__item--level-1:last-child > .menu__link:last-child:after, .menu--sidebar .menu__item--level-1:last-child > .menu__item--level-2:last-child > .menu__link:last-child:after {
+.menu--sidebar .menu__item--level-1:last-child > .menu__link:last-child:after,
+ .menu--sidebar .menu__item--level-1:last-child > .menu__item--level-2:last-child > .menu__link:last-child:after {
       content: none;
     }

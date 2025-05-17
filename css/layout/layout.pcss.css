@@ -12,12 +12,12 @@
      padding-inline: var(--container-padding-nav);
    }
  }
- 
+
  .page-wrapper {
    /* max-width: var(--max-bg-color); */
    background: var(--color--white);
  }
- 
+
  /**
   * Creates stacking context ensuring that child elements can never appear in
   * front of mobile navigation.
@@ -27,7 +27,7 @@
    z-index: 1;
    min-height: 100vh;
  }
- 
+
  /* Contains the social sidebar, and the primary content area. */
  .layout-main {
    @media (--nav) {
@@ -36,7 +36,7 @@
      flex-wrap: wrap;
    }
  }
- 
+
  .main-content {
    @media (--nav) {
      width: calc(100% - var(--content-left));
@@ -44,7 +44,7 @@
      margin-right:auto;
    }
  }
- 
+
  .region--breadcrumb {
   margin-left: auto;
   margin-right: auto;
@@ -52,11 +52,7 @@
   width:100%;
 
   & .block-system-breadcrumb-block{
-    overflow: auto;
-    display: block;
-    flex-basis: calc(75% - var(--grid-gap--md)*0.75);
-
-    & .breadcrumb{
+    overflow: auto;     display: block;     flex-basis: calc(75% - var(--grid-gap--md)*0.75);     & .breadcrumb{
       overflow: hidden;
     }
 
@@ -67,20 +63,14 @@
   }
 
   & .search-form{
-   width: fit-content;
-   position: relative;
-   width: 100%;
-
-    & .js-form-type-search{
+   width: fit-content;    position: relative;    width: 100%;     & .js-form-type-search{
         width:100%;
     }
 
   }
 
   @media (--nav) {
-    display:flex;
-
-    & .search-form {
+    display:flex;     & .search-form {
       width: 100%;
     }
   }
@@ -96,15 +86,7 @@
  }
 
  & .search-form__submit {
-     width:33px;
-     height:44px;
-     font-size:0px;
-     border:0px;
-     background-color: transparent;
-     background-image: url("../../images/icon/Icon-search.svg");
-     background-repeat: no-repeat;
-
-     &:hover{
+     width:33px;      height:44px;      font-size:0px;      border:0px;      background-color: transparent;      background-image: url("../../images/icon/Icon-search.svg");      background-repeat: no-repeat;      &:hover{
       background-color: transparent;
       background-image: url("../../images/icon/Icon-search.svg");
       background-repeat: no-repeat;
@@ -112,14 +94,11 @@
 
  }
 }
- 
+
  .main-content__container {
-  padding-block-start: var(--sp);
-  
-  @media (--md) {
+  padding-block-start: var(--sp);   @media (--md) {
     padding-block-start: var(--sp1);
     padding-left: 0px;
-    padding-right: 0px;   
+    padding-right: 0px;
   }
 }
- 

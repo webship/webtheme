@@ -3,8 +3,7 @@
  * Styles for tabledrag.
  */
 
-@import "../base/media-queries.pcss.css";  
-.draggable:hover {
+@import "../base/media-queries.pcss.css"; .draggable:hover {
   background-color: var(--color--gray-95);
 }
 

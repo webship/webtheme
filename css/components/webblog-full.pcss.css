@@ -9,11 +9,7 @@
  .node--type-webblog.node--view-mode-full {
 
   & h1 {
-    letter-spacing: -0.01em;   
-    font-size: var(--font-size-l);
-    line-height: var(--sp2);   
-    
-    @media (--md) {
+    letter-spacing: -0.01em;     font-size: var(--font-size-l);     line-height: var(--sp2);     @media (--md) {
       font-size: var(--font-size-xxl);
       line-height: var(--sp3);
     }
@@ -21,8 +17,8 @@
 
   & .field--name-created {
     color: var(--color--gray-20);
-    font-size: var(--font-size-s);   
-    line-height: var(--sp1);   
+    font-size: var(--font-size-s);
+    line-height: var(--sp1);
   }
 
   & code {
@@ -36,11 +32,8 @@
 }
 
 .region--content {
- 
-  width:90%;
-  margin:auto;
 
-  @media (--md) {
+  width:90%;   margin:auto;   @media (--md) {
     width:75%;
   }
 

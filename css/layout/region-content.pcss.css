@@ -9,9 +9,8 @@
    margin-block-end: var(--sp);   @media (--md) {
      margin-block-end: var(--sp2);
    }
- 
+
    @media (--lg) {
      margin-block-end: var(--sp3);
    }
  }
- 

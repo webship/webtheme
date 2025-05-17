@@ -44,8 +44,7 @@
  /**
  * When a table row or a container-inline has a single form item, prevent it
  * from adding unnecessary extra spacing.
- * If it has multiple form items, allow spacing between them, overriding Classy.
- */
+ * If it has multiple form items, allow spacing between them.
 
  tr .form-item,
 .container-inline .form-item {
@@ -235,7 +234,7 @@
   margin-left:auto;
   margin-right:auto
 
-  
+
 }
 
  .bluelight-background .form-type-webform-markup {
@@ -251,6 +250,6 @@
     margin-left:auto;
     margin-right:auto
 
-  
+
 }
   }

@@ -24,9 +24,9 @@
 
  .site-footer .menu {
      display: flex;
-     justify-content: flex-end;     
-     margin-inline-start: 0;     
-     list-style: none;     
+     justify-content: flex-end;
+     margin-inline-start: 0;
+     list-style: none;
      font-weight: bold;
      flex-flow: wrap
    }
@@ -100,4 +100,3 @@
        display: flex
  }
        }
- 

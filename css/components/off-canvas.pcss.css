@@ -15,42 +15,42 @@
        transform: none;
        vertical-align: middle;
      }
- 
+
      & .form-item__description {
        margin-inline-start: 0;
      }
    }
- 
+
    /* Necessary for Safari. */
    & .webtheme-details {
      border-top: solid 1px rgba(255, 255, 255, 0.25);
      border-bottom: solid 1px rgba(255, 255, 255, 0.25);
      box-shadow: none;
    }
- 
+
    & .webtheme-details__wrapper {
      padding: 20px;
    }
- 
+
    /* Necessary for Safari. */
    & .webtheme-details__summary {
      display: block;     list-style: initial;     &:focus {
        outline: solid 1px rgba(255, 255, 255, 0.25);
      }
- 
+
      &:before {
        content: none;
      }
- 
+
      &::-webkit-details-marker {
        display: inline-block;
      }
- 
+
      /* Necessary for IE11. */
      & .details-title:before {
        content: none;
      }
- 
+
      /* Necessary for Firefox. */
      @supports (list-style-type: disclosure-closed) {
        display: list-item;
@@ -58,14 +58,14 @@
        list-style-type: disclosure-closed;
      }
    }
- 
+
    /* Necessary for Firefox. */
    & .webtheme-details[open] .webtheme-details__summary {
      @supports (list-style-type: disclosure-open) {
        list-style-type: disclosure-open;
      }
    }
- 
+
    /* Necessary for Safari. */
    & div {
      display: block;
@@ -73,4 +73,3 @@
      font-size: 14px;
    }
  }
- 

@@ -10,22 +10,22 @@
    color: var(--color--gray-10);
    font-family: var(--font-sans);
    line-height: var(--sp1-5);
- 
+
    /*
      @todo
- 
+
      text-decoration-thickness is supported by FF & Safari
      text-underline-offset is supported by Safari
- 
+
      text-decoration-color supported by Chrome, FF, & Safari
    */
- 
+
    & a:not(.button) {
      color: var(--color--blue-20);
      text-decoration-color: var(--color--blue-20);
      text-decoration-thickness: 2px;
      overflow-wrap: break-word;
- 
+
      @supports (box-shadow: none) {
        transition:         box-shadow 0.3s cubic-bezier(           0.55,
            0.085,
@@ -33,23 +33,23 @@
            0.99         );       text-decoration: none;       box-shadow: inset 0 -2px 0 0 var(--color--blue-50);       &:hover {
          text-decoration: underline;
          color: var(--color--black);
- 
+
          /* @todo - #d9ecfa isn't currently a variable. */
          box-shadow: inset 0 -2em 0 0 #d9ecfa;
          text-decoration-color: #d9ecfa;
        }
      }
    }
- 
+
    & p {
      margin-block-start: var(--sp);     margin-block-end: var(--sp);     &:first-child {
        margin-block-start: 0;
      }
- 
+
      &:last-child {
        margin-block-end: 0;
      }
- 
+
      @media (--lg) {
        font-size: var(--font-size-l);
        margin-block-start: var(--sp);
@@ -57,7 +57,7 @@
        line-height: var(--sp2);
      }
    }
-   
+
    & li {
     margin-block-start: var(--sp);     margin-block-end: var(--sp);     &:first-child {
       margin-block-start: 0;
@@ -74,11 +74,11 @@
         line-height: var(--sp2);
       }
     }
- 
+
    & code {
      background-color: var(--color--gray-95);
    }
- 
+
    & pre code {
      display: block;
      overflow: auto;
@@ -87,7 +87,7 @@
      padding-inline-end: var(--sp);
      color: var(--color--gray-20);
    }
- 
+
    & blockquote {
      position: relative;     margin-block: var(--sp2);     margin-inline-start: 0;     margin-inline-end: 0;     padding-inline-start: var(--sp2);     letter-spacing: -0.01em;     font-family: var(--font-serif);     font-size: 21px;     line-height: var(--sp2);     &:before {
        position: absolute;
@@ -97,7 +97,7 @@
        color: var(--color--blue-70);
        font-size: var(--font-size-xxxl);
      }
- 
+
      &:after {
        position: absolute;
        inset-block-end: 0;
@@ -108,21 +108,21 @@
        content: "";
        background: var(--color--gray-95);
      }
- 
+
      @media (--grid-md) {
        font-size: var(--font-size-xl);
        line-height: var(--sp3);
      }
- 
+
      @media (--lg) {
        font-size: var(--font-size-xxl);
        line-height: calc(3.5 * var(--sp));
      }
    }
- 
-   
+
+
  }
- 
+
  /**
   * Special colors for footer that has a dark background.
   */
@@ -130,7 +130,7 @@
    color: inherit;   font-weight: bold;   & * {
      color: inherit;
    }
- 
+
    & a {
      text-decoration: underline;     color: var(--color--white);     box-shadow: none;     &:hover {
        text-decoration: none;
@@ -139,16 +139,13 @@
      }
    }
  }
- 
+
  /**
   * Decrease font-size for blockquote placed in sidebar region.
   */
  .region--sidebar .text-content blockquote {
-   font-size: var(--font-size-m);
- 
-   @media (--lg) {
+   font-size: var(--font-size-m);    @media (--lg) {
      font-size: var(--font-size-l);
      line-height: var(--sp3);
    }
  }
- 

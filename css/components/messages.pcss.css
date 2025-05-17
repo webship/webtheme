@@ -3,8 +3,7 @@
  * Messages.
  */
 
-@import "../base/media-queries.pcss.css";  
-:root {
+@import "../base/media-queries.pcss.css"; :root {
   --messages-icon-size: 32px;
 }
 

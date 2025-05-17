@@ -20,4 +20,3 @@ webtheme.settings:
     site_branding_bg_color:
       type: string
       label: "Site branding background color"
-

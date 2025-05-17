@@ -4,8 +4,7 @@
  */
 /** cspell:ignore grouptitle */
 
-@import "../base/media-queries.pcss.css";  
-.cke_editable {
+@import "../base/media-queries.pcss.css"; .cke_editable {
   margin: var(--sp1);
   background-image: none;
 }

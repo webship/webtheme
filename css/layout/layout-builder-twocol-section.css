@@ -23,7 +23,7 @@
 
 .layout--twocol-section > .layout__region {
     flex: 1 0 100%;
-    width:100%;     
+    width:100%;
     margin-block-end: var(--grid-gap)
   }
 

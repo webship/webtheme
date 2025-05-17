@@ -31,7 +31,7 @@
    font-family: inherit;
    font-size: inherit;
    appearance: none;
- 
+
    &:focus {
      border: solid 2px var(--color--main-1);     outline: solid 2px var(--color--main-1);     @supports (outline-style: double) {
        border-width: 1px;
@@ -40,16 +40,16 @@
        outline-offset: -1px;
      }
    }
- 
+
    &::-ms-clear {
      display: none;
    }
- 
+
    &[disabled] {
      color: var(--color--gray-30);
      background-color: var(--color--gray-90);
    }
- 
+
    &.error {
      border: solid 2px var(--color--red);     &:focus {
        outline-color: var(--color--red);
@@ -59,13 +59,13 @@
        border: solid 2px var(--color--red);
      }
    }
- 
+
    &.form-element--small {
      min-height: var(--sp2-5);
    }
- 
+
  }
- 
+
  [type="date"] {
    /* Ensure that date field isn't larger than other fields. */
    &::-webkit-datetime-edit-fields-wrapper {
@@ -74,14 +74,13 @@
      padding-inline-end: 0;
    }
  }
- 
+
  [type="file"] {
    height: auto;
    padding-block: var(--sp0-75);
  }
- 
+
  [type="color"] {
    width: var(--sp3);
    padding: 0;
  }
- 

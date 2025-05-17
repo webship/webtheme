@@ -3,8 +3,7 @@
  * Styles for pagination.
  */
 
-@import "../base/media-queries.pcss.css";  
-.pager__items {
+@import "../base/media-queries.pcss.css"; .pager__items {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -67,9 +66,7 @@
 
 .pager{
 
-  text-align:center;
-
-  & .pager__items {
+  text-align:center;   & .pager__items {
       display: inline-flex;
   }
 
@@ -81,11 +78,7 @@
 
   & .pager__link {
 
-    width:30px;
-    height:30px;
-    display:black;
-
-    &:hover{
+    width:30px;     height:30px;     display:black;     &:hover{
       background:none;
     }
   }
@@ -93,9 +86,7 @@
   & .pager__item--next{
 
     & .pager__link{
-      background-image: url("../../images/icon/Icon-next-arrow.svg");
-      
-      & svg {
+      background-image: url("../../images/icon/Icon-next-arrow.svg");       & svg {
         display: none;
       }
     }
@@ -104,9 +95,7 @@
   & .pager__item--previous{
 
     & .pager__link{
-      background-image: url("../../images/icon/Icon-back-arrow.svg");
-      
-      & svg {
+      background-image: url("../../images/icon/Icon-back-arrow.svg");       & svg {
         display: none;
       }
     }
@@ -115,9 +104,7 @@
   & .pager__item--last{
 
     & .pager__link{
-      background-image: url("../../images/icon/Icon-last-arrow.svg");
-      
-      & svg {
+      background-image: url("../../images/icon/Icon-last-arrow.svg");       & svg {
         display: none;
       }
     }
@@ -126,9 +113,7 @@
   & .pager__item--first{
 
     & .pager__link{
-      background-image: url("../../images/icon/Icon-first-arrow.svg");
-      
-      & svg {
+      background-image: url("../../images/icon/Icon-first-arrow.svg");       & svg {
         display: none;
       }
     }

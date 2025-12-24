@@ -3,7 +3,7 @@ type: theme
 base theme: false
 description: Webtheme is the default theme for the Webship.co portal site.
 package: Webship
-core_version_requirement: ~11.2.0
+core_version_requirement: ~11.3.0
 regions:
   header: Header
   primary_menu: 'Primary menu'

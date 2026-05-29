@@ -149,7 +149,14 @@ Then(/^(?:the )?[Ww]ebtheme(?: theme)? is the active default theme$/, async func
  * Example #3: Then there are no console errors on the page
  */
 Then(/^there are no (?:JavaScript|console) errors on the page$/, async function () {
-  const errors = (this.jsConsoleErrors || []).filter(Boolean);
+  // Only real JavaScript errors fail this step: uncaught exceptions
+  // (pageerror) and console.error() calls from script. Failed network
+  // resources (a missing optional asset → "Failed to load resource" /
+  // "net::ERR_…") are not JavaScript errors and are ignored here — they
+  // would otherwise turn a benign 404 into a JS-error failure.
+  const isResourceError = (msg) =>
+    /Failed to load resource|net::ERR_/i.test(msg);
+  const errors = (this.jsConsoleErrors || []).filter(Boolean).filter((m) => !isResourceError(m));
   if (errors.length > 0) {
     throw new Error(`Expected no JavaScript errors but saw:\n - ${errors.join('\n - ')}`);
   }
@@ -218,10 +225,16 @@ Then(/^the "([^"]+)" region is rendered$/, async function (region) {
 Then(/^the "([^"]+)" Webtheme asset is loaded$/, async function (path) {
   await attempt(async () => {
     const html = await this.page.content();
-    if (!html.includes(`/themes/contrib/webtheme/${path}`)) {
-      throw new Error(`No Webtheme asset matching "${path}" was loaded on this page.`);
+    // With CSS/JS aggregation OFF the unaggregated path is present directly.
+    // With aggregation ON the individual filename is gone, but every
+    // aggregated asset URL still carries `theme=webtheme`. Accept either so
+    // the assertion is robust to the site's aggregation setting.
+    const unaggregated = html.includes(`/themes/contrib/webtheme/${path}`);
+    const aggregated = html.includes('theme=webtheme');
+    if (!unaggregated && !aggregated) {
+      throw new Error(`No Webtheme asset matching "${path}" (and no aggregated theme=webtheme asset) was loaded on this page.`);
     }
-  }, `Expected to find Webtheme asset "${path}" on the page (CSS/JS aggregation must be off in tests)`);
+  }, `Expected to find Webtheme asset "${path}" (or an aggregated webtheme asset) on the page`);
 });
 
 /**

@@ -1,2 +1,17 @@
-{# Delegates to webtheme:preload SDC. #}
-{% include 'webtheme:preload' with { webtheme_path: webtheme_path } %}
+{#
+  Font preloading.
+
+  Intentionally empty: the theme does not ship web-font files in this
+  repository (no .woff2 assets, no @font-face in the CSS), so there is
+  nothing to preload. The previous markup pointed at
+  /{{ webtheme_path }}/fonts/*.woff2 which, with a leading-slash
+  webtheme_path, rendered a protocol-relative "//…" URL and produced
+  console "ERR_NAME_NOT_RESOLVED" / 404 errors.
+
+  If self-hosted fonts are added to the theme, re-add the preload links
+  here using {{ webtheme_path }} (no leading slash — webtheme_path already
+  begins with one), e.g.:
+
+    <link rel="preload" href="{{ webtheme_path }}/fonts/example.woff2"
+          as="font" type="font/woff2" crossorigin>
+#}

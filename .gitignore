@@ -8,8 +8,21 @@ node_modules
 .gitlab-ci-local.yml
 .cucumber.js.bak
 
-# Ignore Claude Code project-scope MCP config (per-developer tooling).
+# Ignore Claude Code project-scope config (per-developer tooling).
 .mcp.json
+.claude/
 
 # Ignore Playwright MCP browser-session dumps (per-developer debugging output).
 .playwright-mcp/
+
+# Ignore Yarn's generated install state + PnP files (node-modules linker).
+.yarn/*
+.pnp.*
+
+# Ignore generated webship-js test artifacts, but keep the folder READMEs.
+tests/reports/*
+!tests/reports/README.md
+tests/screenshots/*
+!tests/screenshots/README.md
+tests/videos/*
+!tests/videos/README.md

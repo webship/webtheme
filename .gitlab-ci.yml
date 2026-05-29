@@ -94,8 +94,12 @@ stylelint:
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT theme:enable webtheme -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.theme default webtheme -y
     # ── Disable CSS/JS aggregation so per-library URLs are visible ──────────
+    # Both the stored config AND a settings.php override: the override always
+    # wins at runtime, so aggregation stays off regardless of what the test
+    # environment or any config import sets.
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.performance css.preprocess 0 -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.performance js.preprocess 0 -y
+    - printf "\n\$config['system.performance']['css']['preprocess'] = FALSE;\n\$config['system.performance']['js']['preprocess'] = FALSE;\n" >> $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/settings.php
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
     # Per-role test users are provisioned by the first scenario in the suite
     # (01-01-01-users-login.feature, "Webmaster can log in and provision

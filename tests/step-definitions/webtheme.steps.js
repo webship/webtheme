@@ -130,7 +130,21 @@ Then(/^(?:the )?[Ww]ebtheme(?: theme)? is the active default theme$/, async func
       html.includes('/themes/contrib/webtheme/') ||
       html.includes('--color--primary-hue');
     if (!isWebtheme) {
-      throw new Error('No webtheme markers found in the rendered page — webtheme is not the active theme.');
+      // When this fails it usually means the page returned a server error
+      // (HTTP 500) so no theme assets rendered. Surface the page's visible
+      // text — Drupal's non-production error page embeds the exception
+      // message + backtrace — so CI logs show the actual root cause.
+      let diag = '';
+      try {
+        diag = (await this.page.locator('body').innerText()).trim().slice(0, 2000);
+      } catch (_) {
+        diag = (await this.page.content()).slice(0, 2000);
+      }
+      throw new Error(
+        'No webtheme markers found in the rendered page — webtheme is not the active theme '
+        + '(the page likely returned HTTP 500). Page text follows:\n----- PAGE TEXT -----\n'
+        + diag + '\n---------------------'
+      );
     }
   }, 'Expected webtheme to be the active default theme');
 });

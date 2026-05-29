@@ -2,20 +2,24 @@
 /**
  * @file
  * Webtheme SDC: menu-local-tasks.
+ *
+ * Whether each tab group renders is decided by the delegating template
+ * (it has the primary/secondary render arrays) and passed in as the
+ * has_primary / has_secondary props. We must not capture the slots into a
+ * {% set %} variable to test emptiness — that would force the render-array
+ * tabs to render early, an anti-pattern that can fatal during placeholder
+ * processing.
  */
 #}
-{% set _primary %}{% block primary %}{% endblock %}{% endset %}
-{% set _secondary %}{% block secondary %}{% endblock %}{% endset %}
-
-{% if _primary|trim is not empty %}
+{% if has_primary %}
   <h2 id="primary-tabs-title" class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
   <nav role="navigation" class="tabs-wrapper" aria-labelledby="primary-tabs-title" data-drupal-nav-tabs>
-    <ul class="tabs tabs--primary">{{ _primary }}</ul>
+    <ul class="tabs tabs--primary">{% block primary %}{% endblock %}</ul>
   </nav>
 {% endif %}
-{% if _secondary|trim is not empty %}
+{% if has_secondary %}
   <h2 id="secondary-tabs-title" class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
   <nav role="navigation" class="tabs-wrapper" aria-labelledby="secondary-tabs-title" data-drupal-nav-tabs>
-    <ul class="tabs tabs--secondary">{{ _secondary }}</ul>
+    <ul class="tabs tabs--secondary">{% block secondary %}{% endblock %}</ul>
   </nav>
 {% endif %}

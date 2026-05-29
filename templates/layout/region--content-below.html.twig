@@ -9,6 +9,8 @@
  */
 #}
 {{ attach_library('webtheme/content-below') }}
-{% embed 'webtheme:region' with { region: region, wrapper: 'aside' } %}
-  {% block content %}{{ content }}{% endblock %}
-{% endembed %}
+{% if content %}
+  {% embed 'webtheme:region' with { region: region, wrapper: 'aside' } %}
+    {% block content %}{{ content }}{% endblock %}
+  {% endembed %}
+{% endif %}

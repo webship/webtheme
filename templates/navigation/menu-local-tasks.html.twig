@@ -13,7 +13,10 @@
  */
 #}
 {{ attach_library('webtheme/tabs') }}
-{% embed 'webtheme:menu-local-tasks' %}
+{% embed 'webtheme:menu-local-tasks' with {
+  has_primary: primary is not empty,
+  has_secondary: secondary is not empty,
+} %}
   {% block primary %}{{ primary }}{% endblock %}
   {% block secondary %}{{ secondary }}{% endblock %}
 {% endembed %}

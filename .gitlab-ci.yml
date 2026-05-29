@@ -18,7 +18,7 @@ cspell:
     - npm install -g cspell
   script:
     - cspell "**/*.{php,module,inc,install,test,profile,theme,js,css,md,yml,txt}" --no-progress || true
-  allow_failure: true
+  allow_failure: false
 
 eslint:
   stage: validate
@@ -31,7 +31,7 @@ eslint:
     - yarn lint:yaml || true
   after_script:
     - touch junit.xml _eslint.patch
-  allow_failure: true
+  allow_failure: false
 
 stylelint:
   stage: validate
@@ -43,7 +43,7 @@ stylelint:
     - yarn lint:css || true
   after_script:
     - echo '[]' > gl-codequality.json
-  allow_failure: true
+  allow_failure: false
 
 # ─── Shared Drupal + Node.js setup for browser tests ──────────────────────────
 #

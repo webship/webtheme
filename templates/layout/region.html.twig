@@ -14,6 +14,8 @@
  * @see template_preprocess_region()
  */
 #}
-{% embed 'webtheme:region' with { region: region } %}
-  {% block content %}{{ content }}{% endblock %}
-{% endembed %}
+{% if content %}
+  {% embed 'webtheme:region' with { region: region } %}
+    {% block content %}{{ content }}{% endblock %}
+  {% endembed %}
+{% endif %}

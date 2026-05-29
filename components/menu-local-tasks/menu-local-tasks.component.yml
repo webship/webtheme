@@ -8,6 +8,19 @@ description: >
   the live webship.co styles target. The data-drupal-nav-tabs hook is the
   JS handle used by core's tabs.js to collapse the wrapper into a drawer
   on narrow viewports.
+props:
+  type: object
+  properties:
+    has_primary:
+      type: boolean
+      title: Has primary tabs
+      description: Whether the primary tab group should render.
+      default: false
+    has_secondary:
+      type: boolean
+      title: Has secondary tabs
+      description: Whether the secondary tab group should render.
+      default: false
 slots:
   primary:
     title: Primary tabs

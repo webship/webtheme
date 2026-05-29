@@ -4,16 +4,19 @@
  * Webtheme SDC: region.
  *
  * Emits the same region / region--{name} wrapper markup as the original
- * theme overrides, so the live webship.co layout CSS keeps working. The
- * component renders nothing when the content slot is empty (matching the
- * original {% if content %} guard).
+ * theme overrides, so the live webship.co layout CSS keeps working.
+ *
+ * The "render only when there is content" guard lives in the delegating
+ * region--*.html.twig templates as `{% if content %}` — checked against the
+ * content *render array*. It must NOT be done here by capturing the slot
+ * into a {% set %} variable and trimming it: that forces the render-array
+ * content (which contains #lazy_builder / BigPipe placeholders on anonymous,
+ * page-cached requests) to render early, which can fatal during placeholder
+ * processing. So this component simply renders the wrapper + slot.
  */
 #}
 {% set tag = wrapper in ['div', 'aside'] ? wrapper : 'div' %}
 {% set region_classes = ['region', 'region--' ~ region|clean_class]|merge(modifier_classes ?? []) %}
-{% set _content %}{% block content %}{% endblock %}{% endset %}
-{% if _content|trim is not empty %}
-  <{{ tag }}{{ attributes.addClass(region_classes) }}>
-    {{ _content }}
-  </{{ tag }}>
-{% endif %}
+<{{ tag }}{{ attributes.addClass(region_classes) }}>
+  {% block content %}{% endblock %}
+</{{ tag }}>

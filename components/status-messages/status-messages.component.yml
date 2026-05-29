@@ -9,10 +9,10 @@ props:
   type: object
   properties:
     message_list:
-      type: object
+      type: [object, "null"]
       title: Messages by type
       description: Messages grouped by type (status, error, warning, info).
     status_headings:
-      type: object
+      type: [object, "null"]
       title: Status headings
       description: Human-readable heading for each message type.

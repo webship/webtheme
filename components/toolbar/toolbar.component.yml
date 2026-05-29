@@ -10,10 +10,10 @@ props:
     toolbar_attributes:
       type: Drupal\Core\Template\Attribute
     toolbar_heading:
-      type: [string, object]
+      type: [string, object, "null"]
     tabs:
-      type: array
+      type: [array, "null"]
     trays:
-      type: array
+      type: [array, "null"]
     remainder:
-      type: [string, object]
+      type: [string, object, "null"]

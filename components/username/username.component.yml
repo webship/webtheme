@@ -8,8 +8,8 @@ props:
   type: object
   properties:
     name:
-      type: [string, object]
+      type: [string, object, "null"]
     extra:
-      type: [string, object]
+      type: [string, object, "null"]
     link_path:
-      type: [string, boolean, object]
+      type: [string, boolean, object, "null"]

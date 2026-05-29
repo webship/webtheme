@@ -18,12 +18,24 @@ const {
  */
 Before(function () {
   this.__lastMainStatus = null;
+  // Same-origin responses with a 4xx/5xx status, for the "no failed network
+  // requests" performance/health check. Keyed by URL so we can report them.
+  this.__failedRequests = [];
   if (this.page && typeof this.page.on === 'function') {
+    const origin = (() => {
+      try { return new URL(this.parameters.launchUrl).origin; } catch (_) { return null; }
+    })();
     this.page.on('response', (resp) => {
       try {
         const req = resp.request();
         if (req.isNavigationRequest() && req.frame() === this.page.mainFrame()) {
           this.__lastMainStatus = resp.status();
+        }
+        const url = resp.url();
+        // Only flag same-origin failures, and ignore favicon (its absence is
+        // harmless and covered elsewhere).
+        if (origin && url.startsWith(origin) && !/\/favicon\.ico(\?|$)/.test(url) && resp.status() >= 400) {
+          this.__failedRequests.push(`${resp.status()} ${url}`);
         }
       } catch (_) {
         // Best-effort — ignore responses we cannot introspect.
@@ -152,6 +164,125 @@ Given(/^(?:I |we )?add( the)? testing users$/, async function (theCase) {
     await this.page.locator('#edit-submit').click();
     await this.page.waitForLoadState('networkidle');
   }
+});
+
+/**
+ * Seed default content through Drupal's admin UI so the theme can be tested
+ * with real content on every front-facing surface: article teasers + full
+ * pages, tags, the frontpage Views listing and its pager, a Basic page, and
+ * primary-navigation menu links.
+ *
+ * Pure UI automation (no drush, no PHP script): it drives /node/add/article,
+ * /node/add/page and /admin/structure/menu so it works against any site,
+ * local or CI. Article count defaults to 12 so the standard frontpage view
+ * (10 promoted items per page) shows a real pager; override with
+ * worldParameters.demoContent.articleCount.
+ *
+ * Body (CKEditor) and tags are best-effort — a missing widget is swallowed so
+ * an editor quirk never fails seeding; the title + Save path is always taken.
+ *
+ * Must be invoked while logged in as the Webmaster.
+ *
+ * Example #1: Given I add demo content
+ * Example #2: And I add demo content
+ * Example #3: When I add the demo content
+ */
+// Seeding ~12 articles + a page + menu links drives many full page loads
+// through the admin UI, which exceeds the default per-step timeout. Give this
+// one step a generous budget (it is the only heavy step in the suite).
+Given(/^(?:I |we )?add( the)? demo content$/, { timeout: 300000 }, async function (theCase) {
+  const cfg = this.parameters.demoContent || {};
+  const articleCount = cfg.articleCount || 12;
+  const base = this.parameters.launchUrl;
+
+  /**
+   * Best-effort fill of a CKEditor 5 body (or a plain textarea fallback).
+   */
+  const fillBody = async (text) => {
+    const ck = this.page.locator('.ck-editor__editable[contenteditable="true"]').first();
+    if (await ck.count() > 0) {
+      await ck.click();
+      await this.page.keyboard.type(text);
+      return;
+    }
+    const ta = this.page.locator('textarea[name$="[value]"]').first();
+    if (await ta.count() > 0) {
+      await ta.fill(text);
+    }
+  };
+
+  /**
+   * Best-effort fill of the free-tagging Tags autocomplete. The article
+   * Tags widget is a single comma-separated autocomplete
+   * (#edit-field-tags-target-id / field_tags[target_id]); typing a term name
+   * and submitting creates/links it. We set the value and fire input/change
+   * so the widget registers it, then Escape closes the suggestion list.
+   */
+  const fillTags = async (term) => {
+    const tags = this.page.locator('#edit-field-tags-target-id, input[name="field_tags[target_id]"]').first();
+    if (await tags.count() > 0) {
+      await tags.fill(term);
+      await tags.dispatchEvent('input').catch(() => {});
+      await tags.dispatchEvent('change').catch(() => {});
+      await tags.press('Escape').catch(() => {});
+    }
+  };
+
+  // ── Articles (promoted) — enough to force a 2-page pager on /node. ────────
+  for (let i = 1; i <= articleCount; i++) {
+    const title = `Webtheme demo article ${String(i).padStart(2, '0')}`;
+    await this.page.goto(`${base}/node/add/article`, { waitUntil: 'domcontentloaded' });
+    await this.page.locator('#edit-title-0-value').fill(title);
+    await fillTags(['Drupal', 'Webship', 'Theming'][i % 3]).catch(() => {});
+    await fillBody(`Demo article ${i} body — exercises the Webtheme node teaser, full display and text-content styling.`).catch(() => {});
+    await this.page.locator('#edit-submit').click();
+    await smartSettle(this.page, 15000);
+  }
+
+  // ── A Basic page (unpromoted). ────────────────────────────────────────────
+  await this.page.goto(`${base}/node/add/page`, { waitUntil: 'domcontentloaded' });
+  await this.page.locator('#edit-title-0-value').fill('About Webtheme');
+  await fillBody('A Basic page seeded to exercise the Webtheme page content type, the page-title block and the breadcrumb.').catch(() => {});
+  await this.page.locator('#edit-submit').click();
+  await smartSettle(this.page, 15000);
+
+  // ── Main-menu links so the primary navigation renders items. ──────────────
+  // The menu-link UI URI field takes human paths (<front>, /node) or a full
+  // URL — NOT the internal:/entity: storage scheme.
+  const links = [
+    { title: 'Home', uri: '<front>' },
+    { title: 'Articles', uri: '/node' },
+    { title: 'Drupal.org', uri: 'https://www.drupal.org' },
+  ];
+  for (const link of links) {
+    await this.page.goto(`${base}/admin/structure/menu/manage/main/add`, { waitUntil: 'domcontentloaded' });
+    await this.page.locator('#edit-title-0-value').fill(link.title);
+    await this.page.locator('#edit-link-0-uri').fill(link.uri);
+    await this.page.locator('#edit-submit').click();
+    await smartSettle(this.page, 15000);
+  }
+});
+
+/**
+ * Open a link by its visible text, tolerating surrounding markup/whitespace.
+ *
+ * webship-js's generic `I click "X"` matches the link's text content with an
+ * anchored `^X$` regex, which fails when the theme wraps the link label in a
+ * <span> (e.g. node teaser titles: <a><span>Title</span></a>) because the
+ * text content then includes newlines. getByRole('link', { name }) matches
+ * the accessible name with whitespace normalised, so it follows those links
+ * reliably.
+ *
+ * Example #1: When I open the "Webtheme demo article 12" article
+ * Example #2: When I open the "About Webtheme" content
+ * Example #3: And I open the "Drupal.org" link
+ */
+When(/^(?:I |we )?open the "([^"]+)" (?:article|page|content|link)$/, async function (name) {
+  await settle(this);
+  await attempt(async () => {
+    await this.page.getByRole('link', { name, exact: false }).first().click();
+  }, `Expected to find and open a link named "${name}"`);
+  await settle(this);
 });
 
 /**
@@ -501,5 +632,66 @@ Then(/^the body is not HTMX-boosted$/, async function () {
   const v = await this.page.locator('body').getAttribute('hx-boost');
   if (v === 'true') {
     throw new Error('Expected <body> without hx-boost="true", but it was boosted.');
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Performance / health checks (general, non-flaky budgets).
+// ---------------------------------------------------------------------------
+
+/**
+ * Assert no same-origin resource on the current page returned a 4xx/5xx.
+ *
+ * A missing CSS/JS/image (404) or a server error (500) is both a correctness
+ * and a performance problem (wasted requests, broken assets). Cross-origin
+ * and favicon noise is ignored (see the Before hook). Run after navigating
+ * to the page you want to check.
+ *
+ * Example #1: Then there should be no failed network requests
+ * Example #2: And there should be no failed network requests
+ */
+Then(/^there should be no failed network requests$/, async function () {
+  await settle(this);
+  const failed = this.__failedRequests || [];
+  if (failed.length > 0) {
+    throw new Error('Expected no failed (4xx/5xx) same-origin requests but saw:\n - ' + failed.join('\n - '));
+  }
+});
+
+/**
+ * Assert the page reached an interactive/loaded state within a time budget,
+ * read from the Navigation Timing API. A generous budget makes this a
+ * smoke-level performance guard (catches gross regressions / hangs) without
+ * being flaky on a loaded CI box.
+ *
+ * Example #1: Then the page should become interactive within 8000 milliseconds
+ * Example #2: Then the page should become interactive within 10000 milliseconds
+ */
+Then(/^the page should become interactive within (\d+) milliseconds$/, async function (budget) {
+  await settle(this);
+  const ms = await this.page.evaluate(() => {
+    const nav = performance.getEntriesByType('navigation')[0];
+    if (nav) return Math.round(nav.domInteractive);
+    // Legacy fallback.
+    const t = performance.timing;
+    return t ? (t.domInteractive - t.navigationStart) : 0;
+  });
+  if (ms > Number(budget)) {
+    throw new Error(`Expected the page to become interactive within ${budget} ms but it took ${ms} ms.`);
+  }
+});
+
+/**
+ * Assert the page loaded fewer than N same-origin resources — a guard against
+ * runaway asset counts. Budget is intentionally generous.
+ *
+ * Example #1: Then the page should load fewer than 250 resources
+ * Example #2: And the page should load fewer than 300 resources
+ */
+Then(/^the page should load fewer than (\d+) resources$/, async function (max) {
+  await settle(this);
+  const count = await this.page.evaluate(() => performance.getEntriesByType('resource').length);
+  if (count >= Number(max)) {
+    throw new Error(`Expected fewer than ${max} resources but the page loaded ${count}.`);
   }
 });

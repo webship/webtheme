@@ -324,6 +324,7 @@ htmx:
     - core/htmx
     - core/drupal
     - core/drupalSettings
+    - core/once
 
 views.responsive-grid:
   version: VERSION

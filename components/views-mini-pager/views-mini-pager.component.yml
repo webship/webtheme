@@ -8,7 +8,7 @@ props:
   type: object
   properties:
     heading_id:
-      type: string
+      type: [string, "null"]
     items:
-      type: object
+      type: [object, "null"]
       title: Pager items (previous, current, next)

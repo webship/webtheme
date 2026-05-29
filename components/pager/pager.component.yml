@@ -4,21 +4,24 @@ status: stable
 description: >
   Paginated navigation control (first / previous / numbered pages / next /
   last) with SVG arrow controls. Mirrors core's pager data structure.
+  Props accept null so the component never fails validation when the pager
+  theme hook fires without a pager (the delegating template also guards on
+  items, so the markup is only emitted when there is something to page).
 props:
   type: object
   properties:
     heading_id:
-      type: string
+      type: [string, "null"]
       title: Heading ID
       description: ID of the visually-hidden pagination heading.
     items:
-      type: object
+      type: [object, "null"]
       title: Pager items
       description: Core pager items (first, previous, pages, next, last).
     current:
-      type: [integer, string]
+      type: [integer, string, "null"]
       title: Current page
     ellipses:
-      type: object
+      type: [object, "null"]
       title: Ellipses
       description: Flags for leading/trailing ellipses (previous, next).

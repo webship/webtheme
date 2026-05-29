@@ -8,13 +8,13 @@ props:
   type: object
   properties:
     breadcrumb:
-      type: array
+      type: [array, "null"]
       title: Breadcrumb items
       description: Ordered list of trail items, each with a "text" and optional "url".
       items:
-        type: object
+        type: [object, "null"]
         properties:
           text:
-            type: string
+            type: [string, "null"]
           url:
-            type: string
+            type: [string, "null"]

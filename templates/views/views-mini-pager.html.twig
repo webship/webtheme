@@ -3,9 +3,14 @@
  * @file
  * Theme override for a views mini-pager.
  *
- * Delegates the markup to the webtheme:views-mini-pager SDC.
+ * Delegates the markup to the webtheme:views-mini-pager SDC. Only invoked
+ * when there is a pager to render: the hook can fire with NULL items, and
+ * the SDC's required props reject NULL under assertion-enabled validation
+ * (DrupalCI), which would fatal the page.
  *
  * @see template_preprocess_views_mini_pager()
  */
 #}
-{% include 'webtheme:views-mini-pager' with { heading_id: heading_id, items: items } %}
+{% if items %}
+  {% include 'webtheme:views-mini-pager' with { heading_id: heading_id, items: items } only %}
+{% endif %}

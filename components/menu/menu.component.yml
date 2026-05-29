@@ -9,9 +9,9 @@ props:
   type: object
   properties:
     menu_name:
-      type: string
+      type: [string, "null"]
       title: Menu machine name
     items:
-      type: array
+      type: [array, "null"]
       title: Menu items
       description: Nested list of menu item objects (title, url, below, …).

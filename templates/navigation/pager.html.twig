@@ -6,12 +6,22 @@
  * Delegates the markup to the webtheme:pager SDC. See that component for
  * the full variable documentation.
  *
+ * The pager theme hook fires on every page that *could* paginate, even when
+ * there is no pager — in which case items/current/ellipses/heading_id are
+ * all NULL. The SDC declares those props as required, and Drupal validates
+ * SDC props (rejecting NULL) whenever PHP assertions are enabled (as on
+ * DrupalCI), which would fatal the page. So only invoke the component when
+ * there is actually a pager to render — matching the original
+ * `{% if items %}` guard.
+ *
  * @see template_preprocess_pager()
  */
 #}
-{% include 'webtheme:pager' with {
-  heading_id: heading_id,
-  items: items,
-  current: current,
-  ellipses: ellipses,
-} only %}
+{% if items %}
+  {% include 'webtheme:pager' with {
+    heading_id: heading_id,
+    items: items,
+    current: current,
+    ellipses: ellipses,
+  } only %}
+{% endif %}

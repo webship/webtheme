@@ -11,7 +11,9 @@
 #}
 {% if items %}
   <nav{{ attributes.addClass('pager', 'layout--content-medium').setAttribute('role', 'navigation').setAttribute('aria-labelledby', heading_id) }}>
-    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    {# Visually-hidden heading. Kept at h2 so it does not skip a level after
+       the h2 teaser/content titles (valid heading hierarchy for a11y). #}
+    <h2 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h2>
     <ul class="pager__items js-pager__items">
       {# Print first item if we are not on the first page. #}
       {% if items.first %}

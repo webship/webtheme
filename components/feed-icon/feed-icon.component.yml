@@ -8,9 +8,9 @@ props:
   type: object
   properties:
     url:
-      type: string
+      type: [string, "null"]
       title: Feed URL
     title:
-      type: string
+      type: [string, "null"]
       title: Feed title
       default: 'RSS Feed'

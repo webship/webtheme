@@ -10,26 +10,26 @@ props:
   type: object
   properties:
     extra_classes:
-      type: array
+      type: [array, "null"]
       title: Modifier classes
       description: Extra wrapper classes (by-anonymous, by-X-author, comment--{status}, …).
       items:
-        type: string
+        type: [string, "null"]
     user_picture:
-      type: [string, object]
+      type: [string, object, "null"]
       title: User picture
     author:
-      type: [string, object]
+      type: [string, object, "null"]
       title: Author
     created:
-      type: [string, object]
+      type: [string, object, "null"]
       title: Created date
     parent:
-      type: [string, object]
+      type: [string, object, "null"]
       title: Parent comment summary
       description: Visually-hidden summary used by screen readers.
     title:
-      type: [string, object]
+      type: [string, object, "null"]
       title: Comment title
     title_attributes:
       type: Drupal\Core\Template\Attribute

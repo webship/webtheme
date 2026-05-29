@@ -9,11 +9,11 @@ props:
   type: object
   properties:
     region:
-      type: string
+      type: [string, "null"]
       title: Region machine name
       description: Used to build the region--{name} class.
     wrapper:
-      type: string
+      type: [string, "null"]
       title: Wrapper element
       description: HTML element used to wrap the region content.
       enum:
@@ -21,11 +21,11 @@ props:
         - aside
       default: div
     modifier_classes:
-      type: array
+      type: [array, "null"]
       title: Modifier classes
       description: Extra classes appended after region / region--{name}.
       items:
-        type: string
+        type: [string, "null"]
 slots:
   content:
     title: Content

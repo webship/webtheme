@@ -9,24 +9,24 @@ props:
   type: object
   properties:
     url:
-      type: string
+      type: [string, "null"]
       title: Result URL
     title:
-      type: [string, object]
+      type: [string, object, "null"]
       title: Result title
     title_attributes:
       type: Drupal\Core\Template\Attribute
     content_attributes:
       type: Drupal\Core\Template\Attribute
     info_split:
-      type: object
+      type: [object, "null"]
       title: Info-split metadata
     info_date:
-      type: [string, object]
+      type: [string, object, "null"]
     snippet:
-      type: [string, object]
+      type: [string, object, "null"]
     layout:
-      type: string
+      type: [string, "null"]
 slots:
   title_prefix:
     title: Title prefix

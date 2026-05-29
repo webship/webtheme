@@ -9,11 +9,11 @@ props:
   type: object
   properties:
     title:
-      type: [string, object]
+      type: [string, object, "null"]
     options:
-      type: object
+      type: [object, "null"]
       title: Style plugin options
       description: alignment + columns from the views style plugin.
     items:
-      type: array
+      type: [array, "null"]
       title: Grid items

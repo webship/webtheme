@@ -44,6 +44,13 @@ module.exports = {
           "roles": [],
         },
       },
+      // Default content seeded by `Given I add demo content` (see
+      // tests/step-definitions/webtheme.steps.js). articleCount defaults to 12
+      // so the standard frontpage view (10 promoted items per page) renders a
+      // real pager on /node.
+      demoContent: {
+        articleCount: 12,
+      },
       minWaitTime: {
         page: 3000,
         before_scenario: 0,

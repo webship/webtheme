@@ -8,7 +8,10 @@
     "Webtheme mobile nav button": "[data-drupal-selector=\"mobile-nav-button\"]",
     "Webtheme skip link": ".skip-link",
     "Webtheme HTML root style": "html[style*=\"--color--primary-hue\"]",
-    "Webtheme page title": "h1.page-title"
+    "Webtheme page title": "h1.page-title",
+    "Webtheme pager": "nav.pager",
+    "Webtheme article teaser": "article.node--type-article",
+    "Webtheme primary menu": ".primary-nav__menu"
   },
   "xpath": {}
 }

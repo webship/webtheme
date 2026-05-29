@@ -9,20 +9,20 @@ props:
   type: object
   properties:
     title:
-      type: [string, object]
+      type: [string, object, "null"]
       title: Title
     summary_attributes:
       type: Drupal\Core\Template\Attribute
     content_attributes:
       type: Drupal\Core\Template\Attribute
     required:
-      type: boolean
+      type: [boolean, "null"]
       default: false
     description:
-      type: [string, object]
+      type: [string, object, "null"]
     errors:
-      type: [string, object]
+      type: [string, object, "null"]
     children:
-      type: [string, object]
+      type: [string, object, "null"]
     value:
-      type: [string, object]
+      type: [string, object, "null"]

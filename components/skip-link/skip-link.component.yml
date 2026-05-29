@@ -9,11 +9,11 @@ props:
   type: object
   properties:
     href:
-      type: string
+      type: [string, "null"]
       title: Target
       description: Fragment the link points at. Defaults to "#main-content".
       default: '#main-content'
     label:
-      type: string
+      type: [string, "null"]
       title: Label
       description: Visible text of the skip link. Defaults to "Skip to main content".

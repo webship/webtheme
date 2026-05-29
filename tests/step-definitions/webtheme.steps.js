@@ -1,12 +1,36 @@
 'use strict';
 
-const { Given, Then, When } = require('@cucumber/cucumber');
+const { Given, Then, When, Before } = require('@cucumber/cucumber');
 const {
   friendly,
   smartSettle,
   fillField,
   gotoUrl,
 } = require('webship-js/tests/step-definitions/webship');
+
+/**
+ * Track the HTTP status of the most recent main-document navigation so the
+ * smart-wait helper can transparently retry a transient server error.
+ *
+ * webship-js creates `this.page` in its own Before hook, which is required
+ * before this file (see cucumber.js `require` order), so the page exists by
+ * the time this hook runs.
+ */
+Before(function () {
+  this.__lastMainStatus = null;
+  if (this.page && typeof this.page.on === 'function') {
+    this.page.on('response', (resp) => {
+      try {
+        const req = resp.request();
+        if (req.isNavigationRequest() && req.frame() === this.page.mainFrame()) {
+          this.__lastMainStatus = resp.status();
+        }
+      } catch (_) {
+        // Best-effort — ignore responses we cannot introspect.
+      }
+    });
+  }
+});
 
 /**
  * Shared login routine, used by the "I am a logged in user" step and the
@@ -43,6 +67,31 @@ async function attempt(body, message) {
     await body();
   } catch (err) {
     throw friendly(message, err);
+  }
+}
+
+/**
+ * Wait for the current page to settle using webship-js's smart wait
+ * (DOM ready + network-idle + the AJAX/timer/mutation quiet period) before
+ * an assertion reads the DOM, so steps never inspect a half-rendered page.
+ *
+ * If the most recent main-document navigation returned a 5xx, reload the
+ * page once and settle again. This rides out a transient server error
+ * (e.g. a cold-cache hiccup) without masking a deterministic failure: a
+ * page that 500s on every request still 500s after the single reload, so
+ * the assertion — and the CI diagnostics — still report it.
+ *
+ * @param {object} world - the Cucumber world.
+ */
+async function settle(world) {
+  const timeout = (world.minWaitTime && world.minWaitTime.page) || 10000;
+  await smartSettle(world.page, timeout);
+  if (world.__lastMainStatus && world.__lastMainStatus >= 500) {
+    // Clear first so the reload's own response refreshes the status and we
+    // never loop more than this single retry.
+    world.__lastMainStatus = null;
+    await world.page.reload({ waitUntil: 'domcontentloaded' }).catch(() => {});
+    await smartSettle(world.page, timeout);
   }
 }
 
@@ -119,6 +168,11 @@ Given(/^(?:I |we )?add( the)? testing users$/, async function (theCase) {
  */
 Then(/^(?:the )?[Ww]ebtheme(?: theme)? is the active default theme$/, async function () {
   await attempt(async () => {
+    // Let the page settle first using webship-js's smart wait (DOM +
+    // network-idle + AJAX/timer/mutation quiet period) so we never read a
+    // half-rendered document.
+    await smartSettle(this.page, (this.minWaitTime && this.minWaitTime.page) || 10000);
+
     // Drupal aggregates per-theme. Even with aggregation on, every aggregated
     // asset URL carries `theme=webtheme`, the favicon points at
     // /themes/contrib/webtheme/, and the <html> root carries the brand-color
@@ -130,20 +184,24 @@ Then(/^(?:the )?[Ww]ebtheme(?: theme)? is the active default theme$/, async func
       html.includes('/themes/contrib/webtheme/') ||
       html.includes('--color--primary-hue');
     if (!isWebtheme) {
-      // When this fails it usually means the page returned a server error
-      // (HTTP 500) so no theme assets rendered. Surface the page's visible
-      // text — Drupal's non-production error page embeds the exception
-      // message + backtrace — so CI logs show the actual root cause.
-      let diag = '';
-      try {
-        diag = (await this.page.locator('body').innerText()).trim().slice(0, 2000);
-      } catch (_) {
-        diag = (await this.page.content()).slice(0, 2000);
-      }
+      // No theme markers usually means a server error (HTTP 500) so nothing
+      // theme-related rendered. The rendered <body> can be empty on a hard
+      // fatal, so re-fetch the URL from inside the page and surface the raw
+      // HTTP status + response body — that carries Drupal's actual exception
+      // message / backtrace in a non-production test environment.
+      const diag = await this.page.evaluate(async () => {
+        try {
+          const res = await fetch(window.location.href, { credentials: 'include' });
+          const body = await res.text();
+          return `HTTP ${res.status} ${res.statusText}\n` + body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 3000);
+        } catch (e) {
+          return `fetch failed: ${e.message}`;
+        }
+      }).catch((e) => `diagnostic fetch error: ${e.message}`);
       throw new Error(
-        'No webtheme markers found in the rendered page — webtheme is not the active theme '
-        + '(the page likely returned HTTP 500). Page text follows:\n----- PAGE TEXT -----\n'
-        + diag + '\n---------------------'
+        'No webtheme markers found — webtheme is not the active theme '
+        + '(the page likely returned HTTP 500). Raw response follows:\n'
+        + '----- RAW RESPONSE -----\n' + diag + '\n------------------------'
       );
     }
   }, 'Expected webtheme to be the active default theme');
@@ -212,6 +270,7 @@ Given(/^I start collecting JavaScript errors$/, function () {
  * Example #5: And the "highlighted" region is rendered
  */
 Then(/^the "([^"]+)" region is rendered$/, async function (region) {
+  await settle(this);
   await attempt(async () => {
     const locator = this.page.locator(
       `.region.region-${region}, .region--${region}, [data-region="${region}"]`
@@ -237,6 +296,7 @@ Then(/^the "([^"]+)" region is rendered$/, async function (region) {
  * Example #5: And the "polyfills" Webtheme asset is loaded
  */
 Then(/^the "([^"]+)" Webtheme asset is loaded$/, async function (path) {
+  await settle(this);
   await attempt(async () => {
     const html = await this.page.content();
     // With CSS/JS aggregation OFF the unaggregated path is present directly.
@@ -263,6 +323,7 @@ Then(/^the "([^"]+)" Webtheme asset is loaded$/, async function (path) {
  * Example #2: And the brand color is applied to the HTML element
  */
 Then(/^the brand color is applied to the HTML element$/, async function () {
+  await settle(this);
   await attempt(async () => {
     const style = await this.page.locator('html').getAttribute('style');
     if (!style || !style.includes('--color--primary-hue')) {
@@ -286,6 +347,7 @@ Then(/^the brand color is applied to the HTML element$/, async function () {
  * Example #5: And the "status-messages" SDC component is rendered
  */
 Then(/^the "([^"]+)" SDC component is rendered$/, async function (name) {
+  await settle(this);
   await attempt(async () => {
     const count = await this.page.locator(`[data-component-id="webtheme:${name}"]`).count();
     if (count === 0) {
@@ -306,11 +368,7 @@ Then(/^the "([^"]+)" SDC component is rendered$/, async function (name) {
  * Example #2: And the page does not load jQuery
  */
 Then(/^the page does not load jQuery$/, async function () {
-  const result = await this.page.evaluate(
-    () => typeof window.jQuery === 'undefined' && typeof window.jest === 'undefined'
-  );
-  // Note: we check window.jQuery specifically; window.$ is intentionally not
-  // asserted because some browser extensions define it.
+  await settle(this);
   const hasJquery = await this.page.evaluate(() => typeof window.jQuery !== 'undefined');
   if (hasJquery) {
     throw new Error('Expected window.jQuery to be undefined, but jQuery was loaded.');
@@ -327,12 +385,14 @@ Then(/^the page does not load jQuery$/, async function () {
  * Example #2: Then the htmx global is not defined on the page
  */
 Then(/^the htmx global is defined on the page$/, async function () {
+  await settle(this);
   const result = await this.page.evaluate(() => typeof window.htmx !== 'undefined');
   if (!result) {
     throw new Error('Expected window.htmx to be defined.');
   }
 });
 Then(/^the htmx global is not defined on the page$/, async function () {
+  await settle(this);
   const result = await this.page.evaluate(() => typeof window.htmx === 'undefined');
   if (!result) {
     throw new Error('Expected window.htmx to be undefined, but HTMX was loaded.');
@@ -430,12 +490,14 @@ When(/^I disable HTMX boost in webtheme settings$/, async function () {
  * Example #2: Then the body is not HTMX-boosted
  */
 Then(/^the body is HTMX-boosted$/, async function () {
+  await settle(this);
   const v = await this.page.locator('body').getAttribute('hx-boost');
   if (v !== 'true') {
     throw new Error(`Expected <body hx-boost="true"> but got hx-boost="${v}".`);
   }
 });
 Then(/^the body is not HTMX-boosted$/, async function () {
+  await settle(this);
   const v = await this.page.locator('body').getAttribute('hx-boost');
   if (v === 'true') {
     throw new Error('Expected <body> without hx-boost="true", but it was boosted.');

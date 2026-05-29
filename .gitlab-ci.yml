@@ -99,8 +99,17 @@ stylelint:
     # environment or any config import sets.
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.performance css.preprocess 0 -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.performance js.preprocess 0 -y
-    - printf "\n\$config['system.performance']['css']['preprocess'] = FALSE;\n\$config['system.performance']['js']['preprocess'] = FALSE;\n" >> $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/settings.php
+    - printf "\n\$config['system.performance']['css']['preprocess'] = FALSE;\n\$config['system.performance']['js']['preprocess'] = FALSE;\n\$config['system.logging']['error_level'] = 'verbose';\n" >> $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/settings.php
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # ── Front-page diagnostic ────────────────────────────────────────────────
+    # Surface any server-side error before the browser suite runs. error_level
+    # is forced to "verbose" above so a 500 renders the full exception +
+    # backtrace into the response; we also dump Drupal's logged errors and the
+    # Apache/PHP error log so the cause is visible even on a bare PHP fatal.
+    - 'curl -s -o /tmp/front.html -w "front page HTTP=%{http_code}\n" http://localhost/ || true'
+    - 'echo "----- front page body (first 120 lines) -----"; head -120 /tmp/front.html || true'
+    - '$CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT watchdog:show --count=25 --severity=Error --extended || true'
+    - 'echo "----- apache/php error log -----"; tail -80 /var/log/apache2/error.log 2>/dev/null || tail -80 /var/log/php*.log 2>/dev/null || true'
     # Per-role test users are provisioned by the first scenario in the suite
     # (01-01-01-users-login.feature, "Webmaster can log in and provision
     # testing users"), so no separate drush step is needed here.

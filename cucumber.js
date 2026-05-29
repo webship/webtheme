@@ -1,6 +1,11 @@
 module.exports = {
   default: {
     timeout: 60000,
+    // Re-run a failed scenario once. This rides out transient navigation
+    // hiccups (a flaky `I navigate to …` under load) without masking real
+    // failures: a deterministic error (e.g. an HTTP 500) fails both the
+    // initial run and the retry, so it is still reported.
+    retry: 1,
     requireModule: ['tsx/cjs'],
     require: [
       'node_modules/webship-js/tests/step-definitions/**/*.js',

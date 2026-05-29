@@ -14,19 +14,9 @@
       "Drupal": true,
       "drupalSettings": true,
       "drupalTranslations": true,
-      "jQuery": true,
-      "_": true,
-      "Cookies": true,
-      "Backbone": true,
-      "Modernizr": true,
-      "loadjs": true,
-      "Popper": true,
-      "Shepherd": true,
-      "Sortable": true,
       "once": true,
-      "CKEDITOR": true,
-      "CKEditor5": true,
-      "tabbable": true
+      "tabbable": true,
+      "htmx": true
     },
     "rules": {
       "prettier/prettier": "error",

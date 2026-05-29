@@ -7,10 +7,31 @@
 
 use Drupal\webtheme\WebthemePreRender;
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
+
+/**
+ * Returns a Webtheme theme setting.
+ *
+ * Wrapper around the ThemeSettingsProvider service, which replaced the
+ * deprecated theme_get_setting() in Drupal 11.3.
+ *
+ * @param string $name
+ *   The setting name.
+ * @param string|null $theme
+ *   The theme to read from; defaults to the active theme.
+ *
+ * @return mixed
+ *   The setting value, or NULL when it does not exist.
+ *
+ * @see https://www.drupal.org/node/3035289
+ */
+function _webtheme_get_setting(string $name, ?string $theme = NULL): mixed {
+  return \Drupal::service(ThemeSettingsProvider::class)->getSetting($name, $theme);
+}
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -18,12 +39,12 @@ use Drupal\user\UserInterface;
  * Adds body classes if certain regions have content.
  */
 function webtheme_preprocess_html(&$variables) {
-  if (theme_get_setting('mobile_menu_all_widths') === 1) {
+  if (_webtheme_get_setting('mobile_menu_all_widths') === 1) {
     $variables['attributes']['class'][] = 'is-always-mobile-nav';
   }
 
   // Convert custom hex to hsl so we can use the hue value
-  $brand_color_hex = theme_get_setting('base_primary_color') ?? '#1b9ae4';
+  $brand_color_hex = _webtheme_get_setting('base_primary_color') ?? '#1b9ae4';
   [$h, $s, $l] = _webtheme_hex_to_hsl($brand_color_hex);
 
   $variables['html_attributes']->setAttribute('style', "--color--primary-hue:$h;--color--primary-saturation:$s%;--color--primary-lightness:$l");
@@ -48,9 +69,9 @@ function webtheme_preprocess_html(&$variables) {
   // Opt-in HTMX library + boost. Attached only when the site administrator
   // toggles "Enable HTMX" in the theme settings form so the bundle is not
   // shipped on sites that don't want it.
-  if (theme_get_setting('htmx_enabled')) {
+  if (_webtheme_get_setting('htmx_enabled')) {
     $variables['#attached']['library'][] = 'webtheme/htmx';
-    if (theme_get_setting('htmx_boost')) {
+    if (_webtheme_get_setting('htmx_boost')) {
       $variables['attributes']['hx-boost'] = 'true';
     }
   }
@@ -160,7 +181,7 @@ function webtheme_preprocess_block(&$variables) {
     // Pass the configured branding background to the webtheme:site-branding
     // SDC so the modifier class lands on the .site-branding element itself
     // (matching the live webship.co markup and CSS selectors).
-    $variables['site_branding_bg_color'] = theme_get_setting('site_branding_bg_color') ?: 'default';
+    $variables['site_branding_bg_color'] = _webtheme_get_setting('site_branding_bg_color') ?: 'default';
   }
 
   // Add a primary-nav class to main menu navigation block.

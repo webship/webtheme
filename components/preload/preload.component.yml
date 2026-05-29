@@ -1,0 +1,13 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Font preload
+status: stable
+description: >
+  <link rel="preload"> tags for the headings + body web fonts so the
+  browser fetches them in parallel with the CSS. Used inside <head>.
+props:
+  type: object
+  properties:
+    webtheme_path:
+      type: string
+      title: Webtheme path
+      description: Theme path used as the URL prefix for the font files.

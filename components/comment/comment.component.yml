@@ -1,0 +1,45 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Comment
+status: stable
+description: >
+  Threaded comment with avatar, author/time meta, optional title, and the
+  comment body. Matches the original webtheme markup (comment__picture
+  / comment__text-content / comment__meta classes) so the live
+  webship.co styles keep working.
+props:
+  type: object
+  properties:
+    extra_classes:
+      type: array
+      title: Modifier classes
+      description: Extra wrapper classes (by-anonymous, by-X-author, comment--{status}, …).
+      items:
+        type: string
+    user_picture:
+      type: [string, object]
+      title: User picture
+    author:
+      type: [string, object]
+      title: Author
+    created:
+      type: [string, object]
+      title: Created date
+    parent:
+      type: [string, object]
+      title: Parent comment summary
+      description: Visually-hidden summary used by screen readers.
+    title:
+      type: [string, object]
+      title: Comment title
+    title_attributes:
+      type: Drupal\Core\Template\Attribute
+    content_attributes:
+      type: Drupal\Core\Template\Attribute
+slots:
+  title_prefix:
+    title: Title prefix
+  title_suffix:
+    title: Title suffix
+  content:
+    title: Content
+    description: The comment body (already rendered by Drupal).

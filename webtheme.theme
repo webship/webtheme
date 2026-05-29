@@ -44,6 +44,16 @@ function webtheme_preprocess_html(&$variables) {
       'href' => $variables['webtheme_path'] . '/css/components/navigation/nav-primary-no-js.css?' . $query_string,
     ],
   ];
+
+  // Opt-in HTMX library + boost. Attached only when the site administrator
+  // toggles "Enable HTMX" in the theme settings form so the bundle is not
+  // shipped on sites that don't want it.
+  if (theme_get_setting('htmx_enabled')) {
+    $variables['#attached']['library'][] = 'webtheme/htmx';
+    if (theme_get_setting('htmx_boost')) {
+      $variables['attributes']['hx-boost'] = 'true';
+    }
+  }
 }
 
 /**
@@ -147,10 +157,10 @@ function webtheme_preprocess_block(&$variables) {
   }
 
   if ($variables['plugin_id'] === 'system_branding_block') {
-    $site_branding_color = theme_get_setting('site_branding_bg_color');
-    if ($site_branding_color && $site_branding_color !== 'default') {
-      $variables['attributes']['class'][] = 'site-branding--bg-' . $site_branding_color;
-    }
+    // Pass the configured branding background to the webtheme:site-branding
+    // SDC so the modifier class lands on the .site-branding element itself
+    // (matching the live webship.co markup and CSS selectors).
+    $variables['site_branding_bg_color'] = theme_get_setting('site_branding_bg_color') ?: 'default';
   }
 
   // Add a primary-nav class to main menu navigation block.

@@ -1,0 +1,20 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Breadcrumb
+status: stable
+description: >
+  Breadcrumb trail. Each item is { text, url }; items without a url render
+  as plain text (the current page).
+props:
+  type: object
+  properties:
+    breadcrumb:
+      type: array
+      title: Breadcrumb items
+      description: Ordered list of trail items, each with a "text" and optional "url".
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+          url:
+            type: string

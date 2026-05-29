@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Site branding
+status: stable
+description: >
+  Site logo + site name lockup that links home. Rendered by the
+  system_branding_block; each part appears only when enabled in the block
+  configuration.
+props:
+  type: object
+  properties:
+    site_logo:
+      type: string
+      title: Logo URL
+      description: URL of the site logo image. Empty to hide the logo.
+    site_name:
+      type: string
+      title: Site name
+      description: Site name text. Empty to hide the name.
+    front_url:
+      type: string
+      title: Front page URL
+      description: Where the logo/name link points. Defaults to "/".
+      default: '/'
+    bg:
+      type: string
+      title: Background
+      description: Header branding background colour. Adds the matching site-branding--bg-* modifier class.
+      enum:
+        - default
+        - gray
+        - white
+      default: default

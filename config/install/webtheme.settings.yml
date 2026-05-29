@@ -1,7 +1,7 @@
 favicon:
   mimetype: image/vnd.microsoft.icon
-  path: favicon.ico
-  use_default: false
+  path: ''
+  use_default: true
 features:
   comment_user_picture: true
   comment_user_verification: true
@@ -12,3 +12,5 @@ logo:
   use_default: false
 mobile_menu_all_widths: 0
 site_branding_bg_color: default
+htmx_enabled: 0
+htmx_boost: 0

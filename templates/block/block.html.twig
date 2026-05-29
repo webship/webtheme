@@ -25,6 +25,13 @@
  * - title_suffix: Additional output populated by modules, intended to be
  *   displayed after the main title tag that appears in the template.
  *
+ * Note: Twig's `embed` + `extends` does not let grandchild templates
+ * override blocks declared inside an embed. Keeping this as plain twig
+ * so block--*.html.twig overrides of {% block content %} continue to
+ * propagate. Per-block-type markup is still SDC-backed via the
+ * webtheme:site-branding / webtheme:powered-by / webtheme:page-title
+ * components.
+ *
  * @see template_preprocess_block()
  *
  * @ingroup themeable

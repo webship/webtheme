@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Pager
+status: stable
+description: >
+  Paginated navigation control (first / previous / numbered pages / next /
+  last) with SVG arrow controls. Mirrors core's pager data structure.
+props:
+  type: object
+  properties:
+    heading_id:
+      type: string
+      title: Heading ID
+      description: ID of the visually-hidden pagination heading.
+    items:
+      type: object
+      title: Pager items
+      description: Core pager items (first, previous, pages, next, last).
+    current:
+      type: [integer, string]
+      title: Current page
+    ellipses:
+      type: object
+      title: Ellipses
+      description: Flags for leading/trailing ellipses (previous, next).

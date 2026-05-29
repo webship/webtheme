@@ -346,13 +346,11 @@ body:not(.is-always-mobile-nav) {
   body:not(.is-always-mobile-nav) {
     /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */
   }
-      body:not(.is-always-mobile-nav).toolbar-vertical .primary-nav__menu--level-2,
- body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .primary-nav__menu--level-2 {
+      body:not(.is-always-mobile-nav).toolbar-vertical .primary-nav__menu--level-2, body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .primary-nav__menu--level-2 {
         max-height: calc(100vh - var(--site-header-height-wide) - var(--sp) - var(--toolbar-height));
       }
 
-      body:not(.is-always-mobile-nav).toolbar-vertical .is-fixed .primary-nav__menu--level-2,
- body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .is-fixed .primary-nav__menu--level-2 {
+      body:not(.is-always-mobile-nav).toolbar-vertical .is-fixed .primary-nav__menu--level-2, body:not(.is-always-mobile-nav).toolbar-horizontal.toolbar-fixed .is-fixed .primary-nav__menu--level-2 {
         max-height: calc(100vh - var(--site-header-height-wide) - var(--sp) - var(--toolbar-height) + var(--sp4));
       }
   body:not(.is-always-mobile-nav) {

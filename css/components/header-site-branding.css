@@ -104,8 +104,7 @@
    }
 
  .site-branding__logo {
-   flex-shrink: 0;
-   max-width: 100%
+   flex-shrink: 0;    max-width: 100%
  }
 
  .site-branding__logo img {

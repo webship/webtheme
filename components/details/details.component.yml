@@ -1,0 +1,28 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Details
+status: stable
+description: >
+  Native <details>/<summary> disclosure with Drupal's
+  webtheme-details / details-wrapper class hooks and the
+  form-required marker. The summary is hidden when no title is given.
+props:
+  type: object
+  properties:
+    title:
+      type: [string, object]
+      title: Title
+    summary_attributes:
+      type: Drupal\Core\Template\Attribute
+    content_attributes:
+      type: Drupal\Core\Template\Attribute
+    required:
+      type: boolean
+      default: false
+    description:
+      type: [string, object]
+    errors:
+      type: [string, object]
+    children:
+      type: [string, object]
+    value:
+      type: [string, object]

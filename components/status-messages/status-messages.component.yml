@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Status messages
+status: stable
+description: >
+  Drupal status / error / warning / info messages grouped by type, with
+  per-type icons and an assistive-technology heading. Rendered into the
+  data-drupal-messages region so HTMX/AJAX swaps can update it in place.
+props:
+  type: object
+  properties:
+    message_list:
+      type: object
+      title: Messages by type
+      description: Messages grouped by type (status, error, warning, info).
+    status_headings:
+      type: object
+      title: Status headings
+      description: Human-readable heading for each message type.

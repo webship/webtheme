@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: social-bar.
+ *
+ * The data-drupal-selector="social-bar-inner" hook is read by
+ * navigation-utils.js to fix the bar on scroll. Markup matches the
+ * original region--social override.
+ */
+#}
+<aside{{ attributes.addClass('social-bar__inner', 'fixable') }}>
+  <div class="rotate">
+    {% block content %}{% endblock %}
+  </div>
+</aside>

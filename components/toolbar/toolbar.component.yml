@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Toolbar
+status: stable
+description: >
+  Administrative toolbar with tabs and tray panels. Mirrors core's
+  template_preprocess_toolbar variable contract.
+props:
+  type: object
+  properties:
+    toolbar_attributes:
+      type: Drupal\Core\Template\Attribute
+    toolbar_heading:
+      type: [string, object]
+    tabs:
+      type: array
+    trays:
+      type: array
+    remainder:
+      type: [string, object]

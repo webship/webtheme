@@ -1,4 +1,15 @@
-.DS_Store
+# Ignore node modules
 node_modules
 /*/node_modules
-yarn-error.log
+
+# Ignore local gitlab-ci-local runtime + sidecar config.
+# The canonical pipeline lives in .gitlab-ci.yml; the local CI is per-developer.
+.gitlab-ci-local/
+.gitlab-ci-local.yml
+.cucumber.js.bak
+
+# Ignore Claude Code project-scope MCP config (per-developer tooling).
+.mcp.json
+
+# Ignore Playwright MCP browser-session dumps (per-developer debugging output).
+.playwright-mcp/

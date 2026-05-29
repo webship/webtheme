@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: comment.
+ */
+#}
+<article{{ attributes.addClass('comment', 'js-comment').addClass(extra_classes ?? []).setAttribute('role', 'article') }}>
+  <div class="comment__picture-wrapper comment-picture">
+    <div class="comment__picture comment-picture__image">
+      {{ user_picture }}
+    </div>
+  </div>
+  <div class="comment__text-content">
+    <footer class="comment__meta">
+      <p class="comment__author">{{ author }}</p>
+      <p class="comment__time">{{ created }}</p>
+      {% if parent %}
+        <p class="visually-hidden">{{ parent }}</p>
+      {% endif %}
+    </footer>
+    <div{{ content_attributes.addClass('comment__content') }}>
+      {% if title %}
+        {% block title_prefix %}{% endblock %}
+        <h3{{ title_attributes }}>{{ title }}</h3>
+        {% block title_suffix %}{% endblock %}
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</article>

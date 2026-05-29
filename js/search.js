@@ -9,6 +9,14 @@
   var searchWideButton = document.querySelector('.header-nav__search-button');
   var searchWideWrapper = document.querySelector('.search-wide__wrapper');
 
+  // The wide-search block is not placed on every page (e.g. admin pages, or
+  // a fresh install before block placement). Without the toggle button and
+  // wrapper there is nothing to wire up, and the document-level click
+  // handler below would dereference a null wrapper on every click.
+  if (!searchWideButton || !searchWideWrapper) {
+    return;
+  }
+
   function searchIsVisible() {
     return searchWideWrapper.classList.contains('is-active');
   }

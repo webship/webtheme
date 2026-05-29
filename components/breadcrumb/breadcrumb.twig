@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: breadcrumb.
+ *
+ * HTMX note: breadcrumb links inherit hx-boost from the <body> when the
+ * theme's HTMX boost is enabled, so navigating the trail does a partial
+ * page swap rather than a full reload.
+ */
+#}
+{% if breadcrumb %}
+  <nav{{ attributes.addClass('breadcrumb').setAttribute('role', 'navigation').setAttribute('aria-labelledby', 'system-breadcrumb') }}>
+    <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
+    <div class="breadcrumb__content">
+      <ol class="breadcrumb__list">
+        {% for item in breadcrumb %}
+          <li class="breadcrumb__item">
+            {% if item.url %}
+              <a href="{{ item.url }}" class="breadcrumb__link">{{ item.text }}</a>
+            {% else %}
+              {{ item.text }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </nav>
+{% endif %}

@@ -186,16 +186,10 @@
  /* Text that says "menu". */
 
  .mobile-nav-button__label {
-   position: absolute;
-   display: block;
-   overflow: hidden;
-   clip:     rect(       1px,
+   position: absolute;    display: block;    overflow: hidden;    clip:     rect(       1px,
        1px,
        1px,
-       1px     );
-   width: 1px;
-   height: 1px;
-   word-wrap: normal
+       1px     );    width: 1px;    height: 1px;    word-wrap: normal
  }
 
  @media (min-width: 27.77778rem) {
@@ -214,11 +208,7 @@
    }
 
  .mobile-nav-button__icon {
-   position: relative;
-   display: block;
-   width: var(--sp2);
-   height: 0;
-   border-top: solid 4px var(--color--main-1)
+   position: relative;    display: block;    width: var(--sp2);    height: 0;    border-top: solid 4px var(--color--main-1)
  }
 
  .mobile-nav-button__icon:before {

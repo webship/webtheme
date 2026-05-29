@@ -1,0 +1,11 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Social bar
+status: stable
+description: >
+  Fixed, rotated social sidebar used by the "social" region. Wraps its
+  content in the social-bar__inner / rotate structure the theme CSS and the
+  navigation-utils.js intersection observer expect.
+slots:
+  content:
+    title: Content
+    description: Blocks placed in the social region.

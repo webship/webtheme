@@ -1,0 +1,15 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Username
+status: stable
+description: >
+  Username token — rendered as an <a> when link_path is set, otherwise a
+  <span>. Mirrors core's theme_username() variable contract.
+props:
+  type: object
+  properties:
+    name:
+      type: [string, object]
+    extra:
+      type: [string, object]
+    link_path:
+      type: [string, boolean, object]

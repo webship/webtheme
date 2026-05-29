@@ -152,6 +152,13 @@
           '[data-drupal-selector="header-nav-overlay"]',
         );
 
+        // The header is rendered, but the primary-menu / mobile-buttons block
+        // may not be placed yet (e.g. fresh install before block placement).
+        // Skip initialisation rather than throwing on a null element.
+        if (!navWrapper || !navButton || !overlay) {
+          return;
+        }
+
         init({
           webtheme,
           header,

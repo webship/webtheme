@@ -34,8 +34,7 @@
 
  }
 
- .text-content a:not(.button),
- .cke_editable a:not(.button) {
+ .text-content a:not(.button), .cke_editable a:not(.button) {
      color: var(--color--blue-20);
      text-decoration-color: var(--color--blue-20);
      text-decoration-thickness: 2px;
@@ -44,14 +43,12 @@
 
  @supports (box-shadow: none) {
 
- .text-content a:not(.button),
- .cke_editable a:not(.button) {
+ .text-content a:not(.button), .cke_editable a:not(.button) {
        transition:         box-shadow 0.3s cubic-bezier(           0.55,
            0.085,
            0,
            0.99         );       text-decoration: none;       box-shadow: inset 0 -2px 0 0 var(--color--blue-50)
-   }       .text-content a:not(.button):hover,
- .cke_editable a:not(.button):hover {
+   }       .text-content a:not(.button):hover, .cke_editable a:not(.button):hover {
          text-decoration: underline;
          color: var(--color--black);
 
@@ -61,25 +58,21 @@
        }
      }
 
- .text-content p,
- .cke_editable p {
+ .text-content p, .cke_editable p {
      margin-block-start: var(--sp);     margin-block-end: var(--sp)
    }
 
- .text-content p:first-child,
- .cke_editable p:first-child {
+ .text-content p:first-child, .cke_editable p:first-child {
        margin-block-start: 0;
      }
 
- .text-content p:last-child,
- .cke_editable p:last-child {
+ .text-content p:last-child, .cke_editable p:last-child {
        margin-block-end: 0;
      }
 
  @media (min-width: 55.55556rem) {
 
- .text-content p,
- .cke_editable p {
+ .text-content p, .cke_editable p {
        font-size: var(--font-size-l);
        margin-block-start: var(--sp);
        margin-block-end: var(--sp);
@@ -87,25 +80,21 @@
    }
      }
 
- .text-content li,
- .cke_editable li {
+ .text-content li, .cke_editable li {
     margin-block-start: var(--sp);     margin-block-end: var(--sp)
     }
 
- .text-content li:first-child,
- .cke_editable li:first-child {
+ .text-content li:first-child, .cke_editable li:first-child {
       margin-block-start: 0;
     }
 
- .text-content li:last-child,
- .cke_editable li:last-child {
+ .text-content li:last-child, .cke_editable li:last-child {
         margin-block-end: 0;
       }
 
  @media (min-width: 55.55556rem) {
 
- .text-content li,
- .cke_editable li {
+ .text-content li, .cke_editable li {
         font-size: var(--font-size-l);
         margin-block-start: var(--sp);
         margin-block-end: var(--sp);
@@ -113,13 +102,11 @@
     }
       }
 
- .text-content code,
- .cke_editable code {
+ .text-content code, .cke_editable code {
      background-color: var(--color--gray-95);
    }
 
- .text-content pre code,
- .cke_editable pre code {
+ .text-content pre code, .cke_editable pre code {
      display: block;
      overflow: auto;
      padding-block: var(--sp);
@@ -128,13 +115,11 @@
      color: var(--color--gray-20);
    }
 
- .text-content blockquote,
- .cke_editable blockquote {
+ .text-content blockquote, .cke_editable blockquote {
      position: relative;     margin-block: var(--sp2);     margin-inline-start: 0;     margin-inline-end: 0;     padding-inline-start: var(--sp2);     letter-spacing: -0.01em;     font-family: var(--font-serif);     font-size: 1.16667rem;     line-height: var(--sp2)
    }
 
- .text-content blockquote:before,
- .cke_editable blockquote:before {
+ .text-content blockquote:before, .cke_editable blockquote:before {
        position: absolute;
        inset-block-start: 0;
        inset-inline-start: 0;
@@ -143,8 +128,7 @@
        font-size: var(--font-size-xxxl);
      }
 
- .text-content blockquote:after,
- .cke_editable blockquote:after {
+ .text-content blockquote:after, .cke_editable blockquote:after {
        position: absolute;
        inset-block-end: 0;
        inset-inline-start: 0;
@@ -157,8 +141,7 @@
 
  @media (min-width: 38.88889rem) {
 
- .text-content blockquote,
- .cke_editable blockquote {
+ .text-content blockquote, .cke_editable blockquote {
        font-size: var(--font-size-xl);
        line-height: var(--sp3)
    }
@@ -166,8 +149,7 @@
 
  @media (min-width: 55.55556rem) {
 
- .text-content blockquote,
- .cke_editable blockquote {
+ .text-content blockquote, .cke_editable blockquote {
        font-size: var(--font-size-xxl);
        line-height: calc(var(--sp)*3.5)
    }

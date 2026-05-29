@@ -23,9 +23,7 @@
  }
 
  .main-content .region--breadcrumb{
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto
+      width: 100%;       margin-left: auto;       margin-right: auto
   }
 
  @media (min-width: 55.55556rem) {
@@ -90,8 +88,7 @@
      }
 
  .node--type-webdoc.node--view-mode-full .book-navigation__menu a {
-       color: var(--color--white);
-       text-decoration: none
+       color: var(--color--white);        text-decoration: none
      }
 
  .node--type-webdoc.node--view-mode-full .book-navigation__menu a:hover {
@@ -107,9 +104,7 @@
    }
 
  .node--type-webdoc.node--view-mode-full .book-navigation {
-      width: calc(100% - var(--content-left));
-      margin-left: auto;
-      margin-right: auto
+      width: calc(100% - var(--content-left));       margin-left: auto;       margin-right: auto
 
    }
 

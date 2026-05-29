@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: details. Markup is identical to the original
+ * templates/form/details.html.twig — the "webtheme-details" class
+ * prefix is intentional (see https://www.drupal.org/node/2981732).
+ */
+#}
+<details{{ attributes.addClass('webtheme-details') }}>
+  {%- if title -%}
+    {% set summary_classes = [
+      'webtheme-details__summary',
+      required ? 'js-form-required',
+      required ? 'form-required',
+    ] %}
+    <summary{{ summary_attributes.addClass(summary_classes) }}>
+      {{- title -}}
+      {%- if required -%}
+        <span class="required-mark"></span>
+      {%- endif -%}
+    </summary>
+  {%- endif -%}
+  <div{{ content_attributes.addClass('webtheme-details__wrapper', 'details-wrapper') }}>
+    {% if errors %}
+      <div class="form-item form-item--error-message">
+        {{ errors }}
+      </div>
+    {% endif %}
+    {%- if description -%}
+      <div class="webtheme-details__description">{{ description }}</div>
+    {%- endif -%}
+    {%- if children -%}
+      {{ children }}
+    {%- endif -%}
+    {%- if value -%}
+      {{ value }}
+    {%- endif -%}
+  </div>
+</details>

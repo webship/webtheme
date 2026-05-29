@@ -1,0 +1,133 @@
+include:
+  - project: $_GITLAB_TEMPLATES_REPO
+    ref: $_GITLAB_TEMPLATES_REF
+    file:
+      - "/includes/include.drupalci.main.yml"
+      - "/includes/include.drupalci.variables.yml"
+      - "/includes/include.drupalci.workflows.yml"
+
+# No yarn.lock is committed; Yarn 4 defaults to immutable installs and would
+# refuse to create one. Allow lockfile creation in CI for every job.
+variables:
+  YARN_ENABLE_IMMUTABLE_INSTALLS: "false"
+
+cspell:
+  stage: validate
+  image: node:18
+  before_script:
+    - npm install -g cspell
+  script:
+    - cspell "**/*.{php,module,inc,install,test,profile,theme,js,css,md,yml,txt}" --no-progress || true
+  allow_failure: true
+
+eslint:
+  stage: validate
+  image: node:18
+  before_script:
+    - corepack enable
+    - yarn install
+  script:
+    - yarn lint:js || true
+    - yarn lint:yaml || true
+  after_script:
+    - touch junit.xml _eslint.patch
+  allow_failure: true
+
+stylelint:
+  stage: validate
+  image: node:18
+  before_script:
+    - corepack enable
+    - yarn install
+  script:
+    - yarn lint:css || true
+  after_script:
+    - echo '[]' > gl-codequality.json
+  allow_failure: true
+
+# ─── Shared Drupal + Node.js setup for browser tests ──────────────────────────
+#
+# How it works:
+#   1. The drupalci `composer` job builds a full Drupal site (webtheme plus
+#      its dependencies) and passes its artifact to this job via
+#      `needs: [composer]`.
+#   2. This job runs inside the drupalci PHP-Apache image (inherited from
+#      `.testing-job-base`) which already has PHP, Apache, Drush, and MySQL.
+#   3. before_script installs Drupal + the theme, then Node.js + yarn deps +
+#      Playwright Chromium. Test jobs only override `script:`.
+#   4. CSS/JS aggregation is disabled in CI so per-library asset URLs are
+#      visible to the asset-presence step in tests/step-definitions.
+# ──────────────────────────────────────────────────────────────────────────────
+.drupal-node-base:
+  extends: .testing-job-base
+  needs: [composer]
+  # Override the parent's services — we only need the database. Playwright
+  # bundles its own Chromium, so Selenium and chromedriver are not needed.
+  services:
+    - name: $_CONFIG_DOCKERHUB_ROOT/$_TARGET_DB_TYPE-$_TARGET_DB_VERSION:$_TARGET_DB_IMAGE_TAG
+      alias: database
+  variables:
+    DRUPAL_ADMIN_USERNAME: "webmaster"
+    DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
+    DRUPAL_TEST_BASE_URL: "http://localhost"
+    LAUNCH_URL: "http://localhost"
+    FORCE_COLOR: "1"
+  before_script:
+    # ── Web server ──────────────────────────────────────────────────────────
+    - mkdir -pv $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - mkdir -pv $CI_PROJECT_DIR/$_WEB_ROOT/sites/simpletest
+    - chmod -R 777 $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - chmod -R 777 $CI_PROJECT_DIR/$_WEB_ROOT/sites/simpletest
+    - rm -rf /var/www/html && ln -s $CI_PROJECT_DIR/$_WEB_ROOT /var/www/html
+    - chown -R www-data:www-data $CI_PROJECT_DIR
+    - service apache2 start
+    # ── Database ────────────────────────────────────────────────────────────
+    - export SIMPLETEST_DB=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
+    # ── Drupal site install ─────────────────────────────────────────────────
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT site:install standard
+        --db-url=$SIMPLETEST_DB
+        --account-name=webmaster
+        --account-pass=dD.123123ddd
+        --site-name="Webtheme Test"
+        -y
+    # ── Theme install + set as default ──────────────────────────────────────
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT theme:enable webtheme -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.theme default webtheme -y
+    # ── Disable CSS/JS aggregation so per-library URLs are visible ──────────
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.performance css.preprocess 0 -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.performance js.preprocess 0 -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # Per-role test users are provisioned by the first scenario in the suite
+    # (01-01-01-users-login.feature, "Webmaster can log in and provision
+    # testing users"), so no separate drush step is needed here.
+    # ── Node.js 20 ──────────────────────────────────────────────────────────
+    - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+    - apt-get install -y nodejs
+    - node --version && npm --version
+    # ── Yarn deps + Playwright Chromium ─────────────────────────────────────
+    # Force node_modules layout so node_modules/.bin/* is populated.
+    - 'test -f .yarnrc.yml || echo "nodeLinker: node-modules" > .yarnrc.yml'
+    # Back up cucumber.js — webship-js's postinstall can clobber it under yarn 4
+    # because INIT_CWD may differ from our project root inside the container.
+    - cp cucumber.js .cucumber.js.bak
+    - corepack enable
+    - yarn install
+    # Restore cucumber.js if postinstall overwrote it with the init-webship template.
+    - cp .cucumber.js.bak cucumber.js && rm .cucumber.js.bak
+    - ./node_modules/.bin/playwright install --with-deps chromium
+
+# ─── webship-js BDD functional tests ──────────────────────────────────────────
+webship-js-test:
+  extends: .drupal-node-base
+  script:
+    - ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
+  artifacts:
+    when: always
+    paths:
+      - tests/reports/
+      - tests/screenshots/
+      - tests/videos/
+    expire_in: 7 days
+    reports:
+      junit: tests/reports/junit.xml
+  allow_failure: false

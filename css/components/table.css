@@ -23,10 +23,7 @@
   margin-block-start: var(--sp2);   margin-block-end: var(--sp2);   border-spacing: 0;   color: var(--color--gray-10);   border: 0;   border-collapse: collapse;   font-family: var(--font-sans);   font-size: 0.88889rem;   line-height: var(--sp1-5)
 }
 
-.forum table caption,
- .text-content table caption,
- .views-table caption,
- .draggable-table caption {
+.forum table caption, .text-content table caption, .views-table caption, .draggable-table caption {
     margin-block-end: var(--sp1);
     text-align: start;
     color: var(--color--gray-10);
@@ -36,10 +33,7 @@
     line-height: var(--sp);
   }
 
-.forum table tr:last-child td,
- .text-content table tr:last-child td,
- .views-table tr:last-child td,
- .draggable-table tr:last-child td {
+.forum table tr:last-child td, .text-content table tr:last-child td, .views-table tr:last-child td, .draggable-table tr:last-child td {
         border-block-end: 0;
       }
 
@@ -57,10 +51,7 @@
     vertical-align: top;
   }
 
-.forum table th,
- .text-content table th,
- .views-table th,
- .draggable-table th {
+.forum table th, .text-content table th, .views-table th, .draggable-table th {
     margin-block: 0;
     margin-inline-start: 0;
     margin-inline-end: 0;
@@ -77,38 +68,23 @@
      */
   }
 
-.forum table th.text-align-left,
- .text-content table th.text-align-left,
- .views-table th.text-align-left,
- .draggable-table th.text-align-left {
+.forum table th.text-align-left, .text-content table th.text-align-left, .views-table th.text-align-left, .draggable-table th.text-align-left {
       text-align: start;
     }
 
-.forum table th.text-align-right,
- .text-content table th.text-align-right,
- .views-table th.text-align-right,
- .draggable-table th.text-align-right {
+.forum table th.text-align-right, .text-content table th.text-align-right, .views-table th.text-align-right, .draggable-table th.text-align-right {
       text-align: end;
     }
 
-.forum table th.text-align-center,
- .text-content table th.text-align-center,
- .views-table th.text-align-center,
- .draggable-table th.text-align-center {
+.forum table th.text-align-center, .text-content table th.text-align-center, .views-table th.text-align-center, .draggable-table th.text-align-center {
       text-align: center;
     }
 
-.forum table th.text-align-justify,
- .text-content table th.text-align-justify,
- .views-table th.text-align-justify,
- .draggable-table th.text-align-justify {
+.forum table th.text-align-justify, .text-content table th.text-align-justify, .views-table th.text-align-justify, .draggable-table th.text-align-justify {
       text-align: justify;
     }
 
-.forum table td,
- .text-content table td,
- .views-table td,
- .draggable-table td {
+.forum table td, .text-content table td, .views-table td, .draggable-table td {
     white-space: normal;
     border-block-end: 2px solid var(--color--gray-40);
   }

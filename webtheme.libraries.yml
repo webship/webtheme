@@ -40,7 +40,6 @@ global-styling:
       css/components/messages.css: {}
       css/components/navigation/nav-button-mobile.css: {}
       css/components/node.css: {}
-      css/components/node-teaser.css: {}
       css/components/page-title.css: {}
       css/components/site-header.css: {}
       css/components/skip-link.css: {}
@@ -51,14 +50,12 @@ global-styling:
       css/components/wide-image.css: {}
   js:
     js/checkbox.js: {}
-    js/polyfills.js: {}
-    js/scripts.js: {}
   dependencies:
     - core/drupal
     - core/once
     - core/tabbable
     - webtheme/navigation-base
-    
+
 book:
   version: VERSION
   css:
@@ -308,11 +305,25 @@ tags:
 
 debug:
   version: VERSION
-  css:
-    theme:
-      css/components/_debug.css: {}
   js:
     js/debug.js: {}
+
+# Opt-in HTMX behavior. Not attached automatically — sites that want
+# boosted, partial-page navigation enable it in theme settings:
+# /admin/appearance/settings/webtheme → "Enable HTMX".
+# Once enabled, webtheme_preprocess_html() attaches webtheme/htmx for every
+# request, and htmx-init.js re-runs Drupal.attachBehaviors() on every swap.
+#
+# The HTMX runtime itself ships with Drupal core (core/htmx, 2.0.4), so we
+# only provide the Drupal-behaviors glue here and depend on the core library.
+htmx:
+  version: VERSION
+  js:
+    js/htmx-init.js: {}
+  dependencies:
+    - core/htmx
+    - core/drupal
+    - core/drupalSettings
 
 views.responsive-grid:
   version: VERSION

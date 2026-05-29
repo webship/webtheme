@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: skip-link.
+ *
+ * HTMX note: this link targets an in-page anchor (#main-content). It is
+ * intentionally never boosted — `hx-boost="false"` keeps it a native
+ * same-page jump even when the theme's HTMX boost is enabled globally.
+ */
+#}
+<a{{ attributes.addClass('skip-link', 'visually-hidden', 'focusable').setAttribute('href', href ?: '#main-content').setAttribute('hx-boost', 'false') }}>
+  {{- label ?: 'Skip to main content'|t -}}
+</a>

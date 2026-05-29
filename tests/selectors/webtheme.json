@@ -1,0 +1,14 @@
+{
+  "css": {
+    "Webtheme page wrapper": "#page-wrapper",
+    "Webtheme main wrapper": "#main-wrapper",
+    "Webtheme main content": "#main-content",
+    "Webtheme site header": "[data-drupal-selector=\"site-header\"]",
+    "Webtheme primary navigation": "[data-drupal-selector=\"header-nav\"]",
+    "Webtheme mobile nav button": "[data-drupal-selector=\"mobile-nav-button\"]",
+    "Webtheme skip link": ".skip-link",
+    "Webtheme HTML root style": "html[style*=\"--color--primary-hue\"]",
+    "Webtheme page title": "h1.page-title"
+  },
+  "xpath": {}
+}

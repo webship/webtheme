@@ -12,15 +12,8 @@
  *   displayed after the main title tag that appears in the template.
  */
 #}
-{%
-  set classes = [
-    'title',
-    'page-title',
-  ]
-%}
-
-{{ title_prefix }}
-{% if title %}
-  <h1{{ title_attributes.addClass(classes) }}>{{ title }}</h1>
-{% endif %}
-{{ title_suffix }}
+{% embed 'webtheme:page-title' with { title_attributes: title_attributes } %}
+  {% block title_prefix %}{{ title_prefix }}{% endblock %}
+  {% block title %}{{ title }}{% endblock %}
+  {% block title_suffix %}{{ title_suffix }}{% endblock %}
+{% endembed %}

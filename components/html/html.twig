@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: html. The top-level document shell.
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+    {% block head_extra %}{% endblock %}
+    {{ noscript_styles }}
+  </head>
+  <body{{ attributes.addClass(body_classes ?? []) }}>
+    {# Skip link must be the first focusable element in the document. #}
+    {% include 'webtheme:skip-link' %}
+    {% block page_top %}{% endblock %}
+    {% block page %}{% endblock %}
+    {% block page_bottom %}{% endblock %}
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: menu-local-tasks.
+ */
+#}
+{% set _primary %}{% block primary %}{% endblock %}{% endset %}
+{% set _secondary %}{% block secondary %}{% endblock %}{% endset %}
+
+{% if _primary|trim is not empty %}
+  <h2 id="primary-tabs-title" class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
+  <nav role="navigation" class="tabs-wrapper" aria-labelledby="primary-tabs-title" data-drupal-nav-tabs>
+    <ul class="tabs tabs--primary">{{ _primary }}</ul>
+  </nav>
+{% endif %}
+{% if _secondary|trim is not empty %}
+  <h2 id="secondary-tabs-title" class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
+  <nav role="navigation" class="tabs-wrapper" aria-labelledby="secondary-tabs-title" data-drupal-nav-tabs>
+    <ul class="tabs tabs--secondary">{{ _secondary }}</ul>
+  </nav>
+{% endif %}

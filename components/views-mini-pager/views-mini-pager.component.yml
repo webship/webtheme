@@ -1,0 +1,14 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Views mini pager
+status: stable
+description: >
+  Compact pager for Views: previous / current / next. Uses the same
+  pager / pager__item BEM classes as the full pager so styles share.
+props:
+  type: object
+  properties:
+    heading_id:
+      type: string
+    items:
+      type: object
+      title: Pager items (previous, current, next)

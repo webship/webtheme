@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Page title
+status: stable
+description: >
+  The page <h1>. Wraps the title with the theme's title/page-title classes
+  and exposes prefix/suffix slots for module-injected output (shortcuts,
+  contextual links).
+props:
+  type: object
+  properties:
+    title_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Title attributes
+slots:
+  title_prefix:
+    title: Title prefix
+    description: Output rendered before the <h1> (e.g. shortcut add/remove).
+  title:
+    title: Title
+    description: The page title text or markup.
+  title_suffix:
+    title: Title suffix
+    description: Output rendered after the <h1> (e.g. contextual links).

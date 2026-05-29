@@ -65,41 +65,24 @@
  */
 #}
 {%
-  set classes = [
-    'comment',
-    'js-comment',
+  set extra_classes = [
     status != 'published' ? 'comment--' ~ status,
     comment.owner.anonymous ? 'by-anonymous',
     author_id and author_id == commented_entity.getOwnerId() ? 'by-' ~ commented_entity.getEntityTypeId() ~ '-author',
-  ]
+  ]|filter(c => c)
 %}
 {{ attach_library('webtheme/comments') }}
-<article {{ attributes.addClass(classes).setAttribute('role', 'article') }}>
-  <div class="comment__picture-wrapper comment-picture">
-    <div class="comment__picture comment-picture__image">
-      {{ user_picture }}
-    </div>
-  </div>
-  <div class="comment__text-content">
-    <footer class="comment__meta">
-      <p class="comment__author">{{ author }}</p>
-      <p class="comment__time">{{ created }}</p>
-      {#
-        Indicate the semantic relationship between parent and child comments
-        for accessibility. The list is difficult to navigate in a screen
-        reader without this information.
-       #}
-      {% if parent %}
-        <p class="visually-hidden">{{ parent }}</p>
-      {% endif %}
-    </footer>
-    <div{{ content_attributes.addClass('comment__content') }}>
-      {% if title %}
-        {{ title_prefix }}
-        <h3{{ title_attributes }}>{{ title }}</h3>
-        {{ title_suffix }}
-      {% endif %}
-      {{ content }}
-    </div>
-  </div>
-</article>
+{% embed 'webtheme:comment' with {
+  extra_classes: extra_classes,
+  user_picture: user_picture,
+  author: author,
+  created: created,
+  parent: parent,
+  title: title,
+  title_attributes: title_attributes,
+  content_attributes: content_attributes,
+} %}
+  {% block title_prefix %}{{ title_prefix }}{% endblock %}
+  {% block title_suffix %}{{ title_suffix }}{% endblock %}
+  {% block content %}{{ content }}{% endblock %}
+{% endembed %}

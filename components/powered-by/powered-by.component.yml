@@ -1,0 +1,9 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Powered by
+status: stable
+description: >
+  "Powered by Drupal" attribution with the Drupal logo mark. Rendered by
+  the system_powered_by_block.
+props:
+  type: object
+  properties: {}

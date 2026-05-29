@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Skip link
+status: stable
+description: >
+  Accessibility skip-to-content link. The first focusable element on the
+  page; lets keyboard and screen-reader users jump straight to the main
+  content region.
+props:
+  type: object
+  properties:
+    href:
+      type: string
+      title: Target
+      description: Fragment the link points at. Defaults to "#main-content".
+      default: '#main-content'
+    label:
+      type: string
+      title: Label
+      description: Visible text of the skip link. Defaults to "Skip to main content".

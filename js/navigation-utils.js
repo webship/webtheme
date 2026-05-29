@@ -47,6 +47,7 @@
    *   True if sticky header is enabled, false if not.
    */
   function stickyHeaderIsEnabled() {
+    if (!stickyHeaderToggleButton) return false;
     return stickyHeaderToggleButton.getAttribute('aria-checked') === 'true';
   }
 
@@ -78,6 +79,7 @@
    *   State to change the sticky header to.
    */
   function toggleStickyHeaderState(pinnedState) {
+    if (!siteHeaderFixable || !stickyHeaderToggleButton) return;
     if (isDesktopNav()) {
       siteHeaderFixable.classList.toggle('is-expanded', pinnedState);
       stickyHeaderToggleButton.setAttribute('aria-checked', pinnedState);

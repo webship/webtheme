@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Menu
+status: stable
+description: >
+  Recursive nested menu (BEM menu/menu__item/menu__link classes, level
+  modifiers, active-trail + has-children states). Renders the full tree via
+  an internal macro. Used for the main and footer menus.
+props:
+  type: object
+  properties:
+    menu_name:
+      type: string
+      title: Menu machine name
+    items:
+      type: array
+      title: Menu items
+      description: Nested list of menu item objects (title, url, below, …).

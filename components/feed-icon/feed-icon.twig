@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: feed-icon.
+ */
+#}
+<a href="{{ url }}"{{ attributes.addClass('feed-icon') }}>
+  <span class="feed-icon__label">
+    {{ title|default('RSS Feed'|t) }}
+  </span>
+  <span class="feed-icon__icon" aria-hidden="true">
+    {% include "@webtheme/../images/rss.svg" %}
+  </span>
+</a>

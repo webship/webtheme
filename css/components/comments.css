@@ -108,15 +108,13 @@
   position: absolute;   inset-inline-start: 0;   overflow: hidden;   width: var(--sp2);   height: var(--sp2);   border-radius: 50%;   background-color: var(--color--gray-80)
 }
 
-.add-comment__picture *:not(img),
- .comment__picture *:not(img) {
+.add-comment__picture *:not(img), .comment__picture *:not(img) {
     display: inherit;
     width: inherit;
     height: inherit;
   }
 
-.add-comment__picture img,
- .comment__picture img {
+.add-comment__picture img, .comment__picture img {
     width: 100%;
     height: 100%;
     object-fit: cover
@@ -127,8 +125,7 @@
 @media all and (-ms-high-contrast: active),
       (-ms-high-contrast: none) {
 
-.add-comment__picture img,
- .comment__picture img {
+.add-comment__picture img, .comment__picture img {
       position: absolute;
       /* stylelint-disable csstools/use-logical */
       top: 50%;

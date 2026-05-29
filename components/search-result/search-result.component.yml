@@ -1,0 +1,36 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Search result
+status: stable
+description: >
+  Single result row inside the search-results listing. Mirrors core's
+  search_result variable contract (info_split.user / info_date, title with
+  url, optional snippet).
+props:
+  type: object
+  properties:
+    url:
+      type: string
+      title: Result URL
+    title:
+      type: [string, object]
+      title: Result title
+    title_attributes:
+      type: Drupal\Core\Template\Attribute
+    content_attributes:
+      type: Drupal\Core\Template\Attribute
+    info_split:
+      type: object
+      title: Info-split metadata
+    info_date:
+      type: [string, object]
+    snippet:
+      type: [string, object]
+    layout:
+      type: string
+slots:
+  title_prefix:
+    title: Title prefix
+    description: Output before the <h3> (shortcut / contextual links).
+  title_suffix:
+    title: Title suffix
+    description: Output after the <h3>.

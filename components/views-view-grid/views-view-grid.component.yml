@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Views view grid
+status: stable
+description: >
+  Grid wrapper for Views (horizontal or vertical alignment, up to 8 cols).
+  Outputs the views-view-grid / views-view-grid--{alignment} / cols-{n}
+  classes the webtheme layout CSS targets.
+props:
+  type: object
+  properties:
+    title:
+      type: [string, object]
+    options:
+      type: object
+      title: Style plugin options
+      description: alignment + columns from the views style plugin.
+    items:
+      type: array
+      title: Grid items

@@ -17,23 +17,7 @@
  /* Width of the entire grid maxes out. */
 
  .button {
-   display: inline-block;
-   height: var(--sp3);
-   margin-block: var(--sp1);
-   margin-inline-start: 0;
-   margin-inline-end: var(--sp1);
-   padding-block: calc(var(--sp3)/2 - var(--line-height-s)/2);
-   padding-inline: var(--sp1-5);   cursor: pointer;
-   text-align: center;   text-decoration: none;
-   border: solid 2px var(--color--main-1);
-   font-family: var(--font-sans);
-   font-size: var(--font-size-s);
-   font-weight: bold;
-   appearance: none;
-   color: var(--color--white);
-   background-color: var(--color--blue-30);
-   border-radius: var(--border-radius3);
-   -webkit-font-smoothing: antialiased
+   display: inline-block;    height: var(--sp3);    margin-block: var(--sp1);    margin-inline-start: 0;    margin-inline-end: var(--sp1);    padding-block: calc(var(--sp3)/2 - var(--line-height-s)/2);    padding-inline: var(--sp1-5);   cursor: pointer;    text-align: center;   text-decoration: none;    border: solid 2px var(--color--main-1);    font-family: var(--font-sans);    font-size: var(--font-size-s);    font-weight: bold;    appearance: none;    color: var(--color--white);    background-color: var(--color--blue-30);    border-radius: var(--border-radius3);    -webkit-font-smoothing: antialiased
  }
 
  @media (min-width: 55.55556rem) {

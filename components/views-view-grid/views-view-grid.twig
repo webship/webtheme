@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Webtheme SDC: views-view-grid.
+ */
+#}
+{% set columns = options.columns and options.columns <= 8 ? options.columns : (options.columns ? 8 : 1) %}
+{% set classes = [
+  'views-view-grid',
+  'views-view-grid--' ~ (options.alignment ?? 'horizontal'),
+  'cols-' ~ columns,
+] %}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+<div{{ attributes.addClass(classes) }}>
+  {% for row in items %}
+    {% for column in row.content %}
+      <div class="views-view-grid__item">
+        <div class="views-view-grid__item-inner">
+          {{- column.content -}}
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>

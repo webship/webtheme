@@ -14,7 +14,9 @@
     "phpcbf": "phpcbf --standard=./.phpcs.xml .",
     "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json --ext .yml .",
     "lint:js": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json .",
-    "lint:css": "npx stylelint --config=.stylelintrc.json ."
+    "lint:css": "npx stylelint --config=.stylelintrc.json .",
+    "test": "cucumber-js --config cucumber.js",
+    "test:headed": "HEADLESS=false cucumber-js --config cucumber.js"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -70,7 +72,7 @@
     "underscore": "1.13.x",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.4.0",
-    "webship-js": "~1"
+    "webship-js": "~2.0"
   },
   "//": "'development is the default environment, and legacy is for transpiling the old jQuery codebase",
   "babel": {

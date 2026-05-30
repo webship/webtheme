@@ -69,6 +69,13 @@ function webtheme_preprocess_html(&$variables) {
   // Opt-in HTMX library + boost. Attached only when the site administrator
   // toggles "Enable HTMX" in the theme settings form so the bundle is not
   // shipped on sites that don't want it.
+  //
+  // The rendered output varies by webtheme.settings (htmx_enabled / htmx_boost
+  // and the branding/mobile-menu options above), so the page must carry that
+  // config's cache tag — otherwise toggling a setting would not invalidate
+  // the (anonymous) page cache and the change would not take effect until a
+  // manual cache rebuild.
+  $variables['#cache']['tags'][] = 'config:webtheme.settings';
   if (_webtheme_get_setting('htmx_enabled')) {
     $variables['#attached']['library'][] = 'webtheme/htmx';
     if (_webtheme_get_setting('htmx_boost')) {

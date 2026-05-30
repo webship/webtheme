@@ -305,14 +305,15 @@ Then(/^(?:the )?[Ww]ebtheme(?: theme)? is the active default theme$/, async func
     await smartSettle(this.page, (this.minWaitTime && this.minWaitTime.page) || 10000);
 
     // Drupal aggregates per-theme. Even with aggregation on, every aggregated
-    // asset URL carries `theme=webtheme`, the favicon points at
-    // /themes/contrib/webtheme/, and the <html> root carries the brand-color
-    // custom property emitted by webtheme_preprocess_html(). Any of these is
-    // sufficient evidence the active theme is webtheme.
+    // asset URL carries `theme=webtheme`; unaggregated assets live under
+    // /themes/<contrib|custom>/webtheme/ (the install location varies between
+    // a contrib checkout and DrupalCI's custom path), and the <html> root
+    // carries the brand-color custom property from webtheme_preprocess_html().
+    // Any of these is sufficient evidence the active theme is webtheme.
     const html = await this.page.content();
     const isWebtheme =
       html.includes('theme=webtheme') ||
-      html.includes('/themes/contrib/webtheme/') ||
+      /\/themes\/[^"']*\/webtheme\//.test(html) ||
       html.includes('--color--primary-hue');
     if (!isWebtheme) {
       // No theme markers usually means a server error (HTTP 500) so nothing
@@ -430,11 +431,13 @@ Then(/^the "([^"]+)" Webtheme asset is loaded$/, async function (path) {
   await settle(this);
   await attempt(async () => {
     const html = await this.page.content();
-    // With CSS/JS aggregation OFF the unaggregated path is present directly.
-    // With aggregation ON the individual filename is gone, but every
-    // aggregated asset URL still carries `theme=webtheme`. Accept either so
-    // the assertion is robust to the site's aggregation setting.
-    const unaggregated = html.includes(`/themes/contrib/webtheme/${path}`);
+    // With CSS/JS aggregation OFF the unaggregated path is present directly
+    // (under /themes/<contrib|custom>/webtheme/ — the install location varies
+    // between a contrib checkout and DrupalCI's custom path). With aggregation
+    // ON the individual filename is gone, but every aggregated asset URL still
+    // carries `theme=webtheme`. Accept either so the assertion is robust to
+    // both the install location and the aggregation setting.
+    const unaggregated = new RegExp('/themes/[^"\']*/webtheme/' + path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(html);
     const aggregated = html.includes('theme=webtheme');
     if (!unaggregated && !aggregated) {
       throw new Error(`No Webtheme asset matching "${path}" (and no aggregated theme=webtheme asset) was loaded on this page.`);

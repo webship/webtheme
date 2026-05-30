@@ -8,8 +8,8 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: themes/contrib/webtheme/logo-blue.svg
-  use_default: false
+  path: ''
+  use_default: true
 mobile_menu_all_widths: 0
 site_branding_bg_color: default
 htmx_enabled: 0

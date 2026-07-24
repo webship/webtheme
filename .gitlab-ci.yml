@@ -20,12 +20,33 @@ cspell:
     - cspell "**/*.{php,module,inc,install,test,profile,theme,js,css,md,yml,txt}" --no-progress || true
   allow_failure: false
 
-eslint:
-  stage: validate
+# Shared setup for the fast lint jobs (eslint, stylelint).
+#   1. `dependencies: []` skips the composer build artifact (the full Drupal
+#      tree) so the lint jobs don't download and walk thousands of vendor/
+#      files -- the main slowdown.
+#   2. `yarn install --mode=skip-build` skips postinstall (incl. webship-js
+#      pulling Playwright). Install drops to ~10s.
+#   3. Lockfile-keyed cache of `.yarn/cache` reused by later pipelines.
+# The paired .eslintignore excludes vendor/, .yarn/, web/ so `eslint .` only
+# lints real module source.
+.lint-yarn:
   image: node:18
+  dependencies: []
+  variables:
+    YARN_ENABLE_GLOBAL_CACHE: "false"
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - .yarn/cache
   before_script:
     - corepack enable
-    - yarn install
+    - yarn install --mode=skip-build
+
+eslint:
+  extends: .lint-yarn
+  stage: validate
   script:
     - yarn lint:js || true
     - yarn lint:yaml || true
@@ -34,11 +55,8 @@ eslint:
   allow_failure: false
 
 stylelint:
+  extends: .lint-yarn
   stage: validate
-  image: node:18
-  before_script:
-    - corepack enable
-    - yarn install
   script:
     - yarn lint:css || true
   after_script:
@@ -90,6 +108,18 @@ stylelint:
         --account-pass=dD.123123ddd
         --site-name="Webtheme Test"
         -y
+    # ── Article/Basic page content types (Drupal 11.4 regression) ───────────
+    # Since core 11.4, the `standard` install profile no longer ships the
+    # Article/Basic page node types (or the Tags field/vocabulary) in its own
+    # config/install — they moved out to optional recipes that the interactive
+    # installer's "Add-ons" step applies for you. `drush site:install standard`
+    # skips that step entirely, so a non-interactive CI install (or any
+    # scripted install) ends up with zero content types and /node/add/article
+    # 404ing. Apply the same recipes the installer would have, so the site
+    # matches a normal "Standard" install: Article (+ Tags field, which pulls
+    # in the Tags vocabulary) and Basic page.
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT recipe $CI_PROJECT_DIR/$_WEB_ROOT/core/recipes/article_tags -y
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT recipe $CI_PROJECT_DIR/$_WEB_ROOT/core/recipes/page_content_type -y
     # ── Theme install + set as default ──────────────────────────────────────
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT theme:enable webtheme -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.theme default webtheme -y

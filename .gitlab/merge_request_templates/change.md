@@ -10,6 +10,7 @@
 - [ ] Performance
 - [ ] Security
 - [ ] Documentation
+- [ ] Reviewed by human
 - [ ] Code review by maintainers
 - [ ] Full testing and approval
 - [ ] Credit contributors

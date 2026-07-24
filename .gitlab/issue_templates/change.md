@@ -1,12 +1,5 @@
 ### Problem/Motivation
 
-#### Steps to reproduce
-```
-  Given 
-   When 
-   Then 
-```
-
 ### Proposed resolution
 
 
@@ -22,6 +15,7 @@
 - [ ] Performance
 - [ ] Security
 - [ ] Documentation
+- [ ] Reviewed by human
 - [ ] Code review by maintainers
 - [ ] Full testing and approval
 - [ ] Credit contributors

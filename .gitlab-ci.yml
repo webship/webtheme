@@ -9,6 +9,9 @@ include:
 # No yarn.lock is committed; Yarn 4 defaults to immutable installs and would
 # refuse to create one. Allow lockfile creation in CI for every job.
 variables:
+  # For now, build and test with Drupal 11.4 and PHP 8.4.
+  DRUPAL_CORE: "11.4.x-dev"
+  _TARGET_PHP: "8.4"
   YARN_ENABLE_IMMUTABLE_INSTALLS: "false"
 
 cspell:

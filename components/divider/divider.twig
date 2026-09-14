@@ -1,0 +1,4 @@
+{% if variant and variant != 'default' %}
+  {% set attributes = attributes.addClass('uk-divider-' ~ variant) %}
+{% endif %}
+<hr{{ attributes }}>

@@ -1,0 +1,48 @@
+name: "Gallery in a grid"
+slots:
+  items:
+    type: component
+    component: "webtheme:grid"
+    slots:
+      items:
+        - type: component
+          component: "webtheme:lightbox_item"
+          slots:
+            thumbnail:
+              type: html_tag
+              tag: img
+              attributes:
+                src: "https://getuikit.com/docs/images/photo.jpg"
+                alt: "Photo"
+          props:
+            url: "https://getuikit.com/docs/images/photo.jpg"
+            caption: "Caption 1"
+        - type: component
+          component: "webtheme:lightbox_item"
+          slots:
+            thumbnail:
+              type: html_tag
+              tag: img
+              attributes:
+                src: "https://getuikit.com/docs/images/dark.jpg"
+                alt: "Dark"
+          props:
+            url: "https://getuikit.com/docs/images/dark.jpg"
+            caption: "Caption 2"
+        - type: component
+          component: "webtheme:lightbox_item"
+          slots:
+            thumbnail:
+              type: html_tag
+              tag: img
+              attributes:
+                src: "https://getuikit.com/docs/images/light.jpg"
+                alt: "Light"
+          props:
+            url: "https://getuikit.com/docs/images/light.jpg"
+            caption: "Caption 3"
+    props:
+      child_width: 1-3
+      gap: small
+props:
+  animation: fade

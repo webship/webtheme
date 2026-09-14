@@ -1,0 +1,6 @@
+name: Default
+slots:
+  message:
+    type: html_tag
+    tag: p
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."

@@ -1,0 +1,37 @@
+name: Article
+description: "Create articles within your page, with a title, meta data, a lead and content."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/article"
+slots:
+  title:
+    title: Title
+  meta:
+    title: Meta
+    description: "Author, date, category..."
+  lead:
+    title: Lead
+  content:
+    title: Content
+  footer:
+    title: Footer
+props:
+  type: object
+  properties:
+    heading_level:
+      title: "Heading level"
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+      "meta:enum":
+        1: h1
+        2: "h2 (Default)"
+        3: h3
+        4: h4
+    url:
+      title: URL
+      description: "Link the title to the article."
+      $ref: "ui-patterns://url"

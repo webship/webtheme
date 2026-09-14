@@ -1,0 +1,10 @@
+name: Default
+props:
+  variant: pill
+  items:
+    - title: "Active"
+      url: "#"
+      in_active_trail: true
+    - title: "Item"
+      url: "#"
+    - title: "Disabled"

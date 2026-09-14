@@ -1,0 +1,33 @@
+name: Logo
+description: "Site logo and name linking to the front page, typically in the Navbar."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/utility#logo"
+  - "https://getuikit.com/docs/navbar#logo"
+slots:
+  label:
+    title: Label
+    description: "Usually the site name."
+props:
+  type: object
+  properties:
+    url:
+      title: URL
+      description: "Default: the front page."
+      $ref: "ui-patterns://url"
+    image:
+      title: "Image URL"
+      description: "For example /themes/contrib/webtheme/logo.svg."
+      $ref: "ui-patterns://url"
+    image_alt:
+      title: "Image alternative text"
+      type: string
+    image_height:
+      title: "Image height (px)"
+      type: integer
+      minimum: 10
+      maximum: 200
+    navbar_item:
+      title: "Navbar item"
+      description: "Align the logo with the other navbar items."
+      type: boolean

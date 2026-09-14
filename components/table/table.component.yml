@@ -1,0 +1,58 @@
+name: Table
+description: "Create nicely looking tables, which come in different styles."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/table"
+variants:
+  default:
+    title: Default
+  divider:
+    title: Divider
+  striped:
+    title: Striped
+slots:
+  header:
+    title: Header
+    description: "Table rows with header cells."
+    expected:
+      - "webtheme:table_row"
+  rows:
+    title: Rows
+    expected:
+      - "webtheme:table_row"
+  footer:
+    title: Footer
+    expected:
+      - "webtheme:table_row"
+props:
+  type: object
+  properties:
+    caption:
+      title: Caption
+      type: string
+    hover:
+      title: "Hover effect"
+      type: boolean
+    size:
+      title: "Cell padding"
+      type: string
+      enum:
+        - small
+        - large
+      "meta:enum":
+        small: Small
+        large: Large
+    justify:
+      title: Justify
+      description: "Remove the outer padding of the first and last columns."
+      type: boolean
+    middle:
+      title: "Vertically centered cells"
+      type: boolean
+    responsive:
+      title: "Stacked on small screens"
+      type: boolean
+    overflow:
+      title: "Horizontal scroll"
+      description: "Wrap the table in a scrollable container."
+      type: boolean

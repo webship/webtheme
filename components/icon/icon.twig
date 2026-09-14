@@ -1,0 +1,15 @@
+{% if variant and variant != 'default' %}
+  {% set attributes = attributes.addClass('uk-icon-' ~ variant) %}
+{% endif %}
+{% if label %}
+  {% set attributes = attributes.setAttribute('aria-label', label) %}
+{% endif %}
+{% if url %}
+  <a{{ attributes.setAttribute('href', url) }}>
+    {%- if icon %}{{ icon(icon.pack_id, icon.icon_id, icon.settings|default({})) }}{% endif -%}
+  </a>
+{% else %}
+  <span{{ attributes }}>
+    {%- if icon %}{{ icon(icon.pack_id, icon.icon_id, icon.settings|default({})) }}{% endif -%}
+  </span>
+{% endif %}

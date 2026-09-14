@@ -1,0 +1,57 @@
+name: Slideshow
+description: "Create a responsive slideshow with images and videos, made of Slideshow items."
+group: Media
+links:
+  - "https://getuikit.com/docs/slideshow"
+slots:
+  items:
+    title: Slides
+    expected:
+      - "webtheme:slideshow_item"
+props:
+  type: object
+  properties:
+    animation:
+      title: Animation
+      type: string
+      enum:
+        - slide
+        - fade
+        - scale
+        - pull
+        - push
+      "meta:enum":
+        slide: "Slide (Default)"
+        fade: Fade
+        scale: Scale
+        pull: Pull
+        push: Push
+    ratio:
+      title: Ratio
+      description: "Width:height, for example 16:9. Default: 16:9."
+      type: string
+      pattern: "^[0-9]+:[0-9]+$"
+    min_height:
+      title: "Minimum height (px)"
+      type: integer
+      minimum: 0
+    max_height:
+      title: "Maximum height (px)"
+      type: integer
+      minimum: 0
+    finite:
+      title: "No infinite scrolling"
+      type: boolean
+    autoplay:
+      title: Autoplay
+      type: boolean
+    autoplay_interval:
+      title: "Autoplay interval (ms)"
+      type: integer
+      minimum: 1000
+    arrows:
+      title: "Previous and next arrows"
+      type: boolean
+    dotnav:
+      title: "Dot navigation"
+      type: boolean

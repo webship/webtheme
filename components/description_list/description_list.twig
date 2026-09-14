@@ -1,0 +1,7 @@
+{% set attributes = attributes.addClass([
+  'uk-description-list',
+  variant and variant != 'default' ? 'uk-description-list-' ~ variant,
+]) %}
+<dl{{ attributes }}>
+  {{ items }}
+</dl>

@@ -1,12 +1,17 @@
 {#
 /**
  * @file
- * Webtheme's theme implementation for the main menu.
+ * Theme override to display a menu, with the UIkit Nav component.
  *
- * Delegates the markup to the webtheme:menu SDC. See that component for
- * the full variable documentation.
- *
- * @ingroup themeable
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items.
+ * - attributes: HTML attributes for the menu.
  */
 #}
-{% include 'webtheme:menu' with { menu_name: menu_name, items: items } only %}
+{% if items %}
+  {{ include('webtheme:nav', {
+    items: items,
+    accordion: true,
+  }, with_context: false) }}
+{% endif %}

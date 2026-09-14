@@ -1,0 +1,14 @@
+name: Default
+slots:
+  badge:
+    type: component
+    component: "webtheme:label"
+    slots:
+      label: "New"
+  title: "Card title"
+  content:
+    type: html_tag
+    tag: p
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+props:
+  hover: true

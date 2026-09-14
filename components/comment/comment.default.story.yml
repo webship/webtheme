@@ -1,0 +1,26 @@
+name: Default
+slots:
+  avatar:
+    type: html_tag
+    tag: img
+    attributes:
+      class:
+        - uk-border-circle
+      src: "https://getuikit.com/docs/images/avatar.jpg"
+      width: 80
+      height: 80
+      alt: "Avatar"
+  title: "Author"
+  meta: "12 days ago"
+  content:
+    type: html_tag
+    tag: p
+    value: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+  actions:
+    type: component
+    component: "webtheme:link"
+    slots:
+      label: "Reply"
+    props:
+      variant: muted
+      url: "#"

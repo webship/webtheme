@@ -1,0 +1,30 @@
+{% set modal_id = modal_id|default('modal-' ~ random()) %}
+{% set heading_level = heading_level|default(2) %}
+{% set close = close|default('default') %}
+{% set attributes = attributes.setAttribute('id', modal_id).setAttribute('uk-modal', '').addClass('uk-modal') %}
+{% if variant and variant != 'default' %}
+  {% set attributes = attributes.addClass('uk-modal-' ~ variant) %}
+{% endif %}
+{% if center %}
+  {% set attributes = attributes.addClass('uk-flex-top') %}
+{% endif %}
+<div{{ attributes }}>
+  <div class="uk-modal-dialog{{ center ? ' uk-margin-auto-vertical' }}" role="dialog" aria-modal="true"{% if title %} aria-labelledby="{{ modal_id }}-title"{% endif %}>
+    {% if close != 'none' %}
+      <button class="uk-modal-close-{{ variant == 'full' ? 'full uk-close-large' : close }}" type="button" uk-close aria-label="{{ 'Close'|t }}"></button>
+    {% endif %}
+    {% if title %}
+      <div class="uk-modal-header">
+        <h{{ heading_level }} class="uk-modal-title" id="{{ modal_id }}-title">{{ title }}</h{{ heading_level }}>
+      </div>
+    {% endif %}
+    <div class="uk-modal-body"{{ overflow ? ' uk-overflow-auto' }}>
+      {{ body }}
+    </div>
+    {% if footer %}
+      <div class="uk-modal-footer uk-text-right">
+        {{ footer }}
+      </div>
+    {% endif %}
+  </div>
+</div>

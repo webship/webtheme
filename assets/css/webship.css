@@ -1,0 +1,23 @@
+/**
+ * @file
+ * The Webship.co design: colors and fonts on top of the UIkit tokens.
+ *
+ * UI Skins settings override these values.
+ */
+
+:root {
+  --uk-global-color: #313637;
+  --uk-global-emphasis-color: #0d1214;
+  --uk-global-muted-color: #7d919d;
+  --uk-global-link-color: #0c7fc8;
+  --uk-global-link-hover-color: #004e80;
+  --uk-global-primary-background: #0c7fc8;
+  --uk-global-primary-background-hover: #004e80;
+  --uk-global-secondary-background: #313637;
+  --uk-global-secondary-background-hover: #171e23;
+  --uk-global-muted-background: #f3f6f8;
+  --uk-global-muted-background-hover: #e7edf1;
+  --uk-global-border: #d7e1e8;
+  --uk-alert-primary-background: #c5d9e5;
+  --uk-global-font-family: "Zen Maru Gothic", "Georgia", sans-serif;
+}

@@ -1,0 +1,10 @@
+{% set attributes = attributes.addClass('uk-inline').setAttribute('href', url|default('#')) %}
+{% if caption %}
+  {% set attributes = attributes.setAttribute('data-caption', caption) %}
+{% endif %}
+{% if type %}
+  {% set attributes = attributes.setAttribute('data-type', type) %}
+{% endif %}
+<a{{ attributes }}>
+  {{ thumbnail }}
+</a>

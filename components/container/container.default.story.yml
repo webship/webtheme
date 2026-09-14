@@ -1,0 +1,12 @@
+name: Default
+slots:
+  content:
+    type: html_tag
+    tag: div
+    attributes:
+      class:
+        - uk-background-muted
+        - uk-padding
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+props:
+  size: small

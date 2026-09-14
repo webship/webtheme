@@ -1,0 +1,49 @@
+{% set variant = variant|default('default') %}
+{% if variant == 'dropdown' %}
+  {% set nav_class = 'uk-dropdown-nav' %}
+{% elseif variant == 'navbar_dropdown' %}
+  {% set nav_class = 'uk-navbar-dropdown-nav' %}
+{% else %}
+  {% set nav_class = 'uk-nav-' ~ variant %}
+{% endif %}
+{% set attributes = attributes.addClass([
+  'uk-nav',
+  nav_class,
+  divider ? 'uk-nav-divider',
+  center ? 'uk-nav-center',
+]) %}
+{% if accordion %}
+  {% set attributes = attributes.setAttribute('uk-nav', 'multiple: true') %}
+{% endif %}
+<ul{{ attributes }}>
+  {{ _self.nav_items(items, accordion) }}
+</ul>
+
+{% macro nav_items(items, accordion) %}
+  {% for item in items %}
+    {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if item.url %}
+      {% if item.in_active_trail %}
+        {% set item_attributes = item_attributes.addClass(item.below and accordion ? ['uk-active', 'uk-open'] : 'uk-active') %}
+      {% endif %}
+      {% if item.below %}
+        {% set item_attributes = item_attributes.addClass('uk-parent') %}
+      {% endif %}
+      <li{{ item_attributes }}>
+        <a href="{{ item.url }}"{{ item.link_attributes }}>
+          {{- item.title -}}
+          {%- if item.below and accordion %} <span uk-nav-parent-icon></span>{% endif -%}
+        </a>
+        {% if item.below %}
+          <ul class="uk-nav-sub">
+            {{ _self.nav_items(item.below, accordion) }}
+          </ul>
+        {% endif %}
+      </li>
+    {% elseif item.title %}
+      <li{{ item_attributes.addClass('uk-nav-header') }}>{{ item.title }}</li>
+    {% else %}
+      <li class="uk-nav-divider"></li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

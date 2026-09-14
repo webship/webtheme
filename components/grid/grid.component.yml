@@ -1,0 +1,79 @@
+name: Grid
+description: "Create a fully responsive, fluid and nestable grid layout: each item of the slot is a cell."
+group: Layout
+links:
+  - "https://getuikit.com/docs/grid"
+  - "https://getuikit.com/docs/width"
+slots:
+  items:
+    title: Items
+    description: "Each item is wrapped in a grid cell."
+props:
+  type: object
+  properties:
+    child_width:
+      title: "Columns (all screens)"
+      type: string
+      enum: &child_width
+        - 1-1
+        - 1-2
+        - 1-3
+        - 1-4
+        - 1-5
+        - 1-6
+        - auto
+        - expand
+      "meta:enum": &child_width_labels
+        1-1: "1 column"
+        1-2: "2 columns"
+        1-3: "3 columns"
+        1-4: "4 columns"
+        1-5: "5 columns"
+        1-6: "6 columns"
+        auto: "Auto (content width)"
+        expand: "Expand (fill the row)"
+    child_width_s:
+      title: "Columns from small screens (640px)"
+      type: string
+      enum: *child_width
+      "meta:enum": *child_width_labels
+    child_width_m:
+      title: "Columns from medium screens (960px)"
+      type: string
+      enum: *child_width
+      "meta:enum": *child_width_labels
+    child_width_l:
+      title: "Columns from large screens (1200px)"
+      type: string
+      enum: *child_width
+      "meta:enum": *child_width_labels
+    child_width_xl:
+      title: "Columns from x-large screens (1600px)"
+      type: string
+      enum: *child_width
+      "meta:enum": *child_width_labels
+    gap:
+      title: Gap
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+        - collapse
+      "meta:enum":
+        small: Small
+        medium: Medium
+        large: Large
+        collapse: "Collapse (no gap)"
+    divider:
+      title: Divider
+      description: "Separate the cells with lines."
+      type: boolean
+    match:
+      title: "Match height"
+      description: "Cells content (cards...) share the same height."
+      type: boolean
+    masonry:
+      title: Masonry
+      description: "Pack the cells without gaps between rows."
+      type: boolean

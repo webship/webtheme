@@ -1,0 +1,23 @@
+{% set ratios = {
+  'default': ['1-2', '1-2'],
+  'col_66_33': ['2-3', '1-3'],
+  'col_33_66': ['1-3', '2-3'],
+  'col_75_25': ['3-4', '1-4'],
+  'col_25_75': ['1-4', '3-4'],
+} %}
+{% set widths = ratios[variant|default('default')]|default(ratios['default']) %}
+{% set breakpoint = breakpoint|default('m') %}
+{% set attributes = attributes.addClass([
+  'uk-grid',
+  gap ? 'uk-grid-' ~ gap,
+  divider ? 'uk-grid-divider',
+  match ? 'uk-grid-match',
+  vertical_align ? 'uk-flex-' ~ vertical_align,
+]).setAttribute('uk-grid', '') %}
+<div{{ attributes }}>
+  {% for column in [column_1, column_2] %}
+    <div class="uk-width-1-1 uk-width-{{ widths[loop.index0] }}@{{ breakpoint }}">
+      {{ column }}
+    </div>
+  {% endfor %}
+</div>

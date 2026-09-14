@@ -1,0 +1,7 @@
+name: Default
+slots:
+  content: "Drop your content here."
+props:
+  attributes:
+    class:
+      - uk-text-center

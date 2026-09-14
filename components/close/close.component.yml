@@ -1,0 +1,11 @@
+name: Close
+description: "Create a close icon button, typically used for alerts, modals and offcanvas."
+group: Elements
+links:
+  - "https://getuikit.com/docs/close"
+props:
+  type: object
+  properties:
+    large:
+      title: Large
+      type: boolean

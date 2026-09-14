@@ -1,0 +1,58 @@
+name: Cover
+description: "Hero area: an image or a video covering its container, with content on top."
+group: Media
+links:
+  - "https://getuikit.com/docs/cover"
+slots:
+  media:
+    title: "Image or video"
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    height:
+      title: Height
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+        - viewport
+      "meta:enum":
+        small: "Small (150px)"
+        medium: "Medium (300px, Default)"
+        large: "Large (450px)"
+        viewport: "Full viewport"
+    content_position:
+      title: "Content position"
+      type: string
+      enum:
+        - center
+        - top-left
+        - top-center
+        - top-right
+        - center-left
+        - center-right
+        - bottom-left
+        - bottom-center
+        - bottom-right
+      "meta:enum":
+        center: "Center (Default)"
+        top-left: "Top left"
+        top-center: "Top center"
+        top-right: "Top right"
+        center-left: "Center left"
+        center-right: "Center right"
+        bottom-left: "Bottom left"
+        bottom-center: "Bottom center"
+        bottom-right: "Bottom right"
+    inverse:
+      title: "Content color"
+      type: string
+      enum:
+        - light
+        - dark
+      "meta:enum":
+        light: "Light (for dark media)"
+        dark: "Dark (for light media)"

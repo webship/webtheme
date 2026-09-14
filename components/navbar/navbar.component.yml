@@ -1,0 +1,52 @@
+name: Navbar
+description: "Create a navigation bar that can be used for your main site navigation."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/navbar"
+slots:
+  left:
+    title: Left
+    description: "Logo, Navbar nav, Navbar item or Navbar toggle."
+  center:
+    title: Center
+  right:
+    title: Right
+props:
+  type: object
+  properties:
+    container:
+      title: Container
+      type: string
+      enum:
+        - default
+        - xsmall
+        - small
+        - large
+        - xlarge
+        - expand
+        - none
+      "meta:enum":
+        default: "Default (1200px)"
+        xsmall: "X-Small (750px)"
+        small: "Small (900px)"
+        large: "Large (1400px)"
+        xlarge: "X-Large (1600px)"
+        expand: "Expand"
+        none: "No container"
+    transparent:
+      title: Transparent
+      description: "No background, for navbars on top of a cover or a section."
+      type: boolean
+    sticky:
+      title: Sticky
+      description: "The navbar sticks to the top of the viewport when scrolling."
+      type: boolean
+    dropdown_mode:
+      title: "Dropdown mode"
+      type: string
+      enum:
+        - hover
+        - click
+      "meta:enum":
+        hover: "Hover (Default)"
+        click: Click

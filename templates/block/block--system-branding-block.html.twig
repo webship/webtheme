@@ -2,10 +2,7 @@
 {#
 /**
  * @file
- * Webtheme's theme implementation for a branding block.
- *
- * Each branding element variable (logo, name, slogan) is only available if
- * enabled in the block configuration.
+ * Theme override for the site branding block: UIkit logo.
  *
  * Available variables:
  * - site_logo: Logo for site as defined in Appearance or theme settings.
@@ -14,10 +11,15 @@
  */
 #}
 {% block content %}
-  {% include 'webtheme:site-branding' with {
-    site_logo: site_logo,
-    site_name: site_name,
-    front_url: path('<front>'),
-    bg: site_branding_bg_color|default('default'),
-  } only %}
+  <a href="{{ path('<front>') }}" class="uk-navbar-item uk-logo" rel="home">
+    {% if site_logo %}
+      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" height="40" class="uk-margin-small-right">
+    {% endif %}
+    {% if site_name %}
+      <span>{{ site_name }}</span>
+    {% endif %}
+  </a>
+  {% if site_slogan %}
+    <div class="uk-navbar-item uk-text-meta uk-visible@l">{{ site_slogan }}</div>
+  {% endif %}
 {% endblock %}

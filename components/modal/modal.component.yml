@@ -1,0 +1,57 @@
+name: Modal
+description: "Create modal dialogs, opened with a Button component using the same ID as toggle target."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/modal"
+variants:
+  default:
+    title: Default
+  container:
+    title: Container
+    description: "Wider dialog, with the width of a container."
+  full:
+    title: Full
+    description: "Fullscreen dialog."
+slots:
+  title:
+    title: Title
+  body:
+    title: Body
+  footer:
+    title: Footer
+props:
+  type: object
+  properties:
+    modal_id:
+      title: ID
+      description: "Use it as toggle target of a button. Randomly generated if empty."
+      $ref: "ui-patterns://identifier"
+    heading_level:
+      title: "Heading level"
+      type: integer
+      enum:
+        - 2
+        - 3
+        - 4
+      "meta:enum":
+        2: "h2 (Default)"
+        3: h3
+        4: h4
+    close:
+      title: "Close button"
+      type: string
+      enum:
+        - default
+        - outside
+        - none
+      "meta:enum":
+        default: "Inside (Default)"
+        outside: Outside
+        none: None
+    center:
+      title: "Vertically centered"
+      type: boolean
+    overflow:
+      title: "Scrollable body"
+      description: "The body scrolls when the content is taller than the viewport."
+      type: boolean

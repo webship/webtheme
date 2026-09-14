@@ -1,0 +1,10 @@
+name: Default
+slots:
+  items:
+    - "List item 1"
+    - "List item 2"
+    - "List item 3"
+props:
+  variant: divider
+  marker: disc
+  color: primary

@@ -1,0 +1,9 @@
+name: "With title and close button"
+slots:
+  title: "Heads up!"
+  message:
+    type: html_tag
+    tag: p
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+props:
+  close: true

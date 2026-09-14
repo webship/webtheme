@@ -1,0 +1,20 @@
+name: "33% / 33% / 33%"
+slots:
+  column_1:
+    type: component
+    component: "webtheme:placeholder"
+    slots:
+      content: "Column 1"
+  column_2:
+    type: component
+    component: "webtheme:placeholder"
+    slots:
+      content: "Column 2"
+  column_3:
+    type: component
+    component: "webtheme:placeholder"
+    slots:
+      content: "Column 3"
+props:
+  variant: default
+  gap: medium

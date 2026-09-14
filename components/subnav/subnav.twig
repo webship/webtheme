@@ -1,0 +1,17 @@
+{% set attributes = attributes.addClass([
+  'uk-subnav',
+  variant and variant != 'default' ? 'uk-subnav-' ~ variant,
+]) %}
+<ul{{ attributes.setAttribute('uk-margin', '') }}>
+  {% for item in items %}
+    {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if item.url %}
+      {% if item.in_active_trail %}
+        {% set item_attributes = item_attributes.addClass('uk-active') %}
+      {% endif %}
+      <li{{ item_attributes }}><a href="{{ item.url }}"{{ item.link_attributes }}>{{ item.title }}</a></li>
+    {% else %}
+      <li{{ item_attributes.addClass('uk-disabled') }}><a>{{ item.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

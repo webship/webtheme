@@ -1,0 +1,13 @@
+{% set attributes = attributes.addClass([
+  'uk-list',
+  variant and variant != 'default' ? 'uk-list-' ~ variant,
+  marker ? 'uk-list-' ~ marker,
+  color ? 'uk-list-' ~ color,
+  size ? 'uk-list-' ~ size,
+]) %}
+{% set items = items and items is not sequence ? [items] : items %}
+<{{ marker == 'decimal' ? 'ol' : 'ul' }}{{ attributes }}>
+  {% for item in items %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</{{ marker == 'decimal' ? 'ol' : 'ul' }}>

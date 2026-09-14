@@ -1,0 +1,28 @@
+name: Link
+description: "Define different styles for links."
+group: Elements
+links:
+  - "https://getuikit.com/docs/link"
+variants:
+  default:
+    title: Default
+  muted:
+    title: Muted
+  text:
+    title: Text
+  heading:
+    title: Heading
+  reset:
+    title: Reset
+slots:
+  label:
+    title: Label
+props:
+  type: object
+  properties:
+    url:
+      title: URL
+      $ref: "ui-patterns://url"
+    new_window:
+      title: "Open in a new window"
+      type: boolean

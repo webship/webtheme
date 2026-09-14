@@ -1,0 +1,4 @@
+name: Default
+props:
+  target: offcanvas-story
+  label: "Menu"

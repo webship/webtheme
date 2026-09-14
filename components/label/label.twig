@@ -1,0 +1,5 @@
+{% set attributes = attributes.addClass([
+  'uk-label',
+  variant and variant != 'default' ? 'uk-label-' ~ variant,
+]) %}
+<span{{ attributes }}>{{ label }}</span>

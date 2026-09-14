@@ -1,16 +1,12 @@
-favicon:
-  mimetype: image/vnd.microsoft.icon
-  path: ''
-  use_default: true
 features:
+  node_user_picture: true
   comment_user_picture: true
   comment_user_verification: true
   favicon: true
-  node_user_picture: true
 logo:
-  path: ''
   use_default: true
-mobile_menu_all_widths: 0
-site_branding_bg_color: default
-htmx_enabled: 0
-htmx_boost: 0
+favicon:
+  use_default: true
+uikit_source: cdn
+navbar_sticky: true
+htmx_navigation: true

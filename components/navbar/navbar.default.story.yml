@@ -1,0 +1,28 @@
+name: Default
+slots:
+  left:
+    - type: html_tag
+      tag: a
+      attributes:
+        class:
+          - uk-navbar-item
+          - uk-logo
+        href: "#"
+      value: "Logo"
+    - type: component
+      component: "webtheme:navbar_nav"
+      story: default
+  right:
+    type: component
+    component: "webtheme:navbar_item"
+    slots:
+      content:
+        type: component
+        component: "webtheme:button"
+        slots:
+          label: "Sign in"
+        props:
+          variant: primary
+          size: small
+props:
+  container: expand

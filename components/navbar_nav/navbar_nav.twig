@@ -1,0 +1,46 @@
+<ul{{ attributes.addClass('uk-navbar-nav') }}>
+  {% for item in items %}
+    {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if item.in_active_trail %}
+      {% set item_attributes = item_attributes.addClass('uk-active') %}
+    {% endif %}
+    <li{{ item_attributes }}>
+      {% if item.url %}
+        <a href="{{ item.url }}"{{ item.link_attributes }}>
+          {{- item.title -}}
+          {%- if item.below %} <span uk-navbar-parent-icon></span>{% endif -%}
+        </a>
+      {% else %}
+        <a>{{ item.title }}</a>
+      {% endif %}
+      {% if item.below %}
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            {{ _self.dropdown_items(item.below) }}
+          </ul>
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+{% macro dropdown_items(items) %}
+  {% for item in items %}
+    {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if item.in_active_trail %}
+      {% set item_attributes = item_attributes.addClass('uk-active') %}
+    {% endif %}
+    {% if item.url %}
+      <li{{ item_attributes }}>
+        <a href="{{ item.url }}"{{ item.link_attributes }}>{{ item.title }}</a>
+        {% if item.below %}
+          <ul class="uk-nav-sub">
+            {{ _self.dropdown_items(item.below) }}
+          </ul>
+        {% endif %}
+      </li>
+    {% else %}
+      <li{{ item_attributes.addClass('uk-nav-header') }}>{{ item.title }}</li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

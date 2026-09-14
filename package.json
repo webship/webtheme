@@ -1,56 +1,35 @@
 {
   "name": "webtheme",
-  "description": "Webtheme is the default theme for the Webship.co portal site.",
-  "license": "GPL-2.0",
   "private": true,
+  "description": "Tooling for the Webtheme Drupal theme.",
+  "license": "GPL-2.0-or-later",
   "engines": {
-    "yarn": ">= 1.6",
-    "node": ">= 20.0"
-  },
-  "scripts": {
-    "theme:build": "node scripts/css/postcss-build.js",
-    "theme:watch": "node scripts/css/postcss-watch.js",
-    "phpcs": "phpcs --standard=./.phpcs.xml .",
-    "phpcbf": "phpcbf --standard=./.phpcs.xml .",
-    "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json --ext .yml .",
-    "lint:js": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.json .",
-    "lint:css": "npx stylelint --config=.stylelintrc.json .",
-    "test": "cucumber-js --config cucumber.js",
-    "test:headed": "HEADLESS=false cucumber-js --config cucumber.js"
+    "node": ">= 22.0"
   },
   "devDependencies": {
-    "chalk": "^4.1.0",
-    "chokidar": "^3.6.0",
-    "eslint": "~8",
-    "eslint-config-airbnb-base": "~15",
-    "eslint-config-prettier": "~8",
-    "eslint-plugin-import": "~2",
-    "eslint-plugin-prettier": "~4",
-    "eslint-plugin-yml": "~1",
-    "glob": "^7.1.2",
-    "minimist": "^1.2.2",
-    "postcss": "^7.0.18",
-    "postcss-calc": "^7.0.1",
-    "postcss-header": "^2.0.0",
-    "postcss-import": "^12.0.1",
-    "postcss-preset-env": "^6.7.0",
-    "postcss-pxtorem": "^5.1.1",
-    "postcss-url": "^8.0.0",
-    "prettier": "~2",
-    "stylelint": "~15",
-    "stylelint-config-standard": "~33",
-    "stylelint-order": "~6",
-    "webship-js": "~2.0"
+    "@cucumber/cucumber": "~12.9.0",
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-yml": "^1.19.0",
+    "globals": "^16.5.0",
+    "stylelint": "^16.26.0",
+    "stylelint-config-standard": "^39.0.0",
+    "uikit": "3.25.22",
+    "webship-js": "2.0.5"
   },
-  "browserslist": [
-    "last 2 Chrome major versions",
-    "last 2 Firefox major versions",
-    "last 2 Safari major versions",
-    "last 2 Edge major versions",
-    "last 2 Opera versions",
-    "last 2 iOS major versions",
-    "last 1 ChromeAndroid version",
-    "Firefox ESR"
-  ],
-  "packageManager": "yarn@4.9.4"
+  "resolutions": {
+    "@cucumber/cucumber": "~12.9.0"
+  },
+  "scripts": {
+    "lint:js": "eslint assets/js tests/step-definitions cucumber.js eslint.config.js",
+    "lint:yaml": "eslint \"*.yml\" \"config/**/*.yml\" \"components/**/*.yml\"",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "build:icons": "rm -f icons/uikit/*.svg && cp node_modules/uikit/src/images/icons/*.svg icons/uikit/",
+    "test": "cucumber-js --config cucumber.js",
+    "test:chromium": "BROWSER=chromium cucumber-js --config cucumber.js",
+    "test:firefox": "BROWSER=firefox cucumber-js --config cucumber.js",
+    "test:webkit": "BROWSER=webkit cucumber-js --config cucumber.js",
+    "generate-reports": "generate-reports"
+  }
 }

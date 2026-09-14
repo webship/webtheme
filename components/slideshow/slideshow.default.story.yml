@@ -1,0 +1,39 @@
+name: Default
+slots:
+  items:
+    - type: component
+      component: "webtheme:slideshow_item"
+      slots:
+        image:
+          type: html_tag
+          tag: img
+          attributes:
+            src: "https://getuikit.com/docs/images/photo.jpg"
+            alt: "Photo"
+        title: "Slide 1"
+        caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - type: component
+      component: "webtheme:slideshow_item"
+      slots:
+        image:
+          type: html_tag
+          tag: img
+          attributes:
+            src: "https://getuikit.com/docs/images/dark.jpg"
+            alt: "Dark"
+        title: "Slide 2"
+    - type: component
+      component: "webtheme:slideshow_item"
+      slots:
+        image:
+          type: html_tag
+          tag: img
+          attributes:
+            src: "https://getuikit.com/docs/images/light.jpg"
+            alt: "Light"
+        title: "Slide 3"
+props:
+  animation: push
+  ratio: "7:3"
+  arrows: true
+  dotnav: true

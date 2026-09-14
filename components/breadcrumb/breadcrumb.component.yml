@@ -1,20 +1,12 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Breadcrumb
-status: stable
-description: >
-  Breadcrumb trail. Each item is { text, url }; items without a url render
-  as plain text (the current page).
+description: "Create a breadcrumb navigation to indicate the current page's location."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/breadcrumb"
 props:
   type: object
   properties:
-    breadcrumb:
-      type: [array, "null"]
-      title: Breadcrumb items
-      description: Ordered list of trail items, each with a "text" and optional "url".
-      items:
-        type: [object, "null"]
-        properties:
-          text:
-            type: [string, "null"]
-          url:
-            type: [string, "null"]
+    items:
+      title: Items
+      description: "The last item without URL is the current page."
+      $ref: "ui-patterns://links"

@@ -1,0 +1,141 @@
+/**
+ * @file
+ * Drupal specific adjustments for UIkit.
+ */
+
+/* Dark color mode (UI Skins theme "dark"): redefine the UIkit design tokens. */
+[data-theme="dark"] {
+  --uk-global-color: rgb(255 255 255 / 70%);
+  --uk-global-emphasis-color: #fff;
+  --uk-global-muted-color: rgb(255 255 255 / 50%);
+  --uk-global-inverse-color: #fff;
+  --uk-global-link-color: #6db3f8;
+  --uk-global-link-hover-color: #a3cffb;
+  --uk-global-background: #171717;
+  --uk-global-muted-background: #242424;
+  --uk-global-muted-background-hover: #2e2e2e;
+  --uk-global-secondary-background: #000;
+  --uk-global-secondary-background-hover: #0a0a0a;
+  --uk-global-border: rgb(255 255 255 / 15%);
+  --uk-alert-primary-background: #16324f;
+  --uk-alert-success-background: #103b2b;
+  --uk-alert-warning-background: #4a2f19;
+  --uk-alert-danger-background: #4a1a24;
+
+  color-scheme: dark;
+}
+
+/* Skip link and visually hidden helpers from Drupal core. */
+.visually-hidden.focusable:focus {
+  position: static !important;
+  overflow: visible;
+  clip-path: none;
+  width: auto;
+  height: auto;
+}
+
+/* Card with an image on the left or the right. */
+.uk-card-media-left > *,
+.uk-card-media-right > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Images rendered in components (cards, overlays, slides). */
+.uk-card-media-top img,
+.uk-card-media-bottom img,
+.uk-slider-items img,
+.uk-inline > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Description list items are wrapped in a div (description_list_item). */
+.uk-description-list > div > dt {
+  color: var(--uk-global-emphasis-color, #333);
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.uk-description-list > div:nth-child(n+2) > dt {
+  margin-top: 20px;
+}
+
+.uk-description-list-divider > div:nth-child(n+2) > dt {
+  padding-top: 20px;
+  border-top: 1px solid var(--uk-global-border, #e5e5e5);
+}
+
+/* Media (image fields, media entities) covering a slide or a cover. */
+.uk-cover-media img,
+.uk-cover-media video,
+.uk-slideshow-media img,
+.uk-slideshow-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uk-cover-media > *,
+.uk-slideshow-media > * {
+  height: 100%;
+}
+
+/* Form elements. */
+.form-item,
+.form-actions,
+.uk-fieldset {
+  margin-bottom: 20px;
+}
+
+.form-item .description {
+  margin-top: 5px;
+  color: var(--uk-global-muted-color, #999);
+  font-size: 0.875rem;
+}
+
+.form-required::after {
+  content: " *";
+  color: var(--uk-global-danger-background, #f0506e);
+}
+
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  margin-bottom: 5px;
+}
+
+.form-actions .uk-button + .uk-button {
+  margin-left: 10px;
+}
+
+/* Regions and blocks printed in the navbar keep the navbar flex layout. */
+.uk-navbar-left > .region,
+.uk-navbar-center > .region,
+.uk-navbar-right > .region,
+.uk-navbar-left > .region > .block,
+.uk-navbar-center > .region > .block,
+.uk-navbar-right > .region > .block {
+  display: flex;
+  align-items: center;
+}
+
+/* Local tasks and actions. */
+.uk-tab,
+.uk-subnav-pill {
+  margin-bottom: 20px;
+}
+
+/* Contextual links need a positioned parent. */
+.contextual-region {
+  position: relative;
+}
+
+/* Display Builder and Layout Builder: keep empty slots visible. */
+.uk-grid > :empty,
+.uk-switcher > :empty {
+  min-height: 1px;
+}

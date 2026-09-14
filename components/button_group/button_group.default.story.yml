@@ -1,0 +1,15 @@
+name: Default
+slots:
+  buttons:
+    - type: component
+      component: "webtheme:button"
+      slots:
+        label: "Button"
+    - type: component
+      component: "webtheme:button"
+      slots:
+        label: "Button"
+    - type: component
+      component: "webtheme:button"
+      slots:
+        label: "Button"

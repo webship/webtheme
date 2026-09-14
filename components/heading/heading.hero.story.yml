@@ -1,0 +1,6 @@
+name: "Hero size"
+slots:
+  title: "Hero heading"
+props:
+  heading_level: 1
+  size: large

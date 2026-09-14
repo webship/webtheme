@@ -1,0 +1,5 @@
+name: Default
+slots:
+  title: "Heading"
+props:
+  heading_level: 2

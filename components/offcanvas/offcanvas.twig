@@ -1,0 +1,14 @@
+{% set offcanvas_id = offcanvas_id|default('offcanvas-' ~ random()) %}
+{% set options = [
+  'mode: ' ~ mode|default('slide'),
+  'flip: ' ~ (flip ? 'true' : 'false'),
+  'overlay: ' ~ (overlay ? 'true' : 'false'),
+] %}
+<div{{ attributes.setAttribute('id', offcanvas_id).setAttribute('uk-offcanvas', options|join('; ')) }}>
+  <div class="uk-offcanvas-bar">
+    {% if close %}
+      <button class="uk-offcanvas-close" type="button" uk-close aria-label="{{ 'Close'|t }}"></button>
+    {% endif %}
+    {{ content }}
+  </div>
+</div>

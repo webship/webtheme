@@ -1,0 +1,17 @@
+name: Label
+description: "Indicate important notes and highlight parts of your content."
+group: Elements
+links:
+  - "https://getuikit.com/docs/label"
+variants:
+  default:
+    title: Default
+  success:
+    title: Success
+  warning:
+    title: Warning
+  danger:
+    title: Danger
+slots:
+  label:
+    title: Label

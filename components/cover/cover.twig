@@ -1,0 +1,17 @@
+{% set height = height|default('medium') %}
+{% set attributes = attributes.addClass('uk-cover-container').addClass('uk-position-relative') %}
+{% if height == 'viewport' %}
+  {% set attributes = attributes.setAttribute('uk-height-viewport', '') %}
+{% else %}
+  {% set attributes = attributes.addClass('uk-height-' ~ height) %}
+{% endif %}
+<div{{ attributes }}>
+  <div class="uk-position-cover uk-cover-media">
+    {{ media }}
+  </div>
+  {% if content %}
+    <div class="uk-position-{{ content_position|default('center') }} uk-position-medium{{ inverse ? ' uk-' ~ inverse }}">
+      {{ content }}
+    </div>
+  {% endif %}
+</div>

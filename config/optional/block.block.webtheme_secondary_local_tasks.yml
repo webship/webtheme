@@ -5,12 +5,12 @@ dependencies:
     - webtheme
 id: webtheme_secondary_local_tasks
 theme: webtheme
-region: highlighted
-weight: -2
+region: content
+weight: -14
 provider: null
-plugin: local_tasks_block
+plugin: 'local_tasks_block'
 settings:
-  id: local_tasks_block
+  id: 'local_tasks_block'
   label: 'Secondary tabs'
   label_display: '0'
   provider: core

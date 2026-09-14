@@ -1,0 +1,4 @@
+{% if active %}
+  {% set attributes = attributes.addClass('uk-active') %}
+{% endif %}
+<li{{ attributes }}><a href="#">{{ label }}</a></li>

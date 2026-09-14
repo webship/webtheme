@@ -1,0 +1,16 @@
+name: "Cards in 3 columns"
+slots:
+  items:
+    - type: component
+      component: "webtheme:card"
+      story: default
+    - type: component
+      component: "webtheme:card"
+      story: default
+    - type: component
+      component: "webtheme:card"
+      story: default
+props:
+  child_width: 1-1
+  child_width_m: 1-3
+  match: true

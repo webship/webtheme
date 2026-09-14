@@ -13,7 +13,6 @@ const chromiumArgs: string[] = [
   '--disable-extensions',
   '--incognito',
   '--disable-infobars',
-  '--start-maximized',
 ];
 
 interface PlaywrightConfig {
@@ -25,13 +24,12 @@ interface PlaywrightConfig {
 const config: PlaywrightConfig = {
   browser,
   launchOptions: {
-    headless: process.env.HEADLESS !== 'false',
-    // SLOW_MO env var: 0 in CI for speed, 800ms when watching headed runs.
-    slowMo: parseInt(process.env.SLOW_MO || (process.env.HEADLESS === 'false' ? '800' : '300'), 10),
+    headless: true,
+    slowMo: 300,
     args: browser === 'chromium' ? chromiumArgs : [],
   },
   contextOptions: {
-    viewport: null,
+    viewport: { width: 1600, height: 1200 },
     ignoreHTTPSErrors: true,
   },
 };

@@ -1,0 +1,21 @@
+{% set variant = variant|default('tab') %}
+{% if variant == 'pill' %}
+  {% set nav_classes = ['uk-subnav', 'uk-subnav-pill'] %}
+{% elseif variant == 'divider' %}
+  {% set nav_classes = ['uk-subnav', 'uk-subnav-divider'] %}
+{% elseif variant == 'subnav' %}
+  {% set nav_classes = ['uk-subnav'] %}
+{% else %}
+  {% set nav_classes = ['uk-tab'] %}
+{% endif %}
+{% if alignment and alignment != 'left' %}
+  {% set nav_classes = nav_classes|merge(['uk-flex-' ~ alignment]) %}
+{% endif %}
+<div{{ attributes }}>
+  <ul class="{{ nav_classes|join(' ') }}" uk-switcher="{{ animation ? 'animation: uk-animation-' ~ animation }}">
+    {{ tabs }}
+  </ul>
+  <div class="uk-switcher uk-margin">
+    {{ panels }}
+  </div>
+</div>

@@ -1,0 +1,7 @@
+name: Default
+props:
+  icon:
+    pack_id: uikit
+    icon_id: heart
+    settings:
+      ratio: 2

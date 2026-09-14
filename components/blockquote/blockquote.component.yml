@@ -1,0 +1,17 @@
+name: Blockquote
+description: "A quotation, with an optional footer for the author and the source."
+group: Elements
+links:
+  - "https://getuikit.com/docs/base#blockquotes"
+slots:
+  content:
+    title: Quote
+  footer:
+    title: Footer
+    description: "Author and source."
+props:
+  type: object
+  properties:
+    cite:
+      title: "Source URL"
+      $ref: "ui-patterns://url"

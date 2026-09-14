@@ -1,27 +1,34 @@
 {
-  "name": "drupal/webtheme",
-  "description": "Webtheme is the default theme for the Webship.co portal site.",
-  "type": "drupal-theme",
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Webship",
-      "homepage": "https://www.drupal.org/webship",
-      "role": "Maintainer"
+    "name": "drupal/webtheme",
+    "description": "The theme of the Webship.co portal site, generated from UI Suite UIkit: SDC components, UIkit and HTMX, with the Webship.co colors and design.",
+    "type": "drupal-theme",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Webship",
+            "homepage": "https://www.drupal.org/webship",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "http://drupal.org/project/issues/webtheme",
+        "source": "http://cgit.drupalcode.org/webtheme"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "drupal/core": "^11.4 || ^12",
+        "drupal/ui_icons": "^2.0",
+        "drupal/ui_patterns": "^2.0",
+        "drupal/ui_skins": "^1.2",
+        "drupal/ui_styles": "^1.22",
+        "drupal/webpatches": "~11.0.0"
+    },
+    "require-dev": {
+        "drupal/display_builder": "^1.0@beta"
     }
-  ],
-  "support": {
-  "issues": "http://drupal.org/project/issues/webtheme",
-  "source": "http://cgit.drupalcode.org/webtheme"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  ],
-  "require": {
-    "drupal/core": "^11.4 || ^12",
-    "drupal/webpatches": "~11.0.0"
-  }
 }

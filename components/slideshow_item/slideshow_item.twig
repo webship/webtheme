@@ -1,0 +1,23 @@
+{% set heading_level = heading_level|default(3) %}
+{% set overlay_classes = [
+  'uk-overlay',
+  'uk-overlay-' ~ variant|default('primary'),
+  'uk-position-' ~ caption_position|default('bottom'),
+  'uk-text-center',
+  'uk-transition-slide-bottom',
+] %}
+<div{{ attributes }}>
+  <div class="uk-position-cover uk-slideshow-media">
+    {{ image }}
+  </div>
+  {% if title or caption %}
+    <div class="{{ overlay_classes|join(' ') }}">
+      {% if title %}
+        <h{{ heading_level }} class="uk-margin-remove">{{ title }}</h{{ heading_level }}>
+      {% endif %}
+      {% if caption %}
+        <div class="uk-margin-small-top">{{ caption }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

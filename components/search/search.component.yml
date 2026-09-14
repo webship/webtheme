@@ -1,0 +1,39 @@
+name: Search
+description: "A search form, in different styles, for example inside the navbar."
+group: Forms
+links:
+  - "https://getuikit.com/docs/search"
+variants:
+  default:
+    title: Default
+  navbar:
+    title: Navbar
+  medium:
+    title: Medium
+  large:
+    title: Large
+props:
+  type: object
+  properties:
+    action:
+      title: "Form action"
+      description: "URL of the search page, for example /search/node."
+      $ref: "ui-patterns://url"
+    name:
+      title: "Query parameter"
+      description: "Default: keys."
+      $ref: "ui-patterns://identifier"
+    placeholder:
+      title: Placeholder
+      type: string
+    icon_position:
+      title: "Icon position"
+      type: string
+      enum:
+        - left
+        - right
+        - none
+      "meta:enum":
+        left: "Left (Default)"
+        right: Right
+        none: None

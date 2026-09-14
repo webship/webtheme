@@ -7,13 +7,13 @@ dependencies:
     - webtheme
 id: webtheme_help
 theme: webtheme
-region: content_above
+region: help
 weight: 0
 provider: null
-plugin: help_block
+plugin: 'help_block'
 settings:
-  id: help_block
-  label: Help
+  id: 'help_block'
+  label: 'Help'
   label_display: '0'
   provider: help
 visibility: {  }

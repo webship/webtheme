@@ -1,0 +1,35 @@
+{% set options = [
+  'center: ' ~ (center ? 'true' : 'false'),
+  'finite: ' ~ (finite ? 'true' : 'false'),
+  'sets: ' ~ (sets ? 'true' : 'false'),
+  'autoplay: ' ~ (autoplay ? 'true' : 'false'),
+  'autoplay-interval: ' ~ autoplay_interval|default(7000),
+] %}
+{% set items_classes = [
+  'uk-slider-items',
+  'uk-grid',
+  child_width ? 'uk-child-width-' ~ child_width,
+  child_width_s ? 'uk-child-width-' ~ child_width_s ~ '@s',
+  child_width_m ? 'uk-child-width-' ~ child_width_m ~ '@m',
+  child_width_l ? 'uk-child-width-' ~ child_width_l ~ '@l',
+  gap ? 'uk-grid-' ~ gap,
+] %}
+{% set items = items and items is not sequence ? [items] : items %}
+<div{{ attributes.setAttribute('uk-slider', options|join('; ')) }}>
+  <div class="uk-position-relative uk-visible-toggle{{ inverse ? ' uk-' ~ inverse }}" tabindex="-1">
+    <div class="uk-slider-container">
+      <div class="{{ items_classes|filter(c => c)|join(' ') }}">
+        {% for item in items %}
+          <div>{{ item }}</div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if arrows %}
+      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous" aria-label="{{ 'Previous slide'|t }}"></a>
+      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next" aria-label="{{ 'Next slide'|t }}"></a>
+    {% endif %}
+  </div>
+  {% if dotnav %}
+    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+  {% endif %}
+</div>

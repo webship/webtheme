@@ -1,0 +1,13 @@
+name: Default
+library_wrapper: >
+  <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-story">Open offcanvas</button>
+  {{ _story }}
+slots:
+  content:
+    type: component
+    component: "webtheme:nav"
+    story: default
+props:
+  offcanvas_id: offcanvas-story
+  overlay: true
+  close: true

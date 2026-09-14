@@ -1,0 +1,5 @@
+name: Default
+props:
+  value: 45
+  max: 100
+  label: "Upload progress"

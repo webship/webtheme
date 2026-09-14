@@ -1,0 +1,59 @@
+name: "Grid: 4 columns"
+description: "Four columns layout: 1 column on small screens, 2 from the small breakpoint, 4 from the selected breakpoint."
+group: Layout
+icon_map:
+  - [column_1, column_2, column_3, column_4]
+links:
+  - "https://getuikit.com/docs/grid"
+  - "https://getuikit.com/docs/width"
+slots:
+  column_1:
+    title: "Column 1"
+  column_2:
+    title: "Column 2"
+  column_3:
+    title: "Column 3"
+  column_4:
+    title: "Column 4"
+props:
+  type: object
+  properties:
+    breakpoint:
+      title: "4 columns from"
+      type: string
+      enum:
+        - m
+        - l
+      "meta:enum":
+        m: "Medium screens (960px, Default)"
+        l: "Large screens (1200px)"
+    gap:
+      title: Gap
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+        - collapse
+      "meta:enum":
+        small: Small
+        medium: Medium
+        large: Large
+        collapse: "Collapse (no gap)"
+    divider:
+      title: Divider
+      type: boolean
+    match:
+      title: "Match height"
+      type: boolean
+    vertical_align:
+      title: "Vertical alignment"
+      type: string
+      enum:
+        - top
+        - middle
+        - bottom
+      "meta:enum":
+        top: Top
+        middle: Middle
+        bottom: Bottom

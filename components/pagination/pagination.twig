@@ -1,0 +1,19 @@
+{% if items %}
+{% set attributes = attributes.addClass([
+  'uk-pagination',
+  alignment and alignment != 'left' ? 'uk-flex-' ~ alignment,
+]) %}
+<nav aria-label="{{ 'Pagination'|t }}">
+  <ul{{ attributes }}>
+    {% for item in items %}
+      {% if item.url %}
+        <li><a href="{{ item.url }}"{{ item.link_attributes }}>{{ item.title }}</a></li>
+      {% elseif item.title %}
+        <li class="uk-active"><span aria-current="page">{{ item.title }}</span></li>
+      {% else %}
+        <li class="uk-disabled"><span>…</span></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

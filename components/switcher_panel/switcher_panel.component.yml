@@ -1,0 +1,8 @@
+name: "(Switcher panel)"
+description: "Internal: to be used in the 'Panels' slot of the 'Switcher' component."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/switcher"
+slots:
+  content:
+    title: Content

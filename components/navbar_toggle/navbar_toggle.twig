@@ -1,0 +1,13 @@
+{% set attributes = attributes.addClass('uk-navbar-toggle').setAttribute('href', '#') %}
+{% if target %}
+  {% set attributes = attributes.setAttribute('uk-toggle', 'target: #' ~ target).setAttribute('aria-controls', target) %}
+{% endif %}
+{% if not label %}
+  {% set attributes = attributes.setAttribute('aria-label', 'Open menu'|t) %}
+{% endif %}
+<a{{ attributes }}>
+  <span uk-navbar-toggle-icon></span>
+  {% if label %}
+    <span class="uk-margin-small-left">{{ label }}</span>
+  {% endif %}
+</a>

@@ -1,0 +1,12 @@
+{% set attributes = attributes.addClass([
+  'uk-logo',
+  navbar_item ? 'uk-navbar-item',
+]).setAttribute('href', url|default('/')).setAttribute('rel', 'home') %}
+<a{{ attributes }}>
+  {%- if image -%}
+    <img src="{{ image }}" alt="{{ image_alt|default('') }}" height="{{ image_height|default(34) }}"{% if label %} class="uk-margin-small-right"{% endif %}>
+  {%- endif -%}
+  {%- if label -%}
+    <span>{{ label }}</span>
+  {%- endif -%}
+</a>

@@ -1,0 +1,14 @@
+name: Default
+slots:
+  content:
+    - type: html_tag
+      tag: p
+      attributes:
+        class:
+          - uk-h4
+      value: "Tile"
+    - type: html_tag
+      tag: p
+      value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+props:
+  size: small

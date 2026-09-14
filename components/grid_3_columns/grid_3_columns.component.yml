@@ -1,0 +1,68 @@
+name: "Grid: 3 columns"
+description: "Three columns layout, stacked on small screens. The variant sets the columns ratio."
+group: Layout
+icon_map:
+  - [column_1, column_2, column_3]
+links:
+  - "https://getuikit.com/docs/grid"
+  - "https://getuikit.com/docs/width"
+variants:
+  default:
+    title: "33% / 33% / 33%"
+  col_50_25_25:
+    title: "50% / 25% / 25%"
+  col_25_50_25:
+    title: "25% / 50% / 25%"
+  col_25_25_50:
+    title: "25% / 25% / 50%"
+slots:
+  column_1:
+    title: "Column 1"
+  column_2:
+    title: "Column 2"
+  column_3:
+    title: "Column 3"
+props:
+  type: object
+  properties:
+    breakpoint:
+      title: "Side by side from"
+      type: string
+      enum:
+        - s
+        - m
+        - l
+      "meta:enum":
+        s: "Small screens (640px)"
+        m: "Medium screens (960px, Default)"
+        l: "Large screens (1200px)"
+    gap:
+      title: Gap
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+        - collapse
+      "meta:enum":
+        small: Small
+        medium: Medium
+        large: Large
+        collapse: "Collapse (no gap)"
+    divider:
+      title: Divider
+      type: boolean
+    match:
+      title: "Match height"
+      type: boolean
+    vertical_align:
+      title: "Vertical alignment"
+      type: string
+      enum:
+        - top
+        - middle
+        - bottom
+      "meta:enum":
+        top: Top
+        middle: Middle
+        bottom: Bottom

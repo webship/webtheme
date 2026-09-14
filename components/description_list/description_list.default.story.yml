@@ -1,0 +1,15 @@
+name: Default
+slots:
+  items:
+    - type: component
+      component: "webtheme:description_list_item"
+      slots:
+        term: "Description term"
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - type: component
+      component: "webtheme:description_list_item"
+      slots:
+        term: "Description term"
+        description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+props:
+  variant: divider

@@ -1,0 +1,12 @@
+name: "To top"
+description: "Create an icon to scroll back to the top of the page."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/totop"
+props:
+  type: object
+  properties:
+    target:
+      title: Target
+      description: "ID (without #) of the element to scroll to. Default: top of the page."
+      $ref: "ui-patterns://identifier"

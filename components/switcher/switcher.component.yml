@@ -1,0 +1,51 @@
+name: Switcher
+description: "Tabs, pills or subnav toggling panels of content. Put Switcher tabs and Switcher panels in the same order."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/switcher"
+  - "https://getuikit.com/docs/tab"
+variants:
+  tab:
+    title: "Tab (Default)"
+  pill:
+    title: Pill
+  subnav:
+    title: Subnav
+  divider:
+    title: "Subnav with divider"
+slots:
+  tabs:
+    title: Tabs
+    expected:
+      - "webtheme:switcher_tab"
+  panels:
+    title: Panels
+    expected:
+      - "webtheme:switcher_panel"
+props:
+  type: object
+  properties:
+    animation:
+      title: Animation
+      type: string
+      enum:
+        - fade
+        - scale-up
+        - slide-left
+        - slide-bottom
+      "meta:enum":
+        fade: Fade
+        scale-up: "Scale up"
+        slide-left: "Slide left"
+        slide-bottom: "Slide bottom"
+    alignment:
+      title: "Tabs alignment"
+      type: string
+      enum:
+        - left
+        - center
+        - right
+      "meta:enum":
+        left: "Left (Default)"
+        center: Center
+        right: Right

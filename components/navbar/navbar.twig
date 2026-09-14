@@ -1,0 +1,30 @@
+{% set container = container|default('default') %}
+{% set attributes = attributes.addClass([
+  'uk-navbar-container',
+  transparent ? 'uk-navbar-transparent',
+]) %}
+{% if sticky %}
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+{% endif %}
+<nav{{ attributes.setAttribute('aria-label', 'Main navigation'|t) }}>
+  {% if container != 'none' %}
+  <div class="uk-container{{ container != 'default' ? ' uk-container-' ~ container }}">
+  {% endif %}
+    <div class="uk-navbar" uk-navbar="mode: {{ dropdown_mode|default('hover') }}">
+      {% if left %}
+        <div class="uk-navbar-left">{{ left }}</div>
+      {% endif %}
+      {% if center %}
+        <div class="uk-navbar-center">{{ center }}</div>
+      {% endif %}
+      {% if right %}
+        <div class="uk-navbar-right">{{ right }}</div>
+      {% endif %}
+    </div>
+  {% if container != 'none' %}
+  </div>
+  {% endif %}
+</nav>
+{% if sticky %}
+</div>
+{% endif %}

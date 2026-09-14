@@ -1,0 +1,12 @@
+{% set heading_level = heading_level|default(2) %}
+{% set attributes = attributes.addClass([
+  size ? 'uk-heading-' ~ size,
+  variant and variant != 'default' ? 'uk-heading-' ~ variant,
+]) %}
+<h{{ heading_level }}{{ attributes }}>
+  {%- if variant == 'line' -%}
+    <span>{{ title }}</span>
+  {%- else -%}
+    {{ title }}
+  {%- endif -%}
+</h{{ heading_level }}>

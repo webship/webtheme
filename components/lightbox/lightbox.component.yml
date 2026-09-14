@@ -1,0 +1,23 @@
+name: Lightbox
+description: "Open every Lightbox item inside this component in a responsive lightbox gallery."
+group: Media
+links:
+  - "https://getuikit.com/docs/lightbox"
+slots:
+  items:
+    title: Items
+    description: "Lightbox items, directly or inside a Grid."
+props:
+  type: object
+  properties:
+    animation:
+      title: Animation
+      type: string
+      enum:
+        - slide
+        - fade
+        - scale
+      "meta:enum":
+        slide: "Slide (Default)"
+        fade: Fade
+        scale: Scale

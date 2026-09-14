@@ -1,0 +1,73 @@
+name: Card
+description: "Create layout boxes with different styles."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/card"
+variants:
+  default:
+    title: Default
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  blank:
+    title: Blank
+    description: "No background, useful with the hover effect."
+slots:
+  image:
+    title: Image
+  header:
+    title: Header
+  badge:
+    title: Badge
+    description: "Displayed in the top right corner."
+  title:
+    title: Title
+  content:
+    title: Content
+  footer:
+    title: Footer
+props:
+  type: object
+  properties:
+    heading_level:
+      title: "Heading level"
+      type: integer
+      enum:
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      "meta:enum":
+        2: h2
+        3: "h3 (Default)"
+        4: h4
+        5: h5
+        6: h6
+    size:
+      title: Padding
+      type: string
+      enum:
+        - small
+        - large
+      "meta:enum":
+        small: Small
+        large: Large
+    hover:
+      title: "Hover effect"
+      type: boolean
+    image_position:
+      title: "Image position"
+      description: "Left and right images are displayed side by side from small screens."
+      type: string
+      enum:
+        - top
+        - bottom
+        - left
+        - right
+      "meta:enum":
+        top: "Top (Default)"
+        bottom: Bottom
+        left: Left
+        right: Right

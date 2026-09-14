@@ -1,0 +1,18 @@
+name: Default
+slots:
+  toggle:
+    type: component
+    component: "webtheme:button"
+    slots:
+      label: "Open dropdown"
+    props:
+      icon:
+        pack_id: uikit
+        icon_id: chevron-down
+      icon_position: right
+  content:
+    type: component
+    component: "webtheme:nav"
+    story: dropdown
+props:
+  mode: click

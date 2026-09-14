@@ -1,0 +1,25 @@
+name: "Hero"
+slots:
+  media:
+    type: html_tag
+    tag: img
+    attributes:
+      src: "https://getuikit.com/docs/images/dark.jpg"
+      alt: ""
+  content:
+    - type: component
+      component: "webtheme:heading"
+      slots:
+        title: "Cover"
+      props:
+        heading_level: 1
+        size: medium
+    - type: component
+      component: "webtheme:button"
+      slots:
+        label: "Get started"
+      props:
+        variant: primary
+props:
+  height: large
+  inverse: light

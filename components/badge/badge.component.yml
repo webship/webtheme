@@ -1,0 +1,9 @@
+name: Badge
+description: "Easily create nice looking notification badges."
+group: Elements
+links:
+  - "https://getuikit.com/docs/badge"
+slots:
+  label:
+    title: Label
+    description: "Usually a number."

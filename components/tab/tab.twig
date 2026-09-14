@@ -1,0 +1,19 @@
+{% set alignment = alignment|default('left') %}
+{% if alignment == 'justify' %}
+  {% set attributes = attributes.addClass('uk-child-width-expand') %}
+{% elseif alignment != 'left' %}
+  {% set attributes = attributes.addClass('uk-flex-' ~ alignment) %}
+{% endif %}
+<ul{{ attributes.addClass('uk-tab') }}>
+  {% for item in items %}
+    {% set item_attributes = item.attributes|default(create_attribute()) %}
+    {% if item.url %}
+      {% if item.in_active_trail %}
+        {% set item_attributes = item_attributes.addClass('uk-active') %}
+      {% endif %}
+      <li{{ item_attributes }}><a href="{{ item.url }}"{{ item.link_attributes }}>{{ item.title }}</a></li>
+    {% else %}
+      <li{{ item_attributes.addClass('uk-disabled') }}><a>{{ item.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

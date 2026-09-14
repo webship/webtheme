@@ -1,0 +1,33 @@
+name: Tile
+description: "Create tiles that can be arranged in a grid, with different background colors."
+group: Layout
+links:
+  - "https://getuikit.com/docs/tile"
+variants:
+  default:
+    title: Default
+  muted:
+    title: Muted
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    size:
+      title: Padding
+      type: string
+      enum:
+        - xsmall
+        - small
+        - large
+        - xlarge
+      "meta:enum":
+        xsmall: "X-Small"
+        small: Small
+        large: Large
+        xlarge: "X-Large"

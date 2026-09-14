@@ -1,28 +1,9 @@
-# Ignore node modules
+.DS_Store
 node_modules
-/*/node_modules
-
-# Ignore local gitlab-ci-local runtime + sidecar config.
-# The canonical pipeline lives in .gitlab-ci.yml; the local CI is per-developer.
-.gitlab-ci-local/
-.gitlab-ci-local.yml
-.cucumber.js.bak
-
-# Ignore Claude Code project-scope config (per-developer tooling).
-.mcp.json
-.claude/
-
-# Ignore Playwright MCP browser-session dumps (per-developer debugging output).
-.playwright-mcp/
-
-# Ignore Yarn's generated install state + PnP files (node-modules linker).
-.yarn/*
-.pnp.*
-
-# Ignore generated webship-js test artifacts, but keep the folder READMEs.
+package-lock.json
+.playwright-mcp
+screenshots
 tests/reports/*
 !tests/reports/README.md
-tests/screenshots/*
-!tests/screenshots/README.md
-tests/videos/*
-!tests/videos/README.md
+tests/videos
+.gitlab-ci-local.yml

@@ -1,0 +1,15 @@
+{% set icon_position = icon_position|default('left') %}
+{% set placeholder = placeholder|default('Search'|t) %}
+{% set attributes = attributes.addClass([
+  'uk-search',
+  'uk-search-' ~ variant|default('default'),
+]).setAttribute('method', 'get').setAttribute('role', 'search') %}
+{% if action %}
+  {% set attributes = attributes.setAttribute('action', action) %}
+{% endif %}
+<form{{ attributes }}>
+  {% if icon_position != 'none' %}
+    <span class="uk-search-icon{{ icon_position == 'right' ? ' uk-search-icon-flip' }}" uk-search-icon></span>
+  {% endif %}
+  <input class="uk-search-input" type="search" name="{{ name|default('keys') }}" placeholder="{{ placeholder }}" aria-label="{{ placeholder }}">
+</form>

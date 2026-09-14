@@ -1,0 +1,30 @@
+name: Default
+slots:
+  tabs:
+    - type: component
+      component: "webtheme:switcher_tab"
+      slots:
+        label: "Item 1"
+    - type: component
+      component: "webtheme:switcher_tab"
+      slots:
+        label: "Item 2"
+    - type: component
+      component: "webtheme:switcher_tab"
+      slots:
+        label: "Item 3"
+  panels:
+    - type: component
+      component: "webtheme:switcher_panel"
+      slots:
+        content: "Hello!"
+    - type: component
+      component: "webtheme:switcher_panel"
+      slots:
+        content: "Hello again!"
+    - type: component
+      component: "webtheme:switcher_panel"
+      slots:
+        content: "Bazinga!"
+props:
+  animation: fade

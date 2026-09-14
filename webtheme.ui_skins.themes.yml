@@ -1,0 +1,13 @@
+# Color modes. The dark mode redefines the UIkit design tokens, see
+# assets/css/drupal.css.
+light:
+  label: "Light"
+  label_context: "color"
+  key: "data-theme"
+  target: html
+
+dark:
+  label: "Dark"
+  label_context: "color"
+  key: "data-theme"
+  target: html

@@ -1,27 +1,17 @@
 {#
 /**
  * @file
- * Theme override to display a pager.
+ * Theme override to display a pager, with the UIkit Pagination component.
  *
- * Delegates the markup to the webtheme:pager SDC. See that component for
- * the full variable documentation.
+ * Available variables:
+ * - items: List of pager items, normalized as links.
  *
- * The pager theme hook fires on every page that *could* paginate, even when
- * there is no pager — in which case items/current/ellipses/heading_id are
- * all NULL. The SDC declares those props as required, and Drupal validates
- * SDC props (rejecting NULL) whenever PHP assertions are enabled (as on
- * DrupalCI), which would fatal the page. So only invoke the component when
- * there is actually a pager to render — matching the original
- * `{% if items %}` guard.
- *
- * @see template_preprocess_pager()
+ * @see \Drupal\webtheme\Hook\PreprocessHooks::preprocessPager()
  */
 #}
 {% if items %}
-  {% include 'webtheme:pager' with {
-    heading_id: heading_id,
+  {{ include('webtheme:pagination', {
     items: items,
-    current: current,
-    ellipses: ellipses,
-  } only %}
+    alignment: 'center',
+  }, with_context: false) }}
 {% endif %}

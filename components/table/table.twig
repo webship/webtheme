@@ -1,0 +1,27 @@
+{% set attributes = attributes.addClass([
+  'uk-table',
+  variant and variant != 'default' ? 'uk-table-' ~ variant,
+  hover ? 'uk-table-hover',
+  size ? 'uk-table-' ~ size,
+  justify ? 'uk-table-justify',
+  middle ? 'uk-table-middle',
+  responsive ? 'uk-table-responsive',
+]) %}
+{% if overflow %}
+<div class="uk-overflow-auto">
+{% endif %}
+<table{{ attributes }}>
+  {% if caption %}
+    <caption>{{ caption }}</caption>
+  {% endif %}
+  {% if header %}
+    <thead>{{ header }}</thead>
+  {% endif %}
+  <tbody>{{ rows }}</tbody>
+  {% if footer %}
+    <tfoot>{{ footer }}</tfoot>
+  {% endif %}
+</table>
+{% if overflow %}
+</div>
+{% endif %}

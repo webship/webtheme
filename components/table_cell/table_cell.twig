@@ -1,0 +1,7 @@
+{% set cell_tag = tag == 'th' ? 'th' : 'td' %}
+{% if width in ['shrink', 'expand'] %}
+  {% set attributes = attributes.addClass('uk-table-' ~ width) %}
+{% elseif width %}
+  {% set attributes = attributes.addClass('uk-width-' ~ width) %}
+{% endif %}
+<{{ cell_tag }}{{ attributes }}>{{ content }}</{{ cell_tag }}>

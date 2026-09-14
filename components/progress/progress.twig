@@ -1,0 +1,7 @@
+{% set attributes = attributes.addClass('uk-progress')
+  .setAttribute('value', value|default(0))
+  .setAttribute('max', max|default(100)) %}
+{% if label %}
+  {% set attributes = attributes.setAttribute('aria-label', label) %}
+{% endif %}
+<progress{{ attributes }}></progress>

@@ -1,0 +1,4 @@
+name: Default
+slots:
+  label: "Button"
+props: {}

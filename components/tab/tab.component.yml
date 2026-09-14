@@ -1,0 +1,25 @@
+name: Tab
+description: "Tabbed navigation links, for example the local tasks. For tabs with panels, use the Switcher component."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/tab"
+props:
+  type: object
+  properties:
+    items:
+      title: Items
+      description: "Items without URL are disabled."
+      $ref: "ui-patterns://links"
+    alignment:
+      title: Alignment
+      type: string
+      enum:
+        - left
+        - center
+        - right
+        - justify
+      "meta:enum":
+        left: "Left (Default)"
+        center: Center
+        right: Right
+        justify: Justify

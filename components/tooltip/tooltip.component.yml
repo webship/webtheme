@@ -1,0 +1,36 @@
+name: Tooltip
+description: "Easily create a nice looking tooltip around any content."
+group: Feedback
+links:
+  - "https://getuikit.com/docs/tooltip"
+slots:
+  content:
+    title: Content
+    description: "The element the tooltip is attached to."
+props:
+  type: object
+  properties:
+    text:
+      title: "Tooltip text"
+      type: string
+    position:
+      title: Position
+      type: string
+      enum:
+        - top
+        - top-left
+        - top-right
+        - bottom
+        - bottom-left
+        - bottom-right
+        - left
+        - right
+      "meta:enum":
+        top: "Top (Default)"
+        top-left: "Top left"
+        top-right: "Top right"
+        bottom: Bottom
+        bottom-left: "Bottom left"
+        bottom-right: "Bottom right"
+        left: Left
+        right: Right

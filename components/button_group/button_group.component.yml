@@ -1,0 +1,10 @@
+name: "Button group"
+description: "Group buttons next to each other."
+group: Elements
+links:
+  - "https://getuikit.com/docs/button#button-group"
+slots:
+  buttons:
+    title: Buttons
+    expected:
+      - "webtheme:button"

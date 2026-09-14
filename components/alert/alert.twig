@@ -1,0 +1,14 @@
+{% set attributes = attributes.addClass([
+  'uk-alert',
+  variant and variant != 'default' ? 'uk-alert-' ~ variant,
+]) %}
+{% set heading_level = heading_level|default(3) %}
+<div{{ attributes.setAttribute('uk-alert', '').setAttribute('role', 'alert') }}>
+  {% if close %}
+    <button type="button" class="uk-alert-close" uk-close aria-label="{{ 'Close'|t }}"></button>
+  {% endif %}
+  {% if title %}
+    <h{{ heading_level }} class="uk-margin-small-bottom">{{ title }}</h{{ heading_level }}>
+  {% endif %}
+  {{ message }}
+</div>

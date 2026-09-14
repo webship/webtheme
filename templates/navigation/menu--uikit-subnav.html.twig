@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for menus placed in the footer region: UIkit Subnav.
+ *
+ * Available variables:
+ * - items: A nested list of menu items (only the first level is printed).
+ *
+ * @see \Drupal\webtheme\Hook\ThemeHooks::themeSuggestionsMenuAlter()
+ */
+#}
+{% if items %}
+  {{ include('webtheme:subnav', {
+    items: items,
+    variant: 'divider',
+  }, with_context: false) }}
+{% endif %}

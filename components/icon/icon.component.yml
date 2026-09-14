@@ -1,0 +1,27 @@
+name: Icon
+description: "Display an icon from any icon pack, as a simple icon, a link or a round button."
+group: Elements
+links:
+  - "https://getuikit.com/docs/icon"
+variants:
+  default:
+    title: Default
+  link:
+    title: Link
+    description: "Muted icon, with a hover state."
+  button:
+    title: Button
+    description: "Round button with an icon."
+props:
+  type: object
+  properties:
+    icon:
+      title: Icon
+      $ref: "ui-patterns://icon"
+    url:
+      title: URL
+      $ref: "ui-patterns://url"
+    label:
+      title: "Accessible label"
+      description: "Required when the icon is a link."
+      type: string

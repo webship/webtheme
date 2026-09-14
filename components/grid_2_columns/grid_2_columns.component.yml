@@ -1,0 +1,68 @@
+name: "Grid: 2 columns"
+description: "Two columns layout, stacked on small screens. The variant sets the columns ratio."
+group: Layout
+icon_map:
+  - [column_1, column_2]
+links:
+  - "https://getuikit.com/docs/grid"
+  - "https://getuikit.com/docs/width"
+variants:
+  default:
+    title: "50% / 50%"
+  col_66_33:
+    title: "66% / 33%"
+  col_33_66:
+    title: "33% / 66%"
+  col_75_25:
+    title: "75% / 25%"
+  col_25_75:
+    title: "25% / 75%"
+slots:
+  column_1:
+    title: "Column 1"
+  column_2:
+    title: "Column 2"
+props:
+  type: object
+  properties:
+    breakpoint:
+      title: "Side by side from"
+      type: string
+      enum:
+        - s
+        - m
+        - l
+      "meta:enum":
+        s: "Small screens (640px)"
+        m: "Medium screens (960px, Default)"
+        l: "Large screens (1200px)"
+    gap:
+      title: Gap
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+        - collapse
+      "meta:enum":
+        small: Small
+        medium: Medium
+        large: Large
+        collapse: "Collapse (no gap)"
+    divider:
+      title: Divider
+      type: boolean
+    match:
+      title: "Match height"
+      type: boolean
+    vertical_align:
+      title: "Vertical alignment"
+      type: string
+      enum:
+        - top
+        - middle
+        - bottom
+      "meta:enum":
+        top: Top
+        middle: Middle
+        bottom: Bottom

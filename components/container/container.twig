@@ -1,0 +1,7 @@
+{% set attributes = attributes.addClass([
+  'uk-container',
+  size ? 'uk-container-' ~ size,
+]) %}
+<div{{ attributes }}>
+  {{ content }}
+</div>

@@ -1,0 +1,56 @@
+name: Dropdown
+description: "Toggle a dropdown panel below the toggle (usually a button)."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/dropdown"
+slots:
+  toggle:
+    title: Toggle
+    description: "Usually a Button component."
+  content:
+    title: Content
+    description: "Usually a Nav component with the dropdown variant."
+props:
+  type: object
+  properties:
+    mode:
+      title: Mode
+      type: string
+      enum:
+        - click
+        - hover
+      "meta:enum":
+        click: "Click (Default)"
+        hover: Hover
+    position:
+      title: Position
+      type: string
+      enum:
+        - bottom-left
+        - bottom-center
+        - bottom-right
+        - top-left
+        - top-center
+        - top-right
+        - left-top
+        - left-center
+        - left-bottom
+        - right-top
+        - right-center
+        - right-bottom
+      "meta:enum":
+        bottom-left: "Bottom left (Default)"
+        bottom-center: "Bottom center"
+        bottom-right: "Bottom right"
+        top-left: "Top left"
+        top-center: "Top center"
+        top-right: "Top right"
+        left-top: "Left top"
+        left-center: "Left center"
+        left-bottom: "Left bottom"
+        right-top: "Right top"
+        right-center: "Right center"
+        right-bottom: "Right bottom"
+    large:
+      title: "Large padding"
+      type: boolean

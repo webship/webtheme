@@ -1,0 +1,36 @@
+{% set attributes = attributes.addClass([
+  'uk-button',
+  'uk-button-' ~ variant|default('default'),
+  size ? 'uk-button-' ~ size,
+  full_width ? 'uk-width-1-1',
+]) %}
+{% set icon_position = icon_position|default('left') %}
+{% if toggle_target %}
+  {% set attributes = attributes.setAttribute('uk-toggle', 'target: #' ~ toggle_target) %}
+{% endif %}
+
+{% if url %}
+  {% set attributes = attributes.setAttribute('href', url) %}
+  {% if disabled %}
+    {% set attributes = attributes.addClass('uk-disabled').setAttribute('aria-disabled', 'true').setAttribute('tabindex', '-1') %}
+  {% endif %}
+  <a{{ attributes }}>
+{% else %}
+  {% set attributes = attributes.setAttribute('type', button_type|default('button')) %}
+  {% if disabled %}
+    {% set attributes = attributes.setAttribute('disabled', 'disabled') %}
+  {% endif %}
+  <button{{ attributes }}>
+{% endif %}
+  {%- if icon and icon_position == 'left' -%}
+    <span class="{{ label ? 'uk-margin-xsmall-right' }}">{{ icon(icon.pack_id, icon.icon_id, icon.settings|default({})) }}</span>
+  {%- endif -%}
+  {{ label }}
+  {%- if icon and icon_position == 'right' -%}
+    <span class="{{ label ? 'uk-margin-xsmall-left' }}">{{ icon(icon.pack_id, icon.icon_id, icon.settings|default({})) }}</span>
+  {%- endif -%}
+{% if url %}
+  </a>
+{% else %}
+  </button>
+{% endif %}

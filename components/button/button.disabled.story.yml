@@ -1,0 +1,5 @@
+name: Disabled
+slots:
+  label: "Disabled"
+props:
+  disabled: true

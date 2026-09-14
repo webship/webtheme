@@ -1,0 +1,10 @@
+name: "Icon button"
+props:
+  variant: button
+  url: "https://github.com/uikit/uikit"
+  label: "GitHub"
+  icon:
+    pack_id: uikit
+    icon_id: github
+    settings:
+      ratio: 1

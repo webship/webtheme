@@ -1,0 +1,43 @@
+name: Alert
+description: "Display success, warning and error messages."
+group: Feedback
+links:
+  - "https://getuikit.com/docs/alert"
+variants:
+  default:
+    title: Default
+  primary:
+    title: Primary
+  success:
+    title: Success
+  warning:
+    title: Warning
+  danger:
+    title: Danger
+slots:
+  title:
+    title: Title
+  message:
+    title: Message
+props:
+  type: object
+  properties:
+    heading_level:
+      title: "Heading level"
+      type: integer
+      enum:
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      "meta:enum":
+        2: h2
+        3: "h3 (Default)"
+        4: h4
+        5: h5
+        6: h6
+    close:
+      title: "Close button"
+      description: "Add a close button to dismiss the alert."
+      type: boolean

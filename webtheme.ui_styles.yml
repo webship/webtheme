@@ -1,0 +1,769 @@
+################################################################################
+# Text.
+# https://getuikit.com/docs/text
+################################################################################
+
+text_style:
+  category: "Text"
+  label: "Text style"
+  description: "Emphasize or de-emphasize text."
+  links:
+    - "https://getuikit.com/docs/text#text-style"
+  options:
+    uk-text-lead: "Lead"
+    uk-text-meta: "Meta"
+  previewed_with:
+    - uk-padding-small
+
+text_size:
+  category: "Text"
+  label: "Text size"
+  links:
+    - "https://getuikit.com/docs/text#text-size"
+  options:
+    uk-text-small: "Small"
+    uk-text-default: "Default"
+    uk-text-large: "Large"
+  previewed_with:
+    - uk-padding-small
+
+text_weight:
+  category: "Text"
+  label: "Font weight"
+  links:
+    - "https://getuikit.com/docs/text#font-weight-and-style"
+  options:
+    uk-text-light: "Light"
+    uk-text-normal: "Normal"
+    uk-text-bold: "Bold"
+    uk-text-lighter: "Lighter"
+    uk-text-bolder: "Bolder"
+    uk-text-italic: "Italic"
+  previewed_with:
+    - uk-padding-small
+
+text_transform:
+  category: "Text"
+  label: "Text transform"
+  links:
+    - "https://getuikit.com/docs/text#text-transform"
+  options:
+    uk-text-capitalize: "Capitalize"
+    uk-text-uppercase: "Uppercase"
+    uk-text-lowercase: "Lowercase"
+  previewed_with:
+    - uk-padding-small
+
+text_decoration:
+  category: "Text"
+  label: "Text decoration"
+  links:
+    - "https://getuikit.com/docs/text#text-decoration"
+  options:
+    uk-text-decoration-none: "None"
+  previewed_with:
+    - uk-padding-small
+
+text_color:
+  category: "Text"
+  label: "Text color"
+  links:
+    - "https://getuikit.com/docs/text#text-color"
+  options:
+    uk-text-muted: "Muted"
+    uk-text-emphasis: "Emphasis"
+    uk-text-primary: "Primary"
+    uk-text-secondary: "Secondary"
+    uk-text-success: "Success"
+    uk-text-warning: "Warning"
+    uk-text-danger: "Danger"
+  previewed_with:
+    - uk-padding-small
+
+text_background:
+  category: "Text"
+  label: "Text background"
+  description: "Clip a background (gradient or image) to the text."
+  links:
+    - "https://getuikit.com/docs/text#text-background"
+  options:
+    uk-text-background: "Background"
+  previewed_with:
+    - uk-padding-small
+
+text_align:
+  category: "Text"
+  label: "Text alignment"
+  links:
+    - "https://getuikit.com/docs/text#text-alignment"
+  options:
+    uk-text-left: "Left"
+    uk-text-right: "Right"
+    uk-text-center: "Center"
+    uk-text-justify: "Justify"
+    uk-text-left@s: "Left from small"
+    uk-text-center@s: "Center from small"
+    uk-text-right@s: "Right from small"
+    uk-text-left@m: "Left from medium"
+    uk-text-center@m: "Center from medium"
+    uk-text-right@m: "Right from medium"
+    uk-text-left@l: "Left from large"
+    uk-text-center@l: "Center from large"
+    uk-text-right@l: "Right from large"
+  previewed_with:
+    - uk-padding-small
+
+text_vertical_align:
+  category: "Text"
+  label: "Vertical alignment"
+  links:
+    - "https://getuikit.com/docs/text#vertical-alignment"
+  options:
+    uk-text-top: "Top"
+    uk-text-middle: "Middle"
+    uk-text-bottom: "Bottom"
+    uk-text-baseline: "Baseline"
+
+text_wrapping:
+  category: "Text"
+  label: "Text wrapping"
+  links:
+    - "https://getuikit.com/docs/text#text-wrapping"
+  options:
+    uk-text-truncate: "Truncate"
+    uk-text-break: "Break"
+    uk-text-nowrap: "No wrap"
+
+dropcap:
+  category: "Text"
+  label: "Drop cap"
+  links:
+    - "https://getuikit.com/docs/utility#drop-cap"
+  options:
+    uk-dropcap: "Drop cap"
+
+column:
+  category: "Text"
+  label: "Text columns"
+  description: "Split the content into multiple columns."
+  links:
+    - "https://getuikit.com/docs/column"
+  options:
+    uk-column-1-2: "2 columns"
+    uk-column-1-3: "3 columns"
+    uk-column-1-4: "4 columns"
+    uk-column-1-2@m: "2 columns from medium"
+    uk-column-1-3@m: "3 columns from medium"
+    uk-column-1-4@m: "4 columns from medium"
+
+column_divider:
+  category: "Text"
+  label: "Text columns divider"
+  links:
+    - "https://getuikit.com/docs/column#divider"
+  options:
+    uk-column-divider: "Divider"
+
+################################################################################
+# Typography.
+# https://getuikit.com/docs/base https://getuikit.com/docs/heading
+################################################################################
+
+heading_style:
+  category: "Typography"
+  label: "Heading style"
+  description: "Give any element the style of a heading."
+  links:
+    - "https://getuikit.com/docs/base#heading"
+  options:
+    uk-h1: "H1"
+    uk-h2: "H2"
+    uk-h3: "H3"
+    uk-h4: "H4"
+    uk-h5: "H5"
+    uk-h6: "H6"
+
+heading_size:
+  category: "Typography"
+  label: "Heading size"
+  links:
+    - "https://getuikit.com/docs/heading#size-modifiers"
+  options:
+    uk-heading-small: "Small"
+    uk-heading-medium: "Medium"
+    uk-heading-large: "Large"
+    uk-heading-xlarge: "X-Large"
+    uk-heading-2xlarge: "2X-Large"
+    uk-heading-3xlarge: "3X-Large"
+
+link_style:
+  category: "Typography"
+  label: "Link style"
+  description: "Applied on a link or on a parent of links."
+  links:
+    - "https://getuikit.com/docs/link"
+  options:
+    uk-link-muted: "Muted"
+    uk-link-text: "Text"
+    uk-link-heading: "Heading"
+    uk-link-reset: "Reset"
+
+logo:
+  category: "Typography"
+  label: "Logo"
+  links:
+    - "https://getuikit.com/docs/utility#logo"
+  options:
+    uk-logo: "Logo"
+
+################################################################################
+# Colors and inverse.
+# https://getuikit.com/docs/background https://getuikit.com/docs/inverse
+################################################################################
+
+background_color:
+  category: "Colors"
+  label: "Background color"
+  links:
+    - "https://getuikit.com/docs/background#color"
+  options:
+    uk-background-default: "Default"
+    uk-background-muted: "Muted"
+    uk-background-primary:
+      label: "Primary"
+      previewed_with: ["uk-light"]
+    uk-background-secondary:
+      label: "Secondary"
+      previewed_with: ["uk-light"]
+  previewed_with:
+    - uk-padding-small
+
+background_size:
+  category: "Colors"
+  label: "Background image size"
+  links:
+    - "https://getuikit.com/docs/background#size"
+  options:
+    uk-background-cover: "Cover"
+    uk-background-contain: "Contain"
+    uk-background-width-1-1: "Full width"
+    uk-background-height-1-1: "Full height"
+
+background_position:
+  category: "Colors"
+  label: "Background image position"
+  links:
+    - "https://getuikit.com/docs/background#position"
+  options:
+    uk-background-top-left: "Top left"
+    uk-background-top-center: "Top center"
+    uk-background-top-right: "Top right"
+    uk-background-center-left: "Center left"
+    uk-background-center-center: "Center center"
+    uk-background-center-right: "Center right"
+    uk-background-bottom-left: "Bottom left"
+    uk-background-bottom-center: "Bottom center"
+    uk-background-bottom-right: "Bottom right"
+
+background_attachment:
+  category: "Colors"
+  label: "Background image attachment"
+  links:
+    - "https://getuikit.com/docs/background#attachment"
+  options:
+    uk-background-fixed: "Fixed"
+    uk-background-norepeat: "No repeat"
+
+background_blend:
+  category: "Colors"
+  label: "Background blend mode"
+  links:
+    - "https://getuikit.com/docs/background#blend-modes"
+  options:
+    uk-background-blend-multiply: "Multiply"
+    uk-background-blend-screen: "Screen"
+    uk-background-blend-overlay: "Overlay"
+    uk-background-blend-darken: "Darken"
+    uk-background-blend-lighten: "Lighten"
+    uk-background-blend-color-dodge: "Color dodge"
+    uk-background-blend-color-burn: "Color burn"
+    uk-background-blend-hard-light: "Hard light"
+    uk-background-blend-soft-light: "Soft light"
+    uk-background-blend-difference: "Difference"
+    uk-background-blend-exclusion: "Exclusion"
+    uk-background-blend-hue: "Hue"
+    uk-background-blend-saturation: "Saturation"
+    uk-background-blend-color: "Color"
+    uk-background-blend-luminosity: "Luminosity"
+
+inverse:
+  category: "Colors"
+  label: "Inverse"
+  description: "Invert the text color for content on dark (light) or light (dark) backgrounds."
+  links:
+    - "https://getuikit.com/docs/inverse"
+  options:
+    uk-light:
+      label: "Light"
+      previewed_with: ["uk-background-secondary"]
+    uk-dark: "Dark"
+  previewed_with:
+    - uk-padding-small
+
+################################################################################
+# Spacing.
+# https://getuikit.com/docs/margin https://getuikit.com/docs/padding
+################################################################################
+
+margin:
+  category: "Spacing"
+  label: "Margin"
+  links:
+    - "https://getuikit.com/docs/margin"
+  options:
+    uk-margin: "Default (bottom)"
+    uk-margin-xsmall: "X-Small"
+    uk-margin-small: "Small"
+    uk-margin-medium: "Medium"
+    uk-margin-large: "Large"
+    uk-margin-xlarge: "X-Large"
+
+margin_top:
+  category: "Spacing"
+  label: "Margin top"
+  links:
+    - "https://getuikit.com/docs/margin"
+  options:
+    uk-margin-top: "Default"
+    uk-margin-xsmall-top: "X-Small"
+    uk-margin-small-top: "Small"
+    uk-margin-medium-top: "Medium"
+    uk-margin-large-top: "Large"
+    uk-margin-xlarge-top: "X-Large"
+    uk-margin-remove-top: "Remove"
+
+margin_bottom:
+  category: "Spacing"
+  label: "Margin bottom"
+  links:
+    - "https://getuikit.com/docs/margin"
+  options:
+    uk-margin-bottom: "Default"
+    uk-margin-xsmall-bottom: "X-Small"
+    uk-margin-small-bottom: "Small"
+    uk-margin-medium-bottom: "Medium"
+    uk-margin-large-bottom: "Large"
+    uk-margin-xlarge-bottom: "X-Large"
+    uk-margin-remove-bottom: "Remove"
+
+margin_remove:
+  category: "Spacing"
+  label: "Remove margin"
+  links:
+    - "https://getuikit.com/docs/margin#remove"
+  options:
+    uk-margin-remove: "All"
+    uk-margin-remove-vertical: "Vertical"
+    uk-margin-remove-adjacent: "Adjacent"
+    uk-margin-remove-first-child: "First child"
+    uk-margin-remove-last-child: "Last child"
+
+margin_auto:
+  category: "Spacing"
+  label: "Auto margin"
+  links:
+    - "https://getuikit.com/docs/margin#auto"
+  options:
+    uk-margin-auto: "Horizontal"
+    uk-margin-auto-vertical: "Vertical"
+    uk-margin-auto-left: "Left"
+    uk-margin-auto-right: "Right"
+
+padding:
+  category: "Spacing"
+  label: "Padding"
+  links:
+    - "https://getuikit.com/docs/padding"
+  options:
+    uk-padding: "Default"
+    uk-padding-small: "Small"
+    uk-padding-large: "Large"
+  previewed_with:
+    - uk-background-muted
+
+padding_remove:
+  category: "Spacing"
+  label: "Remove padding"
+  links:
+    - "https://getuikit.com/docs/padding#remove"
+  options:
+    uk-padding-remove: "All"
+    uk-padding-remove-top: "Top"
+    uk-padding-remove-bottom: "Bottom"
+    uk-padding-remove-left: "Left"
+    uk-padding-remove-right: "Right"
+    uk-padding-remove-vertical: "Vertical"
+    uk-padding-remove-horizontal: "Horizontal"
+
+################################################################################
+# Sizing.
+# https://getuikit.com/docs/width https://getuikit.com/docs/height
+################################################################################
+
+width:
+  category: "Sizing"
+  label: "Width"
+  links:
+    - "https://getuikit.com/docs/width"
+  options:
+    uk-width-1-1: "Full"
+    uk-width-1-2: "1/2"
+    uk-width-1-3: "1/3"
+    uk-width-2-3: "2/3"
+    uk-width-1-4: "1/4"
+    uk-width-3-4: "3/4"
+    uk-width-1-5: "1/5"
+    uk-width-4-5: "4/5"
+    uk-width-1-6: "1/6"
+    uk-width-5-6: "5/6"
+    uk-width-auto: "Auto"
+    uk-width-expand: "Expand"
+  previewed_with:
+    - uk-background-muted
+
+width_medium:
+  category: "Sizing"
+  label: "Width from medium screens"
+  links:
+    - "https://getuikit.com/docs/width#responsive"
+  options:
+    uk-width-1-1@m: "Full"
+    uk-width-1-2@m: "1/2"
+    uk-width-1-3@m: "1/3"
+    uk-width-2-3@m: "2/3"
+    uk-width-1-4@m: "1/4"
+    uk-width-3-4@m: "3/4"
+    uk-width-auto@m: "Auto"
+    uk-width-expand@m: "Expand"
+
+width_fixed:
+  category: "Sizing"
+  label: "Fixed width"
+  links:
+    - "https://getuikit.com/docs/width#fixed-widths"
+  options:
+    uk-width-small: "Small (150px)"
+    uk-width-medium: "Medium (300px)"
+    uk-width-large: "Large (450px)"
+    uk-width-xlarge: "X-Large (600px)"
+    uk-width-2xlarge: "2X-Large (750px)"
+
+height:
+  category: "Sizing"
+  label: "Height"
+  links:
+    - "https://getuikit.com/docs/height"
+  options:
+    uk-height-1-1: "Full"
+    uk-height-small: "Small (150px)"
+    uk-height-medium: "Medium (300px)"
+    uk-height-large: "Large (450px)"
+    uk-height-max-small: "Max small"
+    uk-height-max-medium: "Max medium"
+    uk-height-max-large: "Max large"
+
+################################################################################
+# Layout.
+# https://getuikit.com/docs/flex https://getuikit.com/docs/position
+################################################################################
+
+flex_display:
+  category: "Layout"
+  label: "Flex display"
+  links:
+    - "https://getuikit.com/docs/flex"
+  options:
+    uk-flex: "Flex"
+    uk-flex-inline: "Inline flex"
+
+flex_justify:
+  category: "Layout"
+  label: "Flex horizontal alignment"
+  links:
+    - "https://getuikit.com/docs/flex#horizontal-alignment"
+  options:
+    uk-flex-left: "Left"
+    uk-flex-center: "Center"
+    uk-flex-right: "Right"
+    uk-flex-between: "Between"
+    uk-flex-around: "Around"
+
+flex_align:
+  category: "Layout"
+  label: "Flex vertical alignment"
+  links:
+    - "https://getuikit.com/docs/flex#vertical-alignment"
+  options:
+    uk-flex-stretch: "Stretch"
+    uk-flex-top: "Top"
+    uk-flex-middle: "Middle"
+    uk-flex-bottom: "Bottom"
+
+flex_direction:
+  category: "Layout"
+  label: "Flex direction"
+  links:
+    - "https://getuikit.com/docs/flex#direction-modifiers"
+  options:
+    uk-flex-row: "Row"
+    uk-flex-row-reverse: "Row reverse"
+    uk-flex-column: "Column"
+    uk-flex-column-reverse: "Column reverse"
+
+flex_wrap:
+  category: "Layout"
+  label: "Flex wrap"
+  links:
+    - "https://getuikit.com/docs/flex#wrap-modifiers"
+  options:
+    uk-flex-wrap: "Wrap"
+    uk-flex-wrap-reverse: "Wrap reverse"
+    uk-flex-nowrap: "No wrap"
+
+flex_item:
+  category: "Layout"
+  label: "Flex item"
+  links:
+    - "https://getuikit.com/docs/flex#dimensions"
+  options:
+    uk-flex-first: "First"
+    uk-flex-last: "Last"
+    uk-flex-none: "None"
+    uk-flex-auto: "Auto"
+    uk-flex-1: "1"
+
+position:
+  category: "Layout"
+  label: "Position"
+  links:
+    - "https://getuikit.com/docs/position"
+  options:
+    uk-position-relative: "Relative"
+    uk-position-absolute: "Absolute"
+    uk-position-fixed: "Fixed"
+    uk-position-z-index: "Z-index"
+
+position_placement:
+  category: "Layout"
+  label: "Position placement"
+  description: "Needs a positioned parent (Relative)."
+  links:
+    - "https://getuikit.com/docs/position"
+  options:
+    uk-position-top: "Top"
+    uk-position-bottom: "Bottom"
+    uk-position-left: "Left"
+    uk-position-right: "Right"
+    uk-position-top-left: "Top left"
+    uk-position-top-center: "Top center"
+    uk-position-top-right: "Top right"
+    uk-position-center: "Center"
+    uk-position-center-left: "Center left"
+    uk-position-center-right: "Center right"
+    uk-position-bottom-left: "Bottom left"
+    uk-position-bottom-center: "Bottom center"
+    uk-position-bottom-right: "Bottom right"
+    uk-position-cover: "Cover"
+
+display:
+  category: "Layout"
+  label: "Display"
+  links:
+    - "https://getuikit.com/docs/utility#display"
+  options:
+    uk-display-block: "Block"
+    uk-display-inline: "Inline"
+    uk-display-inline-block: "Inline block"
+
+overflow:
+  category: "Layout"
+  label: "Overflow"
+  links:
+    - "https://getuikit.com/docs/utility#overflow"
+  options:
+    uk-overflow-hidden: "Hidden"
+    uk-overflow-auto: "Auto"
+
+float:
+  category: "Layout"
+  label: "Float"
+  links:
+    - "https://getuikit.com/docs/float"
+  options:
+    uk-float-left: "Left"
+    uk-float-right: "Right"
+    uk-clearfix: "Clearfix"
+
+################################################################################
+# Visibility.
+# https://getuikit.com/docs/visibility
+################################################################################
+
+visibility_hidden:
+  category: "Visibility"
+  label: "Hidden from breakpoint"
+  links:
+    - "https://getuikit.com/docs/visibility#responsive"
+  options:
+    uk-hidden: "Always hidden"
+    uk-hidden@s: "From small"
+    uk-hidden@m: "From medium"
+    uk-hidden@l: "From large"
+    uk-hidden@xl: "From x-large"
+
+visibility_visible:
+  category: "Visibility"
+  label: "Visible from breakpoint"
+  links:
+    - "https://getuikit.com/docs/visibility#responsive"
+  options:
+    uk-visible@s: "From small"
+    uk-visible@m: "From medium"
+    uk-visible@l: "From large"
+    uk-visible@xl: "From x-large"
+
+visibility_misc:
+  category: "Visibility"
+  label: "Visibility helpers"
+  links:
+    - "https://getuikit.com/docs/visibility"
+  options:
+    uk-invisible: "Invisible"
+    uk-hidden-visually: "Visually hidden"
+    uk-hidden-hover: "Hidden until hover"
+    uk-visible-toggle: "Visible toggle (parent)"
+
+################################################################################
+# Effects.
+# https://getuikit.com/docs/utility https://getuikit.com/docs/animation
+################################################################################
+
+box_shadow:
+  category: "Effects"
+  label: "Box shadow"
+  links:
+    - "https://getuikit.com/docs/utility#box-shadow"
+  options:
+    uk-box-shadow-small: "Small"
+    uk-box-shadow-medium: "Medium"
+    uk-box-shadow-large: "Large"
+    uk-box-shadow-xlarge: "X-Large"
+  previewed_with:
+    - uk-padding-small
+    - uk-margin
+
+box_shadow_hover:
+  category: "Effects"
+  label: "Box shadow on hover"
+  links:
+    - "https://getuikit.com/docs/utility#box-shadow"
+  options:
+    uk-box-shadow-hover-small: "Small"
+    uk-box-shadow-hover-medium: "Medium"
+    uk-box-shadow-hover-large: "Large"
+    uk-box-shadow-hover-xlarge: "X-Large"
+  previewed_with:
+    - uk-padding-small
+    - uk-margin
+
+box_shadow_bottom:
+  category: "Effects"
+  label: "Box shadow bottom"
+  links:
+    - "https://getuikit.com/docs/utility#box-shadow"
+  options:
+    uk-box-shadow-bottom: "Bottom"
+
+border_radius:
+  category: "Effects"
+  label: "Border radius"
+  links:
+    - "https://getuikit.com/docs/utility#border-radius"
+  options:
+    uk-border-rounded: "Rounded"
+    uk-border-circle: "Circle"
+    uk-border-pill: "Pill"
+  previewed_with:
+    - uk-padding-small
+    - uk-background-muted
+
+object_fit:
+  category: "Effects"
+  label: "Object fit"
+  links:
+    - "https://getuikit.com/docs/utility#object-fit-and-position"
+  options:
+    uk-object-cover: "Cover"
+    uk-object-contain: "Contain"
+    uk-object-fill: "Fill"
+    uk-object-none: "None"
+    uk-object-scale-down: "Scale down"
+
+animation:
+  category: "Effects"
+  label: "Animation"
+  links:
+    - "https://getuikit.com/docs/animation"
+  options:
+    uk-animation-fade: "Fade"
+    uk-animation-scale-up: "Scale up"
+    uk-animation-scale-down: "Scale down"
+    uk-animation-slide-top: "Slide top"
+    uk-animation-slide-bottom: "Slide bottom"
+    uk-animation-slide-left: "Slide left"
+    uk-animation-slide-right: "Slide right"
+    uk-animation-slide-top-small: "Slide top small"
+    uk-animation-slide-bottom-small: "Slide bottom small"
+    uk-animation-kenburns: "Ken Burns"
+    uk-animation-shake: "Shake"
+
+transition_toggle:
+  category: "Effects"
+  label: "Transition toggle"
+  description: "Parent element that triggers the transitions of its children on hover."
+  links:
+    - "https://getuikit.com/docs/transition"
+  options:
+    uk-transition-toggle: "Transition toggle"
+
+transition:
+  category: "Effects"
+  label: "Transition"
+  description: "Needs a parent with Transition toggle."
+  links:
+    - "https://getuikit.com/docs/transition"
+  options:
+    uk-transition-fade: "Fade"
+    uk-transition-scale-up: "Scale up"
+    uk-transition-scale-down: "Scale down"
+    uk-transition-slide-top: "Slide top"
+    uk-transition-slide-bottom: "Slide bottom"
+    uk-transition-slide-left: "Slide left"
+    uk-transition-slide-right: "Slide right"
+
+disabled:
+  category: "Effects"
+  label: "Disabled"
+  links:
+    - "https://getuikit.com/docs/utility#disabled"
+  options:
+    uk-disabled: "Disabled"
+
+responsive_media:
+  category: "Effects"
+  label: "Responsive media"
+  links:
+    - "https://getuikit.com/docs/utility#responsive-objects"
+  options:
+    uk-responsive-width: "Responsive width"
+    uk-responsive-height: "Responsive height"

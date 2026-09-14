@@ -1,0 +1,9 @@
+{% if open %}
+  {% set attributes = attributes.addClass('uk-open') %}
+{% endif %}
+<div{{ attributes }}>
+  <a class="uk-accordion-title" href="#">{{ title }}</a>
+  <div class="uk-accordion-content">
+    {{ content }}
+  </div>
+</div>

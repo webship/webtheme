@@ -1,0 +1,10 @@
+name: "(Description list item)"
+description: "Internal: to be used in the 'Description list' component."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/description-list"
+slots:
+  term:
+    title: Term
+  description:
+    title: Description

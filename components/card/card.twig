@@ -1,0 +1,57 @@
+{% set attributes = attributes.addClass([
+  'uk-card',
+  variant != 'blank' ? 'uk-card-' ~ variant|default('default'),
+  hover ? 'uk-card-hover',
+  size ? 'uk-card-' ~ size,
+]) %}
+{% set heading_level = heading_level|default(3) %}
+{% set image_position = image_position|default('top') %}
+{% set side_image = image and image_position in ['left', 'right'] %}
+{% if side_image %}
+  {% set attributes = attributes.addClass(['uk-grid-collapse', 'uk-child-width-1-2@s', 'uk-margin']).setAttribute('uk-grid', '') %}
+{% endif %}
+
+<div{{ attributes }}>
+  {% if side_image %}
+    <div class="uk-card-media-{{ image_position }}{{ image_position == 'right' ? ' uk-flex-last@s' }}">
+      {{ image }}
+    </div>
+    <div>
+  {% elseif image and image_position == 'top' %}
+    <div class="uk-card-media-top">
+      {{ image }}
+    </div>
+  {% endif %}
+
+  {% if header %}
+    <div class="uk-card-header">
+      {{ header }}
+    </div>
+  {% endif %}
+
+  {% if badge or title or content %}
+    <div class="uk-card-body">
+      {% if badge %}
+        <div class="uk-card-badge">{{ badge }}</div>
+      {% endif %}
+      {% if title %}
+        <h{{ heading_level }} class="uk-card-title">{{ title }}</h{{ heading_level }}>
+      {% endif %}
+      {{ content }}
+    </div>
+  {% endif %}
+
+  {% if footer %}
+    <div class="uk-card-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+
+  {% if side_image %}
+    </div>
+  {% elseif image and image_position == 'bottom' %}
+    <div class="uk-card-media-bottom">
+      {{ image }}
+    </div>
+  {% endif %}
+</div>

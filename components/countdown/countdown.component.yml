@@ -1,0 +1,18 @@
+name: Countdown
+description: "Create a countdown timer to a given date."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/countdown"
+props:
+  type: object
+  properties:
+    date:
+      title: Date
+      description: "ISO 8601 date, for example 2030-01-01T00:00:00+00:00."
+      type: string
+    labels:
+      title: "Show labels"
+      type: boolean
+    separators:
+      title: "Show separators"
+      type: boolean

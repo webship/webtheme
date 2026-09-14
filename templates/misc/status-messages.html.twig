@@ -1,10 +1,7 @@
 {#
 /**
  * @file
- * Theme override for status messages.
- *
- * Delegates the markup to the webtheme:status-messages SDC. See that
- * component for the full variable documentation.
+ * Theme override for status messages, with the UIkit Alert component.
  *
  * Available variables:
  * - message_list: List of messages to be displayed, grouped by type.
@@ -12,8 +9,23 @@
  * - attributes: HTML attributes for the element.
  */
 #}
-{{ attach_library('webtheme/messages') }}
-{% include 'webtheme:status-messages' with {
-  message_list: message_list,
-  status_headings: status_headings,
-} %}
+<div data-drupal-messages>
+  {% for type, messages in message_list %}
+    {% set variants = {
+      'status': 'success',
+      'warning': 'warning',
+      'error': 'danger',
+    } %}
+    {% for message in messages %}
+      {#
+        Attributes are not passed: with multiple message types, the classes of
+        the previous type would leak into the next alerts.
+      #}
+      {{ include('webtheme:alert', {
+        variant: variants[type]|default('primary'),
+        message: message,
+        close: true,
+      }, with_context: false) }}
+    {% endfor %}
+  {% endfor %}
+</div>

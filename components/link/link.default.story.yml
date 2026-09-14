@@ -1,0 +1,5 @@
+name: Default
+slots:
+  label: "Link"
+props:
+  url: "https://getuikit.com"

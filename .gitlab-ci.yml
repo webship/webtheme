@@ -33,7 +33,7 @@ cspell:
 # The paired .eslintignore excludes vendor/, .yarn/, web/ so `eslint .` only
 # lints real module source.
 .lint-yarn:
-  image: node:18
+  image: node:22
   dependencies: []
   variables:
     YARN_ENABLE_GLOBAL_CACHE: "false"
@@ -92,6 +92,9 @@ stylelint:
     DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
     DRUPAL_TEST_BASE_URL: "http://localhost"
     LAUNCH_URL: "http://localhost"
+    # The custom steps run Drush as the web server user on the CI site.
+    DRUSH: "drush-www"
+    DRUPAL_PROJECT_DIR: $CI_PROJECT_DIR
     FORCE_COLOR: "1"
   before_script:
     # ── Web server ──────────────────────────────────────────────────────────
@@ -123,6 +126,8 @@ stylelint:
     # in the Tags vocabulary) and Basic page.
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT recipe $CI_PROJECT_DIR/$_WEB_ROOT/core/recipes/article_tags -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT recipe $CI_PROJECT_DIR/$_WEB_ROOT/core/recipes/page_content_type -y
+    # ── UI Suite modules and Display Builder used by the tests ──────────────
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT en ui_patterns_library ui_skins ui_styles_library ui_icons_patterns display_builder_page_layout display_builder_ui -y
     # ── Theme install + set as default ──────────────────────────────────────
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT theme:enable webtheme -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT config:set system.theme default webtheme -y
@@ -143,11 +148,13 @@ stylelint:
     - 'echo "----- front page body (first 120 lines) -----"; head -120 /tmp/front.html || true'
     - '$CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT watchdog:show --count=25 --severity=Error --extended || true'
     - 'echo "----- apache/php error log -----"; tail -80 /var/log/apache2/error.log 2>/dev/null || tail -80 /var/log/php*.log 2>/dev/null || true'
-    # Per-role test users are provisioned by the first scenario in the suite
-    # (01-01-01-users-login.feature, "Webmaster can log in and provision
-    # testing users"), so no separate drush step is needed here.
-    # ── Node.js 20 ──────────────────────────────────────────────────────────
-    - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+    # The administrator steps log in with a one-time login link (drush user:login).
+    # ── Drush as the web server user, for the custom steps ──────────────────
+    - chown -R www-data:www-data $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - printf '#!/bin/sh\nexec su -s /bin/sh www-data -c "HOME=/tmp %s/vendor/bin/drush --root=%s/%s --uri=http://localhost $*"\n' "$CI_PROJECT_DIR" "$CI_PROJECT_DIR" "$_WEB_ROOT" > /usr/local/bin/drush-www
+    - chmod +x /usr/local/bin/drush-www
+    # ── Node.js 22 (required by Cucumber-js) ────────────────────────────────
+    - curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
     - apt-get install -y nodejs
     - node --version && npm --version
     # ── Yarn deps + Playwright Chromium ─────────────────────────────────────

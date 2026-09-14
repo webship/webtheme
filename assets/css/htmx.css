@@ -1,0 +1,36 @@
+/**
+ * @file
+ * HTMX navigation: progress indicator while a boosted page is loading.
+ */
+
+[data-off-canvas-main-canvas].htmx-request::before {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  content: "";
+  animation: webtheme-htmx-progress 1.2s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, var(--uk-global-primary-background, #1e87f0), transparent);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+@keyframes webtheme-htmx-progress {
+  from {
+    background-position: -50% 0;
+  }
+
+  to {
+    background-position: 150% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-off-canvas-main-canvas].htmx-request::before {
+    animation: none;
+    background: var(--uk-global-primary-background, #1e87f0);
+    opacity: 0.6;
+  }
+}

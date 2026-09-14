@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Theme override for the local actions (primary admin actions) block.
+ */
+#}
+{% if content %}
+  <ul{{ attributes.addClass(['uk-subnav', 'uk-margin']) }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    {{ content }}
+  </ul>
+{% endif %}

@@ -1,0 +1,20 @@
+name: Progress
+description: "Define a progress bar that can be used to visualize the progression of a task."
+group: Feedback
+links:
+  - "https://getuikit.com/docs/progress"
+props:
+  type: object
+  properties:
+    value:
+      title: Value
+      type: number
+      minimum: 0
+    max:
+      title: Maximum
+      description: "Default: 100."
+      type: number
+      minimum: 1
+    label:
+      title: "Accessible label"
+      type: string

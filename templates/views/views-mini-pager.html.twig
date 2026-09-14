@@ -1,16 +1,17 @@
 {#
 /**
  * @file
- * Theme override for a views mini-pager.
+ * Theme override for the views mini-pager, with the UIkit Pagination component.
  *
- * Delegates the markup to the webtheme:views-mini-pager SDC. Only invoked
- * when there is a pager to render: the hook can fire with NULL items, and
- * the SDC's required props reject NULL under assertion-enabled validation
- * (DrupalCI), which would fatal the page.
+ * Available variables:
+ * - items: List of pager items, normalized as links.
  *
- * @see template_preprocess_views_mini_pager()
+ * @see \Drupal\webtheme\Hook\PreprocessHooks::preprocessViewsMiniPager()
  */
 #}
 {% if items %}
-  {% include 'webtheme:views-mini-pager' with { heading_id: heading_id, items: items } only %}
+  {{ include('webtheme:pagination', {
+    items: items,
+    alignment: 'center',
+  }, with_context: false) }}
 {% endif %}

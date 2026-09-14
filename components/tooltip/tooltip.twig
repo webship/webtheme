@@ -1,0 +1,6 @@
+{% set attributes = attributes.addClass('uk-inline')
+  .setAttribute('title', text|default(''))
+  .setAttribute('uk-tooltip', 'pos: ' ~ position|default('top')) %}
+<span{{ attributes }}>
+  {{ content }}
+</span>

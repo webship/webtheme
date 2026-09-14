@@ -1,0 +1,22 @@
+name: Pagination
+description: "Create a pagination to navigate through pages. The item without URL is the current page."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/pagination"
+props:
+  type: object
+  properties:
+    items:
+      title: Items
+      $ref: "ui-patterns://links"
+    alignment:
+      title: Alignment
+      type: string
+      enum:
+        - left
+        - center
+        - right
+      "meta:enum":
+        left: "Left (Default)"
+        center: Center
+        right: Right

@@ -1,0 +1,17 @@
+name: "(Table row)"
+description: "Internal: to be used in the 'Table' component."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/table"
+slots:
+  cells:
+    title: Cells
+    expected:
+      - "webtheme:table_cell"
+props:
+  type: object
+  properties:
+    active:
+      title: Active
+      description: "Highlight the row."
+      type: boolean

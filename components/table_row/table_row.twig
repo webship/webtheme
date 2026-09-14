@@ -1,0 +1,6 @@
+{% if active %}
+  {% set attributes = attributes.addClass('uk-active') %}
+{% endif %}
+<tr{{ attributes }}>
+  {{ cells }}
+</tr>

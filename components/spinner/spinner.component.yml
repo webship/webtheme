@@ -1,0 +1,14 @@
+name: Spinner
+description: "Create an animated loading spinner."
+group: Feedback
+links:
+  - "https://getuikit.com/docs/spinner"
+props:
+  type: object
+  properties:
+    ratio:
+      title: Ratio
+      description: "Size multiplier. Default: 1 (30px)."
+      type: number
+      minimum: 0.5
+      maximum: 5

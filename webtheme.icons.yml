@@ -1,0 +1,32 @@
+uikit:
+  label: "UIkit"
+  description: "The UIkit icon set, shipped as SVG files with the theme."
+  links:
+    - "https://getuikit.com/docs/icon"
+  license:
+    name: MIT
+    url: "https://github.com/uikit/uikit/blob/develop/LICENSE.md"
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - "icons/uikit/{icon_id}.svg"
+  settings:
+    ratio:
+      title: "Ratio"
+      description: "Scale the 20px icon: 1 = 20px, 2 = 40px."
+      type: number
+      minimum: 0.5
+      maximum: 10
+      multipleOf: 0.5
+      default: 1
+    alt:
+      title: "Alt text"
+      description: "Accessibility alternative text, leave empty for a decorative icon."
+      type: string
+  template: >-
+    {% set size = (20 * ratio|default(1))|round %}
+    <svg xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" width="{{ size }}" height="{{ size }}" viewBox="0 0 20 20"
+    {% if alt is empty %} aria-hidden="true"{% else %} role="img" aria-label="{{ alt }}"{% endif %}>
+    {{ content }}
+    </svg>

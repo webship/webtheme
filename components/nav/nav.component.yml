@@ -1,0 +1,35 @@
+name: Nav
+description: "Vertical navigation, for sidebars, offcanvas and dropdowns. Links without URL are headers."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/nav"
+variants:
+  default:
+    title: Default
+  primary:
+    title: Primary
+    description: "Bigger links, for offcanvas and modals."
+  secondary:
+    title: Secondary
+  dropdown:
+    title: Dropdown
+    description: "To be used in a Dropdown component."
+  navbar_dropdown:
+    title: "Navbar dropdown"
+    description: "To be used in a dropdown of the Navbar."
+props:
+  type: object
+  properties:
+    items:
+      title: Items
+      $ref: "ui-patterns://links"
+    accordion:
+      title: Accordion
+      description: "Sub items are collapsed in an accordion."
+      type: boolean
+    divider:
+      title: Divider
+      type: boolean
+    center:
+      title: Centered
+      type: boolean

@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override for the page wrapper.
+ *
+ * The "data-off-canvas-main-canvas" attribute is required by the off-canvas
+ * dialog of Drupal core.
+ *
+ * With the HTMX navigation (theme setting), the links inside the wrapper are
+ * boosted: HTMX requests the page and swaps only this wrapper, so the
+ * administration toolbar stays in place.
+ *
+ * Available variables:
+ * - children: Contains the child elements of the page.
+ * - htmx_navigation: Whether the HTMX navigation is enabled.
+ *
+ * @see \Drupal\webtheme\Hook\ThemeHooks::preprocessOffCanvasPageWrapper()
+ * @see assets/js/htmx-navigation.js
+ */
+#}
+{% if children %}
+  {% if htmx_navigation %}
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas hx-boost="true" hx-target="[data-off-canvas-main-canvas]" hx-select="[data-off-canvas-main-canvas]" hx-swap="outerHTML show:window:top" hx-push-url="true">
+      {{ children }}
+    </div>
+  {% else %}
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      {{ children }}
+    </div>
+  {% endif %}
+{% endif %}

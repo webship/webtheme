@@ -1,114 +1,32 @@
-name: 'Webtheme'
+name: Webtheme
 type: theme
-base theme: false
-description: Webtheme is the default theme for the Webship.co portal site.
+description: 'The theme of the Webship.co portal site, generated from UI Suite UIkit: SDC components, UIkit and HTMX, with the Webship.co colors and design.'
 package: Webship
-core_version_requirement: ^11.4 || ^12
+core_version_requirement: '^11.4 || ^12'
+'base theme': false
+logo: logo.svg
+dependencies:
+  - 'ui_patterns:ui_patterns'
+  - 'ui_skins:ui_skins'
+  - 'ui_styles:ui_styles'
+  - 'ui_icons:ui_icons_patterns'
 regions:
+  navbar_left: 'Navbar left'
+  navbar_center: 'Navbar center'
+  navbar_right: 'Navbar right'
+  offcanvas: Offcanvas
   header: Header
-  primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
-  hero: 'Hero (full width)'
   highlighted: Highlighted
-  breadcrumb: Breadcrumb
-  social: Social Bar
-  content_above: Content Above
+  help: Help
   content: Content
-  sidebar: 'Sidebar'
-  content_below: 'Content Below'
-  footer_top: 'Footer Top'
-  footer_bottom: 'Footer Bottom'
-
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
 libraries:
-  - webtheme/global-styling
-  - webtheme/global-scripts
-  - webtheme/book
-  - webtheme/cke-dialog
-  - webtheme/comments
-  - webtheme/content-below
-  - webtheme/content_moderation
-  - webtheme/details
-  - webtheme/dialog.off_canvas
-  - webtheme/dropbutton
-  - webtheme/drupal.dialog
-  - webtheme/drupal.node.preview
-  - webtheme/feed
-  - webtheme/filter.theme
-  - webtheme/forum
-  - webtheme/layout_builder_fourcol_section
-  - webtheme/layout_builder_threecol_section
-  - webtheme/layout_builder_twocol_section
-  - webtheme/layout_discovery_section
-  - webtheme/layout-views-grid-horizontal
-  - webtheme/layout-views-grid-vertical
-  - webtheme/local-actions
-  - webtheme/maintenance-page
-  - webtheme/menu-sidebar
-  - webtheme/navigation-primary
-  - webtheme/navigation-secondary
-  - webtheme/powered-by-block
-  - webtheme/progress
-  - webtheme/search-narrow
-  - webtheme/search-results
-  - webtheme/search-wide
-  - webtheme/sidebar
-  - webtheme/tabs
-  - webtheme/tags
-  - webtheme/webreleases
-
-libraries-override:
-  core/drupal.ajax:
-    css:
-      component:
-        core/components/ajax-progress.module.css: css/components/ajax-progress.module.css
-  core/drupal.autocomplete:
-    css:
-      component:
-        core/components/autocomplete-loading.module.css: css/components/autocomplete-loading.module.css
-  system/admin:
-    css:
-      theme:
-        css/system.admin.css: false
-  core/drupal.checkbox: false
-  core/drupal.dropbutton:
-    css:
-      component:
-        misc/dropbutton/dropbutton.css: css/components/dropbutton.css
-  core/drupal.vertical-tabs:
-    css:
-      component:
-        misc/vertical-tabs.css: css/components/vertical-tabs.css
-  media/oembed.formatter: false
-  layout_builder/twocol_section: webtheme/layout_builder_twocol_section
-  layout_builder/threecol_section: webtheme/layout_builder_threecol_section
-  layout_builder/fourcol_section: webtheme/layout_builder_fourcol_section
-
-libraries-extend:
-  views/views.responsive-grid:
-    - webtheme/views.responsive-grid
-  core/drupal.message:
-    - webtheme/messages
-  core/drupal.collapse:
-    - webtheme/details
-  core/drupal.dialog.off_canvas:
-    - webtheme/dialog.off_canvas
-  core/drupal.progress:
-    - webtheme/progress
-  core/drupal.dropbutton:
-    - webtheme/dropbutton
-  layout_discovery/onecol:
-    - webtheme/layout_discovery_section
-  layout_discovery/twocol_bricks:
-    - webtheme/layout_discovery_section
-  layout_discovery/twocol:
-    - webtheme/layout_discovery_section
-  layout_discovery/threecol_25_50_25:
-    - webtheme/layout_discovery_section
-  layout_discovery/threecol_33_34_33:
-    - webtheme/layout_discovery_section
-  node/drupal.node.preview:
-    - webtheme/drupal.node.preview
-  core/ckeditor:
-    - webtheme/cke-dialog
-  content_moderation/content_moderation:
-    - webtheme/content_moderation
+  - webtheme/uikit
+  - webtheme/base
+ckeditor5-stylesheets:
+  - assets/css/ckeditor5.css
+generator: 'ui_suite_uikit:unknown-version'

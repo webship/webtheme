@@ -1,0 +1,12 @@
+name: "Dropdown nav"
+props:
+  variant: dropdown
+  items:
+    - title: "Active"
+      url: "#"
+      in_active_trail: true
+    - title: "Item"
+      url: "#"
+    - title: "Header"
+    - title: "Item"
+      url: "#"

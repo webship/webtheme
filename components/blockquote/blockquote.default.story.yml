@@ -1,0 +1,12 @@
+name: Default
+slots:
+  content:
+    type: html_tag
+    tag: p
+    attributes:
+      class:
+        - uk-margin-small-bottom
+    value: "The blockquote element represents content that is quoted from another source."
+  footer: "Someone famous in Source Title"
+props:
+  cite: "https://getuikit.com"

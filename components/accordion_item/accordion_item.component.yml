@@ -1,0 +1,16 @@
+name: "(Accordion item)"
+description: "Internal: to be used in the 'Accordion' component."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/accordion"
+slots:
+  title:
+    title: Title
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    open:
+      title: "Open by default"
+      type: boolean

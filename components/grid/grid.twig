@@ -1,0 +1,18 @@
+{% set attributes = attributes.addClass([
+  'uk-grid',
+  child_width ? 'uk-child-width-' ~ child_width,
+  child_width_s ? 'uk-child-width-' ~ child_width_s ~ '@s',
+  child_width_m ? 'uk-child-width-' ~ child_width_m ~ '@m',
+  child_width_l ? 'uk-child-width-' ~ child_width_l ~ '@l',
+  child_width_xl ? 'uk-child-width-' ~ child_width_xl ~ '@xl',
+  gap ? 'uk-grid-' ~ gap,
+  divider ? 'uk-grid-divider',
+  match ? 'uk-grid-match',
+]) %}
+{% set attributes = attributes.setAttribute('uk-grid', masonry ? 'masonry: pack' : '') %}
+{% set items = items and items is not sequence ? [items] : items %}
+<div{{ attributes }}>
+  {% for item in items %}
+    <div>{{ item }}</div>
+  {% endfor %}
+</div>

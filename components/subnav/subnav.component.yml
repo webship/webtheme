@@ -1,0 +1,19 @@
+name: Subnav
+description: "Create a sub navigation, for secondary links, filters or local tasks."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/subnav"
+variants:
+  default:
+    title: Default
+  divider:
+    title: Divider
+  pill:
+    title: Pill
+props:
+  type: object
+  properties:
+    items:
+      title: Items
+      description: "Items without URL are disabled."
+      $ref: "ui-patterns://links"

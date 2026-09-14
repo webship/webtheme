@@ -9,8 +9,8 @@ dependencies:
     - webtheme
 id: webtheme_account_menu
 theme: webtheme
-region: secondary_menu
-weight: -4
+region: navbar_right
+weight: 0
 provider: null
 plugin: 'system_menu_block:account'
 settings:

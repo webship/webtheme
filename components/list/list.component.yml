@@ -1,0 +1,56 @@
+name: List
+description: "Easily create nicely looking lists, in different styles."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/list"
+variants:
+  default:
+    title: Default
+  divider:
+    title: Divider
+  striped:
+    title: Striped
+slots:
+  items:
+    title: Items
+    description: "Each item is wrapped in a list item."
+props:
+  type: object
+  properties:
+    marker:
+      title: Marker
+      type: string
+      enum:
+        - disc
+        - circle
+        - square
+        - decimal
+        - hyphen
+      "meta:enum":
+        disc: Disc
+        circle: Circle
+        square: Square
+        decimal: Decimal
+        hyphen: Hyphen
+    color:
+      title: "Marker color"
+      type: string
+      enum:
+        - muted
+        - emphasis
+        - primary
+        - secondary
+      "meta:enum":
+        muted: Muted
+        emphasis: Emphasis
+        primary: Primary
+        secondary: Secondary
+    size:
+      title: Spacing
+      type: string
+      enum:
+        - large
+        - collapse
+      "meta:enum":
+        large: Large
+        collapse: Collapse

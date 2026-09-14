@@ -1,22 +1,14 @@
 # Schema for the configuration files of the Webtheme theme.
 webtheme.settings:
   type: theme_settings
-  label: 'webtheme settings'
+  label: "Webtheme settings"
   mapping:
-    third_party_settings:
-      type: mapping
-      label: 'Third party settings'
-      mapping:
-        shortcut:
-          type: mapping
-          label: 'Shortcut'
-          mapping:
-            module_link:
-              type: boolean
-              label: 'Module Link'
-    mobile_menu_all_widths:
-      type: integer
-      label: "Mobile menu all widths"
-    site_branding_bg_color:
+    uikit_source:
       type: string
-      label: "Site branding background color"
+      label: "UIkit library source"
+    navbar_sticky:
+      type: boolean
+      label: "Sticky navbar"
+    htmx_navigation:
+      type: boolean
+      label: "HTMX navigation"

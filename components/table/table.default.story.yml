@@ -1,0 +1,49 @@
+name: Default
+slots:
+  header:
+    type: component
+    component: "webtheme:table_row"
+    slots:
+      cells:
+        - type: component
+          component: "webtheme:table_cell"
+          slots:
+            content: "Table heading"
+          props:
+            tag: th
+        - type: component
+          component: "webtheme:table_cell"
+          slots:
+            content: "Table heading"
+          props:
+            tag: th
+  rows:
+    - type: component
+      component: "webtheme:table_row"
+      slots:
+        cells:
+          - type: component
+            component: "webtheme:table_cell"
+            slots:
+              content: "Table data"
+          - type: component
+            component: "webtheme:table_cell"
+            slots:
+              content: "Table data"
+    - type: component
+      component: "webtheme:table_row"
+      slots:
+        cells:
+          - type: component
+            component: "webtheme:table_cell"
+            slots:
+              content: "Table data"
+          - type: component
+            component: "webtheme:table_cell"
+            slots:
+              content: "Table data"
+props:
+  variant: striped
+  caption: "Table caption"
+  hover: true
+  overflow: true

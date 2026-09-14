@@ -1,45 +1,39 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Comment
-status: stable
-description: >
-  Threaded comment with avatar, author/time meta, optional title, and the
-  comment body. Matches the original webtheme markup (comment__picture
-  / comment__text-content / comment__meta classes) so the live
-  webship.co styles keep working.
+description: "Create a comment, with an avatar, a title, meta data and content."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/comment"
+slots:
+  avatar:
+    title: Avatar
+  title:
+    title: Title
+  meta:
+    title: Meta
+  content:
+    title: Content
+  actions:
+    title: Actions
+    description: "Reply, edit and delete links."
 props:
   type: object
   properties:
-    extra_classes:
-      type: [array, "null"]
-      title: Modifier classes
-      description: Extra wrapper classes (by-anonymous, by-X-author, comment--{status}, …).
-      items:
-        type: [string, "null"]
-    user_picture:
-      type: [string, object, "null"]
-      title: User picture
-    author:
-      type: [string, object, "null"]
-      title: Author
-    created:
-      type: [string, object, "null"]
-      title: Created date
-    parent:
-      type: [string, object, "null"]
-      title: Parent comment summary
-      description: Visually-hidden summary used by screen readers.
-    title:
-      type: [string, object, "null"]
-      title: Comment title
-    title_attributes:
-      type: Drupal\Core\Template\Attribute
-    content_attributes:
-      type: Drupal\Core\Template\Attribute
-slots:
-  title_prefix:
-    title: Title prefix
-  title_suffix:
-    title: Title suffix
-  content:
-    title: Content
-    description: The comment body (already rendered by Drupal).
+    heading_level:
+      title: "Heading level"
+      type: integer
+      enum:
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      "meta:enum":
+        2: h2
+        3: h3
+        4: "h4 (Default)"
+        5: h5
+        6: h6
+    primary:
+      title: Highlighted
+      description: "Highlight the comment, for example the author's own."
+      type: boolean

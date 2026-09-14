@@ -1,0 +1,14 @@
+name: "(Switcher tab)"
+description: "Internal: to be used in the 'Tabs' slot of the 'Switcher' component."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/switcher"
+slots:
+  label:
+    title: Label
+props:
+  type: object
+  properties:
+    active:
+      title: "Active by default"
+      type: boolean

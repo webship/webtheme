@@ -1,0 +1,88 @@
+name: Slider
+description: "Create a responsive carousel slider: each item of the slot is a slide."
+group: Media
+links:
+  - "https://getuikit.com/docs/slider"
+slots:
+  items:
+    title: Items
+    description: "Each item is wrapped in a slide."
+props:
+  type: object
+  properties:
+    child_width:
+      title: "Visible slides (all screens)"
+      type: string
+      enum: &slides
+        - 1-1
+        - 1-2
+        - 1-3
+        - 1-4
+        - 1-5
+        - 1-6
+        - auto
+      "meta:enum": &slides_labels
+        1-1: "1 slide"
+        1-2: "2 slides"
+        1-3: "3 slides"
+        1-4: "4 slides"
+        1-5: "5 slides"
+        1-6: "6 slides"
+        auto: "Auto (content width)"
+    child_width_s:
+      title: "Visible slides from small screens"
+      type: string
+      enum: *slides
+      "meta:enum": *slides_labels
+    child_width_m:
+      title: "Visible slides from medium screens"
+      type: string
+      enum: *slides
+      "meta:enum": *slides_labels
+    child_width_l:
+      title: "Visible slides from large screens"
+      type: string
+      enum: *slides
+      "meta:enum": *slides_labels
+    gap:
+      title: Gap
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+      "meta:enum":
+        small: Small
+        medium: Medium
+        large: Large
+    center:
+      title: Centered
+      type: boolean
+    finite:
+      title: "No infinite scrolling"
+      type: boolean
+    sets:
+      title: "Slide by sets"
+      type: boolean
+    autoplay:
+      title: Autoplay
+      type: boolean
+    autoplay_interval:
+      title: "Autoplay interval (ms)"
+      type: integer
+      minimum: 1000
+    arrows:
+      title: "Previous and next arrows"
+      type: boolean
+    dotnav:
+      title: "Dot navigation"
+      type: boolean
+    inverse:
+      title: "Arrows color"
+      type: string
+      enum:
+        - light
+        - dark
+      "meta:enum":
+        light: "Light (for dark slides)"
+        dark: "Dark (for light slides)"

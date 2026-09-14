@@ -1,0 +1,19 @@
+name: Default
+props:
+  items:
+    - title: "Active"
+      url: "#"
+      in_active_trail: true
+    - title: "Parent"
+      url: "#"
+      below:
+        - title: "Active"
+          url: "#"
+          in_active_trail: true
+        - title: "Item"
+          url: "#"
+        - title: "Header"
+        - title: "Item"
+          url: "#"
+    - title: "Item"
+      url: "#"

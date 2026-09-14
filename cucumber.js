@@ -1,11 +1,18 @@
+/**
+ * @file
+ * Webship-js (Cucumber-js + Playwright) configuration for Webtheme.
+ *
+ * Environment:
+ * - LAUNCH_URL: the Drupal site running the theme
+ *   (default https://webtheme.ddev.site).
+ * - DRUSH: command running Drush for that site, used by the custom steps
+ *   (default "ddev drush", run from DRUPAL_PROJECT_DIR).
+ * - DRUPAL_PROJECT_DIR: the Drupal project directory
+ *   (default ~/workspace/test/webtheme).
+ */
 module.exports = {
   default: {
     timeout: 60000,
-    // Re-run a failed scenario once. This rides out transient navigation
-    // hiccups (a flaky `I navigate to …` under load) without masking real
-    // failures: a deterministic error (e.g. an HTTP 500) fails both the
-    // initial run and the retry, so it is still reported.
-    retry: 1,
     requireModule: ['tsx/cjs'],
     require: [
       'node_modules/webship-js/tests/step-definitions/**/*.js',
@@ -16,43 +23,22 @@ module.exports = {
       '@cucumber/pretty-formatter',
       'json:tests/reports/cucumber_report.json',
     ],
+    formatOptions: {
+      colorsEnabled: true,
+      theme: {
+        'feature keyword': ['bold', 'blue'],
+        'feature name': ['blue', 'underline'],
+        'feature description': ['blueBright'],
+        'scenario keyword': ['bold', 'magenta'],
+        'scenario name': ['magenta', 'underline'],
+        'step keyword': ['bold', 'green'],
+        'step text': ['greenBright', 'italic'],
+      },
+    },
     worldParameters: {
-      launchUrl: process.env.LAUNCH_URL || 'http://localhost',
-      // Test users for the Drupal Standard profile roles. Webmaster is the
-      // site-install super-admin (created by `drush site:install …
-      // --account-name=webmaster --account-pass=dD.123123ddd`). The rest are
-      // provisioned by `Given I add testing users` — see
-      // tests/step-definitions/webtheme.steps.js — which iterates this
-      // registry and skips entries flagged `isAdmin: true`.
-      users: {
-        "Webmaster": {
-          "username": "webmaster",
-          "email": "webmaster@example.test",
-          "password": "dD.123123ddd",
-          "isAdmin": true,
-        },
-        "Content editor": {
-          "username": "content_editor_user",
-          "email": "content_editor_user@example.test",
-          "password": "dD.123123ddd",
-          "roles": ["content_editor"],
-        },
-        "Authenticated user": {
-          "username": "authenticated_user",
-          "email": "authenticated_user@example.test",
-          "password": "dD.123123ddd",
-          "roles": [],
-        },
-      },
-      // Default content seeded by `Given I add demo content` (see
-      // tests/step-definitions/webtheme.steps.js). articleCount defaults to 12
-      // so the standard frontpage view (10 promoted items per page) renders a
-      // real pager on /node.
-      demoContent: {
-        articleCount: 12,
-      },
+      launchUrl: process.env.LAUNCH_URL || 'https://webtheme.ddev.site',
       minWaitTime: {
-        page: 3000,
+        page: 1000,
         before_scenario: 0,
         after_scenario: 0,
         before_step: 0,
@@ -62,23 +48,18 @@ module.exports = {
         css: {},
         xpath: {},
         filesPath: './tests/selectors/',
-        files: [
-          'cms-drupal-core-claro.json',
-          'cms-drupal-cms-gin.json',
-          'webtheme.json',
-        ],
+        files: [],
         offset: 60,
         breakpoints: {
-          xs:  { width: 375,  height: 667  },
-          sm:  { width: 576,  height: 800  },
-          md:  { width: 768,  height: 1024 },
-          lg:  { width: 992,  height: 768  },
-          xl:  { width: 1200, height: 900, default: true },
-          xxl: { width: 1400, height: 900 },
+          xs: { width: 400, height: 800 },
+          s: { width: 640, height: 900 },
+          m: { width: 960, height: 900 },
+          l: { width: 1200, height: 900, default: true },
+          xl: { width: 1600, height: 1000 },
         },
       },
       screenshot: {
-        dir: './tests/screenshots',
+        dir: './screenshots',
         purge: false,
         onFailed: true,
         onEveryStep: false,
@@ -88,18 +69,19 @@ module.exports = {
         filenamePatternFailed: '{failed_prefix}{datetime}.{feature_file}.feature_{step_line}.{ext}',
         infoTypes: '',
       },
-      video: {
-        mode: 'on-failure',
-        dir: './tests/videos',
-        size: { width: 1280, height: 720 },
-        filenamePattern: '{datetime}.{feature_file}.{scenario}.{status}.{ext}',
-      },
-      javascript: {
-        mode: 'warn',
-        levels: ['error'],
-        ignore: '',
-        beforeScenario: false,
-        afterScenario: true,
+      // Test users, created on the test site with:
+      // drush user:create Admin --password=... && drush user:role:add administrator Admin
+      users: {
+        Admin: {
+          name: 'Admin',
+          email: 'test.admin@example.com',
+          password: 'dD.123123ddd',
+        },
+        'Authenticated user': {
+          name: 'Authenticated user',
+          email: 'test.authenticated@example.com',
+          password: 'dD.123123ddd',
+        },
       },
     },
   },

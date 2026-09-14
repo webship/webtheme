@@ -1,0 +1,26 @@
+name: Container
+description: "Align and center your page content."
+group: Layout
+links:
+  - "https://getuikit.com/docs/container"
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    size:
+      title: "Max width"
+      type: string
+      enum:
+        - xsmall
+        - small
+        - large
+        - xlarge
+        - expand
+      "meta:enum":
+        xsmall: "X-Small (750px)"
+        small: "Small (900px)"
+        large: "Large (1400px)"
+        xlarge: "X-Large (1600px)"
+        expand: "Expand (no max width)"

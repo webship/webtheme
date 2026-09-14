@@ -1,0 +1,21 @@
+name: Accordion
+description: "Create a list of items that can be shown individually by clicking an item's header."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/accordion"
+slots:
+  items:
+    title: Items
+    expected:
+      - "webtheme:accordion_item"
+props:
+  type: object
+  properties:
+    multiple:
+      title: "Multiple open items"
+      description: "Allow multiple items to be open at the same time."
+      type: boolean
+    always_open:
+      title: "Always one open item"
+      description: "At least one item stays open."
+      type: boolean

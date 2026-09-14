@@ -1,0 +1,15 @@
+name: "Description list"
+description: "Create nicely looking description lists: terms and their descriptions."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/description-list"
+variants:
+  default:
+    title: Default
+  divider:
+    title: Divider
+slots:
+  items:
+    title: Items
+    expected:
+      - "webtheme:description_list_item"

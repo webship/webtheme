@@ -1,0 +1,58 @@
+name: Heading
+description: "Define different styles for headings."
+group: Elements
+links:
+  - "https://getuikit.com/docs/heading"
+variants:
+  default:
+    title: Default
+  divider:
+    title: Divider
+    description: "Add a horizontal line below the heading."
+  bullet:
+    title: Bullet
+    description: "Add a vertical bullet before the heading."
+  line:
+    title: Line
+    description: "Add horizontal lines on both sides of the heading."
+slots:
+  title:
+    title: Title
+props:
+  type: object
+  properties:
+    heading_level:
+      title: "Heading level"
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      "meta:enum":
+        1: h1
+        2: "h2 (Default)"
+        3: h3
+        4: h4
+        5: h5
+        6: h6
+    size:
+      title: Size
+      description: "Headings bigger than h1, for hero sections."
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+        - xlarge
+        - 2xlarge
+        - 3xlarge
+      "meta:enum":
+        small: Small
+        medium: Medium
+        large: Large
+        xlarge: "X-Large"
+        2xlarge: "2X-Large"
+        3xlarge: "3X-Large"

@@ -1,0 +1,23 @@
+{% set attributes = attributes.addClass(['uk-grid', 'uk-grid-small', 'uk-child-width-auto']).setAttribute('uk-grid', '') %}
+{% if date %}
+  {% set attributes = attributes.setAttribute('uk-countdown', 'date: ' ~ date) %}
+{% endif %}
+{% set units = {
+  'days': 'Days'|t,
+  'hours': 'Hours'|t,
+  'minutes': 'Minutes'|t,
+  'seconds': 'Seconds'|t,
+} %}
+<div{{ attributes }}>
+  {% for unit, unit_label in units %}
+    {% if separators and not loop.first %}
+      <div class="uk-countdown-separator">:</div>
+    {% endif %}
+    <div>
+      <div class="uk-countdown-number uk-countdown-{{ unit }}"></div>
+      {% if labels %}
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">{{ unit_label }}</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

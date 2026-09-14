@@ -1,0 +1,27 @@
+{% set options = [
+  'animation: ' ~ animation|default('slide'),
+  'ratio: ' ~ ratio|default('16:9'),
+  'finite: ' ~ (finite ? 'true' : 'false'),
+  'autoplay: ' ~ (autoplay ? 'true' : 'false'),
+  'autoplay-interval: ' ~ autoplay_interval|default(7000),
+] %}
+{% if min_height %}
+  {% set options = options|merge(['min-height: ' ~ min_height]) %}
+{% endif %}
+{% if max_height %}
+  {% set options = options|merge(['max-height: ' ~ max_height]) %}
+{% endif %}
+<div{{ attributes.setAttribute('uk-slideshow', options|join('; ')) }}>
+  <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+    <div class="uk-slideshow-items">
+      {{ items }}
+    </div>
+    {% if arrows %}
+      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous" aria-label="{{ 'Previous slide'|t }}"></a>
+      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next" aria-label="{{ 'Next slide'|t }}"></a>
+    {% endif %}
+  </div>
+  {% if dotnav %}
+    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+  {% endif %}
+</div>

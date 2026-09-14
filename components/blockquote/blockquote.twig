@@ -1,0 +1,9 @@
+{% if cite %}
+  {% set attributes = attributes.setAttribute('cite', cite) %}
+{% endif %}
+<blockquote{{ attributes }}>
+  {{ content }}
+  {% if footer %}
+    <footer>{{ footer }}</footer>
+  {% endif %}
+</blockquote>

@@ -1,0 +1,8 @@
+name: Default
+props:
+  items:
+    - title: "Home"
+      url: "#"
+    - title: "Linked category"
+      url: "#"
+    - title: "Active"

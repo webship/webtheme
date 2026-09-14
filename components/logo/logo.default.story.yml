@@ -1,0 +1,8 @@
+name: Default
+slots:
+  label: "Website"
+props:
+  url: "/"
+  image: "https://getuikit.com/images/uikit-logo.svg"
+  image_alt: "Home"
+  image_height: 34

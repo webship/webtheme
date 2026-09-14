@@ -1,0 +1,31 @@
+name: Default
+library_wrapper: >
+  <button class="uk-button uk-button-default" type="button" uk-toggle="target: #modal-story">Open modal</button>
+  {{ _story }}
+slots:
+  title: "Modal title"
+  body:
+    type: html_tag
+    tag: p
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  footer:
+    - type: component
+      component: "webtheme:button"
+      slots:
+        label: "Cancel"
+      props:
+        attributes:
+          class:
+            - uk-modal-close
+    - type: component
+      component: "webtheme:button"
+      slots:
+        label: "Save"
+      props:
+        variant: primary
+props:
+  # A story without variant is rendered once per variant: the modal ID would
+  # not be unique on the library page.
+  variant: default
+  modal_id: modal-story
+  center: true

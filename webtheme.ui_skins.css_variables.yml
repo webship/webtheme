@@ -1,0 +1,180 @@
+# Webship.co design tokens on top of the UIkit ones, consumed by assets/css/tokens.css
+# and assets/css/webship.css (generated from the
+# UIkit CSS by scripts/build-tokens.mjs). Default values are the UIkit ones.
+
+################################################################################
+# Text colors.
+################################################################################
+
+uk-global-color:
+  category: "Text colors"
+  label: "Text color"
+  type: "color"
+  default_values:
+    ":root": "#313637"
+
+uk-global-emphasis-color:
+  category: "Text colors"
+  label: "Emphasis color (headings, active items)"
+  type: "color"
+  default_values:
+    ":root": "#0d1214"
+
+uk-global-muted-color:
+  category: "Text colors"
+  label: "Muted color"
+  type: "color"
+  default_values:
+    ":root": "#7d919d"
+
+uk-global-inverse-color:
+  category: "Text colors"
+  label: "Inverse color (text on colored backgrounds)"
+  type: "color"
+  default_values:
+    ":root": "#ffffff"
+
+uk-global-link-color:
+  category: "Text colors"
+  label: "Link color"
+  type: "color"
+  default_values:
+    ":root": "#0c7fc8"
+
+uk-global-link-hover-color:
+  category: "Text colors"
+  label: "Link hover color"
+  type: "color"
+  default_values:
+    ":root": "#004e80"
+
+################################################################################
+# Backgrounds.
+################################################################################
+
+uk-global-background:
+  category: "Backgrounds"
+  label: "Background"
+  type: "color"
+  default_values:
+    ":root": "#ffffff"
+
+uk-global-muted-background:
+  category: "Backgrounds"
+  label: "Muted background"
+  type: "color"
+  default_values:
+    ":root": "#f3f6f8"
+
+uk-global-muted-background-hover:
+  category: "Backgrounds"
+  label: "Muted background (hover)"
+  type: "color"
+  default_values:
+    ":root": "#e7edf1"
+
+uk-global-primary-background:
+  category: "Backgrounds"
+  label: "Primary background"
+  type: "color"
+  default_values:
+    ":root": "#0c7fc8"
+
+uk-global-primary-background-hover:
+  category: "Backgrounds"
+  label: "Primary background (hover)"
+  type: "color"
+  default_values:
+    ":root": "#004e80"
+
+uk-global-secondary-background:
+  category: "Backgrounds"
+  label: "Secondary background"
+  type: "color"
+  default_values:
+    ":root": "#313637"
+
+uk-global-secondary-background-hover:
+  category: "Backgrounds"
+  label: "Secondary background (hover)"
+  type: "color"
+  default_values:
+    ":root": "#171e23"
+
+uk-global-success-background:
+  category: "Backgrounds"
+  label: "Success background"
+  type: "color"
+  default_values:
+    ":root": "#32d296"
+
+uk-global-warning-background:
+  category: "Backgrounds"
+  label: "Warning background"
+  type: "color"
+  default_values:
+    ":root": "#faa05a"
+
+uk-global-danger-background:
+  category: "Backgrounds"
+  label: "Danger background"
+  type: "color"
+  default_values:
+    ":root": "#f0506e"
+
+uk-global-danger-background-hover:
+  category: "Backgrounds"
+  label: "Danger background (hover)"
+  type: "color"
+  default_values:
+    ":root": "#ee395b"
+
+uk-global-border:
+  category: "Backgrounds"
+  label: "Border color"
+  type: "color"
+  default_values:
+    ":root": "#d7e1e8"
+
+################################################################################
+# Alerts.
+################################################################################
+
+uk-alert-primary-background:
+  category: "Alerts"
+  label: "Primary alert background"
+  type: "color"
+  default_values:
+    ":root": "#c5d9e5"
+
+uk-alert-success-background:
+  category: "Alerts"
+  label: "Success alert background"
+  type: "color"
+  default_values:
+    ":root": "#edfbf6"
+
+uk-alert-warning-background:
+  category: "Alerts"
+  label: "Warning alert background"
+  type: "color"
+  default_values:
+    ":root": "#fff6ee"
+
+uk-alert-danger-background:
+  category: "Alerts"
+  label: "Danger alert background"
+  type: "color"
+  default_values:
+    ":root": "#fef4f6"
+
+################################################################################
+# Typography.
+################################################################################
+
+uk-global-font-family:
+  category: "Typography"
+  label: "Font family"
+  type: "textfield"
+  default_values:
+    ":root": '"Zen Maru Gothic", "Georgia", sans-serif'

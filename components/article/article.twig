@@ -1,0 +1,22 @@
+{% set heading_level = heading_level|default(2) %}
+<article{{ attributes.addClass('uk-article') }}>
+  {% if title %}
+    <h{{ heading_level }} class="uk-article-title">
+      {%- if url -%}
+        <a class="uk-link-reset" href="{{ url }}">{{ title }}</a>
+      {%- else -%}
+        {{ title }}
+      {%- endif -%}
+    </h{{ heading_level }}>
+  {% endif %}
+  {% if meta %}
+    <div class="uk-article-meta">{{ meta }}</div>
+  {% endif %}
+  {% if lead %}
+    <div class="uk-text-lead">{{ lead }}</div>
+  {% endif %}
+  {{ content }}
+  {% if footer %}
+    <div class="uk-margin-medium-top">{{ footer }}</div>
+  {% endif %}
+</article>

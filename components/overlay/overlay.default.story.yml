@@ -1,0 +1,20 @@
+name: Default
+slots:
+  media:
+    type: html_tag
+    tag: img
+    attributes:
+      src: "https://getuikit.com/docs/images/light.jpg"
+      width: 1800
+      height: 1200
+      alt: "Light"
+  content:
+    type: html_tag
+    tag: p
+    attributes:
+      class:
+        - uk-margin-remove
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+props:
+  variant: primary
+  position: bottom

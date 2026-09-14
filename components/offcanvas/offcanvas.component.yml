@@ -1,0 +1,37 @@
+name: Offcanvas
+description: "Create an off-canvas sidebar that slides in, opened with a Button or Navbar toggle using the same ID as target."
+group: Interactive
+links:
+  - "https://getuikit.com/docs/offcanvas"
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    offcanvas_id:
+      title: ID
+      description: "Use it as toggle target. Randomly generated if empty."
+      $ref: "ui-patterns://identifier"
+    mode:
+      title: Animation
+      type: string
+      enum:
+        - slide
+        - push
+        - reveal
+        - none
+      "meta:enum":
+        slide: "Slide (Default)"
+        push: Push
+        reveal: Reveal
+        none: None
+    flip:
+      title: "From the right"
+      type: boolean
+    overlay:
+      title: Overlay
+      type: boolean
+    close:
+      title: "Close button"
+      type: boolean

@@ -1,0 +1,68 @@
+name: Section
+description: "Create horizontal layout sections with different background colors and styles."
+group: Layout
+links:
+  - "https://getuikit.com/docs/section"
+variants:
+  default:
+    title: Default
+  muted:
+    title: Muted
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    size:
+      title: "Vertical padding"
+      type: string
+      enum:
+        - xsmall
+        - small
+        - large
+        - xlarge
+      "meta:enum":
+        xsmall: "X-Small"
+        small: Small
+        large: Large
+        xlarge: "X-Large"
+    padding_remove:
+      title: "Remove padding"
+      type: string
+      enum:
+        - top
+        - bottom
+        - vertical
+      "meta:enum":
+        top: Top
+        bottom: Bottom
+        vertical: "Top and bottom"
+    container:
+      title: Container
+      description: "Wrap the content in a container."
+      type: string
+      enum:
+        - default
+        - xsmall
+        - small
+        - large
+        - xlarge
+        - expand
+        - none
+      "meta:enum":
+        default: "Default (1200px)"
+        xsmall: "X-Small (750px)"
+        small: "Small (900px)"
+        large: "Large (1400px)"
+        xlarge: "X-Large (1600px)"
+        expand: "Expand"
+        none: "No container"
+    preserve_color:
+      title: "Preserve color"
+      description: "Keep the original colors of the content on primary and secondary sections."
+      type: boolean

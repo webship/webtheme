@@ -1,0 +1,25 @@
+name: "Media, header and footer"
+slots:
+  image:
+    type: html_tag
+    tag: img
+    attributes:
+      src: "https://getuikit.com/docs/images/light.jpg"
+      alt: "Light"
+      width: 1800
+      height: 1200
+  title: "Media top"
+  content:
+    type: html_tag
+    tag: p
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+  footer:
+    type: component
+    component: "webtheme:button"
+    slots:
+      label: "Read more"
+    props:
+      variant: text
+      url: "#"
+props:
+  image_position: top

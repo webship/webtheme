@@ -1,0 +1,47 @@
+name: "(Slideshow item)"
+description: "Internal: to be used in the 'Slideshow' component."
+group: Media
+links:
+  - "https://getuikit.com/docs/slideshow"
+variants:
+  primary:
+    title: "Dark caption (Default)"
+  default:
+    title: "Light caption"
+slots:
+  image:
+    title: "Image or video"
+    description: "Covers the whole slide."
+  title:
+    title: Title
+  caption:
+    title: Caption
+props:
+  type: object
+  properties:
+    caption_position:
+      title: "Caption position"
+      type: string
+      enum:
+        - bottom
+        - top
+        - left
+        - right
+        - center
+      "meta:enum":
+        bottom: "Bottom (Default)"
+        top: Top
+        left: Left
+        right: Right
+        center: Center
+    heading_level:
+      title: "Heading level"
+      type: integer
+      enum:
+        - 2
+        - 3
+        - 4
+      "meta:enum":
+        2: h2
+        3: "h3 (Default)"
+        4: h4

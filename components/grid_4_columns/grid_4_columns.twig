@@ -1,0 +1,18 @@
+{% set breakpoint = breakpoint|default('m') %}
+{% set attributes = attributes.addClass([
+  'uk-grid',
+  'uk-child-width-1-1',
+  'uk-child-width-1-2@s',
+  'uk-child-width-1-4@' ~ breakpoint,
+  gap ? 'uk-grid-' ~ gap,
+  divider ? 'uk-grid-divider',
+  match ? 'uk-grid-match',
+  vertical_align ? 'uk-flex-' ~ vertical_align,
+]).setAttribute('uk-grid', '') %}
+<div{{ attributes }}>
+  {% for column in [column_1, column_2, column_3, column_4] %}
+    <div>
+      {{ column }}
+    </div>
+  {% endfor %}
+</div>

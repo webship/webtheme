@@ -1,0 +1,11 @@
+name: "Link, sizes and icon"
+slots:
+  label: "Download"
+props:
+  url: "https://getuikit.com/download"
+  size: large
+  icon:
+    pack_id: uikit
+    icon_id: download
+    settings:
+      ratio: 1

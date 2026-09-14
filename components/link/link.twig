@@ -1,0 +1,8 @@
+{% set attributes = attributes.addClass(variant and variant != 'default' ? 'uk-link-' ~ variant : 'uk-link') %}
+{% if url %}
+  {% set attributes = attributes.setAttribute('href', url) %}
+{% endif %}
+{% if new_window %}
+  {% set attributes = attributes.setAttribute('target', '_blank').setAttribute('rel', 'noopener') %}
+{% endif %}
+<a{{ attributes }}>{{ label }}</a>

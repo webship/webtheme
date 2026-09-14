@@ -1,0 +1,15 @@
+name: "66% / 33%"
+slots:
+  column_1:
+    type: component
+    component: "webtheme:placeholder"
+    slots:
+      content: "Column 1"
+  column_2:
+    type: component
+    component: "webtheme:placeholder"
+    slots:
+      content: "Column 2"
+props:
+  variant: col_66_33
+  match: true

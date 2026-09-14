@@ -1,0 +1,13 @@
+name: Default
+props:
+  alignment: center
+  items:
+    - title: "‹ Previous"
+      url: "#"
+    - title: "1"
+      url: "#"
+    - title: "2"
+    - title: "3"
+      url: "#"
+    - title: "Next ›"
+      url: "#"

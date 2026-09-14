@@ -1,0 +1,35 @@
+name: "(Table cell)"
+description: "Internal: to be used in the 'Table row' component."
+group: "Data display"
+links:
+  - "https://getuikit.com/docs/table"
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    tag:
+      title: "Cell type"
+      type: string
+      enum:
+        - td
+        - th
+      "meta:enum":
+        td: "Data (Default)"
+        th: Header
+    width:
+      title: Width
+      type: string
+      enum:
+        - shrink
+        - expand
+        - small
+        - medium
+        - large
+      "meta:enum":
+        shrink: "Shrink to content"
+        expand: "Expand"
+        small: "Small (150px)"
+        medium: "Medium (300px)"
+        large: "Large (450px)"

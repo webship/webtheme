@@ -1,0 +1,5 @@
+{% set attributes = attributes.addClass([
+  'uk-close',
+  large ? 'uk-close-large',
+]) %}
+<button{{ attributes.setAttribute('type', 'button').setAttribute('uk-close', '').setAttribute('aria-label', 'Close'|t) }}></button>

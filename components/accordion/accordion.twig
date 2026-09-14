@@ -1,0 +1,7 @@
+{% set options = [
+  'multiple: ' ~ (multiple ? 'true' : 'false'),
+  'collapsible: ' ~ (always_open ? 'false' : 'true'),
+] %}
+<div{{ attributes.addClass('uk-accordion').setAttribute('uk-accordion', options|join('; ')) }}>
+  {{ items }}
+</div>

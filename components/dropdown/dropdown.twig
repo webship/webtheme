@@ -1,0 +1,7 @@
+{% set options = 'mode: ' ~ mode|default('click') ~ '; pos: ' ~ position|default('bottom-left') %}
+<div{{ attributes.addClass('uk-inline') }}>
+  {{ toggle }}
+  <div class="uk-drop uk-dropdown{{ large ? ' uk-dropdown-large' }}" uk-dropdown="{{ options }}">
+    {{ content }}
+  </div>
+</div>

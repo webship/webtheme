@@ -1,0 +1,45 @@
+# UIkit breakpoints: https://getuikit.com/docs/visibility
+webtheme.xs:
+  label: "Extra small (phone portrait)"
+  mediaQuery: "all and (max-width: 639px)"
+  weight: 0
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+
+webtheme.s:
+  label: "Small (@s, phone landscape)"
+  mediaQuery: "all and (min-width: 640px)"
+  weight: 1
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+
+webtheme.m:
+  label: "Medium (@m, tablet landscape)"
+  mediaQuery: "all and (min-width: 960px)"
+  weight: 2
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+
+webtheme.l:
+  label: "Large (@l, desktop)"
+  mediaQuery: "all and (min-width: 1200px)"
+  weight: 3
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x
+
+webtheme.xl:
+  label: "Extra large (@xl, large screens)"
+  mediaQuery: "all and (min-width: 1600px)"
+  weight: 4
+  multipliers:
+    - 1x
+    - 1.5x
+    - 2x

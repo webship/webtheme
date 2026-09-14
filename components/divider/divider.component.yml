@@ -1,0 +1,16 @@
+name: Divider
+description: "Separate content and create visual dividers."
+group: Elements
+links:
+  - "https://getuikit.com/docs/divider"
+variants:
+  default:
+    title: Default
+  icon:
+    title: Icon
+    description: "A divider with an icon in the middle."
+  small:
+    title: Small
+    description: "A short divider."
+  vertical:
+    title: Vertical

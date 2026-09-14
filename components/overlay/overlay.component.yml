@@ -1,0 +1,46 @@
+name: Overlay
+description: "Create an image overlay, which comes in different styles and positions."
+group: Media
+links:
+  - "https://getuikit.com/docs/overlay"
+variants:
+  default:
+    title: "Light"
+  primary:
+    title: "Dark"
+slots:
+  media:
+    title: "Image or video"
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    position:
+      title: Position
+      type: string
+      enum:
+        - bottom
+        - top
+        - left
+        - right
+        - top-left
+        - top-right
+        - bottom-left
+        - bottom-right
+        - center
+        - cover
+      "meta:enum":
+        bottom: "Bottom (Default)"
+        top: Top
+        left: Left
+        right: Right
+        top-left: "Top left"
+        top-right: "Top right"
+        bottom-left: "Bottom left"
+        bottom-right: "Bottom right"
+        center: Center
+        cover: Cover
+    hover:
+      title: "Show on hover"
+      type: boolean

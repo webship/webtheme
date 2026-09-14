@@ -1,0 +1,73 @@
+name: Button
+description: "Easily create nice looking buttons, which come in different styles."
+group: Elements
+links:
+  - "https://getuikit.com/docs/button"
+tags:
+  - action
+variants:
+  default:
+    title: Default
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  danger:
+    title: Danger
+  text:
+    title: Text
+  link:
+    title: Link
+slots:
+  label:
+    title: Label
+props:
+  type: object
+  properties:
+    url:
+      title: URL
+      description: "Render the button as a link."
+      $ref: "ui-patterns://url"
+    size:
+      title: Size
+      type: string
+      enum:
+        - small
+        - large
+      "meta:enum":
+        small: Small
+        large: Large
+    full_width:
+      title: "Full width"
+      type: boolean
+    disabled:
+      title: Disabled
+      type: boolean
+    icon:
+      title: Icon
+      $ref: "ui-patterns://icon"
+    icon_position:
+      title: "Icon position"
+      type: string
+      enum:
+        - left
+        - right
+      "meta:enum":
+        left: "Left (Default)"
+        right: Right
+    toggle_target:
+      title: "Toggle target"
+      description: "ID (without #) of a Modal, Offcanvas or any element to show or hide."
+      $ref: "ui-patterns://identifier"
+    button_type:
+      title: "Button type"
+      description: "Only when there is no URL."
+      type: string
+      enum:
+        - button
+        - submit
+        - reset
+      "meta:enum":
+        button: "Button (Default)"
+        submit: Submit
+        reset: Reset

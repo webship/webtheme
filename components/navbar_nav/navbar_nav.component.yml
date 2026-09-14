@@ -1,0 +1,11 @@
+name: "Navbar nav"
+description: "Menu links of the navbar, with dropdowns for the sub items."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/navbar"
+props:
+  type: object
+  properties:
+    items:
+      title: Items
+      $ref: "ui-patterns://links"

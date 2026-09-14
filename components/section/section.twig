@@ -1,0 +1,17 @@
+{% set attributes = attributes.addClass([
+  'uk-section',
+  'uk-section-' ~ variant|default('default'),
+  size ? 'uk-section-' ~ size,
+  padding_remove ? 'uk-padding-remove-' ~ padding_remove,
+  preserve_color ? 'uk-preserve-color',
+]) %}
+{% set container = container|default('default') %}
+<div{{ attributes }}>
+  {% if container == 'none' %}
+    {{ content }}
+  {% else %}
+    <div class="uk-container{{ container != 'default' ? ' uk-container-' ~ container }}">
+      {{ content }}
+    </div>
+  {% endif %}
+</div>

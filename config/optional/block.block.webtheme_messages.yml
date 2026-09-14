@@ -8,11 +8,11 @@ dependencies:
 id: webtheme_messages
 theme: webtheme
 region: highlighted
-weight: -5
+weight: 0
 provider: null
-plugin: system_messages_block
+plugin: 'system_messages_block'
 settings:
-  id: system_messages_block
+  id: 'system_messages_block'
   label: 'Status messages'
   label_display: '0'
   provider: system

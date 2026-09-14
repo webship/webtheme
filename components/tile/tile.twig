@@ -1,0 +1,8 @@
+{% set attributes = attributes.addClass([
+  'uk-tile',
+  'uk-tile-' ~ variant|default('default'),
+  size ? 'uk-tile-' ~ size,
+]) %}
+<div{{ attributes }}>
+  {{ content }}
+</div>

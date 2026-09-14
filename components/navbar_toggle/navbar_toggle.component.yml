@@ -1,0 +1,16 @@
+name: "Navbar toggle"
+description: "Hamburger icon toggling an Offcanvas or a Modal, typically on small screens."
+group: Navigation
+links:
+  - "https://getuikit.com/docs/navbar#toggle"
+props:
+  type: object
+  properties:
+    target:
+      title: "Toggle target"
+      description: "ID (without #) of the Offcanvas or Modal component."
+      $ref: "ui-patterns://identifier"
+    label:
+      title: Label
+      description: "Visible text next to the icon. Leave empty for the icon only."
+      type: string

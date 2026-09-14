@@ -1,0 +1,5 @@
+name: Default
+props:
+  date: "2030-01-01T00:00:00+00:00"
+  labels: true
+  separators: true

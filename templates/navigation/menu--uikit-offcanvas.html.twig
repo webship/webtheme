@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for menus placed in the offcanvas region: primary UIkit Nav.
+ *
+ * Available variables:
+ * - items: A nested list of menu items.
+ *
+ * @see \Drupal\webtheme\Hook\ThemeHooks::themeSuggestionsMenuAlter()
+ */
+#}
+{% if items %}
+  {{ include('webtheme:nav', {
+    items: items,
+    variant: 'primary',
+    accordion: true,
+    attributes: {
+      class: ['uk-margin-top'],
+    },
+  }, with_context: false) }}
+{% endif %}

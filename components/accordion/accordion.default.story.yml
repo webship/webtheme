@@ -1,0 +1,31 @@
+name: Default
+slots:
+  items:
+    - type: component
+      component: "webtheme:accordion_item"
+      slots:
+        title: "Item 1"
+        content:
+          type: html_tag
+          tag: p
+          value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      props:
+        open: true
+    - type: component
+      component: "webtheme:accordion_item"
+      slots:
+        title: "Item 2"
+        content:
+          type: html_tag
+          tag: p
+          value: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    - type: component
+      component: "webtheme:accordion_item"
+      slots:
+        title: "Item 3"
+        content:
+          type: html_tag
+          tag: p
+          value: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+props:
+  multiple: false

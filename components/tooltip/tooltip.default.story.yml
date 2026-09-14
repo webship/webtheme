@@ -1,0 +1,10 @@
+name: Default
+slots:
+  content:
+    type: component
+    component: "webtheme:button"
+    slots:
+      label: "Hover me"
+props:
+  text: "Hello World"
+  position: right

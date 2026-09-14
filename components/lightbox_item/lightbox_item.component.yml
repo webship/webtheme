@@ -1,0 +1,30 @@
+name: "(Lightbox item)"
+description: "Internal: a link opening an image, a video or an iframe; to be used in the 'Lightbox' component."
+group: Media
+links:
+  - "https://getuikit.com/docs/lightbox"
+slots:
+  thumbnail:
+    title: Thumbnail
+    description: "Image or text of the link."
+props:
+  type: object
+  properties:
+    url:
+      title: "Media URL"
+      $ref: "ui-patterns://url"
+    caption:
+      title: Caption
+      type: string
+    type:
+      title: "Media type"
+      description: "Detected from the URL when empty."
+      type: string
+      enum:
+        - image
+        - video
+        - iframe
+      "meta:enum":
+        image: Image
+        video: Video
+        iframe: Iframe

@@ -1,0 +1,20 @@
+{% set variant = variant|default('default') %}
+{% set overlay_classes = [
+  'uk-overlay',
+  'uk-overlay-' ~ variant,
+  'uk-position-' ~ position|default('bottom'),
+  variant == 'primary' ? 'uk-light',
+  hover ? 'uk-transition-fade',
+] %}
+{% set attributes = attributes.addClass('uk-inline') %}
+{% if hover %}
+  {% set attributes = attributes.addClass('uk-transition-toggle').setAttribute('tabindex', '0') %}
+{% endif %}
+<div{{ attributes }}>
+  {{ media }}
+  {% if content %}
+    <div class="{{ overlay_classes|filter(c => c)|join(' ') }}">
+      {{ content }}
+    </div>
+  {% endif %}
+</div>

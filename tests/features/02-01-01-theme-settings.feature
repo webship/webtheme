@@ -9,3 +9,5 @@ Feature: UIkit theme settings
      Then I should see "UIkit library source"
       And I should see "jsDelivr CDN (UIkit 3.25.22)"
       And I should see "Sticky navbar"
+      And I should see "Show the logo in the footer"
+      And I should see "Footer copyright"

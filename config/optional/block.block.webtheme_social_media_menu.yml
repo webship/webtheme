@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-media-menu
+  module:
+    - system
+  theme:
+    - webtheme
+id: webtheme_social_media_menu
+theme: webtheme
+region: footer
+weight: 5
+provider: null
+plugin: 'system_menu_block:social-media-menu'
+settings:
+  id: 'system_menu_block:social-media-menu'
+  label: 'Social media menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

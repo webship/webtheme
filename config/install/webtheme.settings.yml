@@ -10,3 +10,5 @@ favicon:
 uikit_source: cdn
 navbar_sticky: true
 htmx_navigation: true
+footer_logo: true
+footer_copyright: '© [year] [site:name]'

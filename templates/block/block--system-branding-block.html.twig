@@ -8,6 +8,9 @@
  * - site_logo: Logo for site as defined in Appearance or theme settings.
  * - site_name: Name for site as defined in Site information settings.
  * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * On small screens, the site name is only printed when there is no logo, so
+ * the logo, the account menu and the offcanvas toggle fit in the navbar.
  */
 #}
 {% block content %}
@@ -16,7 +19,7 @@
       <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" height="40" class="uk-margin-small-right">
     {% endif %}
     {% if site_name %}
-      <span>{{ site_name }}</span>
+      <span{{ site_logo ? ' class="uk-visible@m"' }}>{{ site_name }}</span>
     {% endif %}
   </a>
   {% if site_slogan %}

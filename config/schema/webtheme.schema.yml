@@ -12,3 +12,9 @@ webtheme.settings:
     htmx_navigation:
       type: boolean
       label: "HTMX navigation"
+    footer_logo:
+      type: boolean
+      label: "Show the logo in the footer"
+    footer_copyright:
+      type: string
+      label: "Footer copyright"

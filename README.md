@@ -11,7 +11,10 @@ ready for [Display Builder](https://www.drupal.org/project/display_builder).
 - Components: the `components` folder. Each component has its `*.component.yml`, Twig template and stories.
 - Utilities: `webtheme.ui_styles.yml`.
 - Theme settings: Appearance > Webtheme (UIkit from the CDN or local libraries, sticky navbar, HTMX
-  navigation).
+  navigation, the footer logo and the footer copyright line).
+- Optional blocks: the site branding, main and account menus in the navbar, the main and account menus in
+  the offcanvas on small screens, and the footer menu, the social media menu (when a `social-media-menu`
+  menu exists) and "Powered by" in the footer.
 
 ## Update from UI Suite UIkit
 

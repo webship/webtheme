@@ -9,11 +9,15 @@ use Drupal\Component\Utility\Xss;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ExtensionPathResolver;
 use Drupal\Core\Extension\ThemeSettingsProvider;
+use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\Attribute\Hook;
+use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
+use Drupal\Core\Utility\Token;
 
 /**
  * Library, theme settings, page and block hooks for Webtheme.
@@ -32,9 +36,17 @@ class ThemeHooks {
    */
   public const string OFFCANVAS_ID = 'webtheme-offcanvas';
 
+  /**
+   * The default copyright line of the footer.
+   */
+  public const string FOOTER_COPYRIGHT = '© [year] [site:name]';
+
   public function __construct(
     protected ThemeSettingsProvider $themeSettingsProvider,
     protected EntityTypeManagerInterface $entityTypeManager,
+    protected Token $token,
+    protected ExtensionPathResolver $extensionPathResolver,
+    protected FileUrlGeneratorInterface $fileUrlGenerator,
   ) {}
 
   /**
@@ -99,6 +111,25 @@ class ThemeHooks {
       '#description' => $this->t('Links are loaded with HTMX: only the page content is swapped, without full page reloads. Forms, administration pages and files keep the normal navigation.'),
       '#default_value' => $this->themeSettingsProvider->getSetting('htmx_navigation', 'webtheme') ?? TRUE,
     ];
+
+    $form['webtheme_footer'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Footer'),
+      '#open' => TRUE,
+    ];
+    $form['webtheme_footer']['footer_logo'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Show the logo in the footer'),
+      '#description' => $this->t('The white Webship.co logo with the default logo, or the logo of the site.'),
+      '#default_value' => $this->themeSettingsProvider->getSetting('footer_logo', 'webtheme') ?? TRUE,
+    ];
+    $form['webtheme_footer']['footer_copyright'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Footer copyright'),
+      '#description' => $this->t('Printed at the bottom of the footer. <code>[year]</code> is replaced by the current year, and site tokens like <code>[site:name]</code> are replaced. Leave empty to hide it.'),
+      '#default_value' => $this->themeSettingsProvider->getSetting('footer_copyright', 'webtheme') ?? static::FOOTER_COPYRIGHT,
+      '#maxlength' => 512,
+    ];
     $form['#submit'][] = [static::class, 'themeSettingsSubmit'];
   }
 
@@ -116,6 +147,7 @@ class ThemeHooks {
   public function preprocessPage(array &$variables): void {
     $variables['navbar_sticky'] = (bool) ($this->themeSettingsProvider->getSetting('navbar_sticky', 'webtheme') ?? TRUE);
     $variables['offcanvas_id'] = static::OFFCANVAS_ID;
+    $this->prepareFooter($variables);
 
     // Display Builder page layouts render the blocks without block entities
     // and block templates: tag the menus with their region here, and render
@@ -125,6 +157,39 @@ class ThemeHooks {
         $this->prepareRegionElements($variables['page'][$region], $region);
       }
     }
+  }
+
+  /**
+   * Prepares the footer logo and copyright variables of the page.
+   *
+   * @param array $variables
+   *   The page variables.
+   */
+  protected function prepareFooter(array &$variables): void {
+    $metadata = BubbleableMetadata::createFromRenderArray($variables)
+      ->addCacheTags(['config:webtheme.settings', 'config:system.theme.global']);
+
+    $variables['footer_logo'] = NULL;
+    if ($this->themeSettingsProvider->getSetting('footer_logo', 'webtheme') ?? TRUE) {
+      $variables['footer_logo'] = $this->themeSettingsProvider->getSetting('logo.use_default', 'webtheme')
+        ? $this->fileUrlGenerator->generateString($this->extensionPathResolver->getPath('theme', 'webtheme') . '/logo-white.svg')
+        : $this->themeSettingsProvider->getSetting('logo.url', 'webtheme');
+    }
+
+    $copyright = (string) ($this->themeSettingsProvider->getSetting('footer_copyright', 'webtheme') ?? static::FOOTER_COPYRIGHT);
+    $variables['footer_copyright'] = NULL;
+    if (trim($copyright) !== '') {
+      $copyright = str_replace('[year]', date('Y'), $copyright);
+      $copyright = $this->token->replace($copyright, [], ['clear' => TRUE], $metadata);
+      $variables['footer_copyright'] = Markup::create(Xss::filter($copyright, [
+        'a',
+        'em',
+        'strong',
+        'span',
+      ]));
+    }
+
+    $metadata->applyTo($variables);
   }
 
   /**
@@ -153,7 +218,7 @@ class ThemeHooks {
       if (\str_starts_with($region, 'navbar_') && \array_key_exists('site_name', $child) && \array_key_exists('site_logo', $child)) {
         $child = [
           '#type' => 'inline_template',
-          '#template' => '<a href="{{ url }}" class="uk-navbar-item uk-logo" rel="home">{% if logo %}<span class="uk-margin-small-right">{{ logo }}</span>{% endif %}{% if name %}<span>{{ name }}</span>{% endif %}</a>',
+          '#template' => '<a href="{{ url }}" class="uk-navbar-item uk-logo" rel="home">{% if logo %}<span class="uk-margin-small-right">{{ logo }}</span>{% endif %}{% if name %}<span{{ logo ? \' class="uk-visible@m"\' }}>{{ name }}</span>{% endif %}</a>',
           '#context' => [
             'url' => Url::fromRoute('<front>')->toString(),
             'logo' => $child['site_logo'] ?? NULL,

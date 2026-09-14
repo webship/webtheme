@@ -15,6 +15,17 @@ Feature: The offcanvas menu on small screens
      When I click on the element "#webtheme-offcanvas .uk-offcanvas-close"
      Then "#webtheme-offcanvas .uk-offcanvas-bar" should be hidden within 5 seconds
 
+  Scenario: The navbar fits in one row on a phone, with the account menu in the offcanvas
+    Given I am an anonymous user
+      And I set the viewport to the "xs" breakpoint
+     When I go to the homepage
+     Then ".uk-navbar-right .uk-navbar-nav" should be hidden
+      And ".uk-navbar-left .uk-logo" and ".uk-navbar-toggle" should be on the same row
+      And the page should not scroll horizontally
+     When I click on the element ".uk-navbar-toggle"
+     Then "#webtheme-offcanvas .webtheme-offcanvas-account" should be visible within 5 seconds
+      And "#webtheme-offcanvas .webtheme-offcanvas-account" should contain text "Log in"
+
   Scenario: The navbar menu is visible on large screens
     Given I am an anonymous user
       And I set the viewport to the "l" breakpoint

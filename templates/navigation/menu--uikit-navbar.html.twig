@@ -3,8 +3,8 @@
  * @file
  * Theme override for menus placed in the navbar regions: UIkit Navbar nav.
  *
- * Menus in the center region are hidden on small screens: the Offcanvas
- * region takes over there.
+ * Menus in the center and right regions are hidden on small screens: the
+ * Offcanvas region takes over there (the main and the account menus).
  *
  * Available variables:
  * - items: A nested list of menu items.
@@ -17,7 +17,7 @@
   {{ include('webtheme:navbar_nav', {
     items: items,
     attributes: {
-      class: uikit_region == 'navbar_center' ? ['uk-visible@m'] : [],
+      class: uikit_region in ['navbar_center', 'navbar_right'] ? ['uk-visible@m'] : [],
     },
   }, with_context: false) }}
 {% endif %}

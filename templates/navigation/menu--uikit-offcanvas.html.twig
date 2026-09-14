@@ -1,21 +1,27 @@
 {#
 /**
  * @file
- * Theme override for menus placed in the offcanvas region: primary UIkit Nav.
+ * Theme override for menus placed in the offcanvas region: UIkit Nav.
+ *
+ * The account menu is a default Nav below a divider, the other menus are
+ * primary Navs.
  *
  * Available variables:
  * - items: A nested list of menu items.
+ * - menu_name: The machine name of the menu.
  *
  * @see \Drupal\webtheme\Hook\ThemeHooks::themeSuggestionsMenuAlter()
  */
 #}
 {% if items %}
+  {% set account = menu_name == 'account' %}
   {{ include('webtheme:nav', {
     items: items,
-    variant: 'primary',
-    accordion: true,
+    variant: account ? 'default' : 'primary',
+    divider: account,
+    accordion: not account,
     attributes: {
-      class: ['uk-margin-top'],
+      class: account ? ['uk-margin-top', 'webtheme-offcanvas-account'] : ['uk-margin-top'],
     },
   }, with_context: false) }}
 {% endif %}

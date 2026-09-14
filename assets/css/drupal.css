@@ -123,6 +123,36 @@
   align-items: center;
 }
 
+/* Footer logo. */
+.webtheme-footer-logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+/*
+ * The navbar keeps one row on small screens: the branding shrinks, and the
+ * offcanvas toggle stays next to it.
+ */
+.uk-navbar {
+  flex-wrap: nowrap;
+}
+
+.uk-navbar-left {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.uk-navbar-right {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+}
+
+.uk-navbar .uk-logo img {
+  max-width: 100%;
+  height: auto;
+  max-height: 40px;
+}
+
 /* Local tasks and actions. */
 .uk-tab,
 .uk-subnav-pill {

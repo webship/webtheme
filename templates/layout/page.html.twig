@@ -9,6 +9,8 @@
  * Available variables (in addition to core ones):
  * - navbar_sticky: Whether the navbar sticks to the top (theme setting).
  * - offcanvas_id: The ID of the offcanvas printing the "Offcanvas" region.
+ * - footer_logo: The URL of the footer logo, if shown (theme setting).
+ * - footer_copyright: The copyright line of the footer (theme setting).
  *
  * Regions:
  * - page.navbar_left, page.navbar_center, page.navbar_right: Navbar.
@@ -92,11 +94,17 @@
   </div>
 </main>
 
-{% if page.footer %}
+{% if page.footer or footer_logo or footer_copyright %}
   <footer role="contentinfo" class="uk-section uk-section-secondary uk-section-small">
     <div class="uk-container">
+      {% if footer_logo %}
+        <a href="{{ path('<front>') }}" class="webtheme-footer-logo uk-logo uk-display-inline-block uk-margin-bottom" rel="home">
+          <img src="{{ footer_logo }}" alt="{{ 'Home'|t }}" height="40">
+        </a>
+      {% endif %}
       {{ page.footer }}
-      <div class="uk-text-right uk-margin-top">
+      <div class="uk-flex uk-flex-middle uk-flex-between uk-margin-top">
+        <p class="webtheme-footer-copyright uk-text-small uk-margin-remove">{{ footer_copyright }}</p>
         {{ include('webtheme:totop', {}, with_context: false) }}
       </div>
     </div>

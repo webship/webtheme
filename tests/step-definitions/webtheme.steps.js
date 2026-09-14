@@ -70,6 +70,42 @@ Then(/^the computed style "([^"]*)" of "([^"]*)" should (be|contain) "([^"]*)"$/
 });
 
 /**
+ * Checks that two visible elements share a row: their boxes overlap vertically.
+ *
+ * Example: Then ".uk-navbar-left .uk-logo" and ".uk-navbar-toggle" should be on the same row
+ */
+Then(/^"([^"]*)" and "([^"]*)" should be on the same row$/, async function (first, second) {
+  const boxes = [];
+  for (const selector of [first, second]) {
+    const locator = this.page.locator(selector).first();
+    await locator.waitFor({ state: 'visible', timeout: 15000 });
+    boxes.push(await locator.boundingBox());
+  }
+  const [a, b] = boxes;
+  const overlap = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y);
+  assert.ok(overlap > 0, `"${first}" (top ${a.y}) and "${second}" (top ${b.y}) are not on the same row.`);
+});
+
+/**
+ * Example: Then the page should not scroll horizontally
+ */
+Then(/^the page should not scroll horizontally$/, async function () {
+  const [scrollWidth, clientWidth] = await this.page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+  assert.ok(scrollWidth <= clientWidth, `The page is ${scrollWidth}px wide in a ${clientWidth}px viewport.`);
+});
+
+/**
+ * Example: Then "footer .webtheme-footer-copyright" should contain the current year
+ */
+Then(/^"([^"]*)" should contain the current year$/, async function (selector) {
+  const locator = this.page.locator(selector).first();
+  await locator.waitFor({ state: 'attached', timeout: 15000 });
+  const text = await locator.textContent();
+  const year = String(new Date().getFullYear());
+  assert.ok(text.includes(year), `"${selector}" is "${text}", without ${year}.`);
+});
+
+/**
  * Example: Then the UIkit JavaScript version should be "3.25.22"
  */
 Then(/^the UIkit JavaScript version should be "([^"]*)"$/, async function (expected) {

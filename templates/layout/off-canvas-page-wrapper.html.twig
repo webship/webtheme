@@ -8,19 +8,24 @@
  *
  * With the HTMX navigation (theme setting), the links inside the wrapper are
  * boosted: HTMX requests the page and swaps only this wrapper, so the
- * administration toolbar stays in place.
+ * administration toolbar stays in place. The live region announcing the page
+ * title is outside of the wrapper: hx-select-oob updates its content from the
+ * response. The links HTMX must not handle are rendered with
+ * hx-boost="false", and the main content gets the focus (autofocus) on the
+ * boosted requests.
  *
  * Available variables:
  * - children: Contains the child elements of the page.
  * - htmx_navigation: Whether the HTMX navigation is enabled.
+ * - htmx_announcer_id: The ID of the live region announcing the page title.
  *
  * @see \Drupal\webtheme\Hook\ThemeHooks::preprocessOffCanvasPageWrapper()
- * @see assets/js/htmx-navigation.js
+ * @see \Drupal\webtheme\Hook\HtmxNavigationHooks
  */
 #}
 {% if children %}
   {% if htmx_navigation %}
-    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas hx-boost="true" hx-target="[data-off-canvas-main-canvas]" hx-select="[data-off-canvas-main-canvas]" hx-swap="outerHTML show:window:top" hx-push-url="true">
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas hx-boost="true" hx-target="[data-off-canvas-main-canvas]" hx-select="[data-off-canvas-main-canvas]" hx-select-oob="#{{ htmx_announcer_id }}:innerHTML" hx-swap="outerHTML show:window:top" hx-push-url="true">
       {{ children }}
     </div>
   {% else %}

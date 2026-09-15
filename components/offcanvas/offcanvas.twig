@@ -4,7 +4,9 @@
   'flip: ' ~ (flip ? 'true' : 'false'),
   'overlay: ' ~ (overlay ? 'true' : 'false'),
 ] %}
-<div{{ attributes.setAttribute('id', offcanvas_id).setAttribute('uk-offcanvas', options|join('; ')) }}>
+{# The uk-offcanvas class is rendered here, not only added by UIkit: HTMX settles
+   a swapped element with the attributes of the response. #}
+<div{{ attributes.setAttribute('id', offcanvas_id).setAttribute('uk-offcanvas', options|join('; ')).addClass('uk-offcanvas') }}>
   <div class="uk-offcanvas-bar">
     {% if close %}
       <button class="uk-offcanvas-close" type="button" uk-close aria-label="{{ 'Close'|t }}"></button>

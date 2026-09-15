@@ -44,6 +44,7 @@ class ThemeHooks {
   public function __construct(
     protected ThemeSettingsProvider $themeSettingsProvider,
     protected EntityTypeManagerInterface $entityTypeManager,
+    protected HtmxNavigationHooks $htmxNavigationHooks,
     protected Token $token,
     protected ExtensionPathResolver $extensionPathResolver,
     protected FileUrlGeneratorInterface $fileUrlGenerator,
@@ -246,25 +247,9 @@ class ThemeHooks {
   public function preprocessOffCanvasPageWrapper(array &$variables): void {
     $variables['htmx_navigation'] = $this->htmxNavigation();
     $variables['#cache']['tags'][] = 'config:webtheme.settings';
+    $this->htmxNavigationHooks->preprocessOffCanvasPageWrapper($variables);
     if ($variables['htmx_navigation']) {
       $variables['#attached']['library'][] = 'webtheme/htmx';
-    }
-  }
-
-  /**
-   * Implements hook_preprocess_HOOK() for 'form'.
-   *
-   * Forms keep their normal submission (form tokens, Drupal AJAX), except the
-   * GET forms (search, exposed filters) which are boosted by HTMX.
-   */
-  #[Hook('preprocess_form')]
-  public function preprocessForm(array &$variables): void {
-    if (!$this->htmxNavigation()) {
-      return;
-    }
-    $method = strtolower((string) ($variables['element']['#method'] ?? 'post'));
-    if ($method !== 'get') {
-      $variables['attributes']['hx-boost'] = 'false';
     }
   }
 
@@ -324,6 +309,7 @@ class ThemeHooks {
   public function preprocessMenu(array &$variables): void {
     $variables['uikit_region'] = $variables['attributes']['data-uikit-region'] ?? NULL;
     unset($variables['attributes']['data-uikit-region']);
+    $this->htmxNavigationHooks->preprocessMenu($variables);
   }
 
   /**
@@ -334,6 +320,7 @@ class ThemeHooks {
     $variables['link']['#options']['attributes']['class'][] = 'uk-button';
     $variables['link']['#options']['attributes']['class'][] = 'uk-button-primary';
     $variables['link']['#options']['attributes']['class'][] = 'uk-button-small';
+    $this->htmxNavigationHooks->preprocessMenuLocalAction($variables);
   }
 
 }

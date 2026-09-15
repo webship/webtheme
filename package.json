@@ -21,7 +21,7 @@
     "@cucumber/cucumber": "~12.9.0"
   },
   "scripts": {
-    "lint:js": "eslint assets/js tests/step-definitions cucumber.js eslint.config.js",
+    "lint:js": "eslint tests/step-definitions cucumber.js eslint.config.js",
     "lint:yaml": "eslint \"*.yml\" \"config/**/*.yml\" \"components/**/*.yml\"",
     "lint:css": "stylelint \"assets/css/**/*.css\"",
     "build:tokens": "node scripts/build-tokens.mjs",

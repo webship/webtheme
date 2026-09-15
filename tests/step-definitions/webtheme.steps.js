@@ -124,7 +124,7 @@ When(/^I set the "([^"]*)" attribute of the document to "([^"]*)"$/, async funct
  * Example: Then the HTMX library should be loaded
  */
 Then(/^the HTMX library should be loaded$/, async function () {
-  await this.page.waitForFunction(() => typeof window.htmx === 'object' && typeof window.Drupal?.webtheme?.isExcludedFromHtmx === 'function', null, { timeout: 15000 });
+  await this.page.waitForFunction(() => typeof window.htmx === 'object' && typeof window.Drupal?.htmx === 'object', null, { timeout: 15000 });
 });
 
 /**
@@ -140,20 +140,104 @@ When(/^I mark the current page$/, async function () {
 
 /**
  * Example: Then the page should not have been reloaded
+ * Example: Then the page should have been reloaded
  */
-Then(/^the page should not have been reloaded$/, async function () {
+Then(/^the page should (not )?have been reloaded$/, async function (not) {
   await this.page.waitForLoadState('domcontentloaded');
   const marker = await this.page.evaluate(() => window.__webthemeMarker);
-  assert.strictEqual(marker, 'not-reloaded', 'The page was fully reloaded instead of being swapped by HTMX.');
+  if (not) {
+    assert.strictEqual(marker, 'not-reloaded', 'The page was fully reloaded instead of being swapped by HTMX.');
+  }
+  else {
+    assert.strictEqual(marker, undefined, 'The page was swapped by HTMX instead of a normal page load.');
+  }
 });
 
 /**
- * Example: Then the URL "/admin/content" should be excluded from the HTMX navigation
+ * Skips the scenario when a module is not enabled on the test site.
+ *
+ * Example: Given the "webform" module is enabled
  */
-Then(/^the URL "([^"]*)" should (not )?be excluded from the HTMX navigation$/, async function (url, not) {
-  await this.page.waitForFunction(() => typeof window.Drupal?.webtheme?.isExcludedFromHtmx === 'function', null, { timeout: 15000 });
-  const excluded = await this.page.evaluate((path) => window.Drupal.webtheme.isExcludedFromHtmx(path), url);
-  assert.strictEqual(excluded, !not, `"${url}" exclusion is ${excluded}.`);
+Given(/^the "([^"]*)" module is enabled$/, { timeout: 60000 }, function (module) {
+  const enabled = drush('pm:list --status=enabled --field=name').split('\n').map((name) => name.trim());
+  return enabled.includes(module) ? undefined : 'skipped';
+});
+
+/**
+ * Follows a link to a path from the boosted page wrapper, as a visitor would.
+ *
+ * The link is added to the page for the test when the page has none.
+ *
+ * Example: When I navigate with HTMX to "/form/contact"
+ */
+When(/^I navigate with HTMX to "([^"]*)"$/, async function (target) {
+  const selector = await this.page.evaluate((href) => {
+    const wrapper = document.querySelector('[data-off-canvas-main-canvas]');
+    let link = [...wrapper.querySelectorAll('a[href]')].find((element) => new URL(element.href).pathname === href && element.closest('[hx-boost]')?.getAttribute('hx-boost') === 'true' && element.checkVisibility());
+    if (!link) {
+      link = document.createElement('a');
+      link.href = href;
+      link.textContent = 'Test link';
+      wrapper.prepend(link);
+      window.htmx.process(link);
+    }
+    link.setAttribute('data-test-htmx-link', '');
+    return '[data-test-htmx-link]';
+  }, target);
+  await this.page.locator(selector).first().click();
+  await this.page.waitForURL((url) => url.pathname === target, { timeout: 15000 });
+  await this.page.waitForLoadState('domcontentloaded');
+});
+
+/**
+ * Moves the mouse over the page, as a visitor does before a submission.
+ *
+ * Example: When I move the mouse over the page
+ */
+When(/^I move the mouse over the page$/, async function () {
+  await this.page.mouse.move(200, 200);
+  await this.page.mouse.move(400, 300, { steps: 5 });
+});
+
+/**
+ * Lets the browser submit a form without its own required field checks.
+ *
+ * Example: When I turn off the browser validation of "form.webform-submission-form"
+ */
+When(/^I turn off the browser validation of "([^"]*)"$/, async function (selector) {
+  const form = this.page.locator(selector).first();
+  await form.waitFor({ state: 'attached', timeout: 15000 });
+  await form.evaluate((element) => {
+    element.noValidate = true;
+  });
+});
+
+/**
+ * Example: Then the "contact" webform should have a submission from "visitor@example.com"
+ */
+Then(/^the "([^"]*)" webform should have a submission from "([^"]*)"$/, { timeout: 60000 }, function (webform, email) {
+  const count = drush(`sql:query "SELECT COUNT(*) FROM webform_submission_data WHERE webform_id = '${webform}' AND name = 'email' AND value = '${email}'"`);
+  assert.ok(Number.parseInt(count, 10) > 0, `No "${webform}" submission from ${email} is stored.`);
+});
+
+/**
+ * Checks that the links to a path are rendered with or without hx-boost="false".
+ *
+ * Example: Then the links to "/user/logout" should be excluded from the HTMX navigation
+ */
+Then(/^the links to "([^"]*)" should (not )?be excluded from the HTMX navigation$/, async function (path, not) {
+  const links = this.page.locator(`[data-off-canvas-main-canvas] a[href*="${path}"]`);
+  await links.first().waitFor({ state: 'attached', timeout: 15000 });
+  const values = await links.evaluateAll((elements) => elements.map((element) => element.closest('[hx-boost]').getAttribute('hx-boost')));
+  const expected = not ? 'true' : 'false';
+  assert.ok(values.every((value) => value === expected), `The hx-boost values of the links to "${path}" are ${values.join(', ')}.`);
+});
+
+/**
+ * Example: Then the element "#main-content" should have the focus
+ */
+Then(/^the element "([^"]*)" should have the focus$/, async function (selector) {
+  await this.page.waitForFunction((target) => document.activeElement?.matches(target), selector, { timeout: 15000 });
 });
 
 /**

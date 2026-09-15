@@ -16,18 +16,14 @@ uikit:
     https://cdn.jsdelivr.net/npm/uikit@3.25.22/dist/js/uikit-icons.min.js: { type: external, minified: true }
 
 # HTMX navigation: boosted links in the page wrapper, with Drupal core HTMX
-# (assets, settings and behaviors of the swapped content).
+# (assets, settings and behaviors of the swapped content). The exclusions,
+# focus and announcement are rendered on the server, see HtmxNavigationHooks.
 htmx:
-  js:
-    assets/js/htmx-navigation.js: {}
   css:
     theme:
       assets/css/htmx.css: {}
   dependencies:
-    - core/drupal
-    - core/drupal.announce
     - core/drupal.htmx
-    - core/drupalSettings
 
 # Theme glue: design tokens (CSS custom properties consumed by UI Skins) and
 # Drupal specific adjustments.

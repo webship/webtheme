@@ -23,6 +23,10 @@ class PreprocessHooks {
     'textfield', 'time', 'url', 'token',
   ];
 
+  public function __construct(
+    protected HtmxNavigationHooks $htmxNavigationHooks,
+  ) {}
+
   /**
    * Implements hook_preprocess_HOOK() for 'pager'.
    */
@@ -73,13 +77,15 @@ class PreprocessHooks {
    * Implements hook_form_alter().
    *
    * The main submit button of a form is a primary UIkit button, unless the
-   * form already sets a button type.
+   * form already sets a button type. The forms keep their normal submission
+   * in the HTMX navigation, see HtmxNavigationHooks::formAlter().
    */
   #[Hook('form_alter')]
   public function formAlter(array &$form, FormStateInterface $form_state, string $form_id): void {
     if (isset($form['actions']['submit']) && \is_array($form['actions']['submit']) && empty($form['actions']['submit']['#button_type'])) {
       $form['actions']['submit']['#button_type'] = 'primary';
     }
+    $this->htmxNavigationHooks->formAlter($form, $form_state);
   }
 
   /**

@@ -17,6 +17,17 @@ Feature: HTMX navigation
       And the UIkit JavaScript version should be "3.25.22"
       And there should be no JavaScript errors
 
+  Scenario: The main content gets the focus and the new page title is announced
+    Given I am an anonymous user
+     When I go to the homepage
+      And I mark the current page
+      And I click on the element ".uk-navbar-right .uk-navbar-nav a"
+     Then I wait until the URL contains "/user/login"
+      And the page should not have been reloaded
+      And the element "#main-content" should have the focus
+      And "#webtheme-htmx-announcer" should contain text "Log in"
+      And "#webtheme-htmx-announcer" should have attribute "aria-live" with value "polite"
+
   Scenario: Drupal forms keep their normal submission
     Given I am an anonymous user
      When I go to "/user/login"
@@ -33,10 +44,22 @@ Feature: HTMX navigation
      When I click on the element ".uk-navbar-toggle"
      Then "#webtheme-offcanvas .uk-offcanvas-bar" should be visible within 5 seconds
 
-  Scenario: Administration pages and files are loaded without HTMX
+  Scenario: The offcanvas menu is closed after an HTMX navigation
+    Given I am an anonymous user
+      And I set the viewport to the "xs" breakpoint
+     When I go to the homepage
+      And I mark the current page
+      And I click on the element ".uk-navbar-toggle"
+     Then "#webtheme-offcanvas .webtheme-offcanvas-account" should be visible within 5 seconds
+     When I click on the element "#webtheme-offcanvas .webtheme-offcanvas-account a"
+     Then I wait until the URL contains "/user/login"
+      And the page should not have been reloaded
+      And "#webtheme-offcanvas .uk-offcanvas-bar" should be hidden within 5 seconds
+
+  Scenario: The links HTMX must not handle keep the normal navigation
+    Given I am logged in as the Drupal administrator
+     When I go to "/user/1"
+     Then the links to "/user/logout" should be excluded from the HTMX navigation
     Given I am an anonymous user
      When I go to the homepage
-     Then the URL "/admin/content" should be excluded from the HTMX navigation
-      And the URL "/user/logout" should be excluded from the HTMX navigation
-      And the URL "/sites/default/files/image.jpg" should be excluded from the HTMX navigation
-      And the URL "/user/login" should not be excluded from the HTMX navigation
+     Then the links to "/user/login" should not be excluded from the HTMX navigation

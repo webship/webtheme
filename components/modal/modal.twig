@@ -1,7 +1,9 @@
 {% set modal_id = modal_id|default('modal-' ~ random()) %}
 {% set heading_level = heading_level|default(2) %}
 {% set close = close|default('default') %}
-{% set attributes = attributes.setAttribute('id', modal_id).setAttribute('uk-modal', '').addClass('uk-modal') %}
+{# UIkit moves an open modal to the body, out of the HTMX boosted wrapper: its
+   links keep the normal navigation. #}
+{% set attributes = attributes.setAttribute('id', modal_id).setAttribute('uk-modal', '').setAttribute('hx-boost', 'false').addClass('uk-modal') %}
 {% if variant and variant != 'default' %}
   {% set attributes = attributes.addClass('uk-modal-' ~ variant) %}
 {% endif %}

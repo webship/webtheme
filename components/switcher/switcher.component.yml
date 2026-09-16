@@ -16,10 +16,12 @@ variants:
 slots:
   tabs:
     title: Tabs
+    description: "The controls that switch between the panels."
     expected:
       - "webtheme:switcher_tab"
   panels:
     title: Panels
+    description: "The panels, in the order of their controls."
     expected:
       - "webtheme:switcher_panel"
 props:

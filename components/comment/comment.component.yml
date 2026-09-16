@@ -6,12 +6,16 @@ links:
 slots:
   avatar:
     title: Avatar
+    description: "The picture of the author."
   title:
     title: Title
+    description: "The title of the comment."
   meta:
     title: Meta
+    description: "The details about the comment, such as the date."
   content:
     title: Content
+    description: "The text of the comment."
   actions:
     title: Actions
     description: "Reply, edit and delete links."

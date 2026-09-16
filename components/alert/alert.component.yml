@@ -17,8 +17,10 @@ variants:
 slots:
   title:
     title: Title
+    description: "A short title for the message."
   message:
     title: Message
+    description: "The message shown to the visitor."
 props:
   type: object
   properties:

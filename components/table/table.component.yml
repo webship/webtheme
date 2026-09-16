@@ -18,10 +18,12 @@ slots:
       - "webtheme:table_row"
   rows:
     title: Rows
+    description: "The rows of the table."
     expected:
       - "webtheme:table_row"
   footer:
     title: Footer
+    description: "The footer rows of the table."
     expected:
       - "webtheme:table_row"
 props:

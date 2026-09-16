@@ -6,5 +6,7 @@ links:
 slots:
   term:
     title: Term
+    description: "The term being described."
   description:
     title: Description
+    description: "The description of the term."

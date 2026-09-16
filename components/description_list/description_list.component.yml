@@ -11,5 +11,6 @@ variants:
 slots:
   items:
     title: Items
+    description: "The terms and their descriptions."
     expected:
       - "webtheme:description_list_item"

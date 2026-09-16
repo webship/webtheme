@@ -6,8 +6,10 @@ links:
 slots:
   title:
     title: Title
+    description: "The title shown on the row that opens and closes the item."
   content:
     title: Content
+    description: "The content revealed when the item is open."
 props:
   type: object
   properties:

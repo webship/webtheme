@@ -6,15 +6,19 @@ links:
 slots:
   title:
     title: Title
+    description: "The title of the article."
   meta:
     title: Meta
     description: "Author, date, category..."
   lead:
     title: Lead
+    description: "A short introduction, shown before the content."
   content:
     title: Content
+    description: "The body of the article."
   footer:
     title: Footer
+    description: "The closing details, such as the author or the date."
 props:
   type: object
   properties:

@@ -6,6 +6,7 @@ links:
 slots:
   label:
     title: Label
+    description: "The text of the control."
 props:
   type: object
   properties:

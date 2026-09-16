@@ -6,8 +6,10 @@ links:
 slots:
   media:
     title: "Image or video"
+    description: "The image or video that fills the background."
   content:
     title: Content
+    description: "The content placed over the media."
 props:
   type: object
   properties:

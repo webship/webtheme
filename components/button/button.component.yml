@@ -21,6 +21,7 @@ variants:
 slots:
   label:
     title: Label
+    description: "The text of the button."
 props:
   type: object
   properties:

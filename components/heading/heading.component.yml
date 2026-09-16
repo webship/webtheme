@@ -18,6 +18,7 @@ variants:
 slots:
   title:
     title: Title
+    description: "The text of the heading."
 props:
   type: object
   properties:

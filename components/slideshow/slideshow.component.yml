@@ -6,6 +6,7 @@ links:
 slots:
   items:
     title: Slides
+    description: "The slides of the slideshow."
     expected:
       - "webtheme:slideshow_item"
 props:

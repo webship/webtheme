@@ -6,6 +6,7 @@ links:
 slots:
   content:
     title: Content
+    description: "The content held by the container."
 props:
   type: object
   properties:

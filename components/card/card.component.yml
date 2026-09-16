@@ -16,17 +16,22 @@ variants:
 slots:
   image:
     title: Image
+    description: "The image of the card."
   header:
     title: Header
+    description: "The header above the title."
   badge:
     title: Badge
     description: "Displayed in the top right corner."
   title:
     title: Title
+    description: "The title of the card."
   content:
     title: Content
+    description: "The content of the card."
   footer:
     title: Footer
+    description: "The footer of the card, usually actions or details."
 props:
   type: object
   properties:

@@ -6,6 +6,7 @@ links:
 slots:
   cells:
     title: Cells
+    description: "The cells of the row."
     expected:
       - "webtheme:table_cell"
 props:

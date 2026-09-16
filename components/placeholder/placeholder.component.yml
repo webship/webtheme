@@ -6,3 +6,4 @@ links:
 slots:
   content:
     title: Content
+    description: "The content of the placeholder area."

@@ -6,6 +6,7 @@ links:
 slots:
   content:
     title: Content
+    description: "The content of the cell."
 props:
   type: object
   properties:

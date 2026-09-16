@@ -6,6 +6,7 @@ links:
 slots:
   content:
     title: Quote
+    description: "The quoted text."
   footer:
     title: Footer
     description: "Author and source."

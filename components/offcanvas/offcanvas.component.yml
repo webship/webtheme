@@ -6,6 +6,7 @@ links:
 slots:
   content:
     title: Content
+    description: "The content of the panel that slides in."
 props:
   type: object
   properties:

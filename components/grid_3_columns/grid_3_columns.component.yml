@@ -18,10 +18,13 @@ variants:
 slots:
   column_1:
     title: "Column 1"
+    description: "The content of the first column."
   column_2:
     title: "Column 2"
+    description: "The content of the second column."
   column_3:
     title: "Column 3"
+    description: "The content of the third column."
 props:
   type: object
   properties:

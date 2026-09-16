@@ -15,10 +15,13 @@ variants:
 slots:
   title:
     title: Title
+    description: "The title in the header of the dialog."
   body:
     title: Body
+    description: "The content of the dialog."
   footer:
     title: Footer
+    description: "The actions of the dialog, usually buttons."
 props:
   type: object
   properties:

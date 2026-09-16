@@ -6,6 +6,7 @@ links:
 slots:
   items:
     title: Items
+    description: "The accordion items."
     expected:
       - "webtheme:accordion_item"
 props:

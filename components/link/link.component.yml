@@ -17,6 +17,7 @@ variants:
 slots:
   label:
     title: Label
+    description: "The text of the link."
 props:
   type: object
   properties:

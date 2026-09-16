@@ -9,8 +9,10 @@ slots:
     description: "Logo, Navbar nav, Navbar item or Navbar toggle."
   center:
     title: Center
+    description: "The items in the middle of the navigation bar."
   right:
     title: Right
+    description: "The items on the right of the navigation bar."
 props:
   type: object
   properties:

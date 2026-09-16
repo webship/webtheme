@@ -14,8 +14,10 @@ slots:
     description: "Covers the whole slide."
   title:
     title: Title
+    description: "The title shown on the slide."
   caption:
     title: Caption
+    description: "The caption shown under the title."
 props:
   type: object
   properties:

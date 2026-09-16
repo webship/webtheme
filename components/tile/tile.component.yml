@@ -15,6 +15,7 @@ variants:
 slots:
   content:
     title: Content
+    description: "The content of the tile."
 props:
   type: object
   properties:

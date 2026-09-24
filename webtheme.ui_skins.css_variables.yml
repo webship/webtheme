@@ -25,7 +25,7 @@ uk-global-muted-color:
   label: "Muted color"
   type: "color"
   default_values:
-    ":root": "#7d919d"
+    ":root": "#556a77"
 
 uk-global-inverse-color:
   category: "Text colors"
@@ -39,7 +39,7 @@ uk-global-link-color:
   label: "Link color"
   type: "color"
   default_values:
-    ":root": "#0c7fc8"
+    ":root": "#0a6ea9"
 
 uk-global-link-hover-color:
   category: "Text colors"
@@ -78,7 +78,7 @@ uk-global-primary-background:
   label: "Primary background"
   type: "color"
   default_values:
-    ":root": "#0c7fc8"
+    ":root": "#0a6ea9"
 
 uk-global-primary-background-hover:
   category: "Backgrounds"

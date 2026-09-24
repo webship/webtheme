@@ -10,10 +10,10 @@ Feature: UI Skins design tokens and color modes
       And I go to "/user/login"
      Then the computed style "background-color" of "#edit-submit" should be "rgb(255, 51, 0)"
     Given I am logged in as the Drupal administrator
-     When I set the UI Skins CSS variable "uk-global-primary-background" of the UIkit theme to "#0c7fc8"
+     When I set the UI Skins CSS variable "uk-global-primary-background" of the UIkit theme to "#0a6ea9"
       And I am an anonymous user
       And I go to "/user/login"
-     Then the computed style "background-color" of "#edit-submit" should be "rgb(12, 127, 200)"
+     Then the computed style "background-color" of "#edit-submit" should be "rgb(10, 110, 169)"
 
   Scenario: The dark color mode is selected in the theme settings
     Given I am logged in as the Drupal administrator

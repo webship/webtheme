@@ -10,7 +10,7 @@ Feature: Drupal forms and local tasks use UIkit
       And "#edit-pass" should have class "uk-input"
       And "#edit-submit" should have class "uk-button"
       And "#edit-submit" should have class "uk-button-primary"
-      And the computed style "background-color" of "#edit-submit" should be "rgb(12, 127, 200)"
+      And the computed style "background-color" of "#edit-submit" should be "rgb(10, 110, 169)"
 
   Scenario: The local tasks are UIkit tabs
     Given I am an anonymous user

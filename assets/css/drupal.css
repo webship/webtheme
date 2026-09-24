@@ -7,7 +7,7 @@
 [data-theme="dark"] {
   --uk-global-color: rgb(255 255 255 / 70%);
   --uk-global-emphasis-color: #fff;
-  --uk-global-muted-color: rgb(255 255 255 / 50%);
+  --uk-global-muted-color: rgb(255 255 255 / 72%);
   --uk-global-inverse-color: #fff;
   --uk-global-link-color: #6db3f8;
   --uk-global-link-hover-color: #a3cffb;
@@ -168,4 +168,33 @@
 .uk-grid > :empty,
 .uk-switcher > :empty {
   min-height: 1px;
+}
+
+/**
+ * Links inside running text.
+ *
+ * Colour alone does not distinguish them, so the links of the content and
+ * the footer carry an underline. Buttons, icons, the logo and the menus
+ * keep their own styling.
+ */
+main a:not(.uk-button):not(.uk-icon-link):not(.uk-icon-button):not(.uk-logo):not(.uk-totop):not([class*="uk-nav"]),
+footer a:not(.uk-button):not(.uk-icon-link):not(.uk-icon-button):not(.uk-logo):not(.uk-totop) {
+  text-decoration: underline;
+}
+
+
+/**
+ * Muted links on the dark sections.
+ *
+ * UIkit prints them at 50% white, which is 4.4:1 on the secondary
+ * background, just under the WCAG AA minimum. The selectors repeat the
+ * class so they win over the UIkit stylesheet, which loads later.
+ */
+.uk-light.uk-light .uk-subnav > * > a,
+.uk-light.uk-light .uk-nav-default > li > a,
+.uk-section-secondary.uk-section-secondary:not(.uk-preserve-color) .uk-subnav > * > a,
+.uk-section-secondary.uk-section-secondary:not(.uk-preserve-color) .uk-nav-default > li > a,
+.uk-section-primary.uk-section-primary:not(.uk-preserve-color) .uk-subnav > * > a,
+.uk-section-primary.uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a {
+  color: rgb(255 255 255 / 78%);
 }

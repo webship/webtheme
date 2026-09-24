@@ -6,7 +6,13 @@
   preserve_color ? 'uk-preserve-color',
 ]) %}
 {% set container = container|default('default') %}
-<div{{ attributes }}>
+{# A page layout marks one section as the main content: it prints the main
+   landmark with the target of the skip link. #}
+{% set section_tag = landmark == 'main' ? 'main' : 'div' %}
+{% if landmark == 'main' %}
+  {% set attributes = attributes.setAttribute('id', 'main-content').setAttribute('tabindex', '-1') %}
+{% endif %}
+<{{ section_tag }}{{ attributes }}>
   {% if container == 'none' %}
     {{ content }}
   {% else %}
@@ -14,4 +20,4 @@
       {{ content }}
     </div>
   {% endif %}
-</div>
+</{{ section_tag }}>

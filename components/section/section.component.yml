@@ -19,6 +19,14 @@ slots:
 props:
   type: object
   properties:
+    landmark:
+      title: "Page landmark"
+      description: "Mark this section as the main content of the page, so the skip link and the screen readers reach it."
+      type: string
+      enum:
+        - main
+      "meta:enum":
+        main: "Main content"
     size:
       title: "Vertical padding"
       type: string

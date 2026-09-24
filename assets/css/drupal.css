@@ -232,3 +232,14 @@ footer a:not(.uk-button):not(.uk-icon-link):not(.uk-icon-button):not(.uk-logo):n
   color: inherit;
   text-decoration: underline;
 }
+
+/**
+ * Text on the primary and secondary sections.
+ *
+ * UIkit prints it at 70% white, which is 3.5:1 on the brand background.
+ */
+.uk-light.uk-light,
+.uk-section-primary.uk-section-primary:not(.uk-preserve-color),
+.uk-section-secondary.uk-section-secondary:not(.uk-preserve-color) {
+  color: rgb(255 255 255 / 88%);
+}

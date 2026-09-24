@@ -198,3 +198,37 @@ footer a:not(.uk-button):not(.uk-icon-link):not(.uk-icon-button):not(.uk-logo):n
 .uk-section-primary.uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a {
   color: rgb(255 255 255 / 78%);
 }
+
+/**
+ * Alert text.
+ *
+ * UIkit prints the alert text in the colour of its own variant, which is
+ * between 1.8:1 and 3.2:1 on the alert background, below the WCAG AA
+ * minimum. The links inside an alert follow the text of the alert.
+ */
+.uk-alert-primary {
+  color: #14639e;
+}
+
+.uk-alert-success {
+  color: #1a7f5e;
+}
+
+.uk-alert-warning {
+  color: #8a4b12;
+}
+
+.uk-alert-danger {
+  color: #c2183c;
+}
+
+.uk-alert.uk-alert em,
+.uk-alert.uk-alert .placeholder {
+  color: inherit;
+}
+
+.uk-alert.uk-alert a:not(.uk-button):not(.uk-alert-close),
+.uk-alert.uk-alert a:not(.uk-button):not(.uk-alert-close):hover {
+  color: inherit;
+  text-decoration: underline;
+}

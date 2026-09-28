@@ -1,0 +1,12 @@
+name: Default
+description: "A slide is shown in its slideshow: the library shows it in one."
+slots:
+  image:
+    type: html_tag
+    tag: img
+    attributes:
+      src: "https://getuikit.com/docs/images/photo.jpg"
+      alt: "Photo"
+  title: "Title"
+  caption: "Caption"
+library_wrapper: '<div uk-slideshow="ratio: 7:3"><div class="uk-position-relative"><div class="uk-slideshow-items">{{ _story }}</div></div></div>'

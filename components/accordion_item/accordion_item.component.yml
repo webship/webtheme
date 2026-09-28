@@ -16,3 +16,19 @@ props:
     open:
       title: "Open by default"
       type: boolean
+    heading_level:
+      title: "Heading level"
+      description: "The title is a heading of this level, so the items are part of the outline of the page."
+      type: integer
+      enum:
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+      "meta:enum":
+        2: h2
+        3: "h3 (Default)"
+        4: h4
+        5: h5
+        6: h6

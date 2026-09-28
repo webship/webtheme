@@ -14,6 +14,10 @@ props:
       title: ID
       description: "Use it as toggle target. Randomly generated if empty."
       $ref: "ui-patterns://identifier"
+    label:
+      title: Label
+      description: "The name of the panel, read by screen readers when it opens. Default: Menu."
+      type: string
     mode:
       title: Animation
       type: string

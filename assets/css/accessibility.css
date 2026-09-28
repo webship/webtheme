@@ -1,0 +1,639 @@
+/**
+ * @file
+ * WCAG 2.2 AAA adjustments of the UIkit components.
+ *
+ * UIkit is loaded from the CDN or from a local copy of its distribution, so
+ * its own styles are adjusted here, with the design tokens of
+ * assets/css/webship.css (light) and assets/css/drupal.css (dark):
+ * - Focus appearance (2.4.13): a solid 2px ring with a halo, on every
+ *   interactive element, form controls included.
+ * - Focus not obscured (2.4.12): the sticky navbar never covers the focus.
+ * - Target size (2.5.5): 44 by 44 pixels, or an equivalent hit area.
+ * - Non-text contrast (1.4.11): close buttons, dots and checked controls.
+ * - Visual presentation (1.4.8): line length, paragraph spacing.
+ * - Reflow (1.4.10): button groups and navs wrap at 320 pixels.
+ * - Animation from interactions (2.3.3): no motion when reduced motion is
+ *   requested.
+ */
+
+/* Focus appearance
+   ========================================================================== */
+
+/*
+ * The ring is 2px solid, 2px away from the element, over a 6px halo of the
+ * page background: it keeps 3:1 against the element and its surroundings,
+ * whatever their colors (on an image, the ring or the halo does).
+ * Form controls lose their "outline: none".
+ */
+:focus-visible,
+.uk-input:focus-visible,
+.uk-select:focus-visible,
+.uk-textarea:focus-visible,
+.uk-radio:focus-visible,
+.uk-checkbox:focus-visible,
+.uk-search-input:focus-visible,
+.uk-range:focus-visible {
+  outline: 2px solid var(--webtheme-focus-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--webtheme-focus-halo);
+}
+
+/* Text fields show the ring on focus by mouse too. */
+.uk-input:focus,
+.uk-select:focus,
+.uk-textarea:focus,
+.uk-search-input:focus {
+  outline: 2px solid var(--webtheme-focus-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--webtheme-focus-halo);
+}
+
+/* Inverse contexts, and controls over images (slidenav, cover). */
+.uk-light :focus-visible,
+.uk-section-primary:not(.uk-preserve-color) :focus-visible,
+.uk-section-secondary:not(.uk-preserve-color) :focus-visible,
+.uk-tile-primary:not(.uk-preserve-color) :focus-visible,
+.uk-tile-secondary:not(.uk-preserve-color) :focus-visible,
+.uk-card-primary.uk-card-body :focus-visible,
+.uk-card-primary > :not([class*="uk-card-media"]) :focus-visible,
+.uk-card-secondary.uk-card-body :focus-visible,
+.uk-card-secondary > :not([class*="uk-card-media"]) :focus-visible,
+.uk-overlay-primary :focus-visible,
+.uk-offcanvas-bar :focus-visible,
+.uk-lightbox :focus-visible,
+.uk-light .uk-input:focus,
+.uk-light .uk-select:focus,
+.uk-light .uk-textarea:focus,
+.uk-light .uk-search-input:focus,
+.uk-section-primary:not(.uk-preserve-color) .uk-input:focus,
+.uk-section-secondary:not(.uk-preserve-color) .uk-input:focus,
+.uk-offcanvas-bar .uk-input:focus,
+.uk-offcanvas-bar .uk-search-input:focus {
+  outline-color: var(--webtheme-inverse-focus-color);
+  box-shadow: 0 0 0 6px var(--webtheme-inverse-focus-halo);
+}
+
+/* Focus not obscured
+   ========================================================================== */
+
+/*
+ * Keep the focused element and the anchors below the sticky navbar (80px)
+ * when the page scrolls to them.
+ */
+html {
+  scroll-padding-top: calc(80px + 1rem);
+}
+
+/*
+ * The close button of the offcanvas does not cover the first item, and its
+ * ring is not cut by the edge of the bar.
+ */
+.uk-offcanvas-bar:has(> .uk-offcanvas-close) {
+  padding-top: 64px;
+}
+
+.uk-offcanvas-close {
+  top: 10px;
+  right: 10px;
+}
+
+/* Target size
+   ========================================================================== */
+
+/* Buttons: 44px tall with their 1px border, the small ones too. */
+.uk-button:not(.uk-button-text, .uk-button-link) {
+  line-height: 42px;
+}
+
+.uk-button-large:not(.uk-button-text, .uk-button-link) {
+  line-height: 53px;
+}
+
+.uk-button-text,
+.uk-button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
+
+/* Form controls. */
+.uk-input,
+.uk-select:not([multiple], [size]),
+.uk-search-default .uk-search-input,
+.uk-search-navbar .uk-search-input,
+.uk-form-small:not(textarea, [multiple], [size]) {
+  height: 44px;
+}
+
+/*
+ * Navigation items. The navbar items keep their own height (80px), only the
+ * width is set.
+ */
+.uk-navbar-toggle,
+.uk-navbar-nav > li > a,
+.uk-navbar-item:not(.uk-logo) {
+  min-width: 44px;
+}
+
+.uk-nav > li > a,
+.uk-nav-sub > li > a,
+.uk-tab > * > a,
+.uk-iconnav > * > a {
+  box-sizing: border-box;
+  min-height: 44px;
+}
+
+.uk-subnav > * > :first-child,
+.uk-tab > * > a {
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.uk-pagination > * > * {
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.uk-breadcrumb > * > a,
+.uk-breadcrumb > * > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  vertical-align: middle;
+}
+
+.uk-breadcrumb > :nth-child(n + 2):not(.uk-first-column)::before {
+  vertical-align: middle;
+}
+
+/*
+ * Links standing alone in a list, a menu, a view column or a footer: a line
+ * of their own, 44px tall. Links inside running text are exempt.
+ */
+:where(.uk-list, .menu, .views-col, .views-field, .uk-card-footer)
+  > *
+  > a:only-child,
+:where(.views-col, .views-field) > a:only-child,
+.uk-card-footer > a:only-child,
+footer li > a:only-child {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/*
+ * The link and lightbox item components placed on their own, and the links
+ * making a heading.
+ */
+a[data-component-id="webtheme:link"],
+a[data-component-id="webtheme:lightbox_item"],
+:is(h1, h2, h3, h4, h5, h6, .uk-card-title, .uk-article-title) > a:only-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* A link around an image is as large as the image. */
+:where(a:has(> img:only-child, > picture:only-child)) {
+  display: inline-block;
+}
+
+.uk-accordion-title {
+  box-sizing: border-box;
+  min-height: 44px;
+  padding-block: 8px;
+}
+
+/* Icon buttons and links. */
+.uk-icon-button {
+  width: 44px;
+  height: 44px;
+}
+
+.uk-icon-link,
+.uk-close,
+.uk-totop,
+.uk-slidenav,
+.uk-search-toggle,
+.uk-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.uk-logo:not(.uk-navbar-item) {
+  min-height: 44px;
+}
+
+/* Close buttons of alerts, modals, offcanvas and lightbox. */
+.uk-alert:has(> .uk-alert-close) {
+  padding-right: 56px;
+}
+
+.uk-alert-close {
+  top: 4px;
+  right: 4px;
+}
+
+.uk-modal-close-default,
+.uk-modal-close-outside,
+.uk-offcanvas-close {
+  padding: 0;
+}
+
+/*
+ * Password visibility toggles printed in the field, like the one of the View
+ * Password module: a 44px button over the end of the field. The module adds
+ * its styles after the theme ones: the selector is more specific.
+ */
+.form-item > button.shwpd {
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  margin-left: -44px;
+  vertical-align: top;
+  background-position: center;
+  background-size: 20px;
+}
+
+.uk-input:has(+ button.shwpd) {
+  padding-right: 44px;
+}
+
+/* Dot navigation: 44px targets, with the dot drawn inside. */
+.uk-dotnav {
+  margin-left: 0;
+  gap: 0;
+}
+
+.uk-dotnav > * {
+  padding-left: 0;
+}
+
+.uk-dotnav > * > * {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  color: var(--uk-global-emphasis-color, #0d1214);
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.uk-dotnav > * > *::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  content: "";
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.uk-dotnav > .uk-active > *::before,
+.uk-dotnav > * > :hover::before {
+  background-color: currentColor;
+}
+
+.uk-dotnav > * > :hover,
+.uk-dotnav > * > :active,
+.uk-dotnav > .uk-active > * {
+  border: 0;
+  background: none;
+}
+
+.uk-light .uk-dotnav > * > *,
+.uk-section-primary:not(.uk-preserve-color) .uk-dotnav > * > *,
+.uk-section-secondary:not(.uk-preserve-color) .uk-dotnav > * > *,
+.uk-overlay-primary .uk-dotnav > * > *,
+.uk-offcanvas-bar .uk-dotnav > * > * {
+  color: var(--uk-global-inverse-color, #fff);
+  border: 0;
+  background: none;
+}
+
+.uk-dotnav-vertical > * {
+  padding-top: 0;
+}
+
+/* Checkboxes and radios: the label is a 44px target. */
+.form-type-checkbox,
+.form-type-radio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 44px;
+  column-gap: 8px;
+}
+
+.form-type-checkbox > label,
+.form-type-radio > label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* Links in text
+   ========================================================================== */
+
+/*
+ * The links inside running text are underlined: their color alone does not
+ * distinguish them from the text (1.4.1). Buttons, icons, the logo and the
+ * menus keep their own styling.
+ */
+:where(
+    p,
+    li,
+    dd,
+    dt,
+    td,
+    th,
+    blockquote,
+    figcaption,
+    label,
+    .description,
+    .uk-text-lead,
+    .uk-alert,
+    .field__item,
+    small,
+    .uk-text-meta,
+    .uk-text-small,
+    .uk-article-meta,
+    .uk-comment-meta,
+    .block-system-powered-by-block,
+    .webtheme-footer-copyright
+  )
+  a:not(
+    [class*="uk-button"],
+    [class*="uk-icon"],
+    .uk-logo,
+    .uk-totop,
+    .uk-accordion-title,
+    .uk-link-reset,
+    .uk-link-heading,
+    .uk-inline,
+    :where(
+        nav,
+        .uk-nav,
+        .uk-navbar,
+        .uk-subnav,
+        .uk-tab,
+        .uk-breadcrumb,
+        .uk-pagination,
+        .uk-dotnav,
+        .uk-iconnav,
+        .uk-thumbnav,
+        .uk-switcher-nav,
+        .uk-slidenav
+      )
+      a
+  ) {
+  text-decoration: underline;
+}
+
+/*
+ * A plain link in a plain span of text, like the "Powered by Drupal" line of
+ * a page layout, which has no block wrapper. Classes added by scripts, like
+ * the one of the External Links module, are kept.
+ */
+span:not([class]) > a:not([class*="uk-"], [aria-label]) {
+  text-decoration: underline;
+}
+
+/* Non-text contrast
+   ========================================================================== */
+
+.uk-close,
+.uk-totop,
+.uk-slidenav,
+.uk-navbar-toggle,
+.uk-icon-link {
+  color: var(--uk-global-muted-color, #40505a);
+}
+
+.uk-close:hover,
+.uk-totop:hover,
+.uk-slidenav:hover,
+.uk-navbar-toggle:hover,
+.uk-icon-link:hover {
+  color: var(--uk-global-emphasis-color, #0d1214);
+}
+
+/*
+ * The close button of the alerts at full strength, in the color of the alert
+ * text (after the .uk-close rule above).
+ */
+.uk-alert-close,
+.uk-alert-close:hover {
+  opacity: 1;
+  color: currentColor;
+}
+
+/*
+ * The slidenav over the slides: a solid disc behind the arrow, since the
+ * image under it can be of any color.
+ */
+.uk-slidenav {
+  border-radius: 50%;
+}
+
+.uk-slideshow .uk-slidenav,
+.uk-light .uk-slidenav,
+.uk-slidenav.uk-light {
+  color: #fff;
+  background-color: #0d1214;
+}
+
+.uk-slideshow .uk-slidenav:hover,
+.uk-light .uk-slidenav:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/*
+ * Text over images: a scrim behind the content of the covers and of the
+ * default overlays keeps the text contrast whatever the image.
+ */
+.webtheme-cover-content {
+  padding: 20px 30px;
+  background-color: color-mix(
+    in sRGB,
+    var(--uk-global-background, #fff) 90%,
+    transparent
+  );
+}
+
+.webtheme-cover-content.uk-light {
+  background-color: rgb(13, 18, 20, 0.75);
+}
+
+.uk-overlay-default {
+  background-color: color-mix(
+    in sRGB,
+    var(--uk-global-background, #fff) 90%,
+    transparent
+  );
+}
+
+/* Checked controls keep a visible boundary in both color modes. */
+.uk-radio:checked,
+.uk-checkbox:checked,
+.uk-checkbox:indeterminate {
+  border-color: var(--webtheme-primary-color);
+}
+
+/* The current item of the menus is not shown by color alone. */
+.uk-navbar-nav > li.uk-active > a,
+.uk-nav-default > li.uk-active > a,
+.uk-nav-primary > li.uk-active > a,
+.uk-subnav:not(.uk-subnav-pill) > .uk-active > a,
+.uk-navbar-dropdown-nav > li.uk-active > a,
+.uk-dropdown-nav > li.uk-active > a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+}
+
+/* Visual presentation
+   ========================================================================== */
+
+/*
+ * Lines of running text are 80 characters at most (1.4.8). The list items
+ * are the ones of the plain and UIkit lists, not of grids, sliders or menus.
+ */
+:where(
+  p,
+  dd,
+  dt,
+  blockquote,
+  figcaption,
+  .uk-text-lead,
+  .uk-article-meta,
+  .description
+),
+:where(ul:not([class]), ol:not([class]), .uk-list) > li {
+  max-width: 80ch;
+}
+
+.uk-text-center
+  :where(p, blockquote, figcaption, .uk-text-lead, .uk-article-meta) {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+ * The line spacing of the meta texts is 1.5, like the running text (UIkit
+ * sets 1.4), and no text is justified, whether by a class of UIkit, the
+ * alignment of CKEditor or an inline style: justified text leaves uneven gaps
+ * between the words.
+ */
+.uk-article-meta,
+.uk-comment-meta,
+.uk-text-meta,
+.uk-notification-message {
+  line-height: 1.5;
+}
+
+.uk-text-justify,
+.text-align-justify,
+[style*="text-align: justify"],
+[style*="text-align:justify"] {
+  text-align: start !important;
+}
+
+/*
+ * The space between paragraphs is 1.5 times the line spacing (1.5), of the
+ * first paragraph too when its text is larger (a lead paragraph).
+ */
+:is(p, ul, ol, dl, blockquote, pre) + :is(p, ul, ol, dl, blockquote, pre) {
+  margin-top: 2.25em;
+}
+
+:is(p, ul, ol, dl, blockquote, pre):has(+ :is(p, ul, ol, dl, blockquote, pre)) {
+  margin-bottom: 2.25em;
+}
+
+/* Reflow
+   ========================================================================== */
+
+.uk-button-group {
+  flex-wrap: wrap;
+}
+
+.uk-navbar-nav {
+  flex-wrap: wrap;
+}
+
+.uk-navbar .uk-navbar-nav {
+  flex-wrap: nowrap;
+}
+
+.uk-subnav,
+.uk-tab,
+.uk-pagination {
+  flex-wrap: wrap;
+}
+
+/* Animation from interactions
+   ========================================================================== */
+
+/*
+ * UIkit has no reduced motion support: the offcanvas, modal, slideshow,
+ * slider, dropdown, switcher, lightbox, sticky and smooth scroll animate
+ * with inline durations. The !important declarations win over them.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Links inside text are underlined, not told apart by color alone (1.4.1),
+   including the texts Views prints when a list is empty: in the main content,
+   a link without a class is a link in text, unless it is a heading or in a
+   navigation. */
+:is(
+    p,
+    dd,
+    .view-empty,
+    .text-formatted,
+    .field--type-text-long,
+    .field--type-text-with-summary
+  )
+  a:not(.uk-button, .uk-icon-button, .uk-icon-link),
+main a:not([class], :is(h1, h2, h3, h4, h5, h6, nav) a) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* The feed link stands alone: a 44px target (2.5.5). */
+a.feed-icon {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.35em;
+}

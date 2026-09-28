@@ -100,7 +100,6 @@ text_align:
     uk-text-left: "Left"
     uk-text-right: "Right"
     uk-text-center: "Center"
-    uk-text-justify: "Justify"
     uk-text-left@s: "Left from small"
     uk-text-center@s: "Center from small"
     uk-text-right@s: "Right from small"

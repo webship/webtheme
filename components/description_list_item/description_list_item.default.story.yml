@@ -1,0 +1,6 @@
+name: Default
+description: "An item of a description list: the library shows it in its list."
+slots:
+  term: "Term"
+  description: "The description of the term."
+library_wrapper: '<dl class="uk-description-list">{{ _story }}</dl>'

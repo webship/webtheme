@@ -1,0 +1,7 @@
+name: Default
+description: "A tab is a list item: the library shows it in the list of the Switcher tabs."
+slots:
+  label: "Label"
+props:
+  active: true
+library_wrapper: '<ul class="uk-subnav uk-subnav-pill">{{ _story }}</ul>'

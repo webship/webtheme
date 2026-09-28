@@ -45,6 +45,7 @@ props:
       type: boolean
     autoplay:
       title: Autoplay
+      description: "Play the slides automatically. A pause button is shown, and the slides do not play when the visitor asks for reduced motion."
       type: boolean
     autoplay_interval:
       title: "Autoplay interval (ms)"

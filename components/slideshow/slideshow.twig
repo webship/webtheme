@@ -11,9 +11,10 @@
 {% if max_height %}
   {% set options = options|merge(['max-height: ' ~ max_height]) %}
 {% endif %}
+{% set autoplay_id = autoplay ? 'slideshow-items-' ~ random() %}
 <div{{ attributes.setAttribute('uk-slideshow', options|join('; ')) }}>
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
-    <div class="uk-slideshow-items">
+    <div class="uk-slideshow-items"{{ autoplay_id ? ' id=' ~ autoplay_id }}>
       {{ items }}
     </div>
     {% if arrows %}
@@ -21,6 +22,12 @@
       <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next" aria-label="{{ 'Next slide'|t }}"></a>
     {% endif %}
   </div>
+  {% if autoplay %}
+    {# A pause button stops the automatic playing (WCAG 2.2.2). #}
+    <div class="uk-flex uk-flex-center uk-margin-small-top">
+      <button type="button" class="uk-button uk-button-default uk-button-small" data-webtheme-autoplay-toggle="playing" aria-controls="{{ autoplay_id }}">{{ 'Pause'|t }}</button>
+    </div>
+  {% endif %}
   {% if dotnav %}
     <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
   {% endif %}

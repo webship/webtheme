@@ -1,8 +1,11 @@
 {% if open %}
   {% set attributes = attributes.addClass('uk-open') %}
 {% endif %}
+{% set heading_level = heading_level|default(3) %}
 <div{{ attributes }}>
-  <a class="uk-accordion-title" href="#">{{ title }}</a>
+  <h{{ heading_level }} class="webtheme-accordion-heading uk-margin-remove">
+    <a class="uk-accordion-title" href="#">{{ title }}</a>
+  </h{{ heading_level }}>
   <div class="uk-accordion-content">
     {{ content }}
   </div>

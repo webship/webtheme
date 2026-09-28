@@ -23,9 +23,68 @@ class PreprocessHooks {
     'textfield', 'time', 'url', 'token',
   ];
 
+  /**
+   * Whether the first invalid form control of the page got the focus.
+   */
+  protected bool $errorFocused = FALSE;
+
   public function __construct(
     protected HtmxNavigationHooks $htmxNavigationHooks,
   ) {}
+
+  /**
+   * Links an invalid form control to its error message.
+   *
+   * The message printed under the control (see preprocessFormElement()) is
+   * read with the control (aria-describedby, WCAG 3.3.1), and the first
+   * invalid control of the page gets the focus after a failed submission.
+   *
+   * @param array $element
+   *   The form element.
+   * @param \Drupal\Core\Template\Attribute|array $attributes
+   *   The attributes of the control.
+   *
+   * @return \Drupal\Core\Template\Attribute
+   *   The attributes of the control.
+   */
+  protected function describeErrors(array $element, Attribute|array $attributes): Attribute {
+    $attributes = $attributes instanceof Attribute ? $attributes : new Attribute($attributes);
+    if (empty($element['#errors']) || empty($element['#id']) || !empty($element['#error_no_message'])) {
+      return $attributes;
+    }
+    $described_by = \array_filter(\explode(' ', (string) ($attributes['aria-describedby'] ?? '')));
+    $described_by[] = $element['#id'] . '--error';
+    $attributes->setAttribute('aria-describedby', \implode(' ', \array_unique($described_by)));
+    $attributes->setAttribute('aria-invalid', 'true');
+    if (!$this->errorFocused) {
+      $this->errorFocused = TRUE;
+      $attributes->setAttribute('autofocus', 'autofocus');
+    }
+    return $attributes;
+  }
+
+  /**
+   * Implements hook_preprocess_HOOK() for 'form_element'.
+   *
+   * Prints the error message under the control, with the ID the control
+   * refers to. Drupal core only prints it with the Inline Form Errors module;
+   * the message of that module gets the ID too.
+   */
+  #[Hook('preprocess_form_element')]
+  public function preprocessFormElement(array &$variables): void {
+    $element = $variables['element'];
+    if (empty($element['#errors']) || empty($element['#id']) || !empty($element['#error_no_message'])) {
+      return;
+    }
+    $variables['errors'] = [
+      '#type' => 'inline_template',
+      '#template' => '<span id="{{ id }}" class="uk-text-danger">{{ errors }}</span>',
+      '#context' => [
+        'id' => $element['#id'] . '--error',
+        'errors' => $variables['errors'] ?: $element['#errors'],
+      ],
+    ];
+  }
 
   /**
    * Implements hook_preprocess_HOOK() for 'pager'.
@@ -112,7 +171,11 @@ class PreprocessHooks {
     elseif ($type === 'range') {
       $attributes->addClass('uk-range');
     }
-    elseif (\in_array($type, ['submit', 'button', 'image_button'], TRUE)) {
+    if (!\in_array($type, ['submit', 'button', 'image_button', 'hidden'], TRUE)) {
+      $attributes = $this->describeErrors($element, $attributes);
+    }
+
+    if (\in_array($type, ['submit', 'button', 'image_button'], TRUE)) {
       $button_type = $element['#button_type'] ?? '';
       $style = 'uk-button-default';
       if ($button_type === 'primary' || $attributes->hasClass('button--primary')) {
@@ -138,6 +201,7 @@ class PreprocessHooks {
     if (!empty($variables['element']['#errors'])) {
       $variables['attributes']['class'][] = 'uk-form-danger';
     }
+    $variables['attributes'] = $this->describeErrors($variables['element'], $variables['attributes']);
   }
 
   /**
@@ -149,6 +213,7 @@ class PreprocessHooks {
     if (!empty($variables['element']['#errors'])) {
       $variables['attributes']['class'][] = 'uk-form-danger';
     }
+    $variables['attributes'] = $this->describeErrors($variables['element'], $variables['attributes']);
   }
 
   /**

@@ -5,22 +5,36 @@
 
 /* Dark color mode (UI Skins theme "dark"): redefine the UIkit design tokens. */
 [data-theme="dark"] {
-  --uk-global-color: rgb(255 255 255 / 70%);
+  --uk-global-color: rgb(255, 255, 255, 0.7);
   --uk-global-emphasis-color: #fff;
-  --uk-global-muted-color: rgb(255 255 255 / 72%);
+  --uk-global-muted-color: rgb(255, 255, 255, 0.72);
   --uk-global-inverse-color: #fff;
-  --uk-global-link-color: #6db3f8;
-  --uk-global-link-hover-color: #a3cffb;
+  --uk-global-link-color: #85c0f9;
+  --uk-global-link-hover-color: #b9dcfc;
   --uk-global-background: #171717;
   --uk-global-muted-background: #242424;
   --uk-global-muted-background-hover: #2e2e2e;
   --uk-global-secondary-background: #000;
   --uk-global-secondary-background-hover: #0a0a0a;
-  --uk-global-border: rgb(255 255 255 / 15%);
+  --uk-global-border: rgb(255, 255, 255, 0.15);
   --uk-alert-primary-background: #16324f;
   --uk-alert-success-background: #103b2b;
   --uk-alert-warning-background: #4a2f19;
   --uk-alert-danger-background: #4a1a24;
+
+  /*
+   * The brand and status backgrounds keep white text (8.3:1 and more): the
+   * light values are inherited. As text, they get lighter tones.
+   */
+  --webtheme-primary-color: #85c0f9;
+  --webtheme-success-color: #35d397;
+  --webtheme-warning-color: #faa969;
+  --webtheme-danger-color: #f7a4b3;
+  --webtheme-alert-primary-color: #8dc4fa;
+  --webtheme-alert-success-color: #53daa7;
+  --webtheme-alert-warning-color: #fbb680;
+  --webtheme-alert-danger-color: #f7a4b3;
+  --webtheme-form-border: #787879;
 
   color-scheme: dark;
 }
@@ -55,17 +69,17 @@
 
 /* Description list items are wrapped in a div (description_list_item). */
 .uk-description-list > div > dt {
+  text-transform: uppercase;
   color: var(--uk-global-emphasis-color, #333);
   font-size: 0.875rem;
   font-weight: normal;
-  text-transform: uppercase;
 }
 
-.uk-description-list > div:nth-child(n+2) > dt {
+.uk-description-list > div:nth-child(n + 2) > dt {
   margin-top: 20px;
 }
 
-.uk-description-list-divider > div:nth-child(n+2) > dt {
+.uk-description-list-divider > div:nth-child(n + 2) > dt {
   padding-top: 20px;
   border-top: 1px solid var(--uk-global-border, #e5e5e5);
 }
@@ -100,7 +114,7 @@
 
 .form-required::after {
   content: " *";
-  color: var(--uk-global-danger-background, #f0506e);
+  color: var(--webtheme-danger-color, #9d0d28);
 }
 
 .form-checkboxes .form-item,
@@ -125,8 +139,8 @@
 
 /* Footer logo. */
 .webtheme-footer-logo img {
-  max-height: 40px;
   width: auto;
+  max-height: 40px;
 }
 
 /*
@@ -171,75 +185,36 @@
 }
 
 /**
- * Links inside running text.
- *
- * Colour alone does not distinguish them, so the links of the content and
- * the footer carry an underline. Buttons, icons, the logo and the menus
- * keep their own styling.
- */
-main a:not(.uk-button):not(.uk-icon-link):not(.uk-icon-button):not(.uk-logo):not(.uk-totop):not([class*="uk-nav"]),
-footer a:not(.uk-button):not(.uk-icon-link):not(.uk-icon-button):not(.uk-logo):not(.uk-totop) {
-  text-decoration: underline;
-}
-
-
-/**
- * Muted links on the dark sections.
- *
- * UIkit prints them at 50% white, which is 4.4:1 on the secondary
- * background, just under the WCAG AA minimum. The selectors repeat the
- * class so they win over the UIkit stylesheet, which loads later.
- */
-.uk-light.uk-light .uk-subnav > * > a,
-.uk-light.uk-light .uk-nav-default > li > a,
-.uk-section-secondary.uk-section-secondary:not(.uk-preserve-color) .uk-subnav > * > a,
-.uk-section-secondary.uk-section-secondary:not(.uk-preserve-color) .uk-nav-default > li > a,
-.uk-section-primary.uk-section-primary:not(.uk-preserve-color) .uk-subnav > * > a,
-.uk-section-primary.uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a {
-  color: rgb(255 255 255 / 78%);
-}
-
-/**
  * Alert text.
  *
- * UIkit prints the alert text in the colour of its own variant, which is
- * between 1.8:1 and 3.2:1 on the alert background, below the WCAG AA
- * minimum. The links inside an alert follow the text of the alert.
+ * UIkit prints the alert text in the color of its own variant, below the
+ * contrast minimum on the alert background. The links inside an alert follow
+ * the text of the alert.
  */
 .uk-alert-primary {
-  color: #14639e;
+  color: var(--webtheme-alert-primary-color);
 }
 
 .uk-alert-success {
-  color: #1a7f5e;
+  color: var(--webtheme-alert-success-color);
 }
 
 .uk-alert-warning {
-  color: #8a4b12;
+  color: var(--webtheme-alert-warning-color);
 }
 
 .uk-alert-danger {
-  color: #c2183c;
+  color: var(--webtheme-alert-danger-color);
 }
 
 .uk-alert.uk-alert em,
-.uk-alert.uk-alert .placeholder {
+.uk-alert.uk-alert .placeholder,
+.uk-alert.uk-alert :where(h1, h2, h3, h4, h5, h6) {
   color: inherit;
 }
 
-.uk-alert.uk-alert a:not(.uk-button):not(.uk-alert-close),
-.uk-alert.uk-alert a:not(.uk-button):not(.uk-alert-close):hover {
-  color: inherit;
+.uk-alert.uk-alert a:not(.uk-button, .uk-alert-close),
+.uk-alert.uk-alert a:not(.uk-button, .uk-alert-close):hover {
   text-decoration: underline;
-}
-
-/**
- * Text on the primary and secondary sections.
- *
- * UIkit prints it at 70% white, which is 3.5:1 on the brand background.
- */
-.uk-light.uk-light,
-.uk-section-primary.uk-section-primary:not(.uk-preserve-color),
-.uk-section-secondary.uk-section-secondary:not(.uk-preserve-color) {
-  color: rgb(255 255 255 / 88%);
+  color: inherit;
 }

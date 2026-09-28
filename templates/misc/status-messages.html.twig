@@ -3,29 +3,47 @@
  * @file
  * Theme override for status messages, with the UIkit Alert component.
  *
+ * One alert per type of message, with a heading naming the type for screen
+ * readers (the color is not the only cue), and the messages in a list when
+ * there are several. Errors are announced at once (role "alert"), the other
+ * messages politely (role "status").
+ *
  * Available variables:
  * - message_list: List of messages to be displayed, grouped by type.
  * - status_headings: List of all status types.
  * - attributes: HTML attributes for the element.
  */
 #}
+{% set variants = {
+  'status': 'success',
+  'warning': 'warning',
+  'error': 'danger',
+} %}
 <div data-drupal-messages>
   {% for type, messages in message_list %}
-    {% set variants = {
-      'status': 'success',
-      'warning': 'warning',
-      'error': 'danger',
-    } %}
-    {% for message in messages %}
-      {#
-        Attributes are not passed: with multiple message types, the classes of
-        the previous type would leak into the next alerts.
-      #}
-      {{ include('webtheme:alert', {
-        variant: variants[type]|default('primary'),
-        message: message,
-        close: true,
-      }, with_context: false) }}
-    {% endfor %}
+    {% set message %}
+      {% if status_headings[type] %}
+        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+      {% endif %}
+      {% if messages|length > 1 %}
+        <ul class="uk-list uk-margin-remove">
+          {% for item in messages %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        {{ messages|first }}
+      {% endif %}
+    {% endset %}
+    {#
+      Attributes are not passed: with multiple message types, the classes of
+      the previous type would leak into the next alerts.
+    #}
+    {{ include('webtheme:alert', {
+      variant: variants[type]|default('primary'),
+      message: message,
+      role: type == 'error' ? 'alert' : 'status',
+      close: true,
+    }, with_context: false) }}
   {% endfor %}
 </div>

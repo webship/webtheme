@@ -12,9 +12,14 @@
   height: 3px;
   content: "";
   animation: webtheme-htmx-progress 1.2s ease-in-out infinite;
-  background: linear-gradient(90deg, transparent, var(--uk-global-primary-background, #1e87f0), transparent);
-  background-size: 50% 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--uk-global-primary-background, #1e87f0),
+    transparent
+  );
   background-repeat: no-repeat;
+  background-size: 50% 100%;
 }
 
 @keyframes webtheme-htmx-progress {
@@ -30,7 +35,7 @@
 @media (prefers-reduced-motion: reduce) {
   [data-off-canvas-main-canvas].htmx-request::before {
     animation: none;
-    background: var(--uk-global-primary-background, #1e87f0);
     opacity: 0.6;
+    background: var(--uk-global-primary-background, #1e87f0);
   }
 }

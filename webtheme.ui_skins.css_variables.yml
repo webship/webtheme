@@ -1,6 +1,8 @@
-# Webship.co design tokens on top of the UIkit ones, consumed by assets/css/tokens.css
-# and assets/css/webship.css (generated from the
-# UIkit CSS by scripts/build-tokens.mjs). Default values are the UIkit ones.
+# Webship.co design tokens on top of the UIkit ones, consumed by
+# assets/css/tokens.css (generated from the UIkit CSS by
+# scripts/build-tokens.mjs). The defaults are the values of assets/css/webship.css
+# (light) and assets/css/drupal.css (dark, the "dark" UI Skins theme): they all
+# reach the WCAG AAA contrast. Check the contrast again when changing them.
 
 ################################################################################
 # Text colors.
@@ -9,9 +11,10 @@
 uk-global-color:
   category: "Text colors"
   label: "Text color"
-  type: "color"
+  type: "ui_skins_alpha_color"
   default_values:
-    ":root": "#313637"
+    ":root": "#313637ff"
+    '[data-theme="dark"]': "#ffffffb3"
 
 uk-global-emphasis-color:
   category: "Text colors"
@@ -19,13 +22,15 @@ uk-global-emphasis-color:
   type: "color"
   default_values:
     ":root": "#0d1214"
+    '[data-theme="dark"]': "#ffffff"
 
 uk-global-muted-color:
   category: "Text colors"
   label: "Muted color"
-  type: "color"
+  type: "ui_skins_alpha_color"
   default_values:
-    ":root": "#556a77"
+    ":root": "#40505aff"
+    '[data-theme="dark"]': "#ffffffb8"
 
 uk-global-inverse-color:
   category: "Text colors"
@@ -33,20 +38,23 @@ uk-global-inverse-color:
   type: "color"
   default_values:
     ":root": "#ffffff"
+    '[data-theme="dark"]': "#ffffff"
 
 uk-global-link-color:
   category: "Text colors"
   label: "Link color"
   type: "color"
   default_values:
-    ":root": "#0a6ea9"
+    ":root": "#07527f"
+    '[data-theme="dark"]': "#85c0f9"
 
 uk-global-link-hover-color:
   category: "Text colors"
   label: "Link hover color"
   type: "color"
   default_values:
-    ":root": "#004e80"
+    ":root": "#053a5b"
+    '[data-theme="dark"]': "#b9dcfc"
 
 ################################################################################
 # Backgrounds.
@@ -58,6 +66,7 @@ uk-global-background:
   type: "color"
   default_values:
     ":root": "#ffffff"
+    '[data-theme="dark"]': "#171717"
 
 uk-global-muted-background:
   category: "Backgrounds"
@@ -65,6 +74,7 @@ uk-global-muted-background:
   type: "color"
   default_values:
     ":root": "#f3f6f8"
+    '[data-theme="dark"]': "#242424"
 
 uk-global-muted-background-hover:
   category: "Backgrounds"
@@ -72,20 +82,21 @@ uk-global-muted-background-hover:
   type: "color"
   default_values:
     ":root": "#e7edf1"
+    '[data-theme="dark"]': "#2e2e2e"
 
 uk-global-primary-background:
   category: "Backgrounds"
   label: "Primary background"
   type: "color"
   default_values:
-    ":root": "#0a6ea9"
+    ":root": "#07527f"
 
 uk-global-primary-background-hover:
   category: "Backgrounds"
   label: "Primary background (hover)"
   type: "color"
   default_values:
-    ":root": "#004e80"
+    ":root": "#053a5b"
 
 uk-global-secondary-background:
   category: "Backgrounds"
@@ -93,6 +104,7 @@ uk-global-secondary-background:
   type: "color"
   default_values:
     ":root": "#313637"
+    '[data-theme="dark"]': "#000000"
 
 uk-global-secondary-background-hover:
   category: "Backgrounds"
@@ -100,41 +112,43 @@ uk-global-secondary-background-hover:
   type: "color"
   default_values:
     ":root": "#171e23"
+    '[data-theme="dark"]': "#0a0a0a"
 
 uk-global-success-background:
   category: "Backgrounds"
   label: "Success background"
   type: "color"
   default_values:
-    ":root": "#32d296"
+    ":root": "#13583e"
 
 uk-global-warning-background:
   category: "Backgrounds"
   label: "Warning background"
   type: "color"
   default_values:
-    ":root": "#faa05a"
+    ":root": "#7f3a04"
 
 uk-global-danger-background:
   category: "Backgrounds"
   label: "Danger background"
   type: "color"
   default_values:
-    ":root": "#f0506e"
+    ":root": "#9d0d28"
 
 uk-global-danger-background-hover:
   category: "Backgrounds"
   label: "Danger background (hover)"
   type: "color"
   default_values:
-    ":root": "#ee395b"
+    ":root": "#7a0a1f"
 
 uk-global-border:
   category: "Backgrounds"
   label: "Border color"
-  type: "color"
+  type: "ui_skins_alpha_color"
   default_values:
-    ":root": "#d7e1e8"
+    ":root": "#d7e1e8ff"
+    '[data-theme="dark"]': "#ffffff26"
 
 ################################################################################
 # Alerts.
@@ -145,7 +159,8 @@ uk-alert-primary-background:
   label: "Primary alert background"
   type: "color"
   default_values:
-    ":root": "#c5d9e5"
+    ":root": "#e6f0f6"
+    '[data-theme="dark"]': "#16324f"
 
 uk-alert-success-background:
   category: "Alerts"
@@ -153,6 +168,7 @@ uk-alert-success-background:
   type: "color"
   default_values:
     ":root": "#edfbf6"
+    '[data-theme="dark"]': "#103b2b"
 
 uk-alert-warning-background:
   category: "Alerts"
@@ -160,6 +176,7 @@ uk-alert-warning-background:
   type: "color"
   default_values:
     ":root": "#fff6ee"
+    '[data-theme="dark"]': "#4a2f19"
 
 uk-alert-danger-background:
   category: "Alerts"
@@ -167,6 +184,100 @@ uk-alert-danger-background:
   type: "color"
   default_values:
     ":root": "#fef4f6"
+    '[data-theme="dark"]': "#4a1a24"
+
+################################################################################
+# Accessibility: text colors of the brand and status colors, form borders and
+# focus ring.
+################################################################################
+
+webtheme-primary-color:
+  category: "Accessibility"
+  label: "Primary color as text and indicators"
+  type: "color"
+  default_values:
+    ":root": "#07527f"
+    '[data-theme="dark"]': "#85c0f9"
+
+webtheme-success-color:
+  category: "Accessibility"
+  label: "Success color as text"
+  type: "color"
+  default_values:
+    ":root": "#13583e"
+    '[data-theme="dark"]': "#35d397"
+
+webtheme-warning-color:
+  category: "Accessibility"
+  label: "Warning color as text"
+  type: "color"
+  default_values:
+    ":root": "#7f3a04"
+    '[data-theme="dark"]': "#faa969"
+
+webtheme-danger-color:
+  category: "Accessibility"
+  label: "Danger color as text"
+  type: "color"
+  default_values:
+    ":root": "#9d0d28"
+    '[data-theme="dark"]': "#f7a4b3"
+
+webtheme-alert-primary-color:
+  category: "Accessibility"
+  label: "Primary alert text"
+  type: "color"
+  default_values:
+    ":root": "#07527f"
+    '[data-theme="dark"]': "#8dc4fa"
+
+webtheme-alert-success-color:
+  category: "Accessibility"
+  label: "Success alert text"
+  type: "color"
+  default_values:
+    ":root": "#13583e"
+    '[data-theme="dark"]': "#53daa7"
+
+webtheme-alert-warning-color:
+  category: "Accessibility"
+  label: "Warning alert text"
+  type: "color"
+  default_values:
+    ":root": "#7f3a04"
+    '[data-theme="dark"]': "#fbb680"
+
+webtheme-alert-danger-color:
+  category: "Accessibility"
+  label: "Danger alert text"
+  type: "color"
+  default_values:
+    ":root": "#9d0d28"
+    '[data-theme="dark"]': "#f7a4b3"
+
+webtheme-form-border:
+  category: "Accessibility"
+  label: "Form control border (3:1 on the background)"
+  type: "color"
+  default_values:
+    ":root": "#768996"
+    '[data-theme="dark"]': "#787879"
+
+webtheme-focus-color:
+  category: "Accessibility"
+  label: "Focus ring"
+  type: "color"
+  default_values:
+    ":root": "#0d1214"
+    '[data-theme="dark"]': "#ffffff"
+
+webtheme-focus-halo:
+  category: "Accessibility"
+  label: "Focus ring halo"
+  type: "color"
+  default_values:
+    ":root": "#ffffff"
+    '[data-theme="dark"]': "#171717"
 
 ################################################################################
 # Typography.

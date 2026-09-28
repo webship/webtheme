@@ -26,6 +26,9 @@
     <span class="{{ label ? 'uk-margin-xsmall-right' }}">{{ icon(icon.pack_id, icon.icon_id, icon.settings|default({})) }}</span>
   {%- endif -%}
   {{ label }}
+  {%- if hidden_suffix -%}
+    <span class="visually-hidden"> {{ hidden_suffix }}</span>
+  {%- endif -%}
   {%- if icon and icon_position == 'right' -%}
     <span class="{{ label ? 'uk-margin-xsmall-left' }}">{{ icon(icon.pack_id, icon.icon_id, icon.settings|default({})) }}</span>
   {%- endif -%}

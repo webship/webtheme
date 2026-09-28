@@ -25,8 +25,8 @@ htmx:
   dependencies:
     - core/drupal.htmx
 
-# Theme glue: design tokens (CSS custom properties consumed by UI Skins) and
-# Drupal specific adjustments.
+# Theme glue: design tokens (CSS custom properties consumed by UI Skins),
+# Drupal specific adjustments and the WCAG 2.2 AAA adjustments of UIkit.
 base:
   css:
     base:
@@ -35,5 +35,10 @@ base:
       assets/css/tokens.css: {}
       assets/css/webship.css: {}
       assets/css/drupal.css: {}
+      assets/css/accessibility.css: {}
+  js:
+    assets/js/accessibility.js: {}
   dependencies:
+    - core/drupal
+    - core/once
     - webtheme/uikit

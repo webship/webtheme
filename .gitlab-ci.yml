@@ -151,7 +151,9 @@ stylelint:
     # The administrator steps log in with a one-time login link (drush user:login).
     # ── Drush as the web server user, for the custom steps ──────────────────
     - chown -R www-data:www-data $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
-    - printf '#!/bin/sh\nexec su -s /bin/sh www-data -c "HOME=/tmp %s/vendor/bin/drush --root=%s/%s --uri=http://localhost $*"\n' "$CI_PROJECT_DIR" "$CI_PROJECT_DIR" "$_WEB_ROOT" > /usr/local/bin/drush-www
+    # runuser keeps every argument as it is ("$@"), like the PHP code and the
+    # SQL queries of the custom steps.
+    - printf '#!/bin/sh\nexec runuser -u www-data -- env HOME=/tmp %s/vendor/bin/drush --root=%s/%s --uri=http://localhost "$@"\n' "$CI_PROJECT_DIR" "$CI_PROJECT_DIR" "$_WEB_ROOT" > /usr/local/bin/drush-www
     - chmod +x /usr/local/bin/drush-www
     # ── Node.js 22 (required by Cucumber-js) ────────────────────────────────
     - curl -fsSL https://deb.nodesource.com/setup_22.x | bash -

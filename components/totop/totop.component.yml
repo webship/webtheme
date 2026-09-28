@@ -1,5 +1,5 @@
 name: "To top"
-description: "Create an icon to scroll back to the top of the page."
+description: "Create an icon link back to the top of the page."
 group: Navigation
 links:
   - "https://getuikit.com/docs/totop"

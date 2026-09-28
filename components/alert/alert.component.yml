@@ -39,6 +39,16 @@ props:
         4: h4
         5: h5
         6: h6
+    role:
+      title: "Announcement"
+      description: "How screen readers announce the message. Default: at once for the danger and warning variants, politely for the others."
+      type: string
+      enum:
+        - alert
+        - status
+      "meta:enum":
+        alert: "At once (alert)"
+        status: "Politely (status)"
     close:
       title: "Close button"
       description: "Add a close button to dismiss the alert."

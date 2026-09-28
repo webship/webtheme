@@ -22,16 +22,18 @@ Feature: The UIkit components with Display Builder
 
   Scenario: The page rendered through the page layout keeps the UIkit navbar
     Given I am an anonymous user
-     When I go to "/user/login"
+     When I go to "/no-such-page"
      Then ".uk-navbar-left .uk-logo" should be visible
-      And ".uk-navbar-center .uk-navbar-nav" should contain text "Home"
+      And ".uk-navbar-center .uk-navbar-nav > li > a" should be visible
       And ".uk-navbar-right .uk-navbar-nav" should contain text "Log in"
-      And "#webtheme-offcanvas .uk-nav-primary" should be attached
+      And ".uk-offcanvas .uk-nav-primary" should be attached
 
   Scenario: Without page layout, the page is rendered by the block layout again
     Given I am logged in as the Drupal administrator
       And there is no default page layout
       And I am an anonymous user
-     When I go to "/user/login"
+     When I go to "/no-such-page"
      Then ".uk-navbar-container" should be visible
-      And ".uk-navbar-center .uk-navbar-nav" should contain text "Home"
+      And ".uk-navbar-center .uk-navbar-nav > li > a" should be visible
+      And "footer.uk-section-secondary" should be visible
+      And "#webtheme-offcanvas .webtheme-offcanvas-account" should be attached

@@ -38,6 +38,7 @@ Feature: Forms in the HTMX navigation
      Then eventually I should see "field is required." within 15 seconds
       And the page should have been reloaded
       And "#edit-email" should have class "uk-form-danger"
+      And ".uk-alert-danger[role='alert']" should be visible
       And I should not see "Submission failed"
       And the HTMX library should be loaded
       And there should be no JavaScript errors

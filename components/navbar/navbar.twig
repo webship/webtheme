@@ -6,7 +6,9 @@
 {% if sticky %}
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 {% endif %}
-<nav{{ attributes.setAttribute('aria-label', 'Main navigation'|t) }}>
+{# The menus placed in the navbar are navigation landmarks of their own, often
+   named "Main navigation": the navbar gets another name. #}
+<nav{{ attributes.hasAttribute('aria-label') ? attributes : attributes.setAttribute('aria-label', 'Site navigation'|t) }}>
   {% if container != 'none' %}
   <div class="uk-container{{ container != 'default' ? ' uk-container-' ~ container }}">
   {% endif %}

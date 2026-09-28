@@ -25,6 +25,10 @@ slots:
 props:
   type: object
   properties:
+    hidden_suffix:
+      title: "Hidden label suffix"
+      description: "Text read by screen readers after the label, so that links with the same label (like \"Learn more\") tell where they lead."
+      type: string
     url:
       title: URL
       description: "Render the button as a link."

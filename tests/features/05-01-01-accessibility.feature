@@ -4,9 +4,15 @@ Feature: Accessibility of the pages
   I want the pages to follow the accessibility standards
   So that I can read and use the site
 
+  The front page, a page of the block layout (a page not found) and the login
+  and password pages reached from the navbar are checked. The HTMX navigation
+  keeps the theme of the page it starts from, even on a site that renders its
+  user pages with the administration theme.
+
   Scenario Outline: <name> passes the accessibility checks
     Given I am an anonymous user
-     When I go to "<path>"
+     When I go to "<start>"
+      And I navigate with HTMX to "<path>"
      Then the page should have a title
       And the page should declare a language
       And the page should have a main landmark
@@ -24,10 +30,21 @@ Feature: Accessibility of the pages
       And the page should have no serious accessibility violations
 
     Examples:
-      | path             | name                         |
-      | /                | the front page               |
-      | /user/login      | the login page               |
-      | /user/password   | the password reset page      |
+      | start         | path           | name                         |
+      | /no-such-page | /              | the front page               |
+      | /no-such-page | /user/login    | the login page               |
+      | /no-such-page | /user/password | the password reset page      |
+
+  Scenario: A page not found passes the accessibility checks
+    Given I am an anonymous user
+     When I go to "/no-such-page"
+     Then the page should have a title
+      And the page should have a main landmark
+      And the page should have exactly one h1
+      And the heading hierarchy should be valid
+      And every link should have an accessible name
+      And every button should have an accessible name
+      And the page should have no serious accessibility violations
 
   Scenario: The keyboard reaches the content of the front page
     Given I am an anonymous user

@@ -5,4 +5,4 @@
 {% if new_window %}
   {% set attributes = attributes.setAttribute('target', '_blank').setAttribute('rel', 'noopener') %}
 {% endif %}
-<a{{ attributes }}>{{ label }}</a>
+<a{{ attributes }}>{{ label }}{% if hidden_suffix %}<span class="visually-hidden"> {{ hidden_suffix }}</span>{% endif %}</a>

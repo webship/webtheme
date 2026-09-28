@@ -9,7 +9,7 @@ Feature: The interactive UIkit components work with the UIkit JavaScript
   Scenario: The accordion toggles its items
      When I go to "/admin/appearance/ui/components/webtheme/accordion"
      Then ":nth-match(.uk-accordion > div, 2) > .uk-accordion-content" should be hidden
-     When I click on the element ":nth-match(.uk-accordion > div, 2) > .uk-accordion-title"
+     When I click on the element ":nth-match(.uk-accordion > div, 2) > .webtheme-accordion-heading > .uk-accordion-title"
      Then ":nth-match(.uk-accordion > div, 2) > .uk-accordion-content" should be visible within 5 seconds
 
   Scenario: The modal opens with a button toggle and closes

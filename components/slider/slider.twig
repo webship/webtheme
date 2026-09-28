@@ -15,10 +15,11 @@
   gap ? 'uk-grid-' ~ gap,
 ] %}
 {% set items = items and items is not sequence ? [items] : items %}
+{% set autoplay_id = autoplay ? 'slider-items-' ~ random() %}
 <div{{ attributes.setAttribute('uk-slider', options|join('; ')) }}>
   <div class="uk-position-relative uk-visible-toggle{{ inverse ? ' uk-' ~ inverse }}" tabindex="-1">
     <div class="uk-slider-container">
-      <div class="{{ items_classes|filter(c => c)|join(' ') }}">
+      <div class="{{ items_classes|filter(c => c)|join(' ') }}"{{ autoplay_id ? ' id=' ~ autoplay_id }}>
         {% for item in items %}
           <div>{{ item }}</div>
         {% endfor %}
@@ -29,6 +30,12 @@
       <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next" aria-label="{{ 'Next slide'|t }}"></a>
     {% endif %}
   </div>
+  {% if autoplay %}
+    {# A pause button stops the automatic playing (WCAG 2.2.2). #}
+    <div class="uk-flex uk-flex-center uk-margin-small-top">
+      <button type="button" class="uk-button uk-button-default uk-button-small" data-webtheme-autoplay-toggle="playing" aria-controls="{{ autoplay_id }}">{{ 'Pause'|t }}</button>
+    </div>
+  {% endif %}
   {% if dotnav %}
     <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
   {% endif %}

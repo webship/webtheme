@@ -6,9 +6,13 @@
   preserve_color ? 'uk-preserve-color',
 ]) %}
 {% set container = container|default('default') %}
-{# A page layout marks one section as the main content: it prints the main
-   landmark with the target of the skip link. #}
-{% set section_tag = landmark == 'main' ? 'main' : 'div' %}
+{# A page layout marks the sections of the page: the main content (with the
+   target of the skip link), the header, the footer and complementary
+   content. #}
+{% set section_tag = landmark in ['main', 'header', 'footer', 'aside'] ? landmark : 'div' %}
+{% if label and section_tag != 'div' %}
+  {% set attributes = attributes.setAttribute('aria-label', label) %}
+{% endif %}
 {% if landmark == 'main' %}
   {% set attributes = attributes.setAttribute('id', 'main-content').setAttribute('tabindex', '-1') %}
 {% endif %}

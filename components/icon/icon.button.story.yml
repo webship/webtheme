@@ -4,7 +4,7 @@ props:
   url: "https://github.com/uikit/uikit"
   label: "GitHub"
   icon:
-    pack_id: uikit
+    pack_id: webtheme
     icon_id: github
     settings:
       ratio: 1

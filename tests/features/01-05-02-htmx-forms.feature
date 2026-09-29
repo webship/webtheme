@@ -61,6 +61,7 @@ Feature: Forms in the HTMX navigation
 
   Scenario: Boosted navigation between pages still works after a form
     Given the "webform" module is enabled
+      And the "/user/login" page is rendered by the default theme
       And I am an anonymous user
      When I go to "/form/contact"
       And I mark the current page

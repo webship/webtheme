@@ -11,7 +11,10 @@ use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Render\Markup;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Security\TrustedCallbackInterface;
+use Drupal\Core\Theme\ThemeManagerInterface;
+use Drupal\Core\Theme\ThemeNegotiatorInterface;
 use Drupal\Core\Url;
 use Drupal\views\ViewExecutable;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -29,7 +32,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
  * - on a boosted request, the main content gets the autofocus attribute,
  *   which HTMX focuses after the swap;
  * - the page title is printed in a polite live region outside of the wrapper,
- *   updated from each boosted response with hx-select-oob.
+ *   updated from each boosted response with hx-select-oob;
+ * - a boosted request for a page another theme renders on a full load (the
+ *   sign-in screens of the administration theme, a dashboard) answers with
+ *   HX-Redirect, and HTMX loads that page in full.
  *
  * The open UIkit offcanvas and dropdowns are closed by UIkit itself when HTMX
  * removes them from the page.
@@ -67,6 +73,9 @@ class HtmxNavigationHooks implements TrustedCallbackInterface {
   public function __construct(
     protected ThemeSettingsProvider $themeSettingsProvider,
     protected RequestStack $requestStack,
+    protected ThemeNegotiatorInterface $themeNegotiator,
+    protected ThemeManagerInterface $themeManager,
+    protected RouteMatchInterface $routeMatch,
   ) {}
 
   /**
@@ -346,14 +355,21 @@ class HtmxNavigationHooks implements TrustedCallbackInterface {
   }
 
   /**
-   * Implements hook_preprocess_HOOK() for 'html'.
+   * Preprocess for 'html', called from ThemeHooks.
    *
-   * Prints the live region announcing the title of the boosted pages.
+   * A theme implements each hook once.
+   *
+   * Prints the live region announcing the title of the boosted pages, and
+   * sends a boosted request for a page of another theme to a full load.
    */
-  #[Hook('preprocess_html')]
   public function preprocessHtml(array &$variables): void {
     if (!$this->enabled()) {
       return;
+    }
+    $variables['#cache']['contexts'][] = 'headers:HX-Request';
+    $full_load = $this->otherThemeUrl();
+    if ($full_load !== NULL) {
+      $variables['#attached']['http_header'][] = ['HX-Redirect', $full_load];
     }
     $title = \array_map(static fn ($part) => \strip_tags((string) $part), $variables['head_title'] ?? []);
     $variables['page_top'][static::ANNOUNCER_ID] = [
@@ -368,6 +384,42 @@ class HtmxNavigationHooks implements TrustedCallbackInterface {
       ],
       '#weight' => -1000,
     ];
+  }
+
+  /**
+   * The URL to load in full when a boosted request belongs to another theme.
+   *
+   * On a request made by HTMX, core renders the page in the theme of the page
+   * the request comes from (the page state it sends), not in the theme the
+   * page has on a full load: the sign-in screens of the administration theme,
+   * a dashboard. The theme negotiators are asked again without that page
+   * state: when they pick another theme, HTMX loads the page in full
+   * (HX-Redirect), so the same URL always shows the same theme.
+   *
+   * @return string|null
+   *   The URL of the page without the page state, or NULL when the page
+   *   belongs to this theme.
+   */
+  protected function otherThemeUrl(): ?string {
+    $request = $this->requestStack->getCurrentRequest();
+    if (!$request || !$request->headers->has('HX-Request')) {
+      return NULL;
+    }
+    $page_state = $request->attributes->get('ajax_page_state');
+    if (empty($page_state['theme'])) {
+      return NULL;
+    }
+    $request->attributes->remove('ajax_page_state');
+    try {
+      $theme = $this->themeNegotiator->determineActiveTheme($this->routeMatch);
+    }
+    finally {
+      $request->attributes->set('ajax_page_state', $page_state);
+    }
+    if (!$theme || $theme === $this->themeManager->getActiveTheme()->getName()) {
+      return NULL;
+    }
+    return static::removePageState($request->getRequestUri());
   }
 
   /**

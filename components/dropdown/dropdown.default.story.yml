@@ -7,7 +7,7 @@ slots:
       label: "Open dropdown"
     props:
       icon:
-        pack_id: uikit
+        pack_id: webtheme
         icon_id: chevron-down
       icon_position: right
   content:

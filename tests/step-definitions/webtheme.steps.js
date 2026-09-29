@@ -458,21 +458,33 @@ When(
 );
 
 /**
- * Selects a UI Skins theme (color mode) in the theme settings.
+ * Sets the "Color mode" theme setting of the theme.
  *
- * Example: When I select the UI Skins theme "Dark" for the UIkit theme
+ * Example: When I set the color mode of the UIkit theme to "Follow the operating system"
  */
 When(
-  /^I select the UI Skins theme "([^"]*)" for the UIkit theme$/,
+  /^I set the color mode of the UIkit theme to "([^"]*)"$/,
   async function (label) {
     await withoutHttpCache(this);
     await this.page.goto(
       `${this.launchUrl}/admin/appearance/settings/webtheme`,
     );
-    await this.page.locator('select[name="theme"]').selectOption({ label });
+    await this.page.getByRole("radio", { name: label, exact: true }).check();
     await this.page.getByRole("button", { name: "Save configuration" }).click();
     await this.page.waitForLoadState("load");
     drush("cache:rebuild");
+  },
+);
+
+/**
+ * Emulates the color scheme the operating system of the visitor asks for.
+ *
+ * Example: Given the operating system asks for the dark color scheme
+ */
+Given(
+  /^the operating system asks for the (dark|light) color scheme$/,
+  async function (scheme) {
+    await this.page.emulateMedia({ colorScheme: scheme });
   },
 );
 
@@ -744,6 +756,10 @@ Then(
  */
 let savedUiSkins = null;
 
+// The "Color mode" theme setting before a @ui-skins scenario: null outside
+// of one, an empty string when the site had none.
+let savedColorMode = null;
+
 /**
  * PHP code reading or restoring the UI Skins settings of the theme.
  *
@@ -768,9 +784,23 @@ Before({ tags: "@ui-skins", timeout: 60000 }, function () {
     .split("\n")
     .pop()
     .trim();
+  savedColorMode = drush(
+    `php:eval ${shellArgument("echo (string) \\Drupal::config('webtheme.settings')->get('color_mode');")}`,
+  )
+    .split("\n")
+    .pop()
+    .trim();
 });
 
 After({ tags: "@ui-skins", timeout: 180000 }, function () {
+  if (savedColorMode !== null) {
+    drush(
+      savedColorMode
+        ? `config:set webtheme.settings color_mode ${savedColorMode} --yes`
+        : "config:delete webtheme.settings color_mode --yes",
+    );
+    savedColorMode = null;
+  }
   if (savedUiSkins !== null) {
     drush(`php:eval ${shellArgument(uiSkinsCode(savedUiSkins))}`);
     drush("cache:rebuild");
@@ -797,6 +827,47 @@ Given(
     return match && match[1] === configValue("system.theme", "default")
       ? undefined
       : "skipped";
+  },
+);
+
+/**
+ * Skips the scenario unless another theme renders the page on a full load,
+ * like the sign-in pages that Web Admin shows in UIkit Admin.
+ *
+ * Example: Given the "/user/login" page is rendered by another theme than the default theme
+ */
+Given(
+  /^the "([^"]*)" page is rendered by another theme than the default theme$/,
+  { timeout: 60000 },
+  async function (pagePath) {
+    const response = await this.page.request.get(
+      `${this.launchUrl}${pagePath}`,
+    );
+    const match = (await response.text()).match(
+      /"ajaxPageState":\{[^}]*?"theme":"([a-z0-9_]+)"/,
+    );
+    return match && match[1] !== configValue("system.theme", "default")
+      ? undefined
+      : "skipped";
+  },
+);
+
+/**
+ * Example: Then the current page should not be rendered by the default theme
+ */
+Then(
+  /^the current page should not be rendered by the default theme$/,
+  { timeout: 60000 },
+  async function () {
+    await this.page.waitForLoadState("load");
+    const theme = await this.page.evaluate(
+      () => window.drupalSettings?.ajaxPageState?.theme,
+    );
+    assert.notStrictEqual(
+      theme,
+      configValue("system.theme", "default"),
+      "The page is rendered by the default theme.",
+    );
   },
 );
 

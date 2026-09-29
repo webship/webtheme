@@ -9,26 +9,26 @@
  */
 
 :root {
-  --uk-global-color: #313637;
-  --uk-global-emphasis-color: #0d1214;
-  --uk-global-muted-color: #40505a;
-  --uk-global-inverse-color: #fff;
-  --uk-global-link-color: #07527f;
-  --uk-global-link-hover-color: #053a5b;
-  --uk-global-primary-background: #07527f;
-  --uk-global-primary-background-hover: #053a5b;
-  --uk-global-secondary-background: #313637;
-  --uk-global-secondary-background-hover: #171e23;
-  --uk-global-success-background: #13583e;
-  --uk-global-warning-background: #7f3a04;
-  --uk-global-danger-background: #9d0d28;
-  --uk-global-danger-background-hover: #7a0a1f;
-  --uk-global-background: #fff;
-  --uk-global-muted-background: #f3f6f8;
-  --uk-global-muted-background-hover: #e7edf1;
-  --uk-global-border: #d7e1e8;
-  --uk-alert-primary-background: #e6f0f6;
-  --uk-global-font-family: "Zen Maru Gothic", "Georgia", sans-serif;
+  --webtheme-global-color: #313637;
+  --webtheme-global-emphasis-color: #0d1214;
+  --webtheme-global-muted-color: #40505a;
+  --webtheme-global-inverse-color: #fff;
+  --webtheme-global-link-color: #07527f;
+  --webtheme-global-link-hover-color: #053a5b;
+  --webtheme-global-primary-background: #07527f;
+  --webtheme-global-primary-background-hover: #053a5b;
+  --webtheme-global-secondary-background: #313637;
+  --webtheme-global-secondary-background-hover: #171e23;
+  --webtheme-global-success-background: #13583e;
+  --webtheme-global-warning-background: #7f3a04;
+  --webtheme-global-danger-background: #9d0d28;
+  --webtheme-global-danger-background-hover: #7a0a1f;
+  --webtheme-global-background: #fff;
+  --webtheme-global-muted-background: #f3f6f8;
+  --webtheme-global-muted-background-hover: #e7edf1;
+  --webtheme-global-border: #d7e1e8;
+  --webtheme-alert-primary-background: #e6f0f6;
+  --webtheme-global-font-family: "Zen Maru Gothic", "Georgia", sans-serif;
 
   /* The brand and status colors as text, markers and indicators. */
   --webtheme-primary-color: var(--uk-global-primary-background);

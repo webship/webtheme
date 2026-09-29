@@ -10,10 +10,21 @@ ready for [Display Builder](https://www.drupal.org/project/display_builder).
   (dark), and the UI Skins settings in `webtheme.ui_skins.css_variables.yml` and
   `webtheme.ui_skins.themes.yml`. `assets/css/tokens.css` maps the UIkit colors to these variables: it is
   generated with `npm run build:tokens` (`scripts/build-tokens.mjs`), do not edit it.
+- The UI Skins ids carry the theme name: the design tokens (`webtheme-global-color`, mapped to
+  `--uk-global-color` at the end of the dark mode section of `assets/css/drupal.css`), the color modes
+  (`webtheme_light`, `webtheme_dark`) and the icon pack (`webtheme`). UI Skins and UI Icons ids are shared by
+  every theme of the site, so UIkit Admin or UI Suite UIkit never replace them. The earlier `uikit` icon pack id
+  is kept, so content and layouts saved with it keep their icons.
 - Components: the `components` folder. Each component has its `*.component.yml`, Twig template and stories.
 - Utilities: `webtheme.ui_styles.yml`.
 - Theme settings: Appearance > Webtheme (UIkit from the CDN or local libraries, sticky navbar, HTMX
-  navigation, the footer logo and the footer copyright line).
+  navigation, the color mode, the footer logo and the footer copyright line).
+- Color mode: light (the default), dark, or follow the operating system, as in UIkit Admin. The setting
+  prints `data-theme` on `html` and is stored for UI Skins too; with *Follow the operating system* it prints
+  none and the dark tokens apply in a `prefers-color-scheme: dark` media query.
+- HTMX navigation: a boosted request for a page another theme renders on a full load (the sign-in pages
+  that Web Admin shows in UIkit Admin, a dashboard) answers with `HX-Redirect`, and HTMX loads it in full:
+  a URL always shows the same theme.
 - Optional blocks: the site branding, main and account menus in the navbar, the main and account menus in
   the offcanvas on small screens, and the footer menu, the social media menu (when a `social-media-menu`
   menu exists) and "Powered by" in the footer.
@@ -112,8 +123,9 @@ The features check the UIkit markup, not the content of a site: they pass on a s
 the administration theme on the user pages.
 
 - The page template of the theme is checked on a page not found, always rendered by the block layout.
-- The login and password pages are reached from the navbar with the HTMX navigation, which keeps the
-  theme of the page it starts from.
+- The login and password scenarios are skipped when another theme renders those pages (Web Admin shows
+  them in UIkit Admin): HTMX loads them in full there, which a scenario checks. The contact webform shows
+  the form classes of the theme on those sites.
 - The scenarios tagged `@ui-skins` save the UI Skins settings of the theme and restore them after the
   scenario, even when it fails. The HTTP cache of the browser is off for them.
 - A scenario is skipped when the site does not have what it checks: the Webform and Contact scenarios

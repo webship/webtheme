@@ -4,7 +4,8 @@ Feature: HTMX navigation
   So that the navigation is fast and the UIkit components keep working
 
   Scenario: The links of the page are boosted by HTMX
-    Given I am an anonymous user
+    Given the "/user/login" page is rendered by the default theme
+      And I am an anonymous user
      When I go to the homepage
      Then "[data-off-canvas-main-canvas]" should have attribute "hx-boost" with value "true"
       And the HTMX library should be loaded
@@ -18,7 +19,8 @@ Feature: HTMX navigation
       And there should be no JavaScript errors
 
   Scenario: The main content gets the focus and the new page title is announced
-    Given I am an anonymous user
+    Given the "/user/login" page is rendered by the default theme
+      And I am an anonymous user
      When I go to the homepage
       And I mark the current page
       And I click on the element ".uk-navbar-right .uk-navbar-nav a"
@@ -28,11 +30,22 @@ Feature: HTMX navigation
       And "#webtheme-htmx-announcer" should contain text "Log in"
       And "#webtheme-htmx-announcer" should have attribute "aria-live" with value "polite"
 
-  Scenario: Drupal forms keep their normal submission
-    Given I am an anonymous user
-     When I go to "/no-such-page"
+  Scenario: A page another theme renders is loaded in full
+    Given the "/user/login" page is rendered by another theme than the default theme
+      And I am an anonymous user
+     When I go to the homepage
+      And I mark the current page
       And I navigate with HTMX to "/user/login"
-     Then "form#user-login-form" should have attribute "hx-boost" with value "false"
+     Then the page should have been reloaded
+      And the current page should not be rendered by the default theme
+      And there should be no JavaScript errors
+
+  Scenario: Drupal forms keep their normal submission
+    Given the "webform" module is enabled
+      And I am an anonymous user
+     When I go to "/no-such-page"
+      And I navigate with HTMX to "/form/contact"
+     Then "form.webform-submission-form" should have attribute "hx-boost" with value "false"
 
   Scenario: The UIkit components work after an HTMX navigation
     Given I am an anonymous user
@@ -47,7 +60,8 @@ Feature: HTMX navigation
      Then ".uk-offcanvas .uk-offcanvas-bar" should be visible within 5 seconds
 
   Scenario: The offcanvas menu is closed after an HTMX navigation
-    Given I am an anonymous user
+    Given the "/user/login" page is rendered by the default theme
+      And I am an anonymous user
       And I set the viewport to the "xs" breakpoint
      When I go to the homepage
       And I mark the current page

@@ -5,7 +5,7 @@ props:
   url: "https://getuikit.com/download"
   size: large
   icon:
-    pack_id: uikit
+    pack_id: webtheme
     icon_id: download
     settings:
       ratio: 1

@@ -1,13 +1,20 @@
 # Color modes. The dark mode redefines the UIkit design tokens, see
 # assets/css/drupal.css.
-light:
+# The ids carry the theme name: the ids of UI Skins are shared by every theme
+# of the site, so they do not replace the color modes of another theme (like
+# the administration theme). The value written to data-theme stays light or
+# dark. The "Color mode" theme setting is the control that picks one, see
+# ThemeHooks::syncUiSkinsColorMode().
+webtheme_light:
   label: "Light"
   label_context: "color"
   key: "data-theme"
+  value: "light"
   target: html
 
-dark:
+webtheme_dark:
   label: "Dark"
   label_context: "color"
   key: "data-theme"
+  value: "dark"
   target: html

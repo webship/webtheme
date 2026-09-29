@@ -5,12 +5,13 @@ Feature: Accessibility of the pages
   So that I can read and use the site
 
   The front page, a page of the block layout (a page not found) and the login
-  and password pages reached from the navbar are checked. The HTMX navigation
-  keeps the theme of the page it starts from, even on a site that renders its
-  user pages with the administration theme.
+  and password pages reached from the navbar are checked. The user pages are
+  skipped on a site that renders them with the administration theme: HTMX
+  loads them in full there.
 
   Scenario Outline: <name> passes the accessibility checks
-    Given I am an anonymous user
+    Given the "<path>" page is rendered by the default theme
+      And I am an anonymous user
      When I go to "<start>"
       And I navigate with HTMX to "<path>"
      Then the page should have a title

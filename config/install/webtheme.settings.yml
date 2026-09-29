@@ -12,3 +12,4 @@ navbar_sticky: true
 htmx_navigation: true
 footer_logo: true
 footer_copyright: '© [year] [site:name]'
+color_mode: light

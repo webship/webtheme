@@ -18,3 +18,11 @@ webtheme.settings:
     footer_copyright:
       type: string
       label: "Footer copyright"
+    color_mode:
+      type: string
+      label: "Color mode"
+      constraints:
+        Choice:
+          - auto
+          - light
+          - dark

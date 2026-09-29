@@ -3,24 +3,31 @@
  * Drupal specific adjustments for UIkit.
  */
 
-/* Dark color mode (UI Skins theme "dark"): redefine the UIkit design tokens. */
-[data-theme="dark"] {
-  --uk-global-color: rgb(255, 255, 255, 0.7);
-  --uk-global-emphasis-color: #fff;
-  --uk-global-muted-color: rgb(255, 255, 255, 0.72);
-  --uk-global-inverse-color: #fff;
-  --uk-global-link-color: #85c0f9;
-  --uk-global-link-hover-color: #b9dcfc;
-  --uk-global-background: #171717;
-  --uk-global-muted-background: #242424;
-  --uk-global-muted-background-hover: #2e2e2e;
-  --uk-global-secondary-background: #000;
-  --uk-global-secondary-background-hover: #0a0a0a;
-  --uk-global-border: rgb(255, 255, 255, 0.15);
-  --uk-alert-primary-background: #16324f;
-  --uk-alert-success-background: #103b2b;
-  --uk-alert-warning-background: #4a2f19;
-  --uk-alert-danger-background: #4a1a24;
+/**
+ * Dark color mode: redefine the UIkit design tokens.
+ *
+ * The "Color mode" theme setting prints data-theme="dark" or "light" on the
+ * html element; "Follow the operating system" prints none, and the media
+ * query below picks the mode of the system. ":root" in the selector keeps
+ * these values above the light ones printed by UI Skins.
+ */
+:root[data-theme="dark"] {
+  --webtheme-global-color: rgb(255, 255, 255, 0.7);
+  --webtheme-global-emphasis-color: #fff;
+  --webtheme-global-muted-color: rgb(255, 255, 255, 0.72);
+  --webtheme-global-inverse-color: #fff;
+  --webtheme-global-link-color: #85c0f9;
+  --webtheme-global-link-hover-color: #b9dcfc;
+  --webtheme-global-background: #171717;
+  --webtheme-global-muted-background: #242424;
+  --webtheme-global-muted-background-hover: #2e2e2e;
+  --webtheme-global-secondary-background: #000;
+  --webtheme-global-secondary-background-hover: #0a0a0a;
+  --webtheme-global-border: rgb(255, 255, 255, 0.15);
+  --webtheme-alert-primary-background: #16324f;
+  --webtheme-alert-success-background: #103b2b;
+  --webtheme-alert-warning-background: #4a2f19;
+  --webtheme-alert-danger-background: #4a1a24;
 
   /*
    * The brand and status backgrounds keep white text (8.3:1 and more): the
@@ -37,6 +44,86 @@
   --webtheme-form-border: #787879;
 
   color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --webtheme-global-color: rgb(255, 255, 255, 0.7);
+    --webtheme-global-emphasis-color: #fff;
+    --webtheme-global-muted-color: rgb(255, 255, 255, 0.72);
+    --webtheme-global-inverse-color: #fff;
+    --webtheme-global-link-color: #85c0f9;
+    --webtheme-global-link-hover-color: #b9dcfc;
+    --webtheme-global-background: #171717;
+    --webtheme-global-muted-background: #242424;
+    --webtheme-global-muted-background-hover: #2e2e2e;
+    --webtheme-global-secondary-background: #000;
+    --webtheme-global-secondary-background-hover: #0a0a0a;
+    --webtheme-global-border: rgb(255, 255, 255, 0.15);
+    --webtheme-alert-primary-background: #16324f;
+    --webtheme-alert-success-background: #103b2b;
+    --webtheme-alert-warning-background: #4a2f19;
+    --webtheme-alert-danger-background: #4a1a24;
+
+    /*
+     * The brand and status backgrounds keep white text (8.3:1 and more): the
+     * light values are inherited. As text, they get lighter tones.
+     */
+    --webtheme-primary-color: #85c0f9;
+    --webtheme-success-color: #35d397;
+    --webtheme-warning-color: #faa969;
+    --webtheme-danger-color: #f7a4b3;
+    --webtheme-alert-primary-color: #8dc4fa;
+    --webtheme-alert-success-color: #53daa7;
+    --webtheme-alert-warning-color: #fbb680;
+    --webtheme-alert-danger-color: #f7a4b3;
+    --webtheme-form-border: #787879;
+
+    color-scheme: dark;
+  }
+}
+
+/**
+ * The UIkit names of the tokens UI Skins can change.
+ *
+ * The tokens carry the theme name (--webtheme-global-color, not
+ * --uk-global-color): the ids of UI Skins are shared by every theme of the
+ * site, and another theme declares the UIkit names too. A token the theme
+ * leaves unset makes its UIkit name invalid, so the uses fall back to their
+ * UIkit default.
+ */
+:root {
+  --uk-global-color: var(--webtheme-global-color);
+  --uk-global-emphasis-color: var(--webtheme-global-emphasis-color);
+  --uk-global-muted-color: var(--webtheme-global-muted-color);
+  --uk-global-inverse-color: var(--webtheme-global-inverse-color);
+  --uk-global-link-color: var(--webtheme-global-link-color);
+  --uk-global-link-hover-color: var(--webtheme-global-link-hover-color);
+  --uk-global-background: var(--webtheme-global-background);
+  --uk-global-muted-background: var(--webtheme-global-muted-background);
+  --uk-global-muted-background-hover: var(
+    --webtheme-global-muted-background-hover
+  );
+  --uk-global-primary-background: var(--webtheme-global-primary-background);
+  --uk-global-primary-background-hover: var(
+    --webtheme-global-primary-background-hover
+  );
+  --uk-global-secondary-background: var(--webtheme-global-secondary-background);
+  --uk-global-secondary-background-hover: var(
+    --webtheme-global-secondary-background-hover
+  );
+  --uk-global-success-background: var(--webtheme-global-success-background);
+  --uk-global-warning-background: var(--webtheme-global-warning-background);
+  --uk-global-danger-background: var(--webtheme-global-danger-background);
+  --uk-global-danger-background-hover: var(
+    --webtheme-global-danger-background-hover
+  );
+  --uk-global-border: var(--webtheme-global-border);
+  --uk-alert-primary-background: var(--webtheme-alert-primary-background);
+  --uk-alert-success-background: var(--webtheme-alert-success-background);
+  --uk-alert-warning-background: var(--webtheme-alert-warning-background);
+  --uk-alert-danger-background: var(--webtheme-alert-danger-background);
+  --uk-global-font-family: var(--webtheme-global-font-family);
 }
 
 /* Skip link and visually hidden helpers from Drupal core. */

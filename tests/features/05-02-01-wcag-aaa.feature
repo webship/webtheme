@@ -24,7 +24,8 @@ Feature: WCAG 2.2 AAA
       | /no-such-page | dark  | A page not found |
 
   Scenario Outline: The login form passes the WCAG AAA audit in the <mode> color mode
-    Given I am an anonymous user
+    Given the "/user/login" page is rendered by the default theme
+      And I am an anonymous user
      When I go to "/no-such-page"
       And I navigate with HTMX to "/user/login"
       And I set the "data-theme" attribute of the document to "<mode>"

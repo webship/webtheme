@@ -637,3 +637,21 @@ a.feed-icon {
   min-height: 44px;
   gap: 0.35em;
 }
+
+/* Forced colors (Windows contrast themes) drop the backgrounds: the alerts
+   keep an edge, the invalid fields a double border, and the focus ring the
+   system color, as in UI Suite UIkit and UIkit Admin. */
+@media (forced-colors: active) {
+  .uk-alert {
+    border: 1px solid CanvasText;
+  }
+
+  .uk-form-danger {
+    border-width: 3px;
+    border-style: double;
+  }
+
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}

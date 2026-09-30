@@ -23,6 +23,69 @@ webtheme.settings:
       label: "Color mode"
       constraints:
         Choice:
-          - auto
-          - light
-          - dark
+          choices:
+            - auto
+            - light
+            - dark
+    font_family:
+      type: string
+      label: "Font: atkinson (Atkinson Hyperlegible Next, served by the theme) or system (the fonts of the operating system)"
+      constraints:
+        Choice:
+          choices:
+            - atkinson
+            - system
+    sign_in_layout:
+      type: string
+      label: "Sign-in layout: center, start, end, top, bottom or spotlight"
+      constraints:
+        Choice:
+          choices:
+            - center
+            - start
+            - end
+            - top
+            - bottom
+            - spotlight
+    sign_in_message:
+      type: label
+      label: "Sign-in message: one sentence under the site name, at most 160 characters"
+      constraints:
+        Length:
+          max: 160
+    sign_in_header:
+      type: boolean
+      label: "Show the site header on the sign-in screens"
+    sign_in_footer:
+      type: boolean
+      label: "Show the site footer on the sign-in screens"
+    sign_in_page_layout:
+      type: string
+      label: "Sign-in page layout: the id of a Display Builder page layout that draws the sign-in screens, empty for the page of the theme"
+      constraints:
+        Regex:
+          pattern: '/^[a-z0-9_]*$/'
+    sign_in_logo:
+      type: string
+      label: "Sign-in logo: site (the logo of the theme settings), theme (the logo of the theme) or none"
+      constraints:
+        Choice:
+          choices:
+            - site
+            - theme
+            - none
+    sign_in_image:
+      type: string
+      label: "Sign-in image: the URL or path of a decorative image for the brand panel, empty for none"
+    sign_in_image_credit:
+      type: label
+      label: "Sign-in image credit: the author and the license of the image"
+      constraints:
+        Length:
+          max: 160
+    sign_in_help:
+      type: label
+      label: "Sign-in help: a support line under the links, like who to contact"
+      constraints:
+        Length:
+          max: 255

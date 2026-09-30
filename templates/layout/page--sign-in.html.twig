@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * The sign-in screens: log in, create an account, reset the password, set a
+ * new password, log out.
+ *
+ * Drawn with the sign_in component. The theme settings pick the layout, the
+ * logo, the message, the image and whether the site header and footer show.
+ *
+ * It extends page.html.twig, for its header and footer.
+ *
+ * Available variables (in addition to the ones of page.html.twig):
+ * - sign_in: The props of the component, and its title, messages, content,
+ *   links and help.
+ *
+ * @see \Drupal\webtheme\Hook\SignInHooks::preprocessPage()
+ */
+#}
+{% extends 'page.html.twig' %}
+{% block page %}
+{{ include('webtheme:sign_in', {
+  layout: sign_in.layout,
+  screen: sign_in.screen,
+  site_name: sign_in.site_name,
+  home_url: sign_in.home_url,
+  logo: sign_in.logo,
+  logo_alt: sign_in.logo_alt,
+  message: sign_in.message,
+  image: sign_in.image,
+  image_credit: sign_in.image_credit,
+  show_header: sign_in.show_header,
+  show_footer: sign_in.show_footer,
+  header: sign_in.show_header ? site_header,
+  footer: sign_in.show_footer ? site_footer,
+  title: {
+    '#type': 'page_title',
+    '#title': sign_in.title,
+  },
+  messages: sign_in.messages,
+  content: sign_in.content,
+  links: sign_in.links,
+  help: sign_in.help,
+}, with_context: false) }}
+{% endblock %}

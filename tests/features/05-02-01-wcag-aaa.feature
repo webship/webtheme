@@ -38,9 +38,11 @@ Feature: WCAG 2.2 AAA
       | light |
       | dark  |
 
+  # The page component is a whole page, with its own main landmark: it is
+  # checked on the pages that use it.
   Scenario Outline: The component library passes the WCAG AAA audit in the <mode> color mode
     Given I am logged in as the Drupal administrator
-     Then every UIkit component story should pass an accessibility audit at level "AAA" in the "<mode>" color mode
+     Then every UIkit component story should pass an accessibility audit at level "AAA" in the "<mode>" color mode except "page"
 
     Examples:
       | mode  |

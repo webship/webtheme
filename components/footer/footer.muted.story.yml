@@ -1,0 +1,10 @@
+name: "Muted background"
+props:
+  variant: muted
+  size: medium
+  totop: false
+slots:
+  bottom:
+    type: html_tag
+    tag: p
+    value: "© Webship."

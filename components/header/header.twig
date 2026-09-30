@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * The header of the site: the banner landmark, with the offcanvas menu next
+ * to it.
+ */
+#}
+{% set attributes = attributes.addClass('webtheme-header') %}
+{% if label %}
+  {% set attributes = attributes.setAttribute('aria-label', label) %}
+{% endif %}
+<header{{ attributes }}>
+  {{ content }}
+</header>
+{% if below %}
+  <div class="webtheme-header__below uk-section uk-section-muted uk-section-xsmall">
+    <div class="uk-container">{{ below }}</div>
+  </div>
+{% endif %}
+{{ offcanvas }}

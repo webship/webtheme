@@ -45,6 +45,12 @@ system_prompt: |
     Never leave it empty.
 
   ### Props (exact names, types and allowed values)
+  - `landmark` (enum, string) — the landmark of the band. One of: `main`,
+    `header`, `footer`, `aside`, or omitted. `main` prints the main content
+    landmark and the target of the skip link; `header` prints the banner at
+    the top of the page (the band that holds the navbar); `footer` prints the
+    contentinfo at the end of the page. Each of main, header and footer at
+    most once per page. Omit it for a plain band.
   - `size` (enum, string) — vertical padding. One of: `xsmall`, `small`,
     `large`, `xlarge`. Omit for the normal padding. Use `small` for compact
     bands, `large`/`xlarge` for a feature or landing band.

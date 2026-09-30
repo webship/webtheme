@@ -1,0 +1,118 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - webtheme
+id: webtheme
+label: 'Webtheme'
+description: 'For the pages of the front end: the components of Webtheme, without the components of the administration themes and the page parts of the sign-in screens.'
+islands:
+  component_library:
+    status: true
+    weight: -10
+    exclude:
+      navigation: navigation
+      uikit_admin: uikit_admin
+      webdashboard: webdashboard
+      ui_suite_uikit: ui_suite_uikit
+    exclude_id: 'webtheme:sign_in'
+    component_status:
+      experimental: '0'
+      deprecated: '0'
+      obsolete: '0'
+    include_no_ui: false
+    preview: true
+  block_library:
+    status: true
+    weight: -9
+    exclude:
+      htmx: htmx
+      shortcut: shortcut
+    exclude_id: "system_menu_block:admin\r\nsystem_menu_block:devel\r\nsystem_clear_cache_block\r\n"
+    preview: true
+  preset_library:
+    status: true
+    weight: -8
+    preview: true
+  builder:
+    status: true
+    weight: -8
+  scaffold:
+    status: true
+    weight: -6
+  preview:
+    status: true
+    weight: -5
+  instances:
+    status: true
+    weight: -10
+  library:
+    status: true
+    weight: -9
+  tree:
+    status: true
+    weight: -8
+  history:
+    status: true
+    weight: -8
+  state:
+    status: true
+    weight: -9
+    revert: true
+  language_switcher:
+    status: true
+    weight: -6
+  expand:
+    status: true
+    weight: -7
+  theme:
+    status: false
+    weight: -7
+  help:
+    status: true
+    weight: -7
+  contextual_form:
+    status: true
+    weight: -10
+  styles:
+    status: true
+    weight: -9
+  visibility_conditions:
+    status: true
+    weight: -7
+  menu:
+    status: true
+    weight: -10
+  menu_preset:
+    status: true
+    weight: -9
+  menu_delete:
+    status: true
+    weight: -7
+  collaboration:
+    status: false
+    weight: -5
+  back:
+    status: true
+    weight: -6
+  save_status:
+    status: true
+    weight: -10
+  tokens:
+    status: true
+    weight: 0
+  highlight:
+    status: true
+    weight: 0
+  scaffold_options:
+    status: true
+    weight: 0
+  viewport:
+    status: true
+    weight: 0
+  menu_styles:
+    status: true
+    weight: -8
+library_flat: false
+weight: 0

@@ -1,0 +1,13 @@
+name: "With a band below"
+slots:
+  content:
+    type: html_tag
+    tag: nav
+    attributes:
+      class: ["uk-navbar-container"]
+      aria-label: "Main navigation"
+    value: '<div class="uk-container"><div class="uk-navbar"><div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="/">Webship</a></div></div></div>'
+  below:
+    type: html_tag
+    tag: p
+    value: "Home / Documentation"

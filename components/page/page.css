@@ -1,0 +1,14 @@
+/**
+ * @file
+ * The frame of a page: the footer stays at the bottom of short pages.
+ */
+
+.webtheme-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - var(--drupal-displace-offset-top, 0px));
+}
+
+.webtheme-page__main {
+  flex: 1 0 auto;
+}

@@ -1,59 +1,196 @@
 /**
  * @file
- * The Webship.co design: colors and fonts on top of the UIkit tokens.
+ * The Webship.co design: the design tokens of the light mode.
  *
- * UI Skins settings override these values. Every text color reaches the
- * WCAG AAA contrast (7:1, 4.5:1 for large text) on the backgrounds it is
- * printed on, and the borders of the controls reach 3:1. The dark color mode
- * redefines them in assets/css/drupal.css.
+ * Every token UI Skins can change is set here, with the value UI Skins shows
+ * as its default (webtheme.ui_skins.css_variables.yml): what the form shows
+ * is what the page uses. Change both together. The values saved in UI Skins
+ * are printed after this file.
+ *
+ * Every text color reaches the WCAG AAA contrast (7:1, 4.5:1 for large text)
+ * on the backgrounds it is printed on, and the borders of the controls and
+ * the focus ring reach 3:1. The dark color mode redefines the colors in
+ * assets/css/drupal.css, which also maps each token to its UIkit name.
  */
 
 :root {
+  /* Text colors. */
   --webtheme-global-color: #313637;
   --webtheme-global-emphasis-color: #0d1214;
   --webtheme-global-muted-color: #40505a;
   --webtheme-global-inverse-color: #fff;
   --webtheme-global-link-color: #07527f;
   --webtheme-global-link-hover-color: #053a5b;
-  --webtheme-global-primary-background: #07527f;
-  --webtheme-global-primary-background-hover: #053a5b;
+  --webtheme-global-primary-color: #07527f;
+  --webtheme-global-success-color: #13583e;
+  --webtheme-global-warning-color: #7f3a04;
+  --webtheme-global-danger-color: #9d0d28;
+  --webtheme-code-color: #9d0d28;
+
+  /* Inverse areas: text, form borders, and their white elements. */
+  --webtheme-inverse-muted-color: #ffffffeb;
+  --webtheme-inverse-form-border-color: #ffffffb3;
+  --webtheme-on-inverse-color: #0d1214;
+  --webtheme-inverse-hover-background: #e7edf1;
+  --webtheme-inverse-focus-color: #fff;
+  --webtheme-inverse-focus-halo: #0d1214;
+  /* The Webship.co blue: the band of the primary sections. */
+  --webtheme-brand-color: #358fc4;
+
+  /* Backgrounds and borders. */
+  --webtheme-global-background: #fff;
+  --webtheme-global-muted-background: #f3f6f8;
+  --webtheme-global-muted-background-hover: #e7edf1;
+  --webtheme-global-primary-background: #205575;
+  --webtheme-global-primary-background-hover: #19445d;
   --webtheme-global-secondary-background: #313637;
   --webtheme-global-secondary-background-hover: #171e23;
   --webtheme-global-success-background: #13583e;
   --webtheme-global-warning-background: #7f3a04;
   --webtheme-global-danger-background: #9d0d28;
   --webtheme-global-danger-background-hover: #7a0a1f;
-  --webtheme-global-background: #fff;
-  --webtheme-global-muted-background: #f3f6f8;
-  --webtheme-global-muted-background-hover: #e7edf1;
   --webtheme-global-border: #d7e1e8;
+  --webtheme-form-border-color: #768996;
+
+  /* Alerts. */
   --webtheme-alert-primary-background: #e6f0f6;
-  --webtheme-global-font-family: "Zen Maru Gothic", "Georgia", sans-serif;
-
-  /* The brand and status colors as text, markers and indicators. */
-  --webtheme-primary-color: var(--uk-global-primary-background);
-  --webtheme-success-color: var(--uk-global-success-background);
-  --webtheme-warning-color: var(--uk-global-warning-background);
-  --webtheme-danger-color: var(--uk-global-danger-background);
-
-  /* The text of the alerts, on the alert backgrounds. */
+  --webtheme-alert-success-background: #edfbf6;
+  --webtheme-alert-warning-background: #fff6ee;
+  --webtheme-alert-danger-background: #fef4f6;
   --webtheme-alert-primary-color: #07527f;
   --webtheme-alert-success-color: #13583e;
   --webtheme-alert-warning-color: #7f3a04;
   --webtheme-alert-danger-color: #9d0d28;
 
-  /* The border of the form controls; --uk-global-border stays for dividers. */
-  --webtheme-form-border: #768996;
+  /* Focus ring, its halo, and the target size (WCAG 2.4.13 and 2.5.5). */
+  --webtheme-focus-color: #0d1214;
+  --webtheme-focus-halo: #fff;
+  --webtheme-focus-width: 2px;
+  --webtheme-focus-offset: 2px;
+  --webtheme-focus-halo-width: 6px;
+  --webtheme-target-size: 44px;
+  --webtheme-control-height: 44px;
 
-  /* Focus ring, and the halo that separates it from any background. */
-  --webtheme-focus-color: var(--uk-global-emphasis-color);
-  --webtheme-focus-halo: var(--uk-global-background);
+  /* Fonts, text size and line length. The stacks are in fonts.css: the fonts
+     of the theme, or of the operating system with the "Font" theme setting. */
+  --webtheme-global-font-family: var(--uk-font-family-sans);
+  --webtheme-heading-font-family: var(--uk-font-family-brand);
+  --webtheme-code-font-family: var(--uk-font-family-mono);
+  --webtheme-global-font-size: 16px;
+  --webtheme-global-line-height: 1.5;
+  --webtheme-measure: 32em;
 
-  /* Inverse contexts: text, form borders, and their white elements. */
-  --webtheme-inverse-muted-color: rgb(255, 255, 255, 0.92);
-  --webtheme-inverse-form-border: rgb(255, 255, 255, 0.7);
-  --webtheme-on-inverse-color: #0d1214;
-  --webtheme-inverse-hover-background: #e7edf1;
-  --webtheme-inverse-focus-color: #fff;
-  --webtheme-inverse-focus-halo: #0d1214;
+  /* Spacing. */
+  --webtheme-global-small-margin: 10px;
+  --webtheme-global-margin: 20px;
+  --webtheme-global-medium-margin: 40px;
+  --webtheme-global-large-margin: 70px;
+
+  /* Corners and shadows. */
+  --webtheme-global-border-radius: 0;
+  --webtheme-global-small-box-shadow: 0 2px 8px rgb(0, 0, 0, 0.08);
+  --webtheme-global-medium-box-shadow: 0 5px 15px rgb(0, 0, 0, 0.08);
+  --webtheme-global-large-box-shadow: 0 14px 25px rgb(0, 0, 0, 0.16);
+  --webtheme-global-xlarge-box-shadow: 0 28px 50px rgb(0, 0, 0, 0.16);
+  --webtheme-dropdown-box-shadow: 0 5px 12px rgb(0, 0, 0, 0.15);
+}
+
+/* The Webship.co header: a white bar with a soft shadow, and a menu in the
+   font of the titles, set bold in the case it was written in. */
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background: var(--uk-global-background);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+}
+
+.uk-navbar-nav > li > a,
+.uk-navbar-item,
+.uk-navbar-toggle {
+  font-family: var(--uk-base-heading-font-family);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+  color: var(--uk-global-emphasis-color);
+}
+
+/* The titles of Webship.co are set in a medium weight. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.uk-h1,
+.uk-h2,
+.uk-h3,
+.uk-h4,
+.uk-h5,
+.uk-h6,
+.uk-heading-small,
+.uk-heading-medium,
+.uk-heading-large {
+  font-weight: 500;
+}
+
+/* The Webship.co blue, #358fc4, is the band of the primary sections: white
+   text on it would reach 3.6:1, so the text of a primary section sits on a
+   card in the background of the page, where it reaches AAA. The buttons, the
+   labels and the badges use the primary background, a deeper shade of the
+   same blue that carries white text at 8:1. */
+.uk-section-primary {
+  background-color: var(--webtheme-brand-color);
+  /* The text of the section is the text of the page again. */
+  --uk-global-inverse-color: var(--uk-global-emphasis-color);
+  --uk-inverse-muted-color: var(--uk-global-muted-color);
+  --uk-inverse-form-border-color: var(--webtheme-form-border-color);
+  --webtheme-on-inverse-color: var(--uk-global-background);
+  --webtheme-inverse-hover-background: var(--uk-global-secondary-background-hover);
+  --webtheme-inverse-focus-color: var(--webtheme-focus-color);
+  --webtheme-inverse-focus-halo: var(--webtheme-focus-halo);
+}
+
+/* The card: the cells of a grid that hold text, or the container of a
+   section without a grid. The background stops at the content box, so the
+   gutter of the grid and the padding of the container stay blue. */
+.uk-section-primary .uk-grid > :has(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, .uk-button),
+.uk-section-primary > .uk-container:not(:has(.uk-grid)) {
+  background-color: var(--uk-global-background);
+  background-clip: content-box;
+}
+
+.uk-section-primary .uk-grid > :has(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, .uk-button) > *,
+.uk-section-primary > .uk-container:not(:has(.uk-grid)) > * {
+  margin-inline: 28px;
+}
+
+.uk-section-primary .uk-grid > :has(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, .uk-button) > :first-child,
+.uk-section-primary > .uk-container:not(:has(.uk-grid)) > :first-child {
+  margin-block-start: 28px;
+}
+
+.uk-section-primary .uk-grid > :has(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, .uk-button) > :last-child,
+.uk-section-primary > .uk-container:not(:has(.uk-grid)) > :last-child {
+  margin-block-end: 28px;
+}
+
+/* The buttons of a primary section sit on its card: an outline in the color
+   of the links, and the filled button in the primary background. */
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default {
+  border: 1px solid currentcolor;
+  background-color: transparent;
+  color: var(--uk-global-link-color);
+}
+
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default:hover {
+  background-color: var(--uk-global-muted-background);
+  color: var(--uk-global-link-hover-color);
+}
+
+.uk-section-primary:not(.uk-preserve-color) :is(.uk-button-primary, .uk-button-secondary) {
+  background-color: var(--uk-global-primary-background);
+  color: var(--webtheme-global-inverse-color);
+}
+
+.uk-section-primary:not(.uk-preserve-color) :is(.uk-button-primary, .uk-button-secondary):hover {
+  background-color: var(--uk-global-primary-background-hover);
+  color: var(--webtheme-global-inverse-color);
 }

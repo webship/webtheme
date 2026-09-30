@@ -28,5 +28,6 @@ libraries:
   - webtheme/uikit
   - webtheme/base
 ckeditor5-stylesheets:
+  - assets/css/fonts.css
   - assets/css/ckeditor5.css
 generator: 'ui_suite_uikit:unknown-version'

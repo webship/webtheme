@@ -1,0 +1,396 @@
+/**
+ * @file
+ * The sign-in screens.
+ *
+ * The colors come from the design tokens of the theme, so the screens follow
+ * UI Skins and both color modes. Logical properties only: the layouts mirror
+ * in right-to-left languages.
+ */
+
+.webtheme-sign-in {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--uk-global-muted-background, #f3f6f8);
+}
+
+.webtheme-sign-in__body {
+  display: grid;
+  flex: 1 0 auto;
+}
+
+/* The brand panel. */
+.webtheme-sign-in__brand {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 40px;
+  color: var(--uk-global-inverse-color, #fff);
+  background: linear-gradient(150deg, var(--uk-global-primary-background, #07527f), var(--uk-global-secondary-background, #313637));
+}
+
+.webtheme-sign-in__image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+.webtheme-sign-in__brand-inner,
+.webtheme-sign-in__credit {
+  position: relative;
+  z-index: 1;
+}
+
+.webtheme-sign-in__brand-inner {
+  max-width: 28rem;
+}
+
+.webtheme-sign-in__site {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--webtheme-target-size, 44px);
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.375rem;
+  font-weight: 700;
+  gap: 12px;
+}
+
+.webtheme-sign-in__site:hover,
+.webtheme-sign-in__site:focus {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.webtheme-sign-in__name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow-wrap: anywhere;
+}
+
+.webtheme-sign-in__logo {
+  flex: none;
+  max-width: 160px;
+  max-height: 48px;
+}
+
+.webtheme-sign-in__message {
+  max-width: 28rem;
+  margin: 12px 0 0;
+  font-size: 1.125rem;
+}
+
+.webtheme-sign-in__credit {
+  margin: 16px 0 0;
+  font-size: 0.875rem;
+}
+
+/* The card. */
+.webtheme-sign-in__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 32px 16px;
+}
+
+.webtheme-sign-in__main:focus {
+  outline: none;
+}
+
+.webtheme-sign-in__card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 26rem;
+  padding: 32px;
+  color: var(--uk-global-color, #313637);
+  border: 1px solid var(--uk-global-border, #d7e1e8);
+  border-radius: var(--uk-global-border-radius, 0);
+  background: var(--uk-global-background, #fff);
+  box-shadow: var(--uk-global-medium-box-shadow, 0 5px 15px rgb(0, 0, 0, 0.08));
+}
+
+.webtheme-sign-in__title {
+  margin-block-end: 24px;
+}
+
+.webtheme-sign-in__title > * {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+
+.webtheme-sign-in__messages .uk-alert {
+  max-width: none;
+}
+
+/* Fields, labels and buttons: 16px text, the whole width of the card. */
+.webtheme-sign-in__form .form-item {
+  margin-bottom: 20px;
+}
+
+.webtheme-sign-in__form label,
+.webtheme-sign-in__form .uk-input,
+.webtheme-sign-in__form .uk-button {
+  font-size: 1rem;
+}
+
+.webtheme-sign-in__form .uk-input,
+.webtheme-sign-in__form .form-actions .uk-button {
+  width: 100%;
+  max-width: none;
+}
+
+.webtheme-sign-in__form .form-actions {
+  margin: 24px 0 0;
+}
+
+.webtheme-sign-in__form .form-actions .uk-button + .uk-button {
+  margin-block-start: 12px;
+  margin-inline-start: 0;
+}
+
+.webtheme-sign-in__forgot {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-start: -12px;
+}
+
+.webtheme-sign-in__forgot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--webtheme-target-size, 44px);
+}
+
+.webtheme-sign-in__links {
+  margin-block-start: 24px;
+  padding-block-start: 16px;
+  border-block-start: 1px solid var(--uk-global-border, #d7e1e8);
+}
+
+.webtheme-sign-in__links ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0 24px;
+}
+
+/* The local tasks block of a page layout, as plain links. */
+.webtheme-sign-in__links .uk-tab {
+  margin: 0;
+}
+
+.webtheme-sign-in__links .uk-tab::before,
+.webtheme-sign-in__links h2,
+.webtheme-sign-in__links li.uk-active {
+  display: none;
+}
+
+.webtheme-sign-in__links .uk-tab > * > a {
+  padding: 0;
+  text-transform: none;
+  color: var(--uk-global-link-color, #07527f);
+  border: 0;
+  font-size: 1rem;
+}
+
+.webtheme-sign-in__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--webtheme-target-size, 44px);
+  text-decoration: underline;
+}
+
+.webtheme-sign-in__help {
+  margin-block-start: 12px;
+  color: var(--uk-global-muted-color, #40505a);
+  font-size: 0.875rem;
+}
+
+.webtheme-sign-in__help > :last-child {
+  margin-block-end: 0;
+}
+
+/* The show-password control of the View Password module: a 44px target
+   inside the field, at the end in both directions. */
+.webtheme-sign-in__form .form-type-password {
+  position: relative;
+}
+
+.webtheme-sign-in__form .form-type-password .uk-input {
+  padding-inline-end: calc(var(--webtheme-target-size, 44px) + 4px);
+}
+
+.webtheme-sign-in__form button.shwpd {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  width: var(--webtheme-target-size, 44px);
+  height: var(--webtheme-target-size, 44px);
+  margin: 0;
+  background-position: center;
+  background-size: 24px 16px;
+}
+
+/* The header and the footer of the site. */
+.webtheme-sign-in__footer > footer {
+  margin: 0;
+}
+
+/* Centered: the site name above the card. */
+.webtheme-sign-in--center .webtheme-sign-in__body,
+.webtheme-sign-in--spotlight .webtheme-sign-in__body {
+  align-content: center;
+  justify-items: center;
+}
+
+.webtheme-sign-in--center .webtheme-sign-in__brand {
+  align-items: center;
+  padding: 32px 16px 0;
+  text-align: center;
+  color: var(--uk-global-emphasis-color, #0d1214);
+  background: none;
+}
+
+.webtheme-sign-in--center .webtheme-sign-in__main,
+.webtheme-sign-in--spotlight .webtheme-sign-in__main {
+  width: 100%;
+  padding-block-start: 16px;
+}
+
+.webtheme-sign-in--center .webtheme-sign-in__message {
+  color: var(--uk-global-muted-color, #40505a);
+}
+
+.webtheme-sign-in--center .webtheme-sign-in__image {
+  display: none;
+}
+
+/* Start and end: the card on one side, the brand panel on the other. On a
+   phone the panel keeps only the site name. */
+@media (min-width: 960px) {
+  .webtheme-sign-in--start .webtheme-sign-in__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  }
+
+  .webtheme-sign-in--start .webtheme-sign-in__main {
+    order: -1;
+  }
+
+  .webtheme-sign-in--end .webtheme-sign-in__body {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
+  .webtheme-sign-in--start .webtheme-sign-in__brand,
+  .webtheme-sign-in--end .webtheme-sign-in__brand {
+    padding: 64px;
+  }
+}
+
+@media (max-width: 959px) {
+  .webtheme-sign-in--start .webtheme-sign-in__brand,
+  .webtheme-sign-in--end .webtheme-sign-in__brand {
+    padding: 16px;
+  }
+
+  .webtheme-sign-in--start .webtheme-sign-in__message,
+  .webtheme-sign-in--end .webtheme-sign-in__message,
+  .webtheme-sign-in--start .webtheme-sign-in__credit,
+  .webtheme-sign-in--end .webtheme-sign-in__credit {
+    display: none;
+  }
+}
+
+/* Top and bottom: a brand band above or under the card. */
+.webtheme-sign-in--top .webtheme-sign-in__body,
+.webtheme-sign-in--bottom .webtheme-sign-in__body {
+  grid-template-rows: auto 1fr;
+}
+
+.webtheme-sign-in--top .webtheme-sign-in__brand,
+.webtheme-sign-in--bottom .webtheme-sign-in__brand {
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+  text-align: center;
+}
+
+.webtheme-sign-in--top .webtheme-sign-in__main {
+  align-items: flex-start;
+}
+
+.webtheme-sign-in--bottom .webtheme-sign-in__main {
+  align-items: flex-end;
+  order: -1;
+}
+
+/* Spotlight: the card floating over the brand color. */
+.webtheme-sign-in--spotlight .webtheme-sign-in__body {
+  background: radial-gradient(circle at 18% 22%, rgb(255, 255, 255, 0.18), transparent 38%), linear-gradient(135deg, var(--uk-global-primary-background, #07527f), var(--uk-global-secondary-background, #313637) 75%);
+}
+
+.webtheme-sign-in--spotlight .webtheme-sign-in__brand {
+  align-items: center;
+  padding: 32px 16px 0;
+  text-align: center;
+  background: none;
+}
+
+.webtheme-sign-in--spotlight .webtheme-sign-in__card {
+  border-color: transparent;
+  box-shadow: var(--uk-global-xlarge-box-shadow, 0 28px 50px rgb(0, 0, 0, 0.16));
+}
+
+/* Dark mode: a dark brand panel. */
+:root[data-theme="dark"] .webtheme-sign-in__brand:not(.webtheme-sign-in--center *) {
+  background: linear-gradient(150deg, #16324f, #000);
+}
+
+:root[data-theme="dark"] .webtheme-sign-in--spotlight .webtheme-sign-in__body {
+  background: linear-gradient(135deg, #16324f, #000 75%);
+}
+
+/* The blue Webship logo of the theme turns white on the brand panel. */
+.webtheme-sign-in:not(.webtheme-sign-in--center) .webtheme-sign-in__logo[src$="/webtheme/logo.svg"] {
+  filter: brightness(0) invert(1);
+}
+
+:root[data-theme="dark"] .webtheme-sign-in__form button.shwpd {
+  filter: invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .webtheme-sign-in__brand:not(.webtheme-sign-in--center *) {
+    background: linear-gradient(150deg, #16324f, #000);
+  }
+
+  :root:not([data-theme="light"]) .webtheme-sign-in--spotlight .webtheme-sign-in__body {
+    background: linear-gradient(135deg, #16324f, #000 75%);
+  }
+
+  :root:not([data-theme="light"]) .webtheme-sign-in__form button.shwpd {
+    filter: invert(1);
+  }
+}
+
+/* Small screens: the card takes the width. */
+@media (max-width: 639px) {
+  .webtheme-sign-in__card {
+    padding: 24px 16px;
+  }
+
+  .webtheme-sign-in__brand {
+    padding: 16px;
+  }
+}

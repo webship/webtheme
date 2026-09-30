@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * The footer of the site: the contentinfo landmark, a full-width band with
+ * the logo of the footer.
+ */
+#}
+{% set variant = variant|default('secondary') %}
+{% set size = size|default('small') %}
+{% set attributes = attributes.addClass([
+  'webtheme-footer',
+  'uk-section',
+  'uk-section-' ~ variant,
+  size != 'medium' ? 'uk-section-' ~ size,
+]) %}
+<footer{{ attributes }}>
+  <div class="uk-container">
+    {% if logo %}
+      <a href="{{ path('<front>') }}" class="webtheme-footer-logo uk-logo uk-display-inline-block uk-margin-bottom" rel="home">
+        <img src="{{ logo }}" alt="{{ logo_alt|default('Home'|t) }}" height="40">
+      </a>
+    {% endif %}
+    {{ content }}
+    {% if bottom or totop %}
+      <div class="webtheme-footer__bottom uk-margin-top">
+        <div>{{ bottom }}</div>
+        {% if totop %}
+          <a class="uk-totop" href="#" uk-totop aria-label="{{ 'Back to top'|t }}"></a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</footer>

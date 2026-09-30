@@ -1,3 +1,4 @@
+langcode: en
 features:
   node_user_picture: true
   comment_user_picture: true
@@ -13,3 +14,13 @@ htmx_navigation: true
 footer_logo: true
 footer_copyright: '© [year] [site:name]'
 color_mode: light
+font_family: atkinson
+sign_in_layout: center
+sign_in_message: ''
+sign_in_header: false
+sign_in_footer: false
+sign_in_page_layout: ''
+sign_in_logo: site
+sign_in_image: ''
+sign_in_image_credit: ''
+sign_in_help: ''

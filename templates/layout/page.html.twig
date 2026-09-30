@@ -3,8 +3,14 @@
  * @file
  * Theme override to display a single page.
  *
- * Built with the UIkit components of the theme: Navbar, Offcanvas and the
- * UIkit section, container and grid classes.
+ * Built with the page parts of the theme: the Page, Header and Footer
+ * components, which the Display Builder page layouts use too, and the Navbar
+ * and Offcanvas components. page--sign-in.html.twig extends this template
+ * and replaces the "page" block.
+ *
+ * The page template also renders in the "theme page" of a Display Builder
+ * page layout, without the preprocess of the theme: the variables below have
+ * a default.
  *
  * Available variables (in addition to core ones):
  * - navbar_sticky: Whether the navbar sticks to the top (theme setting).
@@ -25,88 +31,86 @@
  * @see \Drupal\webtheme\Hook\ThemeHooks::preprocessPage()
  */
 #}
-{% set navbar_toggle = page.offcanvas ? {
+{% set offcanvas_id = offcanvas_id|default('webtheme-offcanvas') %}
+{% set sticky = navbar_sticky is defined ? navbar_sticky : true %}
+
+{% set site_header = null %}
+{% if page.navbar_left or page.navbar_center or page.navbar_right or page.offcanvas %}
+  {% set site_header = {
+    '#type': 'component',
+    '#component': 'webtheme:header',
+    '#slots': {
+      'content': {
+        '#type': 'component',
+        '#component': 'webtheme:navbar',
+        '#props': {
+          'sticky': sticky,
+        },
+        '#slots': {
+          'left': page.navbar_left,
+          'center': page.navbar_center,
+          'right': [page.navbar_right, page.offcanvas ? {
+            '#type': 'component',
+            '#component': 'webtheme:navbar_toggle',
+            '#props': {
+              'target': offcanvas_id,
+              'attributes': {
+                'class': ['uk-hidden@m'],
+              },
+            },
+          }],
+        },
+      },
+      'offcanvas': page.offcanvas ? {
+        '#type': 'component',
+        '#component': 'webtheme:offcanvas',
+        '#props': {
+          'offcanvas_id': offcanvas_id,
+          'mode': 'push',
+          'flip': true,
+          'overlay': true,
+          'close': true,
+        },
+        '#slots': {
+          'content': page.offcanvas,
+        },
+      },
+    },
+  } %}
+{% endif %}
+
+{% set site_footer = page.footer or footer_logo or footer_copyright ? {
   '#type': 'component',
-  '#component': 'webtheme:navbar_toggle',
+  '#component': 'webtheme:footer',
   '#props': {
-    'target': offcanvas_id,
-    'attributes': {
-      'class': ['uk-hidden@m'],
+    'variant': 'secondary',
+    'size': 'small',
+    'totop': true,
+    'logo': footer_logo,
+  },
+  '#slots': {
+    'content': page.footer,
+    'bottom': footer_copyright ? {
+      '#type': 'html_tag',
+      '#tag': 'p',
+      '#attributes': {
+        'class': ['webtheme-footer-copyright', 'uk-text-small', 'uk-margin-remove'],
+      },
+      '#value': footer_copyright,
     },
   },
 } %}
 
-{% if page.navbar_left or page.navbar_center or page.navbar_right or page.offcanvas %}
-  <header class="webtheme-header">
-    {{ include('webtheme:navbar', {
-      left: page.navbar_left,
-      center: page.navbar_center,
-      right: [page.navbar_right, navbar_toggle],
-      sticky: navbar_sticky,
-    }, with_context: false) }}
-  </header>
-{% endif %}
-
-{% if page.offcanvas %}
-  {{ include('webtheme:offcanvas', {
-    content: page.offcanvas,
-    offcanvas_id: offcanvas_id,
-    mode: 'push',
-    flip: true,
-    overlay: true,
-    close: true,
+{% block page %}
+  {# Blocks like the breadcrumb can render nothing: skip the empty band. #}
+  {% set above = page.header|render %}
+  {{ include('webtheme:page', {
+    header: site_header,
+    above: above|striptags('<img><svg><form><input>')|trim ? above,
+    highlighted: [page.highlighted, page.help],
+    content: page.content,
+    sidebar_first: page.sidebar_first,
+    sidebar_second: page.sidebar_second,
+    footer: site_footer,
   }, with_context: false) }}
-{% endif %}
-
-{# Blocks like the breadcrumb can render nothing: skip the empty section. #}
-{% set header = page.header|render %}
-{% if header|striptags('<img><svg><form><input>')|trim %}
-  <div class="uk-section uk-section-muted uk-section-xsmall">
-    <div class="uk-container">
-      {{ header }}
-    </div>
-  </div>
-{% endif %}
-
-<main role="main" class="uk-section uk-section-small">
-  <div class="uk-container">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-    {{ page.highlighted }}
-    {{ page.help }}
-
-    <div class="uk-grid uk-grid-large" uk-grid>
-      {% if page.sidebar_first %}
-        <aside class="uk-width-1-1 uk-width-1-4@m" role="complementary">
-          {{ page.sidebar_first }}
-        </aside>
-      {% endif %}
-
-      <div class="uk-width-1-1 uk-width-expand@m">
-        {{ page.content }}
-      </div>
-
-      {% if page.sidebar_second %}
-        <aside class="uk-width-1-1 uk-width-1-4@m" role="complementary">
-          {{ page.sidebar_second }}
-        </aside>
-      {% endif %}
-    </div>
-  </div>
-</main>
-
-{% if page.footer or footer_logo or footer_copyright %}
-  <footer role="contentinfo" class="uk-section uk-section-secondary uk-section-small">
-    <div class="uk-container">
-      {% if footer_logo %}
-        <a href="{{ path('<front>') }}" class="webtheme-footer-logo uk-logo uk-display-inline-block uk-margin-bottom" rel="home">
-          <img src="{{ footer_logo }}" alt="{{ 'Home'|t }}" height="40">
-        </a>
-      {% endif %}
-      {{ page.footer }}
-      <div class="uk-flex uk-flex-middle uk-flex-between uk-margin-top">
-        <p class="webtheme-footer-copyright uk-text-small uk-margin-remove">{{ footer_copyright }}</p>
-        {{ include('webtheme:totop', {}, with_context: false) }}
-      </div>
-    </div>
-  </footer>
-{% endif %}
+{% endblock %}

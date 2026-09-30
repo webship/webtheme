@@ -1,14 +1,19 @@
-# Webship.co design tokens on top of the UIkit ones, consumed by
-# assets/css/tokens.css (generated from the UIkit CSS by
-# scripts/build-tokens.mjs). The defaults are the values of
-# assets/css/webship.css (light) and assets/css/drupal.css (dark, the
-# ':root[data-theme="dark"]' scope): they all reach the WCAG AAA contrast.
-# Check the contrast again when changing them.
+# The design tokens of Webtheme, as CSS variables of UI Skins.
+#
+# Each default is the value the theme sets: assets/css/webship.css for the
+# light mode, assets/css/drupal.css for the dark one (the
+# ':root[data-theme="dark"]' scope). What the form shows is what the page
+# uses: change both together. The colors are chosen for WCAG 2.2 AAA: 7:1 for
+# text, 3:1 for the borders of the form controls and the focus ring. Check a
+# new value against every background it sits on.
 #
 # The ids carry the theme name: the ids of UI Skins are shared by every theme
 # of the site, and another theme (the administration theme, UI Suite UIkit)
 # declares the UIkit names too. drupal.css maps each one to its UIkit name
 # (webtheme-global-color to --uk-global-color).
+#
+# Every variable has a description that says what it changes and which values
+# it takes, for the people and the assistants that set it.
 
 ################################################################################
 # Text colors.
@@ -17,6 +22,7 @@
 webtheme-global-color:
   category: "Text colors"
   label: "Text color"
+  description: "The color of the body text. A color and its transparency (0 to 255). Keep 7:1 against the background and the muted background."
   type: "ui_skins_alpha_color"
   default_values:
     ":root": "#313637ff"
@@ -24,7 +30,8 @@ webtheme-global-color:
 
 webtheme-global-emphasis-color:
   category: "Text colors"
-  label: "Emphasis color (headings, active items)"
+  label: "Emphasis color"
+  description: "The color of the headings, the active menu items and the strong text. A hex color. Keep 7:1 against the background."
   type: "color"
   default_values:
     ":root": "#0d1214"
@@ -33,6 +40,7 @@ webtheme-global-emphasis-color:
 webtheme-global-muted-color:
   category: "Text colors"
   label: "Muted color"
+  description: "The color of the secondary text: meta lines, descriptions, inactive menu items. A color and its transparency (0 to 255). Keep 7:1 against the background."
   type: "ui_skins_alpha_color"
   default_values:
     ":root": "#40505aff"
@@ -40,15 +48,17 @@ webtheme-global-muted-color:
 
 webtheme-global-inverse-color:
   category: "Text colors"
-  label: "Inverse color (text on colored backgrounds)"
-  type: "color"
+  label: "Inverse color"
+  description: "The color of the text on the primary, secondary, success, warning and danger backgrounds, like the label of a primary button. A color and its transparency (0 to 255). Keep 7:1 against each of these backgrounds."
+  type: "ui_skins_alpha_color"
   default_values:
-    ":root": "#ffffff"
-    ':root[data-theme="dark"]': "#ffffff"
+    ":root": "#ffffffff"
+    ':root[data-theme="dark"]': "#ffffffff"
 
 webtheme-global-link-color:
   category: "Text colors"
   label: "Link color"
+  description: "The color of the links. A hex color. Usually the primary text color. Keep 7:1 against the background."
   type: "color"
   default_values:
     ":root": "#07527f"
@@ -57,10 +67,108 @@ webtheme-global-link-color:
 webtheme-global-link-hover-color:
   category: "Text colors"
   label: "Link hover color"
+  description: "The color of a link under the pointer. A hex color, darker than the link color in the light mode and lighter in the dark mode."
   type: "color"
   default_values:
     ":root": "#053a5b"
     ':root[data-theme="dark"]': "#b9dcfc"
+
+webtheme-global-primary-color:
+  category: "Text colors"
+  label: "Primary text color"
+  description: "The color of the text and the lines printed in the primary color: primary text, the active tab, the checked boxes, the focused fields. A hex color. Set it with the primary background when the brand color changes. Keep 7:1 against the background."
+  type: "color"
+  default_values:
+    ":root": "#07527f"
+    ':root[data-theme="dark"]': "#85c0f9"
+
+webtheme-global-success-color:
+  category: "Text colors"
+  label: "Success text color"
+  description: "The color of the text printed in the success color. A hex color. Keep 7:1 against the background."
+  type: "color"
+  default_values:
+    ":root": "#13583e"
+    ':root[data-theme="dark"]': "#35d397"
+
+webtheme-global-warning-color:
+  category: "Text colors"
+  label: "Warning text color"
+  description: "The color of the text printed in the warning color. A hex color. Keep 7:1 against the background."
+  type: "color"
+  default_values:
+    ":root": "#7f3a04"
+    ':root[data-theme="dark"]': "#faa969"
+
+webtheme-global-danger-color:
+  category: "Text colors"
+  label: "Danger text color"
+  description: "The color of the text printed in the danger color, the mark of a required field and the border of a field with an error. A hex color. Keep 7:1 against the background."
+  type: "color"
+  default_values:
+    ":root": "#9d0d28"
+    ':root[data-theme="dark"]': "#f7a4b3"
+
+webtheme-code-color:
+  category: "Text colors"
+  label: "Code color"
+  description: "The color of the inline code and the keyboard keys. A hex color. Keep 7:1 against the muted background."
+  type: "color"
+  default_values:
+    ":root": "#9d0d28"
+    ':root[data-theme="dark"]': "#f7a4b3"
+
+################################################################################
+# Inverse areas.
+################################################################################
+
+webtheme-inverse-muted-color:
+  category: "Inverse areas"
+  label: "Muted color on inverse areas"
+  description: "The color of the secondary text inside the primary and secondary sections, tiles, cards and overlays, and the offcanvas menu. A color and its transparency (0 to 255). Keep 7:1 against the primary and the secondary background."
+  type: "ui_skins_alpha_color"
+  default_values:
+    ":root": "#ffffffeb"
+
+webtheme-inverse-form-border-color:
+  category: "Inverse areas"
+  label: "Form control border color on inverse areas"
+  description: "The color of the border of the fields, checkboxes and slider dots inside the inverse areas. A color and its transparency (0 to 255). Keep 3:1 against the primary and the secondary background."
+  type: "ui_skins_alpha_color"
+  default_values:
+    ":root": "#ffffffb3"
+
+webtheme-on-inverse-color:
+  category: "Inverse areas"
+  label: "Text on white elements of inverse areas"
+  description: "The color of the text of the white buttons, labels and fields inside the inverse areas. A hex color. Keep 7:1 against white."
+  type: "color"
+  default_values:
+    ":root": "#0d1214"
+
+webtheme-inverse-hover-background:
+  category: "Inverse areas"
+  label: "White elements of inverse areas (hover)"
+  description: "The background of a white button or field of an inverse area under the pointer. A hex color, close to white."
+  type: "color"
+  default_values:
+    ":root": "#e7edf1"
+
+webtheme-inverse-focus-color:
+  category: "Inverse areas"
+  label: "Focus ring color on inverse areas"
+  description: "The color of the focus ring inside the inverse areas and over images. A hex color. Keep 3:1 against the primary and the secondary background."
+  type: "color"
+  default_values:
+    ":root": "#ffffff"
+
+webtheme-inverse-focus-halo:
+  category: "Inverse areas"
+  label: "Focus halo color on inverse areas"
+  description: "The color of the halo around the focus ring inside the inverse areas. A hex color, dark when the ring is white."
+  type: "color"
+  default_values:
+    ":root": "#0d1214"
 
 ################################################################################
 # Backgrounds.
@@ -69,6 +177,7 @@ webtheme-global-link-hover-color:
 webtheme-global-background:
   category: "Backgrounds"
   label: "Background"
+  description: "The background of the page, the cards, the dropdowns and the fields. A hex color."
   type: "color"
   default_values:
     ":root": "#ffffff"
@@ -77,6 +186,7 @@ webtheme-global-background:
 webtheme-global-muted-background:
   category: "Backgrounds"
   label: "Muted background"
+  description: "The background of the muted sections and cards, and the inline code. A hex color, close to the background."
   type: "color"
   default_values:
     ":root": "#f3f6f8"
@@ -85,28 +195,40 @@ webtheme-global-muted-background:
 webtheme-global-muted-background-hover:
   category: "Backgrounds"
   label: "Muted background (hover)"
+  description: "The muted background under the pointer. A hex color."
   type: "color"
   default_values:
     ":root": "#e7edf1"
     ':root[data-theme="dark"]': "#2e2e2e"
 
+webtheme-brand-color:
+  category: "Backgrounds"
+  label: "Brand color"
+  description: "The band of the primary sections, from edge to edge. A hex color, used in both color modes. The default is the Webship.co blue. The text of a primary section sits on a card in the background of the page, so this color needs no contrast with text."
+  type: "color"
+  default_values:
+    ":root": "#358fc4"
+
 webtheme-global-primary-background:
   category: "Backgrounds"
   label: "Primary background"
+  description: "The brand color: the background of the primary buttons, sections, cards, labels and badges. A hex color, used in both color modes. The default is a deep shade of the Webship.co blue. Keep 7:1 with the inverse color. Set the hover background, the link color and the primary text color with it."
   type: "color"
   default_values:
-    ":root": "#07527f"
+    ":root": "#205575"
 
 webtheme-global-primary-background-hover:
   category: "Backgrounds"
   label: "Primary background (hover)"
+  description: "The primary background under the pointer. A hex color, a little darker than the primary background."
   type: "color"
   default_values:
-    ":root": "#053a5b"
+    ":root": "#19445d"
 
 webtheme-global-secondary-background:
   category: "Backgrounds"
   label: "Secondary background"
+  description: "The background of the secondary buttons, sections and cards, the footer and the offcanvas menu. A hex color, dark. Keep 7:1 with the inverse color."
   type: "color"
   default_values:
     ":root": "#313637"
@@ -115,6 +237,7 @@ webtheme-global-secondary-background:
 webtheme-global-secondary-background-hover:
   category: "Backgrounds"
   label: "Secondary background (hover)"
+  description: "The secondary background under the pointer. A hex color."
   type: "color"
   default_values:
     ":root": "#171e23"
@@ -123,6 +246,7 @@ webtheme-global-secondary-background-hover:
 webtheme-global-success-background:
   category: "Backgrounds"
   label: "Success background"
+  description: "The background of the success labels and notifications. A hex color, used in both color modes. Keep 7:1 with the inverse color."
   type: "color"
   default_values:
     ":root": "#13583e"
@@ -130,6 +254,7 @@ webtheme-global-success-background:
 webtheme-global-warning-background:
   category: "Backgrounds"
   label: "Warning background"
+  description: "The background of the warning labels and notifications. A hex color, used in both color modes. Keep 7:1 with the inverse color."
   type: "color"
   default_values:
     ":root": "#7f3a04"
@@ -137,6 +262,7 @@ webtheme-global-warning-background:
 webtheme-global-danger-background:
   category: "Backgrounds"
   label: "Danger background"
+  description: "The background of the danger buttons, labels and notifications. A hex color, used in both color modes. Keep 7:1 with the inverse color."
   type: "color"
   default_values:
     ":root": "#9d0d28"
@@ -144,6 +270,7 @@ webtheme-global-danger-background:
 webtheme-global-danger-background-hover:
   category: "Backgrounds"
   label: "Danger background (hover)"
+  description: "The danger background under the pointer. A hex color, a little darker than the danger background."
   type: "color"
   default_values:
     ":root": "#7a0a1f"
@@ -151,10 +278,20 @@ webtheme-global-danger-background-hover:
 webtheme-global-border:
   category: "Backgrounds"
   label: "Border color"
+  description: "The color of the dividers and the borders of tables, cards and lists. A color and its transparency (0 to 255). Decoration only: it needs no contrast."
   type: "ui_skins_alpha_color"
   default_values:
     ":root": "#d7e1e8ff"
     ':root[data-theme="dark"]': "#ffffff26"
+
+webtheme-form-border-color:
+  category: "Backgrounds"
+  label: "Form control border color"
+  description: "The color of the border of the fields, checkboxes, default buttons and slider dots. A hex color. Keep 3:1 against the background (WCAG 1.4.11)."
+  type: "color"
+  default_values:
+    ":root": "#768996"
+    ':root[data-theme="dark"]': "#787879"
 
 ################################################################################
 # Alerts.
@@ -163,127 +300,136 @@ webtheme-global-border:
 webtheme-alert-primary-background:
   category: "Alerts"
   label: "Primary alert background"
+  description: "The background of the primary alerts. A hex color, a light tint in the light mode and a dark one in the dark mode."
   type: "color"
   default_values:
     ":root": "#e6f0f6"
     ':root[data-theme="dark"]': "#16324f"
 
-webtheme-alert-success-background:
-  category: "Alerts"
-  label: "Success alert background"
-  type: "color"
-  default_values:
-    ":root": "#edfbf6"
-    ':root[data-theme="dark"]': "#103b2b"
-
-webtheme-alert-warning-background:
-  category: "Alerts"
-  label: "Warning alert background"
-  type: "color"
-  default_values:
-    ":root": "#fff6ee"
-    ':root[data-theme="dark"]': "#4a2f19"
-
-webtheme-alert-danger-background:
-  category: "Alerts"
-  label: "Danger alert background"
-  type: "color"
-  default_values:
-    ":root": "#fef4f6"
-    ':root[data-theme="dark"]': "#4a1a24"
-
-################################################################################
-# Accessibility: text colors of the brand and status colors, form borders and
-# focus ring.
-################################################################################
-
-webtheme-primary-color:
-  category: "Accessibility"
-  label: "Primary color as text and indicators"
-  type: "color"
-  default_values:
-    ":root": "#07527f"
-    ':root[data-theme="dark"]': "#85c0f9"
-
-webtheme-success-color:
-  category: "Accessibility"
-  label: "Success color as text"
-  type: "color"
-  default_values:
-    ":root": "#13583e"
-    ':root[data-theme="dark"]': "#35d397"
-
-webtheme-warning-color:
-  category: "Accessibility"
-  label: "Warning color as text"
-  type: "color"
-  default_values:
-    ":root": "#7f3a04"
-    ':root[data-theme="dark"]': "#faa969"
-
-webtheme-danger-color:
-  category: "Accessibility"
-  label: "Danger color as text"
-  type: "color"
-  default_values:
-    ":root": "#9d0d28"
-    ':root[data-theme="dark"]': "#f7a4b3"
-
 webtheme-alert-primary-color:
-  category: "Accessibility"
-  label: "Primary alert text"
+  category: "Alerts"
+  label: "Primary alert text color"
+  description: "The color of the text and the links of the primary alerts. A hex color. Keep 7:1 against the primary alert background."
   type: "color"
   default_values:
     ":root": "#07527f"
     ':root[data-theme="dark"]': "#8dc4fa"
 
+webtheme-alert-success-background:
+  category: "Alerts"
+  label: "Success alert background"
+  description: "The background of the success alerts, like the status messages of Drupal. A hex color, a light tint in the light mode and a dark one in the dark mode."
+  type: "color"
+  default_values:
+    ":root": "#edfbf6"
+    ':root[data-theme="dark"]': "#103b2b"
+
 webtheme-alert-success-color:
-  category: "Accessibility"
-  label: "Success alert text"
+  category: "Alerts"
+  label: "Success alert text color"
+  description: "The color of the text and the links of the success alerts. A hex color. Keep 7:1 against the success alert background."
   type: "color"
   default_values:
     ":root": "#13583e"
     ':root[data-theme="dark"]': "#53daa7"
 
+webtheme-alert-warning-background:
+  category: "Alerts"
+  label: "Warning alert background"
+  description: "The background of the warning alerts, like the warning messages of Drupal. A hex color, a light tint in the light mode and a dark one in the dark mode."
+  type: "color"
+  default_values:
+    ":root": "#fff6ee"
+    ':root[data-theme="dark"]': "#4a2f19"
+
 webtheme-alert-warning-color:
-  category: "Accessibility"
-  label: "Warning alert text"
+  category: "Alerts"
+  label: "Warning alert text color"
+  description: "The color of the text and the links of the warning alerts. A hex color. Keep 7:1 against the warning alert background."
   type: "color"
   default_values:
     ":root": "#7f3a04"
     ':root[data-theme="dark"]': "#fbb680"
 
+webtheme-alert-danger-background:
+  category: "Alerts"
+  label: "Danger alert background"
+  description: "The background of the danger alerts, like the error messages of Drupal. A hex color, a light tint in the light mode and a dark one in the dark mode."
+  type: "color"
+  default_values:
+    ":root": "#fef4f6"
+    ':root[data-theme="dark"]': "#4a1a24"
+
 webtheme-alert-danger-color:
-  category: "Accessibility"
-  label: "Danger alert text"
+  category: "Alerts"
+  label: "Danger alert text color"
+  description: "The color of the text and the links of the danger alerts. A hex color. Keep 7:1 against the danger alert background."
   type: "color"
   default_values:
     ":root": "#9d0d28"
     ':root[data-theme="dark"]': "#f7a4b3"
 
-webtheme-form-border:
-  category: "Accessibility"
-  label: "Form control border (3:1 on the background)"
-  type: "color"
-  default_values:
-    ":root": "#768996"
-    ':root[data-theme="dark"]': "#787879"
+################################################################################
+# Focus and targets.
+################################################################################
 
 webtheme-focus-color:
-  category: "Accessibility"
-  label: "Focus ring"
+  category: "Focus and targets"
+  label: "Focus ring color"
+  description: "The color of the ring around the element the keyboard is on. A hex color. Keep 3:1 against the background in both color modes (WCAG 2.4.13)."
   type: "color"
   default_values:
     ":root": "#0d1214"
     ':root[data-theme="dark"]': "#ffffff"
 
 webtheme-focus-halo:
-  category: "Accessibility"
-  label: "Focus ring halo"
+  category: "Focus and targets"
+  label: "Focus halo color"
+  description: "The color of the halo between the focus ring and the element, which keeps the ring visible on any fill. A hex color, usually the background."
   type: "color"
   default_values:
     ":root": "#ffffff"
     ':root[data-theme="dark"]': "#171717"
+
+webtheme-focus-width:
+  category: "Focus and targets"
+  label: "Focus ring width"
+  description: "The thickness of the focus ring. A length in pixels, from 2px to 6px. WCAG 2.4.13 asks for 2px or more."
+  type: "textfield"
+  default_values:
+    ":root": "2px"
+
+webtheme-focus-offset:
+  category: "Focus and targets"
+  label: "Focus ring offset"
+  description: "The space between an element and its focus ring. A length in pixels, from 0px to 6px."
+  type: "textfield"
+  default_values:
+    ":root": "2px"
+
+webtheme-focus-halo-width:
+  category: "Focus and targets"
+  label: "Focus halo width"
+  description: "The thickness of the halo around the element under the focus ring. A length in pixels, from 2px to 8px, larger than the offset."
+  type: "textfield"
+  default_values:
+    ":root": "6px"
+
+webtheme-target-size:
+  category: "Focus and targets"
+  label: "Target size"
+  description: "The smallest width and height of what a visitor clicks or taps: menu links, tabs, pagination, icons, checkboxes with their label. A length in pixels, from 44px to 64px. WCAG 2.5.5 asks for 44px or more."
+  type: "textfield"
+  default_values:
+    ":root": "44px"
+
+webtheme-control-height:
+  category: "Focus and targets"
+  label: "Control height"
+  description: "The height of the buttons, the fields and the select lists. A length in pixels, from 44px to 64px. Keep it at the target size or more."
+  type: "textfield"
+  default_values:
+    ":root": "44px"
 
 ################################################################################
 # Typography.
@@ -292,6 +438,135 @@ webtheme-focus-halo:
 webtheme-global-font-family:
   category: "Typography"
   label: "Font family"
+  description: "The font of the text and the interface. A CSS font family list that ends with a generic family, like: Georgia, serif. The default is the font picked in the theme settings: Atkinson Hyperlegible Next, served by the theme, or the fonts of the operating system. A font that the theme does not serve must be on the device of the visitor."
   type: "textfield"
   default_values:
-    ":root": '"Zen Maru Gothic", "Georgia", sans-serif'
+    ":root": "var(--uk-font-family-sans)"
+
+webtheme-heading-font-family:
+  category: "Typography"
+  label: "Heading font family"
+  description: "The font of the headings, the titles and the menu of the header. A CSS font family list that ends with a generic family. The default is Zen Maru Gothic, the font of Webship.co, served from the theme."
+  type: "textfield"
+  default_values:
+    ":root": "var(--uk-font-family-brand)"
+
+webtheme-code-font-family:
+  category: "Typography"
+  label: "Code font family"
+  description: "The font of the code and the preformatted text. A CSS font family list that ends with monospace. The default is Atkinson Hyperlegible Mono, served by the theme, or the code font of the operating system."
+  type: "textfield"
+  default_values:
+    ":root": "var(--uk-font-family-mono)"
+
+webtheme-global-font-size:
+  category: "Typography"
+  label: "Base font size"
+  description: "The size of the body text: headings and small text scale with it. A length in pixels, from 16px to 20px."
+  type: "textfield"
+  default_values:
+    ":root": "16px"
+
+webtheme-global-line-height:
+  category: "Typography"
+  label: "Line height"
+  description: "The height of a line of text, as a number without a unit, from 1.5 to 2. WCAG 1.4.8 asks for 1.5 or more."
+  type: "textfield"
+  default_values:
+    ":root": "1.5"
+
+webtheme-measure:
+  category: "Typography"
+  label: "Line length"
+  description: "The widest a paragraph, a list item or a description gets. A length in em, from 20em to 36em: 32em holds about 72 characters of the font of the theme. WCAG 1.4.8 asks for 80 characters or fewer."
+  type: "textfield"
+  default_values:
+    ":root": "32em"
+
+################################################################################
+# Spacing.
+################################################################################
+
+webtheme-global-small-margin:
+  category: "Spacing"
+  label: "Small margin"
+  description: "The space between the items of a list, and of the small margin style. A length in pixels, from 4px to 20px."
+  type: "textfield"
+  default_values:
+    ":root": "10px"
+
+webtheme-global-margin:
+  category: "Spacing"
+  label: "Margin"
+  description: "The space between two blocks of text: paragraphs, lists, tables, alerts. A length in pixels, from 10px to 40px."
+  type: "textfield"
+  default_values:
+    ":root": "20px"
+
+webtheme-global-medium-margin:
+  category: "Spacing"
+  label: "Medium margin"
+  description: "The space above a heading that follows text, and of the medium margin style. A length in pixels, from 20px to 80px."
+  type: "textfield"
+  default_values:
+    ":root": "40px"
+
+webtheme-global-large-margin:
+  category: "Spacing"
+  label: "Large margin"
+  description: "The space between two articles or two comments, and of the large margin style on wide screens. A length in pixels, from 40px to 140px."
+  type: "textfield"
+  default_values:
+    ":root": "70px"
+
+################################################################################
+# Corners and shadows.
+################################################################################
+
+webtheme-global-border-radius:
+  category: "Corners and shadows"
+  label: "Corner radius"
+  description: "How round the corners of the buttons, fields, cards, alerts, dropdowns and dialogs are. A length in pixels, from 0 to 24px, or 500px for pill shaped buttons. 0 gives square corners."
+  type: "textfield"
+  default_values:
+    ":root": "0"
+
+webtheme-global-small-box-shadow:
+  category: "Corners and shadows"
+  label: "Small shadow"
+  description: "The shadow of the small box shadow style. A CSS box shadow: horizontal offset, vertical offset, blur, color. Use none for a flat look."
+  type: "textfield"
+  default_values:
+    ":root": "0 2px 8px rgb(0, 0, 0, 0.08)"
+
+webtheme-global-medium-box-shadow:
+  category: "Corners and shadows"
+  label: "Medium shadow"
+  description: "The shadow of the cards and of the medium box shadow style. A CSS box shadow. Use none for a flat look."
+  type: "textfield"
+  default_values:
+    ":root": "0 5px 15px rgb(0, 0, 0, 0.08)"
+
+webtheme-global-large-box-shadow:
+  category: "Corners and shadows"
+  label: "Large shadow"
+  description: "The shadow of a card under the pointer and of the large box shadow style. A CSS box shadow. Use none for a flat look."
+  type: "textfield"
+  default_values:
+    ":root": "0 14px 25px rgb(0, 0, 0, 0.16)"
+
+webtheme-global-xlarge-box-shadow:
+  category: "Corners and shadows"
+  label: "Extra large shadow"
+  description: "The shadow of the extra large box shadow style. A CSS box shadow. Use none for a flat look."
+  type: "textfield"
+  default_values:
+    ":root": "0 28px 50px rgb(0, 0, 0, 0.16)"
+
+webtheme-dropdown-box-shadow:
+  category: "Corners and shadows"
+  label: "Dropdown shadow"
+  description: "The shadow of the dropdowns and of the menus that open from the navbar. A CSS box shadow. Use none for a flat look."
+  type: "textfield"
+  default_values:
+    ":root": "0 5px 12px rgb(0, 0, 0, 0.15)"

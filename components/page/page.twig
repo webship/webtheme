@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * The frame of a page: header, main landmark and footer.
+ */
+#}
+{% set container = container|default('default') %}
+<div{{ attributes.addClass('webtheme-page') }}>
+  {{ header }}
+  {% if above %}
+    <div class="uk-section uk-section-muted uk-section-xsmall">
+      <div class="uk-container">{{ above }}</div>
+    </div>
+  {% endif %}
+  <main class="webtheme-page__main uk-section uk-section-small">
+    <div class="uk-container{{ container != 'default' ? ' uk-container-' ~ container }}">
+      <a id="main-content" tabindex="-1"></a>
+      {{ highlighted }}
+      <div class="uk-grid uk-grid-large" uk-grid>
+        {% if sidebar_first %}
+          <aside class="uk-width-1-1 uk-width-1-4@m">{{ sidebar_first }}</aside>
+        {% endif %}
+        <div class="uk-width-1-1 uk-width-expand@m">{{ content }}</div>
+        {% if sidebar_second %}
+          <aside class="uk-width-1-1 uk-width-1-4@m">{{ sidebar_second }}</aside>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+  {{ footer }}
+</div>

@@ -1,14 +1,13 @@
 /**
  * @file
- * UIkit look and feel inside CKEditor 5, with the Webtheme colors (WCAG AAA
- * contrast on the white editor background).
+ * UIkit look and feel inside CKEditor 5, with the Webtheme colors and fonts
+ * (WCAG AAA contrast on the white editor background). The fonts come from
+ * fonts.css, loaded with this file.
  */
 
 .ck-content {
   color: #313637;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif;
+  font-family: var(--uk-font-family-sans, system-ui, sans-serif);
   font-size: 16px;
   line-height: 1.5;
 }
@@ -33,4 +32,10 @@
   font-size: 20px;
   font-style: italic;
   line-height: 1.5;
+}
+
+.ck-content code,
+.ck-content pre {
+  font-family: var(--uk-font-family-mono, ui-monospace, monospace);
+  font-variant-ligatures: none;
 }

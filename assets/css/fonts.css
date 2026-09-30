@@ -1,0 +1,149 @@
+/**
+ * @file
+ * The fonts of the theme, served from the theme itself.
+ *
+ * Atkinson Hyperlegible Next 2.001 and Atkinson Hyperlegible Mono 2.001
+ * (Braille Institute, SIL OFL 1.1), Noto Sans Arabic 2.013 (SIL OFL 1.1).
+ * The license of each family sits next to its files. A browser downloads a
+ * file only when the page prints a character of its range: an English page
+ * downloads one file.
+ *
+ * The "Font" theme setting prints data-font on the html element. The font
+ * family, the heading font, the code font and the line length are design
+ * tokens of UI Skins, see assets/css/drupal.css.
+ */
+
+/* Body, interface and headings: one variable file per style and subset. */
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("../fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("../fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("../fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-latin-wght-italic.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("../fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-latin-ext-wght-italic.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Code. */
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("../fonts/atkinson-hyperlegible-mono/atkinson-hyperlegible-mono-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("../fonts/atkinson-hyperlegible-mono/atkinson-hyperlegible-mono-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Arabic script: downloaded only by a page that prints Arabic. */
+@font-face {
+  font-family: "Noto Sans Arabic";
+  src: url("../fonts/noto-sans-arabic/noto-sans-arabic-arabic-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+/* The fallbacks, tuned to the metrics of the fonts above: the page does not
+   move when the real font arrives. */
+/* stylelint-disable property-no-unknown */
+@font-face {
+  font-family: "Atkinson Hyperlegible Next Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Arimo");
+  size-adjust: 99.73%;
+  ascent-override: 98.67%;
+  descent-override: 31.69%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono Fallback";
+  src: local("Courier New"), local("Liberation Mono"), local("Cousine");
+  size-adjust: 105.32%;
+  ascent-override: 93.43%;
+  descent-override: 30%;
+  line-gap-override: 0%;
+}
+
+/* stylelint-enable property-no-unknown */
+
+/* Zen Maru Gothic: the font of the Webship.co titles. */
+@font-face {
+  font-family: "Zen Maru Gothic";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/zen-maru-gothic/zen-maru-gothic-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Zen Maru Gothic: the font of the Webship.co titles. */
+@font-face {
+  font-family: "Zen Maru Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/zen-maru-gothic/zen-maru-gothic-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* The fonts of the theme, and the fonts of the operating system. */
+:root {
+  --uk-font-family-sans: "Atkinson Hyperlegible Next", "Noto Sans Arabic", "Atkinson Hyperlegible Next Fallback", system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --uk-font-family-mono: "Atkinson Hyperlegible Mono", "Atkinson Hyperlegible Mono Fallback", ui-monospace, "SFMono-Regular", menlo, consolas, "Liberation Mono", monospace;
+  --uk-font-family-brand: "Zen Maru Gothic", var(--uk-font-family-sans);
+}
+
+:root[data-font="system"] {
+  --uk-font-family-brand: var(--uk-font-family-sans);
+  --uk-font-family-sans: system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --uk-font-family-mono: ui-monospace, "SFMono-Regular", menlo, consolas, "Liberation Mono", monospace;
+}
+
+/* Code reads character by character, and the figures of a table line up. */
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp,
+pre,
+pre code {
+  font-variant-ligatures: none;
+}
+
+table {
+  font-variant-numeric: tabular-nums;
+}

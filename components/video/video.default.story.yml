@@ -1,0 +1,6 @@
+name: Default
+props:
+  src: "/themes/contrib/webtheme/assets/video/love-to-help.mp4"
+  label: "The Webship.co animation: love to help with automated functional testing."
+  loop: true
+  rounded: true

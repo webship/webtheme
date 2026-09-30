@@ -1,0 +1,35 @@
+name: Video
+description: "A video file with the controls of the browser. It can start on its own, without sound, and loop, as the hero video of Webship.co does."
+group: Media
+props:
+  type: object
+  required:
+    - src
+  properties:
+    src:
+      title: "Video URL"
+      description: "The address of the video file, an MP4 or a WebM. For example /themes/contrib/webtheme/assets/video/love-to-help.mp4."
+      type: string
+    poster:
+      title: "Poster URL"
+      description: "The image shown before the video plays."
+      type: string
+    label:
+      title: "Accessible label"
+      description: "What the video shows, for the people who cannot see it."
+      type: string
+    autoplay:
+      title: "Start on its own"
+      description: "The video starts without sound when the page opens. The controls stay, so a visitor can pause it."
+      type: boolean
+    loop:
+      title: Loop
+      description: "The video starts again when it ends."
+      type: boolean
+    rounded:
+      title: "Rounded corners and shadow"
+      type: boolean
+    cover:
+      title: "Fill the height of its place"
+      description: "The video takes the full height of the column it is in, next to a text or a card, and is cut at the sides when its proportions differ."
+      type: boolean

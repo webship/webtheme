@@ -4,17 +4,18 @@
  */
 
 /**
- * Dark color mode: redefine the UIkit design tokens.
+ * Dark color mode: redefine the color tokens.
  *
  * The "Color mode" theme setting prints data-theme="dark" or "light" on the
  * html element; "Follow the operating system" prints none, and the media
- * query below picks the mode of the system. ":root" in the selector keeps
+ * query below picks the mode of the system. The dark values saved in UI Skins
+ * are printed for both, see SystemDarkMode. ":root" in the selector keeps
  * these values above the light ones printed by UI Skins.
  */
 :root[data-theme="dark"] {
-  --webtheme-global-color: rgb(255, 255, 255, 0.7);
+  --webtheme-global-color: #ffffffb3;
   --webtheme-global-emphasis-color: #fff;
-  --webtheme-global-muted-color: rgb(255, 255, 255, 0.72);
+  --webtheme-global-muted-color: #ffffffb8;
   --webtheme-global-inverse-color: #fff;
   --webtheme-global-link-color: #85c0f9;
   --webtheme-global-link-hover-color: #b9dcfc;
@@ -23,7 +24,8 @@
   --webtheme-global-muted-background-hover: #2e2e2e;
   --webtheme-global-secondary-background: #000;
   --webtheme-global-secondary-background-hover: #0a0a0a;
-  --webtheme-global-border: rgb(255, 255, 255, 0.15);
+  --webtheme-global-border: #ffffff26;
+  --webtheme-form-border-color: #787879;
   --webtheme-alert-primary-background: #16324f;
   --webtheme-alert-success-background: #103b2b;
   --webtheme-alert-warning-background: #4a2f19;
@@ -33,24 +35,28 @@
    * The brand and status backgrounds keep white text (8.3:1 and more): the
    * light values are inherited. As text, they get lighter tones.
    */
-  --webtheme-primary-color: #85c0f9;
-  --webtheme-success-color: #35d397;
-  --webtheme-warning-color: #faa969;
-  --webtheme-danger-color: #f7a4b3;
+  --webtheme-global-primary-color: #85c0f9;
+  --webtheme-global-success-color: #35d397;
+  --webtheme-global-warning-color: #faa969;
+  --webtheme-global-danger-color: #f7a4b3;
+  --webtheme-code-color: #f7a4b3;
   --webtheme-alert-primary-color: #8dc4fa;
   --webtheme-alert-success-color: #53daa7;
   --webtheme-alert-warning-color: #fbb680;
   --webtheme-alert-danger-color: #f7a4b3;
-  --webtheme-form-border: #787879;
+
+  /* The focus ring and its halo follow the page. */
+  --webtheme-focus-color: #fff;
+  --webtheme-focus-halo: #171717;
 
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --webtheme-global-color: rgb(255, 255, 255, 0.7);
+    --webtheme-global-color: #ffffffb3;
     --webtheme-global-emphasis-color: #fff;
-    --webtheme-global-muted-color: rgb(255, 255, 255, 0.72);
+    --webtheme-global-muted-color: #ffffffb8;
     --webtheme-global-inverse-color: #fff;
     --webtheme-global-link-color: #85c0f9;
     --webtheme-global-link-hover-color: #b9dcfc;
@@ -59,7 +65,8 @@
     --webtheme-global-muted-background-hover: #2e2e2e;
     --webtheme-global-secondary-background: #000;
     --webtheme-global-secondary-background-hover: #0a0a0a;
-    --webtheme-global-border: rgb(255, 255, 255, 0.15);
+    --webtheme-global-border: #ffffff26;
+    --webtheme-form-border-color: #787879;
     --webtheme-alert-primary-background: #16324f;
     --webtheme-alert-success-background: #103b2b;
     --webtheme-alert-warning-background: #4a2f19;
@@ -69,15 +76,19 @@
      * The brand and status backgrounds keep white text (8.3:1 and more): the
      * light values are inherited. As text, they get lighter tones.
      */
-    --webtheme-primary-color: #85c0f9;
-    --webtheme-success-color: #35d397;
-    --webtheme-warning-color: #faa969;
-    --webtheme-danger-color: #f7a4b3;
+    --webtheme-global-primary-color: #85c0f9;
+    --webtheme-global-success-color: #35d397;
+    --webtheme-global-warning-color: #faa969;
+    --webtheme-global-danger-color: #f7a4b3;
+    --webtheme-code-color: #f7a4b3;
     --webtheme-alert-primary-color: #8dc4fa;
     --webtheme-alert-success-color: #53daa7;
     --webtheme-alert-warning-color: #fbb680;
     --webtheme-alert-danger-color: #f7a4b3;
-    --webtheme-form-border: #787879;
+
+    /* The focus ring and its halo follow the page. */
+    --webtheme-focus-color: #fff;
+    --webtheme-focus-halo: #171717;
 
     color-scheme: dark;
   }
@@ -88,9 +99,7 @@
  *
  * The tokens carry the theme name (--webtheme-global-color, not
  * --uk-global-color): the ids of UI Skins are shared by every theme of the
- * site, and another theme declares the UIkit names too. A token the theme
- * leaves unset makes its UIkit name invalid, so the uses fall back to their
- * UIkit default.
+ * site, and another theme declares the UIkit names too.
  */
 :root {
   --uk-global-color: var(--webtheme-global-color);
@@ -99,31 +108,45 @@
   --uk-global-inverse-color: var(--webtheme-global-inverse-color);
   --uk-global-link-color: var(--webtheme-global-link-color);
   --uk-global-link-hover-color: var(--webtheme-global-link-hover-color);
+  --uk-global-primary-color: var(--webtheme-global-primary-color);
+  --uk-global-success-color: var(--webtheme-global-success-color);
+  --uk-global-warning-color: var(--webtheme-global-warning-color);
+  --uk-global-danger-color: var(--webtheme-global-danger-color);
+  --uk-inverse-muted-color: var(--webtheme-inverse-muted-color);
+  --uk-inverse-form-border-color: var(--webtheme-inverse-form-border-color);
   --uk-global-background: var(--webtheme-global-background);
   --uk-global-muted-background: var(--webtheme-global-muted-background);
-  --uk-global-muted-background-hover: var(
-    --webtheme-global-muted-background-hover
-  );
+  --uk-global-muted-background-hover: var(--webtheme-global-muted-background-hover);
   --uk-global-primary-background: var(--webtheme-global-primary-background);
-  --uk-global-primary-background-hover: var(
-    --webtheme-global-primary-background-hover
-  );
+  --uk-global-primary-background-hover: var(--webtheme-global-primary-background-hover);
   --uk-global-secondary-background: var(--webtheme-global-secondary-background);
-  --uk-global-secondary-background-hover: var(
-    --webtheme-global-secondary-background-hover
-  );
+  --uk-global-secondary-background-hover: var(--webtheme-global-secondary-background-hover);
   --uk-global-success-background: var(--webtheme-global-success-background);
   --uk-global-warning-background: var(--webtheme-global-warning-background);
   --uk-global-danger-background: var(--webtheme-global-danger-background);
-  --uk-global-danger-background-hover: var(
-    --webtheme-global-danger-background-hover
-  );
+  --uk-global-danger-background-hover: var(--webtheme-global-danger-background-hover);
   --uk-global-border: var(--webtheme-global-border);
+  --uk-form-border-color: var(--webtheme-form-border-color);
   --uk-alert-primary-background: var(--webtheme-alert-primary-background);
   --uk-alert-success-background: var(--webtheme-alert-success-background);
   --uk-alert-warning-background: var(--webtheme-alert-warning-background);
   --uk-alert-danger-background: var(--webtheme-alert-danger-background);
-  --uk-global-font-family: var(--webtheme-global-font-family);
+  --uk-global-font-family: var(--webtheme-global-font-family, var(--uk-font-family-sans));
+  --uk-base-heading-font-family: var(--webtheme-heading-font-family);
+  --uk-base-code-font-family: var(--webtheme-code-font-family);
+  --uk-measure: var(--webtheme-measure);
+  --uk-global-font-size: var(--webtheme-global-font-size);
+  --uk-global-line-height: var(--webtheme-global-line-height);
+  --uk-global-small-margin: var(--webtheme-global-small-margin);
+  --uk-global-margin: var(--webtheme-global-margin);
+  --uk-global-medium-margin: var(--webtheme-global-medium-margin);
+  --uk-global-large-margin: var(--webtheme-global-large-margin);
+  --uk-global-border-radius: var(--webtheme-global-border-radius);
+  --uk-global-small-box-shadow: var(--webtheme-global-small-box-shadow);
+  --uk-global-medium-box-shadow: var(--webtheme-global-medium-box-shadow);
+  --uk-global-large-box-shadow: var(--webtheme-global-large-box-shadow);
+  --uk-global-xlarge-box-shadow: var(--webtheme-global-xlarge-box-shadow);
+  --uk-dropdown-box-shadow: var(--webtheme-dropdown-box-shadow);
 }
 
 /* Skip link and visually hidden helpers from Drupal core. */
@@ -201,7 +224,7 @@
 
 .form-required::after {
   content: " *";
-  color: var(--webtheme-danger-color, #9d0d28);
+  color: var(--uk-global-danger-color, #9d0d28);
 }
 
 .form-checkboxes .form-item,
@@ -271,6 +294,31 @@
   min-height: 1px;
 }
 
+/* UIkit prints emphasis and inline code in the danger color: the emphasis
+   keeps the color of its text, like the placeholders of Drupal messages and
+   descriptions, on the inverse areas too, and the code has a token of its
+   own. */
+em,
+.uk-text-emphasis,
+.uk-light em,
+.uk-section-primary:not(.uk-preserve-color) em,
+.uk-section-secondary:not(.uk-preserve-color) em,
+.uk-tile-primary:not(.uk-preserve-color) em,
+.uk-tile-secondary:not(.uk-preserve-color) em,
+.uk-card-primary.uk-card-body em,
+.uk-card-primary > :not([class*="uk-card-media"]) em,
+.uk-card-secondary.uk-card-body em,
+.uk-card-secondary > :not([class*="uk-card-media"]) em,
+.uk-overlay-primary em,
+.uk-offcanvas-bar em {
+  color: inherit;
+}
+
+body code,
+body kbd {
+  color: var(--webtheme-code-color);
+}
+
 /**
  * Alert text.
  *
@@ -304,4 +352,150 @@
 .uk-alert.uk-alert a:not(.uk-button, .uk-alert-close):hover {
   text-decoration: underline;
   color: inherit;
+}
+
+/* The Webship logo of the theme is blue: it turns white in the dark color
+   mode. A logo uploaded in the theme settings keeps its colors. */
+:root[data-theme="dark"] img[src$="/webtheme/logo.svg"] {
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) img[src$="/webtheme/logo.svg"] {
+    filter: brightness(0) invert(1);
+  }
+}
+
+/**
+ * The strength of a new password: the bar has the width of the field, and a
+ * color with the text that says it. The label of the confirmation field
+ * keeps clear of the focus ring of the field above it.
+ */
+.password-strength,
+.password-confirm {
+  max-width: 100%;
+  margin-block-start: 8px;
+  font-size: 0.875rem;
+}
+
+.password-strength__meter {
+  overflow: hidden;
+  height: 8px;
+  border: 1px solid var(--uk-form-border-color, #768996);
+  border-radius: 4px;
+  background: var(--uk-global-muted-background, #f3f6f8);
+}
+
+.password-strength__indicator {
+  height: 100%;
+  background: var(--uk-global-danger-color, #9d0d28);
+}
+
+.password-strength__indicator.is-fair {
+  background: var(--uk-global-warning-color, #7f3a04);
+}
+
+.password-strength__indicator.is-good,
+.password-strength__indicator.is-strong {
+  background: var(--uk-global-success-color, #13583e);
+}
+
+.password-confirm .ok {
+  color: var(--uk-global-success-color, #13583e);
+}
+
+.password-confirm .error {
+  color: var(--uk-global-danger-color, #9d0d28);
+}
+
+.form-type-password-confirm .form-item + .form-item {
+  margin-block-start: calc(var(--webtheme-focus-offset, 2px) + var(--webtheme-focus-halo-width, 6px) + 12px);
+}
+
+/* The file fields get the look of a default button. */
+input[type="file"]::file-selector-button {
+  min-height: var(--webtheme-control-height, 44px);
+  margin-inline-end: 12px;
+  padding: 0 20px;
+  cursor: pointer;
+  color: var(--uk-global-emphasis-color, #0d1214);
+  border: 1px solid var(--uk-form-border-color, #768996);
+  border-radius: var(--uk-global-border-radius, 0);
+  background: transparent;
+  font: inherit;
+}
+
+/* A navbar toggle whose offcanvas menu has no link is not printed: the menu
+   of the region can be empty. */
+body:has(.uk-offcanvas-bar:not(:has(a:not(.uk-offcanvas-close), input))) .uk-navbar-toggle[aria-controls] {
+  display: none;
+}
+
+/**
+ * The layers of Drupal over the sticky navbar (980): the bar of a content
+ * preview and the top bar of the Navigation module, with their dropdowns.
+ */
+.node-preview-container {
+  z-index: 1010;
+}
+
+.top-bar {
+  z-index: 1010;
+}
+
+/* The footer of a Display Builder page layout stays at the bottom of short
+   pages too. */
+[data-off-canvas-main-canvas]:has(> :is(footer, .uk-section-secondary):last-child) {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - var(--drupal-displace-offset-top, 0px));
+}
+
+[data-off-canvas-main-canvas] > :is(footer, .uk-section-secondary):last-child:not(:first-child) {
+  margin-block-start: auto;
+}
+
+/* A section with a background goes from edge to edge of the window, as on
+   Webship.co, also when the page layout places it inside a container. Its
+   own container keeps the side padding and the width of the page, so the
+   text lines up with the rest of the page. UIkit removes the padding of a
+   nested container, which left the text on the edge of the colored box. */
+html {
+  overflow-x: clip;
+}
+
+.uk-container > :is(.uk-section-primary, .uk-section-secondary, .uk-section-muted) {
+  width: 100vw;
+  max-width: 100vw;
+  margin-inline-start: calc(50% - 50vw);
+}
+
+.uk-container :is(.uk-section-primary, .uk-section-secondary, .uk-section-muted) > .uk-container {
+  padding-inline: 15px;
+}
+
+@media (min-width: 640px) {
+  .uk-container :is(.uk-section-primary, .uk-section-secondary, .uk-section-muted) > .uk-container {
+    padding-inline: 30px;
+  }
+}
+
+@media (min-width: 960px) {
+  .uk-container :is(.uk-section-primary, .uk-section-secondary, .uk-section-muted) > .uk-container {
+    padding-inline: 40px;
+  }
+}
+
+/* A video fills the width of its place and keeps its proportions. */
+.webtheme-video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The video fills the height of its column and is cut at the sides. */
+.webtheme-video--cover {
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
 }

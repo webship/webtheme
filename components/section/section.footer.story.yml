@@ -1,0 +1,10 @@
+name: "Footer landmark"
+slots:
+  content:
+    - type: html_tag
+      tag: p
+      value: "© Webship. Built with Drupal."
+props:
+  variant: secondary
+  landmark: footer
+  size: small

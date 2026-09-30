@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * The page shown after too many failed log in attempts: the sign-in screen,
+ * blocked, with the message of Drupal and no form.
+ *
+ * Available variables:
+ * - title: The title of the page, "Login failed".
+ * - page.content: The message.
+ * - sign_in: The props of the sign-in component, and its links.
+ *
+ * @see \Drupal\webtheme\Hook\SignInHooks::preprocessMaintenancePage()
+ */
+#}
+{{ include('webtheme:sign_in', {
+  layout: sign_in.layout,
+  screen: 'blocked',
+  site_name: sign_in.site_name,
+  home_url: sign_in.home_url,
+  logo: sign_in.logo,
+  message: sign_in.message,
+  image: sign_in.image,
+  image_credit: sign_in.image_credit,
+  title: {
+    '#type': 'page_title',
+    '#title': title,
+  },
+  messages: {
+    '#type': 'component',
+    '#component': 'webtheme:alert',
+    '#props': {
+      'variant': 'danger',
+    },
+    '#slots': {
+      'message': page.content,
+    },
+  },
+  links: sign_in.links,
+  help: sign_in.help,
+}, with_context: false) }}

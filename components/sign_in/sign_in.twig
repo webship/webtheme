@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * The sign-in screens: the form in a card, a brand panel, the site header
+ * and footer when asked.
+ */
+#}
+{% set layout = layout|default('center') %}
+{% set screen = screen|default('login') %}
+{% set brand_tag = show_header ? 'div' : 'header' %}
+{% set attributes = attributes.addClass([
+  'webtheme-sign-in',
+  'webtheme-sign-in--' ~ layout,
+  'webtheme-sign-in--' ~ screen,
+  show_header ? 'webtheme-sign-in--with-header',
+  show_footer ? 'webtheme-sign-in--with-footer',
+  image ? 'webtheme-sign-in--with-image',
+]) %}
+<div{{ attributes }}>
+  {% if show_header and header %}
+    <div class="webtheme-sign-in__header">{{ header }}</div>
+  {% endif %}
+  <div class="webtheme-sign-in__body">
+    <{{ brand_tag }} class="webtheme-sign-in__brand">
+      {% if image %}
+        <img class="webtheme-sign-in__image" src="{{ image }}" alt="" loading="lazy">
+      {% endif %}
+      <div class="webtheme-sign-in__brand-inner">
+        {% if brand %}
+          {{ brand }}
+        {% else %}
+          {% if not show_header %}
+            <a class="webtheme-sign-in__site" href="{{ home_url|default('/') }}" rel="home">
+              {% if logo %}
+                <img class="webtheme-sign-in__logo" src="{{ logo }}" alt="{{ logo_alt|default('') }}">
+              {% endif %}
+              <span class="webtheme-sign-in__name">{{ site_name|default('Drupal') }}</span>
+            </a>
+          {% endif %}
+          {% if message %}
+            <p class="webtheme-sign-in__message">{{ message }}</p>
+          {% endif %}
+        {% endif %}
+      </div>
+      {% if image and image_credit %}
+        <p class="webtheme-sign-in__credit">{{ image_credit }}</p>
+      {% endif %}
+    </{{ brand_tag }}>
+    <main id="main-content" class="webtheme-sign-in__main" tabindex="-1">
+      <div class="webtheme-sign-in__card">
+        {% if title %}
+          <div class="webtheme-sign-in__title">{{ title }}</div>
+        {% endif %}
+        {% if messages %}
+          <div class="webtheme-sign-in__messages">{{ messages }}</div>
+        {% endif %}
+        <div class="webtheme-sign-in__form">{{ content }}</div>
+        {% if links %}
+          <nav class="webtheme-sign-in__links" aria-label="{{ 'Other sign-in screens'|t }}">{{ links }}</nav>
+        {% endif %}
+        {% if help %}
+          <div class="webtheme-sign-in__help">{{ help }}</div>
+        {% endif %}
+      </div>
+    </main>
+  </div>
+  {% if show_footer and footer %}
+    <div class="webtheme-sign-in__footer">{{ footer }}</div>
+  {% endif %}
+</div>

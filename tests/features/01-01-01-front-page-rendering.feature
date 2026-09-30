@@ -11,7 +11,7 @@ Feature: The front page is rendered with UIkit
      When I go to the homepage
      Then the UIkit JavaScript version should be "3.25.22"
       And ".uk-navbar-container" should be visible
-      And the computed style "background-color" of ".uk-navbar-container" should be "rgb(243, 246, 248)"
+      And the computed style "background-color" of ".uk-navbar-container" should be "rgb(255, 255, 255)"
       And there should be no JavaScript errors
 
   Scenario: The branding and the menus are rendered in the navbar
@@ -26,5 +26,16 @@ Feature: The front page is rendered with UIkit
   Scenario: The UIkit design tokens layer is applied
     Given I am an anonymous user
      When I go to the homepage
-     Then the computed style "font-family" of ".uk-navbar-nav > li > a" should contain "Zen Maru Gothic"
+     Then the computed style "font-family" of ".uk-navbar-nav > li > a" should contain "Atkinson Hyperlegible Next"
       And the computed style "background-color" of "html" should be "rgb(255, 255, 255)"
+
+  Scenario: The footer stays at the bottom of a short page
+    Given I am an anonymous user
+      And I set the viewport to 1440 by 1400
+     When I go to "/webtheme-test-page-not-found"
+     Then the footer should reach the bottom of the window
+
+  Scenario: The bar of a content preview sits above the sticky navbar
+    Given I am an anonymous user
+     When I go to the homepage
+     Then a ".node-preview-container" bar added to the page should be above the sticky navbar

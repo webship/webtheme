@@ -1,0 +1,19 @@
+name: "Layout: start"
+props:
+  layout: start
+  screen: login
+  site_name: "Webship"
+  message: "Sign in to write, review and publish."
+slots:
+  title:
+    type: html_tag
+    tag: h1
+    value: "Log in"
+  content:
+    type: html_tag
+    tag: p
+    value: "The log in form."
+  links:
+    type: html_tag
+    tag: ul
+    value: '<li><a href="/user/password">Forgot your password?</a></li>'

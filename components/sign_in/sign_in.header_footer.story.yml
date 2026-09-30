@@ -1,0 +1,28 @@
+name: "With the site header and footer"
+props:
+  layout: center
+  screen: password
+  site_name: "Webship"
+  show_header: true
+  show_footer: true
+slots:
+  header:
+    type: html_tag
+    tag: p
+    value: "The site header."
+  footer:
+    type: html_tag
+    tag: p
+    value: "The site footer."
+  title:
+    type: html_tag
+    tag: h1
+    value: "Reset your password"
+  content:
+    type: html_tag
+    tag: p
+    value: "The password reset form."
+  help:
+    type: html_tag
+    tag: p
+    value: "Questions? Write to the site team."

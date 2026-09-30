@@ -2,7 +2,7 @@
 {#
 /**
  * @file
- * Theme override for the site branding block: UIkit logo.
+ * Theme override for the site branding block, with the Logo component.
  *
  * Available variables:
  * - site_logo: Logo for site as defined in Appearance or theme settings.
@@ -14,14 +14,21 @@
  */
 #}
 {% block content %}
-  <a href="{{ path('<front>') }}" class="uk-navbar-item uk-logo" rel="home">
-    {% if site_logo %}
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" height="40" class="uk-margin-small-right">
-    {% endif %}
-    {% if site_name %}
-      <span{{ site_logo ? ' class="uk-visible@m"' }}>{{ site_name }}</span>
-    {% endif %}
-  </a>
+  {{ include('webtheme:logo', {
+    url: path('<front>'),
+    image: site_logo,
+    image_alt: site_name ? '' : 'Home'|t,
+    image_height: 40,
+    navbar_item: true,
+    label: site_name and site_logo ? {
+      '#type': 'html_tag',
+      '#tag': 'span',
+      '#attributes': {
+        'class': ['uk-visible@m'],
+      },
+      '#value': site_name,
+    } : site_name,
+  }, with_context: false) }}
   {% if site_slogan %}
     <div class="uk-navbar-item uk-text-meta uk-visible@l">{{ site_slogan }}</div>
   {% endif %}

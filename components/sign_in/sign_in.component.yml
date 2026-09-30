@@ -1,0 +1,111 @@
+name: "Sign in"
+description: "The sign-in screens (log in, create an account, reset the password, set a new password, log out, blocked after too many attempts): the form in a narrow card, a brand panel with the site name, a message and an image, and the site header and footer when asked. Place it once, as the whole page."
+group: Page
+libraryOverrides:
+  dependencies:
+    - webtheme/base
+slots:
+  header:
+    title: Header
+    description: "The site header, like the navbar. Printed only when show_header is true."
+  footer:
+    title: Footer
+    description: "The site footer. Printed only when show_footer is true."
+  title:
+    title: Title
+    description: "The heading of the screen, like the page title: an h1 \"Log in\"."
+  messages:
+    title: Messages
+    description: "The status messages, printed in the card above the form."
+  content:
+    title: Content
+    description: "The form of the screen."
+  links:
+    title: Links
+    description: "Links to the other sign-in screens, as a list of plain links. The wrapper is not printed when it is empty."
+  help:
+    title: Help
+    description: "A short support line under the links, like who to contact."
+  brand:
+    title: Brand
+    description: "Replaces the content of the brand panel: the logo, the site name and the message."
+props:
+  type: object
+  properties:
+    layout:
+      title: Layout
+      description: "Where the card sits. center: the card alone, the site name above it. start: the card at the start, the brand panel next to it. end: the brand panel first, the card at the end. top: a brand band above the card. bottom: a brand band under the card. spotlight: the card floating over the brand color."
+      type: string
+      enum:
+        - center
+        - start
+        - end
+        - top
+        - bottom
+        - spotlight
+      "meta:enum":
+        center: Centered
+        start: "Card at the start"
+        end: "Card at the end"
+        top: "Brand band above"
+        bottom: "Brand band below"
+        spotlight: Spotlight
+      default: center
+    screen:
+      title: Screen
+      description: "Which screen it is: it names the modifier class of the component, for screen specific styles."
+      type: string
+      enum:
+        - login
+        - register
+        - password
+        - reset
+        - logout
+        - blocked
+      "meta:enum":
+        login: "Log in"
+        register: "Create an account"
+        password: "Reset the password"
+        reset: "Set a new password"
+        logout: "Log out"
+        blocked: "Blocked after too many attempts"
+      default: login
+    site_name:
+      title: "Site name"
+      description: "The name of the site, printed in the brand panel and linked to the front page."
+      type: string
+    home_url:
+      title: "Front page URL"
+      description: "Where the site name links to. Default: /."
+      $ref: "ui-patterns://url"
+    logo:
+      title: "Logo URL"
+      description: "The URL of the logo image. Empty: the site name only."
+      $ref: "ui-patterns://url"
+    logo_alt:
+      title: "Logo alternative text"
+      description: "The text of the logo image. Empty when the site name is printed next to it."
+      type: string
+    message:
+      title: Message
+      description: "One sentence under the site name, like what the site is for. At most 160 characters."
+      type: string
+      maxLength: 160
+    image:
+      title: "Image URL"
+      description: "An image shown in the brand panel (start, end, top and bottom layouts). Decorative: it has no alternative text."
+      $ref: "ui-patterns://url"
+    image_credit:
+      title: "Image credit"
+      description: "The author and the license of the image, printed small over it."
+      type: string
+    show_header:
+      title: "Show the site header"
+      description: "Print the header slot above the screen. The site name then leaves the card area."
+      type: boolean
+      default: false
+    show_footer:
+      title: "Show the site footer"
+      description: "Print the footer slot under the screen."
+      type: boolean
+      default: false

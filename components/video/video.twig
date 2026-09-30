@@ -1,0 +1,26 @@
+{% set attributes = attributes.addClass('webtheme-video')
+  .setAttribute('controls', true)
+  .setAttribute('playsinline', true)
+  .setAttribute('preload', 'metadata') %}
+{% if rounded %}
+  {% set attributes = attributes.addClass(['uk-border-rounded', 'uk-box-shadow-large']) %}
+{% endif %}
+{% if cover %}
+  {% set attributes = attributes.addClass('webtheme-video--cover') %}
+{% endif %}
+{% if autoplay %}
+  {# A video may only start on its own without sound. #}
+  {% set attributes = attributes.setAttribute('autoplay', true).setAttribute('muted', true) %}
+{% endif %}
+{% if loop %}
+  {% set attributes = attributes.setAttribute('loop', true) %}
+{% endif %}
+{% if poster %}
+  {% set attributes = attributes.setAttribute('poster', poster) %}
+{% endif %}
+{% if label %}
+  {% set attributes = attributes.setAttribute('aria-label', label) %}
+{% endif %}
+<video{{ attributes }}>
+  <source src="{{ src }}" type="{{ src ends with '.webm' ? 'video/webm' : 'video/mp4' }}">
+</video>

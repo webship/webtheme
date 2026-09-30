@@ -25,13 +25,13 @@ htmx:
   dependencies:
     - core/drupal.htmx
 
-# Theme glue: design tokens (CSS custom properties consumed by UI Skins),
-# Drupal specific adjustments and the WCAG 2.2 AAA adjustments of UIkit.
+# Theme glue: the fonts served by the theme, the design tokens (CSS custom
+# properties consumed by UI Skins), Drupal specific adjustments and the WCAG
+# 2.2 AAA adjustments of UIkit.
 base:
   css:
-    base:
-      'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap': { type: external, minified: true }
     theme:
+      assets/css/fonts.css: {}
       assets/css/tokens.css: {}
       assets/css/webship.css: {}
       assets/css/drupal.css: {}

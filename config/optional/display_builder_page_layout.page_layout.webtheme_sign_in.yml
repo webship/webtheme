@@ -1,0 +1,83 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - display_builder.profile.webtheme_sign_in
+  module:
+    - system
+    - ui_patterns
+    - user
+  theme:
+    - webtheme
+id: webtheme_sign_in
+label: 'Sign-in screens'
+weight: -10
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/user/login\r\n/user/register\r\n/user/password\r\n/user/reset/*\r\n/user/logout/confirm"
+  current_theme:
+    id: current_theme
+    negate: false
+    theme: webtheme
+profile: webtheme_sign_in
+sources:
+  -
+    source_id: component
+    source:
+      component:
+        component_id: 'webtheme:sign_in'
+        variant_id: null
+        props:
+          layout:
+            source_id: select
+            source:
+              value: center
+          screen:
+            source_id: select
+            source:
+              value: login
+          site_name:
+            source_id: token
+            source:
+              value: '[site:name]'
+          home_url:
+            source_id: url
+            source:
+              value: /
+          show_header:
+            source_id: checkbox
+            source:
+              value: false
+          show_footer:
+            source_id: checkbox
+            source:
+              value: false
+        slots:
+          title:
+            sources:
+              -
+                source_id: page_title
+                source: {  }
+          messages:
+            sources:
+              -
+                source_id: block
+                source:
+                  plugin_id: system_messages_block
+                  system_messages_block: {  }
+          content:
+            sources:
+              -
+                source_id: main_page_content
+                source: {  }
+          links:
+            sources:
+              -
+                source_id: block
+                source:
+                  plugin_id: local_tasks_block
+                  local_tasks_block:
+                    primary: true
+                    secondary: false

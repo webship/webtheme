@@ -1,0 +1,59 @@
+name: Footer
+description: "The footer of the site: the contentinfo landmark, as a full-width band with a background, the logo of the footer, the menus and blocks of the footer, a bottom line like the copyright, and a link back to the top. Place it once, at the end of a page layout."
+group: Page
+libraryOverrides:
+  dependencies:
+    - webtheme/base
+slots:
+  content:
+    title: Content
+    description: "The footer menus and blocks."
+  bottom:
+    title: "Bottom line"
+    description: "A short line under the content, like the copyright or the powered by line. The page template of the theme puts the footer copyright of the theme settings here."
+props:
+  type: object
+  properties:
+    variant:
+      title: Background
+      description: "The background of the band. secondary: the dark band (the default). muted: a soft tint. default: the page background. primary: the brand color."
+      type: string
+      enum:
+        - secondary
+        - muted
+        - default
+        - primary
+      "meta:enum":
+        secondary: "Secondary (dark)"
+        muted: Muted
+        default: Default
+        primary: Primary
+      default: secondary
+    size:
+      title: "Vertical padding"
+      description: "The space above and under the content."
+      type: string
+      enum:
+        - xsmall
+        - small
+        - medium
+        - large
+      "meta:enum":
+        xsmall: "X-Small"
+        small: Small
+        medium: Medium
+        large: Large
+      default: small
+    logo:
+      title: "Logo URL"
+      description: "The URL of a logo printed at the top of the footer, linking to the front page. The page template of the theme passes the footer logo of the theme settings: the white Webship.co logo, /themes/contrib/webtheme/logo-white.svg, or the logo of the site. Empty: no logo."
+      $ref: "ui-patterns://url"
+    logo_alt:
+      title: "Logo alternative text"
+      description: "The text of the logo link for screen readers. Default: Home."
+      type: string
+    totop:
+      title: "Back to top link"
+      description: "Print a link that scrolls back to the top of the page."
+      type: boolean
+      default: true

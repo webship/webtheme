@@ -1,0 +1,97 @@
+# A page layout built with the section landmarks of the theme, for the
+# Display Builder feature. It is created and deleted by the scenario.
+langcode: en
+status: true
+dependencies:
+  config:
+    - display_builder.profile.webtheme
+  module:
+    - system
+    - ui_patterns
+  theme:
+    - webtheme
+id: webtheme_test_landmarks
+label: 'Webtheme test: landmarks'
+weight: -20
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node
+profile: webtheme
+sources:
+  -
+    source_id: component
+    source:
+      component:
+        component_id: 'webtheme:section'
+        variant_id:
+          source_id: select
+          source:
+            value: muted
+        props:
+          landmark:
+            source_id: select
+            source:
+              value: header
+          size:
+            source_id: select
+            source:
+              value: xsmall
+        slots:
+          content:
+            sources:
+              -
+                source_id: block
+                source:
+                  plugin_id: system_branding_block
+                  system_branding_block:
+                    use_site_logo: true
+                    use_site_name: true
+                    use_site_slogan: false
+  -
+    source_id: component
+    source:
+      component:
+        component_id: 'webtheme:section'
+        variant_id: null
+        props:
+          landmark:
+            source_id: select
+            source:
+              value: main
+        slots:
+          content:
+            sources:
+              -
+                source_id: page_title
+                source: {  }
+              -
+                source_id: main_page_content
+                source: {  }
+  -
+    source_id: component
+    source:
+      component:
+        component_id: 'webtheme:section'
+        variant_id:
+          source_id: select
+          source:
+            value: secondary
+        props:
+          landmark:
+            source_id: select
+            source:
+              value: footer
+          size:
+            source_id: select
+            source:
+              value: small
+        slots:
+          content:
+            sources:
+              -
+                source_id: block
+                source:
+                  plugin_id: system_powered_by_block
+                  system_powered_by_block: {  }

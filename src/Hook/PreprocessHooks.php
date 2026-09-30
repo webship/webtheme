@@ -124,6 +124,11 @@ class PreprocessHooks {
     if (!isset($variables['items'])) {
       return;
     }
+    // One page only: no pager, like core.
+    if (empty($variables['items']['previous']) && empty($variables['items']['next'])) {
+      $variables['items'] = [];
+      return;
+    }
 
     $variables['items'] = LinksPropType::normalize(\array_filter([
       $variables['items']['previous'] ?? [],

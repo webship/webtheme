@@ -12,7 +12,14 @@ const { existsSync, readdirSync, readFileSync } = require("node:fs");
 const { createRequire } = require("node:module");
 const { homedir } = require("node:os");
 const path = require("node:path");
-const { After, Before, Given, When, Then } = require("@cucumber/cucumber");
+const {
+  After,
+  AfterAll,
+  Before,
+  Given,
+  When,
+  Then,
+} = require("@cucumber/cucumber");
 
 const THEME_ROOT = path.resolve(__dirname, "..", "..");
 const PROJECT_DIR =
@@ -551,11 +558,53 @@ Then(
   },
 );
 
+// The default page layout of the site before the first deletion, as JSON:
+// null until then, an empty string when the site had none.
+let sitePageLayout = null;
+
+/**
+ * Puts the default page layout of the site back, when a test deleted it.
+ *
+ * The page layout is created again with the values it had, and its Display
+ * Builder instance is removed: Display Builder builds it again from them.
+ */
+function restoreSitePageLayout() {
+  if (!sitePageLayout) {
+    sitePageLayout = null;
+    return;
+  }
+  const values = Buffer.from(sitePageLayout).toString("base64");
+  drush(
+    `php:eval ${shellArgument(`$storage = \\Drupal::entityTypeManager()->getStorage("page_layout"); $storage->load("default")?->delete(); \\Drupal::entityTypeManager()->getStorage("display_builder_instance")->load("page_layout__default")?->delete(); $storage->create(json_decode(base64_decode("${values}"), TRUE))->save();`)}`,
+  );
+  drush("cache:rebuild");
+  sitePageLayout = null;
+}
+
+/**
+ * Puts back the default page layout the site had before the tests.
+ *
+ * Example: Then the default page layout of the site is restored
+ */
+Then(
+  /^the default page layout of the site is restored$/,
+  { timeout: 180000 },
+  function () {
+    restoreSitePageLayout();
+  },
+);
+
+AfterAll({ timeout: 180000 }, function () {
+  restoreSitePageLayout();
+});
+
 /**
  * Deletes the default page layout if it exists.
  *
  * Display Builder keeps its page template in the runtime theme registry after
- * the deletion, so the caches are rebuilt too.
+ * the deletion, so the caches are rebuilt too. The page layout the site had
+ * is kept, and put back by "the default page layout of the site is restored"
+ * or at the end of the run.
  *
  * Example: Given there is no default page layout
  */
@@ -563,6 +612,14 @@ Given(
   /^there is no default page layout$/,
   { timeout: 180000 },
   async function () {
+    if (sitePageLayout === null) {
+      sitePageLayout = drush(
+        `php:eval ${shellArgument('echo json_encode(\\Drupal::entityTypeManager()->hasDefinition("page_layout") ? \\Drupal::entityTypeManager()->getStorage("page_layout")->load("default")?->toArray() : NULL);')}`,
+      );
+      if (sitePageLayout === "null") {
+        sitePageLayout = "";
+      }
+    }
     // Check with a request first: a 404 page would be reported as a JavaScript
     // (console) error by the webship-js error tracking.
     const url = `${this.launchUrl}/admin/structure/page-layout/default/delete`;
@@ -971,12 +1028,20 @@ Then(
  * Runs axe-core at a WCAG level on the stories of every component of the
  * library, in a color mode.
  *
+ * Components drawn as a whole page, with their own main landmark, are checked
+ * on the pages that use them: they are left out with "except".
+ *
  * Example: Then every UIkit component story should pass an accessibility audit at level "AAA" in the "dark" color mode
+ * Example: Then every UIkit component story should pass an accessibility audit at level "AAA" in the "dark" color mode except "page"
  */
 Then(
-  /^every UIkit component story should pass an accessibility audit at level "(AA|AAA)" in the "(light|dark)" color mode$/,
+  /^every UIkit component story should pass an accessibility audit at level "(AA|AAA)" in the "(light|dark)" color mode(?: except "([^"]*)")?$/,
   { timeout: 900000 },
-  async function (level, mode) {
+  async function (level, mode, except) {
+    const skipped = (except || "")
+      .split(",")
+      .map((id) => id.trim())
+      .filter(Boolean);
     const AxeBuilder = axeBuilder();
     const tags = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
     if (level === "AAA") {
@@ -988,7 +1053,9 @@ Then(
       components.length > 50,
       `Only ${components.length} components found.`,
     );
-    for (const { id } of components) {
+    for (const { id } of components.filter(
+      (component) => !skipped.includes(component.id),
+    )) {
       await this.page.goto(
         `${this.launchUrl}/admin/appearance/ui/components/webtheme/${id}`,
       );

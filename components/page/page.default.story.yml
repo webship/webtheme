@@ -1,0 +1,22 @@
+name: Default
+slots:
+  header:
+    type: html_tag
+    tag: p
+    value: "The header of the site."
+  highlighted:
+    type: html_tag
+    tag: p
+    value: "A status message."
+  content:
+    type: html_tag
+    tag: p
+    value: "The main content of the page."
+  sidebar_second:
+    type: html_tag
+    tag: p
+    value: "Related links."
+  footer:
+    type: html_tag
+    tag: p
+    value: "The footer of the site."

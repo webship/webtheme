@@ -1,0 +1,46 @@
+name: Page
+description: "The frame of a page: the header, a band for the breadcrumb, the main landmark with the highlighted messages, the content and up to two sidebars, and the footer. The footer stays at the bottom of short pages."
+group: Page
+libraryOverrides:
+  dependencies:
+    - webtheme/base
+slots:
+  header:
+    title: Header
+    description: "The header of the site, usually the Header component."
+  above:
+    title: "Above the content"
+    description: "A muted band under the header, like the breadcrumb. Printed only when it has content."
+  highlighted:
+    title: Highlighted
+    description: "The status messages and help, above the content."
+  content:
+    title: Content
+    description: "The main content of the page."
+  sidebar_first:
+    title: "First sidebar"
+    description: "A column before the content, a quarter of the width on medium screens."
+  sidebar_second:
+    title: "Second sidebar"
+    description: "A column after the content, a quarter of the width on medium screens."
+  footer:
+    title: Footer
+    description: "The footer of the site, usually the Footer component."
+props:
+  type: object
+  properties:
+    container:
+      title: Container
+      description: "The width of the main content."
+      type: string
+      enum:
+        - default
+        - small
+        - large
+        - expand
+      "meta:enum":
+        default: "Default (1200px)"
+        small: "Small (900px)"
+        large: "Large (1400px)"
+        expand: Expand
+      default: default

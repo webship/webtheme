@@ -1,0 +1,15 @@
+/**
+ * @file
+ * The footer of the site.
+ */
+
+.webtheme-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.webtheme-footer__bottom > div > :last-child {
+  margin-block-end: 0;
+}

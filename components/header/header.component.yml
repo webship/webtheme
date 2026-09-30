@@ -1,0 +1,23 @@
+name: Header
+description: "The header of the site: the banner landmark that holds the navbar, and the offcanvas menu that the navbar toggle opens on small screens. Place it once, at the top of a page layout."
+group: Page
+libraryOverrides:
+  dependencies:
+    - webtheme/base
+slots:
+  content:
+    title: Content
+    description: "The navbar of the site, with the logo, the menus and the navbar toggle."
+  offcanvas:
+    title: Offcanvas
+    description: "The offcanvas menu opened by the navbar toggle on small screens. It sits outside the banner, so the landmark holds only the visible header."
+  below:
+    title: "Below the navbar"
+    description: "A band under the navbar, like the breadcrumb. Printed only when it has content."
+props:
+  type: object
+  properties:
+    label:
+      title: "Accessible name"
+      description: "The name of the banner landmark for screen readers. Empty: the landmark has no name, which is right when the page has one header."
+      type: string

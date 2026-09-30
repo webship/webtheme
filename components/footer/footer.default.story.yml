@@ -1,0 +1,15 @@
+name: Default
+props:
+  totop: true
+  logo: "/themes/contrib/webtheme/logo-white.svg"
+slots:
+  content:
+    type: html_tag
+    tag: ul
+    attributes:
+      class: ["uk-subnav", "uk-subnav-divider"]
+    value: '<li><a href="/docs">Documentation</a></li><li><a href="/contact">Contact</a></li>'
+  bottom:
+    type: html_tag
+    tag: p
+    value: "© Webship. Built with Drupal."

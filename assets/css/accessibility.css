@@ -23,7 +23,8 @@
  * The ring is 2px solid, 2px away from the element, over a 6px halo of the
  * page background: it keeps 3:1 against the element and its surroundings,
  * whatever their colors (on an image, the ring or the halo does).
- * Form controls lose their "outline: none".
+ * Form controls lose their "outline: none". The colors, the widths and the
+ * offset are tokens of UI Skins.
  */
 :focus-visible,
 .uk-input:focus-visible,
@@ -33,9 +34,9 @@
 .uk-checkbox:focus-visible,
 .uk-search-input:focus-visible,
 .uk-range:focus-visible {
-  outline: 2px solid var(--webtheme-focus-color);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 6px var(--webtheme-focus-halo);
+  outline: var(--webtheme-focus-width, 2px) solid var(--webtheme-focus-color);
+  outline-offset: var(--webtheme-focus-offset, 2px);
+  box-shadow: 0 0 0 var(--webtheme-focus-halo-width, 6px) var(--webtheme-focus-halo);
 }
 
 /* Text fields show the ring on focus by mouse too. */
@@ -43,9 +44,9 @@
 .uk-select:focus,
 .uk-textarea:focus,
 .uk-search-input:focus {
-  outline: 2px solid var(--webtheme-focus-color);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 6px var(--webtheme-focus-halo);
+  outline: var(--webtheme-focus-width, 2px) solid var(--webtheme-focus-color);
+  outline-offset: var(--webtheme-focus-offset, 2px);
+  box-shadow: 0 0 0 var(--webtheme-focus-halo-width, 6px) var(--webtheme-focus-halo);
 }
 
 /* Inverse contexts, and controls over images (slidenav, cover). */
@@ -70,7 +71,7 @@
 .uk-offcanvas-bar .uk-input:focus,
 .uk-offcanvas-bar .uk-search-input:focus {
   outline-color: var(--webtheme-inverse-focus-color);
-  box-shadow: 0 0 0 6px var(--webtheme-inverse-focus-halo);
+  box-shadow: 0 0 0 var(--webtheme-focus-halo-width, 6px) var(--webtheme-inverse-focus-halo);
 }
 
 /* Focus not obscured
@@ -89,7 +90,7 @@ html {
  * ring is not cut by the edge of the bar.
  */
 .uk-offcanvas-bar:has(> .uk-offcanvas-close) {
-  padding-top: 64px;
+  padding-top: calc(var(--webtheme-target-size, 44px) + 20px);
 }
 
 .uk-offcanvas-close {
@@ -100,9 +101,12 @@ html {
 /* Target size
    ========================================================================== */
 
-/* Buttons: 44px tall with their 1px border, the small ones too. */
+/*
+ * Buttons: 44px tall with their 1px border, the small ones too. The height of
+ * the buttons and fields, and the smallest target, are tokens of UI Skins.
+ */
 .uk-button:not(.uk-button-text, .uk-button-link) {
-  line-height: 42px;
+  line-height: calc(var(--webtheme-control-height, 44px) - 2px);
 }
 
 .uk-button-large:not(.uk-button-text, .uk-button-link) {
@@ -114,7 +118,7 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 /* Form controls. */
@@ -123,7 +127,7 @@ html {
 .uk-search-default .uk-search-input,
 .uk-search-navbar .uk-search-input,
 .uk-form-small:not(textarea, [multiple], [size]) {
-  height: 44px;
+  height: var(--webtheme-control-height, 44px);
 }
 
 /*
@@ -133,7 +137,7 @@ html {
 .uk-navbar-toggle,
 .uk-navbar-nav > li > a,
 .uk-navbar-item:not(.uk-logo) {
-  min-width: 44px;
+  min-width: var(--webtheme-target-size, 44px);
 }
 
 .uk-nav > li > a,
@@ -141,22 +145,22 @@ html {
 .uk-tab > * > a,
 .uk-iconnav > * > a {
   box-sizing: border-box;
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 .uk-subnav > * > :first-child,
 .uk-tab > * > a {
   justify-content: center;
   box-sizing: border-box;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: var(--webtheme-target-size, 44px);
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 .uk-pagination > * > * {
   justify-content: center;
   box-sizing: border-box;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: var(--webtheme-target-size, 44px);
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 .uk-breadcrumb > * > a,
@@ -164,8 +168,8 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: var(--webtheme-target-size, 44px);
+  min-height: var(--webtheme-target-size, 44px);
   vertical-align: middle;
 }
 
@@ -185,7 +189,7 @@ html {
 footer li > a:only-child {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 /*
@@ -198,8 +202,8 @@ a[data-component-id="webtheme:lightbox_item"],
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: var(--webtheme-target-size, 44px);
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 /* A link around an image is as large as the image. */
@@ -209,14 +213,14 @@ a[data-component-id="webtheme:lightbox_item"],
 
 .uk-accordion-title {
   box-sizing: border-box;
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
   padding-block: 8px;
 }
 
 /* Icon buttons and links. */
 .uk-icon-button {
-  width: 44px;
-  height: 44px;
+  width: var(--webtheme-target-size, 44px);
+  height: var(--webtheme-target-size, 44px);
 }
 
 .uk-icon-link,
@@ -229,17 +233,17 @@ a[data-component-id="webtheme:lightbox_item"],
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: var(--webtheme-target-size, 44px);
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 .uk-logo:not(.uk-navbar-item) {
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 /* Close buttons of alerts, modals, offcanvas and lightbox. */
 .uk-alert:has(> .uk-alert-close) {
-  padding-right: 56px;
+  padding-right: calc(var(--webtheme-target-size, 44px) + 12px);
 }
 
 .uk-alert-close {
@@ -255,21 +259,22 @@ a[data-component-id="webtheme:lightbox_item"],
 
 /*
  * Password visibility toggles printed in the field, like the one of the View
- * Password module: a 44px button over the end of the field. The module adds
- * its styles after the theme ones: the selector is more specific.
+ * Password module: a 44px button over the end of the field, in both
+ * directions. The module adds its styles after the theme ones: the selector
+ * is more specific.
  */
 .form-item > button.shwpd {
   box-sizing: border-box;
-  width: 44px;
-  height: 44px;
-  margin-left: -44px;
+  width: var(--webtheme-target-size, 44px);
+  height: var(--webtheme-target-size, 44px);
+  margin-inline-start: calc(-1 * var(--webtheme-target-size, 44px));
   vertical-align: top;
   background-position: center;
   background-size: 20px;
 }
 
 .uk-input:has(+ button.shwpd) {
-  padding-right: 44px;
+  padding-inline-end: var(--webtheme-target-size, 44px);
 }
 
 /* Dot navigation: 44px targets, with the dot drawn inside. */
@@ -284,8 +289,8 @@ a[data-component-id="webtheme:lightbox_item"],
 
 .uk-dotnav > * > * {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: var(--webtheme-target-size, 44px);
+  height: var(--webtheme-target-size, 44px);
   color: var(--uk-global-emphasis-color, #0d1214);
   border: 0;
   border-radius: 0;
@@ -337,7 +342,7 @@ a[data-component-id="webtheme:lightbox_item"],
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
   column-gap: 8px;
 }
 
@@ -345,7 +350,7 @@ a[data-component-id="webtheme:lightbox_item"],
 .form-type-radio > label {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
 }
 
 /* Links in text
@@ -494,7 +499,7 @@ span:not([class]) > a:not([class*="uk-"], [aria-label]) {
 .uk-radio:checked,
 .uk-checkbox:checked,
 .uk-checkbox:indeterminate {
-  border-color: var(--webtheme-primary-color);
+  border-color: var(--uk-global-primary-color);
 }
 
 /* The current item of the menus is not shown by color alone. */
@@ -513,8 +518,11 @@ span:not([class]) > a:not([class*="uk-"], [aria-label]) {
    ========================================================================== */
 
 /*
- * Lines of running text are 80 characters at most (1.4.8). The list items
- * are the ones of the plain and UIkit lists, not of grids, sliders or menus.
+ * Lines of running text are 80 characters at most (1.4.8). The line length
+ * is a design token, in em: 32em holds about 72 characters of the font of the
+ * theme, and "ch" is the width of a zero, wider than the average letter. The
+ * list items are the ones of the plain and UIkit lists, not of grids, sliders
+ * or menus.
  */
 :where(
   p,
@@ -527,7 +535,7 @@ span:not([class]) > a:not([class*="uk-"], [aria-label]) {
   .description
 ),
 :where(ul:not([class]), ol:not([class]), .uk-list) > li {
-  max-width: 80ch;
+  max-width: var(--uk-measure, 32em);
 }
 
 .uk-text-center
@@ -546,7 +554,7 @@ span:not([class]) > a:not([class*="uk-"], [aria-label]) {
 .uk-comment-meta,
 .uk-text-meta,
 .uk-notification-message {
-  line-height: 1.5;
+  line-height: var(--uk-global-line-height, 1.5);
 }
 
 .uk-text-justify,
@@ -634,7 +642,7 @@ main a:not([class], :is(h1, h2, h3, h4, h5, h6, nav) a) {
 a.feed-icon {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: var(--webtheme-target-size, 44px);
   gap: 0.35em;
 }
 

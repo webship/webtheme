@@ -1,9 +1,17 @@
 .DS_Store
 node_modules
-package-lock.json
 .playwright-mcp
 screenshots
 tests/reports/*
 !tests/reports/README.md
 tests/videos
 .gitlab-ci-local.yml
+
+# Yarn 4 cache and install state.
+.yarn/
+
+# JavaScript lockfiles are not committed: installs resolve from package.json
+# (packageManager yarn@4.18.1, engines).
+yarn.lock
+package-lock.json
+pnpm-lock.yaml

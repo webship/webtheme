@@ -651,6 +651,28 @@ When(
 );
 
 /**
+ * An element in the builder canvas of a display. Display Builder 1.0.0-beta9
+ * draws the canvas in an iframe, earlier releases inline in the island.
+ *
+ * Example: Then the builder canvas of "page_layout__default" should have ".uk-navbar-container"
+ */
+Then(
+  /^the builder canvas of "([a-z0-9_]+)" should have "([^"]+)"$/,
+  async function (instance, selector) {
+    const island = this.page.locator(`#island-${instance}-builder`);
+    await island.waitFor({ state: "attached" });
+    const frame = island.locator("iframe.db-builder-frame");
+    const canvas = (await frame.count())
+      ? island.frameLocator("iframe.db-builder-frame")
+      : island;
+    await canvas
+      .locator(selector)
+      .first()
+      .waitFor({ state: "attached", timeout: 15000 });
+  },
+);
+
+/**
  * Lists the visible links, buttons and form controls of the page, as a
  * script added to the page (window.webthemeInteractive()).
  *

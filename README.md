@@ -207,7 +207,7 @@ Playwright). The features run against a Drupal site with Webtheme as the default
 ```shell
 npm install
 LAUNCH_URL=https://webtheme.ddev.site DRUPAL_PROJECT_DIR=~/workspace/test/webtheme \
-  npx -y node@22 ./node_modules/.bin/cucumber-js --config cucumber.js
+  npx -y node@24 ./node_modules/.bin/cucumber-js --config cucumber.js
 ```
 
 The features check the UIkit markup, not the content of a site: they pass on a site installed with the

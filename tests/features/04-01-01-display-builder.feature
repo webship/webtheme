@@ -17,7 +17,7 @@ Feature: The UIkit components with Display Builder
       And "#island-page_layout__default-component_library" should contain text "Navbar"
       And "#island-page_layout__default-component_library" should contain text "Slideshow"
       And "#island-page_layout__default-component_library" should contain text "Accordion"
-      And ":nth-match(#island-page_layout__default-builder .uk-navbar-container, 1)" should be attached
+      And the builder canvas of "page_layout__default" should have ".uk-navbar-container"
       And there should be no JavaScript errors
 
   Scenario: The page rendered through the page layout keeps the UIkit navbar

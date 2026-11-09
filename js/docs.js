@@ -11,7 +11,7 @@
   function headingText(heading) {
     const copy = heading.cloneNode(true);
     copy
-      .querySelectorAll('.visually-hidden, .ext, svg')
+      .querySelectorAll('.visually-hidden, svg, [data-extlink-placement]')
       .forEach((el) => el.remove());
     return (copy.textContent || '').replace(/\s+/g, ' ').trim();
   }

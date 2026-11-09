@@ -817,7 +817,9 @@ function webtheme_preprocess_page(&$variables): void {
   $manager = \Drupal::service('book.manager');
   $bid = (int) $page['link']['bid'];
   $root = \Drupal::entityTypeManager()->getStorage('node')->load($bid);
-  $tree = $manager->bookTreeAllData($bid, $page['link']);
+  // The whole outline, every section's pages included (not only the active trail's), so the side
+  // navigation and the search's fallback see every page.
+  $tree = $manager->bookTreeAllData($bid, $page['link'], NULL, NULL, TRUE);
   $top = reset($tree);
   $items = ($top && !empty($top['below'])) ? $top['below'] : $tree;
   $build = $manager->bookTreeOutput($items);

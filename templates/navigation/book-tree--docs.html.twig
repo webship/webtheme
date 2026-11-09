@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Webtheme's book tree as the side navigation of the documentation pages.
+ *
+ * Every section with pages below it gets a toggle; the sections on the active trail start open,
+ * the rest closed (js/docs.js opens and closes them, and marks the page being read). The same
+ * variables as book-tree.html.twig.
+ *
+ * @see webtheme_preprocess_page()
+ */
+#}
+{% import _self as docs_tree %}
+{{ docs_tree.links(items, attributes, 0) }}
+
+{% macro links(items, attributes, level) %}
+  {% import _self as docs_tree %}
+  {% if items %}
+    <ul class="docs-nav__list docs-nav__list--level-{{ level + 1 }}">
+      {% for item in items %}
+        {% set has_children = item.below is not empty %}
+        {%
+          set item_classes = [
+            'docs-nav__item',
+            'docs-nav__item--level-' ~ (level + 1),
+            has_children ? 'docs-nav__item--section',
+            item.in_active_trail ? 'is-active-trail',
+          ]
+        %}
+        <li{{ item.attributes.addClass(item_classes) }}{% if has_children and item.in_active_trail %} data-open{% endif %}>
+          <div class="docs-nav__row">
+            {{ link(item.title, item.url, { 'class': ['docs-nav__link', 'docs-nav__link--level-' ~ (level + 1)] }) }}
+            {% if has_children %}
+              <button class="docs-nav__toggle" type="button" aria-expanded="{{ item.in_active_trail ? 'true' : 'false' }}" aria-label="{{ 'Open or close'|t }} {{ item.title }}">
+                <svg class="docs-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+              </button>
+            {% endif %}
+          </div>
+          {% if has_children %}
+            {{ docs_tree.links(item.below, attributes, level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

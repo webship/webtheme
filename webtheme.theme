@@ -11,6 +11,8 @@ use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Markup;
+use Drupal\node\NodeInterface;
 use Drupal\user\UserInterface;
 
 /**
@@ -76,6 +78,19 @@ function webtheme_preprocess_html(&$variables) {
   // the (anonymous) page cache and the change would not take effect until a
   // manual cache rebuild.
   $variables['#cache']['tags'][] = 'config:webtheme.settings';
+
+  // A documentation page (page--docs.html.twig): the body says so, and the light-or-dark choice a
+  // reader made is applied before the first paint, so the page never flashes the other one.
+  if (_webtheme_docs_node()) {
+    $variables['attributes']['class'][] = 'docs-page';
+    $variables['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#value' => Markup::create("try{var t=localStorage.getItem('webtheme.docs.theme');if(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches){t='dark';}if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}"),
+      ],
+      'webtheme_docs_theme',
+    ];
+  }
   if (_webtheme_get_setting('htmx_enabled')) {
     $variables['#attached']['library'][] = 'webtheme/htmx';
     if (_webtheme_get_setting('htmx_boost')) {
@@ -739,4 +754,81 @@ function _webtheme_hex_to_hsl(string $hex_string) {
   $l = round($l * 100);
 
   return [$h, $s, $l];
+}
+
+/**
+ * The documentation page being built: its node and its place in the book, or NULL.
+ *
+ * A documentation page is a node that sits in a book outline (the Book module's), read on its own
+ * page: it gets page--docs.html.twig, with the book's outline as the side navigation. The outline
+ * row is read here rather than from the node, which carries it only for the types the Book
+ * settings allow.
+ *
+ * @return array|null
+ *   ['node' => the node, 'link' => its book link (nid, bid, pid, p1..p9, depth, ...)], or NULL.
+ */
+function _webtheme_docs_page(): ?array {
+  static $page = FALSE;
+  if ($page !== FALSE) {
+    return $page;
+  }
+  $page = NULL;
+  $route = \Drupal::routeMatch();
+  $node = $route->getParameter('node');
+  if ($route->getRouteName() === 'entity.node.canonical' && $node instanceof NodeInterface && \Drupal::hasService('book.manager')) {
+    $link = \Drupal::service('book.manager')->loadBookLink((int) $node->id(), FALSE);
+    if (!empty($link['bid'])) {
+      $page = ['node' => $node, 'link' => $link];
+    }
+  }
+  return $page;
+}
+
+/**
+ * The node of the documentation page being built, or NULL.
+ */
+function _webtheme_docs_node(): ?NodeInterface {
+  $page = _webtheme_docs_page();
+  return $page ? $page['node'] : NULL;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page templates.
+ */
+function webtheme_theme_suggestions_page_alter(array &$suggestions, array $variables): void {
+  if (_webtheme_docs_node()) {
+    $suggestions[] = 'page__docs';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ *
+ * A documentation page gets the whole outline of its book for the side navigation (the book's own
+ * entry left out: its sections are the top level), rendered as book-tree--docs.html.twig, and the
+ * book's root as the heading of that navigation.
+ */
+function webtheme_preprocess_page(&$variables): void {
+  $page = _webtheme_docs_page();
+  if (!$page) {
+    return;
+  }
+  $variables['#attached']['library'][] = 'webtheme/docs';
+  $manager = \Drupal::service('book.manager');
+  $bid = (int) $page['link']['bid'];
+  $root = \Drupal::entityTypeManager()->getStorage('node')->load($bid);
+  $tree = $manager->bookTreeAllData($bid, $page['link']);
+  $top = reset($tree);
+  $items = ($top && !empty($top['below'])) ? $top['below'] : $tree;
+  $build = $manager->bookTreeOutput($items);
+  if ($build) {
+    $build['#theme'] = 'book_tree__docs';
+    $build['#cache']['contexts'][] = 'route.book_navigation';
+    $build['#cache']['tags'][] = 'bid:' . $bid;
+  }
+  $variables['docs'] = [
+    'tree' => $build,
+    'book_title' => $root ? $root->label() : '',
+    'book_url' => $root ? $root->toUrl()->toString() : '',
+  ];
 }

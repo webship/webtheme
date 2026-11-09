@@ -355,3 +355,18 @@ webreleases:
   css:
     theme:
       css/components/webreleases.css: {}
+
+docs:
+  version: VERSION
+  css:
+    component:
+      css/components/docs.css: {}
+  js:
+    js/vendor/highlight/highlight.min.js: { minified: true, weight: -10 }
+    js/vendor/highlight/gherkin.min.js: { minified: true, weight: -9 }
+    js/vendor/highlight/twig.min.js: { minified: true, weight: -9 }
+    js/vendor/highlight/dockerfile.min.js: { minified: true, weight: -9 }
+    js/docs.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

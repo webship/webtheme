@@ -159,6 +159,12 @@ With Display Builder installed, the theme ships:
 A recipe imports them with `config: import: webtheme: [...]`: a recipe does not install optional
 configuration. Existing sites get them from a post update.
 
+The page title source of Display Builder prints the title text only (since 1.0.0-beta10): a page layout puts
+it in the *Heading* component, level 1, as `webtheme_sign_in` does. Placed straight in a slot, the title is
+plain text and the page has no h1. A post update does it for the `webtheme_sign_in` layout of an existing
+site, and the theme conflicts with the Display Builder releases before 1.0.0-beta10, which print an h1 of
+their own.
+
 Also: the navbar toggle is not printed when the offcanvas menu has no link, the content preview bar and the
 Navigation top bar sit above the sticky navbar, and a views mini pager with a single page is not printed.
 

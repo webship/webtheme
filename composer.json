@@ -29,5 +29,8 @@
     },
     "require-dev": {
         "drupal/display_builder": "^1.0@beta"
+    },
+    "conflict": {
+        "drupal/display_builder": "<1.0.0-beta10"
     }
 }

@@ -7,9 +7,11 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Config\MemoryStorage;
 use Drupal\webtheme\Hook\ThemeHooks;
+use Drupal\webtheme\PageTitleHeading;
 
 /**
  * Give the UI Skins ids of the theme its name, and one color mode control.
@@ -190,4 +192,35 @@ function webtheme_post_update_display_builder_config(): void {
     }
   }
   \Drupal::service('config.installer')->installOptionalConfig($storage);
+}
+
+/**
+ * Put the page title of the sign-in page layout in a level 1 heading.
+ *
+ * Display Builder 1.0.0-beta10 prints the page title source as text only: the
+ * sign-in screens drawn by the page layout of the theme lost their h1. A page
+ * title straight in the title slot of the Sign in component goes in the
+ * Heading component, level 1, as in the page layout the theme ships.
+ */
+function webtheme_post_update_sign_in_page_title_heading(): void {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  if (!$entity_type_manager->hasDefinition('page_layout')) {
+    return;
+  }
+  $layout = $entity_type_manager->getStorage('page_layout')->load('webtheme_sign_in');
+  if (!$layout instanceof ConfigEntityInterface) {
+    return;
+  }
+  $sources = $layout->get('sources');
+  if (!\is_array($sources)) {
+    return;
+  }
+  $updated = PageTitleHeading::inSlot($sources, 'webtheme:sign_in', 'title');
+  if ($updated === $sources) {
+    return;
+  }
+  // Saved as a configuration import: Display Builder makes the new sources
+  // the present state of the builder too, so the old title does not stay as
+  // a draft that the next publish would bring back.
+  $layout->set('sources', $updated)->setSyncing(TRUE)->save();
 }

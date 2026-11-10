@@ -58,8 +58,22 @@ sources:
           title:
             sources:
               -
-                source_id: page_title
-                source: {  }
+                source_id: component
+                source:
+                  component:
+                    component_id: 'webtheme:heading'
+                    variant_id: null
+                    props:
+                      heading_level:
+                        source_id: select
+                        source:
+                          value: 1
+                    slots:
+                      title:
+                        sources:
+                          -
+                            source_id: page_title
+                            source: {  }
           messages:
             sources:
               -

@@ -11,6 +11,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^12.9.0",
     "@eslint/js": "^9.39.0",
+    "@webship-js/drupal-core-steps": "^2.1.0",
     "eslint": "^9.39.0",
     "eslint-plugin-yml": "^1.19.0",
     "globals": "^16.5.0",
@@ -32,6 +33,7 @@
     "test:chromium": "BROWSER=chromium cucumber-js --config cucumber.js",
     "test:firefox": "BROWSER=firefox cucumber-js --config cucumber.js",
     "test:webkit": "BROWSER=webkit cucumber-js --config cucumber.js",
-    "generate-reports": "generate-reports"
+    "generate-reports": "generate-reports",
+    "test:dry": "cucumber-js --config cucumber.js --dry-run"
   }
 }

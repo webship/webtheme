@@ -181,6 +181,7 @@ stylelint:
 webship-js-test:
   extends: .drupal-node-base
   script:
+    - ./node_modules/.bin/cucumber-js --config cucumber.js --dry-run
     - ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
   artifacts:
     when: always

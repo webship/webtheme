@@ -41,6 +41,9 @@
  * - page.breadcrumb: Items for the breadcrumb region.
  * - page.social: Items for the social region.
  *
+ * The main area sits in the `main` block: page--docs.html.twig extends this template and
+ * replaces that block alone, keeping the header and the footer.
+ *
  * @see template_preprocess_page()
  * @see html.html.twig
  */
@@ -80,6 +83,7 @@
       </header>
     {% endif %}
 
+    {% block main %}
     <div id="main-wrapper" class="layout-main-wrapper layout-container">
       <div id="main" class="layout-main">
         <div class="main-content">
@@ -109,6 +113,7 @@
         </div>
       </div>
     </div>
+    {% endblock %}
 
     <footer class="site-footer">
       <div class="site-footer__inner container">

@@ -25,32 +25,47 @@
  *   as an option. Not used by default.
  * - book_title: The book/node title of the current outline being viewed.
  *
+ * The children are listed under "In this section"; the previous and next links carry a label
+ * and the page's title, so the documentation pages can draw them as two cards.
+ *
  * @see template_preprocess_book_navigation()
  */
 #}
 {{ attach_library('webtheme/book') }}
 {% if tree or has_links %}
   <nav id="book-navigation-{{ book_id }}" class="book-navigation" role="navigation" aria-labelledby="book-label-{{ book_id }}">
-    {{ tree }}
+    {% set children = tree|render %}
+    {% if children|striptags|trim %}
+      <div class="book-navigation__children">
+        <p class="book-navigation__children-title">{{ 'In this section'|t }}</p>
+        {{ children }}
+      </div>
+    {% endif %}
     {% if has_links %}
       <h2 class="visually-hidden" id="book-label-{{ book_id }}">{{ 'Book traversal links for'|t }} {{ book_title }}</h2>
       <ul class="book-pager">
       {% if prev_url %}
         <li class="book-pager__item book-pager__item--previous">
-          <a class="book-pager__link book-pager__link--previous" href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">{{ prev_title }}</a>
+          <a class="book-pager__link book-pager__link--previous" href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">
+            <span class="book-pager__label">{{ 'Previous'|t }}</span>
+            <span class="book-pager__title">{{ prev_title }}</span>
+          </a>
         </li>
       {% endif %}
       {% if parent_url %}
         <li class="book-pager__item book-pager__item--center">
-          <a href="{{ parent_url }}" title="{{ 'Go to parent page'|t }}">{{ 'Up'|t }}</a>
+          <a class="book-pager__link book-pager__link--up" href="{{ parent_url }}" title="{{ 'Go to parent page'|t }}">{{ 'Up'|t }}</a>
         </li>
       {% endif %}
       {% if next_url %}
         <li class="book-pager__item book-pager__item--next">
-          <a class="book-pager__link book-pager__link--next" href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">{{ next_title }}</a>
-       </li>
+          <a class="book-pager__link book-pager__link--next" href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">
+            <span class="book-pager__label">{{ 'Next'|t }}</span>
+            <span class="book-pager__title">{{ next_title }}</span>
+          </a>
+        </li>
       {% endif %}
-    </ul>
+      </ul>
     {% endif %}
   </nav>
 {% endif %}

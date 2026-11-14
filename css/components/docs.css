@@ -1028,9 +1028,21 @@
 
 .docs-article .text-content .docs-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(11.11111rem, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 0.88889rem;
   margin-block: 0 1.77778rem;
+}
+
+/* The three featured cards keep their own row. */
+
+.docs-article .text-content .docs-cards--featured {
+  grid-template-columns: repeat(auto-fill, minmax(11.11111rem, 1fr));
+}
+
+@media (max-width: 33.33333rem) {
+  .docs-article .text-content .docs-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .docs-article .text-content .docs-card {
@@ -1062,6 +1074,13 @@
   width: 3.11111rem;
   height: 3.11111rem;
   margin-block-end: 0.33333rem;
+}
+
+.docs-article .text-content .docs-card__logo {
+  width: 2.22222rem;
+  height: 2.22222rem;
+  margin-block-end: 0.33333rem;
+  object-fit: contain;
 }
 
 .docs-article .text-content .docs-card__title {

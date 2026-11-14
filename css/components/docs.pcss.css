@@ -1025,9 +1025,21 @@
 
 .docs-article .text-content .docs-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-block: 0 32px;
+}
+
+/* The three featured cards keep their own row. */
+
+.docs-article .text-content .docs-cards--featured {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+@media (width <= 600px) {
+  .docs-article .text-content .docs-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .docs-article .text-content .docs-card {
@@ -1059,6 +1071,13 @@
   width: 56px;
   height: 56px;
   margin-block-end: 6px;
+}
+
+.docs-article .text-content .docs-card__logo {
+  width: 40px;
+  height: 40px;
+  margin-block-end: 6px;
+  object-fit: contain;
 }
 
 .docs-article .text-content .docs-card__title {

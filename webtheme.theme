@@ -165,6 +165,19 @@ function webtheme_preprocess_node(&$variables) {
   if ($variables['node']->bundle() === 'article' && $variables['view_mode'] === 'full') {
     $variables['layout'] = 'content-narrow';
   }
+
+  // The book's navigation (previous, next, the pages of a section) is tagged by the Book module with
+  // node_list, so saving any node of the site, a news item or a release, emptied every page of every
+  // book from the caches. What that navigation shows changes only when a page of its book is saved,
+  // moved or deleted, and the Book module invalidates the book's own tag (bid:<book>) for each of those.
+  foreach (['book_navigation', 'book_navigation_without_tree'] as $key) {
+    $bid = $variables['content'][$key]['#book_link']['bid'] ?? NULL;
+    if ($bid && isset($variables['content'][$key]['#cache']['tags'])) {
+      $tags = array_diff($variables['content'][$key]['#cache']['tags'], ['node_list']);
+      $tags[] = 'bid:' . $bid;
+      $variables['content'][$key]['#cache']['tags'] = array_values(array_unique($tags));
+    }
+  }
 }
 
 /**

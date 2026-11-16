@@ -41,7 +41,7 @@
       return;
     }
     nav.addEventListener('click', (event) => {
-      const toggle = event.target.closest('.docs-nav__toggle');
+      const toggle = event.target.closest('button.docs-nav__toggle');
       if (!toggle) {
         return;
       }

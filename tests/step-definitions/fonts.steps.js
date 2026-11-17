@@ -73,6 +73,7 @@ When(
  */
 Given(/^I record the requests of the page$/, async function recordRequests() {
   this.recordedRequests = [];
+  this.fontUsers = [];
   const ofTheNextPage = new WeakSet();
   let navigating = false;
   let committed = false;
@@ -85,6 +86,27 @@ Given(/^I record the requests of the page$/, async function recordRequests() {
       committed = false;
     } else if (committed) {
       ofTheNextPage.add(request);
+      if (request.resourceType() === 'font') {
+        // Which elements of the page use a font of the theme when the file
+        // is asked for: the failure message names them.
+        this.page
+          .evaluate(() =>
+            [...document.querySelectorAll('*')]
+              .map((element) => [element, getComputedStyle(element)])
+              .filter(([, style]) =>
+                /^"?(Atkinson|Zen Maru)/.test(style.fontFamily),
+              )
+              .map(
+                ([element, style]) =>
+                  `${element.tagName.toLowerCase()}${element.id ? `#${element.id}` : ''}.${String(element.className).trim().split(/\s+/).join('.')} (${style.fontFamily.split(',')[0]}, ${style.display})`,
+              )
+              .slice(0, 12),
+          )
+          .then((users) => {
+            this.fontUsers = [...new Set([...(this.fontUsers || []), ...users])];
+          })
+          .catch(() => {});
+      }
     }
   });
   this.page.on('framenavigated', (frame) => {
@@ -164,7 +186,9 @@ Then(
           ({ url, type, from, page }) =>
             `  ${url} (${type}, asked by ${from || '?'} on ${page})`,
         )
-        .join('\n')}`,
+        .join('\n')}\nElements using a font of the theme then: ${
+        (this.fontUsers || []).join('; ') || 'none found'
+      }`,
     );
   },
 );

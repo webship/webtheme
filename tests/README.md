@@ -81,7 +81,7 @@ Webtheme, and the core contact form one (no Contact module):
 
 ```
 116 scenarios (12 skipped, 104 passed)
-1024 steps (133 skipped, 891 passed)
+1026 steps (133 skipped, 893 passed)
 ```
 
 The report is written to `tests/reports/`. The scenarios put back every

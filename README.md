@@ -208,12 +208,14 @@ each site; the theme does not claim them.
 ## Tests
 
 The `tests` folder holds the [webship-js](https://www.npmjs.com/package/webship-js) suite (Cucumber and
-Playwright). The features run against a Drupal site with Webtheme as the default theme:
+Playwright), with the login steps of `@webship-js/drupal-core-steps`. The features run against a Drupal site
+with Webtheme as the default theme; `tests/README.md` has the full install, from a DDEV site to a green run,
+and the test account:
 
 ```shell
-npm install
+yarn install
 LAUNCH_URL=https://webtheme.ddev.site DRUPAL_PROJECT_DIR=~/workspace/test/webtheme \
-  npx -y node@24 ./node_modules/.bin/cucumber-js --config cucumber.js
+  DRUPAL_ADMIN_PASS='…' yarn test
 ```
 
 The features check the UIkit markup, not the content of a site: they pass on a site installed with the

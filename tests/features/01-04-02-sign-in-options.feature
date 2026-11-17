@@ -8,8 +8,8 @@ Feature: The options of the sign-in screens
   # back at the end of the next feature (01-04-03).
 
   Scenario: The sign-in screens are handed to the UIkit theme
-    Given the "display_builder_page_layout" module is enabled
-      And I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
+      And the "display_builder_page_layout" module is enabled
       And there is no default page layout
     Given the sign-in screens are shown by the UIkit theme
       And the blocks of the UIkit theme are placed
@@ -73,7 +73,7 @@ Feature: The options of the sign-in screens
       And ".webtheme-sign-in__name" should be visible
 
   Scenario: The options are theme settings
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I go to "/admin/appearance/settings/webtheme"
      Then I should see "Sign-in screens"
       And I should see "Show the site header"

@@ -4,7 +4,7 @@ Feature: The UIkit components in the UI Patterns library
   So that I can check how each component renders before using it
 
   Scenario: The library overview lists the UIkit components
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I go to "/admin/appearance/ui/components/webtheme"
      Then I should see "Accordion"
       And I should see "Navbar"
@@ -14,5 +14,5 @@ Feature: The UIkit components in the UI Patterns library
       And I should not see "error has occurred"
 
   Scenario: Every component page of the library renders without errors
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      Then every UIkit component page of the library should render without errors

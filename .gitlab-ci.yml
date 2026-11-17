@@ -94,8 +94,10 @@ stylelint:
     - name: $_CONFIG_DOCKERHUB_ROOT/$_TARGET_DB_TYPE-$_TARGET_DB_VERSION:$_TARGET_DB_IMAGE_TAG
       alias: database
   variables:
-    DRUPAL_ADMIN_USERNAME: "webmaster"
-    DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
+    # The account of cucumber.js worldParameters.users. Its password is made
+    # in before_script, for this throwaway site only.
+    DRUPAL_ADMIN_USER: "webmaster"
+    DRUPAL_ADMIN_MAIL: "webmaster@example.test"
     DRUPAL_TEST_BASE_URL: "http://localhost"
     LAUNCH_URL: "http://localhost"
     # The custom steps run Drush as the web server user on the CI site.
@@ -113,11 +115,14 @@ stylelint:
     - service apache2 start
     # ── Database ────────────────────────────────────────────────────────────
     - export SIMPLETEST_DB=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
+    # ── Test account password, for this job only ───────────────────────────
+    - export DRUPAL_ADMIN_PASS=$(php -r "echo bin2hex(random_bytes(12));")
     # ── Drupal site install ─────────────────────────────────────────────────
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT site:install standard
         --db-url=$SIMPLETEST_DB
-        --account-name=webmaster
-        --account-pass=dD.123123ddd
+        --account-name="$DRUPAL_ADMIN_USER"
+        --account-mail="$DRUPAL_ADMIN_MAIL"
+        --account-pass="$DRUPAL_ADMIN_PASS"
         --site-name="Webtheme Test"
         -y
     # ── Article/Basic page content types (Drupal 11.4 regression) ───────────
@@ -154,7 +159,8 @@ stylelint:
     - 'echo "----- front page body (first 120 lines) -----"; head -120 /tmp/front.html || true'
     - '$CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT watchdog:show --count=25 --severity=Error --extended || true'
     - 'echo "----- apache/php error log -----"; tail -80 /var/log/apache2/error.log 2>/dev/null || tail -80 /var/log/php*.log 2>/dev/null || true'
-    # The administrator steps log in with a one-time login link (drush user:login).
+    # The scenarios log in through the login form, as the Webmaster account of
+    # the site install (cucumber.js worldParameters.users).
     # ── Drush as the web server user, for the custom steps ──────────────────
     - chown -R www-data:www-data $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
     # runuser keeps every argument as it is ("$@"), like the PHP code and the

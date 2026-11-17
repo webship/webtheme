@@ -90,20 +90,9 @@ function uikitComponents() {
 }
 
 /**
- * Logs in as user 1 with a one-time login link, without the login form.
- *
- * Example: Given I am logged in as the Drupal administrator
+ * Example: When the caches are rebuilt
  */
-Given(/^I am logged in as the Drupal administrator$/, async function () {
-  const link = drush("user:login --no-browser").split("\n").pop();
-  await this.page.goto(`${this.launchUrl}${new URL(link).pathname}`);
-  await this.page.waitForURL((url) => /\/user\/\d+/.test(url.pathname));
-});
-
-/**
- * Example: When the Drupal caches are rebuilt
- */
-When(/^the Drupal caches are rebuilt$/, { timeout: 180000 }, function () {
+When(/^the caches are rebuilt$/, { timeout: 180000 }, function () {
   drush("cache:rebuild");
 });
 
@@ -375,6 +364,25 @@ Then(
     assert.ok(
       Number.parseInt(count, 10) > 0,
       `No "${webform}" submission from ${email} is stored.`,
+    );
+  },
+);
+
+/**
+ * Deletes the submissions of a webform sent from an email address, so a
+ * scenario that sends the form leaves no data on the site.
+ *
+ * Example: Then the submissions of the "contact" webform from "visitor@example.com" are deleted
+ */
+Then(
+  /^the submissions of the "([^"]*)" webform from "([^"]*)" are deleted$/,
+  { timeout: 60000 },
+  function (webform, email) {
+    const code = `$ids = \\Drupal::database()->select('webform_submission_data', 'd')->fields('d', ['sid'])->condition('webform_id', '${webform}')->condition('name', 'email')->condition('value', '${email}')->execute()->fetchCol(); $storage = \\Drupal::entityTypeManager()->getStorage('webform_submission'); $storage->delete($storage->loadMultiple($ids)); echo count($ids);`;
+    const deleted = drush(`php:eval ${shellArgument(code)}`);
+    assert.ok(
+      Number.parseInt(deleted.split("\n").pop(), 10) > 0,
+      `No "${webform}" submission from ${email} was deleted.`,
     );
   },
 );

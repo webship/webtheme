@@ -4,7 +4,7 @@ Feature: The interactive UIkit components work with the UIkit JavaScript
   So that the interactive components are usable
 
   Background:
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
 
   Scenario: The accordion toggles its items
      When I go to "/admin/appearance/ui/components/webtheme/accordion"

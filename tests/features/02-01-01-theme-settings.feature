@@ -4,7 +4,7 @@ Feature: UIkit theme settings
   So that I can serve UIkit locally and choose the navbar behavior
 
   Scenario: The theme settings form exposes the UIkit settings
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I go to "/admin/appearance/settings/webtheme"
      Then I should see "UIkit library source"
       And I should see "jsDelivr CDN (UIkit 3.25.22)"

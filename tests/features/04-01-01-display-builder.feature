@@ -4,11 +4,11 @@ Feature: The UIkit components with Display Builder
   So that I can design pages without writing templates
 
   Scenario: Every UIkit component has a Display Builder preview
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      Then every UIkit component should have a Display Builder preview
 
   Scenario: The page layout builder lists the UIkit components by group
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
       And there is no default page layout
      When I create the default page layout from the current site
      Then I should see "Created new page layout Default."
@@ -29,7 +29,7 @@ Feature: The UIkit components with Display Builder
       And ".uk-offcanvas .uk-nav-primary" should be attached
 
   Scenario: Without page layout, the page is rendered by the block layout again
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
       And there is no default page layout
       And I am an anonymous user
      When I go to "/no-such-page"
@@ -57,10 +57,13 @@ Feature: The UIkit components with Display Builder
       And the page should have no critical accessibility violations
     Then the page layout "webtheme_test_landmarks" is deleted
 
+  # Role switch: the Webmaster changes a setting, a visitor sees the result,
+  # and the Webmaster puts the setting back.
+  @role-switch
   Scenario: The sign-in page layout draws the sign-in screens when the theme settings pick it
-    Given the "display_builder_page_layout" module is enabled
+    Given I am a logged in user with the "Webmaster" user
+      And the "display_builder_page_layout" module is enabled
       And the sign-in screens are shown by the UIkit theme
-      And I am logged in as the Drupal administrator
      When I pick the page layout "Sign-in screens" for the sign-in screens of the UIkit theme
      Then the page layout "webtheme_sign_in" should be enabled
     Given I am an anonymous user
@@ -69,7 +72,7 @@ Feature: The UIkit components with Display Builder
       And ".webtheme-sign-in" should be visible
       And "#edit-name" should be visible
       And the page should have exactly one h1
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I pick the page layout "- The page of the theme -" for the sign-in screens of the UIkit theme
      Then the page layout "webtheme_sign_in" should be disabled
       And the sign-in screens are given back to the site

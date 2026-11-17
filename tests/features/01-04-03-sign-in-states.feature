@@ -29,7 +29,7 @@ Feature: Every state of the sign-in screens
      When I go to "/user/login"
       And I fill in "name" with "member"
       And I fill in "pass" with "not the password"
-      And I wait 3 seconds
+      And I wait out the form time limit
       And I press "Log in"
      Then ".webtheme-sign-in__messages .uk-alert-danger" should be visible within 10 seconds
       And I should see "Unrecognized username or password"
@@ -41,7 +41,7 @@ Feature: Every state of the sign-in screens
      Then I should see "Log in" in the ".webtheme-sign-in__links" element
      When I fill in "name" with "member"
       And I move the mouse over the page
-      And I wait 3 seconds
+      And I wait out the form time limit
       And I press "Send reset link"
      Then the url should match "/user/login"
       And ".webtheme-sign-in__messages .uk-alert" should be visible within 10 seconds

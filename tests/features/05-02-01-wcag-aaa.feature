@@ -41,7 +41,7 @@ Feature: WCAG 2.2 AAA
   # The page component is a whole page, with its own main landmark: it is
   # checked on the pages that use it.
   Scenario Outline: The component library passes the WCAG AAA audit in the <mode> color mode
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      Then every UIkit component story should pass an accessibility audit at level "AAA" in the "<mode>" color mode except "page"
 
     Examples:
@@ -87,7 +87,7 @@ Feature: WCAG 2.2 AAA
       | /no-such-page |
 
   Scenario Outline: The <name> component is used with the keyboard only
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I go to "/admin/appearance/ui/components/webtheme/<component>"
       And I press the key "Tab" until "<toggle>" has the focus
       And I press the key "Enter"

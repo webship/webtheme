@@ -41,7 +41,7 @@ Feature: Drupal forms and local tasks use UIkit
      When I go to "/user/password"
       And I fill in "name" with "nobody-at-all-test"
       And I move the mouse over the page
-      And I wait 3 seconds
+      And I wait out the form time limit
       And I press "Send reset link"
      Then ".uk-alert" should be visible within 10 seconds
       And ".uk-alert[role='status'], .uk-alert[role='alert']" should be visible

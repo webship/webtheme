@@ -73,7 +73,7 @@ Feature: HTMX navigation
       And ".uk-offcanvas .uk-offcanvas-bar" should be hidden within 5 seconds
 
   Scenario: The links HTMX must not handle keep the normal navigation
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I go to "/user/1"
      Then the links to "/user/logout" should be excluded from the HTMX navigation
     Given I am an anonymous user

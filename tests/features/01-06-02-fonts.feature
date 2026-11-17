@@ -36,8 +36,11 @@ Feature: The fonts are served by the theme
       | 1440  |
       | 960   |
 
+  # Role switch: the Webmaster changes a setting, a visitor sees the result,
+  # and the Webmaster puts the setting back.
+  @role-switch
   Scenario: The font of the operating system is a theme setting
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I pick "The fonts of the operating system" in the settings of the UIkit theme
       And I am an anonymous user
       And I record the requests of the page
@@ -46,22 +49,25 @@ Feature: The fonts are served by the theme
      Then "html" should have attribute "data-font" with value "system"
       And the computed style "font-family" of "body" should contain "system-ui"
       And no request should go to ".woff2"
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I pick "Atkinson Hyperlegible Next" in the settings of the UIkit theme
       And I am an anonymous user
       And I go to "/?font=atkinson"
      Then "html" should have attribute "data-font" with value "atkinson"
       And the computed style "font-family" of "body" should contain "Atkinson Hyperlegible Next"
 
+  # Role switch: the Webmaster changes a setting, a visitor sees the result,
+  # and the Webmaster puts the setting back.
+  @role-switch
   Scenario: A font family saved in UI Skins replaces the font of the theme
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I set the UI Skins CSS variable "webtheme-global-font-family" of the UIkit theme to "Georgia, serif"
       And I set the UI Skins CSS variable "webtheme-measure" of the UIkit theme to "24em"
       And I am an anonymous user
       And I go to "/?font=georgia"
      Then the computed style "font-family" of "body" should be "Georgia, serif"
       And the computed style "--uk-measure" of "html" should be "24em"
-    Given I am logged in as the Drupal administrator
+    Given I am a logged in user with the "Webmaster" user
      When I set the UI Skins CSS variable "webtheme-global-font-family" of the UIkit theme to "var(--uk-font-family-sans)"
       And I set the UI Skins CSS variable "webtheme-measure" of the UIkit theme to "32em"
       And I am an anonymous user

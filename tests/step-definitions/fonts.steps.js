@@ -74,6 +74,26 @@ When(
 Given(/^I record the requests of the page$/, async function recordRequests() {
   this.recordedRequests = [];
   this.fontUsers = [];
+  // In Chromium, what started each font request (the parser, a script, a
+  // preload): the failure message gives it.
+  this.fontInitiators = {};
+  try {
+    const cdp = await this.page.context().newCDPSession(this.page);
+    await cdp.send('Network.enable');
+    cdp.on('Network.requestWillBeSent', ({ request, initiator }) => {
+      if (/\.woff2?(\?|$)/.test(request.url)) {
+        const frame = initiator.stack?.callFrames?.[0];
+        this.fontInitiators[request.url] = [
+          initiator.type,
+          initiator.url || (frame ? `${frame.url}:${frame.lineNumber}` : ''),
+        ]
+          .filter(Boolean)
+          .join(' ');
+      }
+    });
+  } catch {
+    // Another browser: the message names no initiator.
+  }
   const ofTheNextPage = new WeakSet();
   let navigating = false;
   let committed = false;
@@ -184,7 +204,9 @@ Then(
       `Requests to "${text}" on ${this.page.url()}:\n${found
         .map(
           ({ url, type, from, page }) =>
-            `  ${url} (${type}, asked by ${from || '?'} on ${page})`,
+            `  ${url} (${type}, asked by ${from || '?'} on ${page}; started by ${
+              (this.fontInitiators || {})[url] || '?'
+            })`,
         )
         .join('\n')}\nElements using a font of the theme then: ${
         (this.fontUsers || []).join('; ') || 'none found'

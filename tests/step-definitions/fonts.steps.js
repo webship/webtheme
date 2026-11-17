@@ -64,31 +64,41 @@ When(
 );
 
 /**
- * Keeps the requests of the page opened after this step. The answers that
- * still come in for the page that was open before (its font files, for
- * example) are dropped when the next page commits.
+ * Keeps the requests of the page opened after this step: the requests that
+ * page makes once it is committed. A request the page open before made (a
+ * font file still on its way, for example) is not kept, even when its answer
+ * comes in after the next page started.
  *
  * Example: Given I record the requests of the page
  */
 Given(/^I record the requests of the page$/, async function recordRequests() {
   this.recordedRequests = [];
-  let loading = false;
+  const ofTheNextPage = new WeakSet();
+  let navigating = false;
+  let committed = false;
   this.page.on('request', (request) => {
     if (
       request.isNavigationRequest() &&
       request.frame() === this.page.mainFrame()
     ) {
-      loading = true;
+      navigating = true;
+      committed = false;
+    } else if (committed) {
+      ofTheNextPage.add(request);
     }
   });
   this.page.on('framenavigated', (frame) => {
-    if (loading && frame === this.page.mainFrame()) {
-      loading = false;
+    if (navigating && frame === this.page.mainFrame()) {
+      navigating = false;
+      committed = true;
       this.recordedRequests = [];
     }
   });
   this.page.on('response', (response) => {
     const request = response.request();
+    if (!ofTheNextPage.has(request)) {
+      return;
+    }
     this.recordedRequests.push({
       url: response.url(),
       status: response.status(),

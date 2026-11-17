@@ -65,13 +65,17 @@
       }
     });
 
-    props.overlay.addEventListener('click', () => {
-      toggleNav(props, false);
-    });
+    // The overlay behind the open menu closes it when tapped. A page without one (a template that
+    // names it otherwise) still gets a working menu button.
+    if (props.overlay) {
+      props.overlay.addEventListener('click', () => {
+        toggleNav(props, false);
+      });
 
-    props.overlay.addEventListener('touchstart', () => {
-      toggleNav(props, false);
-    });
+      props.overlay.addEventListener('touchstart', () => {
+        toggleNav(props, false);
+      });
+    }
 
     // Focus trap. This is added to the header element because the navButton
     // element is not a child element of the navWrapper element, and the keydown
@@ -148,14 +152,16 @@
           '[data-drupal-selector="mobile-nav-button"]',
         );
         const body = document.body;
+        // page.html.twig names the overlay "header-nav-overlay"; "overlay" is the name core's Olivero
+        // template gives it, which a sub-theme's own page template may still carry.
         const overlay = context.querySelector(
-          '[data-drupal-selector="header-nav-overlay"]',
+          '[data-drupal-selector="header-nav-overlay"], [data-drupal-selector="overlay"]',
         );
 
         // The header is rendered, but the primary-menu / mobile-buttons block
         // may not be placed yet (e.g. fresh install before block placement).
         // Skip initialisation rather than throwing on a null element.
-        if (!navWrapper || !navButton || !overlay) {
+        if (!navWrapper || !navButton) {
           return;
         }
 

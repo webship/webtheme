@@ -64,16 +64,37 @@ When(
 );
 
 /**
- * Keeps the requests of the pages opened after this step.
+ * Keeps the requests of the page opened after this step. The answers that
+ * still come in for the page that was open before (its font files, for
+ * example) are dropped when the next page commits.
  *
  * Example: Given I record the requests of the page
  */
 Given(/^I record the requests of the page$/, async function recordRequests() {
   this.recordedRequests = [];
+  let loading = false;
+  this.page.on('request', (request) => {
+    if (
+      request.isNavigationRequest() &&
+      request.frame() === this.page.mainFrame()
+    ) {
+      loading = true;
+    }
+  });
+  this.page.on('framenavigated', (frame) => {
+    if (loading && frame === this.page.mainFrame()) {
+      loading = false;
+      this.recordedRequests = [];
+    }
+  });
   this.page.on('response', (response) => {
+    const request = response.request();
     this.recordedRequests.push({
       url: response.url(),
       status: response.status(),
+      type: request.resourceType(),
+      from: request.headers().referer || '',
+      page: request.frame().url(),
     });
   });
 });
@@ -122,10 +143,19 @@ Then(
   /^no request should go to "([^"]*)"$/,
   async function noRequestGoesTo(text) {
     assert.ok(this.recordedRequests, 'The requests were not recorded.');
-    const found = this.recordedRequests
-      .map(({ url }) => url)
-      .filter((url) => url.includes(text));
-    assert.deepStrictEqual(found, []);
+    const found = this.recordedRequests.filter(({ url }) =>
+      url.includes(text),
+    );
+    assert.deepStrictEqual(
+      found.map(({ url }) => url),
+      [],
+      `Requests to "${text}" on ${this.page.url()}:\n${found
+        .map(
+          ({ url, type, from, page }) =>
+            `  ${url} (${type}, asked by ${from || '?'} on ${page})`,
+        )
+        .join('\n')}`,
+    );
   },
 );
 

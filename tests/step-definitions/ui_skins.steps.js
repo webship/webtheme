@@ -167,10 +167,19 @@ When(
       element.dispatchEvent(new Event("input", { bubbles: true }));
       element.dispatchEvent(new Event("change", { bubbles: true }));
     }, value);
-    await this.page
-      .locator('#edit-submit, input[type="submit"][value="Save configuration"]')
-      .first()
-      .click();
+    // Saved when the server answers the POST of the form: only then are the
+    // caches rebuilt.
+    await Promise.all([
+      this.page.waitForResponse(
+        (response) =>
+          response.request().isNavigationRequest() &&
+          response.request().method() === "POST",
+      ),
+      this.page
+        .locator('#edit-submit, input[type="submit"][value="Save configuration"]')
+        .first()
+        .click(),
+    ]);
     await this.page.waitForLoadState("load");
     execSync(`${DRUSH} cache:rebuild`, {
       cwd: PROJECT_DIR,

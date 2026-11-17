@@ -39,6 +39,22 @@ function drush(command) {
 }
 
 /**
+ * Clicks the submit button of a form and waits until the server has answered
+ * its POST, so that what the form saves is saved before the next step.
+ */
+async function submitAndWait(page, button) {
+  await Promise.all([
+    page.waitForResponse(
+      (response) =>
+        response.request().isNavigationRequest() &&
+        response.request().method() === "POST",
+    ),
+    button.click(),
+  ]);
+  await page.waitForLoadState("load");
+}
+
+/**
  * Quotes a value as one shell argument.
  */
 function shellArgument(value) {
@@ -463,11 +479,12 @@ When(
       element.dispatchEvent(new Event("input", { bubbles: true }));
       element.dispatchEvent(new Event("change", { bubbles: true }));
     }, value);
-    await this.page
-      .locator('#edit-submit, input[type="submit"][value="Save configuration"]')
-      .first()
-      .click();
-    await this.page.waitForLoadState("load");
+    await submitAndWait(
+      this.page,
+      this.page
+        .locator('#edit-submit, input[type="submit"][value="Save configuration"]')
+        .first(),
+    );
     drush("cache:rebuild");
   },
 );
@@ -485,8 +502,10 @@ When(
       `${this.launchUrl}/admin/appearance/settings/webtheme`,
     );
     await this.page.getByRole("radio", { name: label, exact: true }).check();
-    await this.page.getByRole("button", { name: "Save configuration" }).click();
-    await this.page.waitForLoadState("load");
+    await submitAndWait(
+      this.page,
+      this.page.getByRole("button", { name: "Save configuration" }),
+    );
     drush("cache:rebuild");
   },
 );
@@ -634,8 +653,10 @@ Given(
     const exists = await this.page.request.get(url);
     if (exists.status() === 200) {
       await this.page.goto(url);
-      await this.page.getByRole("button", { name: "Delete" }).click();
-      await this.page.waitForLoadState("load");
+      await submitAndWait(
+        this.page,
+        this.page.getByRole("button", { name: "Delete" }),
+      );
     }
     drush("cache:rebuild");
   },
@@ -653,8 +674,7 @@ When(
     await this.page
       .locator('input[name="starting_point"][value="theme"]')
       .check();
-    await this.page.getByRole("button", { name: "Save" }).click();
-    await this.page.waitForLoadState("load");
+    await submitAndWait(this.page, this.page.getByRole("button", { name: "Save" }));
   },
 );
 

@@ -42,10 +42,19 @@ When(
       element.dispatchEvent(new Event('input', { bubbles: true }));
       element.dispatchEvent(new Event('change', { bubbles: true }));
     }, action === 'pick');
-    await this.page
-      .locator('input[type="submit"][value="Save configuration"]')
-      .first()
-      .click();
+    // The settings are saved when the server answers the POST of the form:
+    // only then are the caches rebuilt and the next page opened.
+    await Promise.all([
+      this.page.waitForResponse(
+        (response) =>
+          response.request().isNavigationRequest() &&
+          response.request().method() === 'POST',
+      ),
+      this.page
+        .locator('input[type="submit"][value="Save configuration"]')
+        .first()
+        .click(),
+    ]);
     await this.page.waitForLoadState('load');
     execSync(`${DRUSH} cache:rebuild`, {
       cwd: PROJECT_DIR,

@@ -112,10 +112,19 @@ When(
     await this.page
       .locator('select[name="sign_in_page_layout"]')
       .selectOption({ label });
-    await this.page
-      .locator('input[type="submit"][value="Save configuration"]')
-      .first()
-      .click();
+    // Saved when the server answers the POST of the form: only then are the
+    // caches flushed.
+    await Promise.all([
+      this.page.waitForResponse(
+        (response) =>
+          response.request().isNavigationRequest() &&
+          response.request().method() === 'POST',
+      ),
+      this.page
+        .locator('input[type="submit"][value="Save configuration"]')
+        .first()
+        .click(),
+    ]);
     await this.page.waitForLoadState('load');
     php('drupal_flush_all_caches();');
   },

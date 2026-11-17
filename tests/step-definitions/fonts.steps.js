@@ -64,6 +64,26 @@ When(
 );
 
 /**
+ * Empties the HTTP cache of the browser (Chromium), so that the next page
+ * asks for what a first visit asks for: Chromium asks again for the font
+ * files the earlier pages of the session loaded, also when the next page
+ * uses none of them. Another browser skips the scenario.
+ *
+ * Example: Given the browser cache is empty
+ */
+Given(/^the browser cache is empty$/, async function emptyBrowserCache() {
+  let cdp;
+  try {
+    cdp = await this.page.context().newCDPSession(this.page);
+  } catch {
+    return 'skipped';
+  }
+  await cdp.send('Network.clearBrowserCache');
+  await cdp.detach();
+  return undefined;
+});
+
+/**
  * Keeps the requests of the page opened after this step: the requests that
  * page makes once it is committed. A request the page open before made (a
  * font file still on its way, for example) is not kept, even when its answer

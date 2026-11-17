@@ -16,6 +16,7 @@ Feature: The fonts are served by the theme
 
   Scenario: The font files come from the theme, and from no other site
     Given I am an anonymous user
+      And the browser cache is empty
       And I record the requests of the page
      When I go to the homepage
       And the fonts of the page are loaded
@@ -43,6 +44,7 @@ Feature: The fonts are served by the theme
     Given I am a logged in user with the "Webmaster" user
      When I pick "The fonts of the operating system" in the settings of the UIkit theme
       And I am an anonymous user
+      And the browser cache is empty
       And I record the requests of the page
       And I go to "/?font=system"
       And the fonts of the page are loaded

@@ -217,6 +217,33 @@
       if (code && lang && window.hljs && window.hljs.getLanguage(lang)) {
         window.hljs.highlightElement(code);
       }
+      scrollers.push({ pre, code, lang });
+    });
+    keyboardScroll();
+    window.addEventListener('resize', Drupal.debounce(keyboardScroll, 200));
+  }
+
+  /**
+   * A code block wider than the page scrolls; the keyboard must reach it to scroll it, so the part that
+   * scrolls (the pre, or the code inside it) takes focus and is named as a region, only while it overflows.
+   */
+  const scrollers = [];
+  function keyboardScroll() {
+    scrollers.forEach(({ pre, code, lang }) => {
+      [pre, code].forEach((el) => {
+        if (!el) {
+          return;
+        }
+        if (el.scrollWidth > el.clientWidth + 1) {
+          el.setAttribute('tabindex', '0');
+          el.setAttribute('role', 'region');
+          el.setAttribute('aria-label', lang ? Drupal.t('Code: @lang', { '@lang': lang }) : Drupal.t('Code'));
+        } else if (el.getAttribute('role') === 'region') {
+          el.removeAttribute('tabindex');
+          el.removeAttribute('role');
+          el.removeAttribute('aria-label');
+        }
+      });
     });
   }
 

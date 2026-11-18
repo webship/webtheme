@@ -370,4 +370,5 @@ docs:
     js/docs.js: {}
   dependencies:
     - core/drupal
+    - core/drupal.debounce
     - core/once

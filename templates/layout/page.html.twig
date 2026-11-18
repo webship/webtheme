@@ -76,6 +76,10 @@
                   {{ page.primary_menu }}
                   {{ page.secondary_menu }}
                 </div>
+
+                {# The overlay behind the open mobile menu. It sits in the header so
+                   that the menu and the Menu button stay above it. #}
+                <div class="header-nav-overlay" data-drupal-selector="header-nav-overlay"></div>
               {% endif %}
             </div>
           </div>
@@ -121,8 +125,6 @@
         {{ page.footer_bottom }}
       </div>
     </footer>
-
-    <div class="header-nav-overlay" data-drupal-selector="header-nav-overlay"></div>
 
   </div>
 </div>

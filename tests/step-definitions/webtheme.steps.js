@@ -47,7 +47,7 @@ Before(function () {
 /**
  * Shared login routine, used by the "I am a logged in user" step and the
  * HTMX toggle helpers. Reuses webship-js's own fillField + smartSettle so
- * the wait logic matches the webpage / webblog / vardoc suites and is
+ * the wait logic matches the webpage and webblog suites and is
  * robust to both full-page navigation and HTMX-boosted in-place swaps
  * (smartSettle waits for the AJAX/timer/mutation quiet period, not a URL
  * change).
@@ -112,7 +112,7 @@ async function settle(world) {
  *
  * The Webmaster row is the site-install super-admin. Every other row is
  * provisioned by `Given I add testing users`. The same phrasing is used
- * by varbase_project / vardoc / webpage so suites can move between
+ * by the webpage suite so suites can move between
  * projects without re-learning step names.
  *
  * Example #1: Given I am a logged in user with the "Webmaster" user
@@ -697,4 +697,45 @@ Then(/^the page should load fewer than (\d+) resources$/, async function (max) {
   if (count >= Number(max)) {
     throw new Error(`Expected fewer than ${max} resources but the page loaded ${count}.`);
   }
+});
+
+// ---------------------------------------------------------------------------
+// Mobile menu.
+// ---------------------------------------------------------------------------
+
+/**
+ * Tap the screen beside the open mobile menu: halfway between the edge of
+ * the screen and the menu, at 60% of the screen's height (below the header).
+ * On a tablet that point is on the overlay behind the open menu. On a phone
+ * the menu takes the whole width, so the step fails and says so.
+ *
+ * A touch tap when the browser context has touch, a mouse click otherwise,
+ * as webship-js's `I tap on "…"` does.
+ *
+ * Example #1: When I tap beside the open menu
+ * Example #2: And I tap beside the open mobile menu
+ */
+When(/^(?:I |we )?tap beside the open (?:mobile )?menu$/, async function () {
+  const menu = await this.page.locator('[data-drupal-selector="header-nav"]').boundingBox();
+  if (!menu) {
+    throw friendly('Expected the open menu ([data-drupal-selector="header-nav"]) on the page, but it has no size.');
+  }
+  const screen = this.page.viewportSize()
+    || await this.page.evaluate(() => ({ width: window.innerWidth, height: window.innerHeight }));
+  const left = Math.max(0, menu.x);
+  const right = Math.max(0, screen.width - (menu.x + menu.width));
+  if (Math.max(left, right) < 20) {
+    throw friendly(`The open menu takes the whole width of the screen (${screen.width}px): there is no point beside it to tap.`);
+  }
+  const x = Math.round(left >= right ? left / 2 : screen.width - right / 2);
+  const y = Math.round(screen.height * 0.6);
+  try {
+    await this.page.touchscreen.tap(x, y);
+  } catch (err) {
+    if (!/hasTouch/i.test(err.message)) {
+      throw err;
+    }
+    await this.page.mouse.click(x, y);
+  }
+  await smartSettle(this.page, 1500);
 });

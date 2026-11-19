@@ -1083,6 +1083,18 @@
   object-fit: contain;
 }
 
+/* Brand logos are drawn for a light page, and a few are black or nearly black
+   (Ghost, GitHub, Backdrop CMS, Symfony). On the dark theme each sits on a light
+   tile, so every logo reads. */
+
+[data-theme="dark"] .docs-article .text-content .docs-card__logo,
+.docs-page[data-theme="dark"] .docs-article .text-content .docs-card__logo {
+  box-sizing: content-box;
+  padding: 0.22222rem;
+  border-radius: 0.44444rem;
+  background: #fff;
+}
+
 .docs-article .text-content .docs-card__title {
   font-size: 0.85rem;
   font-weight: 700;
